@@ -59,5 +59,7 @@ jobs:
           version: latest
       - run: supabase link --project-ref "$PROJECT_REF"
       - run: supabase db push
+      - name: Erlaubte Webadressen für die Funktionen setzen (nicht geheim)
+        run: supabase secrets set --project-ref "$PROJECT_REF" ALLOWED_ORIGINS="https://${{ github.repository_owner }}.github.io,https://passport.io,https://www.passport.io,http://localhost:5173"
       - run: supabase functions deploy prices --no-verify-jwt --project-ref "$PROJECT_REF"
       - run: supabase functions deploy questions --no-verify-jwt --project-ref "$PROJECT_REF"
