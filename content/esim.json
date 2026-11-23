@@ -560,5 +560,197 @@
         "note": "Ägypten, Marokko, Südafrika u. v. m."
       }
     ]
+  },
+  "ar": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "الأكثر مبيعًا"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "أوروبا",
+        "note": "جميع دول الاتحاد الأوروبي + المملكة المتحدة وسويسرا وتركيا"
+      },
+      {
+        "id": "asia",
+        "name": "آسيا",
+        "note": "تايلاند واليابان وفيتنام وغيرها"
+      },
+      {
+        "id": "na",
+        "name": "أمريكا الشمالية",
+        "note": "الولايات المتحدة وكندا والمكسيك"
+      },
+      {
+        "id": "me",
+        "name": "الشرق الأوسط",
+        "note": "الإمارات وقطر والسعودية وغيرها"
+      },
+      {
+        "id": "latam",
+        "name": "أمريكا اللاتينية",
+        "note": "البرازيل والمكسيك وكولومبيا وغيرها"
+      },
+      {
+        "id": "af",
+        "name": "أفريقيا",
+        "note": "مصر والمغرب وجنوب أفريقيا وغيرها"
+      }
+    ]
+  },
+  "ru": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "Хит продаж"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "Европа",
+        "note": "Все страны ЕС + Великобритания, Швейцария, Турция"
+      },
+      {
+        "id": "asia",
+        "name": "Азия",
+        "note": "Таиланд, Япония, Вьетнам и другие"
+      },
+      {
+        "id": "na",
+        "name": "Северная Америка",
+        "note": "США, Канада, Мексика"
+      },
+      {
+        "id": "me",
+        "name": "Ближний Восток",
+        "note": "ОАЭ, Катар, Саудовская Аравия и другие"
+      },
+      {
+        "id": "latam",
+        "name": "Латинская Америка",
+        "note": "Бразилия, Мексика, Колумбия и другие"
+      },
+      {
+        "id": "af",
+        "name": "Африка",
+        "note": "Египет, Марокко, ЮАР и другие"
+      }
+    ]
+  },
+  "fr": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "Meilleure vente"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "Europe",
+        "note": "Tous les pays de l'UE + Royaume-Uni, Suisse, Turquie"
+      },
+      {
+        "id": "asia",
+        "name": "Asie",
+        "note": "Thaïlande, Japon, Vietnam et plus"
+      },
+      {
+        "id": "na",
+        "name": "Amérique du Nord",
+        "note": "États-Unis, Canada, Mexique"
+      },
+      {
+        "id": "me",
+        "name": "Moyen-Orient",
+        "note": "Émirats, Qatar, Arabie saoudite et plus"
+      },
+      {
+        "id": "latam",
+        "name": "Amérique latine",
+        "note": "Brésil, Mexique, Colombie et plus"
+      },
+      {
+        "id": "af",
+        "name": "Afrique",
+        "note": "Égypte, Maroc, Afrique du Sud et plus"
+      }
+    ]
+  },
+  "es": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "Más vendido"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "Europa",
+        "note": "Todos los países de la UE + Reino Unido, Suiza, Turquía"
+      },
+      {
+        "id": "asia",
+        "name": "Asia",
+        "note": "Tailandia, Japón, Vietnam y más"
+      },
+      {
+        "id": "na",
+        "name": "Norteamérica",
+        "note": "EE. UU., Canadá, México"
+      },
+      {
+        "id": "me",
+        "name": "Oriente Medio",
+        "note": "EAU, Catar, Arabia Saudí y más"
+      },
+      {
+        "id": "latam",
+        "name": "Latinoamérica",
+        "note": "Brasil, México, Colombia y más"
+      },
+      {
+        "id": "af",
+        "name": "África",
+        "note": "Egipto, Marruecos, Sudáfrica y más"
+      }
+    ]
   }
 }

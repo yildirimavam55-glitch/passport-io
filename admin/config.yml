@@ -15,7 +15,7 @@ locale: de
 # Türkisch ist die Hauptsprache und enthält Bilder, Links, Preise-Schlüssel usw.; andere Sprachen nur die Texte.
 i18n:
   structure: single_file
-  locales: [tr, en, de]
+  locales: [tr, en, de, ar, ru, fr, es]
   default_locale: tr
 site_url: /
 display_url: /
@@ -568,6 +568,7 @@ collections:
           - { label: "home", name: home, widget: string, i18n: true }
           - { label: "mainNav", name: mainNav, widget: string, i18n: true }
           - { label: "language", name: language, widget: string, i18n: true }
+          - { label: "currency", name: currency, widget: string, i18n: true }
           - { label: "login", name: login, widget: string, i18n: true }
           - { label: "menuOpen", name: menuOpen, widget: string, i18n: true }
           - { label: "payMethods", name: payMethods, widget: string, i18n: true }

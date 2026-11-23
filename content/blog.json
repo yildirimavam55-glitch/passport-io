@@ -130,5 +130,165 @@
         "category": "eSIM Guide"
       }
     ]
+  },
+  "ar": {
+    "posts": [
+      {
+        "category": "دليل eSIM",
+        "title": "eSIM أم التجوال؟ وفّر حتى 90% في عطلتك",
+        "excerpt": "لماذا تكون شريحة eSIM للسفر أرخص دائمًا تقريبًا من باقة التجوال لدى مشغّلك – مع أمثلة حسابية.",
+        "readTime": "6 دقائق"
+      },
+      {
+        "category": "المطار",
+        "title": "أجمل 10 صالات مطارات في أوروبا",
+        "excerpt": "من إسطنبول إلى زيورخ: هنا يصبح الانتظار أجمل لحظات رحلتك.",
+        "readTime": "8 دقائق"
+      },
+      {
+        "category": "نصائح السفر",
+        "title": "المسار السريع: متى يستحق فعلاً؟",
+        "excerpt": "بداية العطلات، الرحلات المبكرة، الترانزيت – المواقف التي يساوي فيها المسار السريع ذهبًا.",
+        "readTime": "5 دقائق"
+      },
+      {
+        "category": "وجهات",
+        "title": "قائمة تايلاند: كل ما تحتاجه لرحلة مثالية",
+        "excerpt": "التأشيرة، الإنترنت، المال، التطبيقات – ما يجب إنجازه قبل رحلتك إلى بانكوك.",
+        "readTime": "7 دقائق"
+      },
+      {
+        "category": "رحلة برية",
+        "title": "ملصقات الطرق في أوروبا: الدليل الشامل 2027",
+        "excerpt": "النمسا، سويسرا، سلوفينيا وغيرها – أي الدول تفرض رسوم طرق وكم تكلّف.",
+        "readTime": "9 دقائق"
+      },
+      {
+        "category": "دليل eSIM",
+        "title": "استخدم الشريحتين بذكاء: يبقى رقمك متاحًا",
+        "excerpt": "هكذا تضبط هاتفك لتصلك رسائل البنك دون أي رسوم تجوال.",
+        "readTime": "4 دقائق"
+      }
+    ]
+  },
+  "ru": {
+    "posts": [
+      {
+        "category": "Гид по eSIM",
+        "title": "eSIM или роуминг: как сэкономить в отпуске до 90%",
+        "excerpt": "Почему eSIM для путешествий почти всегда дешевле роуминга вашего оператора – с примерами расчётов.",
+        "readTime": "6 мин"
+      },
+      {
+        "category": "Аэропорт",
+        "title": "10 самых красивых бизнес-залов Европы",
+        "excerpt": "От Стамбула до Цюриха: здесь ожидание становится лучшей частью поездки.",
+        "readTime": "8 мин"
+      },
+      {
+        "category": "Советы",
+        "title": "Fast Track: когда быстрая полоса действительно оправдана?",
+        "excerpt": "Начало каникул, ранние рейсы, пересадки – ситуации, в которых Fast Track на вес золота.",
+        "readTime": "5 мин"
+      },
+      {
+        "category": "Направления",
+        "title": "Чек-лист для Таиланда: всё для идеальной поездки",
+        "excerpt": "Виза, интернет, деньги, приложения – что сделать до вылета в Бангкок.",
+        "readTime": "7 мин"
+      },
+      {
+        "category": "Автопутешествие",
+        "title": "Виньетки в Европе: большой обзор 2027",
+        "excerpt": "Австрия, Швейцария, Словения и другие – где платные дороги и сколько это стоит.",
+        "readTime": "9 мин"
+      },
+      {
+        "category": "Гид по eSIM",
+        "title": "Две SIM с умом: ваш номер остаётся на связи",
+        "excerpt": "Как настроить телефон, чтобы банковские SMS приходили, а платы за роуминг не было.",
+        "readTime": "4 мин"
+      }
+    ]
+  },
+  "fr": {
+    "posts": [
+      {
+        "category": "Guide eSIM",
+        "title": "eSIM ou itinérance : économisez jusqu'à 90 % en vacances",
+        "excerpt": "Pourquoi une eSIM de voyage est presque toujours moins chère que l'option itinérance de votre opérateur – exemples chiffrés à l'appui.",
+        "readTime": "6 min"
+      },
+      {
+        "category": "Aéroport",
+        "title": "Les 10 plus beaux salons d'aéroport d'Europe",
+        "excerpt": "D'Istanbul à Zurich : quand l'attente devient le meilleur moment du voyage.",
+        "readTime": "8 min"
+      },
+      {
+        "category": "Conseils voyage",
+        "title": "Fast Track : quand le coupe-file vaut-il vraiment le coup ?",
+        "excerpt": "Début des vacances, vols matinaux, correspondances – les situations où le Fast Track vaut de l'or.",
+        "readTime": "5 min"
+      },
+      {
+        "category": "Destinations",
+        "title": "Check-list Thaïlande : tout pour un voyage parfait",
+        "excerpt": "Visa, internet, argent, applis – ce qu'il faut régler avant de partir pour Bangkok.",
+        "readTime": "7 min"
+      },
+      {
+        "category": "Road trip",
+        "title": "Vignettes en Europe : le grand guide 2027",
+        "excerpt": "Autriche, Suisse, Slovénie et autres – quels pays font payer la route, et combien.",
+        "readTime": "9 min"
+      },
+      {
+        "category": "Guide eSIM",
+        "title": "Bien utiliser la double SIM : restez joignable sur votre numéro",
+        "excerpt": "Comment régler votre téléphone pour recevoir les SMS de la banque sans frais d'itinérance.",
+        "readTime": "4 min"
+      }
+    ]
+  },
+  "es": {
+    "posts": [
+      {
+        "category": "Guía eSIM",
+        "title": "eSIM o roaming: ahorra hasta un 90 % en vacaciones",
+        "excerpt": "Por qué una eSIM de viaje casi siempre es más barata que el roaming de tu operador – con ejemplos de cálculo.",
+        "readTime": "6 min"
+      },
+      {
+        "category": "Aeropuerto",
+        "title": "Las 10 salas VIP de aeropuerto más bonitas de Europa",
+        "excerpt": "De Estambul a Zúrich: aquí la espera se convierte en lo mejor del viaje.",
+        "readTime": "8 min"
+      },
+      {
+        "category": "Consejos de viaje",
+        "title": "Fast Track: ¿cuándo merece realmente la pena?",
+        "excerpt": "Inicio de vacaciones, vuelos temprano, conexiones – las situaciones en las que el Fast Track vale oro.",
+        "readTime": "5 min"
+      },
+      {
+        "category": "Destinos",
+        "title": "Checklist de Tailandia: todo para un viaje perfecto",
+        "excerpt": "Visado, internet, dinero, apps – lo que debes resolver antes de volar a Bangkok.",
+        "readTime": "7 min"
+      },
+      {
+        "category": "Road trip",
+        "title": "Viñetas en Europa: la gran guía 2027",
+        "excerpt": "Austria, Suiza, Eslovenia y más – qué países cobran peaje y cuánto cuesta.",
+        "readTime": "9 min"
+      },
+      {
+        "category": "Guía eSIM",
+        "title": "Usa bien la doble SIM: tu número sigue disponible",
+        "excerpt": "Cómo configurar el móvil para recibir los SMS del banco sin pagar roaming.",
+        "readTime": "4 min"
+      }
+    ]
   }
 }

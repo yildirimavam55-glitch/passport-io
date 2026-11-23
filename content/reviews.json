@@ -127,5 +127,169 @@
         "text": "Klare Preise, keine versteckten Kosten. Nachbuchen ging mit einem Klick."
       }
     ]
+  },
+  "ar": {
+    "note": "بيانات تجريبية – تُستبدل بأداة Trustpilot قبل الإطلاق.",
+    "items": [
+      {
+        "name": "عميلة أ.",
+        "date": "قبل يومين",
+        "title": "متصل خلال دقيقتين",
+        "text": "مسحت الرمز، هبطت في أنطاليا، و5G فورًا. أرخص بكثير من التجوال."
+      },
+      {
+        "name": "عميل م.",
+        "date": "قبل 4 أيام",
+        "title": "قسيمة الصالة ممتازة",
+        "text": "حجزت في الليلة السابقة ووصلت القسيمة فورًا. عرضت رمز QR عند المدخل فقط – دون أي مشكلة."
+      },
+      {
+        "name": "عميلة س.",
+        "date": "قبل أسبوع",
+        "title": "دعم رائع",
+        "text": "كان لدي سؤال عن التفعيل وأجابت المساعدة عليه مباشرة."
+      },
+      {
+        "name": "عميل ت.",
+        "date": "قبل أسبوع",
+        "title": "المسار السريع يستحق",
+        "text": "وفّرت 30 دقيقة بسهولة في فرانكفورت في بداية العطلات. سأكررها."
+      },
+      {
+        "name": "عميلة ل.",
+        "date": "قبل أسبوعين",
+        "title": "مثالية للجولات",
+        "text": "باقة آسيا لتايلاند وفيتنام وماليزيا – شريحة واحدة لكل شيء. عملت بلا أي مشكلة."
+      },
+      {
+        "name": "عميل ر.",
+        "date": "قبل 3 أسابيع",
+        "title": "بسيط وعادل",
+        "text": "أسعار واضحة دون تكاليف خفية. أضفت البيانات بنقرة واحدة."
+      }
+    ]
+  },
+  "ru": {
+    "note": "ДЕМО-ДАННЫЕ – перед запуском заменить виджетом Trustpilot.",
+    "items": [
+      {
+        "name": "Клиентка А.",
+        "date": "2 дня назад",
+        "title": "Онлайн за 2 минуты",
+        "text": "Отсканировала код, приземлилась в Анталье – сразу 5G. Намного дешевле роуминга."
+      },
+      {
+        "name": "Клиент М.",
+        "date": "4 дня назад",
+        "title": "Отличный ваучер в зал",
+        "text": "Забронировал накануне вечером, ваучер пришёл сразу. На входе показал QR-код – никаких проблем."
+      },
+      {
+        "name": "Клиентка С.",
+        "date": "1 неделю назад",
+        "title": "Отличная поддержка",
+        "text": "Был вопрос об активации, ассистент сразу ответил."
+      },
+      {
+        "name": "Клиент Т.",
+        "date": "1 неделю назад",
+        "title": "Fast Track того стоит",
+        "text": "В начале каникул во Франкфурте сэкономил минут 30. В следующий раз снова возьму."
+      },
+      {
+        "name": "Клиентка Л.",
+        "date": "2 недели назад",
+        "title": "Идеально для путешествий",
+        "text": "Тариф «Азия» для Таиланда, Вьетнама и Малайзии – одна eSIM на всё. Работала безупречно."
+      },
+      {
+        "name": "Клиент Р.",
+        "date": "3 недели назад",
+        "title": "Просто и честно",
+        "text": "Понятные цены, никаких скрытых платежей. Докупил трафик в один клик."
+      }
+    ]
+  },
+  "fr": {
+    "note": "DONNÉES DE DÉMO – à remplacer par le widget Trustpilot avant la mise en ligne.",
+    "items": [
+      {
+        "name": "Cliente A.",
+        "date": "il y a 2 jours",
+        "title": "En ligne en 2 minutes",
+        "text": "QR code scanné, atterrie à Antalya, 5G immédiatement. Bien moins cher que l'itinérance."
+      },
+      {
+        "name": "Client M.",
+        "date": "il y a 4 jours",
+        "title": "Voucher salon au top",
+        "text": "Réservé la veille au soir, voucher reçu tout de suite. J'ai juste montré le QR code à l'entrée – aucun souci."
+      },
+      {
+        "name": "Cliente S.",
+        "date": "il y a 1 semaine",
+        "title": "Super service",
+        "text": "J'avais une question sur l'activation, l'assistante y a répondu directement."
+      },
+      {
+        "name": "Client T.",
+        "date": "il y a 1 semaine",
+        "title": "Le Fast Track vaut le coup",
+        "text": "En début de vacances à Francfort, j'ai gagné au moins 30 minutes. Je recommencerai."
+      },
+      {
+        "name": "Cliente L.",
+        "date": "il y a 2 semaines",
+        "title": "Parfait pour les circuits",
+        "text": "Forfait Asie pour la Thaïlande, le Vietnam et la Malaisie – une seule eSIM pour tout. Impeccable."
+      },
+      {
+        "name": "Client R.",
+        "date": "il y a 3 semaines",
+        "title": "Simple et honnête",
+        "text": "Prix clairs, aucun frais caché. Recharge en un clic."
+      }
+    ]
+  },
+  "es": {
+    "note": "DATOS DE DEMO – sustituir por el widget de Trustpilot antes del lanzamiento.",
+    "items": [
+      {
+        "name": "Clienta A.",
+        "date": "hace 2 días",
+        "title": "Conectada en 2 minutos",
+        "text": "Escaneé el código, aterricé en Antalya y 5G al instante. Mucho más barato que el roaming."
+      },
+      {
+        "name": "Cliente M.",
+        "date": "hace 4 días",
+        "title": "Bono de sala VIP genial",
+        "text": "Reservé la noche anterior y el bono llegó al momento. Solo enseñé el QR en la entrada – sin problemas."
+      },
+      {
+        "name": "Clienta S.",
+        "date": "hace 1 semana",
+        "title": "Gran atención",
+        "text": "Tenía una duda sobre la activación y la asistente la resolvió al momento."
+      },
+      {
+        "name": "Cliente T.",
+        "date": "hace 1 semana",
+        "title": "El Fast Track compensa",
+        "text": "Al inicio de las vacaciones en Fráncfort me ahorré unos 30 minutos. Repetiré."
+      },
+      {
+        "name": "Clienta L.",
+        "date": "hace 2 semanas",
+        "title": "Perfecta para circuitos",
+        "text": "Plan Asia para Tailandia, Vietnam y Malasia – una eSIM para todo. Funcionó perfecta."
+      },
+      {
+        "name": "Cliente R.",
+        "date": "hace 3 semanas",
+        "title": "Sencillo y justo",
+        "text": "Precios claros, sin costes ocultos. Añadir datos fue un clic."
+      }
+    ]
   }
 }

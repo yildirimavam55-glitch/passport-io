@@ -45,6 +45,22 @@ danach fragen könnten. „Wie oft gefragt“ bestimmt die Reihenfolge in der FA
 - **Neue Sprache:** in `content/languages.json` eintragen, im Admin bei
   `admin/config.yml → i18n.locales` ergänzen, dann übersetzen.
 - Preise in Texten: `{fiyat:esim}`, `{price:lounge}` oder `{preis:country:tr}`.
+- Aktuell: Türkisch, Englisch, Deutsch, Arabisch (von rechts nach links), Russisch,
+  Französisch, Spanisch.
+
+## Währungen
+
+- Oben rechts wählen Besucher Sprache **und** Währung (Handy und Desktop).
+- Startwährung: gespeicherte Wahl › Land des Geräts (z. B. Türkei → TRY, UK → GBP,
+  Euroländer → EUR) › Standard der Sprache (`content/languages.json`).
+- Umgerechnet wird **nur auf dem Server** (Supabase-Funktion `prices`) mit dem
+  offiziellen Tageskurs der Europäischen Zentralbank. Im Browser oder im Code gibt
+  es keine festen Kurse. Ist kein Kurs verfügbar, bleibt es bei der Anbieterwährung.
+- Erlaubte Währungen: Secret `CURRENCIES` in Supabase (Standard `EUR,USD,GBP,TRY,CHF`)
+  und Liste `currencies` in `content/languages.json`. Die EZB veröffentlicht keine
+  Kurse für AED, SAR oder RUB – diese sind deshalb nicht dabei.
+- Wichtig für den Checkout: Der Betrag an der Kasse muss in derselben Währung
+  berechnet werden wie angezeigt (Zahlungsanbieter entsprechend einrichten).
 
 ## Preise – Grundregel
 

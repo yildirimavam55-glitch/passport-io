@@ -27,19 +27,35 @@
     if (base && typeof base === "object") { const out = { ...base }; for (const k of Object.keys(over)) out[k] = merge(base[k], over[k]); return out; }
     return over;
   }
-  let SITE, ESIM, AI, BLOG, REVIEWS, INSTALL, UI, LANGS, LANG, LOCALE, PRICES = null;
+  let SITE, ESIM, AI, BLOG, REVIEWS, INSTALL, UI, LANGS, LANG, LOCALE, CUR, RTL = false, PRICES = null;
   try {
     LANGS = await getJSON("content/languages.json");
+    const params = new URLSearchParams(location.search);
+    const store = (k, v) => { try { if (v) localStorage.setItem(k, v); return localStorage.getItem(k); } catch (_) { return null; } };
+    const devLangs = navigator.languages?.length ? navigator.languages : [navigator.language || ""];
+    // Sprache
     const codes = LANGS.languages.map((l) => l.code);
     const pick = (c) => { c = String(c || "").toLowerCase().split(/[-_]/)[0]; return codes.includes(c) ? c : null; };
-    const fromUrl = pick(new URLSearchParams(location.search).get("lang"));
-    let saved = null;
-    try { if (fromUrl) localStorage.setItem("pp_lang", fromUrl); saved = pick(localStorage.getItem("pp_lang")); } catch (_) {}
-    LANG = fromUrl || saved || (navigator.languages || [navigator.language]).map(pick).find(Boolean) || LANGS.default;
+    const fromUrl = pick(params.get("lang"));
+    const savedLang = pick(store("pp_lang", fromUrl)); // Auswahl aus dem Umschalter merken
+    LANG = fromUrl || savedLang || devLangs.map(pick).find(Boolean) || LANGS.default;
     const meta = LANGS.languages.find((l) => l.code === LANG);
     LOCALE = meta.locale || LANG;
+    RTL = meta.dir === "rtl";
     document.documentElement.lang = LANG;
     document.documentElement.dir = meta.dir || "ltr";
+    if (meta.font) {
+      // Schrift mit arabischen Zeichen nachladen (Schibsted Grotesk hat keine)
+      document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=${encodeURIComponent(meta.font)}:wght@400;500;600;700&display=swap">`);
+      document.documentElement.style.setProperty("--font", `"${meta.font}", "Schibsted Grotesk", system-ui, sans-serif`);
+    }
+    // Währung: ?cur=… › gespeicherte Wahl › Land des Geräts › Standard der Sprache
+    const curCodes = (LANGS.currencies || []).map((c) => c.code);
+    const pickCur = (c) => { c = String(c || "").toUpperCase(); return curCodes.includes(c) ? c : null; };
+    const curUrl = pickCur(params.get("cur"));
+    const region = devLangs.map((l) => (String(l).split(/[-_]/)[1] || "").toUpperCase()).find(Boolean);
+    const savedCur = pickCur(store("pp_cur", curUrl));
+    CUR = curUrl || savedCur || pickCur(LANGS.regionCurrency?.[region]) || pickCur(meta.currency) || curCodes[0] || "EUR";
     const loc = (d) => d && merge(d[LANGS.default], d[LANG]);
     [SITE, ESIM, AI, BLOG, REVIEWS, UI, INSTALL] = (await Promise.all([
       ...["site", "esim", "assistant", "blog", "reviews", "ui"].map((n) => getJSON(`content/${n}.json`)),
@@ -56,7 +72,16 @@
   /* ---------------- Helfer ---------------- */
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-  const eur = (n) => Number(n).toLocaleString(LOCALE, { style: "currency", currency: PRICES?.currency || "EUR", minimumFractionDigits: Number.isInteger(Number(n)) ? 0 : 2 });
+  /* Preis im Format der Sprache, in der Währung, die die Schnittstelle geliefert hat (kurzes Zeichen: $, €, ₺, £) */
+  // Kurzes, international bekanntes Zeichen (manche Sprachen schreiben sonst „US$“ oder „UK£“)
+  const SYM = (c) => { try { return new Intl.NumberFormat("en", { style: "currency", currency: c, currencyDisplay: "narrowSymbol" }).formatToParts(0).find((p) => p.type === "currency")?.value || c; } catch (_) { return c; } };
+  const eur = (n) => {
+    const cur = PRICES?.currency || CUR || "EUR";
+    try {
+      return new Intl.NumberFormat(LOCALE, { style: "currency", currency: cur, currencyDisplay: "narrowSymbol", minimumFractionDigits: Number.isInteger(Number(n)) ? 0 : 2 })
+        .formatToParts(Number(n)).map((p) => (p.type === "currency" ? SYM(cur) : p.value)).join("");
+    } catch (_) { return `${Number(n).toFixed(2)} ${cur}`; }
+  };
   const esc = (s = "") => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const icon = (id) => `<svg><use href="#i-${id}"/></svg>`;
   /* Anker-Links (#esim) zeigen auf Unterseiten zurück zur Startseite */
@@ -66,7 +91,7 @@
   const PAY = { applepay: "Apple Pay", googlepay: "Google Pay", klarna: "Klarna", paypal: "PayPal", visa: "Visa", mastercard: "Mastercard", americanexpress: "American Express" };
   const payLogo = (slug) => `<img class="pay-logo pay-logo--${esc(slug)}" src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/${esc(slug)}.svg" alt="${esc(PAY[slug] || slug)}" title="${esc(PAY[slug] || slug)}" loading="lazy">`;
   /* Für Suche & Assistent: Kleinschreibung, ohne Akzente (ü→u, ş→s, ı→i …), nur Buchstaben/Ziffern */
-  const norm = (s) => String(s).toLocaleLowerCase(LOCALE).replace(/ı/g, "i").replace(/ß/g, "ss").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^\p{L}\p{N} ]+/gu, " ").replace(/\s+/g, " ").trim();
+  const norm = (s) => String(s).toLocaleLowerCase(LOCALE).replace(/ı/g, "i").replace(/ß/g, "ss").normalize("NFD").replace(/[̀-ًͯ-ٰٟ]/g, "").replace(/ى/g, "ي").replace(/ة/g, "ه").replace(/ё/g, "е").replace(/[^\p{L}\p{N} ]+/gu, " ").replace(/\s+/g, " ").trim();
   /* Ländernamen kommen automatisch in der Sprache des Besuchers (Browser); Suche kennt alle Sprachen */
   const regionNames = (loc) => { try { return new Intl.DisplayNames([loc], { type: "region" }); } catch (_) { return null; } };
   const DN = regionNames(LOCALE), ALT = LANGS.languages.map((l) => regionNames(l.locale)).filter(Boolean);
@@ -100,7 +125,10 @@
     const ctl = new AbortController();
     const timeout = setTimeout(() => ctl.abort(), 6000);
     try {
-      const r = await fetch(SITE.api?.pricesUrl || "api/prices.json", { cache: "no-cache", signal: ctl.signal });
+      // Gewünschte Währung mitschicken – umgerechnet wird nur auf dem Server (offizieller EZB-Kurs)
+      const u = new URL(SITE.api?.pricesUrl || "api/prices.json", location.href);
+      u.searchParams.set("currency", CUR);
+      const r = await fetch(u, { cache: "no-cache", signal: ctl.signal });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const data = await r.json();
       if (!data || !data.esim) throw new Error("Ungültige Antwort");
@@ -716,9 +744,15 @@
   // Seitentitel, Beschreibung und Sprachversionen für Suchmaschinen (hreflang)
   document.title = t(PAGE === "install" ? "installMetaTitle" : "metaTitle");
   document.querySelector('meta[name="description"]')?.setAttribute("content", t("metaDescription"));
-  const langUrl = (code) => { const u = new URL(location.href); code ? u.searchParams.set("lang", code) : u.searchParams.delete("lang"); return u.pathname + u.search + u.hash; };
-  document.head.insertAdjacentHTML("beforeend", [...LANGS.languages.map((l) => `<link rel="alternate" hreflang="${esc(l.code)}" href="${esc(new URL(langUrl(l.code), location.origin).href.split("#")[0])}">`),
-    `<link rel="alternate" hreflang="x-default" href="${esc(new URL(langUrl(null), location.origin).href.split("#")[0])}">`].join(""));
+  const prefUrl = (k, v) => { const u = new URL(location.href); v ? u.searchParams.set(k, v) : u.searchParams.delete(k); return u.pathname + u.search + u.hash; };
+  const langUrl = (code) => prefUrl("lang", code);
+  // Angezeigte Währung = die, in der die Schnittstelle tatsächlich geliefert hat
+  const SHOWN_CUR = PRICES?.currency || CUR;
+  const curSymbol = SYM;
+  const curName = (c) => { try { const n = new Intl.DisplayNames([LOCALE], { type: "currency" }).of(c.code); return n ? n.charAt(0).toLocaleUpperCase(LOCALE) + n.slice(1) : c.name; } catch (_) { return c.name; } };
+  const cleanUrl = (code) => location.origin + location.pathname + (code ? `?lang=${code}` : "");
+  document.head.insertAdjacentHTML("beforeend", [...LANGS.languages.map((l) => `<link rel="alternate" hreflang="${esc(l.code)}" href="${esc(cleanUrl(l.code))}">`),
+    `<link rel="alternate" hreflang="x-default" href="${esc(cleanUrl(null))}">`].join(""));
   // Feste Texte im HTML-Gerüst (Geräte-Check) übersetzen
   $$("[data-i18n]").forEach((n) => (n.textContent = t(n.dataset.i18n)));
   $$("[data-i18n-html]").forEach((n) => (n.innerHTML = t(n.dataset.i18nHtml)));
@@ -739,10 +773,17 @@
       </nav>
       <div class="nav__actions">
         <div class="lang">
-          <button class="nav__locale" type="button" aria-haspopup="true" aria-expanded="false" aria-label="${esc(t("language"))}">${esc(LANG.toUpperCase())} · ${esc(PRICES?.currency || "EUR")} ${icon("chev-r")}</button>
-          <ul class="lang__menu" hidden>
-            ${LANGS.languages.map((l) => `<li><a href="${esc(langUrl(l.code))}" hreflang="${esc(l.code)}" lang="${esc(l.code)}" aria-current="${l.code === LANG}">${esc(l.name)} <small>${esc(l.code.toUpperCase())}</small></a></li>`).join("")}
-          </ul>
+          <button class="nav__locale" type="button" aria-haspopup="true" aria-expanded="false" aria-label="${esc(t("language"))} / ${esc(t("currency"))}">${icon("globe")}<span>${esc(LANG.toUpperCase())} · ${esc(SHOWN_CUR)}</span></button>
+          <div class="lang__menu" hidden>
+            <div class="lang__group">
+              <p class="lang__title">${esc(t("language"))}</p>
+              <ul>${LANGS.languages.map((l) => `<li><a href="${esc(prefUrl("lang", l.code))}" hreflang="${esc(l.code)}" lang="${esc(l.code)}" aria-current="${l.code === LANG}"><span dir="${esc(l.dir || "ltr")}">${esc(l.name)}</span> <small>${esc(l.code.toUpperCase())}</small></a></li>`).join("")}</ul>
+            </div>
+            <div class="lang__group">
+              <p class="lang__title">${esc(t("currency"))}</p>
+              <ul>${(LANGS.currencies || []).map((c) => `<li><a href="${esc(prefUrl("cur", c.code))}" aria-current="${c.code === SHOWN_CUR}"><span><b class="lang__sym">${esc(curSymbol(c.code))}</b> ${esc(curName(c))}</span> <small>${esc(c.code)}</small></a></li>`).join("")}</ul>
+            </div>
+          </div>
         </div>
         <a href="#" class="nav__login">${esc(t("login"))}</a>
         <button class="nav__burger" type="button" aria-label="${esc(t("menuOpen"))}" aria-expanded="false">${icon("menu")}</button>
@@ -750,7 +791,14 @@
     </div>`;
   // Sprachumschalter
   const langBox = $(".lang"), langBtn = $(".nav__locale"), langMenu = $(".lang__menu");
-  const setLangMenu = (open) => { langMenu.hidden = !open; langBox.classList.toggle("is-open", open); langBtn.setAttribute("aria-expanded", open); };
+  const setLangMenu = (open) => {
+    // Handy: Panel direkt unter der Navigation (auch wenn oben noch ein Hinweis steht)
+    if (open && matchMedia("(max-width: 640px)").matches) {
+      const top = Math.max(8, Math.round($("#nav").getBoundingClientRect().bottom + 6));
+      langMenu.style.top = `${top}px`; langMenu.style.maxHeight = `${innerHeight - top - 12}px`;
+    } else { langMenu.style.top = ""; langMenu.style.maxHeight = ""; }
+    langMenu.hidden = !open; langBox.classList.toggle("is-open", open); langBtn.setAttribute("aria-expanded", open);
+  };
   langBtn.addEventListener("click", (e) => { e.stopPropagation(); setLangMenu(langMenu.hidden); });
   document.addEventListener("click", (e) => { if (!langBox.contains(e.target)) setLangMenu(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") setLangMenu(false); });
@@ -849,10 +897,12 @@
   }
 
   function wireRail(rail, prev, next) {
+    // Bei Rechts-nach-links (Arabisch) läuft der Slider andersherum; scrollLeft ist dann ≤ 0
+    const dir = RTL ? -1 : 1;
     const step = () => (rail.firstElementChild?.offsetWidth || 260) * 2 + 28;
-    const update = () => { if (!prev) return; prev.disabled = rail.scrollLeft < 4; next.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4; };
-    prev?.addEventListener("click", () => rail.scrollBy({ left: -step() }));
-    next?.addEventListener("click", () => rail.scrollBy({ left: step() }));
+    const update = () => { if (!prev) return; const pos = Math.abs(rail.scrollLeft); prev.disabled = pos < 4; next.disabled = pos + rail.clientWidth >= rail.scrollWidth - 4; };
+    prev?.addEventListener("click", () => rail.scrollBy({ left: -step() * dir }));
+    next?.addEventListener("click", () => rail.scrollBy({ left: step() * dir }));
     rail.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     update();
