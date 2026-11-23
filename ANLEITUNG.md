@@ -31,6 +31,21 @@ Jede Frage unter „Fragen & Antworten“ ist gleichzeitig FAQ-Eintrag und Wisse
 Assistenten. Wichtig sind die **Suchbegriffe**: alle Wörter, mit denen Kunden
 danach fragen könnten. „Wie oft gefragt“ bestimmt die Reihenfolge in der FAQ.
 
+## Sprachen
+
+- **Türkisch ist die Hauptsprache.** Die Seite erscheint automatisch in der
+  Sprache des Handys bzw. Browsers. Gibt es diese Sprache nicht, erscheint Türkisch.
+- Besucher können oben rechts (z. B. „TR · EUR“) die Sprache wechseln; die Wahl wird gespeichert.
+- Jede Inhaltsdatei enthält alle Sprachen: `{ "tr": …, "en": …, "de": … }`.
+  Türkisch enthält alles (Bilder, Links, Reihenfolge); die anderen Sprachen nur Texte.
+  Fehlt ein Text, wird automatisch der türkische angezeigt.
+- Im Admin oben die Sprache wählen und übersetzen. Kleine Texte (Buttons, Hinweise)
+  stehen unter **Oberflächentexte**. Platzhalter wie `{p}` (Preis) oder `{n}` (Zahl) stehen lassen.
+- Ländernamen übersetzt der Browser automatisch in jede Sprache.
+- **Neue Sprache:** in `content/languages.json` eintragen, im Admin bei
+  `admin/config.yml → i18n.locales` ergänzen, dann übersetzen.
+- Preise in Texten: `{fiyat:esim}`, `{price:lounge}` oder `{preis:country:tr}`.
+
 ## Preise – Grundregel
 
 Alle Preise kommen ausschließlich von den Anbieter-APIs (eSIM, Lounge, Fast Track,

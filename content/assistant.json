@@ -1,384 +1,896 @@
 {
-  "persona": {
-    "name": "Lina",
-    "role": "Deine digitale Reiseassistentin",
-    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
-    "intro": "Ich beantworte deine Fragen zu eSIM, Lounge und Fast Track sofort – Tag und Nacht. Wenn ich mal nicht weiterweiß, verbinde ich dich direkt mit unserem Service-Team.",
-    "badge": "Digitale Assistentin · antwortet sofort"
+  "tr": {
+    "persona": {
+      "name": "Lina",
+      "role": "Dijital seyahat asistanın",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
+      "intro": "eSIM, lounge ve Fast Track ile ilgili sorularını anında yanıtlarım – gece gündüz. Bir konuda emin olamazsam seni doğrudan müşteri hizmetleri ekibimize bağlarım.",
+      "badge": "Dijital asistan · anında yanıt verir"
+    },
+    "greeting": "Merhaba, ben Lina! Sana nasıl yardımcı olabilirim? Bana istediğini sorabilirsin – örneğin telefonunun eSIM uyumlu olup olmadığını.",
+    "fallback": "Bu konuda henüz kesin bir yanıtım yok. Müşteri hizmetleri ekibimiz sana memnuniyetle yardımcı olur – genellikle 2 saat içinde.",
+    "contactText": "Memnuniyetle! Bize yaz – 2 saat içinde dönüş yapıyoruz. support@passport.io · her gün 08:00–22:00",
+    "contactEmail": "support@passport.io",
+    "banners": [
+      {
+        "title": "Telefonum eSIM uyumlu mu?",
+        "text": "Cihazını 5 saniyede kontrol et.",
+        "icon": "phone",
+        "action": "device-check"
+      },
+      {
+        "title": "eSIM'imi nasıl kurarım?",
+        "text": "iPhone ve Android için resimli rehber.",
+        "icon": "qr",
+        "action": "install.html"
+      },
+      {
+        "title": "Bana hangi paket uygun?",
+        "text": "Doğru veri miktarını birlikte bulalım.",
+        "icon": "sim",
+        "action": "which-package"
+      }
+    ],
+    "suggestions": [
+      "eSIM'i ne zaman etkinleştirmeliyim?",
+      "eSIM ile telefon görüşmesi yapabilir miyim?",
+      "Lounge erişimimi nasıl alırım?",
+      "İade mümkün mü?"
+    ],
+    "faqs": [
+      {
+        "id": "what-is-esim",
+        "category": "esim",
+        "question": "eSIM nedir?",
+        "answer": "eSIM, akıllı telefonuna yerleşik dijital bir SIM karttır. Plastik kart takmak yerine veri paketini QR kodla indirirsin – 2 dakikadan kısa sürede, mağazaya gitmeden ve beklemeden.",
+        "keywords": [
+          "nedir",
+          "esim",
+          "dijital sim",
+          "e sim",
+          "açıklama",
+          "nasıl çalışır"
+        ],
+        "views": 980
+      },
+      {
+        "id": "device-compatible",
+        "category": "esim",
+        "question": "Telefonum eSIM uyumlu mu?",
+        "answer": "2019'dan itibaren çıkan akıllı telefonların çoğu eSIM destekler – örneğin iPhone XS/XR ve sonrası, Samsung Galaxy S20 ve sonrası, Google Pixel 3 ve sonrası.\n\n**Hızlı test:** ***#06#** tuşla – bir **EID** görünüyorsa cihazın eSIM uyumludur. Önemli: Cihazın ayrıca **SIM kilitsiz** olması gerekir.",
+        "keywords": [
+          "telefon",
+          "uyumlu",
+          "destekliyor",
+          "cihaz",
+          "iphone",
+          "samsung",
+          "pixel",
+          "akıllı telefon",
+          "eid",
+          "olur mu",
+          "çalışır mı"
+        ],
+        "views": 1240
+      },
+      {
+        "id": "install-esim",
+        "category": "esim",
+        "question": "eSIM'imi nasıl kurarım?",
+        "answer": "**iPhone:** Ayarlar → Hücresel → eSIM Ekle → QR kodu tara.\n**Android:** Ayarlar → Bağlantılar → SIM yöneticisi → eSIM ekle → QR kodu tara.\n\nİpucu: eSIM'i **evde Wi-Fi'dayken** kur – etkinleştirmeyi ise destinasyonunda yaparsın.\n\n[Resimli adım adım rehbere git](install.html)",
+        "keywords": [
+          "kurulum",
+          "kurmak",
+          "yüklemek",
+          "qr",
+          "kod",
+          "taramak",
+          "eklemek",
+          "nasıl kurarım",
+          "rehber"
+        ],
+        "views": 1105
+      },
+      {
+        "id": "when-activate",
+        "category": "esim",
+        "question": "eSIM'i ne zaman etkinleştirmeliyim?",
+        "answer": "Kurulumu dilediğin zaman önceden yapabilirsin. Kullanım süresi, eSIM destinasyonunda bir ağa ilk kez bağlandığında başlar. Yani eSIM hattını ve **veri dolaşımını** inişten sonra açman yeterli.",
+        "keywords": [
+          "etkinleştirmek",
+          "aktif",
+          "ne zaman",
+          "süre",
+          "başlıyor",
+          "iniş",
+          "önceden"
+        ],
+        "views": 870
+      },
+      {
+        "id": "which-package",
+        "category": "esim",
+        "question": "Bana hangi veri paketi uygun?",
+        "answer": "Günlük kullanım için kabaca:\n\n- **Mesajlaşma ve harita:** yaklaşık 0,3 GB\n- **Sosyal medya ve gezinme:** yaklaşık 0,7–1 GB\n- **Video ve hotspot:** 2 GB+\n\n7 günlük bir tatil için çoğu kişiye **3–5 GB** yeter. Birden fazla ülkeye gidiyorsan bölgesel veya global paket daha avantajlıdır.",
+        "keywords": [
+          "hangi",
+          "paket",
+          "ne kadar",
+          "veri miktarı",
+          "gb",
+          "yeter",
+          "öneri",
+          "uygun"
+        ],
+        "views": 760
+      },
+      {
+        "id": "calls",
+        "category": "esim",
+        "question": "eSIM ile telefon görüşmesi yapabilir miyim?",
+        "answer": "eSIM'lerimiz yalnızca veri tarifesidir. Yine de WhatsApp, FaceTime, Teams gibi uygulamalarla rahatça görüşebilirsin. Normal SIM kartın aynı anda aktif kalır – böylece SMS'ler (örneğin banka onay kodları) için numarandan ulaşılabilir olmaya devam edersin.",
+        "keywords": [
+          "görüşme",
+          "aramak",
+          "arama",
+          "numara",
+          "sms",
+          "whatsapp",
+          "telefon etmek"
+        ],
+        "views": 640
+      },
+      {
+        "id": "keep-number",
+        "category": "esim",
+        "question": "Normal numaram kalır mı?",
+        "answer": "Evet. eSIM ek olarak kurulur. Ana SIM kartın yerinde kalır – SMS için açık bırakıp mobil veri için passport.io eSIM'ini kullanabilirsin.",
+        "keywords": [
+          "numara",
+          "kalır",
+          "ana sim",
+          "ikinci",
+          "çift sim",
+          "dual sim",
+          "fiziksel"
+        ],
+        "views": 420
+      },
+      {
+        "id": "hotspot",
+        "category": "esim",
+        "question": "Hotspot paylaşabilir miyim?",
+        "answer": "Evet, neredeyse tüm paketlerde hotspot/internet paylaşımı serbesttir. İstisnaları doğrudan paket açıklamasında bulabilirsin.",
+        "keywords": [
+          "hotspot",
+          "paylaşım",
+          "paylaşmak",
+          "tethering",
+          "laptop",
+          "bilgisayar"
+        ],
+        "views": 310
+      },
+      {
+        "id": "topup",
+        "category": "esim",
+        "question": "Ek veri satın alabilir miyim?",
+        "answer": "Evet. Hesabında „eSIM'lerim“ bölümünden tek tıkla istediğin zaman ek veri alabilirsin – yeniden kurulum gerekmez.",
+        "keywords": [
+          "ek veri",
+          "yükleme",
+          "daha fazla",
+          "uzatmak",
+          "top up",
+          "bitti",
+          "tükendi"
+        ],
+        "views": 380
+      },
+      {
+        "id": "lounge-access",
+        "category": "lounge",
+        "question": "Lounge erişimimi nasıl alırım?",
+        "answer": "Rezervasyondan hemen sonra dijital voucher'ın e-postana ve hesabına gelir. Lounge girişinde QR kodu ve biniş kartını göstermen yeterli.",
+        "keywords": [
+          "lounge",
+          "erişim",
+          "voucher",
+          "giriş",
+          "nasıl alırım"
+        ],
+        "views": 590
+      },
+      {
+        "id": "lounge-hours",
+        "category": "lounge",
+        "question": "Lounge'da ne kadar kalabilirim?",
+        "answer": "Genellikle kalkıştan önce 3 saate kadar. Kesin kalış süresi her lounge'un detaylarında yazar.",
+        "keywords": [
+          "lounge",
+          "ne kadar",
+          "süre",
+          "saat",
+          "kalmak"
+        ],
+        "views": 260
+      },
+      {
+        "id": "fasttrack-how",
+        "category": "fasttrack",
+        "question": "Fast Track nasıl çalışır?",
+        "answer": "Fast Track ile güvenlik kontrolündeki ayrı ve hızlı şeridi kullanırsın. Orada dijital voucher'ını ve biniş kartını göstermen yeterli – ortalama 20–40 dakika bekleme süresinden tasarruf edersin.",
+        "keywords": [
+          "fast track",
+          "fasttrack",
+          "güvenlik kontrolü",
+          "hızlı",
+          "kuyruk",
+          "security"
+        ],
+        "views": 470
+      },
+      {
+        "id": "refund",
+        "category": "zahlung",
+        "question": "Rezervasyonum için iade alabilir miyim?",
+        "answer": "**eSIM:** eSIM kurulmadığı sürece 30 gün içinde ücretin tamamını iade ediyoruz.\n**Lounge ve Fast Track:** Rezerve edilen zamandan 24 saat öncesine kadar ücretsiz iptal.",
+        "keywords": [
+          "iade",
+          "geri ödeme",
+          "iptal",
+          "para iadesi",
+          "cayma",
+          "vazgeçmek"
+        ],
+        "views": 690
+      },
+      {
+        "id": "payment",
+        "category": "zahlung",
+        "question": "Hangi ödeme yöntemleri var?",
+        "answer": "Apple Pay, Google Pay, kredi kartı (Visa, Mastercard, Amex), PayPal ve Klarna ile ödeme yapabilirsin. Tüm ödemeler SSL ile şifrelenir.",
+        "keywords": [
+          "ödeme",
+          "ödemek",
+          "paypal",
+          "kredi kartı",
+          "apple pay",
+          "klarna",
+          "ödeme yöntemi"
+        ],
+        "views": 350
+      },
+      {
+        "id": "delivery",
+        "category": "allgemein",
+        "question": "Siparişim ne zaman gelir?",
+        "answer": "Anında. eSIM QR kodu ve voucher'lar birkaç saniye içinde e-postana gelir ve ayrıca passport.io hesabında yer alır.",
+        "keywords": [
+          "ne zaman gelir",
+          "teslimat",
+          "e posta",
+          "gelmedi",
+          "sipariş",
+          "gönderildi",
+          "sürer"
+        ],
+        "views": 400
+      },
+      {
+        "id": "contact",
+        "category": "allgemein",
+        "question": "Müşteri hizmetlerine nasıl ulaşırım?",
+        "answer": "Ekibimiz haftanın 7 günü sohbet ve e-posta ile yanında. Aşağıdaki „Ekiple konuş“ butonuna tıkla.",
+        "keywords": [
+          "iletişim",
+          "müşteri hizmetleri",
+          "destek",
+          "çalışan",
+          "insan",
+          "yardım",
+          "ulaşmak"
+        ],
+        "views": 300
+      }
+    ],
+    "devices": [
+      "iPhone 17",
+      "iPhone 17 Pro",
+      "iPhone 17 Pro Max",
+      "iPhone Air",
+      "iPhone 16",
+      "iPhone 16 Plus",
+      "iPhone 16 Pro",
+      "iPhone 16 Pro Max",
+      "iPhone 16e",
+      "iPhone 15",
+      "iPhone 15 Plus",
+      "iPhone 15 Pro",
+      "iPhone 15 Pro Max",
+      "iPhone 14",
+      "iPhone 14 Plus",
+      "iPhone 14 Pro",
+      "iPhone 14 Pro Max",
+      "iPhone 13",
+      "iPhone 13 mini",
+      "iPhone 13 Pro",
+      "iPhone 13 Pro Max",
+      "iPhone 12",
+      "iPhone 12 mini",
+      "iPhone 12 Pro",
+      "iPhone 12 Pro Max",
+      "iPhone 11",
+      "iPhone 11 Pro",
+      "iPhone 11 Pro Max",
+      "iPhone XS",
+      "iPhone XS Max",
+      "iPhone XR",
+      "iPhone SE (2020)",
+      "iPhone SE (2022)",
+      "Samsung Galaxy S25",
+      "Samsung Galaxy S25+",
+      "Samsung Galaxy S25 Ultra",
+      "Samsung Galaxy S24",
+      "Samsung Galaxy S24+",
+      "Samsung Galaxy S24 Ultra",
+      "Samsung Galaxy S24 FE",
+      "Samsung Galaxy S23",
+      "Samsung Galaxy S23+",
+      "Samsung Galaxy S23 Ultra",
+      "Samsung Galaxy S23 FE",
+      "Samsung Galaxy S22",
+      "Samsung Galaxy S22+",
+      "Samsung Galaxy S22 Ultra",
+      "Samsung Galaxy S21",
+      "Samsung Galaxy S21+",
+      "Samsung Galaxy S21 Ultra",
+      "Samsung Galaxy S20",
+      "Samsung Galaxy S20+",
+      "Samsung Galaxy S20 Ultra",
+      "Samsung Galaxy Z Fold 6",
+      "Samsung Galaxy Z Flip 6",
+      "Samsung Galaxy Z Fold 5",
+      "Samsung Galaxy Z Flip 5",
+      "Samsung Galaxy A55",
+      "Samsung Galaxy A54",
+      "Samsung Galaxy A35",
+      "Google Pixel 10",
+      "Google Pixel 10 Pro",
+      "Google Pixel 9",
+      "Google Pixel 9 Pro",
+      "Google Pixel 9a",
+      "Google Pixel 8",
+      "Google Pixel 8 Pro",
+      "Google Pixel 8a",
+      "Google Pixel 7",
+      "Google Pixel 7 Pro",
+      "Google Pixel 7a",
+      "Google Pixel 6",
+      "Google Pixel 6 Pro",
+      "Google Pixel 6a",
+      "Google Pixel 5",
+      "Google Pixel 4",
+      "Google Pixel 3",
+      "Xiaomi 14",
+      "Xiaomi 13",
+      "Xiaomi 13 Pro",
+      "Xiaomi 12T Pro",
+      "OnePlus 12",
+      "OnePlus 11",
+      "Motorola Edge 50",
+      "Motorola Razr 40",
+      "Huawei P40",
+      "Huawei P40 Pro",
+      "Oppo Find X5",
+      "Sony Xperia 1 V",
+      "Sony Xperia 10 V"
+    ]
   },
-  "greeting": "Hallo, ich bin Lina! Wobei kann ich dir helfen? Frag mich einfach – zum Beispiel, ob dein Handy eSIM-fähig ist.",
-  "fallback": "Dazu habe ich leider noch keine sichere Antwort. Unser Service-Team hilft dir gern persönlich weiter – meist innerhalb von 2 Stunden.",
-  "contactText": "Gern! Schreib uns – wir melden uns innerhalb von 2 Stunden. support@passport.io · täglich 8–22 Uhr",
-  "contactEmail": "support@passport.io",
-  "banners": [
-    {
-      "title": "Ist mein Handy eSIM-fähig?",
-      "text": "Prüfe dein Gerät in 5 Sekunden.",
-      "icon": "phone",
-      "action": "device-check"
+  "en": {
+    "persona": {
+      "name": "Lina",
+      "role": "Your digital travel assistant",
+      "intro": "I answer your questions about eSIM, lounges and Fast Track instantly – day and night. If I'm ever unsure, I'll connect you straight to our service team.",
+      "badge": "Digital assistant · replies instantly"
     },
-    {
-      "title": "Wie installiere ich meine eSIM?",
-      "text": "Bebilderte Anleitung für iPhone & Android.",
-      "icon": "qr",
-      "action": "install.html"
+    "greeting": "Hi, I'm Lina! How can I help you? Just ask – for example, whether your phone supports eSIM.",
+    "fallback": "I don't have a reliable answer to that yet. Our service team will be happy to help you personally – usually within 2 hours.",
+    "contactText": "Of course! Write to us – we'll get back to you within 2 hours. support@passport.io · daily 8 am–10 pm",
+    "banners": [
+      {
+        "title": "Is my phone eSIM compatible?",
+        "text": "Check your device in 5 seconds."
+      },
+      {
+        "title": "How do I install my eSIM?",
+        "text": "Illustrated guide for iPhone & Android."
+      },
+      {
+        "title": "Which plan is right for me?",
+        "text": "We'll find the right data volume."
+      }
+    ],
+    "suggestions": [
+      "When should I activate the eSIM?",
+      "Can I make calls with the eSIM?",
+      "How do I get my lounge access?",
+      "Can I get a refund?"
+    ],
+    "faqs": [
+      {
+        "id": "what-is-esim",
+        "question": "What is an eSIM?",
+        "answer": "An eSIM is a digital SIM card built into your smartphone. Instead of inserting a plastic card, you download your data plan with a QR code – in under 2 minutes, without a shop and without waiting.",
+        "keywords": [
+          "what is",
+          "esim",
+          "digital sim",
+          "explain",
+          "how does it work"
+        ]
+      },
+      {
+        "id": "device-compatible",
+        "question": "Is my phone eSIM compatible?",
+        "answer": "Most smartphones from 2019 onwards support eSIM – e.g. iPhone XS/XR and newer, Samsung Galaxy S20 and newer, Google Pixel 3 and newer.\n\n**Quick test:** dial ***#06#** – if an **EID** appears, your device supports eSIM. Important: the device also needs to be **carrier-unlocked**.",
+        "keywords": [
+          "phone",
+          "compatible",
+          "supported",
+          "support",
+          "device",
+          "iphone",
+          "samsung",
+          "pixel",
+          "smartphone",
+          "eid",
+          "does it work"
+        ]
+      },
+      {
+        "id": "install-esim",
+        "question": "How do I install my eSIM?",
+        "answer": "**iPhone:** Settings → Cellular (Mobile Data) → Add eSIM → scan QR code.\n**Android:** Settings → Connections → SIM manager → Add eSIM → scan QR code.\n\nTip: install the eSIM **at home on Wi-Fi** – you only need to activate it at your destination.\n\n[Go to the illustrated step-by-step guide](install.html)",
+        "keywords": [
+          "install",
+          "set up",
+          "setup",
+          "qr",
+          "code",
+          "scan",
+          "add",
+          "installation",
+          "guide"
+        ]
+      },
+      {
+        "id": "when-activate",
+        "question": "When should I activate the eSIM?",
+        "answer": "You can install it any time beforehand. Your plan only starts when the eSIM connects to a network at your destination for the first time. So simply switch on the eSIM line and **data roaming** after landing.",
+        "keywords": [
+          "activate",
+          "when",
+          "validity",
+          "start",
+          "begins",
+          "landing",
+          "before"
+        ]
+      },
+      {
+        "id": "which-package",
+        "question": "Which data plan is right for me?",
+        "answer": "As a rule of thumb per day:\n\n- **Messaging & maps:** approx. 0.3 GB\n- **Social media & browsing:** approx. 0.7–1 GB\n- **Streaming & hotspot:** 2 GB+\n\nFor a 7-day holiday, **3–5 GB** is enough for most people. Travelling through several countries? A regional or global plan is worth it.",
+        "keywords": [
+          "which",
+          "plan",
+          "package",
+          "how much",
+          "data volume",
+          "gb",
+          "enough",
+          "recommend",
+          "right for me"
+        ]
+      },
+      {
+        "id": "calls",
+        "question": "Can I make calls with the eSIM?",
+        "answer": "Our eSIMs are data-only plans. You can still call easily via WhatsApp, FaceTime, Teams and the like. Your regular SIM stays active in parallel – so you can still be reached on your number for texts (e.g. bank codes).",
+        "keywords": [
+          "call",
+          "calls",
+          "phone call",
+          "number",
+          "sms",
+          "text",
+          "whatsapp"
+        ]
+      },
+      {
+        "id": "keep-number",
+        "question": "Do I keep my regular number?",
+        "answer": "Yes. The eSIM is installed in addition. Your main SIM stays – you can keep it active for texts and use the passport.io eSIM just for mobile data.",
+        "keywords": [
+          "number",
+          "keep",
+          "main sim",
+          "second",
+          "dual sim",
+          "physical"
+        ]
+      },
+      {
+        "id": "hotspot",
+        "question": "Can I share a hotspot?",
+        "answer": "Yes, tethering/hotspot is allowed on almost all plans. Any exceptions are listed directly in the plan description.",
+        "keywords": [
+          "hotspot",
+          "tethering",
+          "share",
+          "laptop"
+        ]
+      },
+      {
+        "id": "topup",
+        "question": "Can I top up my data?",
+        "answer": "Yes. In your account under “My eSIMs” you can add data at any time with one click – no new installation needed.",
+        "keywords": [
+          "top up",
+          "topup",
+          "more data",
+          "extend",
+          "recharge",
+          "ran out",
+          "used up"
+        ]
+      },
+      {
+        "id": "lounge-access",
+        "question": "How do I get my lounge access?",
+        "answer": "Right after booking you receive a digital voucher by email and in your account. At the lounge entrance, simply show the QR code and your boarding pass.",
+        "keywords": [
+          "lounge",
+          "access",
+          "voucher",
+          "entrance",
+          "how do i get"
+        ]
+      },
+      {
+        "id": "lounge-hours",
+        "question": "How long can I stay in the lounge?",
+        "answer": "Usually up to 3 hours before departure. The exact length of stay is listed in each lounge's details.",
+        "keywords": [
+          "lounge",
+          "how long",
+          "duration",
+          "hours",
+          "stay"
+        ]
+      },
+      {
+        "id": "fasttrack-how",
+        "question": "How does Fast Track work?",
+        "answer": "With Fast Track you use the separate, faster lane at security. Simply show your digital voucher and boarding pass there – and save an average of 20–40 minutes of waiting.",
+        "keywords": [
+          "fast track",
+          "fasttrack",
+          "security",
+          "fast",
+          "queue",
+          "line"
+        ]
+      },
+      {
+        "id": "refund",
+        "question": "Can I get a refund for my booking?",
+        "answer": "**eSIM:** as long as the eSIM hasn't been installed, we refund it in full within 30 days.\n**Lounge & Fast Track:** free cancellation up to 24 hours before the booked time.",
+        "keywords": [
+          "refund",
+          "cancel",
+          "cancellation",
+          "money back",
+          "return",
+          "withdraw"
+        ]
+      },
+      {
+        "id": "payment",
+        "question": "Which payment methods are available?",
+        "answer": "You can pay with Apple Pay, Google Pay, credit card (Visa, Mastercard, Amex), PayPal and Klarna. All payments are SSL-encrypted.",
+        "keywords": [
+          "payment",
+          "pay",
+          "paypal",
+          "credit card",
+          "apple pay",
+          "klarna",
+          "payment method"
+        ]
+      },
+      {
+        "id": "delivery",
+        "question": "When will I receive my order?",
+        "answer": "Instantly. Your eSIM QR code and vouchers arrive by email within a few seconds and are also stored in your passport.io account.",
+        "keywords": [
+          "when will i receive",
+          "delivery",
+          "email",
+          "not received",
+          "order",
+          "sent",
+          "how long"
+        ]
+      },
+      {
+        "id": "contact",
+        "question": "How do I reach customer service?",
+        "answer": "Our team is there for you 7 days a week via chat and email. Click “Talk to the team” below.",
+        "keywords": [
+          "contact",
+          "service",
+          "support",
+          "agent",
+          "human",
+          "person",
+          "help",
+          "reach"
+        ]
+      }
+    ]
+  },
+  "de": {
+    "persona": {
+      "name": "Lina",
+      "role": "Deine digitale Reiseassistentin",
+      "intro": "Ich beantworte deine Fragen zu eSIM, Lounge und Fast Track sofort – Tag und Nacht. Wenn ich mal nicht weiterweiß, verbinde ich dich direkt mit unserem Service-Team.",
+      "badge": "Digitale Assistentin · antwortet sofort"
     },
-    {
-      "title": "Welches Paket passt zu mir?",
-      "text": "Wir finden das richtige Datenvolumen.",
-      "icon": "sim",
-      "action": "which-package"
-    }
-  ],
-  "suggestions": [
-    "Wann soll ich die eSIM aktivieren?",
-    "Kann ich mit der eSIM telefonieren?",
-    "Wie bekomme ich meinen Lounge-Zugang?",
-    "Erstattung möglich?"
-  ],
-  "faqs": [
-    {
-      "id": "what-is-esim",
-      "category": "esim",
-      "question": "Was ist eine eSIM?",
-      "answer": "Eine eSIM ist eine digitale SIM-Karte, die fest in deinem Smartphone verbaut ist. Statt eine Plastikkarte einzulegen, lädst du dein Datenpaket per QR-Code herunter – in unter 2 Minuten, ohne Shop und ohne Warten.",
-      "keywords": [
-        "was ist",
-        "esim",
-        "digitale sim",
-        "erklärung",
-        "funktioniert"
-      ],
-      "views": 980
-    },
-    {
-      "id": "device-compatible",
-      "category": "esim",
-      "question": "Ist mein Handy eSIM-fähig?",
-      "answer": "Die meisten Smartphones ab 2019 unterstützen eSIM – z. B. iPhone XS/XR und neuer, Samsung Galaxy S20 und neuer, Google Pixel 3 und neuer.\n\n**Schnelltest:** Wähle ***#06#** – wird eine **EID** angezeigt, ist dein Gerät eSIM-fähig. Wichtig: Das Gerät muss außerdem **SIM-Lock-frei** sein.",
-      "keywords": [
-        "handy",
-        "kompatibel",
-        "fähig",
-        "unterstützt",
-        "gerät",
-        "iphone",
-        "samsung",
-        "pixel",
-        "smartphone",
-        "eid",
-        "geht das"
-      ],
-      "views": 1240
-    },
-    {
-      "id": "install-esim",
-      "category": "esim",
-      "question": "Wie installiere ich meine eSIM?",
-      "answer": "**iPhone:** Einstellungen → Mobilfunk → eSIM hinzufügen → QR-Code scannen.\n**Android:** Einstellungen → Verbindungen → SIM-Manager → eSIM hinzufügen → QR-Code scannen.\n\nTipp: Installiere die eSIM schon **zu Hause im WLAN** – aktivieren musst du sie erst am Reiseziel.\n\n[Zur bebilderten Schritt-für-Schritt-Anleitung](install.html)",
-      "keywords": [
-        "installieren",
-        "einrichten",
-        "qr",
-        "code",
-        "scannen",
-        "hinzufügen",
-        "installation",
-        "anleitung"
-      ],
-      "views": 1105
-    },
-    {
-      "id": "when-activate",
-      "category": "esim",
-      "question": "Wann soll ich die eSIM aktivieren?",
-      "answer": "Installieren kannst du sie jederzeit vorher. Die Laufzeit startet erst, wenn sich die eSIM am Reiseziel zum ersten Mal mit einem Netz verbindet. Schalte die eSIM-Leitung und **Daten-Roaming** also einfach nach der Landung ein.",
-      "keywords": [
-        "aktivieren",
-        "wann",
-        "laufzeit",
-        "start",
-        "beginnt",
-        "landung",
-        "vorher"
-      ],
-      "views": 870
-    },
-    {
-      "id": "which-package",
-      "category": "esim",
-      "question": "Welches Datenpaket passt zu mir?",
-      "answer": "Als Faustregel pro Tag:\n\n- **Messenger & Karten:** ca. 0,3 GB\n- **Social Media & Surfen:** ca. 0,7–1 GB\n- **Streaming & Hotspot:** 2 GB+\n\nFür 7 Tage Urlaub reichen den meisten **3–5 GB**. Reist du durch mehrere Länder, lohnt sich ein Regional- oder Global-Paket.",
-      "keywords": [
-        "welches",
-        "paket",
-        "wie viel",
-        "datenvolumen",
-        "gb",
-        "reicht",
-        "empfehlung",
-        "passt"
-      ],
-      "views": 760
-    },
-    {
-      "id": "calls",
-      "category": "esim",
-      "question": "Kann ich mit der eSIM telefonieren?",
-      "answer": "Unsere eSIMs sind reine Datentarife. Telefonieren geht trotzdem bequem über WhatsApp, FaceTime, Teams & Co. Deine normale SIM bleibt parallel aktiv – so bist du weiter unter deiner Nummer für SMS (z. B. Bank-TANs) erreichbar.",
-      "keywords": [
-        "telefonieren",
-        "anrufen",
-        "nummer",
-        "sms",
-        "whatsapp",
-        "anruf",
-        "telefon"
-      ],
-      "views": 640
-    },
-    {
-      "id": "keep-number",
-      "category": "esim",
-      "question": "Behalte ich meine normale Nummer?",
-      "answer": "Ja. Die eSIM wird zusätzlich installiert. Deine Haupt-SIM bleibt erhalten – du kannst sie für SMS aktiv lassen und nur für mobile Daten die passport.io eSIM nutzen.",
-      "keywords": [
-        "nummer",
-        "behalten",
-        "haupt sim",
-        "zweite",
-        "dual sim",
-        "physische"
-      ],
-      "views": 420
-    },
-    {
-      "id": "hotspot",
-      "category": "esim",
-      "question": "Kann ich einen Hotspot teilen?",
-      "answer": "Ja, bei fast allen Paketen ist Tethering/Hotspot erlaubt. Hinweise zu Ausnahmen findest du direkt in der Paketbeschreibung.",
-      "keywords": [
-        "hotspot",
-        "tethering",
-        "teilen",
-        "laptop"
-      ],
-      "views": 310
-    },
-    {
-      "id": "topup",
-      "category": "esim",
-      "question": "Kann ich Datenvolumen nachbuchen?",
-      "answer": "Ja. In deinem Konto unter „Meine eSIMs“ kannst du jederzeit mit einem Klick Daten nachbuchen – ohne neue Installation.",
-      "keywords": [
-        "nachbuchen",
-        "aufladen",
-        "mehr daten",
-        "verlängern",
-        "top up",
-        "leer",
-        "aufgebraucht"
-      ],
-      "views": 380
-    },
-    {
-      "id": "lounge-access",
-      "category": "lounge",
-      "question": "Wie bekomme ich meinen Lounge-Zugang?",
-      "answer": "Nach der Buchung erhältst du sofort einen digitalen Voucher per E-Mail und in deinem Konto. Am Lounge-Eingang zeigst du einfach den QR-Code und deine Bordkarte vor.",
-      "keywords": [
-        "lounge",
-        "zugang",
-        "voucher",
-        "eingang",
-        "wie bekomme"
-      ],
-      "views": 590
-    },
-    {
-      "id": "lounge-hours",
-      "category": "lounge",
-      "question": "Wie lange darf ich in der Lounge bleiben?",
-      "answer": "In der Regel bis zu 3 Stunden vor Abflug. Die genaue Aufenthaltsdauer steht bei jeder Lounge in den Details.",
-      "keywords": [
-        "lounge",
-        "lange",
-        "dauer",
-        "stunden",
-        "aufenthalt"
-      ],
-      "views": 260
-    },
-    {
-      "id": "fasttrack-how",
-      "category": "fasttrack",
-      "question": "Wie funktioniert Fast Track?",
-      "answer": "Mit Fast Track nutzt du die separate, schnelle Spur an der Sicherheitskontrolle. Zeig dort einfach deinen digitalen Voucher und deine Bordkarte – und spar dir im Schnitt 20–40 Minuten Wartezeit.",
-      "keywords": [
-        "fast track",
-        "fasttrack",
-        "sicherheitskontrolle",
-        "schnell",
-        "warteschlange",
-        "security"
-      ],
-      "views": 470
-    },
-    {
-      "id": "refund",
-      "category": "zahlung",
-      "question": "Kann ich meine Buchung erstatten lassen?",
-      "answer": "**eSIM:** Solange die eSIM nicht installiert wurde, erstatten wir sie innerhalb von 30 Tagen vollständig.\n**Lounge & Fast Track:** Kostenlos stornierbar bis 24 Stunden vor dem gebuchten Zeitpunkt.",
-      "keywords": [
-        "erstattung",
-        "erstatten",
-        "storno",
-        "stornieren",
-        "geld zurück",
-        "rückerstattung",
-        "widerruf"
-      ],
-      "views": 690
-    },
-    {
-      "id": "payment",
-      "category": "zahlung",
-      "question": "Welche Zahlungsmethoden gibt es?",
-      "answer": "Du kannst mit Apple Pay, Google Pay, Kreditkarte (Visa, Mastercard, Amex), PayPal und Klarna bezahlen. Alle Zahlungen sind SSL-verschlüsselt.",
-      "keywords": [
-        "zahlung",
-        "bezahlen",
-        "paypal",
-        "kreditkarte",
-        "apple pay",
-        "klarna",
-        "zahlungsmethode"
-      ],
-      "views": 350
-    },
-    {
-      "id": "delivery",
-      "category": "allgemein",
-      "question": "Wann erhalte ich meine Bestellung?",
-      "answer": "Sofort. eSIM-QR-Code und Voucher kommen innerhalb weniger Sekunden per E-Mail und liegen zusätzlich in deinem passport.io Konto.",
-      "keywords": [
-        "wann erhalte",
-        "lieferung",
-        "email",
-        "nicht bekommen",
-        "bestellung",
-        "zugeschickt",
-        "dauert"
-      ],
-      "views": 400
-    },
-    {
-      "id": "contact",
-      "category": "allgemein",
-      "question": "Wie erreiche ich den Kundenservice?",
-      "answer": "Unser Team ist 7 Tage die Woche per Chat und E-Mail für dich da. Klicke unten auf „Mit dem Team sprechen“.",
-      "keywords": [
-        "kontakt",
-        "service",
-        "support",
-        "mitarbeiter",
-        "mensch",
-        "hilfe",
-        "erreichen"
-      ],
-      "views": 300
-    }
-  ],
-  "devices": [
-    "iPhone 17",
-    "iPhone 17 Pro",
-    "iPhone 17 Pro Max",
-    "iPhone Air",
-    "iPhone 16",
-    "iPhone 16 Plus",
-    "iPhone 16 Pro",
-    "iPhone 16 Pro Max",
-    "iPhone 16e",
-    "iPhone 15",
-    "iPhone 15 Plus",
-    "iPhone 15 Pro",
-    "iPhone 15 Pro Max",
-    "iPhone 14",
-    "iPhone 14 Plus",
-    "iPhone 14 Pro",
-    "iPhone 14 Pro Max",
-    "iPhone 13",
-    "iPhone 13 mini",
-    "iPhone 13 Pro",
-    "iPhone 13 Pro Max",
-    "iPhone 12",
-    "iPhone 12 mini",
-    "iPhone 12 Pro",
-    "iPhone 12 Pro Max",
-    "iPhone 11",
-    "iPhone 11 Pro",
-    "iPhone 11 Pro Max",
-    "iPhone XS",
-    "iPhone XS Max",
-    "iPhone XR",
-    "iPhone SE (2020)",
-    "iPhone SE (2022)",
-    "Samsung Galaxy S25",
-    "Samsung Galaxy S25+",
-    "Samsung Galaxy S25 Ultra",
-    "Samsung Galaxy S24",
-    "Samsung Galaxy S24+",
-    "Samsung Galaxy S24 Ultra",
-    "Samsung Galaxy S24 FE",
-    "Samsung Galaxy S23",
-    "Samsung Galaxy S23+",
-    "Samsung Galaxy S23 Ultra",
-    "Samsung Galaxy S23 FE",
-    "Samsung Galaxy S22",
-    "Samsung Galaxy S22+",
-    "Samsung Galaxy S22 Ultra",
-    "Samsung Galaxy S21",
-    "Samsung Galaxy S21+",
-    "Samsung Galaxy S21 Ultra",
-    "Samsung Galaxy S20",
-    "Samsung Galaxy S20+",
-    "Samsung Galaxy S20 Ultra",
-    "Samsung Galaxy Z Fold 6",
-    "Samsung Galaxy Z Flip 6",
-    "Samsung Galaxy Z Fold 5",
-    "Samsung Galaxy Z Flip 5",
-    "Samsung Galaxy A55",
-    "Samsung Galaxy A54",
-    "Samsung Galaxy A35",
-    "Google Pixel 10",
-    "Google Pixel 10 Pro",
-    "Google Pixel 9",
-    "Google Pixel 9 Pro",
-    "Google Pixel 9a",
-    "Google Pixel 8",
-    "Google Pixel 8 Pro",
-    "Google Pixel 8a",
-    "Google Pixel 7",
-    "Google Pixel 7 Pro",
-    "Google Pixel 7a",
-    "Google Pixel 6",
-    "Google Pixel 6 Pro",
-    "Google Pixel 6a",
-    "Google Pixel 5",
-    "Google Pixel 4",
-    "Google Pixel 3",
-    "Xiaomi 14",
-    "Xiaomi 13",
-    "Xiaomi 13 Pro",
-    "Xiaomi 12T Pro",
-    "OnePlus 12",
-    "OnePlus 11",
-    "Motorola Edge 50",
-    "Motorola Razr 40",
-    "Huawei P40",
-    "Huawei P40 Pro",
-    "Oppo Find X5",
-    "Sony Xperia 1 V",
-    "Sony Xperia 10 V"
-  ]
+    "greeting": "Hallo, ich bin Lina! Wobei kann ich dir helfen? Frag mich einfach – zum Beispiel, ob dein Handy eSIM-fähig ist.",
+    "fallback": "Dazu habe ich leider noch keine sichere Antwort. Unser Service-Team hilft dir gern persönlich weiter – meist innerhalb von 2 Stunden.",
+    "contactText": "Gern! Schreib uns – wir melden uns innerhalb von 2 Stunden. support@passport.io · täglich 8–22 Uhr",
+    "banners": [
+      {
+        "title": "Ist mein Handy eSIM-fähig?",
+        "text": "Prüfe dein Gerät in 5 Sekunden."
+      },
+      {
+        "title": "Wie installiere ich meine eSIM?",
+        "text": "Bebilderte Anleitung für iPhone & Android."
+      },
+      {
+        "title": "Welches Paket passt zu mir?",
+        "text": "Wir finden das richtige Datenvolumen."
+      }
+    ],
+    "suggestions": [
+      "Wann soll ich die eSIM aktivieren?",
+      "Kann ich mit der eSIM telefonieren?",
+      "Wie bekomme ich meinen Lounge-Zugang?",
+      "Erstattung möglich?"
+    ],
+    "faqs": [
+      {
+        "id": "what-is-esim",
+        "question": "Was ist eine eSIM?",
+        "answer": "Eine eSIM ist eine digitale SIM-Karte, die fest in deinem Smartphone verbaut ist. Statt eine Plastikkarte einzulegen, lädst du dein Datenpaket per QR-Code herunter – in unter 2 Minuten, ohne Shop und ohne Warten.",
+        "keywords": [
+          "was ist",
+          "esim",
+          "digitale sim",
+          "erklärung",
+          "funktioniert"
+        ]
+      },
+      {
+        "id": "device-compatible",
+        "question": "Ist mein Handy eSIM-fähig?",
+        "answer": "Die meisten Smartphones ab 2019 unterstützen eSIM – z. B. iPhone XS/XR und neuer, Samsung Galaxy S20 und neuer, Google Pixel 3 und neuer.\n\n**Schnelltest:** Wähle ***#06#** – wird eine **EID** angezeigt, ist dein Gerät eSIM-fähig. Wichtig: Das Gerät muss außerdem **SIM-Lock-frei** sein.",
+        "keywords": [
+          "handy",
+          "kompatibel",
+          "fähig",
+          "unterstützt",
+          "gerät",
+          "iphone",
+          "samsung",
+          "pixel",
+          "smartphone",
+          "eid",
+          "geht das"
+        ]
+      },
+      {
+        "id": "install-esim",
+        "question": "Wie installiere ich meine eSIM?",
+        "answer": "**iPhone:** Einstellungen → Mobilfunk → eSIM hinzufügen → QR-Code scannen.\n**Android:** Einstellungen → Verbindungen → SIM-Manager → eSIM hinzufügen → QR-Code scannen.\n\nTipp: Installiere die eSIM schon **zu Hause im WLAN** – aktivieren musst du sie erst am Reiseziel.\n\n[Zur bebilderten Schritt-für-Schritt-Anleitung](install.html)",
+        "keywords": [
+          "installieren",
+          "einrichten",
+          "qr",
+          "code",
+          "scannen",
+          "hinzufügen",
+          "installation",
+          "anleitung"
+        ]
+      },
+      {
+        "id": "when-activate",
+        "question": "Wann soll ich die eSIM aktivieren?",
+        "answer": "Installieren kannst du sie jederzeit vorher. Die Laufzeit startet erst, wenn sich die eSIM am Reiseziel zum ersten Mal mit einem Netz verbindet. Schalte die eSIM-Leitung und **Daten-Roaming** also einfach nach der Landung ein.",
+        "keywords": [
+          "aktivieren",
+          "wann",
+          "laufzeit",
+          "start",
+          "beginnt",
+          "landung",
+          "vorher"
+        ]
+      },
+      {
+        "id": "which-package",
+        "question": "Welches Datenpaket passt zu mir?",
+        "answer": "Als Faustregel pro Tag:\n\n- **Messenger & Karten:** ca. 0,3 GB\n- **Social Media & Surfen:** ca. 0,7–1 GB\n- **Streaming & Hotspot:** 2 GB+\n\nFür 7 Tage Urlaub reichen den meisten **3–5 GB**. Reist du durch mehrere Länder, lohnt sich ein Regional- oder Global-Paket.",
+        "keywords": [
+          "welches",
+          "paket",
+          "wie viel",
+          "datenvolumen",
+          "gb",
+          "reicht",
+          "empfehlung",
+          "passt"
+        ]
+      },
+      {
+        "id": "calls",
+        "question": "Kann ich mit der eSIM telefonieren?",
+        "answer": "Unsere eSIMs sind reine Datentarife. Telefonieren geht trotzdem bequem über WhatsApp, FaceTime, Teams & Co. Deine normale SIM bleibt parallel aktiv – so bist du weiter unter deiner Nummer für SMS (z. B. Bank-TANs) erreichbar.",
+        "keywords": [
+          "telefonieren",
+          "anrufen",
+          "nummer",
+          "sms",
+          "whatsapp",
+          "anruf",
+          "telefon"
+        ]
+      },
+      {
+        "id": "keep-number",
+        "question": "Behalte ich meine normale Nummer?",
+        "answer": "Ja. Die eSIM wird zusätzlich installiert. Deine Haupt-SIM bleibt erhalten – du kannst sie für SMS aktiv lassen und nur für mobile Daten die passport.io eSIM nutzen.",
+        "keywords": [
+          "nummer",
+          "behalten",
+          "haupt sim",
+          "zweite",
+          "dual sim",
+          "physische"
+        ]
+      },
+      {
+        "id": "hotspot",
+        "question": "Kann ich einen Hotspot teilen?",
+        "answer": "Ja, bei fast allen Paketen ist Tethering/Hotspot erlaubt. Hinweise zu Ausnahmen findest du direkt in der Paketbeschreibung.",
+        "keywords": [
+          "hotspot",
+          "tethering",
+          "teilen",
+          "laptop"
+        ]
+      },
+      {
+        "id": "topup",
+        "question": "Kann ich Datenvolumen nachbuchen?",
+        "answer": "Ja. In deinem Konto unter „Meine eSIMs“ kannst du jederzeit mit einem Klick Daten nachbuchen – ohne neue Installation.",
+        "keywords": [
+          "nachbuchen",
+          "aufladen",
+          "mehr daten",
+          "verlängern",
+          "top up",
+          "leer",
+          "aufgebraucht"
+        ]
+      },
+      {
+        "id": "lounge-access",
+        "question": "Wie bekomme ich meinen Lounge-Zugang?",
+        "answer": "Nach der Buchung erhältst du sofort einen digitalen Voucher per E-Mail und in deinem Konto. Am Lounge-Eingang zeigst du einfach den QR-Code und deine Bordkarte vor.",
+        "keywords": [
+          "lounge",
+          "zugang",
+          "voucher",
+          "eingang",
+          "wie bekomme"
+        ]
+      },
+      {
+        "id": "lounge-hours",
+        "question": "Wie lange darf ich in der Lounge bleiben?",
+        "answer": "In der Regel bis zu 3 Stunden vor Abflug. Die genaue Aufenthaltsdauer steht bei jeder Lounge in den Details.",
+        "keywords": [
+          "lounge",
+          "lange",
+          "dauer",
+          "stunden",
+          "aufenthalt"
+        ]
+      },
+      {
+        "id": "fasttrack-how",
+        "question": "Wie funktioniert Fast Track?",
+        "answer": "Mit Fast Track nutzt du die separate, schnelle Spur an der Sicherheitskontrolle. Zeig dort einfach deinen digitalen Voucher und deine Bordkarte – und spar dir im Schnitt 20–40 Minuten Wartezeit.",
+        "keywords": [
+          "fast track",
+          "fasttrack",
+          "sicherheitskontrolle",
+          "schnell",
+          "warteschlange",
+          "security"
+        ]
+      },
+      {
+        "id": "refund",
+        "question": "Kann ich meine Buchung erstatten lassen?",
+        "answer": "**eSIM:** Solange die eSIM nicht installiert wurde, erstatten wir sie innerhalb von 30 Tagen vollständig.\n**Lounge & Fast Track:** Kostenlos stornierbar bis 24 Stunden vor dem gebuchten Zeitpunkt.",
+        "keywords": [
+          "erstattung",
+          "erstatten",
+          "storno",
+          "stornieren",
+          "geld zurück",
+          "rückerstattung",
+          "widerruf"
+        ]
+      },
+      {
+        "id": "payment",
+        "question": "Welche Zahlungsmethoden gibt es?",
+        "answer": "Du kannst mit Apple Pay, Google Pay, Kreditkarte (Visa, Mastercard, Amex), PayPal und Klarna bezahlen. Alle Zahlungen sind SSL-verschlüsselt.",
+        "keywords": [
+          "zahlung",
+          "bezahlen",
+          "paypal",
+          "kreditkarte",
+          "apple pay",
+          "klarna",
+          "zahlungsmethode"
+        ]
+      },
+      {
+        "id": "delivery",
+        "question": "Wann erhalte ich meine Bestellung?",
+        "answer": "Sofort. eSIM-QR-Code und Voucher kommen innerhalb weniger Sekunden per E-Mail und liegen zusätzlich in deinem passport.io Konto.",
+        "keywords": [
+          "wann erhalte",
+          "lieferung",
+          "email",
+          "nicht bekommen",
+          "bestellung",
+          "zugeschickt",
+          "dauert"
+        ]
+      },
+      {
+        "id": "contact",
+        "question": "Wie erreiche ich den Kundenservice?",
+        "answer": "Unser Team ist 7 Tage die Woche per Chat und E-Mail für dich da. Klicke unten auf „Mit dem Team sprechen“.",
+        "keywords": [
+          "kontakt",
+          "service",
+          "support",
+          "mitarbeiter",
+          "mensch",
+          "hilfe",
+          "erreichen"
+        ]
+      }
+    ]
+  }
 }

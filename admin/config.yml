@@ -10,6 +10,13 @@ backend:
 
 local_backend: true
 locale: de
+
+# Mehrsprachigkeit: alle Sprachen liegen in derselben Datei ({ "tr": …, "en": …, "de": … }).
+# Türkisch ist die Hauptsprache und enthält Bilder, Links, Preise-Schlüssel usw.; andere Sprachen nur die Texte.
+i18n:
+  structure: single_file
+  locales: [tr, en, de]
+  default_locale: tr
 site_url: /
 display_url: /
 
@@ -19,12 +26,14 @@ public_folder: /img/uploads
 collections:
   # ------------------------------------------------------------------------
   - name: seiten
+    i18n: true
     label: Startseite
     editor: { preview: false }
     files:
       - name: site
         label: Startseite & Design
         file: content/site.json
+        i18n: true
         fields:
           - label: Markenfarben
             name: theme
@@ -37,38 +46,41 @@ collections:
           - label: Preis-Schnittstelle
             name: api
             widget: object
+            i18n: true
             collapsed: true
             hint: "Alle Preise der Seite kommen von hier. Lokal: api/prices.json (Testdaten). Live: Adresse des Preis-Proxys, z. B. /.netlify/functions/prices"
             fields:
               - { label: Adresse, name: pricesUrl, widget: string }
               - { label: "Adresse für unbeantwortete Lina-Fragen (Supabase)", name: questionsUrl, widget: string, required: false }
-              - { label: "Text, wenn kein Preis verfügbar", name: unavailableText, widget: string }
-              - { label: "Hinweis im Paketfenster, wenn keine Preise verfügbar", name: modalUnavailableText, widget: text }
+              - { label: "Text, wenn kein Preis verfügbar", name: unavailableText, widget: string, i18n: true }
+              - { label: "Hinweis im Paketfenster, wenn keine Preise verfügbar", name: modalUnavailableText, widget: text, i18n: true }
 
           - label: Vorschau-Hinweis
             name: preview
             widget: object
+            i18n: true
             collapsed: true
             hint: "Gelber Hinweis oben auf der Seite. Vor dem Livegang ausschalten (wenn echte Preise und Trustpilot angebunden sind)."
             fields:
               - { label: Anzeigen, name: enabled, widget: boolean }
-              - { label: Text, name: text, widget: string }
+              - { label: Text, name: text, widget: string, i18n: true }
 
           - label: Marke
             name: brand
             widget: object
             collapsed: true
             fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Endung, name: suffix, widget: string }
+              - { label: Name, name: name, widget: string, i18n: true }
+              - { label: Endung, name: suffix, widget: string, i18n: true }
 
           - label: Ankündigungsleiste (ganz oben)
             name: announcement
             widget: object
+            i18n: true
             collapsed: true
             fields:
               - { label: Anzeigen, name: enabled, widget: boolean, default: false }
-              - { label: Text, name: text, widget: string }
+              - { label: Text, name: text, widget: string, i18n: true }
               - { label: Link, name: link, widget: string, required: false }
 
           - label: Aufbau der Startseite
@@ -95,27 +107,30 @@ collections:
           - label: Menü
             name: nav
             widget: list
+            i18n: true
             collapsed: true
             summary: "{{fields.label}}"
             fields:
-              - { label: Text, name: label, widget: string }
+              - { label: Text, name: label, widget: string, i18n: true }
               - { label: Link, name: url, widget: string }
-              - { label: Kennzeichen (z. B. „bald“), name: badge, widget: string, required: false }
+              - { label: Kennzeichen (z. B. „bald“), name: badge, widget: string, required: false, i18n: true }
 
           - label: "Bereich: Startbild (Hero)"
             name: hero
             widget: object
+            i18n: true
             collapsed: true
             fields:
-              - { label: Überzeile, name: kicker, widget: string }
-              - { label: Überschrift, name: title, widget: string, hint: "Preise nur als Platzhalter: {preis:esim}, {preis:lounge}, {preis:fasttrack}, {preis:country:tr}" }
-              - { label: Unterzeile, name: subtitle, widget: string, hint: "Preise nur als Platzhalter, z. B. „Ab {preis:esim}, in zwei Minuten aktiv.“" }
+              - { label: Überzeile, name: kicker, widget: string, i18n: true }
+              - { label: Überschrift, name: title, widget: string, hint: "Preise nur als Platzhalter: {preis:esim}, {preis:lounge}, {preis:fasttrack}, {preis:country:tr}", i18n: true }
+              - { label: Unterzeile, name: subtitle, widget: string, hint: "Preise nur als Platzhalter, z. B. „Ab {preis:esim}, in zwei Minuten aktiv.“", i18n: true }
               - { label: Hintergrundbild, name: image, widget: image, choose_url: true }
-              - { label: Platzhalter im Suchfeld, name: searchPlaceholder, widget: string }
-              - { label: Such-Button, name: searchButton, widget: string }
+              - { label: Platzhalter im Suchfeld, name: searchPlaceholder, widget: string, i18n: true }
+              - { label: Such-Button, name: searchButton, widget: string, i18n: true }
               - label: Vertrauens-Punkte
                 name: facts
                 widget: list
+                i18n: true
                 summary: "{{fields.text}}"
                 fields:
                   - label: Symbol
@@ -126,8 +141,8 @@ collections:
                       - { label: E-Mail, value: mail }
                       - { label: Schild, value: shield }
                       - { label: Haken, value: check }
-                  - { label: Text, name: text, widget: string }
-              - { label: Text vor den Zahlungslogos, name: paymentsLabel, widget: string, required: false }
+                  - { label: Text, name: text, widget: string, i18n: true }
+              - { label: Text vor den Zahlungslogos, name: paymentsLabel, widget: string, required: false, i18n: true }
               - label: Zahlungslogos im Startbild
                 name: payments
                 widget: select
@@ -144,235 +159,259 @@ collections:
               - label: Produktleiste
                 name: products
                 widget: list
+                i18n: true
                 summary: "{{fields.label}} – {{fields.price}}"
                 fields:
-                  - { label: Name, name: label, widget: string }
-                  - { label: Beschreibung, name: text, widget: string }
+                  - { label: Name, name: label, widget: string, i18n: true }
+                  - { label: Beschreibung, name: text, widget: string, i18n: true }
                   - { label: "Preis aus der Schnittstelle", name: priceKey, widget: select, required: false, options: [{ label: "eSIM (günstigster Preis)", value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: Vignette, value: vignette }], hint: "Preise werden nie von Hand eingetragen – sie kommen live von den Anbietern." }
-                  - { label: Text statt Preis (nur bei „Demnächst“), name: soonText, widget: string, required: false }
+                  - { label: Text statt Preis (nur bei „Demnächst“), name: soonText, widget: string, required: false, i18n: true }
                   - { label: Link, name: url, widget: string, required: false }
                   - { label: Demnächst (ausgegraut), name: comingSoon, widget: boolean, default: false }
 
           - label: "Bereich: Beliebte Reiseziele"
             name: destinations
             widget: object
+            i18n: true
             collapsed: true
             hint: "Welche Länder hier erscheinen, stellst du unter „eSIM-Länder & Pakete“ ein (Schalter „Beliebt“)."
             fields:
-              - { label: Überzeile, name: kicker, widget: string }
-              - { label: Überschrift, name: title, widget: string }
+              - { label: Überzeile, name: kicker, widget: string, i18n: true }
+              - { label: Überschrift, name: title, widget: string, i18n: true }
               - { label: Zusätzliches Suchfeld anzeigen, name: showSearch, widget: boolean, default: false, required: false }
-              - { label: Platzhalter im Suchfeld, name: searchPlaceholder, widget: string }
-              - { label: Hinweis unter den Karten, name: hint, widget: string }
+              - { label: Platzhalter im Suchfeld, name: searchPlaceholder, widget: string, i18n: true }
+              - { label: Hinweis unter den Karten, name: hint, widget: string, i18n: true }
 
           - label: "Bereich: Regionale & globale Pakete"
             name: packages
             widget: object
+            i18n: true
             collapsed: true
             fields:
-              - { label: Überzeile, name: kicker, widget: string }
-              - { label: Überschrift, name: title, widget: string }
-              - { label: Hinweistext, name: note, widget: string }
-              - { label: "Global: Name in der Auswahl", name: globalName, widget: string }
-              - { label: "Global: Zusatz in der Auswahl", name: globalNote, widget: string }
-              - { label: "Global: Überzeile", name: globalKicker, widget: string }
-              - { label: "Global: Überschrift", name: globalTitle, widget: string }
-              - { label: "Global: Text", name: globalText, widget: text }
+              - { label: Überzeile, name: kicker, widget: string, i18n: true }
+              - { label: Überschrift, name: title, widget: string, i18n: true }
+              - { label: Hinweistext, name: note, widget: string, i18n: true }
+              - { label: "Global: Name in der Auswahl", name: globalName, widget: string, i18n: true }
+              - { label: "Global: Zusatz in der Auswahl", name: globalNote, widget: string, i18n: true }
+              - { label: "Global: Überzeile", name: globalKicker, widget: string, i18n: true }
+              - { label: "Global: Überschrift", name: globalTitle, widget: string, i18n: true }
+              - { label: "Global: Text", name: globalText, widget: text, i18n: true }
               - { label: "Global: Hintergrundbild", name: globalImage, widget: image, choose_url: true }
 
           - label: "Bereich: Was ist eine eSIM?"
             name: howto
             widget: object
+            i18n: true
             collapsed: true
             fields:
-              - { label: Überzeile, name: kicker, widget: string }
-              - { label: Überschrift, name: title, widget: string }
-              - { label: Text, name: text, widget: text }
+              - { label: Überzeile, name: kicker, widget: string, i18n: true }
+              - { label: Überschrift, name: title, widget: string, i18n: true }
+              - { label: Text, name: text, widget: text, i18n: true }
               - { label: Bild, name: image, widget: image, choose_url: true }
-              - { label: Bildunterschrift, name: imageCaption, widget: string, required: false }
+              - { label: Bildunterschrift, name: imageCaption, widget: string, required: false, i18n: true }
               - label: Schritte
                 name: steps
                 widget: list
+                i18n: true
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: Titel, name: title, widget: string }
-                  - { label: Text, name: text, widget: text }
-              - { label: Button-Text, name: button, widget: string }
-              - { label: Link-Text zur Installationsanleitung, name: guideLink, widget: string, required: false }
+                  - { label: Titel, name: title, widget: string, i18n: true }
+                  - { label: Text, name: text, widget: text, i18n: true }
+              - { label: Button-Text, name: button, widget: string, i18n: true }
+              - { label: Link-Text zur Installationsanleitung, name: guideLink, widget: string, required: false, i18n: true }
 
           - label: "Bereich: Lounge & Fast Track"
             name: airport
             widget: object
+            i18n: true
             collapsed: true
             fields:
-              - { label: Überzeile, name: kicker, widget: string }
-              - { label: Überschrift, name: title, widget: string }
-              - { label: Hinweistext, name: note, widget: string }
+              - { label: Überzeile, name: kicker, widget: string, i18n: true }
+              - { label: Überschrift, name: title, widget: string, i18n: true }
+              - { label: Hinweistext, name: note, widget: string, i18n: true }
               - label: Karten
                 name: cards
                 widget: list
+                i18n: true
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: Titel, name: title, widget: string }
-                  - { label: Text, name: text, widget: text }
+                  - { label: Titel, name: title, widget: string, i18n: true }
+                  - { label: Text, name: text, widget: text, i18n: true }
                   - { label: Bild, name: image, widget: image, choose_url: true }
-                  - { label: Vorteile, name: ticks, widget: list, field: { label: Vorteil, name: tick, widget: string } }
+                  - { label: Vorteile, name: ticks, widget: list, field: { label: Vorteil, name: tick, widget: string }, i18n: true }
                   - { label: "Preis aus der Schnittstelle", name: priceKey, widget: select, options: [{ label: "eSIM (günstigster Preis)", value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: Vignette, value: vignette }] }
-                  - { label: Button-Text, name: button, widget: string }
-              - { label: Flughäfen in der Suche, name: airports, widget: list, field: { label: Flughafen, name: airport, widget: string } }
-              - { label: Such-Button, name: searchButton, widget: string }
+                  - { label: Button-Text, name: button, widget: string, i18n: true }
+              - { label: Flughäfen in der Suche, name: airports, widget: list, field: { label: Flughafen, name: airport, widget: string }, i18n: true }
+              - { label: Such-Button, name: searchButton, widget: string, i18n: true }
 
           - label: "Bereich: Bewertungen"
             name: reviews
             widget: object
+            i18n: true
             collapsed: true
             hint: "Die einzelnen Bewertungen pflegst du unter „Bewertungen“. Später durch das Trustpilot-Widget ersetzen."
             fields:
-              - { label: Überzeile, name: kicker, widget: string }
-              - { label: "Durchschnitt (z. B. 4,8)", name: score, widget: string }
-              - { label: Bewertungswort, name: label, widget: string }
-              - { label: Anzahl Bewertungen, name: count, widget: string }
-              - { label: Link-Text, name: linkText, widget: string }
+              - { label: Überzeile, name: kicker, widget: string, i18n: true }
+              - { label: "Durchschnitt (z. B. 4,8)", name: score, widget: string, i18n: true }
+              - { label: Bewertungswort, name: label, widget: string, i18n: true }
+              - { label: Anzahl Bewertungen, name: count, widget: string, i18n: true }
+              - { label: Link-Text, name: linkText, widget: string, i18n: true }
               - { label: Link zu Trustpilot, name: linkUrl, widget: string }
 
           - label: "Bereich: Digitaler Assistent & FAQ"
             name: assistant
             widget: object
+            i18n: true
             collapsed: true
             hint: "Fragen, Antworten und Banner pflegst du unter „Assistent & FAQ“."
             fields:
-              - { label: Überzeile, name: kicker, widget: string }
-              - { label: Überschrift, name: title, widget: string }
-              - { label: Hinweistext, name: note, widget: text }
-              - { label: FAQ-Überschrift, name: faqTitle, widget: string }
-              - { label: FAQ-Text, name: faqText, widget: string }
+              - { label: Überzeile, name: kicker, widget: string, i18n: true }
+              - { label: Überschrift, name: title, widget: string, i18n: true }
+              - { label: Hinweistext, name: note, widget: text, i18n: true }
+              - { label: FAQ-Überschrift, name: faqTitle, widget: string, i18n: true }
+              - { label: FAQ-Text, name: faqText, widget: string, i18n: true }
 
           - label: "Bereich: Magazin / Blog"
             name: blog
             widget: object
+            i18n: true
             collapsed: true
             fields:
-              - { label: Überzeile, name: kicker, widget: string }
-              - { label: Überschrift, name: title, widget: string }
-              - { label: Link-Text, name: linkText, widget: string }
+              - { label: Überzeile, name: kicker, widget: string, i18n: true }
+              - { label: Überschrift, name: title, widget: string, i18n: true }
+              - { label: Link-Text, name: linkText, widget: string, i18n: true }
               - { label: Link, name: linkUrl, widget: string }
 
           - label: "Bereich: Newsletter"
             name: newsletter
             widget: object
+            i18n: true
             collapsed: true
             fields:
-              - { label: Überschrift, name: title, widget: string }
-              - { label: Text, name: text, widget: string }
-              - { label: Platzhalter, name: placeholder, widget: string }
-              - { label: Button-Text, name: button, widget: string }
-              - { label: Erfolgsmeldung, name: success, widget: text }
+              - { label: Überschrift, name: title, widget: string, i18n: true }
+              - { label: Text, name: text, widget: string, i18n: true }
+              - { label: Platzhalter, name: placeholder, widget: string, i18n: true }
+              - { label: Button-Text, name: button, widget: string, i18n: true }
+              - { label: Erfolgsmeldung, name: success, widget: text, i18n: true }
 
           - label: Footer
             name: footer
             widget: object
+            i18n: true
             collapsed: true
             fields:
-              - { label: Kurztext unter dem Logo, name: tagline, widget: string }
+              - { label: Kurztext unter dem Logo, name: tagline, widget: string, i18n: true }
               - label: Spalten
                 name: columns
                 widget: list
+                i18n: true
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: Überschrift, name: title, widget: string }
+                  - { label: Überschrift, name: title, widget: string, i18n: true }
                   - label: Links
                     name: links
                     widget: list
+                    i18n: true
                     summary: "{{fields.label}}"
                     fields:
-                      - { label: Text, name: label, widget: string }
+                      - { label: Text, name: label, widget: string, i18n: true }
                       - { label: Link, name: url, widget: string }
               - { label: Zahlungslogos, name: payments, widget: select, multiple: true, options: *payments }
               - label: Rechtliche Links
                 name: legal
                 widget: list
+                i18n: true
                 summary: "{{fields.label}}"
                 fields:
-                  - { label: Text, name: label, widget: string }
+                  - { label: Text, name: label, widget: string, i18n: true }
                   - { label: Link, name: url, widget: string }
-              - { label: Copyright, name: copyright, widget: string }
+              - { label: Copyright, name: copyright, widget: string, i18n: true }
 
   # ------------------------------------------------------------------------
   - name: produkte
+    i18n: true
     label: Produkte
     editor: { preview: false }
     files:
       - name: esim
         label: eSIM-Länder & Pakete
         file: content/esim.json
+        i18n: true
         fields:
           - label: Länder
             name: countries
             widget: list
+            i18n: true
             collapsed: true
             summary: "{{fields.name}} – ab {{fields.from}} €"
             hint: "„Beliebt“ = erscheint im Slider „Beliebte Reiseziele“."
             fields:
               - { label: "Ländercode (ISO, z. B. tr)", name: code, widget: string, hint: "Zwei Buchstaben, klein – bestimmt die Flagge." }
-              - { label: Name, name: name, widget: string }
+              - { label: Name, name: name, widget: string, i18n: true }
               - { label: Beliebt, name: popular, widget: boolean, default: false }
-              - { label: "Kennzeichen (z. B. Bestseller, 5G)", name: tag, widget: string, required: false }
+              - { label: "Kennzeichen (z. B. Bestseller, 5G)", name: tag, widget: string, required: false, i18n: true }
               - { label: Bild, name: image, widget: image, choose_url: true, required: false }
           - label: Regionale Pakete
             name: regional
             widget: list
+            i18n: true
             collapsed: true
             summary: "{{fields.name}}"
             fields:
               - { label: Kürzel, name: id, widget: string }
-              - { label: Name, name: name, widget: string }
+              - { label: Name, name: name, widget: string, i18n: true }
               - { label: Anzahl Länder, name: countries, widget: number }
-              - { label: Datenvolumen, name: data, widget: string }
-              - { label: Beschreibung, name: note, widget: string }
+              - { label: Datenvolumen, name: data, widget: string, i18n: true }
+              - { label: Beschreibung, name: note, widget: string, i18n: true }
               - { label: Bild, name: image, widget: image, choose_url: true, required: false }
               - { label: Länder auf der Weltkarte, name: mapCodes, widget: list, required: false, hint: "ISO-Ländernummern (z. B. 276 = Deutschland, 792 = Türkei). Diese Länder werden auf der Karte grün markiert und eingekreist." }
           # Globale Pakete und alle Paketgrößen/Preise kommen ausschließlich aus der Preis-Schnittstelle.
 
   # ------------------------------------------------------------------------
   - name: hilfe
+    i18n: true
     label: Hilfe-Center
     editor: { preview: false }
     files:
       - name: assistant
         label: Assistent & FAQ
         file: content/assistant.json
+        i18n: true
         fields:
           - label: Digitale Assistentin
             name: persona
             widget: object
+            i18n: true
             hint: "Gesicht und Name des Assistenten. Bitte klar als „digital“ kennzeichnen, damit Kunden wissen, dass sie mit einer KI schreiben."
             fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Rolle, name: role, widget: string }
-              - { label: Kennzeichnung, name: badge, widget: string }
+              - { label: Name, name: name, widget: string, i18n: true }
+              - { label: Rolle, name: role, widget: string, i18n: true }
+              - { label: Kennzeichnung, name: badge, widget: string, i18n: true }
               - { label: Foto, name: image, widget: image, choose_url: true }
-              - { label: Vorstellungstext, name: intro, widget: text }
-          - { label: Begrüßung, name: greeting, widget: text }
-          - { label: "Antwort, wenn nichts gefunden wird", name: fallback, widget: text }
-          - { label: Kontakt-Text (Übergabe ans Team), name: contactText, widget: text }
+              - { label: Vorstellungstext, name: intro, widget: text, i18n: true }
+          - { label: Begrüßung, name: greeting, widget: text, i18n: true }
+          - { label: "Antwort, wenn nichts gefunden wird", name: fallback, widget: text, i18n: true }
+          - { label: Kontakt-Text (Übergabe ans Team), name: contactText, widget: text, i18n: true }
           - { label: Kontakt-E-Mail, name: contactEmail, widget: string }
           - label: Die drei großen Banner
             name: banners
             widget: list
+            i18n: true
             max: 3
             summary: "{{fields.title}}"
             fields:
-              - { label: Titel, name: title, widget: string }
-              - { label: Text, name: text, widget: string }
+              - { label: Titel, name: title, widget: string, i18n: true }
+              - { label: Text, name: text, widget: string, i18n: true }
               - label: Symbol
                 name: icon
                 widget: select
                 options: [{ label: Handy, value: phone }, { label: QR-Code, value: qr }, { label: SIM-Karte, value: sim }, { label: Sprechblase, value: chat }]
               - { label: "Aktion", name: action, widget: string, hint: "„device-check“ öffnet den Geräte-Check. Sonst die ID einer FAQ (z. B. install-esim) – der Assistent beantwortet dann diese Frage." }
-          - { label: Schnellfragen unter dem Chat, name: suggestions, widget: list, field: { label: Frage, name: q, widget: string } }
+          - { label: Schnellfragen unter dem Chat, name: suggestions, widget: list, field: { label: Frage, name: q, widget: string }, i18n: true }
           - label: Fragen & Antworten
             name: faqs
             widget: list
+            i18n: true
             collapsed: true
             summary: "{{fields.question}}"
             hint: "Jede Frage erscheint in der FAQ und wird vom Assistenten genutzt."
@@ -382,40 +421,44 @@ collections:
                 name: category
                 widget: select
                 options: [{ label: eSIM, value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: Zahlung & Erstattung, value: zahlung }, { label: Allgemein, value: allgemein }]
-              - { label: Frage, name: question, widget: string }
-              - { label: Antwort, name: answer, widget: text, hint: "**fett**, neue Zeile mit „- “ = Aufzählung, Leerzeile = neuer Absatz, [Linktext](https://…)" }
-              - { label: Suchbegriffe, name: keywords, widget: list, hint: "Wörter, mit denen Kunden danach fragen könnten (auch Umgangssprache, Tippfehler)." }
+              - { label: Frage, name: question, widget: string, i18n: true }
+              - { label: Antwort, name: answer, widget: text, hint: "**fett**, neue Zeile mit „- “ = Aufzählung, Leerzeile = neuer Absatz, [Linktext](https://…)", i18n: true }
+              - { label: Suchbegriffe, name: keywords, widget: list, hint: "Wörter, mit denen Kunden danach fragen könnten (auch Umgangssprache, Tippfehler).", i18n: true }
               - { label: Wie oft gefragt, name: views, widget: number, hint: "Höhere Zahl = weiter oben in der FAQ. Die 3 höchsten bekommen „Häufig gefragt“." }
           - { label: eSIM-fähige Geräte, name: devices, widget: list, collapsed: true, field: { label: Gerät, name: device, widget: string } }
 
       - name: install
         label: Installationsanleitung (Unterseite)
         file: content/install.json
+        i18n: true
         fields:
-          - { label: Überzeile, name: kicker, widget: string }
-          - { label: Überschrift, name: title, widget: string }
-          - { label: Einleitung, name: intro, widget: text }
-          - { label: "Checkliste: Überschrift", name: beforeTitle, widget: string }
-          - { label: "Checkliste: Punkte", name: before, widget: list, field: { label: Punkt, name: item, widget: string } }
+          - { label: Überzeile, name: kicker, widget: string, i18n: true }
+          - { label: Überschrift, name: title, widget: string, i18n: true }
+          - { label: Einleitung, name: intro, widget: text, i18n: true }
+          - { label: "Checkliste: Überschrift", name: beforeTitle, widget: string, i18n: true }
+          - { label: "Checkliste: Punkte", name: before, widget: list, field: { label: Punkt, name: item, widget: string }, i18n: true }
           - label: Geräte / Betriebssysteme
             name: platforms
             widget: list
+            i18n: true
             summary: "{{fields.label}}"
             fields:
               - { label: Kürzel, name: id, widget: string, hint: "z. B. ios, samsung, pixel" }
-              - { label: Name im Tab, name: label, widget: string }
-              - { label: Zusatz (Version), name: sub, widget: string, required: false }
+              - { label: Name im Tab, name: label, widget: string, i18n: true }
+              - { label: Zusatz (Version), name: sub, widget: string, required: false, i18n: true }
               - label: Schritte
                 name: steps
                 widget: list
+                i18n: true
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: Titel, name: title, widget: string }
-                  - { label: Text, name: text, widget: text, hint: "**fett** für Menüpunkte" }
-                  - { label: Tipp (gelber Kasten), name: tip, widget: text, required: false }
+                  - { label: Titel, name: title, widget: string, i18n: true }
+                  - { label: Text, name: text, widget: text, hint: "**fett** für Menüpunkte", i18n: true }
+                  - { label: Tipp (gelber Kasten), name: tip, widget: text, required: false, i18n: true }
                   - label: Handy-Bildschirm
                     name: screen
                     widget: object
+                    i18n: true
                     fields:
                       - label: Art
                         name: type
@@ -426,16 +469,17 @@ collections:
                         widget: select
                         required: false
                         options: [{ label: iPhone, value: ios }, { label: Android, value: android }]
-                      - { label: Titel oben, name: title, widget: string, required: false }
-                      - { label: Untertitel (bei QR / Fertig), name: caption, widget: string, required: false }
+                      - { label: Titel oben, name: title, widget: string, required: false, i18n: true }
+                      - { label: Untertitel (bei QR / Fertig), name: caption, widget: string, required: false, i18n: true }
                       - label: Zeilen
                         name: items
                         widget: list
+                        i18n: true
                         required: false
                         summary: "{{fields.label}}"
                         fields:
-                          - { label: Text, name: label, widget: string }
-                          - { label: Wert rechts / darunter, name: value, widget: string, required: false }
+                          - { label: Text, name: label, widget: string, i18n: true }
+                          - { label: Wert rechts / darunter, name: value, widget: string, required: false, i18n: true }
                           - { label: Symbolfarbe, name: color, widget: color, required: false }
                           - label: Schalter
                             name: toggle
@@ -445,51 +489,164 @@ collections:
                           - { label: "Hier tippen (grün markiert)", name: tap, widget: boolean, required: false }
                           - { label: Als Link (blau), name: accent, widget: boolean, required: false }
                           - { label: Ausgewählt (bei Auswahl), name: selected, widget: boolean, required: false }
-          - { label: "Hilfe bei Problemen: Überschrift", name: troubleTitle, widget: string }
+          - { label: "Hilfe bei Problemen: Überschrift", name: troubleTitle, widget: string, i18n: true }
           - label: "Hilfe bei Problemen"
             name: trouble
             widget: list
+            i18n: true
             summary: "{{fields.q}}"
             fields:
-              - { label: Problem, name: q, widget: string }
-              - { label: Lösung, name: a, widget: text }
-          - { label: "Kontakt: Überschrift", name: helpTitle, widget: string }
-          - { label: "Kontakt: Text", name: helpText, widget: text }
-          - { label: "Kontakt: Button", name: helpButton, widget: string }
+              - { label: Problem, name: q, widget: string, i18n: true }
+              - { label: Lösung, name: a, widget: text, i18n: true }
+          - { label: "Kontakt: Überschrift", name: helpTitle, widget: string, i18n: true }
+          - { label: "Kontakt: Text", name: helpText, widget: text, i18n: true }
+          - { label: "Kontakt: Button", name: helpButton, widget: string, i18n: true }
 
   # ------------------------------------------------------------------------
   - name: magazin
+    i18n: true
     label: Magazin & Bewertungen
     editor: { preview: false }
     files:
       - name: blog
         label: Blogartikel (Startseite)
         file: content/blog.json
+        i18n: true
         fields:
           - label: Artikel
             name: posts
             widget: list
+            i18n: true
             hint: "Die ersten 5 erscheinen auf der Startseite, der erste groß."
             summary: "{{fields.title}}"
             fields:
-              - { label: Kategorie, name: category, widget: string }
-              - { label: Titel, name: title, widget: string }
-              - { label: Kurztext, name: excerpt, widget: text }
-              - { label: Lesezeit, name: readTime, widget: string }
+              - { label: Kategorie, name: category, widget: string, i18n: true }
+              - { label: Titel, name: title, widget: string, i18n: true }
+              - { label: Kurztext, name: excerpt, widget: text, i18n: true }
+              - { label: Lesezeit, name: readTime, widget: string, i18n: true }
               - { label: Bild, name: image, widget: image, choose_url: true }
               - { label: Link zum Artikel, name: url, widget: string }
       - name: reviews
         label: Bewertungen
         file: content/reviews.json
+        i18n: true
         fields:
-          - { label: Hinweis, name: note, widget: string }
+          - { label: Hinweis, name: note, widget: string, i18n: true }
           - label: Bewertungen
             name: items
             widget: list
+            i18n: true
             summary: "{{fields.stars}}★ {{fields.title}}"
             fields:
-              - { label: Name, name: name, widget: string }
+              - { label: Name, name: name, widget: string, i18n: true }
               - { label: Sterne, name: stars, widget: number, min: 1, max: 5 }
-              - { label: Datum, name: date, widget: string }
-              - { label: Titel, name: title, widget: string }
-              - { label: Text, name: text, widget: text }
+              - { label: Datum, name: date, widget: string, i18n: true }
+              - { label: Titel, name: title, widget: string, i18n: true }
+              - { label: Text, name: text, widget: text, i18n: true }
+
+
+  # ------------------------------------------------------------------------
+  - name: oberflaeche
+    label: Oberflächentexte
+    i18n: true
+    editor: { preview: false }
+    files:
+      - name: ui
+        label: Buttons, Hinweise & Meldungen
+        file: content/ui.json
+        i18n: true
+        description: "Kleine Texte der Seite. {p} = Preis, {n} = Zahl, {name}/{country}/{q} = Platzhalter – bitte stehen lassen."
+        fields:
+          - { label: "metaTitle", name: metaTitle, widget: string, i18n: true }
+          - { label: "metaDescription", name: metaDescription, widget: string, i18n: true }
+          - { label: "installMetaTitle", name: installMetaTitle, widget: string, i18n: true }
+          - { label: "loadError", name: loadError, widget: string, i18n: true }
+          - { label: "priceNA", name: priceNA, widget: string, i18n: true }
+          - { label: "modalUnavailable", name: modalUnavailable, widget: string, i18n: true }
+          - { label: "priceFrom", name: priceFrom, widget: string, i18n: true }
+          - { label: "priceFromPerson", name: priceFromPerson, widget: string, i18n: true }
+          - { label: "home", name: home, widget: string, i18n: true }
+          - { label: "mainNav", name: mainNav, widget: string, i18n: true }
+          - { label: "language", name: language, widget: string, i18n: true }
+          - { label: "login", name: login, widget: string, i18n: true }
+          - { label: "menuOpen", name: menuOpen, widget: string, i18n: true }
+          - { label: "payMethods", name: payMethods, widget: string, i18n: true }
+          - { label: "previewMock", name: previewMock, widget: string, i18n: true }
+          - { label: "railLabel", name: railLabel, widget: string, i18n: true }
+          - { label: "prev", name: prev, widget: string, i18n: true }
+          - { label: "next", name: next, widget: string, i18n: true }
+          - { label: "gbDays", name: gbDays, widget: string, i18n: true }
+          - { label: "days", name: days, widget: string, i18n: true }
+          - { label: "planFor", name: planFor, widget: string, i18n: true }
+          - { label: "popular", name: popular, widget: string, i18n: true }
+          - { label: "destFeatures", name: destFeatures, widget: string, i18n: true }
+          - { label: "viewPlans", name: viewPlans, widget: string, i18n: true }
+          - { label: "mapLabel", name: mapLabel, widget: string, i18n: true }
+          - { label: "mapLegend", name: mapLegend, widget: string, i18n: true }
+          - { label: "chooseRegion", name: chooseRegion, widget: string, i18n: true }
+          - { label: "bestseller", name: bestseller, widget: string, i18n: true }
+          - { label: "regionalPackage", name: regionalPackage, widget: string, i18n: true }
+          - { label: "factCountries", name: factCountries, widget: string, i18n: true }
+          - { label: "factData", name: factData, widget: string, i18n: true }
+          - { label: "factDaysUpTo", name: factDaysUpTo, widget: string, i18n: true }
+          - { label: "factDays", name: factDays, widget: string, i18n: true }
+          - { label: "globalCheckout", name: globalCheckout, widget: string, i18n: true }
+          - { label: "airportLabel", name: airportLabel, widget: string, i18n: true }
+          - { label: "airportPlaceholder", name: airportPlaceholder, widget: string, i18n: true }
+          - { label: "departDate", name: departDate, widget: string, i18n: true }
+          - { label: "persons", name: persons, widget: string, i18n: true }
+          - { label: "product", name: product, widget: string, i18n: true }
+          - { label: "chooseAirport", name: chooseAirport, widget: string, i18n: true }
+          - { label: "airportSearching", name: airportSearching, widget: string, i18n: true }
+          - { label: "starsOf", name: starsOf, widget: string, i18n: true }
+          - { label: "reviewsOn", name: reviewsOn, widget: string, i18n: true }
+          - { label: "reviewsDemo", name: reviewsDemo, widget: string, i18n: true }
+          - { label: "reviewsLabel", name: reviewsLabel, widget: string, i18n: true }
+          - { label: "helloIam", name: helloIam, widget: string, i18n: true }
+          - { label: "talkHuman", name: talkHuman, widget: string, i18n: true }
+          - { label: "askPlaceholder", name: askPlaceholder, widget: string, i18n: true }
+          - { label: "askLabel", name: askLabel, widget: string, i18n: true }
+          - { label: "send", name: send, widget: string, i18n: true }
+          - { label: "faqCats", name: faqCats, widget: string, i18n: true }
+          - { label: "writeEmail", name: writeEmail, widget: string, i18n: true }
+          - { label: "countryAnswer", name: countryAnswer, widget: string, i18n: true }
+          - { label: "countryPrice", name: countryPrice, widget: string, i18n: true }
+          - { label: "plansFor", name: plansFor, widget: string, i18n: true }
+          - { label: "helpful", name: helpful, widget: string, i18n: true }
+          - { label: "yes", name: yes, widget: string, i18n: true }
+          - { label: "no", name: no, widget: string, i18n: true }
+          - { label: "talkTeam", name: talkTeam, widget: string, i18n: true }
+          - { label: "thanksFeedback", name: thanksFeedback, widget: string, i18n: true }
+          - { label: "pity", name: pity, widget: string, i18n: true }
+          - { label: "catAll", name: catAll, widget: string, i18n: true }
+          - { label: "catEsim", name: catEsim, widget: string, i18n: true }
+          - { label: "catLounge", name: catLounge, widget: string, i18n: true }
+          - { label: "catFasttrack", name: catFasttrack, widget: string, i18n: true }
+          - { label: "catPayment", name: catPayment, widget: string, i18n: true }
+          - { label: "catGeneral", name: catGeneral, widget: string, i18n: true }
+          - { label: "hot", name: hot, widget: string, i18n: true }
+          - { label: "showAll", name: showAll, widget: string, i18n: true }
+          - { label: "readTime", name: readTime, widget: string, i18n: true }
+          - { label: "emailLabel", name: emailLabel, widget: string, i18n: true }
+          - { label: "backHelp", name: backHelp, widget: string, i18n: true }
+          - { label: "choosePhone", name: choosePhone, widget: string, i18n: true }
+          - { label: "stepOf", name: stepOf, widget: string, i18n: true }
+          - { label: "kindCountry", name: kindCountry, widget: string, i18n: true }
+          - { label: "kindRegion", name: kindRegion, widget: string, i18n: true }
+          - { label: "noResult", name: noResult, widget: string, i18n: true }
+          - { label: "plansAria", name: plansAria, widget: string, i18n: true }
+          - { label: "close", name: close, widget: string, i18n: true }
+          - { label: "modalLead", name: modalLead, widget: string, i18n: true }
+          - { label: "modalCountries", name: modalCountries, widget: string, i18n: true }
+          - { label: "dataVolume", name: dataVolume, widget: string, i18n: true }
+          - { label: "checkout", name: checkout, widget: string, i18n: true }
+          - { label: "moneyBack", name: moneyBack, widget: string, i18n: true }
+          - { label: "checkoutToast", name: checkoutToast, widget: string, i18n: true }
+          - { label: "deviceTitle", name: deviceTitle, widget: string, i18n: true }
+          - { label: "deviceLead", name: deviceLead, widget: string, i18n: true }
+          - { label: "devicePlaceholder", name: devicePlaceholder, widget: string, i18n: true }
+          - { label: "deviceModel", name: deviceModel, widget: string, i18n: true }
+          - { label: "deviceTip", name: deviceTip, widget: string, i18n: true }
+          - { label: "deviceOk", name: deviceOk, widget: string, i18n: true }
+          - { label: "deviceNone", name: deviceNone, widget: string, i18n: true }
+          - { label: "assistantFallbackName", name: assistantFallbackName, widget: string, i18n: true }

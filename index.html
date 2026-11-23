@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="de">
+<html lang="tr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>passport.io – eSIM, Lounge & Fast Track für deine Reise</title>
-  <meta name="description" content="Reise-eSIMs für über 190 Länder, Flughafen-Lounges und Fast Track – sofort digital per E-Mail." />
+  <title>passport.io</title>
+  <meta name="description" content="eSIM · Lounge · Fast Track" />
   <meta name="theme-color" content="#0a0d0c" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,17 +49,15 @@
   <div class="modal" id="device-modal" hidden>
     <div class="modal__backdrop" data-close-modal></div>
     <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="device-title">
-      <button class="modal__close icon-btn" type="button" data-close-modal aria-label="Schließen"><svg><use href="#i-x"/></svg></button>
-      <h3 id="device-title" class="h3">Ist mein Handy eSIM-fähig?</h3>
-      <p class="modal__lead">Gib dein Smartphone-Modell ein.</p>
+      <button class="modal__close icon-btn" type="button" data-close-modal aria-label="Close" data-i18n-aria="close"><svg><use href="#i-x"/></svg></button>
+      <h3 id="device-title" class="h3" data-i18n="deviceTitle"></h3>
+      <p class="modal__lead" data-i18n="deviceLead"></p>
       <div class="search search--modal">
         <svg class="search__icon"><use href="#i-search"/></svg>
-        <input type="text" class="search__input" id="device-input" placeholder="z. B. iPhone 13 oder Galaxy S22" aria-label="Smartphone-Modell" autocomplete="off" />
+        <input type="text" class="search__input" id="device-input" data-i18n-placeholder="devicePlaceholder" data-i18n-aria="deviceModel" autocomplete="off" />
       </div>
       <div class="device-result" id="device-result" aria-live="polite"></div>
-      <div class="modal__tip">
-        <b>Schnelltest:</b> Wähle <code>*#06#</code>. Wird eine <b>EID</b> angezeigt, ist dein Gerät eSIM-fähig. Es muss außerdem frei von SIM-Lock sein.
-      </div>
+      <div class="modal__tip" data-i18n-html="deviceTip"></div>
     </div>
   </div>
 

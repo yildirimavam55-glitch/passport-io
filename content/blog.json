@@ -1,52 +1,134 @@
 {
-  "posts": [
-    {
-      "category": "eSIM Guide",
-      "title": "eSIM vs. Roaming: So sparst du im Urlaub bis zu 90 %",
-      "excerpt": "Warum eine Reise-eSIM fast immer günstiger ist als der Roaming-Tarif deines Anbieters – mit Rechenbeispielen.",
-      "readTime": "6 Min.",
-      "image": "https://images.unsplash.com/photo-1678667720699-5c0fc04ac166",
-      "url": "#"
-    },
-    {
-      "category": "Flughafen",
-      "title": "Die 10 schönsten Flughafen-Lounges Europas",
-      "excerpt": "Von Istanbul bis Zürich: Hier wird die Wartezeit zum Highlight deiner Reise.",
-      "readTime": "8 Min.",
-      "image": "https://images.unsplash.com/photo-1786175087740-cd110411221d",
-      "url": "#"
-    },
-    {
-      "category": "Reisetipps",
-      "title": "Fast Track: Wann lohnt sich die schnelle Spur wirklich?",
-      "excerpt": "Ferienbeginn, Frühflug, Umsteigen – die Situationen, in denen Fast Track Gold wert ist.",
-      "readTime": "5 Min.",
-      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
-      "url": "#"
-    },
-    {
-      "category": "Ziele",
-      "title": "Thailand-Checkliste: Alles für den perfekten Trip",
-      "excerpt": "Visum, Internet, Geld, Apps – was du vor dem Abflug nach Bangkok erledigen solltest.",
-      "readTime": "7 Min.",
-      "image": "https://images.unsplash.com/photo-1508009603885-50cf7c579365",
-      "url": "#"
-    },
-    {
-      "category": "Roadtrip",
-      "title": "Vignetten in Europa: Der große Überblick 2027",
-      "excerpt": "Österreich, Schweiz, Slowenien & Co. – welche Länder Maut verlangen und was sie kostet.",
-      "readTime": "9 Min.",
-      "image": "https://images.unsplash.com/photo-1733522688659-b8a33c406a37",
-      "url": "#"
-    },
-    {
-      "category": "eSIM Guide",
-      "title": "Dual-SIM clever nutzen: Deine Nummer bleibt erreichbar",
-      "excerpt": "So stellst du dein Smartphone ein, damit Bank-SMS ankommen und trotzdem keine Roaming-Kosten entstehen.",
-      "readTime": "4 Min.",
-      "image": "https://images.unsplash.com/photo-1629653163521-5394bd65f28d",
-      "url": "#"
-    }
-  ]
+  "tr": {
+    "posts": [
+      {
+        "category": "eSIM Rehberi",
+        "title": "eSIM mi, dolaşım mı? Tatilde %90'a kadar tasarruf",
+        "excerpt": "Bir seyahat eSIM'i neden neredeyse her zaman operatörünün dolaşım paketinden daha ucuzdur – hesap örnekleriyle.",
+        "readTime": "6 dk",
+        "image": "https://images.unsplash.com/photo-1678667720699-5c0fc04ac166",
+        "url": "#"
+      },
+      {
+        "category": "Havalimanı",
+        "title": "Avrupa'nın en güzel 10 havalimanı lounge'u",
+        "excerpt": "İstanbul'dan Zürih'e: Bekleme süresi seyahatinin en keyifli anına dönüşüyor.",
+        "readTime": "8 dk",
+        "image": "https://images.unsplash.com/photo-1786175087740-cd110411221d",
+        "url": "#"
+      },
+      {
+        "category": "Seyahat ipuçları",
+        "title": "Fast Track: Hızlı şerit gerçekten ne zaman değer?",
+        "excerpt": "Tatil başlangıcı, sabah erken uçuşlar, aktarmalar – Fast Track'in altın değerinde olduğu durumlar.",
+        "readTime": "5 dk",
+        "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+        "url": "#"
+      },
+      {
+        "category": "Destinasyonlar",
+        "title": "Tayland kontrol listesi: Mükemmel bir gezi için her şey",
+        "excerpt": "Vize, internet, para, uygulamalar – Bangkok uçuşundan önce halletmen gerekenler.",
+        "readTime": "7 dk",
+        "image": "https://images.unsplash.com/photo-1508009603885-50cf7c579365",
+        "url": "#"
+      },
+      {
+        "category": "Yol gezisi",
+        "title": "Avrupa'da vinyetler: 2027 için büyük rehber",
+        "excerpt": "Avusturya, İsviçre, Slovenya ve diğerleri – hangi ülkeler otoyol ücreti alıyor ve ne kadar?",
+        "readTime": "9 dk",
+        "image": "https://images.unsplash.com/photo-1733522688659-b8a33c406a37",
+        "url": "#"
+      },
+      {
+        "category": "eSIM Rehberi",
+        "title": "Çift SIM'i akıllıca kullan: Numaran ulaşılabilir kalsın",
+        "excerpt": "Banka SMS'leri gelsin ama dolaşım ücreti oluşmasın diye telefonunu böyle ayarla.",
+        "readTime": "4 dk",
+        "image": "https://images.unsplash.com/photo-1629653163521-5394bd65f28d",
+        "url": "#"
+      }
+    ]
+  },
+  "en": {
+    "posts": [
+      {
+        "category": "eSIM Guide",
+        "title": "eSIM vs. roaming: how to save up to 90% on holiday",
+        "excerpt": "Why a travel eSIM is almost always cheaper than your provider's roaming plan – with worked examples.",
+        "readTime": "6 min"
+      },
+      {
+        "category": "Airport",
+        "title": "Europe's 10 most beautiful airport lounges",
+        "excerpt": "From Istanbul to Zurich: where waiting becomes the highlight of your trip.",
+        "readTime": "8 min"
+      },
+      {
+        "category": "Travel tips",
+        "title": "Fast Track: when is the fast lane really worth it?",
+        "excerpt": "Start of the holidays, early flights, connections – the situations where Fast Track is worth its weight in gold.",
+        "readTime": "5 min"
+      },
+      {
+        "category": "Destinations",
+        "title": "Thailand checklist: everything for the perfect trip",
+        "excerpt": "Visa, internet, money, apps – what to sort out before your flight to Bangkok.",
+        "readTime": "7 min"
+      },
+      {
+        "category": "Road trip",
+        "title": "Vignettes in Europe: the big 2027 overview",
+        "excerpt": "Austria, Switzerland, Slovenia and more – which countries charge tolls and how much.",
+        "readTime": "9 min"
+      },
+      {
+        "category": "eSIM Guide",
+        "title": "Use dual SIM cleverly: stay reachable on your number",
+        "excerpt": "How to set up your phone so bank texts arrive without any roaming charges.",
+        "readTime": "4 min"
+      }
+    ]
+  },
+  "de": {
+    "posts": [
+      {
+        "title": "eSIM vs. Roaming: So sparst du im Urlaub bis zu 90 %",
+        "excerpt": "Warum eine Reise-eSIM fast immer günstiger ist als der Roaming-Tarif deines Anbieters – mit Rechenbeispielen.",
+        "readTime": "6 Min.",
+        "category": "eSIM Guide"
+      },
+      {
+        "title": "Die 10 schönsten Flughafen-Lounges Europas",
+        "excerpt": "Von Istanbul bis Zürich: Hier wird die Wartezeit zum Highlight deiner Reise.",
+        "readTime": "8 Min.",
+        "category": "Flughafen"
+      },
+      {
+        "title": "Fast Track: Wann lohnt sich die schnelle Spur wirklich?",
+        "excerpt": "Ferienbeginn, Frühflug, Umsteigen – die Situationen, in denen Fast Track Gold wert ist.",
+        "readTime": "5 Min.",
+        "category": "Reisetipps"
+      },
+      {
+        "title": "Thailand-Checkliste: Alles für den perfekten Trip",
+        "excerpt": "Visum, Internet, Geld, Apps – was du vor dem Abflug nach Bangkok erledigen solltest.",
+        "readTime": "7 Min.",
+        "category": "Ziele"
+      },
+      {
+        "title": "Vignetten in Europa: Der große Überblick 2027",
+        "excerpt": "Österreich, Schweiz, Slowenien & Co. – welche Länder Maut verlangen und was sie kostet.",
+        "readTime": "9 Min.",
+        "category": "Roadtrip"
+      },
+      {
+        "title": "Dual-SIM clever nutzen: Deine Nummer bleibt erreichbar",
+        "excerpt": "So stellst du dein Smartphone ein, damit Bank-SMS ankommen und trotzdem keine Roaming-Kosten entstehen.",
+        "readTime": "4 Min.",
+        "category": "eSIM Guide"
+      }
+    ]
+  }
 }

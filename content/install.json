@@ -1,195 +1,1190 @@
 {
-  "kicker": "Anleitung",
-  "title": "eSIM installieren – Schritt für Schritt",
-  "intro": "In etwa zwei Minuten erledigt. Wähle dein Smartphone und folge den Bildschirmen. Menünamen können je nach Modell und Software-Version leicht abweichen.",
-  "beforeTitle": "Bevor du startest",
-  "before": [
-    "Mit stabilem WLAN verbinden – am besten noch zu Hause",
-    "Handy ist eSIM-fähig und frei von SIM-Lock",
-    "QR-Code aus deiner E-Mail auf einem zweiten Bildschirm öffnen oder ausdrucken",
-    "eSIM nach der Installation nicht löschen – sie lässt sich meist nur einmal installieren"
-  ],
-  "platforms": [
-    {
-      "id": "ios",
-      "label": "iPhone",
-      "sub": "iOS 17 und neuer",
-      "steps": [
-        {
-          "title": "Einstellungen öffnen",
-          "text": "Öffne die App **Einstellungen** und tippe auf **Mobilfunk**.",
-          "screen": { "type": "list", "title": "Einstellungen", "items": [
-            { "label": "Flugmodus", "color": "#ff9500", "toggle": "off" },
-            { "label": "WLAN", "color": "#007aff", "value": "Zuhause" },
-            { "label": "Bluetooth", "color": "#007aff", "value": "Ein" },
-            { "label": "Mobilfunk", "color": "#34c759", "tap": true },
-            { "label": "Persönlicher Hotspot", "color": "#34c759" }
-          ] }
-        },
-        {
-          "title": "eSIM hinzufügen",
-          "text": "Tippe auf **eSIM hinzufügen** (bei manchen Versionen: **Mobilfunktarif hinzufügen**).",
-          "screen": { "type": "list", "title": "Mobilfunk", "items": [
-            { "label": "Mobile Daten", "toggle": "on" },
-            { "label": "Mobilfunk-Optionen", "value": "Roaming aus" },
-            { "label": "Persönlicher Hotspot", "value": "Aus" },
-            { "label": "eSIM hinzufügen", "tap": true, "accent": true }
-          ] }
-        },
-        {
-          "title": "QR-Code scannen",
-          "text": "Wähle **QR-Code verwenden** und richte die Kamera auf den Code aus deiner E-Mail.",
-          "tip": "Code auf demselben iPhone? Lange auf das QR-Bild in der Mail drücken und **eSIM hinzufügen** wählen – oder **Details manuell eingeben** mit SM-DP+-Adresse und Aktivierungscode aus der E-Mail.",
-          "screen": { "type": "qr", "title": "QR-Code scannen", "caption": "Positioniere den QR-Code im Rahmen" }
-        },
-        {
-          "title": "Leitungen festlegen",
-          "text": "Benenne die neue eSIM z. B. **Reise**. Wähle deine bisherige Nummer für Anrufe und SMS und **Reise** für **Mobile Daten**. Schalte **Wechseln der mobilen Daten zulassen** aus.",
-          "screen": { "type": "choice", "title": "Mobile Daten", "items": [
-            { "label": "Primär", "value": "+49 …" },
-            { "label": "Reise", "value": "passport.io", "selected": true },
-            { "label": "Wechseln der mobilen Daten zulassen", "toggle": "off" }
-          ] }
-        },
-        {
-          "title": "Am Reiseziel einschalten",
-          "text": "Nach der Landung: **Einstellungen › Mobilfunk › Reise**. Schalte **Diese Leitung aktivieren** und **Datenroaming** ein.",
-          "tip": "Datenroaming nur für die Reise-eSIM einschalten – bei deiner normalen SIM bleibt es aus, so entstehen keine Roaming-Kosten.",
-          "screen": { "type": "list", "title": "Reise", "items": [
-            { "label": "Diese Leitung aktivieren", "toggle": "on", "tap": true },
-            { "label": "Datenroaming", "toggle": "on", "tap": true },
-            { "label": "Mobilfunknetz", "value": "Automatisch" },
-            { "label": "Mobiles Datennetz", "value": "" }
-          ] }
-        },
-        {
-          "title": "Fertig – du bist online",
-          "text": "Oben rechts erscheint das Netz deines Reiseziels. Das kann nach dem Einschalten bis zu 2 Minuten dauern.",
-          "screen": { "type": "done", "title": "Verbunden", "caption": "Turkcell · 5G" }
-        }
-      ]
-    },
-    {
-      "id": "samsung",
-      "label": "Samsung Galaxy",
-      "sub": "One UI 5 und neuer",
-      "steps": [
-        {
-          "title": "Verbindungen öffnen",
-          "text": "Öffne **Einstellungen** und tippe auf **Verbindungen**.",
-          "screen": { "type": "list", "style": "android", "title": "Einstellungen", "items": [
-            { "label": "Verbindungen", "value": "WLAN · Bluetooth · SIM-Manager", "color": "#3e91ff", "tap": true },
-            { "label": "Verbundene Geräte", "color": "#ff7a45" },
-            { "label": "Modi und Routinen", "color": "#22c55e" },
-            { "label": "Töne und Vibration", "color": "#a855f7" }
-          ] }
-        },
-        {
-          "title": "SIM-Manager",
-          "text": "Tippe auf **SIM-Manager** (bei manchen Modellen: **SIM-Kartenverwaltung**).",
-          "screen": { "type": "list", "style": "android", "title": "Verbindungen", "items": [
-            { "label": "WLAN", "toggle": "on" },
-            { "label": "Bluetooth", "toggle": "off" },
-            { "label": "Flugmodus", "toggle": "off" },
-            { "label": "SIM-Manager", "tap": true },
-            { "label": "Mobile Netzwerke" }
-          ] }
-        },
-        {
-          "title": "eSIM hinzufügen",
-          "text": "Tippe auf **eSIM hinzufügen** und dann auf **QR-Code vom Dienstanbieter scannen**.",
-          "screen": { "type": "list", "style": "android", "title": "SIM-Manager", "items": [
-            { "label": "SIM 1", "value": "Primär" },
-            { "label": "eSIM hinzufügen", "tap": true, "accent": true },
-            { "label": "Bevorzugte SIM-Karte", "value": "" }
-          ] }
-        },
-        {
-          "title": "QR-Code scannen",
-          "text": "Scanne den QR-Code aus deiner E-Mail und bestätige mit **Hinzufügen**.",
-          "tip": "Alternativ **Aktivierungscode eingeben** und den Code aus der E-Mail einfügen.",
-          "screen": { "type": "qr", "style": "android", "title": "QR-Code scannen", "caption": "QR-Code im Rahmen platzieren" }
-        },
-        {
-          "title": "Mobile Daten auf die eSIM",
-          "text": "Im **SIM-Manager** unter **Mobile Daten** die neue eSIM wählen. Anrufe und SMS bleiben auf deiner SIM 1.",
-          "screen": { "type": "choice", "style": "android", "title": "Mobile Daten", "items": [
-            { "label": "SIM 1", "value": "Deine Nummer" },
-            { "label": "Reise eSIM", "value": "passport.io", "selected": true }
-          ] }
-        },
-        {
-          "title": "Daten-Roaming einschalten",
-          "text": "Am Reiseziel: **Verbindungen › Mobile Netzwerke** und **Daten-Roaming** einschalten.",
-          "screen": { "type": "list", "style": "android", "title": "Mobile Netzwerke", "items": [
-            { "label": "Daten-Roaming", "toggle": "on", "tap": true },
-            { "label": "Netzmodus", "value": "5G/LTE/3G (autom.)" },
-            { "label": "Zugangspunkte", "value": "" },
-            { "label": "Netzbetreiber", "value": "Automatisch" }
-          ] }
-        },
-        {
-          "title": "Fertig – du bist online",
-          "text": "In der Statusleiste erscheint das Netz deines Reiseziels.",
-          "screen": { "type": "done", "style": "android", "title": "Verbunden", "caption": "Vodafone ES · 5G" }
-        }
-      ]
-    },
-    {
-      "id": "pixel",
-      "label": "Google Pixel & Android",
-      "sub": "Android 13 und neuer",
-      "steps": [
-        {
-          "title": "SIMs öffnen",
-          "text": "Öffne **Einstellungen › Netzwerk & Internet** und tippe auf **SIMs**.",
-          "screen": { "type": "list", "style": "android", "title": "Netzwerk & Internet", "items": [
-            { "label": "Internet", "value": "Zuhause" },
-            { "label": "SIMs", "value": "Telekom", "tap": true },
-            { "label": "Flugmodus", "toggle": "off" },
-            { "label": "Hotspot und Tethering", "value": "Aus" }
-          ] }
-        },
-        {
-          "title": "eSIM herunterladen",
-          "text": "Tippe auf **SIM hinzufügen** und dann auf **Stattdessen eSIM herunterladen** bzw. **SIM herunterladen**.",
-          "screen": { "type": "list", "style": "android", "title": "SIMs", "items": [
-            { "label": "Telekom", "value": "Aktiv" },
-            { "label": "SIM hinzufügen", "tap": true, "accent": true }
-          ] }
-        },
-        {
-          "title": "QR-Code scannen",
-          "text": "Scanne den QR-Code aus deiner E-Mail und folge den Hinweisen auf dem Bildschirm.",
-          "screen": { "type": "qr", "style": "android", "title": "QR-Code scannen", "caption": "Code in den Rahmen halten" }
-        },
-        {
-          "title": "Mobile Daten und Roaming",
-          "text": "Unter **SIMs** die neue eSIM öffnen, **Mobile Daten** und am Reiseziel **Roaming** einschalten.",
-          "screen": { "type": "list", "style": "android", "title": "passport.io", "items": [
-            { "label": "SIM verwenden", "toggle": "on" },
-            { "label": "Mobile Daten", "toggle": "on", "tap": true },
-            { "label": "Roaming", "toggle": "on", "tap": true },
-            { "label": "Zugangspunkte (APN)", "value": "" }
-          ] }
-        },
-        {
-          "title": "Fertig – du bist online",
-          "text": "Das Netz deines Reiseziels erscheint in der Statusleiste.",
-          "screen": { "type": "done", "style": "android", "title": "Verbunden", "caption": "AIS · 5G" }
-        }
-      ]
-    }
-  ],
-  "troubleTitle": "Kein Netz? So löst du es",
-  "trouble": [
-    { "q": "Nach der Landung wird kein Netz angezeigt", "a": "Prüfe, ob die Reise-eSIM eingeschaltet ist und **Datenroaming** für sie aktiv ist. Schalte dann 10 Sekunden den **Flugmodus** ein und wieder aus. Hilft das nicht, starte das Handy neu." },
-    { "q": "Netz ist da, aber kein Internet", "a": "Stelle sicher, dass **Mobile Daten** auf die Reise-eSIM eingestellt sind. Steht in deiner E-Mail ein **APN**, trage ihn ein:\n\n- **iPhone:** Mobilfunk › Reise › Mobiles Datennetz\n- **Android:** Mobile Netzwerke › Zugangspunkte" },
-    { "q": "Das falsche Netz wird verwendet", "a": "Schalte unter **Mobilfunknetz** bzw. **Netzbetreiber** die automatische Auswahl aus und wähle einen der Partner-Netzbetreiber aus deiner E-Mail." },
-    { "q": "Der QR-Code wird nicht erkannt", "a": "Erhöhe die Bildschirmhelligkeit des Geräts, auf dem der Code angezeigt wird, oder gib die Daten manuell ein (SM-DP+-Adresse und Aktivierungscode stehen in der E-Mail)." },
-    { "q": "Ich habe die eSIM aus Versehen gelöscht", "a": "Bitte nicht erneut scannen – der Code ist meist nur einmal gültig. Schreib uns, wir helfen dir mit einem neuen Profil weiter." }
-  ],
-  "helpTitle": "Noch Fragen?",
-  "helpText": "Lina, unsere digitale Assistentin, hilft dir sofort weiter – und wenn nötig unser Service-Team.",
-  "helpButton": "Frag Lina"
+  "tr": {
+    "kicker": "Rehber",
+    "title": "eSIM kurulumu – adım adım",
+    "intro": "Yaklaşık iki dakikada tamamlanır. Telefonunu seç ve ekranları takip et. Menü adları modele ve yazılım sürümüne göre biraz farklı olabilir.",
+    "beforeTitle": "Başlamadan önce",
+    "before": [
+      "Stabil bir Wi-Fi ağına bağlan – en iyisi henüz evdeyken",
+      "Telefon eSIM uyumlu ve SIM kilitsiz olmalı",
+      "E-postandaki QR kodu ikinci bir ekranda aç veya yazdır",
+      "Kurulumdan sonra eSIM'i silme – çoğu zaman yalnızca bir kez kurulabilir"
+    ],
+    "platforms": [
+      {
+        "id": "ios",
+        "label": "iPhone",
+        "sub": "iOS 17 ve sonrası",
+        "steps": [
+          {
+            "title": "Ayarlar'ı aç",
+            "text": "**Ayarlar** uygulamasını aç ve **Hücresel**'e dokun.",
+            "screen": {
+              "type": "list",
+              "title": "Ayarlar",
+              "items": [
+                {
+                  "label": "Uçak Modu",
+                  "color": "#ff9500",
+                  "toggle": "off"
+                },
+                {
+                  "label": "Wi-Fi",
+                  "color": "#007aff",
+                  "value": "Ev"
+                },
+                {
+                  "label": "Bluetooth",
+                  "color": "#007aff",
+                  "value": "Açık"
+                },
+                {
+                  "label": "Hücresel",
+                  "color": "#34c759",
+                  "tap": true
+                },
+                {
+                  "label": "Kişisel Erişim Noktası",
+                  "color": "#34c759"
+                }
+              ]
+            }
+          },
+          {
+            "title": "eSIM ekle",
+            "text": "**eSIM Ekle**'ye dokun (bazı sürümlerde: **Hücresel Plan Ekle**).",
+            "screen": {
+              "type": "list",
+              "title": "Hücresel",
+              "items": [
+                {
+                  "label": "Hücresel Veri",
+                  "toggle": "on"
+                },
+                {
+                  "label": "Hücresel Veri Seçenekleri",
+                  "value": "Dolaşım kapalı"
+                },
+                {
+                  "label": "Kişisel Erişim Noktası",
+                  "value": "Kapalı"
+                },
+                {
+                  "label": "eSIM Ekle",
+                  "tap": true,
+                  "accent": true
+                }
+              ]
+            }
+          },
+          {
+            "title": "QR kodu tara",
+            "text": "**QR Kodu Kullan**'ı seç ve kamerayı e-postandaki koda tut.",
+            "tip": "Kod aynı iPhone'da mı? E-postadaki QR görseline uzun bas ve **eSIM Ekle**'yi seç – ya da e-postadaki SM-DP+ adresi ve etkinleştirme koduyla **Bilgileri Elle Gir**.",
+            "screen": {
+              "type": "qr",
+              "title": "QR kodu tara",
+              "caption": "QR kodu çerçevenin içine yerleştir"
+            }
+          },
+          {
+            "title": "Hatları belirle",
+            "text": "Yeni eSIM'e örneğin **Seyahat** adını ver. Arama ve SMS için mevcut numaranı, **Hücresel Veri** için **Seyahat**'i seç. **Hücresel Veri Değiştirmeye İzin Ver**'i kapat.",
+            "screen": {
+              "type": "choice",
+              "title": "Hücresel Veri",
+              "items": [
+                {
+                  "label": "Birincil",
+                  "value": "+90 …"
+                },
+                {
+                  "label": "Seyahat",
+                  "value": "passport.io",
+                  "selected": true
+                },
+                {
+                  "label": "Hücresel Veri Değiştirmeye İzin Ver",
+                  "toggle": "off"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Destinasyonda aç",
+            "text": "İnişten sonra: **Ayarlar › Hücresel › Seyahat**. **Bu Hattı Aç** ve **Veri Dolaşımı**'nı etkinleştir.",
+            "tip": "Veri dolaşımını yalnızca seyahat eSIM'i için aç – normal SIM kartında kapalı kalsın, böylece dolaşım ücreti oluşmaz.",
+            "screen": {
+              "type": "list",
+              "title": "Seyahat",
+              "items": [
+                {
+                  "label": "Bu Hattı Aç",
+                  "toggle": "on",
+                  "tap": true
+                },
+                {
+                  "label": "Veri Dolaşımı",
+                  "toggle": "on",
+                  "tap": true
+                },
+                {
+                  "label": "Ağ Seçimi",
+                  "value": "Otomatik"
+                },
+                {
+                  "label": "Hücresel Veri Ağı",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "title": "Hazır – artık çevrimiçisin",
+            "text": "Sağ üstte destinasyonundaki ağın adı görünür. Açtıktan sonra bu 2 dakikayı bulabilir.",
+            "screen": {
+              "type": "done",
+              "title": "Bağlandı",
+              "caption": "Turkcell · 5G"
+            }
+          }
+        ]
+      },
+      {
+        "id": "samsung",
+        "label": "Samsung Galaxy",
+        "sub": "One UI 5 ve sonrası",
+        "steps": [
+          {
+            "title": "Bağlantılar'ı aç",
+            "text": "**Ayarlar**'ı aç ve **Bağlantılar**'a dokun.",
+            "screen": {
+              "type": "list",
+              "style": "android",
+              "title": "Ayarlar",
+              "items": [
+                {
+                  "label": "Bağlantılar",
+                  "value": "Wi-Fi · Bluetooth · SIM yöneticisi",
+                  "color": "#3e91ff",
+                  "tap": true
+                },
+                {
+                  "label": "Bağlı cihazlar",
+                  "color": "#ff7a45"
+                },
+                {
+                  "label": "Modlar ve Rutinler",
+                  "color": "#22c55e"
+                },
+                {
+                  "label": "Sesler ve titreşim",
+                  "color": "#a855f7"
+                }
+              ]
+            }
+          },
+          {
+            "title": "SIM yöneticisi",
+            "text": "**SIM yöneticisi**'ne dokun (bazı modellerde: **SIM kart yöneticisi**).",
+            "screen": {
+              "type": "list",
+              "style": "android",
+              "title": "Bağlantılar",
+              "items": [
+                {
+                  "label": "Wi-Fi",
+                  "toggle": "on"
+                },
+                {
+                  "label": "Bluetooth",
+                  "toggle": "off"
+                },
+                {
+                  "label": "Uçuş modu",
+                  "toggle": "off"
+                },
+                {
+                  "label": "SIM yöneticisi",
+                  "tap": true
+                },
+                {
+                  "label": "Mobil ağlar"
+                }
+              ]
+            }
+          },
+          {
+            "title": "eSIM ekle",
+            "text": "**eSIM ekle**'ye, ardından **Servis sağlayıcıdan QR kodunu tara**'ya dokun.",
+            "screen": {
+              "type": "list",
+              "style": "android",
+              "title": "SIM yöneticisi",
+              "items": [
+                {
+                  "label": "SIM 1",
+                  "value": "Birincil"
+                },
+                {
+                  "label": "eSIM ekle",
+                  "tap": true,
+                  "accent": true
+                },
+                {
+                  "label": "Tercih edilen SIM kart",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "title": "QR kodu tara",
+            "text": "E-postandaki QR kodu tara ve **Ekle** ile onayla.",
+            "tip": "Alternatif olarak **Etkinleştirme kodunu gir**'i seçip e-postadaki kodu yapıştır.",
+            "screen": {
+              "type": "qr",
+              "style": "android",
+              "title": "QR kodu tara",
+              "caption": "QR kodu çerçeveye yerleştir"
+            }
+          },
+          {
+            "title": "Mobil veriyi eSIM'e ayarla",
+            "text": "**SIM yöneticisi**'nde **Mobil veri** altında yeni eSIM'i seç. Arama ve SMS, SIM 1'de kalır.",
+            "screen": {
+              "type": "choice",
+              "style": "android",
+              "title": "Mobil veri",
+              "items": [
+                {
+                  "label": "SIM 1",
+                  "value": "Senin numaran"
+                },
+                {
+                  "label": "Seyahat eSIM",
+                  "value": "passport.io",
+                  "selected": true
+                }
+              ]
+            }
+          },
+          {
+            "title": "Veri dolaşımını aç",
+            "text": "Destinasyonda: **Bağlantılar › Mobil ağlar** ve **Veri dolaşımı**'nı aç.",
+            "screen": {
+              "type": "list",
+              "style": "android",
+              "title": "Mobil ağlar",
+              "items": [
+                {
+                  "label": "Veri dolaşımı",
+                  "toggle": "on",
+                  "tap": true
+                },
+                {
+                  "label": "Ağ modu",
+                  "value": "5G/LTE/3G (otomatik)"
+                },
+                {
+                  "label": "Erişim Noktası Adları",
+                  "value": ""
+                },
+                {
+                  "label": "Şebeke operatörleri",
+                  "value": "Otomatik"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Hazır – artık çevrimiçisin",
+            "text": "Durum çubuğunda destinasyonundaki ağın adı görünür.",
+            "screen": {
+              "type": "done",
+              "style": "android",
+              "title": "Bağlandı",
+              "caption": "Vodafone ES · 5G"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pixel",
+        "label": "Google Pixel ve Android",
+        "sub": "Android 13 ve sonrası",
+        "steps": [
+          {
+            "title": "SIM'ler'i aç",
+            "text": "**Ayarlar › Ağ ve internet**'i aç ve **SIM'ler**'e dokun.",
+            "screen": {
+              "type": "list",
+              "style": "android",
+              "title": "Ağ ve internet",
+              "items": [
+                {
+                  "label": "İnternet",
+                  "value": "Ev"
+                },
+                {
+                  "label": "SIM'ler",
+                  "value": "Turkcell",
+                  "tap": true
+                },
+                {
+                  "label": "Uçak modu",
+                  "toggle": "off"
+                },
+                {
+                  "label": "Hotspot ve tethering",
+                  "value": "Kapalı"
+                }
+              ]
+            }
+          },
+          {
+            "title": "eSIM indir",
+            "text": "**SIM ekle**'ye, ardından **Bunun yerine bir eSIM indirin** veya **SIM indir**'e dokun.",
+            "screen": {
+              "type": "list",
+              "style": "android",
+              "title": "SIM'ler",
+              "items": [
+                {
+                  "label": "Turkcell",
+                  "value": "Aktif"
+                },
+                {
+                  "label": "SIM ekle",
+                  "tap": true,
+                  "accent": true
+                }
+              ]
+            }
+          },
+          {
+            "title": "QR kodu tara",
+            "text": "E-postandaki QR kodu tara ve ekrandaki talimatları izle.",
+            "screen": {
+              "type": "qr",
+              "style": "android",
+              "title": "QR kodu tara",
+              "caption": "Kodu çerçevenin içinde tut"
+            }
+          },
+          {
+            "title": "Mobil veri ve dolaşım",
+            "text": "**SIM'ler** altında yeni eSIM'i aç, **Mobil veri**'yi ve destinasyonda **Dolaşım**'ı etkinleştir.",
+            "screen": {
+              "type": "list",
+              "style": "android",
+              "title": "passport.io",
+              "items": [
+                {
+                  "label": "SIM'i kullan",
+                  "toggle": "on"
+                },
+                {
+                  "label": "Mobil veri",
+                  "toggle": "on",
+                  "tap": true
+                },
+                {
+                  "label": "Dolaşım",
+                  "toggle": "on",
+                  "tap": true
+                },
+                {
+                  "label": "Erişim Noktası Adları (APN)",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "title": "Hazır – artık çevrimiçisin",
+            "text": "Destinasyonundaki ağın adı durum çubuğunda görünür.",
+            "screen": {
+              "type": "done",
+              "style": "android",
+              "title": "Bağlandı",
+              "caption": "AIS · 5G"
+            }
+          }
+        ]
+      }
+    ],
+    "troubleTitle": "Şebeke yok mu? Böyle çözersin",
+    "trouble": [
+      {
+        "q": "İnişten sonra şebeke görünmüyor",
+        "a": "Seyahat eSIM'inin açık olduğunu ve onun için **veri dolaşımının** etkin olduğunu kontrol et. Ardından **uçak modunu** 10 saniye açıp kapat. İşe yaramazsa telefonu yeniden başlat."
+      },
+      {
+        "q": "Şebeke var ama internet yok",
+        "a": "**Mobil verinin** seyahat eSIM'ine ayarlı olduğundan emin ol. E-postanda bir **APN** yazıyorsa onu gir:\n\n- **iPhone:** Hücresel › Seyahat › Hücresel Veri Ağı\n- **Android:** Mobil ağlar › Erişim Noktası Adları"
+      },
+      {
+        "q": "Yanlış şebeke kullanılıyor",
+        "a": "**Ağ Seçimi** veya **Şebeke operatörleri** altında otomatik seçimi kapat ve e-postandaki iş ortağı operatörlerden birini seç."
+      },
+      {
+        "q": "QR kod tanınmıyor",
+        "a": "Kodun gösterildiği cihazın ekran parlaklığını artır veya bilgileri elle gir (SM-DP+ adresi ve etkinleştirme kodu e-postada yazıyor)."
+      },
+      {
+        "q": "eSIM'i yanlışlıkla sildim",
+        "a": "Lütfen tekrar tarama – kod çoğu zaman yalnızca bir kez geçerlidir. Bize yaz, yeni bir profille sana yardımcı olalım."
+      }
+    ],
+    "helpTitle": "Başka sorun mu var?",
+    "helpText": "Dijital asistanımız Lina sana hemen yardımcı olur – gerekirse müşteri hizmetleri ekibimiz de.",
+    "helpButton": "Lina'ya sor"
+  },
+  "en": {
+    "kicker": "Guide",
+    "title": "Install your eSIM – step by step",
+    "intro": "Done in about two minutes. Choose your phone and follow the screens. Menu names may vary slightly depending on model and software version.",
+    "beforeTitle": "Before you start",
+    "before": [
+      "Connect to stable Wi-Fi – ideally while still at home",
+      "Your phone supports eSIM and is carrier-unlocked",
+      "Open the QR code from your email on a second screen or print it",
+      "Don't delete the eSIM after installing – it can usually only be installed once"
+    ],
+    "platforms": [
+      {
+        "id": "ios",
+        "label": "iPhone",
+        "sub": "iOS 17 and later",
+        "steps": [
+          {
+            "title": "Open Settings",
+            "text": "Open the **Settings** app and tap **Cellular** (or **Mobile Data**).",
+            "screen": {
+              "title": "Settings",
+              "items": [
+                {
+                  "label": "Airplane Mode"
+                },
+                {
+                  "label": "Wi-Fi",
+                  "value": "Home"
+                },
+                {
+                  "label": "Bluetooth",
+                  "value": "On"
+                },
+                {
+                  "label": "Cellular"
+                },
+                {
+                  "label": "Personal Hotspot"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Add eSIM",
+            "text": "Tap **Add eSIM** (on some versions: **Add Cellular Plan**).",
+            "screen": {
+              "title": "Cellular",
+              "items": [
+                {
+                  "label": "Cellular Data"
+                },
+                {
+                  "label": "Cellular Data Options",
+                  "value": "Roaming off"
+                },
+                {
+                  "label": "Personal Hotspot",
+                  "value": "Off"
+                },
+                {
+                  "label": "Add eSIM"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Scan the QR code",
+            "text": "Choose **Use QR Code** and point the camera at the code from your email.",
+            "tip": "Code on the same iPhone? Press and hold the QR image in the email and choose **Add eSIM** – or **Enter Details Manually** with the SM-DP+ address and activation code from the email.",
+            "screen": {
+              "title": "Scan QR code",
+              "caption": "Position the QR code inside the frame"
+            }
+          },
+          {
+            "title": "Set up your lines",
+            "text": "Name the new eSIM e.g. **Travel**. Choose your existing number for calls and texts and **Travel** for **Cellular Data**. Turn off **Allow Cellular Data Switching**.",
+            "screen": {
+              "title": "Cellular Data",
+              "items": [
+                {
+                  "label": "Primary",
+                  "value": "+44 …"
+                },
+                {
+                  "label": "Travel",
+                  "value": "passport.io"
+                },
+                {
+                  "label": "Allow Cellular Data Switching"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Switch on at your destination",
+            "text": "After landing: **Settings › Cellular › Travel**. Turn on **Turn On This Line** and **Data Roaming**.",
+            "tip": "Only switch on data roaming for the travel eSIM – leave it off for your regular SIM so no roaming charges apply.",
+            "screen": {
+              "title": "Travel",
+              "items": [
+                {
+                  "label": "Turn On This Line"
+                },
+                {
+                  "label": "Data Roaming"
+                },
+                {
+                  "label": "Network Selection",
+                  "value": "Automatic"
+                },
+                {
+                  "label": "Cellular Data Network",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "title": "Done – you're online",
+            "text": "Your destination's network appears in the top right. This can take up to 2 minutes after switching on.",
+            "screen": {
+              "title": "Connected",
+              "caption": "Turkcell · 5G"
+            }
+          }
+        ]
+      },
+      {
+        "id": "samsung",
+        "label": "Samsung Galaxy",
+        "sub": "One UI 5 and later",
+        "steps": [
+          {
+            "title": "Open Connections",
+            "text": "Open **Settings** and tap **Connections**.",
+            "screen": {
+              "title": "Settings",
+              "items": [
+                {
+                  "label": "Connections",
+                  "value": "Wi-Fi · Bluetooth · SIM manager"
+                },
+                {
+                  "label": "Connected devices"
+                },
+                {
+                  "label": "Modes and Routines"
+                },
+                {
+                  "label": "Sounds and vibration"
+                }
+              ]
+            }
+          },
+          {
+            "title": "SIM manager",
+            "text": "Tap **SIM manager** (on some models: **SIM card manager**).",
+            "screen": {
+              "title": "Connections",
+              "items": [
+                {
+                  "label": "Wi-Fi"
+                },
+                {
+                  "label": "Bluetooth"
+                },
+                {
+                  "label": "Flight mode"
+                },
+                {
+                  "label": "SIM manager"
+                },
+                {
+                  "label": "Mobile networks"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Add eSIM",
+            "text": "Tap **Add eSIM**, then **Scan QR code from service provider**.",
+            "screen": {
+              "title": "SIM manager",
+              "items": [
+                {
+                  "label": "SIM 1",
+                  "value": "Primary"
+                },
+                {
+                  "label": "Add eSIM"
+                },
+                {
+                  "label": "Preferred SIM card",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "title": "Scan the QR code",
+            "text": "Scan the QR code from your email and confirm with **Add**.",
+            "tip": "Alternatively, choose **Enter activation code** and paste the code from the email.",
+            "screen": {
+              "title": "Scan QR code",
+              "caption": "Place the QR code inside the frame"
+            }
+          },
+          {
+            "title": "Mobile data on the eSIM",
+            "text": "In **SIM manager**, choose the new eSIM under **Mobile data**. Calls and texts stay on your SIM 1.",
+            "screen": {
+              "title": "Mobile data",
+              "items": [
+                {
+                  "label": "SIM 1",
+                  "value": "Your number"
+                },
+                {
+                  "label": "Travel eSIM",
+                  "value": "passport.io"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Switch on data roaming",
+            "text": "At your destination: **Connections › Mobile networks** and switch on **Data roaming**.",
+            "screen": {
+              "title": "Mobile networks",
+              "items": [
+                {
+                  "label": "Data roaming"
+                },
+                {
+                  "label": "Network mode",
+                  "value": "5G/LTE/3G (auto)"
+                },
+                {
+                  "label": "Access Point Names",
+                  "value": ""
+                },
+                {
+                  "label": "Network operators",
+                  "value": "Automatic"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Done – you're online",
+            "text": "Your destination's network appears in the status bar.",
+            "screen": {
+              "title": "Connected",
+              "caption": "Vodafone ES · 5G"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pixel",
+        "label": "Google Pixel & Android",
+        "sub": "Android 13 and later",
+        "steps": [
+          {
+            "title": "Open SIMs",
+            "text": "Open **Settings › Network & internet** and tap **SIMs**.",
+            "screen": {
+              "title": "Network & internet",
+              "items": [
+                {
+                  "label": "Internet",
+                  "value": "Home"
+                },
+                {
+                  "label": "SIMs",
+                  "value": "Vodafone"
+                },
+                {
+                  "label": "Airplane mode"
+                },
+                {
+                  "label": "Hotspot & tethering",
+                  "value": "Off"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Download eSIM",
+            "text": "Tap **Add SIM**, then **Download a SIM instead?** or **Download SIM**.",
+            "screen": {
+              "title": "SIMs",
+              "items": [
+                {
+                  "label": "Vodafone",
+                  "value": "Active"
+                },
+                {
+                  "label": "Add SIM"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Scan the QR code",
+            "text": "Scan the QR code from your email and follow the instructions on screen.",
+            "screen": {
+              "title": "Scan QR code",
+              "caption": "Hold the code inside the frame"
+            }
+          },
+          {
+            "title": "Mobile data and roaming",
+            "text": "Under **SIMs**, open the new eSIM, switch on **Mobile data** and, at your destination, **Roaming**.",
+            "screen": {
+              "title": "passport.io",
+              "items": [
+                {
+                  "label": "Use SIM"
+                },
+                {
+                  "label": "Mobile data"
+                },
+                {
+                  "label": "Roaming"
+                },
+                {
+                  "label": "Access Point Names (APN)",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "title": "Done – you're online",
+            "text": "Your destination's network appears in the status bar.",
+            "screen": {
+              "title": "Connected",
+              "caption": "AIS · 5G"
+            }
+          }
+        ]
+      }
+    ],
+    "troubleTitle": "No signal? Here's how to fix it",
+    "trouble": [
+      {
+        "q": "No network shows after landing",
+        "a": "Check that the travel eSIM is switched on and **data roaming** is enabled for it. Then turn **airplane mode** on for 10 seconds and off again. If that doesn't help, restart your phone."
+      },
+      {
+        "q": "Network shows, but no internet",
+        "a": "Make sure **mobile data** is set to the travel eSIM. If your email lists an **APN**, enter it:\n\n- **iPhone:** Cellular › Travel › Cellular Data Network\n- **Android:** Mobile networks › Access Point Names"
+      },
+      {
+        "q": "The wrong network is being used",
+        "a": "Under **Network Selection** or **Network operators**, turn off automatic selection and choose one of the partner networks from your email."
+      },
+      {
+        "q": "The QR code isn't recognised",
+        "a": "Increase the screen brightness of the device showing the code, or enter the details manually (the SM-DP+ address and activation code are in the email)."
+      },
+      {
+        "q": "I deleted the eSIM by mistake",
+        "a": "Please don't scan again – the code is usually only valid once. Write to us and we'll help you with a new profile."
+      }
+    ],
+    "helpTitle": "More questions?",
+    "helpText": "Lina, our digital assistant, will help you right away – and our service team if needed.",
+    "helpButton": "Ask Lina"
+  },
+  "de": {
+    "kicker": "Anleitung",
+    "title": "eSIM installieren – Schritt für Schritt",
+    "intro": "In etwa zwei Minuten erledigt. Wähle dein Smartphone und folge den Bildschirmen. Menünamen können je nach Modell und Software-Version leicht abweichen.",
+    "beforeTitle": "Bevor du startest",
+    "before": [
+      "Mit stabilem WLAN verbinden – am besten noch zu Hause",
+      "Handy ist eSIM-fähig und frei von SIM-Lock",
+      "QR-Code aus deiner E-Mail auf einem zweiten Bildschirm öffnen oder ausdrucken",
+      "eSIM nach der Installation nicht löschen – sie lässt sich meist nur einmal installieren"
+    ],
+    "platforms": [
+      {
+        "id": "ios",
+        "label": "iPhone",
+        "sub": "iOS 17 und neuer",
+        "steps": [
+          {
+            "title": "Einstellungen öffnen",
+            "text": "Öffne die App **Einstellungen** und tippe auf **Mobilfunk**.",
+            "screen": {
+              "title": "Einstellungen",
+              "items": [
+                {
+                  "label": "Flugmodus"
+                },
+                {
+                  "label": "WLAN",
+                  "value": "Zuhause"
+                },
+                {
+                  "label": "Bluetooth",
+                  "value": "Ein"
+                },
+                {
+                  "label": "Mobilfunk"
+                },
+                {
+                  "label": "Persönlicher Hotspot"
+                }
+              ]
+            }
+          },
+          {
+            "title": "eSIM hinzufügen",
+            "text": "Tippe auf **eSIM hinzufügen** (bei manchen Versionen: **Mobilfunktarif hinzufügen**).",
+            "screen": {
+              "title": "Mobilfunk",
+              "items": [
+                {
+                  "label": "Mobile Daten"
+                },
+                {
+                  "label": "Mobilfunk-Optionen",
+                  "value": "Roaming aus"
+                },
+                {
+                  "label": "Persönlicher Hotspot",
+                  "value": "Aus"
+                },
+                {
+                  "label": "eSIM hinzufügen"
+                }
+              ]
+            }
+          },
+          {
+            "title": "QR-Code scannen",
+            "text": "Wähle **QR-Code verwenden** und richte die Kamera auf den Code aus deiner E-Mail.",
+            "tip": "Code auf demselben iPhone? Lange auf das QR-Bild in der Mail drücken und **eSIM hinzufügen** wählen – oder **Details manuell eingeben** mit SM-DP+-Adresse und Aktivierungscode aus der E-Mail.",
+            "screen": {
+              "title": "QR-Code scannen",
+              "caption": "Positioniere den QR-Code im Rahmen"
+            }
+          },
+          {
+            "title": "Leitungen festlegen",
+            "text": "Benenne die neue eSIM z. B. **Reise**. Wähle deine bisherige Nummer für Anrufe und SMS und **Reise** für **Mobile Daten**. Schalte **Wechseln der mobilen Daten zulassen** aus.",
+            "screen": {
+              "title": "Mobile Daten",
+              "items": [
+                {
+                  "label": "Primär",
+                  "value": "+49 …"
+                },
+                {
+                  "label": "Reise",
+                  "value": "passport.io"
+                },
+                {
+                  "label": "Wechseln der mobilen Daten zulassen"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Am Reiseziel einschalten",
+            "text": "Nach der Landung: **Einstellungen › Mobilfunk › Reise**. Schalte **Diese Leitung aktivieren** und **Datenroaming** ein.",
+            "tip": "Datenroaming nur für die Reise-eSIM einschalten – bei deiner normalen SIM bleibt es aus, so entstehen keine Roaming-Kosten.",
+            "screen": {
+              "title": "Reise",
+              "items": [
+                {
+                  "label": "Diese Leitung aktivieren"
+                },
+                {
+                  "label": "Datenroaming"
+                },
+                {
+                  "label": "Mobilfunknetz",
+                  "value": "Automatisch"
+                },
+                {
+                  "label": "Mobiles Datennetz",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "title": "Fertig – du bist online",
+            "text": "Oben rechts erscheint das Netz deines Reiseziels. Das kann nach dem Einschalten bis zu 2 Minuten dauern.",
+            "screen": {
+              "title": "Verbunden",
+              "caption": "Turkcell · 5G"
+            }
+          }
+        ]
+      },
+      {
+        "id": "samsung",
+        "label": "Samsung Galaxy",
+        "sub": "One UI 5 und neuer",
+        "steps": [
+          {
+            "title": "Verbindungen öffnen",
+            "text": "Öffne **Einstellungen** und tippe auf **Verbindungen**.",
+            "screen": {
+              "title": "Einstellungen",
+              "items": [
+                {
+                  "label": "Verbindungen",
+                  "value": "WLAN · Bluetooth · SIM-Manager"
+                },
+                {
+                  "label": "Verbundene Geräte"
+                },
+                {
+                  "label": "Modi und Routinen"
+                },
+                {
+                  "label": "Töne und Vibration"
+                }
+              ]
+            }
+          },
+          {
+            "title": "SIM-Manager",
+            "text": "Tippe auf **SIM-Manager** (bei manchen Modellen: **SIM-Kartenverwaltung**).",
+            "screen": {
+              "title": "Verbindungen",
+              "items": [
+                {
+                  "label": "WLAN"
+                },
+                {
+                  "label": "Bluetooth"
+                },
+                {
+                  "label": "Flugmodus"
+                },
+                {
+                  "label": "SIM-Manager"
+                },
+                {
+                  "label": "Mobile Netzwerke"
+                }
+              ]
+            }
+          },
+          {
+            "title": "eSIM hinzufügen",
+            "text": "Tippe auf **eSIM hinzufügen** und dann auf **QR-Code vom Dienstanbieter scannen**.",
+            "screen": {
+              "title": "SIM-Manager",
+              "items": [
+                {
+                  "label": "SIM 1",
+                  "value": "Primär"
+                },
+                {
+                  "label": "eSIM hinzufügen"
+                },
+                {
+                  "label": "Bevorzugte SIM-Karte",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "title": "QR-Code scannen",
+            "text": "Scanne den QR-Code aus deiner E-Mail und bestätige mit **Hinzufügen**.",
+            "tip": "Alternativ **Aktivierungscode eingeben** und den Code aus der E-Mail einfügen.",
+            "screen": {
+              "title": "QR-Code scannen",
+              "caption": "QR-Code im Rahmen platzieren"
+            }
+          },
+          {
+            "title": "Mobile Daten auf die eSIM",
+            "text": "Im **SIM-Manager** unter **Mobile Daten** die neue eSIM wählen. Anrufe und SMS bleiben auf deiner SIM 1.",
+            "screen": {
+              "title": "Mobile Daten",
+              "items": [
+                {
+                  "label": "SIM 1",
+                  "value": "Deine Nummer"
+                },
+                {
+                  "label": "Reise eSIM",
+                  "value": "passport.io"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Daten-Roaming einschalten",
+            "text": "Am Reiseziel: **Verbindungen › Mobile Netzwerke** und **Daten-Roaming** einschalten.",
+            "screen": {
+              "title": "Mobile Netzwerke",
+              "items": [
+                {
+                  "label": "Daten-Roaming"
+                },
+                {
+                  "label": "Netzmodus",
+                  "value": "5G/LTE/3G (autom.)"
+                },
+                {
+                  "label": "Zugangspunkte",
+                  "value": ""
+                },
+                {
+                  "label": "Netzbetreiber",
+                  "value": "Automatisch"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Fertig – du bist online",
+            "text": "In der Statusleiste erscheint das Netz deines Reiseziels.",
+            "screen": {
+              "title": "Verbunden",
+              "caption": "Vodafone ES · 5G"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pixel",
+        "label": "Google Pixel & Android",
+        "sub": "Android 13 und neuer",
+        "steps": [
+          {
+            "title": "SIMs öffnen",
+            "text": "Öffne **Einstellungen › Netzwerk & Internet** und tippe auf **SIMs**.",
+            "screen": {
+              "title": "Netzwerk & Internet",
+              "items": [
+                {
+                  "label": "Internet",
+                  "value": "Zuhause"
+                },
+                {
+                  "label": "SIMs",
+                  "value": "Telekom"
+                },
+                {
+                  "label": "Flugmodus"
+                },
+                {
+                  "label": "Hotspot und Tethering",
+                  "value": "Aus"
+                }
+              ]
+            }
+          },
+          {
+            "title": "eSIM herunterladen",
+            "text": "Tippe auf **SIM hinzufügen** und dann auf **Stattdessen eSIM herunterladen** bzw. **SIM herunterladen**.",
+            "screen": {
+              "title": "SIMs",
+              "items": [
+                {
+                  "label": "Telekom",
+                  "value": "Aktiv"
+                },
+                {
+                  "label": "SIM hinzufügen"
+                }
+              ]
+            }
+          },
+          {
+            "title": "QR-Code scannen",
+            "text": "Scanne den QR-Code aus deiner E-Mail und folge den Hinweisen auf dem Bildschirm.",
+            "screen": {
+              "title": "QR-Code scannen",
+              "caption": "Code in den Rahmen halten"
+            }
+          },
+          {
+            "title": "Mobile Daten und Roaming",
+            "text": "Unter **SIMs** die neue eSIM öffnen, **Mobile Daten** und am Reiseziel **Roaming** einschalten.",
+            "screen": {
+              "title": "passport.io",
+              "items": [
+                {
+                  "label": "SIM verwenden"
+                },
+                {
+                  "label": "Mobile Daten"
+                },
+                {
+                  "label": "Roaming"
+                },
+                {
+                  "label": "Zugangspunkte (APN)",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "title": "Fertig – du bist online",
+            "text": "Das Netz deines Reiseziels erscheint in der Statusleiste.",
+            "screen": {
+              "title": "Verbunden",
+              "caption": "AIS · 5G"
+            }
+          }
+        ]
+      }
+    ],
+    "troubleTitle": "Kein Netz? So löst du es",
+    "trouble": [
+      {
+        "q": "Nach der Landung wird kein Netz angezeigt",
+        "a": "Prüfe, ob die Reise-eSIM eingeschaltet ist und **Datenroaming** für sie aktiv ist. Schalte dann 10 Sekunden den **Flugmodus** ein und wieder aus. Hilft das nicht, starte das Handy neu."
+      },
+      {
+        "q": "Netz ist da, aber kein Internet",
+        "a": "Stelle sicher, dass **Mobile Daten** auf die Reise-eSIM eingestellt sind. Steht in deiner E-Mail ein **APN**, trage ihn ein:\n\n- **iPhone:** Mobilfunk › Reise › Mobiles Datennetz\n- **Android:** Mobile Netzwerke › Zugangspunkte"
+      },
+      {
+        "q": "Das falsche Netz wird verwendet",
+        "a": "Schalte unter **Mobilfunknetz** bzw. **Netzbetreiber** die automatische Auswahl aus und wähle einen der Partner-Netzbetreiber aus deiner E-Mail."
+      },
+      {
+        "q": "Der QR-Code wird nicht erkannt",
+        "a": "Erhöhe die Bildschirmhelligkeit des Geräts, auf dem der Code angezeigt wird, oder gib die Daten manuell ein (SM-DP+-Adresse und Aktivierungscode stehen in der E-Mail)."
+      },
+      {
+        "q": "Ich habe die eSIM aus Versehen gelöscht",
+        "a": "Bitte nicht erneut scannen – der Code ist meist nur einmal gültig. Schreib uns, wir helfen dir mit einem neuen Profil weiter."
+      }
+    ],
+    "helpTitle": "Noch Fragen?",
+    "helpText": "Lina, unsere digitale Assistentin, hilft dir sofort weiter – und wenn nötig unser Service-Team.",
+    "helpButton": "Frag Lina"
+  }
 }

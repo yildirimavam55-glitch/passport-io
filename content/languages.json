@@ -1,0 +1,9 @@
+{
+  "_hinweis": "Neue Sprache: hier eintragen und in jeder Datei in content/ einen Block mit dem Sprachkürzel ergänzen (bzw. im Admin übersetzen). Fehlende Texte werden automatisch aus der Standardsprache genommen.",
+  "default": "tr",
+  "languages": [
+    { "code": "tr", "name": "Türkçe", "locale": "tr-TR", "dir": "ltr" },
+    { "code": "en", "name": "English", "locale": "en-GB", "dir": "ltr" },
+    { "code": "de", "name": "Deutsch", "locale": "de-DE", "dir": "ltr" }
+  ]
+}

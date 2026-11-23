@@ -1,359 +1,857 @@
 {
-  "theme": {
-    "green": "#2ef58a",
-    "dark": "#0a0d0c"
-  },
-  "brand": {
-    "name": "passport",
-    "suffix": ".io"
-  },
-  "announcement": {
-    "enabled": false,
-    "text": "Winter-Aktion: 15 % auf alle Europa-eSIMs mit dem Code WINTER15",
-    "link": "#esim"
-  },
-  "nav": [
-    {
-      "label": "eSIM",
-      "url": "#esim"
+  "tr": {
+    "theme": {
+      "green": "#2ef58a",
+      "dark": "#0a0d0c"
     },
-    {
-      "label": "Lounges",
-      "url": "#airport"
+    "brand": {
+      "name": "passport",
+      "suffix": ".io"
     },
-    {
-      "label": "Fast Track",
-      "url": "#airport"
+    "announcement": {
+      "enabled": false,
+      "text": "Kış kampanyası: WINTER15 koduyla tüm Avrupa eSIM'lerinde %15 indirim",
+      "link": "#esim"
     },
-    {
-      "label": "Vignetten",
-      "url": "#vignette",
-      "badge": "bald"
-    },
-    {
-      "label": "Hilfe",
-      "url": "#assistant"
-    },
-    {
-      "label": "Magazin",
-      "url": "#blog"
-    }
-  ],
-  "sections": [
-    {
-      "type": "hero",
-      "enabled": true
-    },
-    {
-      "type": "destinations",
-      "enabled": true
-    },
-    {
-      "type": "packages",
-      "enabled": true
-    },
-    {
-      "type": "howto",
-      "enabled": true
-    },
-    {
-      "type": "airport",
-      "enabled": true
-    },
-    {
-      "type": "reviews",
-      "enabled": true
-    },
-    {
-      "type": "assistant",
-      "enabled": true
-    },
-    {
-      "type": "blog",
-      "enabled": true
-    },
-    {
-      "type": "newsletter",
-      "enabled": true
-    }
-  ],
-  "hero": {
-    "kicker": "eSIM · Lounge · Fast Track",
-    "title": "Mobiles Internet in 190 Ländern.",
-    "subtitle": "Ab {preis:esim}, in zwei Minuten aktiv.",
-    "image": "https://images.unsplash.com/photo-1692029861107-991b13db6ad0",
-    "searchPlaceholder": "Wohin reist du?",
-    "searchButton": "eSIM finden",
-    "facts": [
-      {
-        "icon": "trustpilot",
-        "text": "4,8 bei Trustpilot"
-      },
-      {
-        "icon": "mail",
-        "text": "QR-Code sofort per E-Mail"
-      },
-      {
-        "icon": "shield",
-        "text": "30 Tage Geld-zurück"
-      }
-    ],
-    "products": [
+    "nav": [
       {
         "label": "eSIM",
-        "text": "Daten für 190+ Länder",
-        "url": "#esim",
-        "comingSoon": false,
-        "priceKey": "esim"
+        "url": "#esim"
       },
       {
-        "label": "Lounge",
-        "text": "1.400 Lounges weltweit",
-        "url": "#airport",
-        "comingSoon": false,
-        "priceKey": "lounge"
+        "label": "Lounge'lar",
+        "url": "#airport"
       },
       {
         "label": "Fast Track",
-        "text": "Schneller durch die Kontrolle",
-        "url": "#airport",
-        "comingSoon": false,
-        "priceKey": "fasttrack"
+        "url": "#airport"
+      },
+      {
+        "label": "Vinyetler",
+        "url": "#vignette",
+        "badge": "yakında"
+      },
+      {
+        "label": "Yardım",
+        "url": "#assistant"
+      },
+      {
+        "label": "Dergi",
+        "url": "#blog"
+      }
+    ],
+    "sections": [
+      {
+        "type": "hero",
+        "enabled": true
+      },
+      {
+        "type": "destinations",
+        "enabled": true
+      },
+      {
+        "type": "packages",
+        "enabled": true
+      },
+      {
+        "type": "howto",
+        "enabled": true
+      },
+      {
+        "type": "airport",
+        "enabled": true
+      },
+      {
+        "type": "reviews",
+        "enabled": true
+      },
+      {
+        "type": "assistant",
+        "enabled": true
+      },
+      {
+        "type": "blog",
+        "enabled": true
+      },
+      {
+        "type": "newsletter",
+        "enabled": true
+      }
+    ],
+    "hero": {
+      "kicker": "eSIM · Lounge · Fast Track",
+      "title": "190 ülkede mobil internet.",
+      "subtitle": "En uygun fiyat {fiyat:esim}, iki dakikada aktif.",
+      "image": "https://images.unsplash.com/photo-1692029861107-991b13db6ad0",
+      "searchPlaceholder": "Nereye seyahat ediyorsun?",
+      "searchButton": "eSIM bul",
+      "facts": [
+        {
+          "icon": "trustpilot",
+          "text": "Trustpilot'ta 4,8"
+        },
+        {
+          "icon": "mail",
+          "text": "QR kod anında e-postada"
+        },
+        {
+          "icon": "shield",
+          "text": "30 gün para iade garantisi"
+        }
+      ],
+      "products": [
+        {
+          "label": "eSIM",
+          "text": "190+ ülke için mobil veri",
+          "url": "#esim",
+          "comingSoon": false,
+          "priceKey": "esim"
+        },
+        {
+          "label": "Lounge",
+          "text": "Dünya çapında 1.400 lounge",
+          "url": "#airport",
+          "comingSoon": false,
+          "priceKey": "lounge"
+        },
+        {
+          "label": "Fast Track",
+          "text": "Güvenlik kontrolünden hızlı geçiş",
+          "url": "#airport",
+          "comingSoon": false,
+          "priceKey": "fasttrack"
+        },
+        {
+          "label": "Vinyetler",
+          "text": "Avrupa için dijital otoyol vinyeti",
+          "url": "",
+          "comingSoon": true,
+          "priceKey": "vignette",
+          "soonText": "İlkbahar 2027"
+        }
+      ],
+      "paymentsLabel": "Ödeme seçenekleri",
+      "payments": [
+        "applepay",
+        "googlepay",
+        "klarna",
+        "paypal"
+      ]
+    },
+    "destinations": {
+      "kicker": "eSIM",
+      "title": "Sıradaki durak neresi?",
+      "searchPlaceholder": "Ülke veya bölge ara",
+      "hint": "Bu ay müşterilerimizin en çok tercih ettiği destinasyonlar"
+    },
+    "packages": {
+      "kicker": "Birden fazla ülke, tek eSIM",
+      "title": "Bölgesel paketler",
+      "note": "Turlar için ideal: Ülke değişir, eSIM aynı kalır.",
+      "globalKicker": "Global",
+      "globalTitle": "120 ülke için tek eSIM.",
+      "globalText": "Sık seyahat edenler, dünya turu yapanlar ve rotasını önceden belirlemek istemeyenler için.",
+      "globalImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+      "globalName": "Global",
+      "globalNote": "120+ ülke"
+    },
+    "howto": {
+      "kicker": "eSIM'de yeni misin?",
+      "title": "eSIM nedir?",
+      "text": "eSIM, akıllı telefonuna yerleşik dijital bir SIM karttır. Plastik kart takmak yerine tarifeni QR kodla yüklersin. Normal numaran da aktif kalır.",
+      "image": "https://images.unsplash.com/photo-1529775768124-fb874e73ac7e",
+      "imageCaption": "Bağlı · 5G",
+      "steps": [
+        {
+          "title": "Paketini seç",
+          "text": "Destinasyonunu ara, veri miktarını seç; Apple Pay, PayPal veya kartla öde."
+        },
+        {
+          "title": "QR kodu tara",
+          "text": "Kod anında e-postana gelir. En iyisi evde, Wi-Fi'dayken kurmak."
+        },
+        {
+          "title": "İn ve internete bağlan",
+          "text": "İnişten sonra eSIM'i ve veri dolaşımını aç. Kullanım süresi ancak o zaman başlar."
+        }
+      ],
+      "button": "Telefonum eSIM uyumlu mu?",
+      "guideLink": "Kurulum rehberi"
+    },
+    "airport": {
+      "kicker": "Havalimanında",
+      "title": "Daha az kuyruk. Uçuş öncesi daha fazla huzur.",
+      "note": "Sık uçan yolcu statüsü veya business bilet gerekmez. Voucher anında telefonunda.",
+      "cards": [
+        {
+          "title": "Lounge erişimi",
+          "text": "Sessizlik, Wi-Fi, açık büfe ve içecekler – 650 havalimanında 1.400'den fazla lounge.",
+          "image": "https://images.unsplash.com/photo-1759038086545-a905cb519ae8",
+          "ticks": [
+            "24 saat öncesine kadar ücretsiz iptal",
+            "3 saate kadar konaklama"
+          ],
+          "button": "Lounge bul",
+          "priceKey": "lounge"
+        },
+        {
+          "title": "Fast Track",
+          "text": "Güvenlik kontrolünde size özel şerit. Ortalama 20–40 dakika daha hızlı.",
+          "image": "https://images.unsplash.com/photo-1767710096520-9246565a9d31",
+          "ticks": [
+            "200'den fazla havalimanında",
+            "Tatil başlangıcında ve aktarmalarda ideal"
+          ],
+          "button": "Fast Track al",
+          "priceKey": "fasttrack"
+        }
+      ],
+      "airports": [
+        "Frankfurt (FRA)",
+        "Münih (MUC)",
+        "Berlin (BER)",
+        "Düsseldorf (DUS)",
+        "Hamburg (HAM)",
+        "Köln/Bonn (CGN)",
+        "Stuttgart (STR)",
+        "Viyana (VIE)",
+        "Zürih (ZRH)",
+        "İstanbul (IST)",
+        "Antalya (AYT)",
+        "Dubai (DXB)",
+        "Londra Heathrow (LHR)",
+        "Palma de Mallorca (PMI)"
+      ],
+      "searchButton": "Uygunluğu kontrol et"
+    },
+    "reviews": {
+      "kicker": "Değerlendirmeler",
+      "score": "4,8",
+      "label": "Mükemmel",
+      "count": "2.341",
+      "linkText": "Tüm değerlendirmeleri oku",
+      "linkUrl": "https://www.trustpilot.com"
+    },
+    "assistant": {
+      "kicker": "Yardım merkezi",
+      "title": "Nasıl yardımcı olabiliriz?",
+      "note": "Asistanımız çoğu soruyu anında yanıtlar – 7/24. Yanıtlayamazsa ekibimiz devreye girer.",
+      "faqTitle": "Sıkça sorulan sorular",
+      "faqText": "Müşterilerimizin en çok sorduklarına göre sıralandı."
+    },
+    "blog": {
+      "kicker": "Dergi",
+      "title": "Hazırlıklı seyahat et.",
+      "linkText": "Tüm yazılar",
+      "linkUrl": "#"
+    },
+    "newsletter": {
+      "title": "İlk eSIM'inde %10 indirim.",
+      "text": "Ayrıca seyahat ipuçları ve fırsatlar, ayda yaklaşık bir kez. İstediğin zaman abonelikten çıkabilirsin.",
+      "placeholder": "E-posta adresin",
+      "button": "Kodu al",
+      "success": "Teşekkürler! Lütfen az önce gönderdiğimiz e-postadaki bağlantıyla kaydını onayla."
+    },
+    "footer": {
+      "tagline": "Seyahatin için her şey. Dijital, anında ve adil fiyatlarla.",
+      "columns": [
+        {
+          "title": "Ürünler",
+          "links": [
+            {
+              "label": "eSIM",
+              "url": "#esim"
+            },
+            {
+              "label": "Bölgesel paketler",
+              "url": "#packages"
+            },
+            {
+              "label": "Lounge'lar",
+              "url": "#airport"
+            },
+            {
+              "label": "Fast Track",
+              "url": "#airport"
+            }
+          ]
+        },
+        {
+          "title": "Yardım",
+          "links": [
+            {
+              "label": "Yardım merkezi",
+              "url": "#assistant"
+            },
+            {
+              "label": "eSIM uyumluluğu",
+              "url": "#howto"
+            },
+            {
+              "label": "SSS",
+              "url": "#faq"
+            },
+            {
+              "label": "İletişim",
+              "url": "mailto:support@passport.io"
+            }
+          ]
+        },
+        {
+          "title": "Şirket",
+          "links": [
+            {
+              "label": "Hakkımızda",
+              "url": "#"
+            },
+            {
+              "label": "Dergi",
+              "url": "#blog"
+            },
+            {
+              "label": "Ortaklık programı",
+              "url": "#"
+            },
+            {
+              "label": "Basın",
+              "url": "#"
+            }
+          ]
+        }
+      ],
+      "payments": [
+        "applepay",
+        "googlepay",
+        "visa",
+        "mastercard",
+        "paypal",
+        "klarna"
+      ],
+      "legal": [
+        {
+          "label": "Künye",
+          "url": "#"
+        },
+        {
+          "label": "Gizlilik",
+          "url": "#"
+        },
+        {
+          "label": "Kullanım koşulları",
+          "url": "#"
+        },
+        {
+          "label": "Cayma hakkı",
+          "url": "#"
+        }
+      ],
+      "copyright": "© 2026 passport.io"
+    },
+    "api": {
+      "pricesUrl": "api/prices.json",
+      "questionsUrl": "https://sbzwibctxezprpefwxzn.supabase.co/functions/v1/questions",
+      "unavailableText": "Fiyat yakında",
+      "modalUnavailableText": "Güncel fiyatlar şu anda yüklenemedi. Lütfen birazdan tekrar deneyin."
+    },
+    "preview": {
+      "enabled": true,
+      "text": "Önizleme – değerlendirmeler, fiyatlar ve görseller örnek veya test verisidir."
+    }
+  },
+  "en": {
+    "announcement": {
+      "text": "Winter deal: 15% off all Europe eSIMs with the code WINTER15"
+    },
+    "nav": [
+      {
+        "label": "eSIM"
+      },
+      {
+        "label": "Lounges"
+      },
+      {
+        "label": "Fast Track"
+      },
+      {
+        "label": "Vignettes",
+        "badge": "soon"
+      },
+      {
+        "label": "Help"
+      },
+      {
+        "label": "Magazine"
+      }
+    ],
+    "hero": {
+      "kicker": "eSIM · Lounge · Fast Track",
+      "title": "Mobile data in 190 countries.",
+      "subtitle": "From {price:esim}, active in two minutes.",
+      "searchPlaceholder": "Where are you travelling?",
+      "searchButton": "Find eSIM",
+      "facts": [
+        {
+          "text": "Rated 4.8 on Trustpilot"
+        },
+        {
+          "text": "QR code instantly by email"
+        },
+        {
+          "text": "30-day money-back guarantee"
+        }
+      ],
+      "products": [
+        {
+          "label": "eSIM",
+          "text": "Data for 190+ countries"
+        },
+        {
+          "label": "Lounge",
+          "text": "1,400 lounges worldwide"
+        },
+        {
+          "label": "Fast Track",
+          "text": "Breeze through security"
+        },
+        {
+          "label": "Vignettes",
+          "text": "Digital road tolls for Europe",
+          "soonText": "Spring 2027"
+        }
+      ],
+      "paymentsLabel": "Pay with"
+    },
+    "destinations": {
+      "kicker": "eSIM",
+      "title": "Where to next?",
+      "searchPlaceholder": "Search country or region",
+      "hint": "Our customers' most popular destinations this month"
+    },
+    "packages": {
+      "kicker": "Several countries, one eSIM",
+      "title": "Regional plans",
+      "note": "Perfect for multi-country trips: the country changes, your eSIM stays.",
+      "globalKicker": "Global",
+      "globalTitle": "One eSIM for 120 countries.",
+      "globalText": "For frequent flyers, round-the-world trips and anyone who doesn't want to commit to one place.",
+      "globalName": "Global",
+      "globalNote": "120+ countries"
+    },
+    "howto": {
+      "kicker": "New to eSIM?",
+      "title": "What is an eSIM?",
+      "text": "An eSIM is a SIM card built into your smartphone. Instead of inserting a plastic card, you download your plan with a QR code. Your regular number stays active.",
+      "imageCaption": "Connected · 5G",
+      "steps": [
+        {
+          "title": "Choose a plan",
+          "text": "Search your destination, pick your data volume and pay with Apple Pay, PayPal or card."
+        },
+        {
+          "title": "Scan the QR code",
+          "text": "The code arrives instantly by email. Ideally install it at home on Wi-Fi."
+        },
+        {
+          "title": "Land and go online",
+          "text": "After landing, switch on the eSIM and data roaming. Your plan only starts now."
+        }
+      ],
+      "button": "Is my phone eSIM compatible?",
+      "guideLink": "Installation guide"
+    },
+    "airport": {
+      "kicker": "At the airport",
+      "title": "Less queuing. More calm before take-off.",
+      "note": "No frequent-flyer status or business ticket needed. Voucher straight to your phone.",
+      "cards": [
+        {
+          "title": "Lounge access",
+          "text": "Peace and quiet, Wi-Fi, buffet and drinks – in more than 1,400 lounges at 650 airports.",
+          "ticks": [
+            "Free cancellation up to 24 h before",
+            "Stay up to 3 hours"
+          ],
+          "button": "Find a lounge"
+        },
+        {
+          "title": "Fast Track",
+          "text": "Your own lane at security. On average 20 to 40 minutes faster.",
+          "ticks": [
+            "At more than 200 airports",
+            "Ideal at the start of holidays and for connections"
+          ],
+          "button": "Book Fast Track"
+        }
+      ],
+      "airports": [
+        "Frankfurt (FRA)",
+        "Munich (MUC)",
+        "Berlin (BER)",
+        "Düsseldorf (DUS)",
+        "Hamburg (HAM)",
+        "Cologne/Bonn (CGN)",
+        "Stuttgart (STR)",
+        "Vienna (VIE)",
+        "Zurich (ZRH)",
+        "Istanbul (IST)",
+        "Antalya (AYT)",
+        "Dubai (DXB)",
+        "London Heathrow (LHR)",
+        "Palma de Mallorca (PMI)"
+      ],
+      "searchButton": "Check availability"
+    },
+    "reviews": {
+      "kicker": "Reviews",
+      "score": "4.8",
+      "label": "Excellent",
+      "count": "2,341",
+      "linkText": "Read all reviews"
+    },
+    "assistant": {
+      "kicker": "Help centre",
+      "title": "How can we help?",
+      "note": "Our assistant answers most questions instantly – around the clock. If not, our team takes over.",
+      "faqTitle": "Frequently asked questions",
+      "faqText": "Sorted by what our customers ask most often."
+    },
+    "blog": {
+      "kicker": "Magazine",
+      "title": "Travel well prepared.",
+      "linkText": "All articles"
+    },
+    "newsletter": {
+      "title": "10% off your first eSIM.",
+      "text": "Plus travel tips and deals, about once a month. Unsubscribe anytime.",
+      "placeholder": "Your email address",
+      "button": "Get my code",
+      "success": "Thank you! Please confirm your subscription in the email we just sent you."
+    },
+    "footer": {
+      "tagline": "Everything for your trip. Digital, instant and fairly priced.",
+      "columns": [
+        {
+          "title": "Products",
+          "links": [
+            {
+              "label": "eSIM"
+            },
+            {
+              "label": "Regional plans"
+            },
+            {
+              "label": "Lounges"
+            },
+            {
+              "label": "Fast Track"
+            }
+          ]
+        },
+        {
+          "title": "Help",
+          "links": [
+            {
+              "label": "Help centre"
+            },
+            {
+              "label": "eSIM compatibility"
+            },
+            {
+              "label": "FAQ"
+            },
+            {
+              "label": "Contact"
+            }
+          ]
+        },
+        {
+          "title": "Company",
+          "links": [
+            {
+              "label": "About us"
+            },
+            {
+              "label": "Magazine"
+            },
+            {
+              "label": "Affiliate programme"
+            },
+            {
+              "label": "Press"
+            }
+          ]
+        }
+      ],
+      "legal": [
+        {
+          "label": "Legal notice"
+        },
+        {
+          "label": "Privacy"
+        },
+        {
+          "label": "Terms"
+        },
+        {
+          "label": "Cancellation"
+        }
+      ],
+      "copyright": "© 2026 passport.io"
+    },
+    "api": {
+      "unavailableText": "Price coming soon",
+      "modalUnavailableText": "Current prices could not be loaded right now. Please try again in a moment."
+    },
+    "preview": {
+      "text": "Preview – reviews, prices and images are placeholders or test data."
+    }
+  },
+  "de": {
+    "announcement": {
+      "text": "Winter-Aktion: 15 % auf alle Europa-eSIMs mit dem Code WINTER15"
+    },
+    "nav": [
+      {
+        "label": "eSIM"
+      },
+      {
+        "label": "Lounges"
+      },
+      {
+        "label": "Fast Track"
       },
       {
         "label": "Vignetten",
-        "text": "Digitale Maut für Europa",
-        "url": "",
-        "comingSoon": true,
-        "priceKey": "vignette",
-        "soonText": "Frühjahr 2027"
+        "badge": "bald"
+      },
+      {
+        "label": "Hilfe"
+      },
+      {
+        "label": "Magazin"
       }
     ],
-    "paymentsLabel": "Bezahle mit",
-    "payments": [
-      "applepay",
-      "googlepay",
-      "klarna",
-      "paypal"
-    ]
-  },
-  "destinations": {
-    "kicker": "eSIM",
-    "title": "Wohin geht's als Nächstes?",
-    "searchPlaceholder": "Land oder Region suchen",
-    "hint": "Die beliebtesten Ziele unserer Kunden diesen Monat"
-  },
-  "packages": {
-    "kicker": "Mehrere Länder, eine eSIM",
-    "title": "Regionale Pakete",
-    "note": "Ideal für Rundreisen: Du wechselst das Land, die eSIM bleibt.",
-    "globalKicker": "Global",
-    "globalTitle": "Eine eSIM für 120 Länder.",
-    "globalText": "Für Vielreisende, Weltreisen und alle, die sich nicht festlegen wollen.",
-    "globalImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
-    "globalName": "Global",
-    "globalNote": "120+ Länder"
-  },
-  "howto": {
-    "kicker": "Neu bei eSIM?",
-    "title": "Was ist eine eSIM?",
-    "text": "Eine eSIM ist eine SIM-Karte, die fest in deinem Smartphone verbaut ist. Statt eine Plastikkarte einzulegen, lädst du deinen Tarif per QR-Code. Deine normale Nummer bleibt dabei aktiv.",
-    "image": "https://images.unsplash.com/photo-1529775768124-fb874e73ac7e",
-    "imageCaption": "Verbunden · 5G",
-    "steps": [
-      {
-        "title": "Paket wählen",
-        "text": "Reiseziel suchen, Datenvolumen wählen, mit Apple Pay, PayPal oder Karte bezahlen."
-      },
-      {
-        "title": "QR-Code scannen",
-        "text": "Der Code kommt sofort per E-Mail. Am besten noch zu Hause im WLAN installieren."
-      },
-      {
-        "title": "Landen und lossurfen",
-        "text": "Nach der Landung eSIM und Daten-Roaming einschalten. Die Laufzeit beginnt erst jetzt."
-      }
-    ],
-    "button": "Ist mein Handy eSIM-fähig?",
-    "guideLink": "Installationsanleitung"
-  },
-  "airport": {
-    "kicker": "Am Flughafen",
-    "title": "Weniger Schlange. Mehr Ruhe vor dem Abflug.",
-    "note": "Kein Vielfliegerstatus, kein Business-Ticket nötig. Voucher sofort aufs Handy.",
-    "cards": [
-      {
-        "title": "Lounge-Zugang",
-        "text": "Ruhe, WLAN, Buffet und Getränke – in über 1.400 Lounges an 650 Flughäfen.",
-        "image": "https://images.unsplash.com/photo-1759038086545-a905cb519ae8",
-        "ticks": [
-          "Bis 24 h vorher kostenlos stornierbar",
-          "Bis zu 3 Stunden Aufenthalt"
-        ],
-        "button": "Lounge finden",
-        "priceKey": "lounge"
-      },
-      {
-        "title": "Fast Track",
-        "text": "Die eigene Spur an der Sicherheitskontrolle. Im Schnitt 20 bis 40 Minuten schneller.",
-        "image": "https://images.unsplash.com/photo-1767710096520-9246565a9d31",
-        "ticks": [
-          "An über 200 Flughäfen",
-          "Ideal zu Ferienbeginn und beim Umsteigen"
-        ],
-        "button": "Fast Track buchen",
-        "priceKey": "fasttrack"
-      }
-    ],
-    "airports": [
-      "Frankfurt (FRA)",
-      "München (MUC)",
-      "Berlin (BER)",
-      "Düsseldorf (DUS)",
-      "Hamburg (HAM)",
-      "Köln/Bonn (CGN)",
-      "Stuttgart (STR)",
-      "Wien (VIE)",
-      "Zürich (ZRH)",
-      "Istanbul (IST)",
-      "Antalya (AYT)",
-      "Dubai (DXB)",
-      "London Heathrow (LHR)",
-      "Palma de Mallorca (PMI)"
-    ],
-    "searchButton": "Verfügbarkeit prüfen"
-  },
-  "reviews": {
-    "kicker": "Bewertungen",
-    "score": "4,8",
-    "label": "Hervorragend",
-    "count": "2.341",
-    "linkText": "Alle Bewertungen lesen",
-    "linkUrl": "https://www.trustpilot.com"
-  },
-  "assistant": {
-    "kicker": "Hilfe-Center",
-    "title": "Wie können wir helfen?",
-    "note": "Unser Assistent beantwortet die meisten Fragen sofort – rund um die Uhr. Wenn nicht, übernimmt unser Team.",
-    "faqTitle": "Häufig gestellte Fragen",
-    "faqText": "Sortiert nach dem, was unsere Kunden am häufigsten fragen."
-  },
-  "blog": {
-    "kicker": "Magazin",
-    "title": "Gut vorbereitet reisen.",
-    "linkText": "Alle Artikel",
-    "linkUrl": "#"
-  },
-  "newsletter": {
-    "title": "10 % auf deine erste eSIM.",
-    "text": "Plus Reisetipps und Angebote, etwa einmal im Monat. Abmeldung jederzeit.",
-    "placeholder": "Deine E-Mail-Adresse",
-    "button": "Code sichern",
-    "success": "Danke! Bitte bestätige deine Anmeldung in der E-Mail, die wir dir gerade geschickt haben."
-  },
-  "footer": {
-    "tagline": "Alles für deine Reise. Digital, sofort und zu fairen Preisen.",
-    "columns": [
-      {
-        "title": "Produkte",
-        "links": [
-          {
-            "label": "eSIM",
-            "url": "#esim"
-          },
-          {
-            "label": "Regionale Pakete",
-            "url": "#packages"
-          },
-          {
-            "label": "Lounges",
-            "url": "#airport"
-          },
-          {
-            "label": "Fast Track",
-            "url": "#airport"
-          }
-        ]
-      },
-      {
-        "title": "Hilfe",
-        "links": [
-          {
-            "label": "Hilfe-Center",
-            "url": "#assistant"
-          },
-          {
-            "label": "eSIM-Kompatibilität",
-            "url": "#howto"
-          },
-          {
-            "label": "FAQ",
-            "url": "#faq"
-          },
-          {
-            "label": "Kontakt",
-            "url": "mailto:support@passport.io"
-          }
-        ]
-      },
-      {
-        "title": "Unternehmen",
-        "links": [
-          {
-            "label": "Über uns",
-            "url": "#"
-          },
-          {
-            "label": "Magazin",
-            "url": "#blog"
-          },
-          {
-            "label": "Partnerprogramm",
-            "url": "#"
-          },
-          {
-            "label": "Presse",
-            "url": "#"
-          }
-        ]
-      }
-    ],
-    "payments": [
-      "applepay",
-      "googlepay",
-      "visa",
-      "mastercard",
-      "paypal",
-      "klarna"
-    ],
-    "legal": [
-      {
-        "label": "Impressum",
-        "url": "#"
-      },
-      {
-        "label": "Datenschutz",
-        "url": "#"
-      },
-      {
-        "label": "AGB",
-        "url": "#"
-      },
-      {
-        "label": "Widerruf",
-        "url": "#"
-      }
-    ],
-    "copyright": "© 2026 passport.io"
-  },
-  "api": {
-    "pricesUrl": "api/prices.json",
-    "questionsUrl": "https://sbzwibctxezprpefwxzn.supabase.co/functions/v1/questions",
-    "unavailableText": "Preis folgt",
-    "modalUnavailableText": "Die aktuellen Preise konnten gerade nicht geladen werden. Bitte versuche es in einem Moment erneut."
-  },
-  "preview": {
-    "enabled": true,
-    "text": "Vorschau – Bewertungen, Preise und Bilder sind Platzhalter bzw. Testdaten."
+    "hero": {
+      "kicker": "eSIM · Lounge · Fast Track",
+      "title": "Mobiles Internet in 190 Ländern.",
+      "subtitle": "Ab {preis:esim}, in zwei Minuten aktiv.",
+      "searchPlaceholder": "Wohin reist du?",
+      "searchButton": "eSIM finden",
+      "facts": [
+        {
+          "text": "4,8 bei Trustpilot"
+        },
+        {
+          "text": "QR-Code sofort per E-Mail"
+        },
+        {
+          "text": "30 Tage Geld-zurück"
+        }
+      ],
+      "products": [
+        {
+          "label": "eSIM",
+          "text": "Daten für 190+ Länder"
+        },
+        {
+          "label": "Lounge",
+          "text": "1.400 Lounges weltweit"
+        },
+        {
+          "label": "Fast Track",
+          "text": "Schneller durch die Kontrolle"
+        },
+        {
+          "label": "Vignetten",
+          "text": "Digitale Maut für Europa",
+          "soonText": "Frühjahr 2027"
+        }
+      ],
+      "paymentsLabel": "Bezahle mit"
+    },
+    "destinations": {
+      "kicker": "eSIM",
+      "title": "Wohin geht's als Nächstes?",
+      "searchPlaceholder": "Land oder Region suchen",
+      "hint": "Die beliebtesten Ziele unserer Kunden diesen Monat"
+    },
+    "packages": {
+      "kicker": "Mehrere Länder, eine eSIM",
+      "title": "Regionale Pakete",
+      "note": "Ideal für Rundreisen: Du wechselst das Land, die eSIM bleibt.",
+      "globalKicker": "Global",
+      "globalTitle": "Eine eSIM für 120 Länder.",
+      "globalText": "Für Vielreisende, Weltreisen und alle, die sich nicht festlegen wollen.",
+      "globalName": "Global",
+      "globalNote": "120+ Länder"
+    },
+    "howto": {
+      "kicker": "Neu bei eSIM?",
+      "title": "Was ist eine eSIM?",
+      "text": "Eine eSIM ist eine SIM-Karte, die fest in deinem Smartphone verbaut ist. Statt eine Plastikkarte einzulegen, lädst du deinen Tarif per QR-Code. Deine normale Nummer bleibt dabei aktiv.",
+      "imageCaption": "Verbunden · 5G",
+      "steps": [
+        {
+          "title": "Paket wählen",
+          "text": "Reiseziel suchen, Datenvolumen wählen, mit Apple Pay, PayPal oder Karte bezahlen."
+        },
+        {
+          "title": "QR-Code scannen",
+          "text": "Der Code kommt sofort per E-Mail. Am besten noch zu Hause im WLAN installieren."
+        },
+        {
+          "title": "Landen und lossurfen",
+          "text": "Nach der Landung eSIM und Daten-Roaming einschalten. Die Laufzeit beginnt erst jetzt."
+        }
+      ],
+      "button": "Ist mein Handy eSIM-fähig?",
+      "guideLink": "Installationsanleitung"
+    },
+    "airport": {
+      "kicker": "Am Flughafen",
+      "title": "Weniger Schlange. Mehr Ruhe vor dem Abflug.",
+      "note": "Kein Vielfliegerstatus, kein Business-Ticket nötig. Voucher sofort aufs Handy.",
+      "cards": [
+        {
+          "title": "Lounge-Zugang",
+          "text": "Ruhe, WLAN, Buffet und Getränke – in über 1.400 Lounges an 650 Flughäfen.",
+          "ticks": [
+            "Bis 24 h vorher kostenlos stornierbar",
+            "Bis zu 3 Stunden Aufenthalt"
+          ],
+          "button": "Lounge finden"
+        },
+        {
+          "title": "Fast Track",
+          "text": "Die eigene Spur an der Sicherheitskontrolle. Im Schnitt 20 bis 40 Minuten schneller.",
+          "ticks": [
+            "An über 200 Flughäfen",
+            "Ideal zu Ferienbeginn und beim Umsteigen"
+          ],
+          "button": "Fast Track buchen"
+        }
+      ],
+      "airports": [
+        "Frankfurt (FRA)",
+        "München (MUC)",
+        "Berlin (BER)",
+        "Düsseldorf (DUS)",
+        "Hamburg (HAM)",
+        "Köln/Bonn (CGN)",
+        "Stuttgart (STR)",
+        "Wien (VIE)",
+        "Zürich (ZRH)",
+        "Istanbul (IST)",
+        "Antalya (AYT)",
+        "Dubai (DXB)",
+        "London Heathrow (LHR)",
+        "Palma de Mallorca (PMI)"
+      ],
+      "searchButton": "Verfügbarkeit prüfen"
+    },
+    "reviews": {
+      "kicker": "Bewertungen",
+      "score": "4,8",
+      "label": "Hervorragend",
+      "count": "2.341",
+      "linkText": "Alle Bewertungen lesen"
+    },
+    "assistant": {
+      "kicker": "Hilfe-Center",
+      "title": "Wie können wir helfen?",
+      "note": "Unser Assistent beantwortet die meisten Fragen sofort – rund um die Uhr. Wenn nicht, übernimmt unser Team.",
+      "faqTitle": "Häufig gestellte Fragen",
+      "faqText": "Sortiert nach dem, was unsere Kunden am häufigsten fragen."
+    },
+    "blog": {
+      "kicker": "Magazin",
+      "title": "Gut vorbereitet reisen.",
+      "linkText": "Alle Artikel"
+    },
+    "newsletter": {
+      "title": "10 % auf deine erste eSIM.",
+      "text": "Plus Reisetipps und Angebote, etwa einmal im Monat. Abmeldung jederzeit.",
+      "placeholder": "Deine E-Mail-Adresse",
+      "button": "Code sichern",
+      "success": "Danke! Bitte bestätige deine Anmeldung in der E-Mail, die wir dir gerade geschickt haben."
+    },
+    "footer": {
+      "tagline": "Alles für deine Reise. Digital, sofort und zu fairen Preisen.",
+      "columns": [
+        {
+          "title": "Produkte",
+          "links": [
+            {
+              "label": "eSIM"
+            },
+            {
+              "label": "Regionale Pakete"
+            },
+            {
+              "label": "Lounges"
+            },
+            {
+              "label": "Fast Track"
+            }
+          ]
+        },
+        {
+          "title": "Hilfe",
+          "links": [
+            {
+              "label": "Hilfe-Center"
+            },
+            {
+              "label": "eSIM-Kompatibilität"
+            },
+            {
+              "label": "FAQ"
+            },
+            {
+              "label": "Kontakt"
+            }
+          ]
+        },
+        {
+          "title": "Unternehmen",
+          "links": [
+            {
+              "label": "Über uns"
+            },
+            {
+              "label": "Magazin"
+            },
+            {
+              "label": "Partnerprogramm"
+            },
+            {
+              "label": "Presse"
+            }
+          ]
+        }
+      ],
+      "legal": [
+        {
+          "label": "Impressum"
+        },
+        {
+          "label": "Datenschutz"
+        },
+        {
+          "label": "AGB"
+        },
+        {
+          "label": "Widerruf"
+        }
+      ],
+      "copyright": "© 2026 passport.io"
+    },
+    "api": {
+      "unavailableText": "Preis folgt",
+      "modalUnavailableText": "Die aktuellen Preise konnten gerade nicht geladen werden. Bitte versuche es in einem Moment erneut."
+    },
+    "preview": {
+      "text": "Vorschau – Bewertungen, Preise und Bilder sind Platzhalter bzw. Testdaten."
+    }
   }
 }

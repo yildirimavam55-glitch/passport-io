@@ -1,47 +1,131 @@
 {
-  "note": "DEMO-PLATZHALTER – vor dem Livegang durch das Trustpilot-Widget ersetzen.",
-  "items": [
-    {
-      "name": "Kundin A.",
-      "stars": 5,
-      "date": "vor 2 Tagen",
-      "title": "In 2 Minuten online",
-      "text": "QR-Code gescannt, in Antalya gelandet, sofort 5G. Viel günstiger als Roaming."
-    },
-    {
-      "name": "Kunde M.",
-      "stars": 5,
-      "date": "vor 4 Tagen",
-      "title": "Lounge-Voucher top",
-      "text": "Buchung am Vorabend, Voucher kam sofort. Am Eingang nur QR-Code gezeigt – problemlos."
-    },
-    {
-      "name": "Kundin S.",
-      "stars": 5,
-      "date": "vor 1 Woche",
-      "title": "Super Support",
-      "text": "Hatte eine Frage zur Aktivierung, der Assistent hat sie direkt beantwortet."
-    },
-    {
-      "name": "Kunde T.",
-      "stars": 4,
-      "date": "vor 1 Woche",
-      "title": "Fast Track lohnt sich",
-      "text": "Zu Ferienbeginn in Frankfurt locker 30 Minuten gespart. Nächstes Mal wieder."
-    },
-    {
-      "name": "Kundin L.",
-      "stars": 5,
-      "date": "vor 2 Wochen",
-      "title": "Perfekt für Rundreisen",
-      "text": "Asien-Paket für Thailand, Vietnam und Malaysia – eine eSIM für alles. Lief einwandfrei."
-    },
-    {
-      "name": "Kunde R.",
-      "stars": 5,
-      "date": "vor 3 Wochen",
-      "title": "Einfach und fair",
-      "text": "Klare Preise, keine versteckten Kosten. Nachbuchen ging mit einem Klick."
-    }
-  ]
+  "tr": {
+    "note": "ÖRNEK VERİ – yayına almadan önce Trustpilot widget'ı ile değiştirilecek.",
+    "items": [
+      {
+        "name": "Müşteri A.",
+        "stars": 5,
+        "date": "2 gün önce",
+        "title": "2 dakikada çevrimiçi",
+        "text": "QR kodu taradım, Antalya'ya indim, anında 5G. Dolaşımdan çok daha ucuz."
+      },
+      {
+        "name": "Müşteri M.",
+        "stars": 5,
+        "date": "4 gün önce",
+        "title": "Lounge voucher'ı harika",
+        "text": "Bir gece önceden aldım, voucher hemen geldi. Girişte sadece QR kodu gösterdim – sorunsuz."
+      },
+      {
+        "name": "Müşteri S.",
+        "stars": 5,
+        "date": "1 hafta önce",
+        "title": "Süper destek",
+        "text": "Etkinleştirmeyle ilgili bir sorum vardı, asistan hemen yanıtladı."
+      },
+      {
+        "name": "Müşteri T.",
+        "stars": 4,
+        "date": "1 hafta önce",
+        "title": "Fast Track'e değer",
+        "text": "Tatil başlangıcında Frankfurt'ta rahatça 30 dakika kazandım. Bir dahaki sefere yine."
+      },
+      {
+        "name": "Müşteri L.",
+        "stars": 5,
+        "date": "2 hafta önce",
+        "title": "Turlar için mükemmel",
+        "text": "Tayland, Vietnam ve Malezya için Asya paketi – her şey için tek eSIM. Kusursuz çalıştı."
+      },
+      {
+        "name": "Müşteri R.",
+        "stars": 5,
+        "date": "3 hafta önce",
+        "title": "Basit ve adil",
+        "text": "Net fiyatlar, gizli ücret yok. Ek veri tek tıkla eklendi."
+      }
+    ]
+  },
+  "en": {
+    "note": "DEMO PLACEHOLDER – replace with the Trustpilot widget before going live.",
+    "items": [
+      {
+        "name": "Customer A.",
+        "date": "2 days ago",
+        "title": "Online in 2 minutes",
+        "text": "Scanned the QR code, landed in Antalya, 5G straight away. Much cheaper than roaming."
+      },
+      {
+        "name": "Customer M.",
+        "date": "4 days ago",
+        "title": "Great lounge voucher",
+        "text": "Booked the evening before, the voucher arrived instantly. Just showed the QR code at the entrance – no problem."
+      },
+      {
+        "name": "Customer S.",
+        "date": "1 week ago",
+        "title": "Super support",
+        "text": "Had a question about activation and the assistant answered it right away."
+      },
+      {
+        "name": "Customer T.",
+        "date": "1 week ago",
+        "title": "Fast Track is worth it",
+        "text": "Saved a good 30 minutes in Frankfurt at the start of the holidays. Will do it again."
+      },
+      {
+        "name": "Customer L.",
+        "date": "2 weeks ago",
+        "title": "Perfect for multi-country trips",
+        "text": "Asia plan for Thailand, Vietnam and Malaysia – one eSIM for everything. Worked flawlessly."
+      },
+      {
+        "name": "Customer R.",
+        "date": "3 weeks ago",
+        "title": "Simple and fair",
+        "text": "Clear prices, no hidden costs. Topping up took one click."
+      }
+    ]
+  },
+  "de": {
+    "note": "DEMO-PLATZHALTER – vor dem Livegang durch das Trustpilot-Widget ersetzen.",
+    "items": [
+      {
+        "name": "Kundin A.",
+        "date": "vor 2 Tagen",
+        "title": "In 2 Minuten online",
+        "text": "QR-Code gescannt, in Antalya gelandet, sofort 5G. Viel günstiger als Roaming."
+      },
+      {
+        "name": "Kunde M.",
+        "date": "vor 4 Tagen",
+        "title": "Lounge-Voucher top",
+        "text": "Buchung am Vorabend, Voucher kam sofort. Am Eingang nur QR-Code gezeigt – problemlos."
+      },
+      {
+        "name": "Kundin S.",
+        "date": "vor 1 Woche",
+        "title": "Super Support",
+        "text": "Hatte eine Frage zur Aktivierung, der Assistent hat sie direkt beantwortet."
+      },
+      {
+        "name": "Kunde T.",
+        "date": "vor 1 Woche",
+        "title": "Fast Track lohnt sich",
+        "text": "Zu Ferienbeginn in Frankfurt locker 30 Minuten gespart. Nächstes Mal wieder."
+      },
+      {
+        "name": "Kundin L.",
+        "date": "vor 2 Wochen",
+        "title": "Perfekt für Rundreisen",
+        "text": "Asien-Paket für Thailand, Vietnam und Malaysia – eine eSIM für alles. Lief einwandfrei."
+      },
+      {
+        "name": "Kunde R.",
+        "date": "vor 3 Wochen",
+        "title": "Einfach und fair",
+        "text": "Klare Preise, keine versteckten Kosten. Nachbuchen ging mit einem Klick."
+      }
+    ]
+  }
 }

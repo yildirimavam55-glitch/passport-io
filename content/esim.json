@@ -1,466 +1,564 @@
 {
-  "countries": [
-    {
-      "code": "tr",
-      "name": "Türkei",
-      "popular": true,
-      "tag": "Bestseller",
-      "image": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200"
-    },
-    {
-      "code": "us",
-      "name": "USA",
-      "popular": true,
-      "tag": "5G",
-      "image": "https://images.unsplash.com/photo-1496588152823-86ff7695e68f"
-    },
-    {
-      "code": "th",
-      "name": "Thailand",
-      "popular": true,
-      "tag": "",
-      "image": "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220"
-    },
-    {
-      "code": "ae",
-      "name": "Vereinigte Arab. Emirate",
-      "popular": true,
-      "tag": "",
-      "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
-    },
-    {
-      "code": "es",
-      "name": "Spanien",
-      "popular": true,
-      "tag": "",
-      "image": "https://images.unsplash.com/photo-1583422409516-2895a77efded"
-    },
-    {
-      "code": "it",
-      "name": "Italien",
-      "popular": true,
-      "tag": "",
-      "image": "https://images.unsplash.com/photo-1612698093158-e07ac200d44e"
-    },
-    {
-      "code": "jp",
-      "name": "Japan",
-      "popular": true,
-      "tag": "5G",
-      "image": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf"
-    },
-    {
-      "code": "gr",
-      "name": "Griechenland",
-      "popular": true,
-      "tag": "",
-      "image": "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e"
-    },
-    {
-      "code": "eg",
-      "name": "Ägypten",
-      "popular": true,
-      "tag": "",
-      "image": "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368"
-    },
-    {
-      "code": "gb",
-      "name": "Vereinigtes Königreich",
-      "popular": true,
-      "tag": "",
-      "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad"
-    },
-    {
-      "code": "id",
-      "name": "Indonesien",
-      "popular": true,
-      "tag": "",
-      "image": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f"
-    },
-    {
-      "code": "ma",
-      "name": "Marokko",
-      "popular": true,
-      "tag": "",
-      "image": "https://images.unsplash.com/photo-1597212618440-806262de4f6b"
-    },
-    {
-      "code": "fr",
-      "name": "Frankreich",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "pt",
-      "name": "Portugal",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "hr",
-      "name": "Kroatien",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "ch",
-      "name": "Schweiz",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "at",
-      "name": "Österreich",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "nl",
-      "name": "Niederlande",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "ca",
-      "name": "Kanada",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "mx",
-      "name": "Mexiko",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "br",
-      "name": "Brasilien",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "cn",
-      "name": "China",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "kr",
-      "name": "Südkorea",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "vn",
-      "name": "Vietnam",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "sg",
-      "name": "Singapur",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "my",
-      "name": "Malaysia",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "in",
-      "name": "Indien",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "au",
-      "name": "Australien",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "za",
-      "name": "Südafrika",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "sa",
-      "name": "Saudi-Arabien",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "qa",
-      "name": "Katar",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "mv",
-      "name": "Malediven",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "lk",
-      "name": "Sri Lanka",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "tn",
-      "name": "Tunesien",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "cy",
-      "name": "Zypern",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "me",
-      "name": "Montenegro",
-      "popular": false,
-      "tag": "",
-      "image": "https://images.unsplash.com/photo-1700901742651-6b353164caf3"
-    },
-    {
-      "code": "al",
-      "name": "Albanien",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "rs",
-      "name": "Serbien",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "ba",
-      "name": "Bosnien & Herzegowina",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "ge",
-      "name": "Georgien",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "az",
-      "name": "Aserbaidschan",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    },
-    {
-      "code": "do",
-      "name": "Dominikanische Republik",
-      "popular": false,
-      "tag": "",
-      "image": ""
-    }
-  ],
-  "regional": [
-    {
-      "id": "eu",
-      "name": "Europa",
-      "countries": 39,
-      "data": "1–50 GB",
-      "note": "Alle EU-Länder + UK, CH, TR",
-      "image": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f",
-      "mapCodes": [
-        "040",
-        "056",
-        "100",
-        "191",
-        "196",
-        "203",
-        "208",
-        "233",
-        "246",
-        "250",
-        "276",
-        "300",
-        "348",
-        "372",
-        "380",
-        "428",
-        "440",
-        "442",
-        "470",
-        "528",
-        "616",
-        "620",
-        "642",
-        "703",
-        "705",
-        "724",
-        "752",
-        "826",
-        "756",
-        "578",
-        "352",
-        "792",
-        "688",
-        "499",
-        "008",
-        "807",
-        "070",
-        "-99",
-        "498"
-      ]
-    },
-    {
-      "id": "asia",
-      "name": "Asien",
-      "countries": 14,
-      "data": "1–20 GB",
-      "note": "Thailand, Japan, Vietnam u. v. m.",
-      "image": "https://images.unsplash.com/photo-1620015092538-e33c665fc181",
-      "mapCodes": [
-        "764",
-        "392",
-        "704",
-        "360",
-        "458",
-        "702",
-        "410",
-        "156",
-        "356",
-        "608",
-        "116",
-        "144",
-        "158",
-        "418"
-      ]
-    },
-    {
-      "id": "na",
-      "name": "Nordamerika",
-      "countries": 3,
-      "data": "1–20 GB",
-      "note": "USA, Kanada, Mexiko",
-      "image": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
-      "mapCodes": [
-        "840",
-        "124",
-        "484"
-      ]
-    },
-    {
-      "id": "me",
-      "name": "Naher Osten",
-      "countries": 12,
-      "data": "1–20 GB",
-      "note": "VAE, Katar, Saudi-Arabien u. v. m.",
-      "image": "https://images.unsplash.com/photo-1700901742651-6b353164caf3",
-      "mapCodes": [
-        "784",
-        "634",
-        "682",
-        "512",
-        "414",
-        "048",
-        "400",
-        "376",
-        "368",
-        "422",
-        "275",
-        "887"
-      ]
-    },
-    {
-      "id": "latam",
-      "name": "Lateinamerika",
-      "countries": 18,
-      "data": "1–10 GB",
-      "note": "Brasilien, Mexiko, Kolumbien u. v. m.",
-      "image": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325",
-      "mapCodes": [
-        "076",
-        "032",
-        "152",
-        "170",
-        "604",
-        "218",
-        "858",
-        "600",
-        "068",
-        "188",
-        "591",
-        "320",
-        "214",
-        "222",
-        "340",
-        "558",
-        "862"
-      ]
-    },
-    {
-      "id": "af",
-      "name": "Afrika",
-      "countries": 22,
-      "data": "1–10 GB",
-      "note": "Ägypten, Marokko, Südafrika u. v. m.",
-      "image": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99",
-      "mapCodes": [
-        "818",
-        "504",
-        "710",
-        "788",
-        "404",
-        "834",
-        "566",
-        "288",
-        "686",
-        "800",
-        "646",
-        "012",
-        "384",
-        "120",
-        "450",
-        "894",
-        "072",
-        "516",
-        "508",
-        "231",
-        "716"
-      ]
-    }
-  ]
+  "tr": {
+    "countries": [
+      {
+        "code": "tr",
+        "name": "Türkei",
+        "popular": true,
+        "tag": "Çok satan",
+        "image": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200"
+      },
+      {
+        "code": "us",
+        "name": "USA",
+        "popular": true,
+        "tag": "5G",
+        "image": "https://images.unsplash.com/photo-1496588152823-86ff7695e68f"
+      },
+      {
+        "code": "th",
+        "name": "Thailand",
+        "popular": true,
+        "tag": "",
+        "image": "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220"
+      },
+      {
+        "code": "ae",
+        "name": "Vereinigte Arab. Emirate",
+        "popular": true,
+        "tag": "",
+        "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
+      },
+      {
+        "code": "es",
+        "name": "Spanien",
+        "popular": true,
+        "tag": "",
+        "image": "https://images.unsplash.com/photo-1583422409516-2895a77efded"
+      },
+      {
+        "code": "it",
+        "name": "Italien",
+        "popular": true,
+        "tag": "",
+        "image": "https://images.unsplash.com/photo-1612698093158-e07ac200d44e"
+      },
+      {
+        "code": "jp",
+        "name": "Japan",
+        "popular": true,
+        "tag": "5G",
+        "image": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf"
+      },
+      {
+        "code": "gr",
+        "name": "Griechenland",
+        "popular": true,
+        "tag": "",
+        "image": "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e"
+      },
+      {
+        "code": "eg",
+        "name": "Ägypten",
+        "popular": true,
+        "tag": "",
+        "image": "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368"
+      },
+      {
+        "code": "gb",
+        "name": "Vereinigtes Königreich",
+        "popular": true,
+        "tag": "",
+        "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad"
+      },
+      {
+        "code": "id",
+        "name": "Indonesien",
+        "popular": true,
+        "tag": "",
+        "image": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f"
+      },
+      {
+        "code": "ma",
+        "name": "Marokko",
+        "popular": true,
+        "tag": "",
+        "image": "https://images.unsplash.com/photo-1597212618440-806262de4f6b"
+      },
+      {
+        "code": "fr",
+        "name": "Frankreich",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "pt",
+        "name": "Portugal",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "hr",
+        "name": "Kroatien",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "ch",
+        "name": "Schweiz",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "at",
+        "name": "Österreich",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "nl",
+        "name": "Niederlande",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "ca",
+        "name": "Kanada",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "mx",
+        "name": "Mexiko",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "br",
+        "name": "Brasilien",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "cn",
+        "name": "China",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "kr",
+        "name": "Südkorea",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "vn",
+        "name": "Vietnam",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "sg",
+        "name": "Singapur",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "my",
+        "name": "Malaysia",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "in",
+        "name": "Indien",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "au",
+        "name": "Australien",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "za",
+        "name": "Südafrika",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "sa",
+        "name": "Saudi-Arabien",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "qa",
+        "name": "Katar",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "mv",
+        "name": "Malediven",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "lk",
+        "name": "Sri Lanka",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "tn",
+        "name": "Tunesien",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "cy",
+        "name": "Zypern",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "me",
+        "name": "Montenegro",
+        "popular": false,
+        "tag": "",
+        "image": "https://images.unsplash.com/photo-1700901742651-6b353164caf3"
+      },
+      {
+        "code": "al",
+        "name": "Albanien",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "rs",
+        "name": "Serbien",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "ba",
+        "name": "Bosnien & Herzegowina",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "ge",
+        "name": "Georgien",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "az",
+        "name": "Aserbaidschan",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      },
+      {
+        "code": "do",
+        "name": "Dominikanische Republik",
+        "popular": false,
+        "tag": "",
+        "image": ""
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "Avrupa",
+        "countries": 39,
+        "data": "1–50 GB",
+        "note": "Tüm AB ülkeleri + Birleşik Krallık, İsviçre, Türkiye",
+        "image": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f",
+        "mapCodes": [
+          "040",
+          "056",
+          "100",
+          "191",
+          "196",
+          "203",
+          "208",
+          "233",
+          "246",
+          "250",
+          "276",
+          "300",
+          "348",
+          "372",
+          "380",
+          "428",
+          "440",
+          "442",
+          "470",
+          "528",
+          "616",
+          "620",
+          "642",
+          "703",
+          "705",
+          "724",
+          "752",
+          "826",
+          "756",
+          "578",
+          "352",
+          "792",
+          "688",
+          "499",
+          "008",
+          "807",
+          "070",
+          "-99",
+          "498"
+        ]
+      },
+      {
+        "id": "asia",
+        "name": "Asya",
+        "countries": 14,
+        "data": "1–20 GB",
+        "note": "Tayland, Japonya, Vietnam ve daha fazlası",
+        "image": "https://images.unsplash.com/photo-1620015092538-e33c665fc181",
+        "mapCodes": [
+          "764",
+          "392",
+          "704",
+          "360",
+          "458",
+          "702",
+          "410",
+          "156",
+          "356",
+          "608",
+          "116",
+          "144",
+          "158",
+          "418"
+        ]
+      },
+      {
+        "id": "na",
+        "name": "Kuzey Amerika",
+        "countries": 3,
+        "data": "1–20 GB",
+        "note": "ABD, Kanada, Meksika",
+        "image": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
+        "mapCodes": [
+          "840",
+          "124",
+          "484"
+        ]
+      },
+      {
+        "id": "me",
+        "name": "Orta Doğu",
+        "countries": 12,
+        "data": "1–20 GB",
+        "note": "BAE, Katar, Suudi Arabistan ve daha fazlası",
+        "image": "https://images.unsplash.com/photo-1700901742651-6b353164caf3",
+        "mapCodes": [
+          "784",
+          "634",
+          "682",
+          "512",
+          "414",
+          "048",
+          "400",
+          "376",
+          "368",
+          "422",
+          "275",
+          "887"
+        ]
+      },
+      {
+        "id": "latam",
+        "name": "Latin Amerika",
+        "countries": 18,
+        "data": "1–10 GB",
+        "note": "Brezilya, Meksika, Kolombiya ve daha fazlası",
+        "image": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325",
+        "mapCodes": [
+          "076",
+          "032",
+          "152",
+          "170",
+          "604",
+          "218",
+          "858",
+          "600",
+          "068",
+          "188",
+          "591",
+          "320",
+          "214",
+          "222",
+          "340",
+          "558",
+          "862"
+        ]
+      },
+      {
+        "id": "af",
+        "name": "Afrika",
+        "countries": 22,
+        "data": "1–10 GB",
+        "note": "Mısır, Fas, Güney Afrika ve daha fazlası",
+        "image": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99",
+        "mapCodes": [
+          "818",
+          "504",
+          "710",
+          "788",
+          "404",
+          "834",
+          "566",
+          "288",
+          "686",
+          "800",
+          "646",
+          "012",
+          "384",
+          "120",
+          "450",
+          "894",
+          "072",
+          "516",
+          "508",
+          "231",
+          "716"
+        ]
+      }
+    ]
+  },
+  "en": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "Best seller"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "Europe",
+        "note": "All EU countries + UK, Switzerland, Türkiye"
+      },
+      {
+        "id": "asia",
+        "name": "Asia",
+        "note": "Thailand, Japan, Vietnam and more"
+      },
+      {
+        "id": "na",
+        "name": "North America",
+        "note": "USA, Canada, Mexico"
+      },
+      {
+        "id": "me",
+        "name": "Middle East",
+        "note": "UAE, Qatar, Saudi Arabia and more"
+      },
+      {
+        "id": "latam",
+        "name": "Latin America",
+        "note": "Brazil, Mexico, Colombia and more"
+      },
+      {
+        "id": "af",
+        "name": "Africa",
+        "note": "Egypt, Morocco, South Africa and more"
+      }
+    ]
+  },
+  "de": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "Bestseller"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "Europa",
+        "note": "Alle EU-Länder + UK, CH, TR"
+      },
+      {
+        "id": "asia",
+        "name": "Asien",
+        "note": "Thailand, Japan, Vietnam u. v. m."
+      },
+      {
+        "id": "na",
+        "name": "Nordamerika",
+        "note": "USA, Kanada, Mexiko"
+      },
+      {
+        "id": "me",
+        "name": "Naher Osten",
+        "note": "VAE, Katar, Saudi-Arabien u. v. m."
+      },
+      {
+        "id": "latam",
+        "name": "Lateinamerika",
+        "note": "Brasilien, Mexiko, Kolumbien u. v. m."
+      },
+      {
+        "id": "af",
+        "name": "Afrika",
+        "note": "Ägypten, Marokko, Südafrika u. v. m."
+      }
+    ]
+  }
 }
