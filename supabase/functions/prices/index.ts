@@ -19,8 +19,16 @@
    ========================================================================== */
 
 import { createClient } from "jsr:@supabase/supabase-js@2";
+// Testdaten (gleiches Format wie die Live-Antwort) – nur solange KEIN eSIM-Anbieter eingetragen ist.
+import MOCK from "./mock.json" with { type: "json" };
 
 const CACHE_SECONDS = 15 * 60;
+/* ---------- Währungen ----------
+   Anbieterpreise kommen in ihrer Währung (meist EUR). Andere Währungen werden mit dem
+   offiziellen Tageskurs der Europäischen Zentralbank (über api.frankfurter.dev) umgerechnet.
+   Erlaubte Währungen: Secret CURRENCIES (z. B. "EUR,USD,GBP,TRY,CHF"). Keine festen Kurse im Code. */
+const FX_SECONDS = 6 * 60 * 60;
+const currencies = () => (Deno.env.get("CURRENCIES") ?? "EUR,USD,GBP,TRY,CHF").split(",").map((s) => s.trim().toUpperCase()).filter(Boolean);
 const env = (k: string) => Deno.env.get(k) ?? "";
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
 
@@ -93,23 +101,70 @@ async function fetchAll(previous: Record<string, unknown> | null) {
   return body;
 }
 
+/* Wechselkurse (EZB) – zwischengespeichert in price_cache unter "fx:<Basis>" */
+async function rates(base: string): Promise<{ date: string; rates: Record<string, number> } | null> {
+  const id = `fx:${base}`;
+  const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", id).maybeSingle();
+  if (row && (Date.now() - new Date(row.updated_at).getTime()) / 1000 < FX_SECONDS) return row.body;
+  try {
+    const res = await fetch(`https://api.frankfurter.dev/v1/latest?base=${base}`, { signal: AbortSignal.timeout(8000) });
+    if (!res.ok) throw new Error(`FX HTTP ${res.status}`);
+    const j = await res.json();
+    const body = { date: j.date, rates: j.rates };
+    await db.from("price_cache").upsert({ id, body, updated_at: new Date().toISOString() });
+    return body;
+  } catch (err) {
+    console.error(err);
+    return row?.body ?? null; // letzter bekannter offizieller Kurs, sonst keine Umrechnung
+  }
+}
+
+/* Alle Preisfelder umrechnen (Pakete + „ab“-Preise) */
+// deno-lint-ignore no-explicit-any
+function convert(body: any, rate: number) {
+  const out = structuredClone(body);
+  const plans = (g: { plans?: Plan[] } | undefined) => g?.plans?.forEach((p) => (p.price = round(p.price * rate)));
+  Object.values(out.esim?.countries ?? {}).forEach((c) => plans(c as { plans: Plan[] }));
+  Object.values(out.esim?.regions ?? {}).forEach((c) => plans(c as { plans: Plan[] }));
+  plans(out.esim?.global);
+  for (const k of ["lounge", "fasttrack", "vignette"]) if (out[k]?.from != null) out[k].from = round(out[k].from * rate);
+  return out;
+}
+
 Deno.serve(async (req) => {
   const headers = cors(req);
   if (req.method === "OPTIONS") return new Response(null, { headers });
+  const json = (b: unknown, status = 200) => new Response(JSON.stringify(b), { status, headers: { ...headers, "Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=60" } });
 
-  const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", "current").maybeSingle();
-  let body = row?.body ?? null;
-  const age = row ? (Date.now() - new Date(row.updated_at).getTime()) / 1000 : Infinity;
-
-  if (!body || age > CACHE_SECONDS) {
-    try {
-      body = await fetchAll(body);
-      await db.from("price_cache").upsert({ id: "current", body, updated_at: new Date().toISOString() });
-    } catch (err) {
-      console.error(err);
-      if (!body) return new Response(JSON.stringify({ error: "prices_unavailable" }), { status: 503, headers: { ...headers, "Content-Type": "application/json" } });
+  // deno-lint-ignore no-explicit-any
+  let body: any = null;
+  if (!env("ESIM_API_URL")) {
+    // Noch kein Anbieter angebunden → Testdaten (auf der Seite als „Testdaten“ gekennzeichnet)
+    body = { ...structuredClone(MOCK), source: "mock" };
+  } else {
+    const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", "current").maybeSingle();
+    body = row?.body ?? null;
+    const age = row ? (Date.now() - new Date(row.updated_at).getTime()) / 1000 : Infinity;
+    if (!body || age > CACHE_SECONDS) {
+      try {
+        body = await fetchAll(body);
+        await db.from("price_cache").upsert({ id: "current", body, updated_at: new Date().toISOString() });
+      } catch (err) {
+        console.error(err);
+        if (!body) return json({ error: "prices_unavailable" }, 503);
+      }
     }
   }
+
+  // Gewünschte Währung (?currency=TRY). Ohne Kurs bleibt es bei der Anbieterwährung – nie ein geschätzter Wert.
+  const want = (new URL(req.url).searchParams.get("currency") ?? "").toUpperCase();
+  const base = body.currency ?? "EUR";
+  if (want && want !== base && currencies().includes(want)) {
+    const fx = await rates(base);
+    const rate = fx?.rates?.[want];
+    if (rate) body = { ...convert(body, rate), currency: want, fx: { base, rate, date: fx!.date, source: "ECB" } };
+  }
+  body.currencies = currencies();
 
   return new Response(JSON.stringify(body), {
     headers: { ...headers, "Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=60" },

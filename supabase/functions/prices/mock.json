@@ -1,0 +1,1730 @@
+{
+  "_hinweis": "TESTDATEN (Mock). Live liefert diese Antwort der Preis-Proxy (functions/prices.js), der die APIs der Anbieter abfragt. Hier niemals echte Preise von Hand pflegen.",
+  "source": "mock",
+  "currency": "EUR",
+  "updatedAt": "2026-11-23T13:25:00.159Z",
+  "esim": {
+    "countries": {
+      "tr": {
+        "plans": [
+          {
+            "id": "tr-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.99
+          },
+          {
+            "id": "tr-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 8.99
+          },
+          {
+            "id": "tr-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 11.99,
+            "popular": true
+          },
+          {
+            "id": "tr-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 19.99
+          },
+          {
+            "id": "tr-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 30.99
+          }
+        ]
+      },
+      "us": {
+        "plans": [
+          {
+            "id": "us-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.49
+          },
+          {
+            "id": "us-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 9.99
+          },
+          {
+            "id": "us-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 13.99,
+            "popular": true
+          },
+          {
+            "id": "us-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 21.99
+          },
+          {
+            "id": "us-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 34.99
+          }
+        ]
+      },
+      "th": {
+        "plans": [
+          {
+            "id": "th-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.49
+          },
+          {
+            "id": "th-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 7.99
+          },
+          {
+            "id": "th-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 10.99,
+            "popular": true
+          },
+          {
+            "id": "th-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 16.99
+          },
+          {
+            "id": "th-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 26.99
+          }
+        ]
+      },
+      "ae": {
+        "plans": [
+          {
+            "id": "ae-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 5.99
+          },
+          {
+            "id": "ae-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 12.99
+          },
+          {
+            "id": "ae-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 17.99,
+            "popular": true
+          },
+          {
+            "id": "ae-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 28.99
+          },
+          {
+            "id": "ae-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 45.99
+          }
+        ]
+      },
+      "es": {
+        "plans": [
+          {
+            "id": "es-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 2.99
+          },
+          {
+            "id": "es-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 6.99
+          },
+          {
+            "id": "es-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 8.99,
+            "popular": true
+          },
+          {
+            "id": "es-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 14.99
+          },
+          {
+            "id": "es-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 22.99
+          }
+        ]
+      },
+      "it": {
+        "plans": [
+          {
+            "id": "it-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 2.99
+          },
+          {
+            "id": "it-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 6.99
+          },
+          {
+            "id": "it-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 8.99,
+            "popular": true
+          },
+          {
+            "id": "it-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 14.99
+          },
+          {
+            "id": "it-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 22.99
+          }
+        ]
+      },
+      "jp": {
+        "plans": [
+          {
+            "id": "jp-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.99
+          },
+          {
+            "id": "jp-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 10.99
+          },
+          {
+            "id": "jp-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 14.99,
+            "popular": true
+          },
+          {
+            "id": "jp-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 23.99
+          },
+          {
+            "id": "jp-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 37.99
+          }
+        ]
+      },
+      "gr": {
+        "plans": [
+          {
+            "id": "gr-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 2.99
+          },
+          {
+            "id": "gr-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 6.99
+          },
+          {
+            "id": "gr-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 8.99,
+            "popular": true
+          },
+          {
+            "id": "gr-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 14.99
+          },
+          {
+            "id": "gr-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 22.99
+          }
+        ]
+      },
+      "eg": {
+        "plans": [
+          {
+            "id": "eg-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.99
+          },
+          {
+            "id": "eg-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 10.99
+          },
+          {
+            "id": "eg-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 14.99,
+            "popular": true
+          },
+          {
+            "id": "eg-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 23.99
+          },
+          {
+            "id": "eg-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 37.99
+          }
+        ]
+      },
+      "gb": {
+        "plans": [
+          {
+            "id": "gb-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.49
+          },
+          {
+            "id": "gb-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 7.99
+          },
+          {
+            "id": "gb-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 10.99,
+            "popular": true
+          },
+          {
+            "id": "gb-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 16.99
+          },
+          {
+            "id": "gb-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 26.99
+          }
+        ]
+      },
+      "id": {
+        "plans": [
+          {
+            "id": "id-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.99
+          },
+          {
+            "id": "id-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 8.99
+          },
+          {
+            "id": "id-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 11.99,
+            "popular": true
+          },
+          {
+            "id": "id-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 19.99
+          },
+          {
+            "id": "id-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 30.99
+          }
+        ]
+      },
+      "ma": {
+        "plans": [
+          {
+            "id": "ma-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.49
+          },
+          {
+            "id": "ma-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 9.99
+          },
+          {
+            "id": "ma-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 13.99,
+            "popular": true
+          },
+          {
+            "id": "ma-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 21.99
+          },
+          {
+            "id": "ma-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 34.99
+          }
+        ]
+      },
+      "fr": {
+        "plans": [
+          {
+            "id": "fr-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 2.99
+          },
+          {
+            "id": "fr-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 6.99
+          },
+          {
+            "id": "fr-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 8.99,
+            "popular": true
+          },
+          {
+            "id": "fr-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 14.99
+          },
+          {
+            "id": "fr-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 22.99
+          }
+        ]
+      },
+      "pt": {
+        "plans": [
+          {
+            "id": "pt-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 2.99
+          },
+          {
+            "id": "pt-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 6.99
+          },
+          {
+            "id": "pt-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 8.99,
+            "popular": true
+          },
+          {
+            "id": "pt-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 14.99
+          },
+          {
+            "id": "pt-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 22.99
+          }
+        ]
+      },
+      "hr": {
+        "plans": [
+          {
+            "id": "hr-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 2.99
+          },
+          {
+            "id": "hr-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 6.99
+          },
+          {
+            "id": "hr-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 8.99,
+            "popular": true
+          },
+          {
+            "id": "hr-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 14.99
+          },
+          {
+            "id": "hr-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 22.99
+          }
+        ]
+      },
+      "ch": {
+        "plans": [
+          {
+            "id": "ch-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.99
+          },
+          {
+            "id": "ch-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 10.99
+          },
+          {
+            "id": "ch-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 14.99,
+            "popular": true
+          },
+          {
+            "id": "ch-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 23.99
+          },
+          {
+            "id": "ch-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 37.99
+          }
+        ]
+      },
+      "at": {
+        "plans": [
+          {
+            "id": "at-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 2.99
+          },
+          {
+            "id": "at-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 6.99
+          },
+          {
+            "id": "at-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 8.99,
+            "popular": true
+          },
+          {
+            "id": "at-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 14.99
+          },
+          {
+            "id": "at-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 22.99
+          }
+        ]
+      },
+      "nl": {
+        "plans": [
+          {
+            "id": "nl-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 2.99
+          },
+          {
+            "id": "nl-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 6.99
+          },
+          {
+            "id": "nl-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 8.99,
+            "popular": true
+          },
+          {
+            "id": "nl-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 14.99
+          },
+          {
+            "id": "nl-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 22.99
+          }
+        ]
+      },
+      "ca": {
+        "plans": [
+          {
+            "id": "ca-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 5.49
+          },
+          {
+            "id": "ca-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 11.99
+          },
+          {
+            "id": "ca-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 16.99,
+            "popular": true
+          },
+          {
+            "id": "ca-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 26.99
+          },
+          {
+            "id": "ca-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 41.99
+          }
+        ]
+      },
+      "mx": {
+        "plans": [
+          {
+            "id": "mx-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.99
+          },
+          {
+            "id": "mx-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 10.99
+          },
+          {
+            "id": "mx-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 14.99,
+            "popular": true
+          },
+          {
+            "id": "mx-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 23.99
+          },
+          {
+            "id": "mx-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 37.99
+          }
+        ]
+      },
+      "br": {
+        "plans": [
+          {
+            "id": "br-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 5.49
+          },
+          {
+            "id": "br-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 11.99
+          },
+          {
+            "id": "br-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 16.99,
+            "popular": true
+          },
+          {
+            "id": "br-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 26.99
+          },
+          {
+            "id": "br-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 41.99
+          }
+        ]
+      },
+      "cn": {
+        "plans": [
+          {
+            "id": "cn-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 5.99
+          },
+          {
+            "id": "cn-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 12.99
+          },
+          {
+            "id": "cn-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 17.99,
+            "popular": true
+          },
+          {
+            "id": "cn-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 28.99
+          },
+          {
+            "id": "cn-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 45.99
+          }
+        ]
+      },
+      "kr": {
+        "plans": [
+          {
+            "id": "kr-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.49
+          },
+          {
+            "id": "kr-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 9.99
+          },
+          {
+            "id": "kr-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 13.99,
+            "popular": true
+          },
+          {
+            "id": "kr-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 21.99
+          },
+          {
+            "id": "kr-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 34.99
+          }
+        ]
+      },
+      "vn": {
+        "plans": [
+          {
+            "id": "vn-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.99
+          },
+          {
+            "id": "vn-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 8.99
+          },
+          {
+            "id": "vn-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 11.99,
+            "popular": true
+          },
+          {
+            "id": "vn-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 19.99
+          },
+          {
+            "id": "vn-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 30.99
+          }
+        ]
+      },
+      "sg": {
+        "plans": [
+          {
+            "id": "sg-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.99
+          },
+          {
+            "id": "sg-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 8.99
+          },
+          {
+            "id": "sg-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 11.99,
+            "popular": true
+          },
+          {
+            "id": "sg-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 19.99
+          },
+          {
+            "id": "sg-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 30.99
+          }
+        ]
+      },
+      "my": {
+        "plans": [
+          {
+            "id": "my-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.49
+          },
+          {
+            "id": "my-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 7.99
+          },
+          {
+            "id": "my-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 10.99,
+            "popular": true
+          },
+          {
+            "id": "my-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 16.99
+          },
+          {
+            "id": "my-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 26.99
+          }
+        ]
+      },
+      "in": {
+        "plans": [
+          {
+            "id": "in-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.99
+          },
+          {
+            "id": "in-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 8.99
+          },
+          {
+            "id": "in-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 11.99,
+            "popular": true
+          },
+          {
+            "id": "in-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 19.99
+          },
+          {
+            "id": "in-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 30.99
+          }
+        ]
+      },
+      "au": {
+        "plans": [
+          {
+            "id": "au-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 5.49
+          },
+          {
+            "id": "au-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 11.99
+          },
+          {
+            "id": "au-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 16.99,
+            "popular": true
+          },
+          {
+            "id": "au-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 26.99
+          },
+          {
+            "id": "au-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 41.99
+          }
+        ]
+      },
+      "za": {
+        "plans": [
+          {
+            "id": "za-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 5.99
+          },
+          {
+            "id": "za-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 12.99
+          },
+          {
+            "id": "za-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 17.99,
+            "popular": true
+          },
+          {
+            "id": "za-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 28.99
+          },
+          {
+            "id": "za-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 45.99
+          }
+        ]
+      },
+      "sa": {
+        "plans": [
+          {
+            "id": "sa-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 5.99
+          },
+          {
+            "id": "sa-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 12.99
+          },
+          {
+            "id": "sa-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 17.99,
+            "popular": true
+          },
+          {
+            "id": "sa-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 28.99
+          },
+          {
+            "id": "sa-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 45.99
+          }
+        ]
+      },
+      "qa": {
+        "plans": [
+          {
+            "id": "qa-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 5.99
+          },
+          {
+            "id": "qa-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 12.99
+          },
+          {
+            "id": "qa-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 17.99,
+            "popular": true
+          },
+          {
+            "id": "qa-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 28.99
+          },
+          {
+            "id": "qa-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 45.99
+          }
+        ]
+      },
+      "mv": {
+        "plans": [
+          {
+            "id": "mv-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 6.99
+          },
+          {
+            "id": "mv-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 14.99
+          },
+          {
+            "id": "mv-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 20.99,
+            "popular": true
+          },
+          {
+            "id": "mv-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 33.99
+          },
+          {
+            "id": "mv-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 53.99
+          }
+        ]
+      },
+      "lk": {
+        "plans": [
+          {
+            "id": "lk-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.99
+          },
+          {
+            "id": "lk-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 10.99
+          },
+          {
+            "id": "lk-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 14.99,
+            "popular": true
+          },
+          {
+            "id": "lk-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 23.99
+          },
+          {
+            "id": "lk-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 37.99
+          }
+        ]
+      },
+      "tn": {
+        "plans": [
+          {
+            "id": "tn-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.49
+          },
+          {
+            "id": "tn-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 9.99
+          },
+          {
+            "id": "tn-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 13.99,
+            "popular": true
+          },
+          {
+            "id": "tn-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 21.99
+          },
+          {
+            "id": "tn-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 34.99
+          }
+        ]
+      },
+      "cy": {
+        "plans": [
+          {
+            "id": "cy-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 2.99
+          },
+          {
+            "id": "cy-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 6.99
+          },
+          {
+            "id": "cy-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 8.99,
+            "popular": true
+          },
+          {
+            "id": "cy-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 14.99
+          },
+          {
+            "id": "cy-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 22.99
+          }
+        ]
+      },
+      "me": {
+        "plans": [
+          {
+            "id": "me-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.99
+          },
+          {
+            "id": "me-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 8.99
+          },
+          {
+            "id": "me-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 11.99,
+            "popular": true
+          },
+          {
+            "id": "me-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 19.99
+          },
+          {
+            "id": "me-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 30.99
+          }
+        ]
+      },
+      "al": {
+        "plans": [
+          {
+            "id": "al-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.99
+          },
+          {
+            "id": "al-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 8.99
+          },
+          {
+            "id": "al-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 11.99,
+            "popular": true
+          },
+          {
+            "id": "al-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 19.99
+          },
+          {
+            "id": "al-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 30.99
+          }
+        ]
+      },
+      "rs": {
+        "plans": [
+          {
+            "id": "rs-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.99
+          },
+          {
+            "id": "rs-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 8.99
+          },
+          {
+            "id": "rs-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 11.99,
+            "popular": true
+          },
+          {
+            "id": "rs-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 19.99
+          },
+          {
+            "id": "rs-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 30.99
+          }
+        ]
+      },
+      "ba": {
+        "plans": [
+          {
+            "id": "ba-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.99
+          },
+          {
+            "id": "ba-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 8.99
+          },
+          {
+            "id": "ba-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 11.99,
+            "popular": true
+          },
+          {
+            "id": "ba-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 19.99
+          },
+          {
+            "id": "ba-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 30.99
+          }
+        ]
+      },
+      "ge": {
+        "plans": [
+          {
+            "id": "ge-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 3.99
+          },
+          {
+            "id": "ge-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 8.99
+          },
+          {
+            "id": "ge-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 11.99,
+            "popular": true
+          },
+          {
+            "id": "ge-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 19.99
+          },
+          {
+            "id": "ge-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 30.99
+          }
+        ]
+      },
+      "az": {
+        "plans": [
+          {
+            "id": "az-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.49
+          },
+          {
+            "id": "az-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 9.99
+          },
+          {
+            "id": "az-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 13.99,
+            "popular": true
+          },
+          {
+            "id": "az-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 21.99
+          },
+          {
+            "id": "az-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 34.99
+          }
+        ]
+      },
+      "do": {
+        "plans": [
+          {
+            "id": "do-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 5.49
+          },
+          {
+            "id": "do-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 11.99
+          },
+          {
+            "id": "do-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 16.99,
+            "popular": true
+          },
+          {
+            "id": "do-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 26.99
+          },
+          {
+            "id": "do-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 41.99
+          }
+        ]
+      }
+    },
+    "regions": {
+      "eu": {
+        "plans": [
+          {
+            "id": "eu-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 4.99
+          },
+          {
+            "id": "eu-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 10.99
+          },
+          {
+            "id": "eu-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 14.99,
+            "popular": true
+          },
+          {
+            "id": "eu-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 23.99
+          },
+          {
+            "id": "eu-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 37.99
+          }
+        ]
+      },
+      "asia": {
+        "plans": [
+          {
+            "id": "asia-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 6.99
+          },
+          {
+            "id": "asia-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 14.99
+          },
+          {
+            "id": "asia-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 20.99,
+            "popular": true
+          },
+          {
+            "id": "asia-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 33.99
+          },
+          {
+            "id": "asia-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 53.99
+          }
+        ]
+      },
+      "na": {
+        "plans": [
+          {
+            "id": "na-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 7.49
+          },
+          {
+            "id": "na-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 15.99
+          },
+          {
+            "id": "na-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 22.99,
+            "popular": true
+          },
+          {
+            "id": "na-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 35.99
+          },
+          {
+            "id": "na-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 56.99
+          }
+        ]
+      },
+      "me": {
+        "plans": [
+          {
+            "id": "me-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 8.99
+          },
+          {
+            "id": "me-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 18.99
+          },
+          {
+            "id": "me-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 26.99,
+            "popular": true
+          },
+          {
+            "id": "me-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 43.99
+          },
+          {
+            "id": "me-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 68.99
+          }
+        ]
+      },
+      "latam": {
+        "plans": [
+          {
+            "id": "latam-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 9.99
+          },
+          {
+            "id": "latam-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 20.99
+          },
+          {
+            "id": "latam-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 29.99,
+            "popular": true
+          },
+          {
+            "id": "latam-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 47.99
+          },
+          {
+            "id": "latam-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 75.99
+          }
+        ]
+      },
+      "af": {
+        "plans": [
+          {
+            "id": "af-1gb-7d",
+            "gb": 1,
+            "days": 7,
+            "price": 11.99
+          },
+          {
+            "id": "af-3gb-15d",
+            "gb": 3,
+            "days": 15,
+            "price": 25.99
+          },
+          {
+            "id": "af-5gb-30d",
+            "gb": 5,
+            "days": 30,
+            "price": 35.99,
+            "popular": true
+          },
+          {
+            "id": "af-10gb-30d",
+            "gb": 10,
+            "days": 30,
+            "price": 57.99
+          },
+          {
+            "id": "af-20gb-30d",
+            "gb": 20,
+            "days": 30,
+            "price": 91.99
+          }
+        ]
+      }
+    },
+    "global": {
+      "plans": [
+        {
+          "id": "global-1",
+          "name": "Global Light",
+          "gb": 3,
+          "days": 30,
+          "countries": 120,
+          "price": 14.99
+        },
+        {
+          "id": "global-2",
+          "name": "Global Plus",
+          "gb": 10,
+          "days": 30,
+          "countries": 120,
+          "price": 34.99,
+          "popular": true
+        },
+        {
+          "id": "global-3",
+          "name": "Global Max",
+          "gb": 20,
+          "days": 60,
+          "countries": 120,
+          "price": 59.99
+        }
+      ]
+    }
+  },
+  "lounge": {
+    "from": 24
+  },
+  "fasttrack": {
+    "from": 9
+  },
+  "vignette": {
+    "from": null
+  }
+}
