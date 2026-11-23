@@ -56,9 +56,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: supabase/setup-cli@v1
         with:
-          version: latest
+          version: 2.122.1
       - run: supabase link --project-ref "$PROJECT_REF"
-      - run: supabase db push --remote --yes
+      - run: supabase db push --linked --yes
       - name: Erlaubte Webadressen für die Funktionen setzen (nicht geheim)
         run: supabase secrets set --project-ref "$PROJECT_REF" ALLOWED_ORIGINS="https://${{ github.repository_owner }}.github.io,https://passport.io,https://www.passport.io,http://localhost:5173"
       - run: supabase functions deploy prices --no-verify-jwt --project-ref "$PROJECT_REF"
