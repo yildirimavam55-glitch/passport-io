@@ -348,7 +348,7 @@
   },
   "api": {
     "pricesUrl": "api/prices.json",
-    "questionsUrl": "",
+    "questionsUrl": "https://sbzwibctxezprpefwxzn.supabase.co/functions/v1/questions",
     "unavailableText": "Preis folgt",
     "modalUnavailableText": "Die aktuellen Preise konnten gerade nicht geladen werden. Bitte versuche es in einem Moment erneut."
   },
