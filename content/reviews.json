@@ -1,0 +1,47 @@
+{
+  "note": "DEMO-PLATZHALTER – vor dem Livegang durch das Trustpilot-Widget ersetzen.",
+  "items": [
+    {
+      "name": "Kundin A.",
+      "stars": 5,
+      "date": "vor 2 Tagen",
+      "title": "In 2 Minuten online",
+      "text": "QR-Code gescannt, in Antalya gelandet, sofort 5G. Viel günstiger als Roaming."
+    },
+    {
+      "name": "Kunde M.",
+      "stars": 5,
+      "date": "vor 4 Tagen",
+      "title": "Lounge-Voucher top",
+      "text": "Buchung am Vorabend, Voucher kam sofort. Am Eingang nur QR-Code gezeigt – problemlos."
+    },
+    {
+      "name": "Kundin S.",
+      "stars": 5,
+      "date": "vor 1 Woche",
+      "title": "Super Support",
+      "text": "Hatte eine Frage zur Aktivierung, der Assistent hat sie direkt beantwortet."
+    },
+    {
+      "name": "Kunde T.",
+      "stars": 4,
+      "date": "vor 1 Woche",
+      "title": "Fast Track lohnt sich",
+      "text": "Zu Ferienbeginn in Frankfurt locker 30 Minuten gespart. Nächstes Mal wieder."
+    },
+    {
+      "name": "Kundin L.",
+      "stars": 5,
+      "date": "vor 2 Wochen",
+      "title": "Perfekt für Rundreisen",
+      "text": "Asien-Paket für Thailand, Vietnam und Malaysia – eine eSIM für alles. Lief einwandfrei."
+    },
+    {
+      "name": "Kunde R.",
+      "stars": 5,
+      "date": "vor 3 Wochen",
+      "title": "Einfach und fair",
+      "text": "Klare Preise, keine versteckten Kosten. Nachbuchen ging mit einem Klick."
+    }
+  ]
+}

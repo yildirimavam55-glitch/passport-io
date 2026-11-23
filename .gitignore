@@ -1,0 +1,12 @@
+# Geheimnisse gehören nach Supabase, nie ins Repository
+.env
+.env.*
+supabase/.env
+supabase/.temp/
+supabase/.branches/
+
+# Lokales
+node_modules/
+.claude/settings.local.json
+.DS_Store
+Thumbs.db

@@ -1,0 +1,495 @@
+# ==========================================================================
+# passport.io – Redaktionsoberfläche (Decap CMS)
+# Lokal testen:   node server.js   und   npx decap-server   ->  http://localhost:5173/admin/
+# Live (z. B. Netlify + GitHub): "backend" unten auf git-gateway oder github umstellen.
+# ==========================================================================
+
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+locale: de
+site_url: /
+display_url: /
+
+media_folder: img/uploads
+public_folder: /img/uploads
+
+collections:
+  # ------------------------------------------------------------------------
+  - name: seiten
+    label: Startseite
+    editor: { preview: false }
+    files:
+      - name: site
+        label: Startseite & Design
+        file: content/site.json
+        fields:
+          - label: Markenfarben
+            name: theme
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Akzentfarbe (Grün), name: green, widget: color }
+              - { label: Dunkle Farbe, name: dark, widget: color }
+
+          - label: Preis-Schnittstelle
+            name: api
+            widget: object
+            collapsed: true
+            hint: "Alle Preise der Seite kommen von hier. Lokal: api/prices.json (Testdaten). Live: Adresse des Preis-Proxys, z. B. /.netlify/functions/prices"
+            fields:
+              - { label: Adresse, name: pricesUrl, widget: string }
+              - { label: "Adresse für unbeantwortete Lina-Fragen (Supabase)", name: questionsUrl, widget: string, required: false }
+              - { label: "Text, wenn kein Preis verfügbar", name: unavailableText, widget: string }
+              - { label: "Hinweis im Paketfenster, wenn keine Preise verfügbar", name: modalUnavailableText, widget: text }
+
+          - label: Vorschau-Hinweis
+            name: preview
+            widget: object
+            collapsed: true
+            hint: "Gelber Hinweis oben auf der Seite. Vor dem Livegang ausschalten (wenn echte Preise und Trustpilot angebunden sind)."
+            fields:
+              - { label: Anzeigen, name: enabled, widget: boolean }
+              - { label: Text, name: text, widget: string }
+
+          - label: Marke
+            name: brand
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Endung, name: suffix, widget: string }
+
+          - label: Ankündigungsleiste (ganz oben)
+            name: announcement
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Anzeigen, name: enabled, widget: boolean, default: false }
+              - { label: Text, name: text, widget: string }
+              - { label: Link, name: link, widget: string, required: false }
+
+          - label: Aufbau der Startseite
+            name: sections
+            widget: list
+            hint: "Reihenfolge per Ziehen ändern. Bereiche mit dem Schalter ein- oder ausblenden."
+            summary: "{{fields.type}} {{fields.enabled}}"
+            fields:
+              - label: Bereich
+                name: type
+                widget: select
+                options:
+                  - { label: "Startbild (Hero)", value: hero }
+                  - { label: "Beliebte Reiseziele", value: destinations }
+                  - { label: "Regionale & globale Pakete", value: packages }
+                  - { label: "Was ist eine eSIM?", value: howto }
+                  - { label: "Lounge & Fast Track", value: airport }
+                  - { label: "Bewertungen", value: reviews }
+                  - { label: "Digitaler Assistent & FAQ", value: assistant }
+                  - { label: "Magazin / Blog", value: blog }
+                  - { label: "Newsletter", value: newsletter }
+              - { label: Sichtbar, name: enabled, widget: boolean, default: true }
+
+          - label: Menü
+            name: nav
+            widget: list
+            collapsed: true
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Text, name: label, widget: string }
+              - { label: Link, name: url, widget: string }
+              - { label: Kennzeichen (z. B. „bald“), name: badge, widget: string, required: false }
+
+          - label: "Bereich: Startbild (Hero)"
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string, hint: "Preise nur als Platzhalter: {preis:esim}, {preis:lounge}, {preis:fasttrack}, {preis:country:tr}" }
+              - { label: Unterzeile, name: subtitle, widget: string, hint: "Preise nur als Platzhalter, z. B. „Ab {preis:esim}, in zwei Minuten aktiv.“" }
+              - { label: Hintergrundbild, name: image, widget: image, choose_url: true }
+              - { label: Platzhalter im Suchfeld, name: searchPlaceholder, widget: string }
+              - { label: Such-Button, name: searchButton, widget: string }
+              - label: Vertrauens-Punkte
+                name: facts
+                widget: list
+                summary: "{{fields.text}}"
+                fields:
+                  - label: Symbol
+                    name: icon
+                    widget: select
+                    options:
+                      - { label: Trustpilot-Stern, value: trustpilot }
+                      - { label: E-Mail, value: mail }
+                      - { label: Schild, value: shield }
+                      - { label: Haken, value: check }
+                  - { label: Text, name: text, widget: string }
+              - { label: Text vor den Zahlungslogos, name: paymentsLabel, widget: string, required: false }
+              - label: Zahlungslogos im Startbild
+                name: payments
+                widget: select
+                multiple: true
+                required: false
+                options: &payments
+                  - { label: Apple Pay, value: applepay }
+                  - { label: Google Pay, value: googlepay }
+                  - { label: Klarna, value: klarna }
+                  - { label: PayPal, value: paypal }
+                  - { label: Visa, value: visa }
+                  - { label: Mastercard, value: mastercard }
+                  - { label: American Express, value: americanexpress }
+              - label: Produktleiste
+                name: products
+                widget: list
+                summary: "{{fields.label}} – {{fields.price}}"
+                fields:
+                  - { label: Name, name: label, widget: string }
+                  - { label: Beschreibung, name: text, widget: string }
+                  - { label: "Preis aus der Schnittstelle", name: priceKey, widget: select, required: false, options: [{ label: "eSIM (günstigster Preis)", value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: Vignette, value: vignette }], hint: "Preise werden nie von Hand eingetragen – sie kommen live von den Anbietern." }
+                  - { label: Text statt Preis (nur bei „Demnächst“), name: soonText, widget: string, required: false }
+                  - { label: Link, name: url, widget: string, required: false }
+                  - { label: Demnächst (ausgegraut), name: comingSoon, widget: boolean, default: false }
+
+          - label: "Bereich: Beliebte Reiseziele"
+            name: destinations
+            widget: object
+            collapsed: true
+            hint: "Welche Länder hier erscheinen, stellst du unter „eSIM-Länder & Pakete“ ein (Schalter „Beliebt“)."
+            fields:
+              - { label: Überzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Zusätzliches Suchfeld anzeigen, name: showSearch, widget: boolean, default: false, required: false }
+              - { label: Platzhalter im Suchfeld, name: searchPlaceholder, widget: string }
+              - { label: Hinweis unter den Karten, name: hint, widget: string }
+
+          - label: "Bereich: Regionale & globale Pakete"
+            name: packages
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Hinweistext, name: note, widget: string }
+              - { label: "Global: Name in der Auswahl", name: globalName, widget: string }
+              - { label: "Global: Zusatz in der Auswahl", name: globalNote, widget: string }
+              - { label: "Global: Überzeile", name: globalKicker, widget: string }
+              - { label: "Global: Überschrift", name: globalTitle, widget: string }
+              - { label: "Global: Text", name: globalText, widget: text }
+              - { label: "Global: Hintergrundbild", name: globalImage, widget: image, choose_url: true }
+
+          - label: "Bereich: Was ist eine eSIM?"
+            name: howto
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Bild, name: image, widget: image, choose_url: true }
+              - { label: Bildunterschrift, name: imageCaption, widget: string, required: false }
+              - label: Schritte
+                name: steps
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+              - { label: Button-Text, name: button, widget: string }
+              - { label: Link-Text zur Installationsanleitung, name: guideLink, widget: string, required: false }
+
+          - label: "Bereich: Lounge & Fast Track"
+            name: airport
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Hinweistext, name: note, widget: string }
+              - label: Karten
+                name: cards
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+                  - { label: Bild, name: image, widget: image, choose_url: true }
+                  - { label: Vorteile, name: ticks, widget: list, field: { label: Vorteil, name: tick, widget: string } }
+                  - { label: "Preis aus der Schnittstelle", name: priceKey, widget: select, options: [{ label: "eSIM (günstigster Preis)", value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: Vignette, value: vignette }] }
+                  - { label: Button-Text, name: button, widget: string }
+              - { label: Flughäfen in der Suche, name: airports, widget: list, field: { label: Flughafen, name: airport, widget: string } }
+              - { label: Such-Button, name: searchButton, widget: string }
+
+          - label: "Bereich: Bewertungen"
+            name: reviews
+            widget: object
+            collapsed: true
+            hint: "Die einzelnen Bewertungen pflegst du unter „Bewertungen“. Später durch das Trustpilot-Widget ersetzen."
+            fields:
+              - { label: Überzeile, name: kicker, widget: string }
+              - { label: "Durchschnitt (z. B. 4,8)", name: score, widget: string }
+              - { label: Bewertungswort, name: label, widget: string }
+              - { label: Anzahl Bewertungen, name: count, widget: string }
+              - { label: Link-Text, name: linkText, widget: string }
+              - { label: Link zu Trustpilot, name: linkUrl, widget: string }
+
+          - label: "Bereich: Digitaler Assistent & FAQ"
+            name: assistant
+            widget: object
+            collapsed: true
+            hint: "Fragen, Antworten und Banner pflegst du unter „Assistent & FAQ“."
+            fields:
+              - { label: Überzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Hinweistext, name: note, widget: text }
+              - { label: FAQ-Überschrift, name: faqTitle, widget: string }
+              - { label: FAQ-Text, name: faqText, widget: string }
+
+          - label: "Bereich: Magazin / Blog"
+            name: blog
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Link-Text, name: linkText, widget: string }
+              - { label: Link, name: linkUrl, widget: string }
+
+          - label: "Bereich: Newsletter"
+            name: newsletter
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Text, name: text, widget: string }
+              - { label: Platzhalter, name: placeholder, widget: string }
+              - { label: Button-Text, name: button, widget: string }
+              - { label: Erfolgsmeldung, name: success, widget: text }
+
+          - label: Footer
+            name: footer
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Kurztext unter dem Logo, name: tagline, widget: string }
+              - label: Spalten
+                name: columns
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Überschrift, name: title, widget: string }
+                  - label: Links
+                    name: links
+                    widget: list
+                    summary: "{{fields.label}}"
+                    fields:
+                      - { label: Text, name: label, widget: string }
+                      - { label: Link, name: url, widget: string }
+              - { label: Zahlungslogos, name: payments, widget: select, multiple: true, options: *payments }
+              - label: Rechtliche Links
+                name: legal
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: Text, name: label, widget: string }
+                  - { label: Link, name: url, widget: string }
+              - { label: Copyright, name: copyright, widget: string }
+
+  # ------------------------------------------------------------------------
+  - name: produkte
+    label: Produkte
+    editor: { preview: false }
+    files:
+      - name: esim
+        label: eSIM-Länder & Pakete
+        file: content/esim.json
+        fields:
+          - label: Länder
+            name: countries
+            widget: list
+            collapsed: true
+            summary: "{{fields.name}} – ab {{fields.from}} €"
+            hint: "„Beliebt“ = erscheint im Slider „Beliebte Reiseziele“."
+            fields:
+              - { label: "Ländercode (ISO, z. B. tr)", name: code, widget: string, hint: "Zwei Buchstaben, klein – bestimmt die Flagge." }
+              - { label: Name, name: name, widget: string }
+              - { label: Beliebt, name: popular, widget: boolean, default: false }
+              - { label: "Kennzeichen (z. B. Bestseller, 5G)", name: tag, widget: string, required: false }
+              - { label: Bild, name: image, widget: image, choose_url: true, required: false }
+          - label: Regionale Pakete
+            name: regional
+            widget: list
+            collapsed: true
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Kürzel, name: id, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: Anzahl Länder, name: countries, widget: number }
+              - { label: Datenvolumen, name: data, widget: string }
+              - { label: Beschreibung, name: note, widget: string }
+              - { label: Bild, name: image, widget: image, choose_url: true, required: false }
+              - { label: Länder auf der Weltkarte, name: mapCodes, widget: list, required: false, hint: "ISO-Ländernummern (z. B. 276 = Deutschland, 792 = Türkei). Diese Länder werden auf der Karte grün markiert und eingekreist." }
+          # Globale Pakete und alle Paketgrößen/Preise kommen ausschließlich aus der Preis-Schnittstelle.
+
+  # ------------------------------------------------------------------------
+  - name: hilfe
+    label: Hilfe-Center
+    editor: { preview: false }
+    files:
+      - name: assistant
+        label: Assistent & FAQ
+        file: content/assistant.json
+        fields:
+          - label: Digitale Assistentin
+            name: persona
+            widget: object
+            hint: "Gesicht und Name des Assistenten. Bitte klar als „digital“ kennzeichnen, damit Kunden wissen, dass sie mit einer KI schreiben."
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Rolle, name: role, widget: string }
+              - { label: Kennzeichnung, name: badge, widget: string }
+              - { label: Foto, name: image, widget: image, choose_url: true }
+              - { label: Vorstellungstext, name: intro, widget: text }
+          - { label: Begrüßung, name: greeting, widget: text }
+          - { label: "Antwort, wenn nichts gefunden wird", name: fallback, widget: text }
+          - { label: Kontakt-Text (Übergabe ans Team), name: contactText, widget: text }
+          - { label: Kontakt-E-Mail, name: contactEmail, widget: string }
+          - label: Die drei großen Banner
+            name: banners
+            widget: list
+            max: 3
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: string }
+              - label: Symbol
+                name: icon
+                widget: select
+                options: [{ label: Handy, value: phone }, { label: QR-Code, value: qr }, { label: SIM-Karte, value: sim }, { label: Sprechblase, value: chat }]
+              - { label: "Aktion", name: action, widget: string, hint: "„device-check“ öffnet den Geräte-Check. Sonst die ID einer FAQ (z. B. install-esim) – der Assistent beantwortet dann diese Frage." }
+          - { label: Schnellfragen unter dem Chat, name: suggestions, widget: list, field: { label: Frage, name: q, widget: string } }
+          - label: Fragen & Antworten
+            name: faqs
+            widget: list
+            collapsed: true
+            summary: "{{fields.question}}"
+            hint: "Jede Frage erscheint in der FAQ und wird vom Assistenten genutzt."
+            fields:
+              - { label: ID, name: id, widget: string, hint: "Eindeutig, nur Kleinbuchstaben und Bindestriche, z. B. lounge-kinder" }
+              - label: Kategorie
+                name: category
+                widget: select
+                options: [{ label: eSIM, value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: Zahlung & Erstattung, value: zahlung }, { label: Allgemein, value: allgemein }]
+              - { label: Frage, name: question, widget: string }
+              - { label: Antwort, name: answer, widget: text, hint: "**fett**, neue Zeile mit „- “ = Aufzählung, Leerzeile = neuer Absatz, [Linktext](https://…)" }
+              - { label: Suchbegriffe, name: keywords, widget: list, hint: "Wörter, mit denen Kunden danach fragen könnten (auch Umgangssprache, Tippfehler)." }
+              - { label: Wie oft gefragt, name: views, widget: number, hint: "Höhere Zahl = weiter oben in der FAQ. Die 3 höchsten bekommen „Häufig gefragt“." }
+          - { label: eSIM-fähige Geräte, name: devices, widget: list, collapsed: true, field: { label: Gerät, name: device, widget: string } }
+
+      - name: install
+        label: Installationsanleitung (Unterseite)
+        file: content/install.json
+        fields:
+          - { label: Überzeile, name: kicker, widget: string }
+          - { label: Überschrift, name: title, widget: string }
+          - { label: Einleitung, name: intro, widget: text }
+          - { label: "Checkliste: Überschrift", name: beforeTitle, widget: string }
+          - { label: "Checkliste: Punkte", name: before, widget: list, field: { label: Punkt, name: item, widget: string } }
+          - label: Geräte / Betriebssysteme
+            name: platforms
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Kürzel, name: id, widget: string, hint: "z. B. ios, samsung, pixel" }
+              - { label: Name im Tab, name: label, widget: string }
+              - { label: Zusatz (Version), name: sub, widget: string, required: false }
+              - label: Schritte
+                name: steps
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Text, name: text, widget: text, hint: "**fett** für Menüpunkte" }
+                  - { label: Tipp (gelber Kasten), name: tip, widget: text, required: false }
+                  - label: Handy-Bildschirm
+                    name: screen
+                    widget: object
+                    fields:
+                      - label: Art
+                        name: type
+                        widget: select
+                        options: [{ label: "Menü / Liste", value: list }, { label: "Auswahl (Radio)", value: choice }, { label: "QR-Code scannen", value: qr }, { label: "Fertig / Verbunden", value: done }]
+                      - label: Stil
+                        name: style
+                        widget: select
+                        required: false
+                        options: [{ label: iPhone, value: ios }, { label: Android, value: android }]
+                      - { label: Titel oben, name: title, widget: string, required: false }
+                      - { label: Untertitel (bei QR / Fertig), name: caption, widget: string, required: false }
+                      - label: Zeilen
+                        name: items
+                        widget: list
+                        required: false
+                        summary: "{{fields.label}}"
+                        fields:
+                          - { label: Text, name: label, widget: string }
+                          - { label: Wert rechts / darunter, name: value, widget: string, required: false }
+                          - { label: Symbolfarbe, name: color, widget: color, required: false }
+                          - label: Schalter
+                            name: toggle
+                            widget: select
+                            required: false
+                            options: [{ label: An, value: "on" }, { label: Aus, value: "off" }]
+                          - { label: "Hier tippen (grün markiert)", name: tap, widget: boolean, required: false }
+                          - { label: Als Link (blau), name: accent, widget: boolean, required: false }
+                          - { label: Ausgewählt (bei Auswahl), name: selected, widget: boolean, required: false }
+          - { label: "Hilfe bei Problemen: Überschrift", name: troubleTitle, widget: string }
+          - label: "Hilfe bei Problemen"
+            name: trouble
+            widget: list
+            summary: "{{fields.q}}"
+            fields:
+              - { label: Problem, name: q, widget: string }
+              - { label: Lösung, name: a, widget: text }
+          - { label: "Kontakt: Überschrift", name: helpTitle, widget: string }
+          - { label: "Kontakt: Text", name: helpText, widget: text }
+          - { label: "Kontakt: Button", name: helpButton, widget: string }
+
+  # ------------------------------------------------------------------------
+  - name: magazin
+    label: Magazin & Bewertungen
+    editor: { preview: false }
+    files:
+      - name: blog
+        label: Blogartikel (Startseite)
+        file: content/blog.json
+        fields:
+          - label: Artikel
+            name: posts
+            widget: list
+            hint: "Die ersten 5 erscheinen auf der Startseite, der erste groß."
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Kategorie, name: category, widget: string }
+              - { label: Titel, name: title, widget: string }
+              - { label: Kurztext, name: excerpt, widget: text }
+              - { label: Lesezeit, name: readTime, widget: string }
+              - { label: Bild, name: image, widget: image, choose_url: true }
+              - { label: Link zum Artikel, name: url, widget: string }
+      - name: reviews
+        label: Bewertungen
+        file: content/reviews.json
+        fields:
+          - { label: Hinweis, name: note, widget: string }
+          - label: Bewertungen
+            name: items
+            widget: list
+            summary: "{{fields.stars}}★ {{fields.title}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Sterne, name: stars, widget: number, min: 1, max: 5 }
+              - { label: Datum, name: date, widget: string }
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }

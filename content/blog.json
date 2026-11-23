@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "category": "eSIM Guide",
+      "title": "eSIM vs. Roaming: So sparst du im Urlaub bis zu 90 %",
+      "excerpt": "Warum eine Reise-eSIM fast immer günstiger ist als der Roaming-Tarif deines Anbieters – mit Rechenbeispielen.",
+      "readTime": "6 Min.",
+      "image": "https://images.unsplash.com/photo-1678667720699-5c0fc04ac166",
+      "url": "#"
+    },
+    {
+      "category": "Flughafen",
+      "title": "Die 10 schönsten Flughafen-Lounges Europas",
+      "excerpt": "Von Istanbul bis Zürich: Hier wird die Wartezeit zum Highlight deiner Reise.",
+      "readTime": "8 Min.",
+      "image": "https://images.unsplash.com/photo-1786175087740-cd110411221d",
+      "url": "#"
+    },
+    {
+      "category": "Reisetipps",
+      "title": "Fast Track: Wann lohnt sich die schnelle Spur wirklich?",
+      "excerpt": "Ferienbeginn, Frühflug, Umsteigen – die Situationen, in denen Fast Track Gold wert ist.",
+      "readTime": "5 Min.",
+      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "url": "#"
+    },
+    {
+      "category": "Ziele",
+      "title": "Thailand-Checkliste: Alles für den perfekten Trip",
+      "excerpt": "Visum, Internet, Geld, Apps – was du vor dem Abflug nach Bangkok erledigen solltest.",
+      "readTime": "7 Min.",
+      "image": "https://images.unsplash.com/photo-1508009603885-50cf7c579365",
+      "url": "#"
+    },
+    {
+      "category": "Roadtrip",
+      "title": "Vignetten in Europa: Der große Überblick 2027",
+      "excerpt": "Österreich, Schweiz, Slowenien & Co. – welche Länder Maut verlangen und was sie kostet.",
+      "readTime": "9 Min.",
+      "image": "https://images.unsplash.com/photo-1733522688659-b8a33c406a37",
+      "url": "#"
+    },
+    {
+      "category": "eSIM Guide",
+      "title": "Dual-SIM clever nutzen: Deine Nummer bleibt erreichbar",
+      "excerpt": "So stellst du dein Smartphone ein, damit Bank-SMS ankommen und trotzdem keine Roaming-Kosten entstehen.",
+      "readTime": "4 Min.",
+      "image": "https://images.unsplash.com/photo-1629653163521-5394bd65f28d",
+      "url": "#"
+    }
+  ]
+}

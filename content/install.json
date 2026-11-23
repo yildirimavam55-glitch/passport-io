@@ -1,0 +1,195 @@
+{
+  "kicker": "Anleitung",
+  "title": "eSIM installieren – Schritt für Schritt",
+  "intro": "In etwa zwei Minuten erledigt. Wähle dein Smartphone und folge den Bildschirmen. Menünamen können je nach Modell und Software-Version leicht abweichen.",
+  "beforeTitle": "Bevor du startest",
+  "before": [
+    "Mit stabilem WLAN verbinden – am besten noch zu Hause",
+    "Handy ist eSIM-fähig und frei von SIM-Lock",
+    "QR-Code aus deiner E-Mail auf einem zweiten Bildschirm öffnen oder ausdrucken",
+    "eSIM nach der Installation nicht löschen – sie lässt sich meist nur einmal installieren"
+  ],
+  "platforms": [
+    {
+      "id": "ios",
+      "label": "iPhone",
+      "sub": "iOS 17 und neuer",
+      "steps": [
+        {
+          "title": "Einstellungen öffnen",
+          "text": "Öffne die App **Einstellungen** und tippe auf **Mobilfunk**.",
+          "screen": { "type": "list", "title": "Einstellungen", "items": [
+            { "label": "Flugmodus", "color": "#ff9500", "toggle": "off" },
+            { "label": "WLAN", "color": "#007aff", "value": "Zuhause" },
+            { "label": "Bluetooth", "color": "#007aff", "value": "Ein" },
+            { "label": "Mobilfunk", "color": "#34c759", "tap": true },
+            { "label": "Persönlicher Hotspot", "color": "#34c759" }
+          ] }
+        },
+        {
+          "title": "eSIM hinzufügen",
+          "text": "Tippe auf **eSIM hinzufügen** (bei manchen Versionen: **Mobilfunktarif hinzufügen**).",
+          "screen": { "type": "list", "title": "Mobilfunk", "items": [
+            { "label": "Mobile Daten", "toggle": "on" },
+            { "label": "Mobilfunk-Optionen", "value": "Roaming aus" },
+            { "label": "Persönlicher Hotspot", "value": "Aus" },
+            { "label": "eSIM hinzufügen", "tap": true, "accent": true }
+          ] }
+        },
+        {
+          "title": "QR-Code scannen",
+          "text": "Wähle **QR-Code verwenden** und richte die Kamera auf den Code aus deiner E-Mail.",
+          "tip": "Code auf demselben iPhone? Lange auf das QR-Bild in der Mail drücken und **eSIM hinzufügen** wählen – oder **Details manuell eingeben** mit SM-DP+-Adresse und Aktivierungscode aus der E-Mail.",
+          "screen": { "type": "qr", "title": "QR-Code scannen", "caption": "Positioniere den QR-Code im Rahmen" }
+        },
+        {
+          "title": "Leitungen festlegen",
+          "text": "Benenne die neue eSIM z. B. **Reise**. Wähle deine bisherige Nummer für Anrufe und SMS und **Reise** für **Mobile Daten**. Schalte **Wechseln der mobilen Daten zulassen** aus.",
+          "screen": { "type": "choice", "title": "Mobile Daten", "items": [
+            { "label": "Primär", "value": "+49 …" },
+            { "label": "Reise", "value": "passport.io", "selected": true },
+            { "label": "Wechseln der mobilen Daten zulassen", "toggle": "off" }
+          ] }
+        },
+        {
+          "title": "Am Reiseziel einschalten",
+          "text": "Nach der Landung: **Einstellungen › Mobilfunk › Reise**. Schalte **Diese Leitung aktivieren** und **Datenroaming** ein.",
+          "tip": "Datenroaming nur für die Reise-eSIM einschalten – bei deiner normalen SIM bleibt es aus, so entstehen keine Roaming-Kosten.",
+          "screen": { "type": "list", "title": "Reise", "items": [
+            { "label": "Diese Leitung aktivieren", "toggle": "on", "tap": true },
+            { "label": "Datenroaming", "toggle": "on", "tap": true },
+            { "label": "Mobilfunknetz", "value": "Automatisch" },
+            { "label": "Mobiles Datennetz", "value": "" }
+          ] }
+        },
+        {
+          "title": "Fertig – du bist online",
+          "text": "Oben rechts erscheint das Netz deines Reiseziels. Das kann nach dem Einschalten bis zu 2 Minuten dauern.",
+          "screen": { "type": "done", "title": "Verbunden", "caption": "Turkcell · 5G" }
+        }
+      ]
+    },
+    {
+      "id": "samsung",
+      "label": "Samsung Galaxy",
+      "sub": "One UI 5 und neuer",
+      "steps": [
+        {
+          "title": "Verbindungen öffnen",
+          "text": "Öffne **Einstellungen** und tippe auf **Verbindungen**.",
+          "screen": { "type": "list", "style": "android", "title": "Einstellungen", "items": [
+            { "label": "Verbindungen", "value": "WLAN · Bluetooth · SIM-Manager", "color": "#3e91ff", "tap": true },
+            { "label": "Verbundene Geräte", "color": "#ff7a45" },
+            { "label": "Modi und Routinen", "color": "#22c55e" },
+            { "label": "Töne und Vibration", "color": "#a855f7" }
+          ] }
+        },
+        {
+          "title": "SIM-Manager",
+          "text": "Tippe auf **SIM-Manager** (bei manchen Modellen: **SIM-Kartenverwaltung**).",
+          "screen": { "type": "list", "style": "android", "title": "Verbindungen", "items": [
+            { "label": "WLAN", "toggle": "on" },
+            { "label": "Bluetooth", "toggle": "off" },
+            { "label": "Flugmodus", "toggle": "off" },
+            { "label": "SIM-Manager", "tap": true },
+            { "label": "Mobile Netzwerke" }
+          ] }
+        },
+        {
+          "title": "eSIM hinzufügen",
+          "text": "Tippe auf **eSIM hinzufügen** und dann auf **QR-Code vom Dienstanbieter scannen**.",
+          "screen": { "type": "list", "style": "android", "title": "SIM-Manager", "items": [
+            { "label": "SIM 1", "value": "Primär" },
+            { "label": "eSIM hinzufügen", "tap": true, "accent": true },
+            { "label": "Bevorzugte SIM-Karte", "value": "" }
+          ] }
+        },
+        {
+          "title": "QR-Code scannen",
+          "text": "Scanne den QR-Code aus deiner E-Mail und bestätige mit **Hinzufügen**.",
+          "tip": "Alternativ **Aktivierungscode eingeben** und den Code aus der E-Mail einfügen.",
+          "screen": { "type": "qr", "style": "android", "title": "QR-Code scannen", "caption": "QR-Code im Rahmen platzieren" }
+        },
+        {
+          "title": "Mobile Daten auf die eSIM",
+          "text": "Im **SIM-Manager** unter **Mobile Daten** die neue eSIM wählen. Anrufe und SMS bleiben auf deiner SIM 1.",
+          "screen": { "type": "choice", "style": "android", "title": "Mobile Daten", "items": [
+            { "label": "SIM 1", "value": "Deine Nummer" },
+            { "label": "Reise eSIM", "value": "passport.io", "selected": true }
+          ] }
+        },
+        {
+          "title": "Daten-Roaming einschalten",
+          "text": "Am Reiseziel: **Verbindungen › Mobile Netzwerke** und **Daten-Roaming** einschalten.",
+          "screen": { "type": "list", "style": "android", "title": "Mobile Netzwerke", "items": [
+            { "label": "Daten-Roaming", "toggle": "on", "tap": true },
+            { "label": "Netzmodus", "value": "5G/LTE/3G (autom.)" },
+            { "label": "Zugangspunkte", "value": "" },
+            { "label": "Netzbetreiber", "value": "Automatisch" }
+          ] }
+        },
+        {
+          "title": "Fertig – du bist online",
+          "text": "In der Statusleiste erscheint das Netz deines Reiseziels.",
+          "screen": { "type": "done", "style": "android", "title": "Verbunden", "caption": "Vodafone ES · 5G" }
+        }
+      ]
+    },
+    {
+      "id": "pixel",
+      "label": "Google Pixel & Android",
+      "sub": "Android 13 und neuer",
+      "steps": [
+        {
+          "title": "SIMs öffnen",
+          "text": "Öffne **Einstellungen › Netzwerk & Internet** und tippe auf **SIMs**.",
+          "screen": { "type": "list", "style": "android", "title": "Netzwerk & Internet", "items": [
+            { "label": "Internet", "value": "Zuhause" },
+            { "label": "SIMs", "value": "Telekom", "tap": true },
+            { "label": "Flugmodus", "toggle": "off" },
+            { "label": "Hotspot und Tethering", "value": "Aus" }
+          ] }
+        },
+        {
+          "title": "eSIM herunterladen",
+          "text": "Tippe auf **SIM hinzufügen** und dann auf **Stattdessen eSIM herunterladen** bzw. **SIM herunterladen**.",
+          "screen": { "type": "list", "style": "android", "title": "SIMs", "items": [
+            { "label": "Telekom", "value": "Aktiv" },
+            { "label": "SIM hinzufügen", "tap": true, "accent": true }
+          ] }
+        },
+        {
+          "title": "QR-Code scannen",
+          "text": "Scanne den QR-Code aus deiner E-Mail und folge den Hinweisen auf dem Bildschirm.",
+          "screen": { "type": "qr", "style": "android", "title": "QR-Code scannen", "caption": "Code in den Rahmen halten" }
+        },
+        {
+          "title": "Mobile Daten und Roaming",
+          "text": "Unter **SIMs** die neue eSIM öffnen, **Mobile Daten** und am Reiseziel **Roaming** einschalten.",
+          "screen": { "type": "list", "style": "android", "title": "passport.io", "items": [
+            { "label": "SIM verwenden", "toggle": "on" },
+            { "label": "Mobile Daten", "toggle": "on", "tap": true },
+            { "label": "Roaming", "toggle": "on", "tap": true },
+            { "label": "Zugangspunkte (APN)", "value": "" }
+          ] }
+        },
+        {
+          "title": "Fertig – du bist online",
+          "text": "Das Netz deines Reiseziels erscheint in der Statusleiste.",
+          "screen": { "type": "done", "style": "android", "title": "Verbunden", "caption": "AIS · 5G" }
+        }
+      ]
+    }
+  ],
+  "troubleTitle": "Kein Netz? So löst du es",
+  "trouble": [
+    { "q": "Nach der Landung wird kein Netz angezeigt", "a": "Prüfe, ob die Reise-eSIM eingeschaltet ist und **Datenroaming** für sie aktiv ist. Schalte dann 10 Sekunden den **Flugmodus** ein und wieder aus. Hilft das nicht, starte das Handy neu." },
+    { "q": "Netz ist da, aber kein Internet", "a": "Stelle sicher, dass **Mobile Daten** auf die Reise-eSIM eingestellt sind. Steht in deiner E-Mail ein **APN**, trage ihn ein:\n\n- **iPhone:** Mobilfunk › Reise › Mobiles Datennetz\n- **Android:** Mobile Netzwerke › Zugangspunkte" },
+    { "q": "Das falsche Netz wird verwendet", "a": "Schalte unter **Mobilfunknetz** bzw. **Netzbetreiber** die automatische Auswahl aus und wähle einen der Partner-Netzbetreiber aus deiner E-Mail." },
+    { "q": "Der QR-Code wird nicht erkannt", "a": "Erhöhe die Bildschirmhelligkeit des Geräts, auf dem der Code angezeigt wird, oder gib die Daten manuell ein (SM-DP+-Adresse und Aktivierungscode stehen in der E-Mail)." },
+    { "q": "Ich habe die eSIM aus Versehen gelöscht", "a": "Bitte nicht erneut scannen – der Code ist meist nur einmal gültig. Schreib uns, wir helfen dir mit einem neuen Profil weiter." }
+  ],
+  "helpTitle": "Noch Fragen?",
+  "helpText": "Lina, unsere digitale Assistentin, hilft dir sofort weiter – und wenn nötig unser Service-Team.",
+  "helpButton": "Frag Lina"
+}
