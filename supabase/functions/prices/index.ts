@@ -22,7 +22,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 // Testdaten (gleiches Format wie die Live-Antwort) – nur solange KEIN eSIM-Anbieter eingetragen ist.
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { applyPricing, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
-import { applyAssortment, dropDominated } from "../_shared/assortment.ts";
+import { applyAssortment, enforceStaircase } from "../_shared/assortment.ts";
 import { accessOn, type Catalog, esimAccessCatalog, goTier, esimGoCatalog, goOn, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
 
 const CACHE_SECONDS = 15 * 60;
@@ -197,11 +197,21 @@ Deno.serve(async (req) => {
     const fx0 = await rates(base0); // für Wettbewerbspreise in anderen Währungen
     const toBase = (n: number, cur: string) => { cur = (cur || "EUR").toUpperCase(); if (cur === base0) return n; const r = fx0?.rates?.[cur]; return r ? n / r : null; };
     const [settings, comps] = await Promise.all([loadSettings(db), loadCompetitors(db)]);
-    // Nur Paketgrößen, die auch die Wettbewerber verkaufen (bei Testdaten unverändert)
-    if (body.source !== "mock") body = applyAssortment(body, comps);
-    body = applyPricing(body, settings, comps, toBase);
-    // Kleinere Pakete, die mehr kosten als ein größeres, fallen weg (keine unlogischen Preise)
-    if (body.source !== "mock") body = dropDominated(body);
+    const live = body.source !== "mock";
+    // Festes Sortiment: 1/2/3/5/10/20/50 GB + Unlimited 3–30 Tage (bei Testdaten unverändert)
+    if (live) body = applyAssortment(body);
+    // Preisregel mit internen Angaben (Einkauf), damit die Staffel die Untergrenze kennt …
+    body = applyPricing(body, settings, comps, toBase, true);
+    // … kleineres Paket nie teurer als ein größeres
+    const minBase = toBase(settings.min_price_eur, "EUR") ?? settings.min_price_eur;
+    if (live) body = enforceStaircase(body, (p) => Math.max(minBase, Number(p.cost ?? 0) * (1 + settings.min_margin_pct / 100)));
+    // … und die internen Angaben wieder entfernen: Einkaufspreise verlassen die Funktion nie
+    // deno-lint-ignore no-explicit-any
+    const clean = (p: any) => { delete p.cost; delete p.rule; delete p.competitor; };
+    // deno-lint-ignore no-explicit-any
+    const each = (g: any) => g?.plans?.forEach(clean);
+    Object.values(body.esim?.countries ?? {}).forEach(each); Object.values(body.esim?.regions ?? {}).forEach(each); each(body.esim?.global);
+    for (const k of ["lounge", "fasttrack", "vignette"]) if (body[k]) clean(body[k]);
   }
 
   // Gewünschte Währung (?currency=TRY). Ohne Kurs bleibt es bei der Anbieterwährung – nie ein geschätzter Wert.

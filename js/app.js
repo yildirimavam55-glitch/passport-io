@@ -1280,7 +1280,7 @@
       <div class="modal__panel modal__panel--plans" role="dialog" aria-modal="true" aria-label="${esc(t("plansAria", { name: item.name }))}">
         <button class="modal__close icon-btn" type="button" data-close-modal aria-label="${esc(t("close"))}">${icon("x")}</button>
         <div class="modal__hero">
-          ${item.image ? `<img src="${img(item.image, 1000, 340)}" alt="">` : ""}
+          ${item.image ? `<img src="${img(item.image, 1000, 340)}" alt="">` : item.code ? `<img class="modal__hero-flag" src="https://flagcdn.com/w640/${esc(item.code)}.png" alt="">` : ""}
           <h3>${item.code ? `<img class="dest__flag" src="${flag(item.code)}" alt="">` : ""}${esc(item.name)}</h3>
         </div>
         <p class="modal__lead">${item.countries ? esc(t("modalCountries", { n: item.countries })) : ""}${esc(t("modalLead"))}</p>
