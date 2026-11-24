@@ -499,6 +499,14 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .plan-det__list dd { margin: 0; color: var(--ink); font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
 .plan-det__none { margin: 6px 0 0; color: var(--ink-3); }
 .plan__days { white-space: nowrap; }
+/* Info-Kasten oben im Paketfenster: Netze + Geschwindigkeitsregel (einmal für alle Tarife des Reiters) */
+.plan-info { margin: 0 0 12px; padding: 10px 14px; border-radius: 12px; background: var(--paper); border: 1px solid var(--line); font-size: 13.5px; }
+.plan-info[hidden] { display: none; }
+.plan-info dl { display: grid; gap: 6px; margin: 0; }
+.plan-info dl > div { display: grid; grid-template-columns: minmax(84px, 30%) minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.plan-info dt { color: var(--ink-3); font-weight: 500; }
+.plan-info dd { margin: 0; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+@media (max-width: 420px) { .plan-info dl > div { grid-template-columns: minmax(0, 1fr); gap: 0; } }
 /* Kurzinfo unter dem Tarif (Netze, Technik, Drosselung) – eigene Zeile */
 .plan { flex-wrap: wrap; row-gap: 4px; }
 .plan__sum { order: 10; flex: 1 0 100%; font-size: 12.5px; line-height: 1.35; color: var(--ink-3); font-weight: 500; }

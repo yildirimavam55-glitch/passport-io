@@ -144,7 +144,10 @@
     "detTypeTxt": "Yalnızca mobil veri – telefon numarası yok (aramalar WhatsApp vb. ile)",
     "sumUnl": "Günde {hs} GB tam hız, sonra {fup}",
     "detAfterTopup": "İnternet durur – ek paket yükleyebilirsin",
-    "detAfterStop": "İnternet durur"
+    "detAfterStop": "İnternet durur",
+    "infoLimit": "Hız sınırı",
+    "infoNoLimit": "Yok – kota bitince internet durur, ek paket yükleyebilirsin",
+    "infoNoLimitStop": "Yok – kota bitince internet durur"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -291,7 +294,10 @@
     "detTypeTxt": "Mobile data only – no phone number (calls via WhatsApp etc.)",
     "sumUnl": "{hs} GB/day full speed, then {fup}",
     "detAfterTopup": "Data stops – you can add a top-up",
-    "detAfterStop": "Data stops"
+    "detAfterStop": "Data stops",
+    "infoLimit": "Speed limit",
+    "infoNoLimit": "None – data stops when used up, top-up available",
+    "infoNoLimitStop": "None – data stops when used up"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -438,7 +444,10 @@
     "detTypeTxt": "Nur mobile Daten – keine Telefonnummer (Anrufe per WhatsApp & Co.)",
     "sumUnl": "{hs} GB/Tag volle Geschwindigkeit, danach {fup}",
     "detAfterTopup": "Daten stoppen – du kannst nachladen",
-    "detAfterStop": "Daten stoppen"
+    "detAfterStop": "Daten stoppen",
+    "infoLimit": "Drosselung",
+    "infoNoLimit": "Keine – nach dem Volumen stoppen die Daten, Nachladen möglich",
+    "infoNoLimitStop": "Keine – nach dem Volumen stoppen die Daten"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -585,7 +594,10 @@
     "detTypeTxt": "بيانات جوال فقط – بدون رقم هاتف (المكالمات عبر واتساب وغيره)",
     "sumUnl": "{hs} غيغابايت يوميًا بسرعة كاملة، ثم {fup}",
     "detAfterTopup": "يتوقف الإنترنت – يمكنك إعادة الشحن",
-    "detAfterStop": "يتوقف الإنترنت"
+    "detAfterStop": "يتوقف الإنترنت",
+    "infoLimit": "حد السرعة",
+    "infoNoLimit": "لا يوجد – تتوقف البيانات عند نفادها، ويمكن إعادة الشحن",
+    "infoNoLimitStop": "لا يوجد – تتوقف البيانات عند نفادها"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -732,7 +744,10 @@
     "detTypeTxt": "Только мобильный интернет – без номера телефона (звонки через WhatsApp и др.)",
     "sumUnl": "{hs} ГБ/сутки на полной скорости, затем {fup}",
     "detAfterTopup": "Интернет отключается – можно пополнить",
-    "detAfterStop": "Интернет отключается"
+    "detAfterStop": "Интернет отключается",
+    "infoLimit": "Ограничение скорости",
+    "infoNoLimit": "Нет – по окончании трафика интернет отключается, можно пополнить",
+    "infoNoLimitStop": "Нет – по окончании трафика интернет отключается"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -879,7 +894,10 @@
     "detTypeTxt": "Data mobile uniquement – sans numéro (appels via WhatsApp etc.)",
     "sumUnl": "{hs} Go/jour à pleine vitesse, puis {fup}",
     "detAfterTopup": "La data s'arrête – recharge possible",
-    "detAfterStop": "La data s'arrête"
+    "detAfterStop": "La data s'arrête",
+    "infoLimit": "Limite de débit",
+    "infoNoLimit": "Aucune – la data s'arrête une fois épuisée, recharge possible",
+    "infoNoLimitStop": "Aucune – la data s'arrête une fois épuisée"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -1026,6 +1044,9 @@
     "detTypeTxt": "Solo datos móviles – sin número de teléfono (llamadas por WhatsApp, etc.)",
     "sumUnl": "{hs} GB/día a máxima velocidad, luego {fup}",
     "detAfterTopup": "Los datos se detienen – puedes recargar",
-    "detAfterStop": "Los datos se detienen"
+    "detAfterStop": "Los datos se detienen",
+    "infoLimit": "Límite de velocidad",
+    "infoNoLimit": "Ninguno – los datos se detienen al agotarse, recarga disponible",
+    "infoNoLimitStop": "Ninguno – los datos se detienen al agotarse"
   }
 }

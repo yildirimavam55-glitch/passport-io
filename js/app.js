@@ -1288,6 +1288,7 @@
             <button type="button" role="tab" class="plan-tab ${plans[pre].unlimited ? "" : "is-active"}" aria-selected="${!plans[pre].unlimited}" data-ptab="data">${esc(t("tabData"))}</button>
             <button type="button" role="tab" class="plan-tab ${plans[pre].unlimited ? "is-active" : ""}" aria-selected="${!!plans[pre].unlimited}" data-ptab="unl">${icon("wifi")} ${esc(t("tabUnlimited"))}</button>
           </div>` : ""}
+          <div class="plan-info" data-pinfo hidden></div>
           <div class="plan-list" role="radiogroup" aria-label="${esc(t("dataVolume"))}">
           ${plans.map((p, i) => `
             <div class="plan-row" data-kind="${p.unlimited ? "unl" : "data"}" ${hasData && hasUnl && !!p.unlimited !== !!plans[pre].unlimited ? "hidden" : ""}>
@@ -1296,13 +1297,11 @@
                 <span class="plan__gb">${esc(vol(p))}</span><span class="plan__days">${esc(t("days", { n: p.days }))}</span>
                 ${p.popular ? `<span class="plan__pop">${esc(t("popular"))}</span>` : ""}
                 <span class="plan__price">${eur(p.price)}</span>
-                <span class="plan__sum" data-sum="${i}"></span>
                 <button type="button" class="plan__info" data-info="${i}" aria-expanded="false" aria-controls="pd-${i}" aria-label="${esc(t("detToggle"))}" title="${esc(t("detToggle"))}">${icon("chev-r")}</button>
               </label>
               <div class="plan-det" id="pd-${i}" hidden></div>
             </div>`).join("")}
         </div>
-        ${hasUnl ? `<p class="plan-hint" ${hasData && !plans[pre].unlimited ? "hidden" : ""}>${icon("wifi")} ${esc(t("unlimitedHint"))}</p>` : ""}
         <button class="btn btn--dark plan-buy" type="button" style="width:100%;margin-top:18px">${esc(t("checkout"))} · <span>${eur(plans[pre].price)}</span></button>
         <p class="plan-note">${icon("shield")} ${esc(t("moneyBack"))}</p>`
         : `<div class="device-result__none">${esc(SITE.api?.modalUnavailableText || t("modalUnavailable"))}</div>`}
@@ -1325,6 +1324,7 @@
       rows.forEach((l) => (l.hidden = l.dataset.kind !== kind));
       const hint = $(".plan-hint", modal);
       if (hint) hint.hidden = kind !== "unl";
+      renderInfo(kind);
       const first = rows.find((l) => l.dataset.kind === kind && plans[+$("input", l).value].popular) || rows.find((l) => l.dataset.kind === kind);
       if (first) { const inp = $("input", first); inp.checked = true; inp.dispatchEvent(new Event("change", { bubbles: true })); }
     });
@@ -1373,20 +1373,26 @@
       }
       return `<dl class="plan-det__list">${rows.join("")}</dl>${m ? "" : `<p class="plan-det__none">${esc(t("detNone"))}</p>`}`;
     };
-    // Kurzinfo in jeder Zeile: Netze + Technik, bei Unlimited zusätzlich die Drosselung
-    const summary = (p, m) => {
-      if (!m) return "";
-      const nets = (m.net || []).slice(0, 3).map((n) => n.n).join(" · ");
-      const top = (m.spd || "").split("/").filter(Boolean).pop();
-      const parts = [];
-      if (p.unlimited && m.hs && m.fup) parts.push(t("sumUnl", { hs: String(m.hs).replace(".", ","), fup: m.fup }));
-      if (nets) parts.push(nets);
-      if (top) parts.push(top);
-      return parts.join(" · ");
+    // Einmal oben: Netzbetreiber, Technik und Geschwindigkeitsregel – passend zum gewählten Reiter
+    const SPD = ["2G", "3G", "4G", "LTE", "5G"];
+    const renderInfo = async (kind) => {
+      const box = $("[data-pinfo]", modal);
+      if (!box) return;
+      const d = await loadDetails();
+      const metas = plans.filter((p) => (kind === "unl") === !!p.unlimited).map((p) => d[p.id]).filter(Boolean);
+      if (!metas.length) { box.hidden = true; return; }
+      const nets = [...new Map(metas.flatMap((m) => m.net || []).map((n) => [n.n.toLowerCase(), n.n])).values()].slice(0, 5);
+      const top = metas.flatMap((m) => (m.spd || "").split("/")).filter(Boolean).sort((a, b) => SPD.indexOf(a) - SPD.indexOf(b)).pop();
+      const fupM = metas.find((m) => m.hs && m.fup);
+      const rows = [];
+      if (nets.length || top) rows.push(`<div><dt>${esc(t("detNetwork"))}</dt><dd>${esc([nets.join(" · "), top].filter(Boolean).join(" · "))}</dd></div>`);
+      rows.push(`<div><dt>${esc(t("infoLimit"))}</dt><dd>${esc(kind === "unl"
+        ? (fupM ? t("sumUnl", { hs: String(fupM.hs).replace(".", ","), fup: fupM.fup }) : t("detDataUnlPlain"))
+        : t(metas.some((m) => m.top === false) ? "infoNoLimitStop" : "infoNoLimit"))}</dd></div>`);
+      box.innerHTML = `<dl>${rows.join("")}</dl>`;
+      box.hidden = false;
     };
-    loadDetails().then((d) => {
-      $$("[data-sum]", modal).forEach((el) => { const pl = plans[+el.dataset.sum]; el.textContent = summary(pl, d[pl.id] || null); });
-    });
+    renderInfo(plans[pre]?.unlimited ? "unl" : "data");
     async function toggleDetails(btn) {
       const i = +btn.dataset.info, box = $("#pd-" + i, modal), open = btn.getAttribute("aria-expanded") === "true";
       btn.setAttribute("aria-expanded", String(!open));
