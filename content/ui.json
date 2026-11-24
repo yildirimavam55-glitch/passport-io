@@ -141,7 +141,10 @@
     "detIp": "IP konumu",
     "detIpTxt": "İnternet çıkışı: {list}",
     "detType": "Tür",
-    "detTypeTxt": "Yalnızca mobil veri – telefon numarası yok (aramalar WhatsApp vb. ile)"
+    "detTypeTxt": "Yalnızca mobil veri – telefon numarası yok (aramalar WhatsApp vb. ile)",
+    "sumUnl": "Günde {hs} GB tam hız, sonra {fup}",
+    "detAfterTopup": "İnternet durur – ek paket yükleyebilirsin",
+    "detAfterStop": "İnternet durur"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -285,7 +288,10 @@
     "detIp": "IP location",
     "detIpTxt": "Internet breakout: {list}",
     "detType": "Type",
-    "detTypeTxt": "Mobile data only – no phone number (calls via WhatsApp etc.)"
+    "detTypeTxt": "Mobile data only – no phone number (calls via WhatsApp etc.)",
+    "sumUnl": "{hs} GB/day full speed, then {fup}",
+    "detAfterTopup": "Data stops – you can add a top-up",
+    "detAfterStop": "Data stops"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -429,7 +435,10 @@
     "detIp": "IP-Standort",
     "detIpTxt": "Internet-Ausgang: {list}",
     "detType": "Art",
-    "detTypeTxt": "Nur mobile Daten – keine Telefonnummer (Anrufe per WhatsApp & Co.)"
+    "detTypeTxt": "Nur mobile Daten – keine Telefonnummer (Anrufe per WhatsApp & Co.)",
+    "sumUnl": "{hs} GB/Tag volle Geschwindigkeit, danach {fup}",
+    "detAfterTopup": "Daten stoppen – du kannst nachladen",
+    "detAfterStop": "Daten stoppen"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -573,7 +582,10 @@
     "detIp": "موقع IP",
     "detIpTxt": "مخرج الإنترنت: {list}",
     "detType": "النوع",
-    "detTypeTxt": "بيانات جوال فقط – بدون رقم هاتف (المكالمات عبر واتساب وغيره)"
+    "detTypeTxt": "بيانات جوال فقط – بدون رقم هاتف (المكالمات عبر واتساب وغيره)",
+    "sumUnl": "{hs} غيغابايت يوميًا بسرعة كاملة، ثم {fup}",
+    "detAfterTopup": "يتوقف الإنترنت – يمكنك إعادة الشحن",
+    "detAfterStop": "يتوقف الإنترنت"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -717,7 +729,10 @@
     "detIp": "IP-локация",
     "detIpTxt": "Выход в интернет: {list}",
     "detType": "Тип",
-    "detTypeTxt": "Только мобильный интернет – без номера телефона (звонки через WhatsApp и др.)"
+    "detTypeTxt": "Только мобильный интернет – без номера телефона (звонки через WhatsApp и др.)",
+    "sumUnl": "{hs} ГБ/сутки на полной скорости, затем {fup}",
+    "detAfterTopup": "Интернет отключается – можно пополнить",
+    "detAfterStop": "Интернет отключается"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -861,7 +876,10 @@
     "detIp": "Localisation IP",
     "detIpTxt": "Sortie internet : {list}",
     "detType": "Type",
-    "detTypeTxt": "Data mobile uniquement – sans numéro (appels via WhatsApp etc.)"
+    "detTypeTxt": "Data mobile uniquement – sans numéro (appels via WhatsApp etc.)",
+    "sumUnl": "{hs} Go/jour à pleine vitesse, puis {fup}",
+    "detAfterTopup": "La data s'arrête – recharge possible",
+    "detAfterStop": "La data s'arrête"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -1005,6 +1023,9 @@
     "detIp": "Ubicación IP",
     "detIpTxt": "Salida a internet: {list}",
     "detType": "Tipo",
-    "detTypeTxt": "Solo datos móviles – sin número de teléfono (llamadas por WhatsApp, etc.)"
+    "detTypeTxt": "Solo datos móviles – sin número de teléfono (llamadas por WhatsApp, etc.)",
+    "sumUnl": "{hs} GB/día a máxima velocidad, luego {fup}",
+    "detAfterTopup": "Los datos se detienen – puedes recargar",
+    "detAfterStop": "Los datos se detienen"
   }
 }

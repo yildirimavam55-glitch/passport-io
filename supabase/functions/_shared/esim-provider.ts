@@ -170,11 +170,14 @@ export async function esimGoCatalog(toEur: (n: number, cur: string) => number | 
         return `${String(Math.round(mb * 100) / 100).replace(".", ",")} Mbit/s`;
       };
       const fupTxt = code ? speedTxt(code[3], code[4]) : fupm ? speedTxt(fupm[1], fupm[2]) : null;
+      // Fehlt der Code, gelten die festen Werte der Stufe (eSIM Go: lite 1 GB/512 kbit/s, essential 1 GB/1,28 Mbit/s, plus 2 GB/2 Mbit/s)
+      const TIER_FUP: Record<string, [number, string]> = { lite: [1, "512 kbit/s"], essential: [1, "1,28 Mbit/s"], plus: [2, "2 Mbit/s"] };
+      const tf = tier ? TIER_FUP[tier] : undefined;
       const meta: PlanMeta = {
         spd: (b.speed ?? []).join("/") || undefined,
         net: isos.length === 1 ? [...new Map(nets.map((o: any) => [o.n, o])).values()].slice(0, 8) as any : undefined,
-        fup: fupTxt,
-        hs: hsGb, hsDay: !!(code || hsm), tier: tier ?? undefined,
+        fup: fupTxt ?? tf?.[1] ?? null,
+        hs: hsGb ?? tf?.[0] ?? null, hsDay: !!(code || hsm || tf), tier: tier ?? undefined,
         act: b.autostart ? "network" : "install",
         top: true, ip: null,
         sms: al.some((a) => a.type === "SMS"), voice: al.some((a) => a.type === "VOICE"),

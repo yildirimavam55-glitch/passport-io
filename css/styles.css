@@ -492,6 +492,11 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .plan-det__list dd { margin: 0; color: var(--ink); font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
 .plan-det__none { margin: 6px 0 0; color: var(--ink-3); }
 .plan__days { white-space: nowrap; }
+/* Kurzinfo unter dem Tarif (Netze, Technik, Drosselung) – eigene Zeile */
+.plan { flex-wrap: wrap; row-gap: 4px; }
+.plan__sum { order: 10; flex: 1 0 100%; font-size: 12.5px; line-height: 1.35; color: var(--ink-3); font-weight: 500; }
+.plan__sum:empty { display: none; }
+.plan--unl .plan__sum { color: var(--green-ink); }
 @media (max-width: 480px) {
   .plan { gap: 8px; padding: 12px 10px 12px 14px; }
   .plan__gb { min-width: 0; font-size: 16px; }

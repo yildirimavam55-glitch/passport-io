@@ -1268,7 +1268,7 @@
     // Datenpakete zuerst (nach Preis), dann Unlimited (nach Laufzeit); Reiter nur, wenn es beides gibt
     const all = plansOf(item.code ? "country:" + item.code : "region:" + item.id);
     const plans = [
-      ...all.filter((p) => !p.unlimited).sort((a, b) => a.price - b.price),
+      ...all.filter((p) => !p.unlimited).sort((a, b) => a.gb - b.gb || a.days - b.days || a.price - b.price),
       ...all.filter((p) => p.unlimited).sort((a, b) => a.days - b.days || a.price - b.price),
     ];
     const hasData = plans.some((p) => !p.unlimited), hasUnl = plans.some((p) => p.unlimited);
@@ -1296,6 +1296,7 @@
                 <span class="plan__gb">${esc(vol(p))}</span><span class="plan__days">${esc(t("days", { n: p.days }))}</span>
                 ${p.popular ? `<span class="plan__pop">${esc(t("popular"))}</span>` : ""}
                 <span class="plan__price">${eur(p.price)}</span>
+                <span class="plan__sum" data-sum="${i}"></span>
                 <button type="button" class="plan__info" data-info="${i}" aria-expanded="false" aria-controls="pd-${i}" aria-label="${esc(t("detToggle"))}" title="${esc(t("detToggle"))}">${icon("chev-r")}</button>
               </label>
               <div class="plan-det" id="pd-${i}" hidden></div>
@@ -1359,7 +1360,7 @@
       const rows = [];
       const add = (k, v) => v && rows.push(`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`);
       if (p.unlimited) add(t("detData"), m?.hs && m?.fup ? t("detDataUnl", { hs: String(m.hs).replace(".", ","), fup: m.fup }) : t("detDataUnlPlain"));
-      else { add(t("detData"), t("detDataStd", { gb: p.gb })); if (m?.fup) add(t("detAfter"), m.fup); }
+      else { add(t("detData"), t("detDataStd", { gb: p.gb })); add(t("detAfter"), m?.fup ? m.fup : t(m?.top === false ? "detAfterStop" : "detAfterTopup")); }
       add(t("detValidity"), t("detValidityTxt", { n: p.days }));
       if (m) {
         if (m.net?.length) add(t("detNetwork"), m.net.map((n) => (n.t ? `${n.n} (${n.t})` : n.n)).join(", "));
@@ -1372,6 +1373,20 @@
       }
       return `<dl class="plan-det__list">${rows.join("")}</dl>${m ? "" : `<p class="plan-det__none">${esc(t("detNone"))}</p>`}`;
     };
+    // Kurzinfo in jeder Zeile: Netze + Technik, bei Unlimited zusätzlich die Drosselung
+    const summary = (p, m) => {
+      if (!m) return "";
+      const nets = (m.net || []).slice(0, 3).map((n) => n.n).join(" · ");
+      const top = (m.spd || "").split("/").filter(Boolean).pop();
+      const parts = [];
+      if (p.unlimited && m.hs && m.fup) parts.push(t("sumUnl", { hs: String(m.hs).replace(".", ","), fup: m.fup }));
+      if (nets) parts.push(nets);
+      if (top) parts.push(top);
+      return parts.join(" · ");
+    };
+    loadDetails().then((d) => {
+      $$("[data-sum]", modal).forEach((el) => { const pl = plans[+el.dataset.sum]; el.textContent = summary(pl, d[pl.id] || null); });
+    });
     async function toggleDetails(btn) {
       const i = +btn.dataset.info, box = $("#pd-" + i, modal), open = btn.getAttribute("aria-expanded") === "true";
       btn.setAttribute("aria-expanded", String(!open));
