@@ -11,7 +11,7 @@
    ========================================================================== */
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { cors, env, json } from "../_shared/http.ts";
-import { provision, usage } from "../_shared/esim-provider.ts";
+import { fulfillOrder, refresh } from "../_shared/esim-provider.ts";
 
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
 const LANGS = ["tr", "en", "de", "ar", "ru", "fr", "es"];
@@ -61,11 +61,12 @@ Deno.serve(async (req) => {
         db.from("refund_requests").select("order_id, status, created_at, decided_at").eq("user_id", user.id),
         db.from("support_requests").select("id, subject, status, created_at").eq("user_id", user.id).order("created_at", { ascending: false }).limit(20),
       ]);
-      // Verbrauch beim Anbieter auffrischen (höchstens alle 10 Minuten je eSIM)
+      // Verbrauch beim Anbieter auffrischen (höchstens alle 10 Minuten je eSIM; Profile in Arbeit alle 20 Sekunden)
       const fresh = await Promise.all((esims ?? []).map(async (e) => {
-        const stale = !e.usage_checked_at || Date.now() - new Date(e.usage_checked_at).getTime() > 10 * 60 * 1000;
+        const wait = e.status === "processing" ? 20 * 1000 : 10 * 60 * 1000;
+        const stale = !e.usage_checked_at || Date.now() - new Date(e.usage_checked_at).getTime() > wait;
         if (!stale || !e.provider_ref || ["expired", "cancelled"].includes(e.status)) return e;
-        const u = await usage(e.provider_ref).catch(() => null);
+        const u = await refresh(e.provider_ref).catch((err) => { console.error(err); return null; });
         if (!u) return e;
         const patch = { ...u, usage_checked_at: new Date().toISOString() };
         await db.from("esims").update(patch).eq("id", e.id);
@@ -104,7 +105,8 @@ Deno.serve(async (req) => {
       const { plan } = found;
       const { data: order, error } = await db.from("orders").insert({
         user_id: user.id, customer_email: user.email, product: "esim", item_key: item, plan_id: plan.id,
-        title: `${plan.gb} GB · ${plan.days}`, amount: plan.price, currency: found.currency,
+        title: `${plan.unlimited ? "Unlimited" : plan.gb + " GB"} · ${plan.days}`, amount: plan.price, currency: found.currency,
+        plan_meta: { gb: plan.gb, days: plan.days, unlimited: !!plan.unlimited },
       }).select().single();
       if (error) throw error;
 
@@ -115,16 +117,9 @@ Deno.serve(async (req) => {
       }
       if (env("ALLOW_TEST_ORDERS") !== "true") return json({ order, payment: { status: "provider_missing" } }, 409, headers);
 
-      // Testmodus: ohne Zahlung sofort eine Test-eSIM ausstellen
-      const p = await provision(plan);
-      const { data: esim, error: e2 } = await db.from("esims").insert({
-        user_id: user.id, order_id: order.id, country: item.split(":")[1] ?? item, plan_name: `${plan.gb} GB · ${plan.days}`,
-        iccid: p.iccid, lpa: p.lpa, smdp_address: p.smdp_address, activation_code: p.activation_code,
-        data_total_mb: p.data_total_mb, validity_days: p.validity_days, provider_ref: p.provider_ref, test: p.test,
-      }).select().single();
-      if (e2) throw e2;
-      await db.from("orders").update({ status: "fulfilled", test: true, updated_at: new Date().toISOString() }).eq("id", order.id);
-      return json({ order: { ...order, status: "fulfilled", test: true }, esim: view(esim) }, 200, headers);
+      // Testmodus: ohne Zahlung sofort eine Test-eSIM ausstellen – NIE eine echte (kostenpflichtige) eSIM
+      const done = await fulfillOrder(db, order.id, { test: true });
+      return json({ order: { ...done.order, test: true }, esim: done.esim ? view(done.esim) : null }, 200, headers);
     }
 
     if (body.action === "refund_request") {
@@ -135,7 +130,7 @@ Deno.serve(async (req) => {
       if (!["paid", "fulfilled"].includes(order.status)) return json({ error: "not_refundable" }, 409, headers);
       if (Date.now() - new Date(order.created_at).getTime() > refundDays() * 864e5) return json({ error: "too_late" }, 409, headers);
       const { data: es } = await db.from("esims").select("status, activated_at").eq("order_id", order.id);
-      if ((es ?? []).some((e) => !["ready", "cancelled"].includes(e.status) || e.activated_at)) return json({ error: "esim_used" }, 409, headers);
+      if ((es ?? []).some((e) => !["processing", "ready", "cancelled"].includes(e.status) || e.activated_at)) return json({ error: "esim_used" }, 409, headers);
       const { error } = await db.from("refund_requests").insert({ order_id: order.id, user_id: user.id, customer_email: user.email, reason: String(body.reason ?? "").trim().slice(0, 1000) || null });
       if (error) return json({ error: error.code === "23505" ? "already_requested" : "server" }, error.code === "23505" ? 409 : 500, headers);
       return json({ ok: true }, 200, headers);

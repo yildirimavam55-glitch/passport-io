@@ -138,14 +138,20 @@ window.PP_ACCOUNT = function (ctx) {
       <article class="esim ${"esim--" + esc(e.status)}">
         <header class="esim__head">
           ${e.country && e.country.length === 2 ? `<img class="esim__flag" src="${flag(e.country)}" alt="">` : `<span class="esim__flag esim__flag--globe">${icon("globe")}</span>`}
-          <div><h3>${esc(countryName(e.country))}</h3><p>${esc(e.plan_name ? e.plan_name.replace(/·\s*(\d+)$/, (m, n) => "· " + A("days", { n })) : "")}</p></div>
+          <div><h3>${esc(countryName(e.country))}</h3><p>${esc(e.plan_name ? e.plan_name.replace(/^Unlimited/, A("unlimited")).replace(/·\s*(\d+)$/, (m, n) => "· " + A("days", { n })) : "")}</p></div>
           <span class="esim__badge">${esc(statusLabel(e.status))}</span>
         </header>
         ${e.test ? `<p class="esim__test">${esc(A("testBadge"))}</p>` : ""}
+        ${e.status === "processing" ? `<p class="esim__test">${esc(A("processingNote"))}</p>` : ""}
+        ${e.unlimited ? `
+        <div class="esim__usage">
+          <div class="esim__bar esim__bar--unl" aria-hidden="true"><i style="width:100%"></i></div>
+          <div class="esim__nums"><span>${esc(A("dataUsedUnl", { used: gb(Number(e.data_used_mb || 0)) }))}</span><b>${esc(A("unlimited"))}</b></div>
+        </div>` : `
         <div class="esim__usage">
           <div class="esim__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><i style="width:${pct}%"></i></div>
           <div class="esim__nums"><span>${esc(A("dataUsed", { used: gb(used), total: gb(total) }))}</span><b>${esc(A("dataLeft", { left: gb(left) }))}</b></div>
-        </div>
+        </div>`}
         <dl class="esim__facts">
           <div><dt>${esc(A("remaining"))}</dt><dd>${e.days_left != null ? esc(A("daysLeft", { n: e.days_left })) : esc(A("validity", { n: e.validity_days || "–" }))}</dd></div>
           <div><dt>${esc(A("validUntilLabel"))}</dt><dd>${e.expires_at ? esc(fmtDate(e.expires_at)) : esc(A("startsOnUse"))}</dd></div>
@@ -170,7 +176,7 @@ window.PP_ACCOUNT = function (ctx) {
       const refundable = (o) => {
         if (!["paid", "fulfilled"].includes(o.status)) return false;
         if (Date.now() - new Date(o.created_at).getTime() > (a.refundDays || 30) * 864e5) return false;
-        return !(a.esims || []).some((e) => e.order_id === o.id && (!["ready", "cancelled"].includes(e.status) || e.activated_at));
+        return !(a.esims || []).some((e) => e.order_id === o.id && (!["processing", "ready", "cancelled"].includes(e.status) || e.activated_at));
       };
       body = a.orders.length ? `<div class="orders">${a.orders.map((o) => {
         const rr = (a.refunds || []).find((r) => r.order_id === o.id);

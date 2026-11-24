@@ -12,7 +12,7 @@
      CACHE_SECONDS abgefragt. Fällt ein Anbieter aus, bleibt der letzte gültige
      Stand stehen – erfundene Preise gibt es nie.
 
-   Secrets: ESIM_API_URL, ESIM_API_KEY, LOUNGE_API_URL, LOUNGE_API_KEY,
+   Secrets: ESIMACCESS_ACCESS_CODE, ESIMGO_API_KEY (siehe _shared/esim-provider.ts), LOUNGE_API_URL, LOUNGE_API_KEY,
             FASTTRACK_API_URL, FASTTRACK_API_KEY, (später VIGNETTE_API_URL/KEY)
             ALLOWED_ORIGINS (kommagetrennt, z. B. https://passport.io,https://<name>.github.io)
    SUPABASE_URL und SUPABASE_SERVICE_ROLE_KEY stellt Supabase automatisch bereit.
@@ -22,6 +22,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 // Testdaten (gleiches Format wie die Live-Antwort) – nur solange KEIN eSIM-Anbieter eingetragen ist.
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { applyPricing, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
+import { type Catalog, esimAccessCatalog, esimGoCatalog, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
 
 const CACHE_SECONDS = 15 * 60;
 /* ---------- Währungen ----------
@@ -33,7 +34,7 @@ const currencies = () => (Deno.env.get("CURRENCIES") ?? "EUR,USD,GBP,TRY,CHF").s
 const env = (k: string) => Deno.env.get(k) ?? "";
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
 
-type Plan = { id: string; gb: number; days: number; price: number; popular?: boolean; name?: string; countries?: number };
+type Plan = { id: string; gb: number; days: number; price: number; popular?: boolean; name?: string; countries?: number; unlimited?: boolean };
 type Esim = { countries: Record<string, { plans: Plan[] }>; regions: Record<string, { plans: Plan[] }>; global: { plans: Plan[] } };
 const EMPTY_ESIM: Esim = { countries: {}, regions: {}, global: { plans: [] } };
 
@@ -59,24 +60,33 @@ async function call(url: string, key: string, path = "") {
   return res.json();
 }
 const round = (n: unknown) => Math.round(Number(n) * 100) / 100;
-const valid = (p: Plan) => p.price > 0 && p.gb > 0 && p.days > 0;
 
-/* ---------- Adapter: eSIM-Anbieter ----------
-   TODO: an die Felder eures eSIM-Anbieters anpassen (Name des Anbieters nennen,
-   dann wird das passend zugeordnet). */
-async function esim(): Promise<Esim | null> {
-  const raw = await call(env("ESIM_API_URL"), env("ESIM_API_KEY"), "/packages");
-  if (!raw) return null;
-  const out: Esim = { countries: {}, regions: {}, global: { plans: [] } };
-  // deno-lint-ignore no-explicit-any
-  for (const p of (raw.data || raw.packages || []) as any[]) {
-    const plan: Plan = { id: String(p.id), gb: Number(p.data_gb ?? p.dataGb), days: Number(p.validity_days ?? p.days), price: round(p.wholesale_price ?? p.net_price ?? p.cost ?? p.price) }; // Einkaufspreis – Verkaufspreis macht die Preisregel
-    if (!valid(plan)) continue;
-    if (p.type === "global") out.global.plans.push({ ...plan, name: p.title, countries: Number(p.country_count) });
-    else if (p.type === "regional") (out.regions[p.region_code] ??= { plans: [] }).plans.push(plan);
-    else (out.countries[String(p.country_code).toLowerCase()] ??= { plans: [] }).plans.push(plan);
+/* ---------- Adapter: eSIM-Anbieter (eSIM Access = Datenvolumen, eSIM Go = Unlimited) ----------
+   Einkaufspreise werden in EUR umgerechnet (EZB-Kurs). Ohne Kurs fällt der Tarif weg – nie geschätzt.
+   Jeder Katalog hat einen eigenen Zwischenspeicher: eSIM Access 1 h, eSIM Go 6 h (eSIM Go bittet um
+   seltene Katalogabfragen). Fällt ein Anbieter aus, bleibt sein letzter gültiger Stand stehen. */
+async function cachedCatalog(id: string, ttl: number, load: () => Promise<Catalog | null>): Promise<Catalog | null> {
+  const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", id).maybeSingle();
+  if (row && (Date.now() - new Date(row.updated_at).getTime()) / 1000 < ttl) return row.body;
+  try {
+    const cat = await load();
+    if (cat) await db.from("price_cache").upsert({ id, body: cat, updated_at: new Date().toISOString() });
+    return cat;
+  } catch (err) {
+    console.error(err);
+    return row?.body ?? null;
   }
-  return out;
+}
+async function esim(): Promise<Esim | null> {
+  if (!providerConfigured()) return null;
+  const fx = await rates("EUR");
+  const toEur = (n: number, cur: string) => { cur = (cur || "EUR").toUpperCase(); if (cur === "EUR") return n; const r = fx?.rates?.[cur]; return r ? n / r : null; };
+  const [a, g] = await Promise.all([
+    cachedCatalog("cat:esimaccess", 3600, () => esimAccessCatalog(toEur)),
+    cachedCatalog("cat:esimgo", 6 * 3600, () => esimGoCatalog(toEur)),
+  ]);
+  if (!a && !g) throw new Error("Kein eSIM-Katalog verfügbar");
+  return mergeCatalogs(a, g) as Esim;
 }
 
 /* ---------- Adapter: „ab“-Preise (Lounge, Fast Track, Vignette) ---------- */
@@ -139,7 +149,7 @@ Deno.serve(async (req) => {
 
   // deno-lint-ignore no-explicit-any
   let body: any = null;
-  if (!env("ESIM_API_URL")) {
+  if (!providerConfigured()) {
     // Noch kein Anbieter angebunden → Testdaten (auf der Seite als „Testdaten“ gekennzeichnet)
     body = { ...structuredClone(MOCK), source: "mock" };
   } else {

@@ -131,7 +131,11 @@
     "supportHistory": "Taleplerin",
     "ticket_open": "Açık",
     "ticket_answered": "Yanıtlandı",
-    "ticket_closed": "Kapatıldı"
+    "ticket_closed": "Kapatıldı",
+    "unlimited": "Sınırsız",
+    "dataUsedUnl": "{used} kullanıldı",
+    "status_processing": "Hazırlanıyor",
+    "processingNote": "eSIM'iniz hazırlanıyor – genellikle birkaç dakika sürer. Sayfayı biraz sonra yenileyin."
   },
   "en": {
     "title": "My account",
@@ -265,7 +269,11 @@
     "supportHistory": "Your requests",
     "ticket_open": "Open",
     "ticket_answered": "Answered",
-    "ticket_closed": "Closed"
+    "ticket_closed": "Closed",
+    "unlimited": "Unlimited",
+    "dataUsedUnl": "{used} used",
+    "status_processing": "Preparing",
+    "processingNote": "Your eSIM is being prepared – this usually takes a few minutes. Refresh the page shortly."
   },
   "de": {
     "title": "Mein Konto",
@@ -399,7 +407,11 @@
     "supportHistory": "Deine Anfragen",
     "ticket_open": "Offen",
     "ticket_answered": "Beantwortet",
-    "ticket_closed": "Geschlossen"
+    "ticket_closed": "Geschlossen",
+    "unlimited": "Unbegrenzt",
+    "dataUsedUnl": "{used} verbraucht",
+    "status_processing": "Wird vorbereitet",
+    "processingNote": "Deine eSIM wird vorbereitet – das dauert meist nur ein paar Minuten. Lade die Seite gleich neu."
   },
   "ar": {
     "title": "حسابي",
@@ -533,7 +545,11 @@
     "supportHistory": "طلباتك",
     "ticket_open": "مفتوح",
     "ticket_answered": "تم الرد",
-    "ticket_closed": "مغلق"
+    "ticket_closed": "مغلق",
+    "unlimited": "غير محدود",
+    "dataUsedUnl": "تم استخدام {used}",
+    "status_processing": "قيد التجهيز",
+    "processingNote": "يتم تجهيز شريحتك الإلكترونية – يستغرق ذلك عادةً بضع دقائق. حدّث الصفحة بعد قليل."
   },
   "ru": {
     "title": "Мой аккаунт",
@@ -667,7 +683,11 @@
     "supportHistory": "Ваши обращения",
     "ticket_open": "Открыто",
     "ticket_answered": "Отвечено",
-    "ticket_closed": "Закрыто"
+    "ticket_closed": "Закрыто",
+    "unlimited": "Безлимит",
+    "dataUsedUnl": "Использовано {used}",
+    "status_processing": "Подготовка",
+    "processingNote": "Ваша eSIM готовится – обычно это занимает несколько минут. Обновите страницу чуть позже."
   },
   "fr": {
     "title": "Mon compte",
@@ -801,7 +821,11 @@
     "supportHistory": "Vos demandes",
     "ticket_open": "Ouverte",
     "ticket_answered": "Répondue",
-    "ticket_closed": "Clôturée"
+    "ticket_closed": "Clôturée",
+    "unlimited": "Illimité",
+    "dataUsedUnl": "{used} utilisés",
+    "status_processing": "En préparation",
+    "processingNote": "Votre eSIM est en préparation – cela prend généralement quelques minutes. Actualisez la page dans un instant."
   },
   "es": {
     "title": "Mi cuenta",
@@ -935,6 +959,10 @@
     "supportHistory": "Tus solicitudes",
     "ticket_open": "Abierta",
     "ticket_answered": "Respondida",
-    "ticket_closed": "Cerrada"
+    "ticket_closed": "Cerrada",
+    "unlimited": "Ilimitado",
+    "dataUsedUnl": "{used} usados",
+    "status_processing": "Preparando",
+    "processingNote": "Tu eSIM se está preparando; suele tardar unos minutos. Actualiza la página en un momento."
   }
 }

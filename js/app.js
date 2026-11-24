@@ -203,6 +203,9 @@
   /* Angebot sichtbar? Solange keine Preise da sind: ja (mit „Preis folgt“). Sonst nur, wenn die API es führt. */
   const offered = (key) => !PRICES || plansOf(key).length > 0;
   const popularPlan = (plans) => plans.find((p) => p.popular) || plans[Math.min(2, plans.length - 1)];
+  // Volumen-Beschriftung: „5 GB“ oder „Unbegrenzt“ (Unlimited-Tarife von eSIM Go)
+  const vol = (p) => (p.unlimited ? t("unlimited") : `${p.gb} GB`);
+  const volDays = (p) => (p.unlimited ? t("unlimitedDays", { days: p.days }) : t("gbDays", { gb: p.gb, days: p.days }));
   function refreshPrices() {
     $$("[data-price]").forEach((s) => {
       const v = priceOf(s.dataset.price);
@@ -293,7 +296,7 @@
                 <span class="dest__name"><img class="dest__flag" src="${flag(d.code)}" alt="">${esc(d.name)}</span>
                 <span class="dest__price">${P("country:" + d.code, t("priceFrom"))}</span>
                 <span class="dest__more">
-                  ${pop ? `<span class="dest__plan"><b>${esc(t("gbDays", { gb: pop.gb, days: pop.days }))}</b> ${esc(t("planFor", { p: eur(pop.price) }))} <em>${esc(t("popular"))}</em></span>` : ""}
+                  ${pop ? `<span class="dest__plan"><b>${esc(volDays(pop))}</b> ${esc(t("planFor", { p: eur(pop.price) }))} <em>${esc(t("popular"))}</em></span>` : ""}
                   <span class="dest__feat">${esc(t("destFeatures"))}</span>
                   <span class="dest__cta">${esc(t("viewPlans"))} ${icon("arrow")}</span>
                 </span>
@@ -369,7 +372,7 @@
                       ${plansOf("global").map((g, k) => `
                         <button class="gpick ${g.featured ? "gpick--featured" : ""}" type="button" data-global="${k}">
                           ${g.featured ? `<span class="gpick__badge">${esc(t("bestseller"))}</span>` : ""}
-                          <b>${g.gb} GB</b><span>${esc(t("days", { n: g.days }))}</span><strong>${eur(g.price)}</strong>
+                          <b>${esc(vol(g))}</b><span>${esc(t("days", { n: g.days }))}</span><strong>${eur(g.price)}</strong>
                         </button>`).join("")}
                     </div>` : `
                     <p class="kicker kicker--dark">${esc(t("regionalPackage"))}</p>
@@ -1262,7 +1265,13 @@
   function openPlans(item) {
     if (!item) return;
     // Pakete und Preise ausschließlich aus der Preis-Schnittstelle
-    const plans = [...plansOf(item.code ? "country:" + item.code : "region:" + item.id)].sort((a, b) => a.price - b.price);
+    // Datenpakete zuerst (nach Preis), dann Unlimited (nach Laufzeit); Reiter nur, wenn es beides gibt
+    const all = plansOf(item.code ? "country:" + item.code : "region:" + item.id);
+    const plans = [
+      ...all.filter((p) => !p.unlimited).sort((a, b) => a.price - b.price),
+      ...all.filter((p) => p.unlimited).sort((a, b) => a.days - b.days || a.price - b.price),
+    ];
+    const hasData = plans.some((p) => !p.unlimited), hasUnl = plans.some((p) => p.unlimited);
     const pre = Math.max(0, plans.findIndex((p) => p.popular));
     const modal = document.createElement("div");
     modal.className = "modal";
@@ -1275,15 +1284,20 @@
           <h3>${item.code ? `<img class="dest__flag" src="${flag(item.code)}" alt="">` : ""}${esc(item.name)}</h3>
         </div>
         <p class="modal__lead">${item.countries ? esc(t("modalCountries", { n: item.countries })) : ""}${esc(t("modalLead"))}</p>
-        ${plans.length ? `<div class="plan-list" role="radiogroup" aria-label="${esc(t("dataVolume"))}">
+        ${plans.length ? `${hasData && hasUnl ? `<div class="plan-tabs" role="tablist">
+            <button type="button" role="tab" class="plan-tab ${plans[pre].unlimited ? "" : "is-active"}" aria-selected="${!plans[pre].unlimited}" data-ptab="data">${esc(t("tabData"))}</button>
+            <button type="button" role="tab" class="plan-tab ${plans[pre].unlimited ? "is-active" : ""}" aria-selected="${!!plans[pre].unlimited}" data-ptab="unl">${icon("wifi")} ${esc(t("tabUnlimited"))}</button>
+          </div>` : ""}
+          <div class="plan-list" role="radiogroup" aria-label="${esc(t("dataVolume"))}">
           ${plans.map((p, i) => `
-            <label class="plan ${i === pre ? "is-active" : ""}">
+            <label class="plan ${i === pre ? "is-active" : ""} ${p.unlimited ? "plan--unl" : ""}" data-kind="${p.unlimited ? "unl" : "data"}" ${hasData && hasUnl && !!p.unlimited !== !!plans[pre].unlimited ? "hidden" : ""}>
               <input type="radio" name="plan" value="${i}" ${i === pre ? "checked" : ""}>
-              <span class="plan__gb">${p.gb} GB</span><span class="plan__days">${esc(t("days", { n: p.days }))}</span>
+              <span class="plan__gb">${esc(vol(p))}</span><span class="plan__days">${esc(t("days", { n: p.days }))}</span>
               ${p.popular ? `<span class="plan__pop">${esc(t("popular"))}</span>` : ""}
               <span class="plan__price">${eur(p.price)}</span>
             </label>`).join("")}
         </div>
+        ${hasUnl ? `<p class="plan-hint" ${hasData && !plans[pre].unlimited ? "hidden" : ""}>${icon("wifi")} ${esc(t("unlimitedHint"))}</p>` : ""}
         <button class="btn btn--dark plan-buy" type="button" style="width:100%;margin-top:18px">${esc(t("checkout"))} · <span>${eur(plans[pre].price)}</span></button>
         <p class="plan-note">${icon("shield")} ${esc(t("moneyBack"))}</p>`
         : `<div class="device-result__none">${esc(SITE.api?.modalUnavailableText || t("modalUnavailable"))}</div>`}
@@ -1293,7 +1307,20 @@
     const close = () => { modal.remove(); document.body.style.overflow = ""; document.removeEventListener("keydown", onKey); };
     const onKey = (e) => { if (e.key === "Escape") close(); };
     document.addEventListener("keydown", onKey);
-    modal.addEventListener("click", (e) => { if (e.target.closest("[data-close-modal]")) close(); });
+    modal.addEventListener("click", (e) => {
+      if (e.target.closest("[data-close-modal]")) return close();
+      const tab = e.target.closest("[data-ptab]");
+      if (!tab) return;
+      // Reiter wechseln: passende Tarife zeigen und den ersten (bzw. beliebten) auswählen
+      const kind = tab.dataset.ptab;
+      $$(".plan-tab", modal).forEach((b) => { b.classList.toggle("is-active", b === tab); b.setAttribute("aria-selected", b === tab); });
+      const rows = $$(".plan", modal);
+      rows.forEach((l) => (l.hidden = l.dataset.kind !== kind));
+      const hint = $(".plan-hint", modal);
+      if (hint) hint.hidden = kind !== "unl";
+      const first = rows.find((l) => l.dataset.kind === kind && plans[+$("input", l).value].popular) || rows.find((l) => l.dataset.kind === kind);
+      if (first) { const inp = $("input", first); inp.checked = true; inp.dispatchEvent(new Event("change", { bubbles: true })); }
+    });
     modal.addEventListener("change", (e) => {
       if (e.target.name !== "plan") return;
       $$(".plan", modal).forEach((l) => l.classList.toggle("is-active", l.contains(e.target)));

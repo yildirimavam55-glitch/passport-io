@@ -12,11 +12,12 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { cors, env, json } from "../_shared/http.ts";
 import { applyPricing, DEFAULTS, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
 import MOCK from "../_shared/mock.json" with { type: "json" };
+import { accessOn, cancel, fulfillOrder, goOn, providerConfigured } from "../_shared/esim-provider.ts";
 
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
 const admins = () => env("ADMIN_EMAILS").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
 const ORDER_ST = ["pending", "paid", "fulfilled", "failed", "refunded", "cancelled"];
-const ESIM_ST = ["ready", "installed", "active", "depleted", "expired", "cancelled"];
+const ESIM_ST = ["processing", "ready", "installed", "active", "depleted", "expired", "cancelled"];
 const num = (v: unknown, min = 0, max = 1e6) => { const n = Number(v); return Number.isFinite(n) && n >= min && n <= max ? n : null; };
 const txt = (v: unknown, max = 200) => String(v ?? "").trim().slice(0, max);
 
@@ -38,7 +39,7 @@ async function providerStatus() {
     const s = await r.json(); google = !!s.external?.google; apple = !!s.external?.apple;
   } catch (_) { /* unbekannt */ }
   return {
-    esim: !!env("ESIM_API_URL"), lounge: !!env("LOUNGE_API_URL"), fasttrack: !!env("FASTTRACK_API_URL"),
+    esim: providerConfigured(), esimAccess: accessOn(), esimGo: goOn(), lounge: !!env("LOUNGE_API_URL"), fasttrack: !!env("FASTTRACK_API_URL"),
     payment: env("PAYMENT_PROVIDER") || null, testOrders: env("ALLOW_TEST_ORDERS") === "true",
     cmsGithub: !!env("GITHUB_CLIENT_ID") && !!env("GITHUB_CLIENT_SECRET"), google, apple,
     currencies: env("CURRENCIES") || "EUR,USD,GBP,TRY,CHF",
@@ -48,7 +49,7 @@ async function providerStatus() {
 /** Preisvorschau: Einkaufspreise (Cache oder Testdaten) mit angewandter Regel */
 async function pricingPreview() {
   let raw: any;
-  if (env("ESIM_API_URL")) { const { data } = await db.from("price_cache").select("body").eq("id", "current").maybeSingle(); raw = data?.body; }
+  if (providerConfigured()) { const { data } = await db.from("price_cache").select("body").eq("id", "current").maybeSingle(); raw = data?.body; }
   raw = raw ?? { ...structuredClone(MOCK), source: "mock" };
   const base = raw.currency ?? "EUR";
   const { data: fxRow } = await db.from("price_cache").select("body").eq("id", `fx:${base}`).maybeSingle();
@@ -195,13 +196,36 @@ Deno.serve(async (req) => {
       const { data: rr } = await db.from("refund_requests").select("id, order_id, status").eq("id", txt(b.id, 60)).maybeSingle();
       if (!rr || rr.status !== "open") return json({ error: "not_open" }, 409, headers);
       await db.from("refund_requests").update({ status: decision, admin_note: txt(b.note, 1000) || null, decided_by: user.email, decided_at: now }).eq("id", rr.id);
+      const providerCancel: string[] = [];
       if (decision === "approved") {
         const { data: o } = await db.from("orders").select("amount").eq("id", rr.order_id).maybeSingle();
         await db.from("orders").update({ status: "refunded", refunded_amount: o?.amount ?? 0, updated_at: now }).eq("id", rr.order_id);
+        // Unbenutzte eSIM beim Anbieter stornieren (eSIM Access erstattet den Einkauf aufs Guthaben)
+        const { data: es } = await db.from("esims").select("id, provider_ref, test").eq("order_id", rr.order_id);
+        for (const e of es ?? []) {
+          if (e.test || !e.provider_ref) continue;
+          const ok = await cancel(e.provider_ref).catch((err) => { console.error(err); return false; });
+          providerCancel.push(ok ? "ok" : "manual");
+        }
         await db.from("esims").update({ status: "cancelled" }).eq("order_id", rr.order_id);
       }
-      await audit("refund_" + decision, rr.order_id, { note: txt(b.note, 300) });
-      return json({ ok: true }, 200, headers);
+      await audit("refund_" + decision, rr.order_id, { note: txt(b.note, 300), providerCancel });
+      return json({ ok: true, providerCancel }, 200, headers);
+    }
+    if (b.action === "order_fulfill") {
+      // eSIM für eine BEZAHLTE Bestellung ausstellen (z. B. nach manueller Zahlungsprüfung). Nie doppelt.
+      const { data: o } = await db.from("orders").select("id, status, test").eq("id", txt(b.id, 60)).maybeSingle();
+      if (!o) return json({ error: "not_found" }, 404, headers);
+      if (o.status !== "paid") return json({ error: "not_paid" }, 409, headers);
+      try {
+        const r = await fulfillOrder(db, o.id, { test: o.test });
+        await audit("order_fulfill", o.id, { already: r.already, provider: r.esim?.provider ?? null, status: r.esim?.status ?? null });
+        return json({ ok: true, already: r.already, esimStatus: r.esim?.status ?? null }, 200, headers);
+      } catch (err) {
+        console.error(err);
+        await audit("order_fulfill_failed", o.id, { message: String((err as Error).message).slice(0, 300) });
+        return json({ error: "provider", message: String((err as Error).message).slice(0, 300) }, 502, headers);
+      }
     }
     if (b.action === "support_update") {
       const st = ["open", "answered", "closed"].includes(b.status) ? b.status : null;

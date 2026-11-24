@@ -114,7 +114,12 @@
     "handoffMsg": "Nasıl yardımcı olabiliriz?",
     "handoffSend": "Ekibe gönder",
     "handoffSent": "Teşekkürler! Ekibimiz en kısa sürede e-postayla dönüş yapacak.",
-    "handoffErr": "Lütfen geçerli bir e-posta ve kısa bir mesaj gir."
+    "handoffErr": "Lütfen geçerli bir e-posta ve kısa bir mesaj gir.",
+    "unlimited": "Sınırsız",
+    "tabData": "Veri paketleri",
+    "tabUnlimited": "Sınırsız",
+    "unlimitedHint": "Sınırsız veri · adil kullanım politikası geçerlidir",
+    "unlimitedDays": "Sınırsız · {days} gün"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -231,7 +236,12 @@
     "handoffMsg": "How can we help?",
     "handoffSend": "Send to the team",
     "handoffSent": "Thanks! Our team will reply by email shortly.",
-    "handoffErr": "Please enter a valid email and a short message."
+    "handoffErr": "Please enter a valid email and a short message.",
+    "unlimited": "Unlimited",
+    "tabData": "Data plans",
+    "tabUnlimited": "Unlimited",
+    "unlimitedHint": "Unlimited data · fair usage policy applies",
+    "unlimitedDays": "Unlimited · {days} days"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -348,7 +358,12 @@
     "handoffMsg": "Wie können wir helfen?",
     "handoffSend": "An das Team senden",
     "handoffSent": "Danke! Unser Team antwortet dir bald per E-Mail.",
-    "handoffErr": "Bitte gib eine gültige E-Mail und eine kurze Nachricht ein."
+    "handoffErr": "Bitte gib eine gültige E-Mail und eine kurze Nachricht ein.",
+    "unlimited": "Unbegrenzt",
+    "tabData": "Datenpakete",
+    "tabUnlimited": "Unbegrenzt",
+    "unlimitedHint": "Unbegrenzte Daten · es gilt eine Fair-Use-Regel",
+    "unlimitedDays": "Unbegrenzt · {days} Tage"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -465,7 +480,12 @@
     "handoffMsg": "كيف يمكننا المساعدة؟",
     "handoffSend": "إرسال إلى الفريق",
     "handoffSent": "شكرًا! سيرد فريقنا عليك بالبريد قريبًا.",
-    "handoffErr": "يرجى إدخال بريد صحيح ورسالة قصيرة."
+    "handoffErr": "يرجى إدخال بريد صحيح ورسالة قصيرة.",
+    "unlimited": "غير محدود",
+    "tabData": "باقات البيانات",
+    "tabUnlimited": "غير محدود",
+    "unlimitedHint": "بيانات غير محدودة · تطبق سياسة الاستخدام العادل",
+    "unlimitedDays": "غير محدود · {days} يومًا"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -582,7 +602,12 @@
     "handoffMsg": "Чем мы можем помочь?",
     "handoffSend": "Отправить команде",
     "handoffSent": "Спасибо! Команда скоро ответит по почте.",
-    "handoffErr": "Введите корректный e-mail и короткое сообщение."
+    "handoffErr": "Введите корректный e-mail и короткое сообщение.",
+    "unlimited": "Безлимит",
+    "tabData": "Пакеты данных",
+    "tabUnlimited": "Безлимит",
+    "unlimitedHint": "Безлимитный интернет · действует политика честного использования",
+    "unlimitedDays": "Безлимит · {days} дн."
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -699,7 +724,12 @@
     "handoffMsg": "Comment pouvons-nous aider ?",
     "handoffSend": "Envoyer à l'équipe",
     "handoffSent": "Merci ! Notre équipe vous répondra bientôt par e-mail.",
-    "handoffErr": "Saisissez un e-mail valide et un court message."
+    "handoffErr": "Saisissez un e-mail valide et un court message.",
+    "unlimited": "Illimité",
+    "tabData": "Forfaits data",
+    "tabUnlimited": "Illimité",
+    "unlimitedHint": "Data illimitée · politique d'utilisation raisonnable",
+    "unlimitedDays": "Illimité · {days} jours"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -816,6 +846,11 @@
     "handoffMsg": "¿Cómo podemos ayudarte?",
     "handoffSend": "Enviar al equipo",
     "handoffSent": "¡Gracias! Nuestro equipo te responderá pronto por correo.",
-    "handoffErr": "Introduce un correo válido y un mensaje corto."
+    "handoffErr": "Introduce un correo válido y un mensaje corto.",
+    "unlimited": "Ilimitado",
+    "tabData": "Planes de datos",
+    "tabUnlimited": "Ilimitado",
+    "unlimitedHint": "Datos ilimitados · se aplica una política de uso razonable",
+    "unlimitedDays": "Ilimitado · {days} días"
   }
 }
