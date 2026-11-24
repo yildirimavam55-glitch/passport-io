@@ -135,13 +135,18 @@ export async function esimGoCatalog(toEur: (n: number, cur: string) => number | 
       const data = al.find((a) => a.type === "DATA");
       const nets = (b.countries ?? []).flatMap((c: any) => (c.countryNetworks?.networks ?? c.networks ?? []).map((n: any) => ({ n: String(n.brandName || n.name || "").trim(), t: (n.speeds ?? []).join("/") || undefined }))).filter((n: any) => n.n);
       const text = `${b.description ?? ""} ${data?.description ?? ""}`;
-      const hsm = text.match(/([0-9]+(?:[.][0-9]+)?)[ ]*GB[ ]*(?:[/]|per|a)[ ]*day/i) || text.match(/([0-9]+(?:[.][0-9]+)?)[ ]*GB/i);
-      const fupm = text.match(/([0-9]+(?:[.][0-9]+)?)[ ]*(kbps|mbps)/i);
+      // Fair-Use steht im Allowance-Code, z. B. "ESIM_UL_7D_ALL_U1000MB512KBPS" = 1000 MB pro Tag in voller
+      // Geschwindigkeit, danach 512 kbit/s (Unlimited-Tarife von eSIM Go setzen das Volumen täglich zurück)
+      const code = text.match(/U([0-9]+(?:[.][0-9]+)?)(MB|GB)([0-9]+(?:[.][0-9]+)?)(KBPS|MBPS)/i);
+      const hsm = code ? null : text.match(/([0-9]+(?:[.][0-9]+)?)[ ]*GB[ ]*(?:[/]|per|a)[ ]*day/i);
+      const fupm = code ? null : text.match(/([0-9]+(?:[.][0-9]+)?)[ ]*(kbps|mbps)/i);
+      const hsGb = code ? Math.round((Number(code[1]) / (code[2].toUpperCase() === "MB" ? 1000 : 1)) * 100) / 100 : hsm ? Number(hsm[1]) : null;
+      const fupTxt = code ? `${code[3]} ${code[4].toUpperCase() === "KBPS" ? "kbit/s" : "Mbit/s"}` : fupm ? `${fupm[1]} ${/^k/i.test(fupm[2]) ? "kbit/s" : "Mbit/s"}` : null;
       const meta: PlanMeta = {
         spd: (b.speed ?? []).join("/") || undefined,
         net: isos.length === 1 ? [...new Map(nets.map((o: any) => [o.n, o])).values()].slice(0, 8) as any : undefined,
-        fup: fupm ? `${fupm[1]} ${fupm[2].replace(/^k/i, "K").replace(/^m/i, "M")}` : null,
-        hs: hsm ? Number(hsm[1]) : null, hsDay: !!(hsm && /day/i.test(hsm[0])),
+        fup: fupTxt,
+        hs: hsGb, hsDay: !!(code || hsm),
         act: b.autostart ? "network" : "install",
         top: true, ip: null,
         sms: al.some((a) => a.type === "SMS"), voice: al.some((a) => a.type === "VOICE"),
