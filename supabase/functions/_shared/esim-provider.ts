@@ -51,9 +51,10 @@ async function eg(path: string, init: RequestInit = {}) {
 /* ---------- Region aus dem Tarifnamen (unsere Regionen: eu, asia, na, me, latam, af, global) ---------- */
 const REGION_WORDS: [RegExp, string][] = [
   [/global|world|worldwide/i, "global"], [/middle east|mena|gulf/i, "me"], [/europe|\beu\b|euro/i, "eu"],
-  [/north america|usa? ?(&|and|\+) ?canada/i, "na"], [/latin|south america|central america|caribbean|americas/i, "latam"],
+  [/north america|usa? ?(&|and|\+) ?canada/i, "na"], [/latin|south america|central america|cenam|caribbean|americas/i, "latam"],
   [/africa/i, "af"], [/asia|apac/i, "asia"],
 ];
+const ISO2 = /^[a-z]{2}$/i;
 const regionOf = (text: string) => REGION_WORDS.find(([re]) => re.test(text))?.[1] ?? null;
 
 function add(cat: Catalog, kind: "country" | "region" | "global", key: string, plan: CatalogPlan) {
@@ -80,7 +81,7 @@ export async function esimAccessCatalog(toEur: (n: number, cur: string) => numbe
     if (!(gb >= 1) || gb > 200 || !(days > 0) || !cost) continue;
     const locs = String(p.location ?? "").split(",").map((s) => s.trim()).filter(Boolean);
     const plan: CatalogPlan = { id: `ea:${p.packageCode}`, gb, days, price: Math.round(cost * 100) / 100 };
-    if (locs.length === 1) add(cat, "country", locs[0].toLowerCase(), plan);
+    if (locs.length === 1 && ISO2.test(locs[0])) add(cat, "country", locs[0].toLowerCase(), plan);
     else {
       const reg = regionOf(`${p.name} ${p.description ?? ""}`);
       if (reg) add(cat, reg === "global" ? "global" : "region", reg, { ...plan, name: p.name, countries: locs.length });
@@ -102,10 +103,12 @@ export async function esimGoCatalog(toEur: (n: number, cur: string) => number | 
       if (!(days > 0) || !cost) continue;
       const isos = (b.countries ?? []).map((c: any) => String(c.iso ?? c.country?.iso ?? "").toLowerCase()).filter(Boolean);
       const plan: CatalogPlan = { id: `eg:${b.name}`, gb: 0, days, price: Math.round(cost * 100) / 100, unlimited: true };
-      if (isos.length === 1) add(cat, "country", isos[0], plan);
+      // Ein Land nur bei echtem 2-Buchstaben-Code – eSIM Go führt Regionen teils als „Land“ (z. B. "Europe+", "Middle East")
+      if (isos.length === 1 && ISO2.test(isos[0])) add(cat, "country", isos[0], plan);
       else {
-        const reg = regionOf(`${b.description ?? ""} ${b.name ?? ""} ${(b.countries ?? [])[0]?.region ?? ""}`);
-        if (reg) add(cat, reg === "global" ? "global" : "region", reg, { ...plan, name: b.description, countries: isos.length });
+        const reg = regionOf(`${b.description ?? ""} ${b.name ?? ""} ${isos.join(" ")} ${(b.countries ?? [])[0]?.region ?? ""}`);
+        const n = (b.roamingEnabled ?? []).length || isos.filter((x: string) => ISO2.test(x)).length || undefined;
+        if (reg) add(cat, reg === "global" ? "global" : "region", reg, { ...plan, name: b.description, countries: n });
       }
     }
     const pages = Number(raw?.pageCount ?? 0);

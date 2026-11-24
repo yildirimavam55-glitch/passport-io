@@ -90,7 +90,7 @@ async function esim(): Promise<Esim | null> {
   const toEur = (n: number, cur: string) => { cur = (cur || "EUR").toUpperCase(); if (cur === "EUR") return n; const r = fx?.rates?.[cur]; return r ? n / r : null; };
   const [a, g] = await Promise.all([
     cachedCatalog("cat:esimaccess3", 3600, () => esimAccessCatalog(toEur)),
-    cachedCatalog("cat:esimgo2", 6 * 3600, () => esimGoCatalog(toEur)),
+    cachedCatalog("cat:esimgo3", 6 * 3600, () => esimGoCatalog(toEur)),
   ]);
   if (!a && !g) throw new Error("Kein eSIM-Katalog verfügbar");
   return mergeCatalogs(a, g) as Esim;
