@@ -22,7 +22,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 // Testdaten (gleiches Format wie die Live-Antwort) – nur solange KEIN eSIM-Anbieter eingetragen ist.
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { applyPricing, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
-import { applyAssortment } from "../_shared/assortment.ts";
+import { applyAssortment, dropDominated } from "../_shared/assortment.ts";
 import { accessOn, type Catalog, esimAccessCatalog, goTier, esimGoCatalog, goOn, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
 
 const CACHE_SECONDS = 15 * 60;
@@ -200,6 +200,8 @@ Deno.serve(async (req) => {
     // Nur Paketgrößen, die auch die Wettbewerber verkaufen (bei Testdaten unverändert)
     if (body.source !== "mock") body = applyAssortment(body, comps);
     body = applyPricing(body, settings, comps, toBase);
+    // Kleinere Pakete, die mehr kosten als ein größeres, fallen weg (keine unlogischen Preise)
+    if (body.source !== "mock") body = dropDominated(body);
   }
 
   // Gewünschte Währung (?currency=TRY). Ohne Kurs bleibt es bei der Anbieterwährung – nie ein geschätzter Wert.

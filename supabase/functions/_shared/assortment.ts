@@ -13,6 +13,31 @@ import type { Competitor } from "./pricing.ts";
 const STD_DATA = new Set(["1|7", "3|30", "5|30", "10|30", "20|30", "50|30"]);
 const STD_UNL_DAYS = new Set([3, 5, 7, 10, 15, 30]);
 
+/**
+ * Nach der Preisregel: unlogische Pakete entfernen. Kostet ein kleineres Paket (weniger GB und/oder
+ * kürzere Laufzeit) MEHR als ein größeres, würde es niemand kaufen – es fällt weg. Bei Unlimited zählt die
+ * Laufzeit. So ist ein größeres Paket nie günstiger als ein angezeigtes kleineres.
+ */
+export function dropDominated(body: any) {
+  const clean = (plans: any[] | undefined) => {
+    if (!plans?.length) return plans;
+    const bigger = (p: any, q: any) => p.unlimited
+      ? Number(p.days) > Number(q.days)
+      : Number(p.gb) >= Number(q.gb) && Number(p.days) >= Number(q.days) && (Number(p.gb) > Number(q.gb) || Number(p.days) > Number(q.days));
+    const out = plans.filter((q) => !plans.some((p) => p !== q && !!p.unlimited === !!q.unlimited && bigger(p, q) && Number(p.price) < Number(q.price)));
+    if (!out.some((p) => p.popular)) {
+      const d = out.filter((p) => !p.unlimited);
+      const pop = d.find((p) => Number(p.gb) === 5 && Number(p.days) === 30) ?? d[Math.floor(d.length / 2)];
+      if (pop) pop.popular = true;
+    }
+    return out;
+  };
+  for (const c of Object.values<any>(body.esim?.countries ?? {})) c.plans = clean(c.plans);
+  for (const c of Object.values<any>(body.esim?.regions ?? {})) c.plans = clean(c.plans);
+  if (body.esim?.global) body.esim.global.plans = clean(body.esim.global.plans);
+  return body;
+}
+
 export function applyAssortment(body: any, comps: Competitor[]) {
   const shapes = new Map<string, Set<string>>();
   for (const c of comps) {
