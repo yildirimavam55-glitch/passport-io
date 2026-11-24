@@ -500,10 +500,12 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 @media (max-width: 480px) {
   .plan { gap: 8px; padding: 12px 10px 12px 14px; }
   .plan__gb { min-width: 0; font-size: 16px; }
-  .plan__pop { padding: 3px 6px; font-size: 10px; }
+  .plan { position: relative; }
+  .plan__pop { position: absolute; top: -9px; left: 12px; padding: 2px 8px; font-size: 10px; line-height: 1.4; }
+  .plan-row + .plan-row { margin-top: 2px; }
   .plan__price { white-space: nowrap; }
   .plan__info { margin: -4px -4px -4px 0; width: 28px; height: 28px; }
-  .plan-list { padding: 2px 4px 2px 2px; }
+  .plan-list { padding: 10px 4px 2px 2px; }
 }
 @media (max-width: 420px) { .plan-det__list > div { grid-template-columns: minmax(0, 1fr); gap: 1px; } }
 /* Reiter Datenpakete / Unbegrenzt */
