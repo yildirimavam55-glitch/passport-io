@@ -25,11 +25,8 @@ concurrency:
 
 jobs:
   website:
-    name: Webseite (GitHub Pages)
+    name: Webseite bauen
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - name: Nur die öffentlichen Dateien einpacken
@@ -44,6 +41,16 @@ jobs:
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
+
+  # Eigener Schritt: GitHub findet das Paket zuverlässig erst nach Abschluss des Bau-Schritts
+  pages:
+    name: Webseite (GitHub Pages)
+    needs: website
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
       - id: deploy
         uses: actions/deploy-pages@v4
 
