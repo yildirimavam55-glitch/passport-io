@@ -1320,7 +1320,7 @@
       // Reiter wechseln: passende Tarife zeigen und den ersten (bzw. beliebten) auswählen
       const kind = tab.dataset.ptab;
       $$(".plan-tab", modal).forEach((b) => { b.classList.toggle("is-active", b === tab); b.setAttribute("aria-selected", b === tab); });
-      const rows = $(".plan-row", modal);
+      const rows = $$(".plan-row", modal);
       rows.forEach((l) => (l.hidden = l.dataset.kind !== kind));
       const hint = $(".plan-hint", modal);
       if (hint) hint.hidden = kind !== "unl";

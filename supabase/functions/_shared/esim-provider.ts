@@ -127,7 +127,21 @@ export async function esimGoCatalog(toEur: (n: number, cur: string) => number | 
   const cur = goCurrency();
   const wantTier = goTier();
   // Netzbetreiber stehen bei eSIM Go in countryNetworks: [{ country: { iso }, networks: [...] }]
-  const netsOf = (b: any) => (b.countryNetworks ?? []).flatMap((cn: any) => (cn.networks ?? []).map((n: any) => ({ n: String(n.brandName || n.name || "").trim(), t: (n.speeds ?? []).join("/") || undefined }))).filter((n: any) => n.n);
+  // Ländernamen aus Netznamen entfernen („O2 Germany“ → „O2“) und Dubletten zusammenfassen (beste Technik behalten)
+  const netsOf = (b: any) => {
+    const out = new Map<string, { n: string; t?: string }>();
+    for (const cn of b.countryNetworks ?? []) {
+      const land = String(cn.country?.name ?? "").trim();
+      for (const n of cn.networks ?? []) {
+        let name = String(n.brandName || n.name || "").trim();
+        if (land && name.toLowerCase().endsWith(" " + land.toLowerCase())) name = name.slice(0, -land.length - 1).trim();
+        if (!name) continue;
+        const t = (n.speeds ?? []).join("/") || undefined, key = name.toLowerCase(), old = out.get(key);
+        if (!old || (t && (!old.t || t.length > old.t.length))) out.set(key, { n: name, t });
+      }
+    }
+    return [...out.values()];
+  };
   for (let page = 1; page <= 40; page++) {
     const raw = await eg(`/catalogue?page=${page}&perPage=200`);
     const list: any[] = Array.isArray(raw) ? raw : raw?.bundles ?? [];
