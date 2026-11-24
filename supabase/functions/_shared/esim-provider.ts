@@ -162,7 +162,14 @@ export async function esimGoCatalog(toEur: (n: number, cur: string) => number | 
       const hsm = code ? null : text.match(/([0-9]+(?:[.][0-9]+)?)[ ]*GB[ ]*(?:[/]|per|a)[ ]*day/i);
       const fupm = code ? null : text.match(/([0-9]+(?:[.][0-9]+)?)[ ]*(kbps|mbps)/i);
       const hsGb = code ? Math.round((Number(code[1]) / (code[2].toUpperCase() === "MB" ? 1000 : 1)) * 100) / 100 : hsm ? Number(hsm[1]) : null;
-      const fupTxt = code ? `${code[3]} ${code[4].toUpperCase() === "KBPS" ? "kbit/s" : "Mbit/s"}` : fupm ? `${fupm[1]} ${/^k/i.test(fupm[2]) ? "kbit/s" : "Mbit/s"}` : null;
+      // Geschwindigkeit lesbar: ab 1000 kbit/s in Mbit/s (1280 kbit/s → 1,28 Mbit/s; 2048 → 2 Mbit/s)
+      const speedTxt = (v: string, unit: string) => {
+        const kbps = Number(v) * (/^m/i.test(unit) ? 1000 : 1);
+        if (kbps < 1000) return `${kbps} kbit/s`;
+        const mb = kbps % 1024 === 0 ? kbps / 1024 : kbps / 1000;
+        return `${String(Math.round(mb * 100) / 100).replace(".", ",")} Mbit/s`;
+      };
+      const fupTxt = code ? speedTxt(code[3], code[4]) : fupm ? speedTxt(fupm[1], fupm[2]) : null;
       const meta: PlanMeta = {
         spd: (b.speed ?? []).join("/") || undefined,
         net: isos.length === 1 ? [...new Map(nets.map((o: any) => [o.n, o])).values()].slice(0, 8) as any : undefined,
