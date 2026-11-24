@@ -106,26 +106,26 @@
 
   /* ---------- İskelet ---------- */
   const NAV = [
-    ["overview", "▦", "Genel bakış"], ["orders", "🧾", "Siparişler"], ["payments", "💳", "Ödemeler"],
-    ["refunds", "↩", "İade talepleri"], ["support", "✉", "Destek talepleri"], ["questions", "💬", "Lina soruları"],
-    ["customers", "👥", "Müşteriler"], ["esims", "📶", "eSIM'ler"], ["pricing", "₺", "Fiyatlar & rakipler"],
-    ["settings", "⚙", "Entegrasyonlar"], ["audit", "📜", "İşlem kaydı"], ["security", "🔒", "Güvenlik"],
+    ["", "", "Genel"], ["overview", "◧", "Genel bakış"],
+    ["", "", "Satış"], ["orders", "🧾", "Siparişler"], ["payments", "💳", "Ödemeler"], ["refunds", "↩", "İade talepleri"], ["esims", "📶", "eSIM'ler"],
+    ["", "", "Müşteriler"], ["customers", "👥", "Müşteriler"], ["support", "✉", "Destek talepleri"], ["questions", "💬", "Lina soruları"],
+    ["", "", "Online mağaza"], ["editor", "✎", "Mağaza editörü"], ["pricing", "₺", "Fiyatlar & rakipler"],
+    ["", "", "Ayarlar"], ["settings", "⚙", "Entegrasyonlar"], ["audit", "📜", "İşlem kaydı"], ["security", "🔒", "Güvenlik"],
   ];
   let view = "overview", userEmail = "", counts = {};
-  function shell(title, body) {
+  function shell(title, body, sub = "") {
     app.innerHTML = `
       <div class="pl">
         <aside class="pl-side">
-          <div class="pl-brand">passport<em>.io</em><small>Mağaza yönetimi</small></div>
-          ${NAV.map(([id, ic, label]) => `<a class="pl-nav ${id === view ? "is-active" : ""}" href="#${id}"><i>${ic}</i>${label}${counts[id] ? `<span class="pl-count">${counts[id]}</span>` : ""}</a>`).join("")}
-          <a class="pl-nav" href="./" target="_blank" rel="noopener"><i>✎</i>İçerikleri düzenle ↗</a>
+          <div class="pl-brand"><span class="pl-logo">◉</span><span>passport<em>.io</em><small>Mağaza yönetimi</small></span></div>
+          ${NAV.map(([id, ic, label]) => !id ? `<div class="pl-group">${esc(label)}</div>` : `<a class="pl-nav ${id === view ? "is-active" : ""}" href="#${id}"><i>${ic}</i>${label}${counts[id] ? `<span class="pl-count">${counts[id]}</span>` : ""}</a>`).join("")}
           <div class="pl-sep"></div>
           <a class="pl-nav" href="../index.html" target="_blank" rel="noopener"><i>↗</i>Mağazayı gör</a>
         </aside>
         <main class="pl-main">
           <div class="pl-top">
-            <div style="display:flex;gap:10px;align-items:center"><button class="pl-btn pl-btn--line pl-btn--sm pl-burger" data-menu>☰</button><h1>${esc(title)}</h1></div>
-            <div class="pl-user">${esc(userEmail)} <button class="pl-btn pl-btn--line pl-btn--sm" data-logout>Çıkış yap</button></div>
+            <div style="display:flex;gap:12px;align-items:center"><button class="pl-btn pl-btn--line pl-btn--sm pl-burger" data-menu>☰</button><h1>${esc(title)}${sub ? `<span class="pl-sub">${esc(sub)}</span>` : ""}</h1></div>
+            <div class="pl-user"><span class="pl-avatar">${esc((userEmail || "?").slice(0, 1).toUpperCase())}</span><span>${esc(userEmail)}</span> <button class="pl-btn pl-btn--line pl-btn--sm" data-logout>Çıkış</button></div>
           </div>
           ${body}
         </main>
@@ -134,13 +134,57 @@
   const loading = (title) => shell(title, `<p class="pl-loading">Yükleniyor …</p>`);
   const table = (head, rows, empty) => `<div class="pl-table-wrap"><table><thead><tr>${head.map((h) => `<th${h.startsWith("#") ? ' class="num"' : ""}>${esc(h.replace(/^#/, ""))}</th>`).join("")}</tr></thead><tbody>${rows.join("") || `<tr><td colspan="${head.length}" class="pl-empty">${esc(empty)}</td></tr>`}</tbody></table></div>`;
 
-  /* Son 30 günün grafiği (SVG çubuklar) */
-  function chart(days, cur) {
-    const vals = days.map((d) => d.revenue[cur] || 0), max = Math.max(1, ...vals);
-    const w = 720, h = 180, bw = w / days.length;
-    const bars = days.map((d, i) => { const v = d.revenue[cur] || 0, bh = Math.round((v / max) * (h - 30)); return `<g><title>${day(d.day)} · ${money(v, cur)} · ${d.orders} sipariş</title><rect x="${(i * bw + 2).toFixed(1)}" y="${h - 20 - bh}" width="${(bw - 4).toFixed(1)}" height="${Math.max(bh, 1)}" rx="3" fill="${v ? "#2ef58a" : "#dfe8e3"}"/></g>`; }).join("");
-    const labels = [0, 10, 20, 29].map((i) => `<text x="${(i * bw + bw / 2).toFixed(1)}" y="${h - 4}" font-size="11" text-anchor="middle" fill="#6b7671">${day(days[i].day)}</text>`).join("");
-    return `<svg viewBox="0 0 ${w} ${h}" class="pl-chart" role="img" aria-label="Son 30 gün ciro">${bars}${labels}</svg>`;
+  /* ---------- Dashboard-Bausteine ---------- */
+  const eurF = (n) => money(n, "EUR");
+  const delta = (cur, prev) => {
+    if (!prev && !cur) return `<span class="pl-delta flat">±0 %</span>`;
+    if (!prev) return `<span class="pl-delta up">▲ yeni</span>`;
+    const p = Math.round(((cur - prev) / prev) * 100);
+    return `<span class="pl-delta ${p > 0 ? "up" : p < 0 ? "down" : "flat"}">${p > 0 ? "▲" : p < 0 ? "▼" : "±"} ${Math.abs(p)} %</span>`;
+  };
+  // Mini-Kurve für eine KPI-Karte
+  const spark = (vals) => {
+    if (!vals.length) return "";
+    const max = Math.max(1, ...vals), w = 96, h = 34, step = w / Math.max(1, vals.length - 1);
+    const pts = vals.map((v, i) => `${(i * step).toFixed(1)},${(h - 3 - (v / max) * (h - 6)).toFixed(1)}`).join(" ");
+    return `<svg class="pl-spark" viewBox="0 0 ${w} ${h}" aria-hidden="true"><polyline points="${pts}" fill="none" stroke="#2ef58a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity=".85"/></svg>`;
+  };
+  // Große Umsatzkurve (Fläche + Bestellbalken) mit Hover-Tooltip
+  function areaChart(series) {
+    const w = 760, h = 230, pad = { l: 8, r: 8, t: 14, b: 26 };
+    const vals = series.map((d) => d.revenue), maxV = Math.max(1, ...vals), maxO = Math.max(1, ...series.map((d) => d.orders));
+    const iw = w - pad.l - pad.r, ih = h - pad.t - pad.b, step = iw / Math.max(1, series.length - 1);
+    const x = (i) => pad.l + i * step, y = (v) => pad.t + ih - (v / maxV) * ih;
+    const line = series.map((d, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(d.revenue).toFixed(1)}`).join("");
+    const area = `${line}L${x(series.length - 1).toFixed(1)},${pad.t + ih}L${x(0).toFixed(1)},${pad.t + ih}Z`;
+    const bw = Math.max(2, Math.min(14, step * 0.5));
+    const bars = series.map((d, i) => d.orders ? `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${(pad.t + ih - (d.orders / maxO) * ih * 0.35).toFixed(1)}" width="${bw.toFixed(1)}" height="${((d.orders / maxO) * ih * 0.35).toFixed(1)}" rx="2" fill="#6aa8ff" opacity=".35"/>` : "").join("");
+    const grid = [0.25, 0.5, 0.75, 1].map((f) => `<line x1="${pad.l}" x2="${w - pad.r}" y1="${(pad.t + ih - f * ih).toFixed(1)}" y2="${(pad.t + ih - f * ih).toFixed(1)}" stroke="#1e2925" stroke-dasharray="3 5"/>`).join("");
+    const n = series.length, ticks = [0, Math.round(n / 3), Math.round((2 * n) / 3), n - 1].filter((v, i, a) => a.indexOf(v) === i);
+    const labels = ticks.map((i) => `<text x="${x(i).toFixed(1)}" y="${h - 6}" font-size="11" text-anchor="${i === 0 ? "start" : i === n - 1 ? "end" : "middle"}" fill="#7f8d87">${day(series[i].day)}</text>`).join("");
+    return `<div class="pl-chartwrap"><svg viewBox="0 0 ${w} ${h}" class="pl-chart" data-chart role="img" aria-label="Ciro grafiği">
+      <defs><linearGradient id="plg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2ef58a" stop-opacity=".35"/><stop offset="1" stop-color="#2ef58a" stop-opacity="0"/></linearGradient></defs>
+      ${grid}${bars}<path d="${area}" fill="url(#plg)"/><path d="${line}" fill="none" stroke="#2ef58a" stroke-width="2.2" stroke-linejoin="round"/>
+      <line data-cursor x1="0" x2="0" y1="${pad.t}" y2="${pad.t + ih}" stroke="#2ef58a" stroke-opacity=".5" visibility="hidden"/>
+      <circle data-dot r="4.5" fill="#070a09" stroke="#2ef58a" stroke-width="2.5" visibility="hidden"/>${labels}
+      <rect x="0" y="0" width="${w}" height="${h}" fill="transparent" data-hit/></svg><div class="pl-tip" hidden></div></div>
+      <div class="pl-legend"><span><i style="background:#2ef58a"></i>Ciro (EUR)</span><span><i style="background:#6aa8ff;opacity:.6"></i>Sipariş</span></div>`;
+  }
+  function wireChart(el, series) {
+    const svg = $("[data-chart]", el); if (!svg) return;
+    const tip = $(".pl-tip", el), cur = $("[data-cursor]", svg), dot = $("[data-dot]", svg);
+    const w = 760, h = 230, pad = { l: 8, r: 8, t: 14, b: 26 }, ih = h - pad.t - pad.b, maxV = Math.max(1, ...series.map((d) => d.revenue));
+    const step = (w - pad.l - pad.r) / Math.max(1, series.length - 1);
+    $("[data-hit]", svg).addEventListener("mousemove", (e) => {
+      const r = svg.getBoundingClientRect(), sx = ((e.clientX - r.left) / r.width) * w;
+      const i = Math.max(0, Math.min(series.length - 1, Math.round((sx - pad.l) / step))), d = series[i];
+      const px = pad.l + i * step, py = pad.t + ih - (d.revenue / maxV) * ih;
+      cur.setAttribute("x1", px); cur.setAttribute("x2", px); cur.setAttribute("visibility", "visible");
+      dot.setAttribute("cx", px); dot.setAttribute("cy", py); dot.setAttribute("visibility", "visible");
+      tip.hidden = false; tip.style.left = `${(px / w) * 100}%`; tip.style.top = `${(py / h) * 100}%`;
+      tip.innerHTML = `${esc(day(d.day))} · <b>${esc(eurF(d.revenue))}</b> · ${d.orders} sipariş`;
+    });
+    $("[data-hit]", svg).addEventListener("mouseleave", () => { tip.hidden = true; cur.setAttribute("visibility", "hidden"); dot.setAttribute("visibility", "hidden"); });
   }
 
   /* ---------- Görünümler ---------- */
@@ -148,40 +192,69 @@
     loading("Genel bakış");
     const d = await api("GET", "?view=overview");
     counts = { refunds: d.openRefunds, support: d.openSupport, questions: d.openQuestions };
-    const rev = Object.entries(d.revenue);
-    const cur = rev.sort((a, b) => b[1] - a[1])[0]?.[0] || "EUR";
-    const s = d.status;
+    const k = d.kpi || {}, s = d.status, series = d.series || [];
+    const last = (n) => series.slice(-n).map((x) => x.revenue);
     const check = [
       ["eSIM Access (veri paketleri)", s.esimAccess, "Supabase secret: ESIMACCESS_ACCESS_CODE"],
-      ["eSIM Go (sınırsız paketler)", s.esimGo, "Supabase secret: ESIMGO_API_KEY (+ ESIMGO_CURRENCY)"],
+      ["eSIM Go (sınırsız paketler)", s.esimGo, "Supabase secret: ESIMGO_API_KEY"],
       ["Ödeme sağlayıcısı", !!s.payment, "Ödeme sağlayıcısını seç ve bağla (PAYMENT_PROVIDER)"],
+      ["Mağaza editörü (GitHub)", s.contentEditor, "Supabase secret: GITHUB_CONTENT_TOKEN"],
       ["Google ile giriş", s.google, "Supabase → Authentication → Providers → Google"],
       ["Apple ile giriş", s.apple, "Supabase → Authentication → Providers → Apple"],
-      ["İçerik editörü (GitHub)", s.cmsGithub, "GitHub OAuth uygulaması, GITHUB_CLIENT_ID/SECRET"],
       ["Test modu kapalı", !s.testOrders, "Yayından önce ALLOW_TEST_ORDERS secret'ını sil"],
       ["İki adımlı doğrulama", d.mfa?.hasFactor, "Menü → Güvenlik"],
     ];
+    const done = check.filter((c) => c[1]).length;
+    const hello = new Date().getHours() < 12 ? "Günaydın" : new Date().getHours() < 18 ? "İyi günler" : "İyi akşamlar";
+    const card = (label, v, prev, prevLabel, sp, hero) => `
+      <div class="pl-card pl-kpi ${hero ? "pl-kpi--hero" : ""}"><span>${esc(label)}</span><b>${esc(eurF(v.revenue || 0))}</b>
+        <div class="pl-kpi__meta">${delta(v.revenue || 0, prev?.revenue || 0)}<span>${esc(prevLabel)}</span></div>
+        <div class="pl-kpi__meta"><span>${v.orders || 0} sipariş</span></div>${spark(sp)}</div>`;
+    const top = d.topItems || [], topMax = Math.max(1, ...top.map((t) => t.revenue));
+    const itemName = (key) => { const [type, id] = String(key).split(":"); if (type === "country") { try { return new Intl.DisplayNames(["tr"], { type: "region" }).of(id.toUpperCase()); } catch (_) { return id; } } return ({ eu: "Avrupa", asia: "Asya", na: "Kuzey Amerika", me: "Orta Doğu", latam: "Latin Amerika", af: "Afrika" })[id] || key; };
     shell("Genel bakış", `
       <div class="pl-grid">
-        <div class="pl-card pl-kpi"><span>Ciro (ödenmiş)</span><b>${rev.length ? rev.map(([c, v]) => esc(money(v, c))).join("<br>") : esc(money(0, "EUR"))}</b></div>
-        <div class="pl-card pl-kpi"><span>Sipariş (30 gün)</span><b>${d.orders30}</b></div>
-        <div class="pl-card pl-kpi"><span>Müşteri</span><b>${d.customers}</b></div>
-        <div class="pl-card pl-kpi"><span>eSIM aktif / toplam</span><b>${d.esimsActive} / ${d.esims}</b></div>
+        ${card("Bugün", k.today || {}, k.yesterday, "dün ile karşılaştırma", last(7), true)}
+        ${card("Son 7 gün", k.week || {}, k.prevWeek, "önceki 7 gün", last(14))}
+        ${card("Bu ay", k.month || {}, k.prevMonth, "geçen ayın aynı dönemi", last(30))}
+        <div class="pl-card pl-kpi"><span>Toplam ciro</span><b>${esc(eurF(k.total?.revenue || 0))}</b>
+          <div class="pl-kpi__meta"><span>${k.total?.orders || 0} sipariş · Ø ${esc(eurF(k.total?.orders ? k.total.revenue / k.total.orders : 0))}</span></div>
+          <div class="pl-kpi__meta"><span>${d.customers} müşteri · +${d.newCustomers30 || 0} (30 gün)</span></div>${spark(last(90))}</div>
       </div>
-      <div class="pl-grid pl-grid--3">
-        <a class="pl-card pl-kpi pl-link" href="#refunds"><span>Bekleyen iade talepleri</span><b class="${d.openRefunds ? "warn" : ""}">${d.openRefunds}</b></a>
-        <a class="pl-card pl-kpi pl-link" href="#support"><span>Açık destek talepleri</span><b class="${d.openSupport ? "warn" : ""}">${d.openSupport}</b></a>
-        <a class="pl-card pl-kpi pl-link" href="#questions"><span>Lina'nın yanıtlayamadığı sorular</span><b>${d.openQuestions}</b></a>
-      </div>
-      <div class="pl-card" style="margin-bottom:14px"><h2>Son 30 gün <small>ciro (${esc(cur)}) ve sipariş · test siparişleri hariç</small></h2>${chart(d.days, cur)}</div>
       <div class="pl-two">
-        <div class="pl-card"><h2>Son siparişler</h2>${ordersTable(d.recent, false)}</div>
-        <div class="pl-card"><h2>Yayına hazır mı? <small>satış kontrol listesi</small></h2>
-          <div class="pl-check">${check.map(([l, ok, how]) => `<div><span>${esc(l)}${ok ? "" : `<small>${esc(how)}</small>`}</span><span class="pl-badge ${ok ? "ok" : "warn"}">${ok ? "Tamam" : "Eksik"}</span></div>`).join("")}</div>
-          <h2 style="margin-top:18px">Sipariş durumları</h2>
-          <div class="pl-check">${Object.entries(d.byStatus).map(([k, v]) => `<div><span>${esc(ORDER_ST[k])}</span><b>${v}</b></div>`).join("")}</div>
+        <div class="pl-card pl-chartcard"><h2>Ciro gelişimi <span class="pl-seg" data-range>${[7, 30, 90].map((n) => `<button type="button" data-days="${n}" class="${n === 30 ? "is-active" : ""}">${n} gün</button>`).join("")}</span></h2><div data-chartbox>${areaChart(series.slice(-30))}</div></div>
+        <div class="pl-card"><h2>Bekleyen işler</h2>
+          <div class="pl-tasks">
+            <a class="pl-task" href="#refunds"><span>İade talepleri</span><b class="${d.openRefunds ? "warn" : ""}">${d.openRefunds}</b></a>
+            <a class="pl-task" href="#support"><span>Destek talepleri</span><b class="${d.openSupport ? "warn" : ""}">${d.openSupport}</b></a>
+            <a class="pl-task" href="#questions"><span>Lina'nın yanıtlayamadığı sorular</span><b>${d.openQuestions}</b></a>
+            <a class="pl-task" href="#esims"><span>Aktif eSIM / toplam</span><b>${d.esimsActive} / ${d.esims}</b></a>
+          </div>
+          <h2 style="margin-top:18px">En çok satan destinasyonlar <small>30 gün</small></h2>
+          ${top.length ? `<div class="pl-bars">${top.map((t) => `<div class="pl-bar"><span>${esc(itemName(t.key))} <small class="pl-note">· ${t.orders} sipariş</small></span><b>${esc(eurF(t.revenue))}</b><div class="pl-bar__track"><i style="width:${Math.round((t.revenue / topMax) * 100)}%"></i></div></div>`).join("")}</div>` : `<p class="pl-help">Henüz satış yok.</p>`}
         </div>
-      </div>`);
+      </div>
+      <div class="pl-two">
+        <div class="pl-card"><h2>Son siparişler <small><a href="#orders">Tümü →</a></small></h2>${ordersTable(d.recent, false)}</div>
+        <div class="pl-card"><h2>Yayına hazır mı? <small>${done} / ${check.length} tamam</small></h2>
+          <div class="pl-progress"><i style="width:${Math.round((done / check.length) * 100)}%"></i></div>
+          <div class="pl-check">${check.map(([l, ok, how]) => `<div><span>${esc(l)}${ok ? "" : `<small>${esc(how)}</small>`}</span><span class="pl-badge ${ok ? "ok" : "warn"}">${ok ? "Tamam" : "Eksik"}</span></div>`).join("")}</div>
+        </div>
+      </div>`, `${hello} · ${new Intl.DateTimeFormat("tr-TR", { weekday: "long", day: "numeric", month: "long" }).format(new Date())}`);
+    const box = $("[data-chartbox]");
+    wireChart(box, series.slice(-30));
+    $("[data-range]").addEventListener("click", (e) => {
+      const b = e.target.closest("[data-days]"); if (!b) return;
+      $$("[data-range] button").forEach((x) => x.classList.toggle("is-active", x === b));
+      const sl = series.slice(-Number(b.dataset.days));
+      box.innerHTML = areaChart(sl); wireChart(box, sl);
+    });
+  }
+
+  /* ---------- Mağaza editörü (eigene Datei panel-editor.js) ---------- */
+  async function editor() {
+    if (!window.PPEditor) { shell("Mağaza editörü", `<div class="pl-card"><p>Editör yüklenemedi.</p></div>`); return; }
+    window.PPEditor.open({ api, toast, esc, close: () => { location.hash = "overview"; } });
   }
 
   function ordersTable(list, editable = true) {
@@ -325,7 +398,7 @@
           ${row("Kendi e-posta gönderimi (SMTP)", false, "Yayından önce zorunlu – ör. Resend, Brevo, Postmark", dash("settings/auth"))}
           ${row("Bot koruması (CAPTCHA)", false, "Supabase → Authentication → Attack Protection → Turnstile/hCaptcha", dash("auth/protection"))}
           ${row("Yönlendirme adresleri", true, "Yayındaki alan adının account.html adresini ekle", dash("auth/url-configuration"))}
-          ${row("İçerik editörü (GitHub)", s.cmsGithub, "GitHub OAuth uygulaması, GITHUB_CLIENT_ID/SECRET", dash("settings/functions"))}
+          ${row("Mağaza editörü (GitHub)", s.contentEditor, "Secret: GITHUB_CONTENT_TOKEN – GitHub'da yalnızca bu depo için \"Contents: Read and write\" izinli ince ayarlı token", dash("settings/functions"))}
         </div></div>
       </div>`);
   }
@@ -349,7 +422,7 @@
       </div>`);
   }
 
-  const VIEWS = { overview, orders, payments, refunds, support, questions, customers, esims, pricing, settings, audit, security };
+  const VIEWS = { overview, editor, orders, payments, refunds, support, questions, customers, esims, pricing, settings, audit, security };
   let lastCsv = null;
   async function show() {
     view = VIEWS[location.hash.slice(1)] ? location.hash.slice(1) : "overview";

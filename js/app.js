@@ -13,8 +13,13 @@
      Sprache = ?lang=… (Umschalter) › gespeicherte Wahl › Sprache des Geräts › Standard. */
   const PAGE = document.body.dataset.page || "home";
   // Schutz gegen Einbetten in fremde Seiten (Clickjacking) – GitHub Pages kann dafür keine Header setzen
-  if (window.top !== window.self) { try { window.top.location = window.self.location.href; } catch (_) { document.documentElement.innerHTML = ""; return; } }
-  const getJSON = (p) => fetch(p, { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`); return r.json(); });
+  // Ausnahme: die Live-Vorschau im eigenen Mağaza editörü (gleiche Herkunft, ?editor=1)
+  const sameOriginParent = (() => { try { return window.parent !== window && window.parent.location.origin === location.origin; } catch (_) { return false; } })();
+  const EDITOR = sameOriginParent && new URLSearchParams(location.search).get("editor") === "1";
+  if (window.top !== window.self && !EDITOR) { try { window.top.location = window.self.location.href; } catch (_) { document.documentElement.innerHTML = ""; return; } }
+  // Im Editor: noch nicht gespeicherte Entwürfe (sessionStorage „pp_draft:<datei>“) statt der veröffentlichten Datei
+  const draft = (p) => { if (!EDITOR) return null; try { const s = sessionStorage.getItem("pp_draft:" + p); return s ? JSON.parse(s) : null; } catch (_) { return null; } };
+  const getJSON = (p) => { const d = draft(p); if (d) return Promise.resolve(d); return fetch(p, { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`); return r.json(); }); };
   const KEY = (o) => (o && typeof o === "object" ? (o.id ?? o.code) : undefined);
   function merge(base, over) {
     if (over === undefined || over === null) return base;

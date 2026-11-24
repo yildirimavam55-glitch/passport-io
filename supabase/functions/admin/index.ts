@@ -39,7 +39,7 @@ async function providerStatus() {
     const s = await r.json(); google = !!s.external?.google; apple = !!s.external?.apple;
   } catch (_) { /* unbekannt */ }
   return {
-    esim: providerConfigured(), esimAccess: accessOn(), esimGo: goOn(), lounge: !!env("LOUNGE_API_URL"), fasttrack: !!env("FASTTRACK_API_URL"),
+    esim: providerConfigured(), esimAccess: accessOn(), esimGo: goOn(), contentEditor: !!env("GITHUB_CONTENT_TOKEN"), lounge: !!env("LOUNGE_API_URL"), fasttrack: !!env("FASTTRACK_API_URL"),
     payment: env("PAYMENT_PROVIDER") || null, testOrders: env("ALLOW_TEST_ORDERS") === "true",
     cmsGithub: !!env("GITHUB_CLIENT_ID") && !!env("GITHUB_CLIENT_SECRET"), google, apple,
     currencies: env("CURRENCIES") || "EUR,USD,GBP,TRY,CHF",
@@ -111,11 +111,39 @@ Deno.serve(async (req) => {
           if (new Date(o.created_at).getTime() > last30) orders30++;
         });
         const byStatus = ORDER_ST.reduce((a: any, s) => ((a[s] = (orders ?? []).filter((o: any) => o.status === s).length), a), {});
+        // Kennzahlen in EUR (EZB-Kurs aus dem Zwischenspeicher): heute, Woche, Monat + Vorzeitraum, Verlauf 90 Tage
+        const { data: fxRow } = await db.from("price_cache").select("body").eq("id", "fx:EUR").maybeSingle();
+        const toEur = (n: number, c: string) => { c = String(c || "EUR").toUpperCase(); if (c === "EUR") return n; const r = fxRow?.body?.rates?.[c]; return r ? n / r : 0; };
+        const paid = (orders ?? []).filter((o: any) => !o.test && ["paid", "fulfilled"].includes(o.status));
+        const startOf = (d: Date) => { const x = new Date(d); x.setUTCHours(0, 0, 0, 0); return x.getTime(); };
+        const now = new Date(), today = startOf(now), dayMs = 864e5;
+        const monthStart = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1), prevMonthStart = Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - 1, 1);
+        const sumRange = (from: number, to: number) => {
+          const list = paid.filter((o: any) => { const t = new Date(o.created_at).getTime(); return t >= from && t < to; });
+          const rev = list.reduce((a: number, o: any) => a + toEur(Number(o.amount), o.currency), 0);
+          return { revenue: Math.round(rev * 100) / 100, orders: list.length };
+        };
+        const elapsedMonth = now.getTime() - monthStart; // Vormonat bis zum gleichen Tag vergleichen
+        const kpi = {
+          today: sumRange(today, today + dayMs), yesterday: sumRange(today - dayMs, today),
+          week: sumRange(today - 6 * dayMs, today + dayMs), prevWeek: sumRange(today - 13 * dayMs, today - 6 * dayMs),
+          month: sumRange(monthStart, now.getTime() + 1), prevMonth: sumRange(prevMonthStart, prevMonthStart + elapsedMonth),
+          total: sumRange(0, now.getTime() + 1),
+        };
+        const series: { day: string; revenue: number; orders: number }[] = [];
+        for (let i = 89; i >= 0; i--) { const s = today - i * dayMs; const r = sumRange(s, s + dayMs); series.push({ day: new Date(s).toISOString().slice(0, 10), ...r }); }
+        // Top-Ziele der letzten 30 Tage
+        const top: Record<string, { orders: number; revenue: number }> = {};
+        paid.filter((o: any) => new Date(o.created_at).getTime() >= today - 29 * dayMs).forEach((o: any) => {
+          const k = String(o.item_key || "?"); top[k] ??= { orders: 0, revenue: 0 }; top[k].orders++; top[k].revenue = Math.round((top[k].revenue + toEur(Number(o.amount), o.currency)) * 100) / 100;
+        });
+        const topItems = Object.entries(top).sort((a, b) => b[1].revenue - a[1].revenue).slice(0, 6).map(([key, v]) => ({ key, ...v }));
         return json({
           revenue, orders30, byStatus, customers: Object.keys(users).length, esims: esimCount ?? 0, esimsActive: activeCount ?? 0,
           recent: (orders ?? []).slice(0, 8).map((o: any) => ({ ...o, email: users[o.user_id]?.email ?? o.customer_email ?? "" })), status,
           days, openRefunds: openRefunds ?? 0, openSupport: openSupport ?? 0, openQuestions: openQuestions ?? 0,
-          mfa: { hasFactor, aal },
+          mfa: { hasFactor, aal }, kpi, series, topItems,
+          newCustomers30: Object.values(users).filter((u) => new Date(u.created_at).getTime() >= today - 29 * dayMs).length,
         }, 200, headers);
       }
       if (view === "orders") {
@@ -282,6 +310,49 @@ Deno.serve(async (req) => {
       const good = rows.filter(Boolean);
       if (good.length) { const { error } = await db.from("competitor_prices").insert(good); if (error) throw error; await audit("competitor_import", String(good.length)); }
       return json({ ok: true, imported: good.length, skipped: rows.length - good.length }, 200, headers);
+    }
+
+    /* ---------- Mağaza editörü: Inhalte laden/speichern über GitHub (Secret GITHUB_CONTENT_TOKEN) ---------- */
+    if (b.action === "content_get" || b.action === "content_put" || b.action === "content_upload") {
+      const token = env("GITHUB_CONTENT_TOKEN"), repo = env("GITHUB_REPO") || "yildirimavam55-glitch/passport-io", branch = env("GITHUB_BRANCH") || "main";
+      if (!token) return json({ error: "github_missing" }, 409, headers);
+      const gh = (path: string, init: RequestInit = {}) => fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+        ...init, headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", "User-Agent": "passport-io-admin", "Content-Type": "application/json" },
+      });
+      const b64 = (s: string) => { const bytes = new TextEncoder().encode(s); let bin = ""; for (const x of bytes) bin += String.fromCharCode(x); return btoa(bin); };
+      const unb64 = (s: string) => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g, "")), (c) => c.charCodeAt(0)));
+      if (b.action === "content_upload") {
+        // Bild hochladen → img/uploads/<zeit>-<name>; nur Bilder bis 3 MB
+        const name = txt(b.name, 80).toLowerCase().replace(/[^a-z0-9.-]+/g, "-").replace(/^-+|-+$/g, "");
+        const ext = (name.match(/\.(jpe?g|png|webp|avif|gif|svg)$/) || [])[1];
+        const data = String(b.data ?? "");
+        if (!ext || !/^[A-Za-z0-9+/=]+$/.test(data) || data.length > 4_200_000) return json({ error: "invalid_image" }, 400, headers);
+        const path = `img/uploads/${Date.now()}-${name}`;
+        const r = await gh(path, { method: "PUT", body: JSON.stringify({ message: `Bild hochgeladen: ${name}`, content: data, branch }) });
+        if (!r.ok) return json({ error: "github", status: r.status }, 502, headers);
+        await audit("content_upload", path);
+        return json({ ok: true, path, url: path }, 200, headers); // relativ, die Seite liegt ggf. in einem Unterordner
+      }
+      // Erlaubte Dateien: content/<name>.json und content/posts/<name>.json (nicht auth.json/blog.json – werden erzeugt)
+      const file = txt(b.file, 120);
+      if (!/^content\/(posts\/)?[a-z0-9-]+\.json$/.test(file) || /^content\/(auth|blog)\.json$/.test(file)) return json({ error: "file" }, 400, headers);
+      if (b.action === "content_get") {
+        const r = await gh(`${file}?ref=${branch}`);
+        if (r.status === 404) return json({ data: null, sha: null }, 200, headers);
+        if (!r.ok) return json({ error: "github", status: r.status }, 502, headers);
+        const d = await r.json();
+        return json({ data: JSON.parse(unb64(d.content)), sha: d.sha }, 200, headers);
+      }
+      // content_put: JSON prüfen, höchstens 1,5 MB, nur Objekte
+      if (!b.data || typeof b.data !== "object" || Array.isArray(b.data)) return json({ error: "invalid" }, 400, headers);
+      const body = JSON.stringify(b.data, null, 2) + "\n";
+      if (body.length > 1_500_000) return json({ error: "too_large" }, 400, headers);
+      const r = await gh(file, { method: "PUT", body: JSON.stringify({ message: `Inhalt geändert: ${file} (Mağaza editörü, ${user.email})`, content: b64(body), sha: b.sha || undefined, branch }) });
+      if (r.status === 409 || r.status === 422) return json({ error: "conflict" }, 409, headers);
+      if (!r.ok) return json({ error: "github", status: r.status }, 502, headers);
+      const d = await r.json();
+      await audit("content_put", file);
+      return json({ ok: true, sha: d.content?.sha }, 200, headers);
     }
     return json({ error: "unknown_action" }, 400, headers);
   } catch (err) {
