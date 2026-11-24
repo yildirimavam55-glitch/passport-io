@@ -135,8 +135,8 @@ export async function esimGoCatalog(toEur: (n: number, cur: string) => number | 
       const data = al.find((a) => a.type === "DATA");
       const nets = (b.countries ?? []).flatMap((c: any) => (c.countryNetworks?.networks ?? c.networks ?? []).map((n: any) => ({ n: String(n.brandName || n.name || "").trim(), t: (n.speeds ?? []).join("/") || undefined }))).filter((n: any) => n.n);
       const text = `${b.description ?? ""} ${data?.description ?? ""}`;
-      const hsm = text.match(/(d+(?:.d+)?)s*GBs*(?:/|per|a)s*day/i) || text.match(/(d+(?:.d+)?)s*GB/i);
-      const fupm = text.match(/(d+(?:.d+)?)s*(kbps|mbps)/i);
+      const hsm = text.match(/([0-9]+(?:[.][0-9]+)?)[ ]*GB[ ]*(?:[/]|per|a)[ ]*day/i) || text.match(/([0-9]+(?:[.][0-9]+)?)[ ]*GB/i);
+      const fupm = text.match(/([0-9]+(?:[.][0-9]+)?)[ ]*(kbps|mbps)/i);
       const meta: PlanMeta = {
         spd: (b.speed ?? []).join("/") || undefined,
         net: isos.length === 1 ? [...new Map(nets.map((o: any) => [o.n, o])).values()].slice(0, 8) as any : undefined,
