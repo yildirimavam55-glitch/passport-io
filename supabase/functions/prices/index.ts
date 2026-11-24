@@ -22,7 +22,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 // Testdaten (gleiches Format wie die Live-Antwort) – nur solange KEIN eSIM-Anbieter eingetragen ist.
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { applyPricing, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
-import { accessOn, type Catalog, esimAccessCatalog, esimGoCatalog, goOn, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
+import { accessOn, type Catalog, egSample, esimAccessCatalog, esimGoCatalog, goOn, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
 
 const CACHE_SECONDS = 15 * 60;
 /* ---------- Währungen ----------
@@ -89,8 +89,8 @@ async function esim(): Promise<Esim | null> {
   const fx = await rates("EUR");
   const toEur = (n: number, cur: string) => { cur = (cur || "EUR").toUpperCase(); if (cur === "EUR") return n; const r = fx?.rates?.[cur]; return r ? n / r : null; };
   const [a, g] = await Promise.all([
-    cachedCatalog("cat:esimaccess3", 3600, () => esimAccessCatalog(toEur)),
-    cachedCatalog("cat:esimgo3", 6 * 3600, () => esimGoCatalog(toEur)),
+    cachedCatalog("cat:esimaccess4", 3600, () => esimAccessCatalog(toEur)),
+    cachedCatalog("cat:esimgo4", 6 * 3600, () => esimGoCatalog(toEur)),
   ]);
   if (!a && !g) throw new Error("Kein eSIM-Katalog verfügbar");
   return mergeCatalogs(a, g) as Esim;
@@ -160,7 +160,7 @@ Deno.serve(async (req) => {
     // Noch kein Anbieter angebunden → Testdaten (auf der Seite als „Testdaten“ gekennzeichnet)
     body = { ...structuredClone(MOCK), source: "mock" };
   } else {
-    const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", "current").maybeSingle();
+    const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", "current2").maybeSingle();
     body = row?.body ?? null;
     const age = row ? (Date.now() - new Date(row.updated_at).getTime()) / 1000 : Infinity;
     // Leerer Katalog (z. B. Schlüssel falsch) → nach 60 s erneut versuchen statt 15 min warten
@@ -171,13 +171,25 @@ Deno.serve(async (req) => {
     if (!body || age > CACHE_SECONDS || ((empty || pending) && age > 60)) {
       try {
         body = await fetchAll(body);
-        await db.from("price_cache").upsert({ id: "current", body, updated_at: new Date().toISOString() });
+        await db.from("price_cache").upsert({ id: "current2", body, updated_at: new Date().toISOString() });
       } catch (err) {
         console.error(err);
         if (!body) return json({ error: "prices_unavailable" }, 503);
       }
     }
   }
+
+  // Tarif-Details eines Landes/einer Region (?item=country:de) – ohne Preise, nur Anbieterinformationen
+  const params = new URL(req.url).searchParams;
+  const item = params.get("item");
+  if (item && /^(country:[a-z]{2}|region:[a-z0-9-]+|global)$/.test(item)) {
+    const [type, id] = item.split(":");
+    const E = body.esim ?? {};
+    const list = (type === "country" ? E.countries?.[id]?.plans : type === "region" ? E.regions?.[id]?.plans : E.global?.plans) ?? [];
+    // deno-lint-ignore no-explicit-any
+    return json({ item, plans: list.map((p: any) => ({ id: p.id, meta: p.meta ?? null })) });
+  }
+  if (params.get("debug") === "eg") return json({ sample: egSample });
 
   // Preisregel anwenden (Einkauf → Verkaufspreis); Einkaufspreise verlassen die Funktion nie
   {
@@ -197,6 +209,10 @@ Deno.serve(async (req) => {
     if (rate) body = { ...convert(body, rate), currency: want, fx: { base, rate, date: fx!.date, source: "ECB" } };
   }
   body.currencies = currencies();
+  // Details nicht im Hauptabruf (klein halten) – die Seite lädt sie pro Land über ?item=
+  // deno-lint-ignore no-explicit-any
+  const strip = (g: any) => g?.plans?.forEach((p: any) => delete p.meta);
+  Object.values(body.esim?.countries ?? {}).forEach(strip); Object.values(body.esim?.regions ?? {}).forEach(strip); strip(body.esim?.global);
 
   return new Response(JSON.stringify(body), {
     headers: { ...headers, "Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=60" },

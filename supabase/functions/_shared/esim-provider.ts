@@ -13,7 +13,21 @@
 // deno-lint-ignore-file no-explicit-any
 import { env } from "./http.ts";
 
-export type CatalogPlan = { id: string; gb: number; days: number; price: number; unlimited?: boolean; name?: string; countries?: number; popular?: boolean };
+/** Tarif-Details aus der Anbieter-API (öffentlich unbedenklich, ohne Einkaufspreis) */
+export type PlanMeta = {
+  spd?: string;                                   // Netzgeschwindigkeit, z. B. "4G/5G"
+  net?: { n: string; t?: string }[];              // Netzbetreiber (Name, Technik)
+  fup?: string | null;                            // Drosselung nach Verbrauch (Fair-Use), z. B. "384 Kbps"
+  hs?: number | null;                             // Hochgeschwindigkeits-Volumen in GB (bei Unlimited: pro Tag, falls bekannt)
+  hsDay?: boolean;                                // hs gilt pro Tag
+  act?: "install" | "network" | null;             // Laufzeit startet bei Installation oder erster Verbindung im Zielland
+  win?: number | null;                            // Tage, in denen aktiviert werden muss
+  top?: boolean;                                  // aufladbar
+  ip?: string | null;                             // Internet-Ausgang (Land), z. B. "HK"
+  sms?: boolean; voice?: boolean;                 // nur Daten oder auch SMS/Telefonie
+  desc?: string;                                  // Beschreibung des Anbieters
+};
+export type CatalogPlan = { id: string; gb: number; days: number; price: number; unlimited?: boolean; name?: string; countries?: number; popular?: boolean; meta?: PlanMeta };
 export type Catalog = { countries: Record<string, { plans: CatalogPlan[] }>; regions: Record<string, { plans: CatalogPlan[] }>; global: { plans: CatalogPlan[] } };
 export type Provisioned = {
   iccid: string | null; lpa: string | null; smdp_address: string | null; activation_code: string | null;
@@ -80,7 +94,18 @@ export async function esimAccessCatalog(toEur: (n: number, cur: string) => numbe
     // 999 GB u. Ä. sind verkappte Unlimited-Tarife – Unlimited kommt von eSIM Go
     if (!(gb >= 1) || gb > 200 || !(days > 0) || !cost) continue;
     const locs = String(p.location ?? "").split(",").map((s) => s.trim()).filter(Boolean);
-    const plan: CatalogPlan = { id: `ea:${p.packageCode}`, gb, days, price: Math.round(cost * 100) / 100 };
+    const ops = (p.locationNetworkList ?? []).flatMap((l: any) => (l.operatorList ?? []).map((o: any) => ({ n: String(o.operatorName ?? "").trim(), t: o.networkType ? String(o.networkType) : undefined }))).filter((o: any) => o.n);
+    const meta: PlanMeta = {
+      spd: p.speed ? String(p.speed) : undefined,
+      net: locs.length === 1 ? [...new Map(ops.map((o: any) => [o.n, o])).values()].slice(0, 8) as any : undefined,
+      fup: p.fupPolicy ? String(p.fupPolicy) : null,
+      act: Number(p.activeType) === 2 ? "network" : Number(p.activeType) === 1 ? "install" : null,
+      win: Number(p.unusedValidTime) || null,
+      top: Number(p.supportTopUpType) >= 2,
+      ip: p.ipExport ? String(p.ipExport).toUpperCase() : null,
+      sms: Number(p.smsStatus) > 0, voice: false,
+    };
+    const plan: CatalogPlan = { id: `ea:${p.packageCode}`, gb, days, price: Math.round(cost * 100) / 100, meta };
     if (locs.length === 1 && ISO2.test(locs[0])) add(cat, "country", locs[0].toLowerCase(), plan);
     else {
       const reg = regionOf(`${p.name} ${p.description ?? ""}`);
@@ -90,6 +115,8 @@ export async function esimAccessCatalog(toEur: (n: number, cur: string) => numbe
   return cat;
 }
 
+/** Vorübergehend zur Prüfung: alle Unlimited-Varianten für einige Länder (Name, Beschreibung, Speed, Allowances) */
+export const egSample: any[] = [];
 export async function esimGoCatalog(toEur: (n: number, cur: string) => number | null): Promise<Catalog | null> {
   if (!goOn()) return null;
   const cat: Catalog = { countries: {}, regions: {}, global: { plans: [] } };
@@ -98,11 +125,29 @@ export async function esimGoCatalog(toEur: (n: number, cur: string) => number | 
     const raw = await eg(`/catalogue?page=${page}&perPage=200`);
     const list: any[] = Array.isArray(raw) ? raw : raw?.bundles ?? [];
     for (const b of list) {
+      const iso0 = String(b.countries?.[0]?.iso ?? "").toLowerCase();
+      if (["tr", "de", "fr"].includes(iso0) && (b.countries ?? []).length === 1 && egSample.length < 80) egSample.push({ name: b.name, unl: b.unlimited, dur: b.duration, amt: b.dataAmount, desc: b.description, speed: b.speed, auto: b.autostart, groups: b.groups, allow: b.allowances, nets: (b.countries?.[0]?.countryNetworks?.networks ?? []).map((n: any) => n.brandName || n.name).slice(0, 6), keys: Object.keys(b) });
       if (!b.unlimited) continue;                                             // eSIM Go liefert bei uns nur Unlimited
       const days = Number(b.duration), cost = toEur(Number(b.price), cur);
       if (!(days > 0) || !cost) continue;
       const isos = (b.countries ?? []).map((c: any) => String(c.iso ?? c.country?.iso ?? "").toLowerCase()).filter(Boolean);
-      const plan: CatalogPlan = { id: `eg:${b.name}`, gb: 0, days, price: Math.round(cost * 100) / 100, unlimited: true };
+      const al = (b.allowances ?? []) as any[];
+      const data = al.find((a) => a.type === "DATA");
+      const nets = (b.countries ?? []).flatMap((c: any) => (c.countryNetworks?.networks ?? c.networks ?? []).map((n: any) => ({ n: String(n.brandName || n.name || "").trim(), t: (n.speeds ?? []).join("/") || undefined }))).filter((n: any) => n.n);
+      const text = `${b.description ?? ""} ${data?.description ?? ""}`;
+      const hsm = text.match(/(d+(?:.d+)?)s*GBs*(?:/|per|a)s*day/i) || text.match(/(d+(?:.d+)?)s*GB/i);
+      const fupm = text.match(/(d+(?:.d+)?)s*(kbps|mbps)/i);
+      const meta: PlanMeta = {
+        spd: (b.speed ?? []).join("/") || undefined,
+        net: isos.length === 1 ? [...new Map(nets.map((o: any) => [o.n, o])).values()].slice(0, 8) as any : undefined,
+        fup: fupm ? `${fupm[1]} ${fupm[2].replace(/^k/i, "K").replace(/^m/i, "M")}` : null,
+        hs: hsm ? Number(hsm[1]) : null, hsDay: !!(hsm && /day/i.test(hsm[0])),
+        act: b.autostart ? "network" : "install",
+        top: true, ip: null,
+        sms: al.some((a) => a.type === "SMS"), voice: al.some((a) => a.type === "VOICE"),
+        desc: [b.description, data?.description].filter(Boolean).join(" · ").slice(0, 300),
+      };
+      const plan: CatalogPlan = { id: `eg:${b.name}`, gb: 0, days, price: Math.round(cost * 100) / 100, unlimited: true, meta };
       // Ein Land nur bei echtem 2-Buchstaben-Code – eSIM Go führt Regionen teils als „Land“ (z. B. "Europe+", "Middle East")
       if (isos.length === 1 && ISO2.test(isos[0])) add(cat, "country", isos[0], plan);
       else {
