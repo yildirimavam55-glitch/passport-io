@@ -13,7 +13,8 @@
 import { env } from "../_shared/http.ts";
 
 const text = (body: string, status: number) => new Response(body, { status, headers: { "Content-Type": "text/plain; charset=utf-8" } });
-const allowed = (u: URL) => env("ALLOWED_ORIGINS").split(",").map((s) => s.trim()).includes(u.origin);
+// Token nur an freigegebene HTTPS-Adressen (lokale Entwicklung nutzt den lokalen Admin ohne GitHub)
+const allowed = (u: URL) => u.protocol === "https:" && env("ALLOWED_ORIGINS").split(",").map((s) => s.trim()).includes(u.origin);
 
 Deno.serve(async (req) => {
   const url = new URL(req.url);

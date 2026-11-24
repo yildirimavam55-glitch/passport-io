@@ -12,6 +12,8 @@
      andere Sprachen enthalten nur die Texte. Fehlt ein Text, gilt die Standardsprache.
      Sprache = ?lang=… (Umschalter) › gespeicherte Wahl › Sprache des Geräts › Standard. */
   const PAGE = document.body.dataset.page || "home";
+  // Schutz gegen Einbetten in fremde Seiten (Clickjacking) – GitHub Pages kann dafür keine Header setzen
+  if (window.top !== window.self) { try { window.top.location = window.self.location.href; } catch (_) { document.documentElement.innerHTML = ""; return; } }
   const getJSON = (p) => fetch(p, { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`); return r.json(); });
   const KEY = (o) => (o && typeof o === "object" ? (o.id ?? o.code) : undefined);
   function merge(base, over) {
@@ -27,7 +29,7 @@
     if (base && typeof base === "object") { const out = { ...base }; for (const k of Object.keys(over)) out[k] = merge(base[k], over[k]); return out; }
     return over;
   }
-  let SITE, ESIM, AI, BLOG, REVIEWS, INSTALL, UI, LANGS, LANG, LOCALE, CUR, RTL = false, PRICES = null, POST = null, ACC = null, AUTH = null;
+  let SITE, ESIM, AI, BLOG, REVIEWS, INSTALL, UI, LANGS, LANG, LOCALE, CUR, RTL = false, PRICES = null, POST = null, ACC = null, AUTH = null, CONTENT_PAGE = null;
   const POST_ID = PAGE === "blog" ? (new URLSearchParams(location.search).get("p") || "").replace(/[^a-z0-9-]/gi, "") : "";
   try {
     LANGS = await getJSON("content/languages.json");
@@ -53,7 +55,7 @@
     document.documentElement.dir = meta.dir || "ltr";
     if (meta.font) {
       // Schrift mit arabischen Zeichen nachladen (Schibsted Grotesk hat keine)
-      document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=${encodeURIComponent(meta.font)}:wght@400;500;600;700&display=swap">`);
+      document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=${encodeURIComponent(meta.font)}:wght@400;500;600;700&display=swap">`);
       document.documentElement.style.setProperty("--font", `"${meta.font}", "Schibsted Grotesk", system-ui, sans-serif`);
     }
     // Währung: ?cur=… › gespeicherte Wahl › Land des Geräts › Standard der Sprache
@@ -70,6 +72,11 @@
       POST_ID ? getJSON(`content/posts/${POST_ID}.json`).catch(() => null) : null, // Artikel (fehlt er → Übersicht)
     ])).map(loc);
     if (POST) POST.id = POST_ID;
+    if (PAGE === "page") {
+      const pid = (params.get("p") || "").replace(/[^a-z0-9-]/gi, "");
+      const all = loc(await getJSON("content/pages.json"));
+      CONTENT_PAGE = (all.pages || []).find((x) => x.id === pid) || (all.pages || [])[0] || null;
+    }
     if (PAGE === "account") {
       // Texte des Kundenkontos und öffentliche Supabase-Angaben (auth.json wird beim Veröffentlichen erzeugt)
       [ACC, AUTH] = await Promise.all([getJSON("content/account.json").then(loc), getJSON("content/auth.json").catch(() => null)]);
@@ -118,7 +125,9 @@
   /* Mini-Markdown für Antworten: **fett**, [Link](url), "- " Aufzählung, Leerzeile = Absatz */
   const md = (s = "") => {
     if (/<[a-z][\s\S]*>/i.test(s)) return s; // bereits HTML
-    const inline = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
+    // Links nur zu sicheren Zielen (keine javascript:-Adressen aus Inhalten)
+    const safeHref = (u) => (/^(https?:\/\/|mailto:|tel:|#|[a-z0-9_./-]+(\?[^"]*)?(#.*)?$)/i.test(u) && !/^\s*(javascript|data|vbscript):/i.test(u) ? u : "#");
+    const inline = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\[(.+?)\]\((.+?)\)/g, (_, txt, url) => `<a href="${safeHref(url)}"${/^https?:/i.test(url) ? ' rel="noopener" target="_blank"' : ""}>${txt}</a>`);
     return s.trim().split(/\n{2,}/).map((block) => {
       const lines = block.split("\n");
       const h = /^(#{2,3}) (.+)$/.exec(block.trim());
@@ -752,6 +761,20 @@
     },
   };
 
+  /* ---------- UNTERSEITE: INHALTS- UND RECHTSSEITEN (content/pages.json) ---------- */
+  sections.contentPage = {
+    render: () => !CONTENT_PAGE ? "" : `
+      <article class="art legal">
+        <header class="guide-hero art-hero">
+          <div class="container art__narrow">
+            <a class="guide-back" href="index.html">${icon("chev-l")} ${esc(t("home"))}</a>
+            <h1 class="guide-hero__title">${esc(CONTENT_PAGE.title)}</h1>
+          </div>
+        </header>
+        <div class="container art__narrow"><div class="art__body">${md(CONTENT_PAGE.body || "")}</div></div>
+      </article>`,
+  };
+
   /* ---------- UNTERSEITE: KUNDENKONTO (Logik in js/account.js) ---------- */
   sections.accountPage = {
     render: () => `<section class="acct-page"><div class="container" id="account-root"><div class="acct-loading">${esc(ACC?.loading || "…")}</div></div></section>`,
@@ -979,7 +1002,7 @@
   if (previewOn) document.body.insertAdjacentHTML("afterbegin", `<div class="preview-bar">${esc(SITE.preview.text)}${PRICES?.source === "mock" ? esc(t("previewMock")) : ""}</div>`);
 
   // Seitentitel, Beschreibung und Sprachversionen für Suchmaschinen (hreflang)
-  document.title = POST ? `${POST.title} | passport.io` : PAGE === "account" ? `${ACC?.title || "Account"} | passport.io` : t(PAGE === "install" ? "installMetaTitle" : PAGE === "blog" ? "blogMetaTitle" : "metaTitle");
+  document.title = POST ? `${POST.title} | passport.io` : CONTENT_PAGE ? `${CONTENT_PAGE.title} | passport.io` : PAGE === "account" ? `${ACC?.title || "Account"} | passport.io` : t(PAGE === "install" ? "installMetaTitle" : PAGE === "blog" ? "blogMetaTitle" : "metaTitle");
   document.querySelector('meta[name="description"]')?.setAttribute("content", POST ? (POST.excerpt || "") : PAGE === "blog" ? t("blogIntro") : t("metaDescription"));
   if (POST) {
     // Artikel-Angaben für Suchmaschinen (strukturierte Daten)
@@ -1079,6 +1102,7 @@
   const active = PAGE === "install" ? [{ type: "installGuide" }]
     : PAGE === "blog" ? [{ type: "blogPage" }]
     : PAGE === "account" ? [{ type: "accountPage" }]
+    : PAGE === "page" ? [{ type: "contentPage" }]
     : (SITE.sections || []).filter((s) => s.enabled !== false && sections[s.type]);
   page.innerHTML = active.map((s) => sections[s.type].render()).join("");
   active.forEach((s, i) => sections[s.type].init?.(page.children[i]));

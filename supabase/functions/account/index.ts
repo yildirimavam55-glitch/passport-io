@@ -88,7 +88,11 @@ Deno.serve(async (req) => {
     }
 
     if (body.action === "order") {
-      const item = String(body.item ?? ""), planId = String(body.planId ?? "");
+      // Schutz vor Missbrauch: höchstens 10 Bestellungen pro Stunde und Konto
+      const since = new Date(Date.now() - 3600 * 1000).toISOString();
+      const { count } = await db.from("orders").select("id", { count: "exact", head: true }).eq("user_id", user.id).gte("created_at", since);
+      if ((count ?? 0) >= 10) return json({ error: "rate_limited" }, 429, headers);
+      const item = String(body.item ?? "").slice(0, 60), planId = String(body.planId ?? "").slice(0, 80);
       const currency = CURS.includes(body.currency) ? body.currency : "EUR";
       const found = await findPlan(item, planId, currency);
       if (!found) return json({ error: "plan_not_found" }, 400, headers);

@@ -11,11 +11,12 @@
   --dark-3: #1e2522;
 
   --ink: #0a0d0c;
-  --ink-2: #3b423f;
-  --ink-3: #6d7571;
-  --line: #e3e6e3;
-  --paper: #f3f4f1;
+  --ink-2: #36403b;
+  --ink-3: #64706a;
+  --line: #dde7e1;
+  --paper: #eef5f0;          /* leicht mintfarben statt Grau – passend zum Markengrün */
   --white: #ffffff;
+  --mint: rgba(46, 245, 138, .14);
 
   --tp: #00b67a;
   --radius-sm: 10px;
@@ -1266,15 +1267,29 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 :root { --surface: #ffffff; }
 [data-theme="dark"] {
   color-scheme: dark;
-  --white: #0b0f0d;
-  --paper: #121715;
-  --surface: #171d1a;
-  --ink: #eef2ef;
-  --ink-2: #b8c0bb;
-  --ink-3: #87908b;
-  --line: #27302c;
+  /* Drei klar unterscheidbare Ebenen mit leichtem Grünstich: Seite › Bereich › Karte */
+  --white: #090d0b;
+  --paper: #0f1814;
+  --surface: #17221d;
+  --ink: #f1f5f2;
+  --ink-2: #c2ccc6;
+  --ink-3: #8e9a94;
+  --line: #26332d;
   --green-ink: #2ef58a;
+  --mint: rgba(46, 245, 138, .12);
 }
+/* Dezente grüne Lichtakzente geben den dunklen Flächen Tiefe */
+[data-theme="dark"] .section--paper { background: radial-gradient(55% 45% at 12% 0%, rgba(46,245,138,.07), transparent 70%), radial-gradient(45% 40% at 95% 100%, rgba(46,245,138,.05), transparent 70%), var(--paper); }
+[data-theme="dark"] #howto, [data-theme="dark"] #blog { background: radial-gradient(50% 40% at 85% 0%, rgba(46,245,138,.05), transparent 70%), var(--white); }
+[data-theme="dark"] .how2__card, [data-theme="dark"] .wmap__side, [data-theme="dark"] .assistant, [data-theme="dark"] .qband { box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 20px 50px -30px rgba(0,0,0,.8); }
+[data-theme="dark"] .how2__card { background: var(--surface); }
+[data-theme="dark"] .how2__visual { background: radial-gradient(110% 80% at 50% 0%, rgba(46,245,138,.18), transparent 62%); }
+[data-theme="dark"] .msg--bot { background: #1f2c26; }
+[data-theme="dark"] .qchip { background: #1f2c26; }
+/* Hell: mintfarbene Akzentflächen */
+.section--paper { background: radial-gradient(50% 45% at 10% 0%, rgba(46,245,138,.10), transparent 70%), var(--paper); }
+.kicker--dark { display: inline-flex; align-items: center; gap: 8px; }
+.kicker--dark::before { content: ""; width: 18px; height: 2px; border-radius: 2px; background: currentColor; }
 /* Flächen, die im hellen Modus weiß sind */
 [data-theme="dark"] :is(.btn--line, .icon-btn, .lang__menu, .search, .search__results, .rtab, .banner, .assistant, .modal__panel, .wmap__side, .wtab) { background: var(--surface); }
 [data-theme="dark"] .marquee .review,

@@ -20,7 +20,8 @@
 
 import { createClient } from "jsr:@supabase/supabase-js@2";
 // Testdaten (gleiches Format wie die Live-Antwort) – nur solange KEIN eSIM-Anbieter eingetragen ist.
-import MOCK from "./mock.json" with { type: "json" };
+import MOCK from "../_shared/mock.json" with { type: "json" };
+import { applyPricing, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
 
 const CACHE_SECONDS = 15 * 60;
 /* ---------- Währungen ----------
@@ -69,7 +70,7 @@ async function esim(): Promise<Esim | null> {
   const out: Esim = { countries: {}, regions: {}, global: { plans: [] } };
   // deno-lint-ignore no-explicit-any
   for (const p of (raw.data || raw.packages || []) as any[]) {
-    const plan: Plan = { id: String(p.id), gb: Number(p.data_gb ?? p.dataGb), days: Number(p.validity_days ?? p.days), price: round(p.retail_price ?? p.price) };
+    const plan: Plan = { id: String(p.id), gb: Number(p.data_gb ?? p.dataGb), days: Number(p.validity_days ?? p.days), price: round(p.wholesale_price ?? p.net_price ?? p.cost ?? p.price) }; // Einkaufspreis – Verkaufspreis macht die Preisregel
     if (!valid(plan)) continue;
     if (p.type === "global") out.global.plans.push({ ...plan, name: p.title, countries: Number(p.country_count) });
     else if (p.type === "regional") (out.regions[p.region_code] ??= { plans: [] }).plans.push(plan);
@@ -84,7 +85,7 @@ async function fromPrice(prefix: string) {
   if (!raw) return null;
   // TODO: an die Felder des jeweiligen Anbieters anpassen
   // deno-lint-ignore no-explicit-any
-  const prices = ((raw.data || raw.products || []) as any[]).map((p) => Number(p.price ?? p.retail_price)).filter((n) => n > 0);
+  const prices = ((raw.data || raw.products || []) as any[]).map((p) => Number(p.wholesale_price ?? p.net_price ?? p.cost ?? p.price)).filter((n) => n > 0); // Einkaufspreise
   return { from: prices.length ? round(Math.min(...prices)) : null };
 }
 
@@ -154,6 +155,15 @@ Deno.serve(async (req) => {
         if (!body) return json({ error: "prices_unavailable" }, 503);
       }
     }
+  }
+
+  // Preisregel anwenden (Einkauf → Verkaufspreis); Einkaufspreise verlassen die Funktion nie
+  {
+    const base0 = body.currency ?? "EUR";
+    const fx0 = await rates(base0); // für Wettbewerbspreise in anderen Währungen
+    const toBase = (n: number, cur: string) => { cur = (cur || "EUR").toUpperCase(); if (cur === base0) return n; const r = fx0?.rates?.[cur]; return r ? n / r : null; };
+    const [settings, comps] = await Promise.all([loadSettings(db), loadCompetitors(db)]);
+    body = applyPricing(body, settings, comps, toBase);
   }
 
   // Gewünschte Währung (?currency=TRY). Ohne Kurs bleibt es bei der Anbieterwährung – nie ein geschätzter Wert.

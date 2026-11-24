@@ -124,6 +124,40 @@ Einmalig einrichten:
   über die Preis-Schnittstelle – nie aus dem Browser.
 - Texte: `content/account.json` (alle 7 Sprachen).
 
+## Shop-Verwaltung (/admin/panel.html)
+
+- **Übersicht:** Umsatz, Bestellungen (30 Tage), Kunden, aktive eSIMs, letzte Bestellungen,
+  „Startklar?“-Liste (was vor dem Verkauf noch fehlt).
+- **Bestellungen / Kunden / eSIMs:** Listen mit Suche und Filter, Status ändern
+  (Erstattungen zusätzlich beim Zahlungsanbieter auslösen).
+- **Preise & Wettbewerb:** Preisregel einstellen, Wettbewerbspreise pflegen (einzeln oder per
+  CSV), Vorschau aller Verkaufspreise mit Einkauf, Marge und angewandter Regel.
+- **Anbieter & Einstellungen:** Status aller Schnittstellen mit direkten Links ins Supabase-Dashboard.
+- **Inhalte:** Texte, Bilder, Blog, Rechtsseiten, Farben → Inhalts-Editor unter /admin/.
+- **Zugang:** Supabase → Edge Functions → Secrets → `ADMIN_EMAILS` = eure E-Mails
+  (kommagetrennt). Diese Personen registrieren sich normal auf der Kontoseite, bestätigen die
+  E-Mail und melden sich dann im Panel an.
+
+## Preisregel
+
+Grundlage ist immer der **Einkaufspreis aus der Anbieter-API**:
+1. Gibt es einen Wettbewerbspreis für dasselbe Produkt (Land/Region, Volumen, Laufzeit) →
+   **günstigster Wettbewerber minus „ein Tick“** (Standard 0,10 €).
+2. Sonst → **Einkaufspreis × 2** (auf ,99 gerundet).
+3. **Nie unter 2,99 €** und nie unter Einkauf + Mindestmarge (Standard 10 %, Schutz vor
+   Verlustverkäufen, falls ein Wettbewerber extrem günstig ist).
+
+Alle Werte sind im Panel einstellbar und gelten sofort. Einkaufspreise werden nie öffentlich
+ausgeliefert. Der eSIM-Adapter liest den Einkauf aus `wholesale_price` / `net_price` / `cost` /
+`price` der Anbieter-Antwort (in `supabase/functions/prices/index.ts` an den Anbieter anpassen).
+
+## Rechtsseiten
+
+`page.html?p=imprint | privacy | terms | withdrawal | distance-sales | about` – Inhalte in
+`content/pages.json` (Admin: „Seiten & Rechtliches“). **Entwürfe mit Platzhaltern in
+[ECKIGEN KLAMMERN]** – ausfüllen und vor dem Start anwaltlich prüfen lassen. Türkisch,
+Englisch und Deutsch sind ausformuliert, die übrigen Sprachen zeigen vorerst den englischen Text.
+
 ## Start-Checkliste (einmalig, von euch selbst einzurichten)
 
 Alle Schlüssel und Passwörter tragt ihr selbst ein – nie in den Code.
@@ -140,9 +174,15 @@ Alle Schlüssel und Passwörter tragt ihr selbst ein – nie in den Code.
 - *SMTP*: **Pflicht vor dem Start.** Ohne eigenen Mailversand verschickt Supabase nur
   wenige Test-Mails. Einen Dienst wie Resend, Brevo oder Postmark anlegen, Absender z. B.
   `no-reply@passport.io`, Zugangsdaten unter *SMTP Settings* eintragen.
-- *Google*: In der Google Cloud Console einen OAuth-Client (Web) anlegen, erlaubte
-  Weiterleitung `https://sbzwibctxezprpefwxzn.supabase.co/auth/v1/callback`; Client-ID und
-  Secret in Supabase bei *Google* eintragen.
+- *Google* (aktuell **aus** – deshalb funktioniert „Mit Google“ noch nicht; der Knopf ist
+  so lange ausgeblendet):
+  1. console.cloud.google.com → Projekt anlegen → *APIs & Services → OAuth consent screen*
+     (App-Name passport.io, Support-E-Mail, Domain) ausfüllen.
+  2. *Credentials → Create credentials → OAuth client ID → Web application*.
+     Authorized JavaScript origins: Live-Adresse(n). Authorized redirect URI:
+     `https://sbzwibctxezprpefwxzn.supabase.co/auth/v1/callback`.
+  3. Client-ID und Client-Secret in Supabase → Authentication → Providers → *Google* eintragen
+     und einschalten. Danach erscheint der Knopf automatisch.
 - *Apple*: Apple-Developer-Konto nötig. Services ID + Key anlegen, Return URL wie oben
   (`…/auth/v1/callback`), Team ID, Key ID und Key in Supabase bei *Apple* eintragen.
 

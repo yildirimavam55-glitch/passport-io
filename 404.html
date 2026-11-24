@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>404 · passport.io</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #090d0b; color: #f1f5f2; font-family: -apple-system, "Segoe UI", Roboto, sans-serif; text-align: center; padding: 24px; }
+    b { font-size: 72px; color: #2ef58a; letter-spacing: -.04em; display: block; }
+    p { color: #c2ccc6; max-width: 420px; margin: 8px auto 26px; line-height: 1.5; }
+    a { display: inline-block; padding: 14px 24px; border-radius: 999px; background: #2ef58a; color: #0a0d0c; font-weight: 700; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <b>404</b>
+    <p>Aradığın sayfa bulunamadı. · Page not found. · Seite nicht gefunden.</p>
+    <a id="home" href="/">passport.io</a>
+  </main>
+  <script>
+    // Startseite des Projekts finden (funktioniert auf github.io/<projekt>/ und auf eigener Domain)
+    var seg = location.pathname.split("/").filter(Boolean)[0];
+    if (location.hostname.endsWith("github.io") && seg) document.getElementById("home").href = "/" + seg + "/";
+  </script>
+</body>
+</html>

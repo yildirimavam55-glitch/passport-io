@@ -302,19 +302,11 @@
           "links": [
             {
               "label": "Hakkımızda",
-              "url": "#"
+              "url": "page.html?p=about"
             },
             {
               "label": "Dergi",
               "url": "blog.html"
-            },
-            {
-              "label": "Ortaklık programı",
-              "url": "#"
-            },
-            {
-              "label": "Basın",
-              "url": "#"
             }
           ]
         }
@@ -330,19 +322,23 @@
       "legal": [
         {
           "label": "Künye",
-          "url": "#"
+          "url": "page.html?p=imprint"
         },
         {
           "label": "Gizlilik",
-          "url": "#"
+          "url": "page.html?p=privacy"
         },
         {
           "label": "Kullanım koşulları",
-          "url": "#"
+          "url": "page.html?p=terms"
         },
         {
           "label": "Cayma hakkı",
-          "url": "#"
+          "url": "page.html?p=withdrawal"
+        },
+        {
+          "label": "Mesafeli satış sözleşmesi",
+          "url": "page.html?p=distance-sales"
         }
       ],
       "copyright": "© 2026 passport.io"
@@ -572,12 +568,6 @@
             },
             {
               "label": "Magazine"
-            },
-            {
-              "label": "Affiliate programme"
-            },
-            {
-              "label": "Press"
             }
           ]
         }
@@ -594,6 +584,9 @@
         },
         {
           "label": "Cancellation"
+        },
+        {
+          "label": "Distance sales contract"
         }
       ],
       "copyright": "© 2026 passport.io"
@@ -820,12 +813,6 @@
             },
             {
               "label": "Magazin"
-            },
-            {
-              "label": "Partnerprogramm"
-            },
-            {
-              "label": "Presse"
             }
           ]
         }
@@ -842,6 +829,9 @@
         },
         {
           "label": "Widerruf"
+        },
+        {
+          "label": "Fernabsatzvertrag"
         }
       ],
       "copyright": "© 2026 passport.io"
@@ -1068,12 +1058,6 @@
             },
             {
               "label": "المجلة"
-            },
-            {
-              "label": "برنامج الشركاء"
-            },
-            {
-              "label": "الصحافة"
             }
           ]
         }
@@ -1090,6 +1074,9 @@
         },
         {
           "label": "حق الإلغاء"
+        },
+        {
+          "label": "عقد البيع عن بُعد"
         }
       ],
       "copyright": "© 2026 passport.io"
@@ -1316,12 +1303,6 @@
             },
             {
               "label": "Журнал"
-            },
-            {
-              "label": "Партнёрская программа"
-            },
-            {
-              "label": "Пресса"
             }
           ]
         }
@@ -1338,6 +1319,9 @@
         },
         {
           "label": "Отказ от покупки"
+        },
+        {
+          "label": "Договор дистанционной продажи"
         }
       ],
       "copyright": "© 2026 passport.io"
@@ -1564,12 +1548,6 @@
             },
             {
               "label": "Magazine"
-            },
-            {
-              "label": "Programme d'affiliation"
-            },
-            {
-              "label": "Presse"
             }
           ]
         }
@@ -1586,6 +1564,9 @@
         },
         {
           "label": "Rétractation"
+        },
+        {
+          "label": "Contrat de vente à distance"
         }
       ],
       "copyright": "© 2026 passport.io"
@@ -1812,12 +1793,6 @@
             },
             {
               "label": "Revista"
-            },
-            {
-              "label": "Programa de afiliados"
-            },
-            {
-              "label": "Prensa"
             }
           ]
         }
@@ -1834,6 +1809,9 @@
         },
         {
           "label": "Desistimiento"
+        },
+        {
+          "label": "Contrato de venta a distancia"
         }
       ],
       "copyright": "© 2026 passport.io"

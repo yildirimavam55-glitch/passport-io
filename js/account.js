@@ -22,6 +22,12 @@ window.PP_ACCOUNT = function (ctx) {
     return;
   }
   const sb = window.supabase.createClient(cfg.url, cfg.anonKey, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
+  // Nur Anmeldewege zeigen, die in Supabase wirklich eingeschaltet sind (sonst landet man auf einer Fehlerseite)
+  let enabled = { google: false, apple: false };
+  const providersReady = fetch(`${cfg.url}/auth/v1/settings`, { headers: { apikey: cfg.anonKey } })
+    .then((r) => r.json()).then((s) => { enabled = { google: !!s.external?.google, apple: !!s.external?.apple }; }).catch(() => {});
+  // Fehler aus einer abgebrochenen Google/Apple-Anmeldung (…#error=…) verständlich anzeigen
+  const oauthError = new URLSearchParams(location.hash.slice(1)).get("error_description") || params.get("error_description");
 
   // Kauf aus dem Paket-Fenster: account.html?buy=country:jp&plan=jp-5gb-30d
   const buy = params.get("buy") && params.get("plan") ? { item: params.get("buy"), plan: params.get("plan") } : null;
@@ -53,10 +59,10 @@ window.PP_ACCOUNT = function (ctx) {
       <button type="button" class="acct-eye" data-eye aria-label="${esc(A("showPassword"))}">${eye}</button></span>
     </label>`;
   const eye = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>`;
-  const social = `
+  const socialHtml = () => !enabled.google && !enabled.apple ? "" : `
     <div class="acct-social">
-      <button type="button" class="acct-oauth" data-oauth="google"><svg viewBox="0 0 24 24"><path fill="#EA4335" d="M12 10.2v3.9h5.4c-.2 1.3-1.6 3.8-5.4 3.8-3.2 0-5.9-2.7-5.9-6s2.7-6 5.9-6c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.8 3.4 14.6 2.4 12 2.4 6.7 2.4 2.4 6.7 2.4 12s4.3 9.6 9.6 9.6c5.5 0 9.2-3.9 9.2-9.4 0-.6-.1-1.1-.2-1.6H12Z"/></svg>${esc(A("google"))}</button>
-      <button type="button" class="acct-oauth acct-oauth--apple" data-oauth="apple"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.4 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.5-1-2.5-3.9ZM14 5.6c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4Z"/></svg>${esc(A("apple"))}</button>
+      ${enabled.google ? `<button type="button" class="acct-oauth" data-oauth="google"><svg viewBox="0 0 24 24"><path fill="#EA4335" d="M12 10.2v3.9h5.4c-.2 1.3-1.6 3.8-5.4 3.8-3.2 0-5.9-2.7-5.9-6s2.7-6 5.9-6c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.8 3.4 14.6 2.4 12 2.4 6.7 2.4 2.4 6.7 2.4 12s4.3 9.6 9.6 9.6c5.5 0 9.2-3.9 9.2-9.4 0-.6-.1-1.1-.2-1.6H12Z"/></svg>${esc(A("google"))}</button>` : ""}
+      ${enabled.apple ? `<button type="button" class="acct-oauth acct-oauth--apple" data-oauth="apple"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.4 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.5-1-2.5-3.9ZM14 5.6c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4Z"/></svg>${esc(A("apple"))}</button>` : ""}
     </div>
     <div class="acct-or"><span>${esc(A("or"))}</span></div>`;
   const shell = (title, sub, body, foot = "") => `
@@ -76,7 +82,7 @@ window.PP_ACCOUNT = function (ctx) {
 
   /* ---------- Ansichten: Anmeldung ---------- */
   const views = {
-    login: () => shell(A("loginTitle"), esc(A("loginSub")), `${social}
+    login: () => shell(A("loginTitle"), esc(A("loginSub")), `${socialHtml()}
       <form data-form="login" novalidate>
         ${field("email", "email", A("email"), 'autocomplete="email" inputmode="email"')}
         ${pwField("password", A("password"), "current-password")}
@@ -84,7 +90,7 @@ window.PP_ACCOUNT = function (ctx) {
         <button class="btn btn--green acct-submit" type="submit">${esc(A("login"))}</button>
       </form>`, `${esc(A("noAccount"))} <a class="acct-link" href="#register">${esc(A("register"))}</a>`),
 
-    register: () => shell(A("registerTitle"), esc(A("registerSub")), `${social}
+    register: () => shell(A("registerTitle"), esc(A("registerSub")), `${socialHtml()}
       <form data-form="register" novalidate>
         ${field("name", "text", A("name"), 'autocomplete="name" maxlength="120"')}
         ${field("email", "email", A("email"), 'autocomplete="email" inputmode="email"')}
@@ -374,5 +380,9 @@ window.PP_ACCOUNT = function (ctx) {
     if (event === "PASSWORD_RECOVERY") { state.account = null; go("reset", {}); }        // Link aus der E-Mail statt Code
     else if (event === "SIGNED_IN" && session && !state.account && state.view !== "reset") loadAccount();
   });
-  sb.auth.getSession().then(({ data: { session } }) => (session ? loadAccount() : render()));
+  Promise.all([sb.auth.getSession(), providersReady]).then(([{ data: { session } }]) => {
+    if (session) return loadAccount();
+    render();
+    if (oauthError) say(errText(oauthError));
+  });
 };

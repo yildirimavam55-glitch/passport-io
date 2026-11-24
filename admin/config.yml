@@ -539,6 +539,28 @@ collections:
       - { label: Entwurf (nicht veröffentlichen), name: draft, widget: boolean, default: false, required: false }
 
   # ------------------------------------------------------------------------
+  - name: inhaltsseiten
+    label: Seiten & Rechtliches
+    i18n: true
+    editor: { preview: false }
+    files:
+      - name: pages
+        label: Über uns, Impressum, Datenschutz, AGB, Widerruf, Fernabsatz
+        file: content/pages.json
+        i18n: true
+        fields:
+          - label: Seiten
+            name: pages
+            widget: list
+            i18n: true
+            summary: "{{fields.title}}"
+            hint: "Platzhalter in [ECKIGEN KLAMMERN] ausfüllen. Adresse der Seite: page.html?p=<Kennung>"
+            fields:
+              - { label: Kennung (nicht ändern), name: id, widget: string }
+              - { label: Titel, name: title, widget: string, i18n: true }
+              - { label: Text, name: body, widget: markdown, i18n: true }
+
+  # ------------------------------------------------------------------------
   - name: konto
     label: Kundenkonto-Texte
     i18n: true

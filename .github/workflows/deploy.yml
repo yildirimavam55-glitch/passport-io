@@ -37,11 +37,11 @@ jobs:
           mkdir _site
           # Blog-Übersicht aus content/posts erzeugen, dazu sitemap.xml und robots.txt
           node tools/build-blog.js _site "${SITE_URL}"
-          cp -r index.html install.html blog.html account.html css js content img admin api _site/
+          cp -r index.html install.html blog.html account.html page.html 404.html css js content img admin api _site/
           touch _site/.nojekyll
           # Versionsnummer anhängen, damit Besucher Änderungen sofort sehen
           V=$(echo "$GITHUB_SHA" | cut -c1-8)
-          sed -i "s#css/styles.css\"#css/styles.css?v=$V\"#; s#js/app.js\"#js/app.js?v=$V\"#" _site/index.html _site/install.html _site/blog.html _site/account.html
+          sed -i "s#css/styles.css\"#css/styles.css?v=$V\"#; s#js/app.js\"#js/app.js?v=$V\"#" _site/index.html _site/install.html _site/blog.html _site/account.html _site/page.html
       - name: Öffentliche Supabase-Angaben für das Kundenkonto (nur der öffentliche Schlüssel)
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
@@ -93,3 +93,5 @@ jobs:
       - run: supabase functions deploy account --no-verify-jwt --project-ref "$PROJECT_REF"
       # Admin-Anmeldung (GitHub) für /admin
       - run: supabase functions deploy cms-auth --no-verify-jwt --project-ref "$PROJECT_REF"
+      # Shop-Verwaltung (/admin/panel.html) – Zugriff nur für ADMIN_EMAILS
+      - run: supabase functions deploy admin --no-verify-jwt --project-ref "$PROJECT_REF"
