@@ -22,7 +22,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 // Testdaten (gleiches Format wie die Live-Antwort) – nur solange KEIN eSIM-Anbieter eingetragen ist.
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { applyPricing, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
-import { type Catalog, esimAccessCatalog, esimGoCatalog, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
+import { accessOn, type Catalog, esimAccessCatalog, esimGoCatalog, goOn, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
 
 const CACHE_SECONDS = 15 * 60;
 /* ---------- Währungen ----------
@@ -165,7 +165,10 @@ Deno.serve(async (req) => {
     const age = row ? (Date.now() - new Date(row.updated_at).getTime()) / 1000 : Infinity;
     // Leerer Katalog (z. B. Schlüssel falsch) → nach 60 s erneut versuchen statt 15 min warten
     const empty = !Object.keys(body?.esim?.countries ?? {}).length;
-    if (!body || age > CACHE_SECONDS || (empty && age > 60)) {
+    // Neu eingetragener oder zuletzt fehlerhafter Anbieter → sofort neu laden (höchstens alle 60 s)
+    const pv = body?.providers ?? {};
+    const pending = (accessOn() && !String(pv.esimaccess ?? "").startsWith("ok")) || (goOn() && !String(pv.esimgo ?? "").startsWith("ok"));
+    if (!body || age > CACHE_SECONDS || ((empty || pending) && age > 60)) {
       try {
         body = await fetchAll(body);
         await db.from("price_cache").upsert({ id: "current", body, updated_at: new Date().toISOString() });
