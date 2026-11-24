@@ -154,6 +154,12 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .search--inline .search__input { height: 54px; }
 .search--modal { background: var(--paper); border-color: transparent; }
 .search__results { position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 8px); margin: 0; padding: 6px; list-style: none; background: #fff; border-radius: var(--radius); border: 1px solid var(--line); box-shadow: 0 24px 60px -16px rgba(0,0,0,.25); max-height: 380px; overflow: auto; }
+/* Offene Trefferliste im Startbild: über die Produktleiste legen und das Ausblenden beim Scrollen
+   aussetzen (die Scroll-Animation erzeugt sonst eine eigene Ebene, in der die Liste gefangen ist). */
+.hero__content:has(.search__results:not([hidden])),
+.hero__content:has(.search__results:not([hidden])) > * { position: relative; z-index: 20; animation: none !important; opacity: 1 !important; transform: none !important; }
+.hero__content:has(.search__results:not([hidden])) > :has(.search__results:not([hidden])),
+.hero__content :is(.search, form):has(.search__results:not([hidden])) { z-index: 21; }
 .search__results li { display: flex; align-items: center; gap: 12px; padding: 8px 10px; border-radius: 10px; cursor: pointer; }
 .search__results li[aria-selected="true"], .search__results li:hover { background: var(--paper); }
 .search__results .r-thumb { width: 52px; height: 38px; border-radius: 7px; object-fit: cover; background: var(--paper); }
