@@ -15,7 +15,7 @@ import MOCK from "../_shared/mock.json" with { type: "json" };
 import { accessOn, cancel, fulfillOrder, goOn, providerConfigured } from "../_shared/esim-provider.ts";
 
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
-const admins = () => env("ADMIN_EMAILS").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
+const admins = () => (env("ADMIN_EMAILS") || env("ADMIN_MAIL")).split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
 const ORDER_ST = ["pending", "paid", "fulfilled", "failed", "refunded", "cancelled"];
 const ESIM_ST = ["processing", "ready", "installed", "active", "depleted", "expired", "cancelled"];
 const num = (v: unknown, min = 0, max = 1e6) => { const n = Number(v); return Number.isFinite(n) && n >= min && n <= max ? n : null; };
