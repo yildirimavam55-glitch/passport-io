@@ -1,6 +1,8 @@
 /* ==========================================================================
-   passport.io – Shop-Verwaltung (Übersicht, Bestellungen, Kunden, eSIMs, Preise, Anbieter)
-   Anmeldung über Supabase; Zugriff nur für E-Mails im Secret ADMIN_EMAILS (Funktion „admin“).
+   passport.io – Mağaza yönetimi (Shop-Verwaltung)
+   Genel bakış, siparişler, ödemeler, iadeler, destek talepleri, Lina soruları,
+   müşteriler, eSIM'ler, fiyatlar & rakipler, entegrasyonlar, işlem kaydı, güvenlik (2FA).
+   Erişim: Supabase girişi + ADMIN_EMAILS listesindeki e-postalar (Funktion „admin“).
    ========================================================================== */
 (async () => {
   "use strict";
@@ -9,17 +11,21 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const $ = (s, el = app) => el.querySelector(s);
   const $$ = (s, el = app) => [...el.querySelectorAll(s)];
-  const date = (d) => (d ? new Intl.DateTimeFormat("de-DE", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(d)) : "–");
-  const money = (n, c) => { try { return new Intl.NumberFormat("de-DE", { style: "currency", currency: c || "EUR" }).format(n); } catch (_) { return `${n} ${c}`; } };
+  const date = (d) => (d ? new Intl.DateTimeFormat("tr-TR", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(d)) : "–");
+  const day = (d) => new Intl.DateTimeFormat("tr-TR", { day: "2-digit", month: "short" }).format(new Date(d));
+  const money = (n, c) => { try { return new Intl.NumberFormat("tr-TR", { style: "currency", currency: c || "EUR" }).format(n || 0); } catch (_) { return `${n} ${c}`; } };
   const gb = (mb) => `${(Number(mb || 0) / 1024).toFixed(1).replace(".", ",")} GB`;
   const toast = (t) => { const d = document.createElement("div"); d.className = "pl-toast"; d.textContent = t; document.body.appendChild(d); setTimeout(() => d.remove(), 3200); };
-  const ORDER_ST = { pending: "Zahlung ausstehend", paid: "Bezahlt", fulfilled: "Abgeschlossen", failed: "Fehlgeschlagen", refunded: "Erstattet", cancelled: "Storniert" };
-  const ESIM_ST = { ready: "Bereit", installed: "Installiert", active: "Aktiv", depleted: "Aufgebraucht", expired: "Abgelaufen", cancelled: "Storniert" };
-  const stClass = (s) => (["paid", "fulfilled", "active"].includes(s) ? "ok" : ["pending", "ready", "installed"].includes(s) ? "warn" : ["failed", "cancelled", "expired", "depleted"].includes(s) ? "bad" : "");
+  const ORDER_ST = { pending: "Ödeme bekleniyor", paid: "Ödendi", fulfilled: "Tamamlandı", failed: "Başarısız", refunded: "İade edildi", cancelled: "İptal" };
+  const ESIM_ST = { ready: "Kuruluma hazır", installed: "Kuruldu", active: "Aktif", depleted: "Veri bitti", expired: "Süresi doldu", cancelled: "İptal" };
+  const REF_ST = { open: "Bekliyor", approved: "Onaylandı", rejected: "Reddedildi" };
+  const SUP_ST = { open: "Açık", answered: "Yanıtlandı", closed: "Kapatıldı" };
+  const stClass = (s) => (["paid", "fulfilled", "active", "approved", "answered", "closed"].includes(s) ? "ok" : ["pending", "ready", "installed", "open"].includes(s) ? "warn" : ["failed", "cancelled", "expired", "depleted", "rejected", "refunded"].includes(s) ? "bad" : "");
+  const badge = (s, map) => `<span class="pl-badge ${stClass(s)}">${esc(map[s] || s)}</span>`;
 
   let cfg = null;
   try { cfg = await fetch("../content/auth.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)); } catch (_) {}
-  if (!cfg?.url || !window.supabase) { app.innerHTML = `<div class="pl-login"><form><h1>Shop-Verwaltung</h1><p>Supabase ist für diese Seite noch nicht verbunden. Die Verwaltung funktioniert auf der veröffentlichten Seite.</p></form></div>`; return; }
+  if (!cfg?.url || !window.supabase) { app.innerHTML = `<div class="pl-login"><form><h1>Mağaza yönetimi</h1><p>Bu sayfa için Supabase henüz bağlı değil. Yönetim paneli yayındaki sitede çalışır.</p></form></div>`; return; }
   const ref = new URL(cfg.url).hostname.split(".")[0];
   const sb = window.supabase.createClient(cfg.url, cfg.anonKey, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
   const fnUrl = `${cfg.url}/functions/v1/admin`;
@@ -34,221 +40,363 @@
     return d;
   }
 
-  /* ---------- Anmeldung ---------- */
+  /* ---------- Giriş ve iki adımlı doğrulama ---------- */
   function login(msg = "") {
     app.innerHTML = `
       <div class="pl-login"><form data-login>
-        <h1>passport.io · Shop-Verwaltung</h1>
-        <p>Nur für das Team. Zugriff haben die E-Mail-Adressen im Supabase-Secret <b>ADMIN_EMAILS</b>.</p>
-        <label class="pl-field">E-Mail<input name="email" type="email" autocomplete="email" required></label>
-        <label class="pl-field">Passwort<input name="password" type="password" autocomplete="current-password" required></label>
-        <button class="pl-btn pl-btn--green" type="submit">Anmelden</button>
+        <h1>passport.io · Mağaza yönetimi</h1>
+        <p>Yalnızca ekip için. Erişim, Supabase'deki <b>ADMIN_EMAILS</b> listesindeki e-postalara açıktır.</p>
+        <label class="pl-field">E-posta<input name="email" type="email" autocomplete="email" required></label>
+        <label class="pl-field">Şifre<input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="pl-btn pl-btn--green" type="submit">Giriş yap</button>
         <p class="pl-msg">${esc(msg)}</p>
-        <p>Noch kein Konto? Zuerst auf der <a href="../account.html#register">Kontoseite</a> registrieren und die E-Mail bestätigen.</p>
+        <p>Hesabın yok mu? Önce <a href="../account.html#register">hesap sayfasında</a> kayıt ol ve e-postanı doğrula.</p>
       </form></div>`;
     $("[data-login]").addEventListener("submit", async (e) => {
       e.preventDefault();
       const f = e.target, m = $(".pl-msg");
       m.textContent = "";
       const { error } = await sb.auth.signInWithPassword({ email: f.email.value.trim(), password: f.password.value });
-      if (error) { m.textContent = /invalid/i.test(error.message) ? "E-Mail oder Passwort falsch." : error.message; return; }
+      if (error) { m.textContent = /invalid/i.test(error.message) ? "E-posta veya şifre hatalı." : error.message; return; }
       start();
     });
   }
+  async function mfaChallenge(msg = "") {
+    const { data } = await sb.auth.mfa.listFactors();
+    const factor = (data?.totp || []).find((f) => f.status === "verified");
+    if (!factor) return mfaSetup("Yönetim için iki adımlı doğrulama zorunlu. Lütfen kurulumu tamamla.");
+    app.innerHTML = `
+      <div class="pl-login"><form data-mfa>
+        <h1>İki adımlı doğrulama</h1>
+        <p>Doğrulama uygulamandaki (Google Authenticator, 1Password, Authy …) 6 haneli kodu gir.</p>
+        <label class="pl-field">Kod<input name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" required></label>
+        <button class="pl-btn pl-btn--green" type="submit">Doğrula</button>
+        <p class="pl-msg">${esc(msg)}</p>
+        <button type="button" class="pl-btn pl-btn--line" data-logout>Çıkış yap</button>
+      </form></div>`;
+    $("[data-mfa]").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const { error } = await sb.auth.mfa.challengeAndVerify({ factorId: factor.id, code: e.target.code.value.trim() });
+      if (error) return mfaChallenge("Kod hatalı. Tekrar dene.");
+      show();
+    });
+  }
+  async function mfaSetup(msg = "") {
+    // Yarım kalmış kurulumları temizle, yeni bir TOTP oluştur
+    const { data: list } = await sb.auth.mfa.listFactors();
+    for (const f of (list?.all || []).filter((x) => x.status !== "verified")) await sb.auth.mfa.unenroll({ factorId: f.id });
+    const { data, error } = await sb.auth.mfa.enroll({ factorType: "totp", friendlyName: "passport.io yönetim" });
+    if (error) { shell("Güvenlik", `<div class="pl-card"><p>İki adımlı doğrulama başlatılamadı: ${esc(error.message)}. Supabase → Authentication → MFA altında TOTP açık mı?</p></div>`); return; }
+    const body = `
+      <div class="pl-card" style="max-width:560px"><h2>İki adımlı doğrulamayı kur</h2>
+        <p class="pl-help">${esc(msg || "Yönetim hesabını şifre çalınmasına karşı korur.")} QR kodu doğrulama uygulamanla tara, ardından gösterilen 6 haneli kodu gir.</p>
+        <img src="${esc(data.totp.qr_code)}" alt="QR" width="200" height="200" style="background:#fff;border-radius:12px;padding:8px">
+        <p class="pl-help">Elle giriş anahtarı: <span class="mono">${esc(data.totp.secret)}</span></p>
+        <form data-mfa-setup style="display:grid;gap:10px;max-width:260px"><label class="pl-field">Kod<input name="code" inputmode="numeric" maxlength="6" required></label><button class="pl-btn pl-btn--green" type="submit">Etkinleştir</button><p class="pl-msg"></p></form>
+      </div>`;
+    if ($(".pl")) { $(".pl-main").innerHTML = `<div class="pl-top"><h1>Güvenlik</h1></div>${body}`; } else app.innerHTML = `<div class="pl-login">${body}</div>`;
+    $("[data-mfa-setup]").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const { error: err } = await sb.auth.mfa.challengeAndVerify({ factorId: data.id, code: e.target.code.value.trim() });
+      if (err) { $(".pl-msg", e.target).textContent = "Kod hatalı. Uygulamadaki güncel kodu gir."; return; }
+      toast("İki adımlı doğrulama etkin.");
+      location.hash = "overview"; show();
+    });
+  }
 
-  /* ---------- Gerüst ---------- */
+  /* ---------- İskelet ---------- */
   const NAV = [
-    ["overview", "▦", "Übersicht"], ["orders", "🧾", "Bestellungen"], ["customers", "👥", "Kunden"],
-    ["esims", "📶", "eSIMs"], ["pricing", "€", "Preise & Wettbewerb"], ["settings", "⚙", "Anbieter & Einstellungen"],
+    ["overview", "▦", "Genel bakış"], ["orders", "🧾", "Siparişler"], ["payments", "💳", "Ödemeler"],
+    ["refunds", "↩", "İade talepleri"], ["support", "✉", "Destek talepleri"], ["questions", "💬", "Lina soruları"],
+    ["customers", "👥", "Müşteriler"], ["esims", "📶", "eSIM'ler"], ["pricing", "₺", "Fiyatlar & rakipler"],
+    ["settings", "⚙", "Entegrasyonlar"], ["audit", "📜", "İşlem kaydı"], ["security", "🔒", "Güvenlik"],
   ];
-  let view = (location.hash.slice(1) || "overview"), userEmail = "";
+  let view = "overview", userEmail = "", counts = {};
   function shell(title, body) {
     app.innerHTML = `
       <div class="pl">
         <aside class="pl-side">
-          <div class="pl-brand">passport<em>.io</em><small>Shop-Verwaltung</small></div>
-          ${NAV.map(([id, ic, label]) => `<a class="pl-nav ${id === view ? "is-active" : ""}" href="#${id}"><i>${ic}</i>${label}</a>`).join("")}
-          <a class="pl-nav" href="./" target="_blank" rel="noopener"><i>✎</i>Inhalte bearbeiten ↗</a>
+          <div class="pl-brand">passport<em>.io</em><small>Mağaza yönetimi</small></div>
+          ${NAV.map(([id, ic, label]) => `<a class="pl-nav ${id === view ? "is-active" : ""}" href="#${id}"><i>${ic}</i>${label}${counts[id] ? `<span class="pl-count">${counts[id]}</span>` : ""}</a>`).join("")}
+          <a class="pl-nav" href="./" target="_blank" rel="noopener"><i>✎</i>İçerikleri düzenle ↗</a>
           <div class="pl-sep"></div>
-          <a class="pl-nav" href="../index.html" target="_blank" rel="noopener"><i>↗</i>Shop ansehen</a>
+          <a class="pl-nav" href="../index.html" target="_blank" rel="noopener"><i>↗</i>Mağazayı gör</a>
         </aside>
         <main class="pl-main">
           <div class="pl-top">
             <div style="display:flex;gap:10px;align-items:center"><button class="pl-btn pl-btn--line pl-btn--sm pl-burger" data-menu>☰</button><h1>${esc(title)}</h1></div>
-            <div class="pl-user">${esc(userEmail)} <button class="pl-btn pl-btn--line pl-btn--sm" data-logout>Abmelden</button></div>
+            <div class="pl-user">${esc(userEmail)} <button class="pl-btn pl-btn--line pl-btn--sm" data-logout>Çıkış yap</button></div>
           </div>
           ${body}
         </main>
       </div>`;
   }
-  const loading = (title) => shell(title, `<p class="pl-loading">Wird geladen …</p>`);
+  const loading = (title) => shell(title, `<p class="pl-loading">Yükleniyor …</p>`);
+  const table = (head, rows, empty) => `<div class="pl-table-wrap"><table><thead><tr>${head.map((h) => `<th${h.startsWith("#") ? ' class="num"' : ""}>${esc(h.replace(/^#/, ""))}</th>`).join("")}</tr></thead><tbody>${rows.join("") || `<tr><td colspan="${head.length}" class="pl-empty">${esc(empty)}</td></tr>`}</tbody></table></div>`;
 
-  /* ---------- Ansichten ---------- */
+  /* Son 30 günün grafiği (SVG çubuklar) */
+  function chart(days, cur) {
+    const vals = days.map((d) => d.revenue[cur] || 0), max = Math.max(1, ...vals);
+    const w = 720, h = 180, bw = w / days.length;
+    const bars = days.map((d, i) => { const v = d.revenue[cur] || 0, bh = Math.round((v / max) * (h - 30)); return `<g><title>${day(d.day)} · ${money(v, cur)} · ${d.orders} sipariş</title><rect x="${(i * bw + 2).toFixed(1)}" y="${h - 20 - bh}" width="${(bw - 4).toFixed(1)}" height="${Math.max(bh, 1)}" rx="3" fill="${v ? "#2ef58a" : "#dfe8e3"}"/></g>`; }).join("");
+    const labels = [0, 10, 20, 29].map((i) => `<text x="${(i * bw + bw / 2).toFixed(1)}" y="${h - 4}" font-size="11" text-anchor="middle" fill="#6b7671">${day(days[i].day)}</text>`).join("");
+    return `<svg viewBox="0 0 ${w} ${h}" class="pl-chart" role="img" aria-label="Son 30 gün ciro">${bars}${labels}</svg>`;
+  }
+
+  /* ---------- Görünümler ---------- */
   async function overview() {
-    loading("Übersicht");
+    loading("Genel bakış");
     const d = await api("GET", "?view=overview");
+    counts = { refunds: d.openRefunds, support: d.openSupport, questions: d.openQuestions };
     const rev = Object.entries(d.revenue);
+    const cur = rev.sort((a, b) => b[1] - a[1])[0]?.[0] || "EUR";
     const s = d.status;
     const check = [
-      ["eSIM-Anbieter", s.esim, "Secrets ESIM_API_URL und ESIM_API_KEY in Supabase eintragen."],
-      ["Zahlungsanbieter", !!s.payment, "Zahlungsanbieter festlegen und anbinden (PAYMENT_PROVIDER)."],
-      ["Anmeldung mit Google", s.google, "Supabase → Authentication → Providers → Google einschalten."],
-      ["Anmeldung mit Apple", s.apple, "Supabase → Authentication → Providers → Apple einschalten."],
-      ["Inhalts-Editor online (GitHub)", s.cmsGithub, "GitHub OAuth-App anlegen, GITHUB_CLIENT_ID/SECRET eintragen."],
-      ["Testmodus aus", !s.testOrders, "Secret ALLOW_TEST_ORDERS vor dem Start entfernen."],
+      ["eSIM sağlayıcısı", s.esim, "Supabase secret: ESIM_API_URL, ESIM_API_KEY"],
+      ["Ödeme sağlayıcısı", !!s.payment, "Ödeme sağlayıcısını seç ve bağla (PAYMENT_PROVIDER)"],
+      ["Google ile giriş", s.google, "Supabase → Authentication → Providers → Google"],
+      ["Apple ile giriş", s.apple, "Supabase → Authentication → Providers → Apple"],
+      ["İçerik editörü (GitHub)", s.cmsGithub, "GitHub OAuth uygulaması, GITHUB_CLIENT_ID/SECRET"],
+      ["Test modu kapalı", !s.testOrders, "Yayından önce ALLOW_TEST_ORDERS secret'ını sil"],
+      ["İki adımlı doğrulama", d.mfa?.hasFactor, "Menü → Güvenlik"],
     ];
-    shell("Übersicht", `
+    shell("Genel bakış", `
       <div class="pl-grid">
-        <div class="pl-card pl-kpi"><span>Umsatz (bezahlt)</span><b>${rev.length ? rev.map(([c, v]) => esc(money(v, c))).join("<br>") : "0 €"}</b></div>
-        <div class="pl-card pl-kpi"><span>Bestellungen (30 Tage)</span><b>${d.orders30}</b></div>
-        <div class="pl-card pl-kpi"><span>Kunden</span><b>${d.customers}</b></div>
-        <div class="pl-card pl-kpi"><span>eSIMs aktiv / gesamt</span><b>${d.esimsActive} / ${d.esims}</b></div>
+        <div class="pl-card pl-kpi"><span>Ciro (ödenmiş)</span><b>${rev.length ? rev.map(([c, v]) => esc(money(v, c))).join("<br>") : esc(money(0, "EUR"))}</b></div>
+        <div class="pl-card pl-kpi"><span>Sipariş (30 gün)</span><b>${d.orders30}</b></div>
+        <div class="pl-card pl-kpi"><span>Müşteri</span><b>${d.customers}</b></div>
+        <div class="pl-card pl-kpi"><span>eSIM aktif / toplam</span><b>${d.esimsActive} / ${d.esims}</b></div>
       </div>
+      <div class="pl-grid pl-grid--3">
+        <a class="pl-card pl-kpi pl-link" href="#refunds"><span>Bekleyen iade talepleri</span><b class="${d.openRefunds ? "warn" : ""}">${d.openRefunds}</b></a>
+        <a class="pl-card pl-kpi pl-link" href="#support"><span>Açık destek talepleri</span><b class="${d.openSupport ? "warn" : ""}">${d.openSupport}</b></a>
+        <a class="pl-card pl-kpi pl-link" href="#questions"><span>Lina'nın yanıtlayamadığı sorular</span><b>${d.openQuestions}</b></a>
+      </div>
+      <div class="pl-card" style="margin-bottom:14px"><h2>Son 30 gün <small>ciro (${esc(cur)}) ve sipariş · test siparişleri hariç</small></h2>${chart(d.days, cur)}</div>
       <div class="pl-two">
-        <div class="pl-card"><h2>Letzte Bestellungen</h2>${ordersTable(d.recent, false)}</div>
-        <div class="pl-card"><h2>Startklar? <small>Verkaufsbereitschaft</small></h2>
-          <div class="pl-check">${check.map(([l, ok, how]) => `<div><span>${esc(l)}${ok ? "" : `<small>${esc(how)}</small>`}</span><span class="pl-badge ${ok ? "ok" : "warn"}">${ok ? "Erledigt" : "Offen"}</span></div>`).join("")}</div>
-          <h2 style="margin-top:18px">Bestellstatus</h2>
+        <div class="pl-card"><h2>Son siparişler</h2>${ordersTable(d.recent, false)}</div>
+        <div class="pl-card"><h2>Yayına hazır mı? <small>satış kontrol listesi</small></h2>
+          <div class="pl-check">${check.map(([l, ok, how]) => `<div><span>${esc(l)}${ok ? "" : `<small>${esc(how)}</small>`}</span><span class="pl-badge ${ok ? "ok" : "warn"}">${ok ? "Tamam" : "Eksik"}</span></div>`).join("")}</div>
+          <h2 style="margin-top:18px">Sipariş durumları</h2>
           <div class="pl-check">${Object.entries(d.byStatus).map(([k, v]) => `<div><span>${esc(ORDER_ST[k])}</span><b>${v}</b></div>`).join("")}</div>
         </div>
       </div>`);
   }
 
   function ordersTable(list, editable = true) {
-    if (!list.length) return `<p class="pl-empty">Noch keine Bestellungen.</p>`;
-    return `<div class="pl-table-wrap"><table><thead><tr><th>Datum</th><th>Kunde</th><th>Produkt</th><th class="num">Betrag</th><th>Status</th></tr></thead><tbody>
-      ${list.map((o) => `<tr><td>${esc(date(o.created_at))}</td><td>${esc(o.email)}</td><td>${esc(o.item_key)} · ${esc(o.title || "")}${o.test ? ' <span class="pl-badge warn">Test</span>' : ""}</td>
+    return table(["Tarih", "Müşteri", "Ürün", "#Tutar", "Durum"], list.map((o) => `<tr><td>${esc(date(o.created_at))}</td><td>${esc(o.email || o.customer_email || "–")}</td><td>${esc(o.item_key)} · ${esc(o.title || "")}${o.test ? ' <span class="pl-badge warn">Test</span>' : ""}</td>
         <td class="num">${esc(money(o.amount, o.currency))}</td>
-        <td>${editable ? `<select data-order="${esc(o.id)}">${Object.entries(ORDER_ST).map(([k, l]) => `<option value="${k}" ${k === o.status ? "selected" : ""}>${l}</option>`).join("")}</select>` : `<span class="pl-badge ${stClass(o.status)}">${esc(ORDER_ST[o.status] || o.status)}</span>`}</td></tr>`).join("")}
-      </tbody></table></div>`;
+        <td>${editable ? `<select data-order="${esc(o.id)}">${Object.entries(ORDER_ST).map(([k, l]) => `<option value="${k}" ${k === o.status ? "selected" : ""}>${l}</option>`).join("")}</select>` : badge(o.status, ORDER_ST)}</td></tr>`), "Henüz sipariş yok.");
   }
 
   async function orders() {
-    loading("Bestellungen");
+    loading("Siparişler");
     const st = sessionStorage.getItem("pl_ost") || "";
     const d = await api("GET", `?view=orders${st ? "&status=" + st : ""}`);
-    shell("Bestellungen", `
-      <div class="pl-tools"><label class="pl-field">Status<select data-ofilter><option value="">Alle</option>${Object.entries(ORDER_ST).map(([k, l]) => `<option value="${k}" ${k === st ? "selected" : ""}>${l}</option>`).join("")}</select></label></div>
-      <p class="pl-help">Status ändern setzt nur den Eintrag. <b>Erstattungen</b> zusätzlich beim Zahlungsanbieter auslösen.</p>
+    shell("Siparişler", `
+      <div class="pl-tools"><label class="pl-field">Durum<select data-ofilter><option value="">Tümü</option>${Object.entries(ORDER_ST).map(([k, l]) => `<option value="${k}" ${k === st ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+        <button class="pl-btn pl-btn--line" data-csv="orders">CSV indir</button></div>
+      <p class="pl-help">Durum değişikliği yalnızca kaydı günceller. <b>Para iadesini</b> ayrıca ödeme sağlayıcısında başlat.</p>
       <div class="pl-card">${ordersTable(d.orders)}</div>`);
+    lastCsv = { name: "siparisler", rows: d.orders.map((o) => ({ tarih: o.created_at, musteri: o.email, urun: o.item_key, tarife: o.title, tutar: o.amount, para: o.currency, durum: ORDER_ST[o.status], test: o.test ? "evet" : "" })) };
+  }
+
+  async function payments() {
+    loading("Ödemeler");
+    const d = await api("GET", "?view=payments");
+    const sums = (o) => Object.entries(o).map(([c, v]) => esc(money(v, c))).join("<br>") || esc(money(0, "EUR"));
+    shell("Ödemeler", `
+      <div class="pl-grid pl-grid--3">
+        <div class="pl-card pl-kpi"><span>Brüt tahsilat</span><b>${sums(d.gross)}</b></div>
+        <div class="pl-card pl-kpi"><span>İade edilen</span><b>${sums(d.refunded)}</b></div>
+        <div class="pl-card pl-kpi"><span>Ödeme kaydı</span><b>${d.payments.length}</b></div>
+      </div>
+      <div class="pl-tools"><button class="pl-btn pl-btn--line" data-csv="payments">CSV indir (muhasebe)</button></div>
+      <div class="pl-card">${table(["Tarih", "Müşteri", "Ürün", "#Tutar", "#İade", "Sağlayıcı", "Ödeme no", "Durum"], d.payments.map((p) => `<tr><td>${esc(date(p.paid_at || p.created_at))}</td><td>${esc(p.customer_email || "–")}</td><td>${esc(p.item_key)} · ${esc(p.title || "")}${p.test ? ' <span class="pl-badge warn">Test</span>' : ""}</td><td class="num">${esc(money(p.amount, p.currency))}</td><td class="num">${p.refunded_amount ? esc(money(p.refunded_amount, p.currency)) : "–"}</td><td>${esc(p.payment_provider || "–")}</td><td><span class="mono">${esc(p.payment_ref || "–")}</span></td><td>${badge(p.status, ORDER_ST)}</td></tr>`), "Henüz ödeme yok. Ödeme sağlayıcısı bağlandığında ödemeler burada görünür.")}</div>`);
+    lastCsv = { name: "odemeler", rows: d.payments.map((p) => ({ tarih: p.paid_at || p.created_at, musteri: p.customer_email, urun: p.item_key, tutar: p.amount, iade: p.refunded_amount, para: p.currency, saglayici: p.payment_provider, odeme_no: p.payment_ref, durum: ORDER_ST[p.status], test: p.test ? "evet" : "" })) };
+  }
+
+  async function refunds() {
+    loading("İade talepleri");
+    const d = await api("GET", "?view=refunds");
+    shell("İade talepleri", `
+      <p class="pl-help">Müşteriler, <b>kurulmamış</b> eSIM'ler için süre içinde iade talep edebilir. <b>Onayla</b> → sipariş “İade edildi”, eSIM kapatılır. Para iadesini ödeme sağlayıcısında yap.</p>
+      <div class="pl-card">${table(["Tarih", "Müşteri", "Sipariş", "#Tutar", "Gerekçe", "Durum", ""], d.refunds.map((r) => `<tr><td>${esc(date(r.created_at))}</td><td>${esc(r.customer_email || "–")}</td><td>${esc(r.orders?.item_key || "")} · ${esc(r.orders?.title || "")}</td><td class="num">${r.orders ? esc(money(r.orders.amount, r.orders.currency)) : "–"}</td><td>${esc(r.reason || "–")}${r.admin_note ? `<br><small class="pl-note">Not: ${esc(r.admin_note)}</small>` : ""}</td><td>${badge(r.status, REF_ST)}${r.decided_by ? `<br><small class="pl-note">${esc(r.decided_by)}</small>` : ""}</td>
+        <td>${r.status === "open" ? `<div class="pl-actions"><button class="pl-btn pl-btn--green pl-btn--sm" data-refund="${esc(r.id)}" data-decision="approve">Onayla</button><button class="pl-btn pl-btn--red pl-btn--sm" data-refund="${esc(r.id)}" data-decision="reject">Reddet</button></div>` : ""}</td></tr>`), "İade talebi yok.")}</div>`);
+  }
+
+  async function support() {
+    loading("Destek talepleri");
+    const d = await api("GET", "?view=support");
+    shell("Destek talepleri", `
+      <p class="pl-help">Hesap sayfasından ve Lina'nın “Bir insanla konuşmak istiyorum” akışından gelen talepler. Müşteriye e-postayla yanıt ver, sonra durumu güncelle.</p>
+      <div class="pl-card">${table(["Tarih", "Kimden", "Konu", "Mesaj", "Durum"], d.tickets.map((t) => `<tr><td>${esc(date(t.created_at))}</td><td>${esc(t.name || "")}<br><a href="mailto:${esc(t.email)}">${esc(t.email)}</a></td><td>${esc(t.subject || "–")}</td><td class="pl-msgcell">${esc(t.message)}</td>
+        <td><select data-ticket="${esc(t.id)}">${Object.entries(SUP_ST).map(([k, l]) => `<option value="${k}" ${k === t.status ? "selected" : ""}>${l}</option>`).join("")}</select></td></tr>`), "Destek talebi yok.")}</div>`);
+  }
+
+  async function questions() {
+    loading("Lina soruları");
+    const d = await api("GET", "?view=questions");
+    shell("Lina soruları", `
+      <p class="pl-help">Lina'nın yanıtlayamadığı sorular. Sık gelenler için içerik editöründe (<b>Yardım merkezi → Asistan & SSS</b>) yeni bir SSS ekle, sonra “İşlendi” olarak işaretle.</p>
+      <div class="pl-card">${table(["Tarih", "Soru", "Sayfa", ""], d.questions.map((q) => `<tr><td>${esc(date(q.created_at))}</td><td>${esc(q.question)}</td><td>${esc(q.page || "–")}</td><td>${q.handled ? '<span class="pl-badge ok">İşlendi</span>' : `<button class="pl-btn pl-btn--line pl-btn--sm" data-question="${esc(q.id)}">İşlendi</button>`}</td></tr>`), "Soru yok.")}</div>`);
   }
 
   async function customers() {
-    loading("Kunden");
+    loading("Müşteriler");
     const d = await api("GET", "?view=customers");
-    shell("Kunden", `
-      <div class="pl-tools"><label class="pl-field">Suchen<input data-search placeholder="E-Mail oder Name"></label></div>
-      <div class="pl-card"><div class="pl-table-wrap"><table><thead><tr><th>E-Mail</th><th>Name</th><th>Sprache</th><th>Registriert</th><th>Letzte Anmeldung</th><th>Anmeldung</th><th class="num">Bestellungen</th><th>Newsletter</th></tr></thead><tbody>
-      ${d.customers.map((c) => `<tr data-row="${esc((c.email + " " + (c.full_name || "")).toLowerCase())}"><td>${esc(c.email)}</td><td>${esc(c.full_name || "–")}</td><td>${esc((c.language || "–").toUpperCase())}</td><td>${esc(date(c.created_at))}</td><td>${esc(date(c.last_sign_in_at))}</td><td>${esc((c.providers || []).join(", "))}</td><td class="num">${c.paid} / ${c.orders}</td><td>${c.marketing ? '<span class="pl-badge ok">Ja</span>' : "–"}</td></tr>`).join("") || `<tr><td colspan="8" class="pl-empty">Noch keine Kunden.</td></tr>`}
-      </tbody></table></div></div>`);
+    shell("Müşteriler", `
+      <div class="pl-tools"><label class="pl-field">Ara<input data-search placeholder="E-posta veya ad"></label></div>
+      <div class="pl-card">${table(["E-posta", "Ad", "Dil", "Kayıt", "Son giriş", "Giriş yöntemi", "#Sipariş (ödenmiş/toplam)", "Bülten"], d.customers.map((c) => `<tr data-row="${esc((c.email + " " + (c.full_name || "")).toLowerCase())}"><td>${esc(c.email)}</td><td>${esc(c.full_name || "–")}</td><td>${esc((c.language || "–").toUpperCase())}</td><td>${esc(date(c.created_at))}</td><td>${esc(date(c.last_sign_in_at))}</td><td>${esc((c.providers || []).join(", "))}</td><td class="num">${c.paid} / ${c.orders}</td><td>${c.marketing ? '<span class="pl-badge ok">Evet</span>' : "–"}</td></tr>`), "Henüz müşteri yok.")}</div>`);
   }
 
   async function esims() {
-    loading("eSIMs");
+    loading("eSIM'ler");
     const d = await api("GET", "?view=esims");
-    shell("eSIMs", `
-      <div class="pl-card"><div class="pl-table-wrap"><table><thead><tr><th>Datum</th><th>Kunde</th><th>Land</th><th>Tarif</th><th>ICCID</th><th class="num">Verbrauch</th><th>Gültig bis</th><th>Status</th></tr></thead><tbody>
-      ${d.esims.map((e) => `<tr><td>${esc(date(e.created_at))}</td><td>${esc(e.email)}</td><td>${esc((e.country || "").toUpperCase())}</td><td>${esc(e.plan_name || "")}${e.test ? ' <span class="pl-badge warn">Test</span>' : ""}</td><td><span class="mono">${esc(e.iccid || "–")}</span></td>
-        <td class="num">${esc(gb(e.data_used_mb))} / ${esc(gb(e.data_total_mb))}</td><td>${esc(e.expires_at ? date(e.expires_at) : "ab Aktivierung")}</td>
-        <td><select data-esim="${esc(e.id)}">${Object.entries(ESIM_ST).map(([k, l]) => `<option value="${k}" ${k === e.status ? "selected" : ""}>${l}</option>`).join("")}</select></td></tr>`).join("") || `<tr><td colspan="8" class="pl-empty">Noch keine eSIMs.</td></tr>`}
-      </tbody></table></div></div>`);
+    shell("eSIM'ler", `
+      <div class="pl-card">${table(["Tarih", "Müşteri", "Ülke", "Tarife", "ICCID", "#Kullanım", "Bitiş", "Durum"], d.esims.map((e) => `<tr><td>${esc(date(e.created_at))}</td><td>${esc(e.email)}</td><td>${esc((e.country || "").toUpperCase())}</td><td>${esc(e.plan_name || "")}${e.test ? ' <span class="pl-badge warn">Test</span>' : ""}</td><td><span class="mono">${esc(e.iccid || "–")}</span></td>
+        <td class="num">${esc(gb(e.data_used_mb))} / ${esc(gb(e.data_total_mb))}</td><td>${esc(e.expires_at ? date(e.expires_at) : "aktivasyonla başlar")}</td>
+        <td><select data-esim="${esc(e.id)}">${Object.entries(ESIM_ST).map(([k, l]) => `<option value="${k}" ${k === e.status ? "selected" : ""}>${l}</option>`).join("")}</select></td></tr>`), "Henüz eSIM yok.")}</div>`);
   }
 
   async function pricing() {
-    loading("Preise & Wettbewerb");
+    loading("Fiyatlar & rakipler");
     const d = await api("GET", "?view=pricing");
     const s = d.settings, p = d.preview;
-    const ruleLabel = (r) => ({ competitor: "Wettbewerb − Tick", markup: "Einkauf × Faktor" }[String(r).split("+")[0]] || r) + (String(r).includes("+floor") ? " → Untergrenze" : "");
-    shell("Preise & Wettbewerb", `
-      <div class="pl-card" style="margin-bottom:14px"><h2>Preisregel</h2>
-        <p class="pl-help">Gibt es einen <b>Wettbewerbspreis</b> für dasselbe Produkt (gleiches Land, Volumen, Laufzeit), verkaufen wir <b>einen Tick günstiger</b>. Sonst <b>Einkaufspreis × Faktor</b>. Nie unter dem <b>Mindestpreis</b> und nie unter <b>Einkauf + Mindestmarge</b> (Schutz vor Verlustverkäufen).</p>
+    const ruleLabel = (r) => ({ competitor: "Rakip − 1 tık", markup: "Alış × çarpan" }[String(r).split("+")[0]] || r) + (String(r).includes("+floor") ? " → alt sınır" : "");
+    shell("Fiyatlar & rakipler", `
+      <div class="pl-card" style="margin-bottom:14px"><h2>Fiyat kuralı</h2>
+        <p class="pl-help">Aynı ürün için (aynı ülke, veri miktarı, süre) <b>rakip fiyatı</b> varsa, en ucuz rakibin <b>bir tık altında</b> satarız. Yoksa <b>alış fiyatı × çarpan</b>. Fiyat hiçbir zaman <b>en düşük fiyatın</b> ve <b>alış + asgari kâr marjının</b> altına inmez (zararına satış koruması).</p>
         <form class="pl-form" data-settings>
-          <label class="pl-field">Faktor (ohne Wettbewerb)<input name="markup_factor" type="number" step="0.01" min="1" value="${esc(s.markup_factor)}"></label>
-          <label class="pl-field">Tick unter Wettbewerb (€)<input name="undercut_eur" type="number" step="0.01" min="0" value="${esc(s.undercut_eur)}"></label>
-          <label class="pl-field">Mindestpreis (€)<input name="min_price_eur" type="number" step="0.01" min="0" value="${esc(s.min_price_eur)}"></label>
-          <label class="pl-field">Mindestmarge (%)<input name="min_margin_pct" type="number" step="1" min="0" value="${esc(s.min_margin_pct)}"></label>
-          <label class="pl-field">Auf ,99 runden<select name="round_99"><option value="1" ${s.round_99 ? "selected" : ""}>Ja</option><option value="0" ${s.round_99 ? "" : "selected"}>Nein</option></select></label>
-          <button class="pl-btn pl-btn--green" type="submit">Speichern</button>
+          <label class="pl-field">Çarpan (rakip yoksa)<input name="markup_factor" type="number" step="0.01" min="1" value="${esc(s.markup_factor)}"></label>
+          <label class="pl-field">Rakibin altında (€)<input name="undercut_eur" type="number" step="0.01" min="0" value="${esc(s.undercut_eur)}"></label>
+          <label class="pl-field">En düşük fiyat (€)<input name="min_price_eur" type="number" step="0.01" min="0" value="${esc(s.min_price_eur)}"></label>
+          <label class="pl-field">Asgari kâr marjı (%)<input name="min_margin_pct" type="number" step="1" min="0" value="${esc(s.min_margin_pct)}"></label>
+          <label class="pl-field">,99'a yuvarla<select name="round_99"><option value="1" ${s.round_99 ? "selected" : ""}>Evet</option><option value="0" ${s.round_99 ? "" : "selected"}>Hayır</option></select></label>
+          <button class="pl-btn pl-btn--green" type="submit">Kaydet</button>
         </form>
       </div>
-      <div class="pl-card" style="margin-bottom:14px"><h2>Wettbewerbspreise <small>${d.competitors.length} Einträge</small></h2>
-        <p class="pl-help">Produkt-Schlüssel: <b>country:jp</b>, <b>region:europe</b>, <b>global</b>, <b>lounge</b>, <b>fasttrack</b>. Volumen/Tage leer lassen = gilt für alle Varianten.</p>
+      <div class="pl-card" style="margin-bottom:14px"><h2>Rakip fiyatları <small>${d.competitors.length} kayıt</small></h2>
+        <p class="pl-help">Ürün anahtarı: <b>country:jp</b>, <b>region:europe</b>, <b>global</b>, <b>lounge</b>, <b>fasttrack</b>. GB/gün boş = tüm varyantlar için geçerli. Fiyatlar değişir – <b>düzenli olarak kontrol et</b> (“Kontrol” sütunu).</p>
         <form class="pl-form pl-form--comp" data-comp>
-          <label class="pl-field">Produkt<input name="item_key" placeholder="country:jp" required></label>
+          <label class="pl-field">Ürün<input name="item_key" placeholder="country:jp" required></label>
           <label class="pl-field">GB<input name="gb" type="number" step="0.1" min="0"></label>
-          <label class="pl-field">Tage<input name="days" type="number" step="1" min="0"></label>
-          <label class="pl-field">Preis<input name="price" type="number" step="0.01" min="0.01" required></label>
-          <label class="pl-field">Währung<input name="currency" value="EUR" maxlength="3" required></label>
-          <label class="pl-field">Wettbewerber<input name="competitor" placeholder="z. B. Airalo" required></label>
-          <label class="pl-field">Quelle (Link)<input name="url" type="url" placeholder="https://"></label>
-          <button class="pl-btn" type="submit">Hinzufügen</button>
+          <label class="pl-field">Gün<input name="days" type="number" step="1" min="0"></label>
+          <label class="pl-field">Fiyat<input name="price" type="number" step="0.01" min="0.01" required></label>
+          <label class="pl-field">Para birimi<input name="currency" value="EUR" maxlength="3" required></label>
+          <label class="pl-field">Rakip<input name="competitor" placeholder="ör. Nomad" required></label>
+          <label class="pl-field">Kaynak (link)<input name="url" type="url" placeholder="https://"></label>
+          <button class="pl-btn" type="submit">Ekle</button>
         </form>
-        <details style="margin:14px 0"><summary style="cursor:pointer;font-weight:600">CSV importieren</summary>
-          <p class="pl-help" style="margin-top:10px">Eine Zeile je Preis: <b>produkt;gb;tage;preis;währung;wettbewerber;link</b> – z. B. <span class="mono">country:jp;5;30;9.50;EUR;Airalo;https://…</span></p>
-          <form data-import style="display:grid;gap:10px"><label class="pl-field">Daten<textarea name="csv" placeholder="country:jp;5;30;9.50;EUR;Airalo;https://..."></textarea></label><button class="pl-btn pl-btn--line" type="submit" style="justify-self:start">Importieren</button></form>
+        <details style="margin:14px 0"><summary style="cursor:pointer;font-weight:600">CSV içe aktar</summary>
+          <p class="pl-help" style="margin-top:10px">Her satırda bir fiyat: <b>ürün;gb;gün;fiyat;para;rakip;link</b> – ör. <span class="mono">country:jp;5;30;9.50;USD;Nomad;https://…</span></p>
+          <form data-import style="display:grid;gap:10px"><label class="pl-field">Veri<textarea name="csv" placeholder="country:jp;5;30;9.50;USD;Nomad;https://..."></textarea></label><button class="pl-btn pl-btn--line" type="submit" style="justify-self:start">İçe aktar</button></form>
         </details>
-        <div class="pl-table-wrap"><table><thead><tr><th>Produkt</th><th class="num">GB</th><th class="num">Tage</th><th class="num">Preis</th><th>Wettbewerber</th><th>Geprüft</th><th></th></tr></thead><tbody>
-          ${d.competitors.map((c) => `<tr><td>${esc(c.item_key)}</td><td class="num">${esc(c.gb ?? "alle")}</td><td class="num">${esc(c.days ?? "alle")}</td><td class="num">${esc(money(c.price, c.currency))}</td><td>${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.competitor)}</a>` : esc(c.competitor)}</td><td>${esc(date(c.checked_at))}</td><td><button class="pl-btn pl-btn--red pl-btn--sm" data-del="${esc(c.id)}">Löschen</button></td></tr>`).join("") || `<tr><td colspan="7" class="pl-empty">Noch keine Wettbewerbspreise – es gilt Einkauf × Faktor.</td></tr>`}
-        </tbody></table></div>
+        ${table(["Ürün", "#GB", "#Gün", "#Fiyat", "Rakip", "Kontrol", ""], d.competitors.map((c) => `<tr><td>${esc(c.item_key)}</td><td class="num">${esc(c.gb ?? "tümü")}</td><td class="num">${esc(c.days ?? "tümü")}</td><td class="num">${esc(money(c.price, c.currency))}</td><td>${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.competitor)}</a>` : esc(c.competitor)}</td><td>${esc(date(c.checked_at))}</td><td><button class="pl-btn pl-btn--red pl-btn--sm" data-del="${esc(c.id)}">Sil</button></td></tr>`), "Henüz rakip fiyatı yok – alış × çarpan uygulanır.")}
       </div>
-      <div class="pl-card"><h2>Vorschau Verkaufspreise <small>${p.source === "mock" ? "auf Basis der Testdaten" : "auf Basis der Anbieter-Einkaufspreise"} · ${esc(p.currency)}</small></h2>
-        <div class="pl-tools"><label class="pl-field">Filtern<input data-pfilter placeholder="z. B. country:jp"></label></div>
-        <div class="pl-table-wrap"><table><thead><tr><th>Produkt</th><th>Tarif</th><th class="num">Einkauf</th><th>Wettbewerb</th><th class="num">Verkaufspreis</th><th class="num">Marge</th><th>Regel</th></tr></thead><tbody>
-          ${p.rows.map((r) => { const m = r.cost ? Math.round(((r.price - r.cost) / r.price) * 100) : null; return `<tr data-prow="${esc(r.key)}"><td>${esc(r.key)}</td><td>${r.gb ? `${esc(r.gb)} GB · ${esc(r.days)} T.` : esc(r.name || r.id)}</td><td class="num">${esc(money(r.cost, p.currency))}</td><td>${esc(r.competitor || "–")}</td><td class="num"><b>${esc(money(r.price, p.currency))}</b></td><td class="num">${m != null ? m + " %" : "–"}</td><td><span class="pl-badge ${String(r.rule).startsWith("competitor") ? "ok" : ""}">${esc(ruleLabel(r.rule))}</span></td></tr>`; }).join("")}
-        </tbody></table></div>
+      <div class="pl-card"><h2>Satış fiyatı önizlemesi <small>${p.source === "mock" ? "test verilerine göre" : "sağlayıcı alış fiyatlarına göre"} · ${esc(p.currency)}</small></h2>
+        <div class="pl-tools"><label class="pl-field">Filtre<input data-pfilter placeholder="ör. country:jp"></label></div>
+        ${table(["Ürün", "Tarife", "#Alış", "Rakip", "#Satış fiyatı", "#Marj", "Kural"], p.rows.map((r) => { const m = r.cost ? Math.round(((r.price - r.cost) / r.price) * 100) : null; return `<tr data-prow="${esc(r.key)}"><td>${esc(r.key)}</td><td>${r.gb ? `${esc(r.gb)} GB · ${esc(r.days)} gün` : esc(r.name || r.id)}</td><td class="num">${esc(money(r.cost, p.currency))}</td><td>${esc(r.competitor || "–")}</td><td class="num"><b>${esc(money(r.price, p.currency))}</b></td><td class="num">${m != null ? "%" + m : "–"}</td><td><span class="pl-badge ${String(r.rule).startsWith("competitor") ? "ok" : ""}">${esc(ruleLabel(r.rule))}</span></td></tr>`; }), "Önizleme yok.")}
       </div>`);
   }
 
   async function settings() {
-    loading("Anbieter & Einstellungen");
+    loading("Entegrasyonlar");
     const d = await api("GET", "?view=overview");
     const s = d.status;
-    const row = (label, ok, how, link) => `<div><span><b>${esc(label)}</b><small>${how}${link ? ` · <a href="${esc(link)}" target="_blank" rel="noopener">öffnen ↗</a>` : ""}</small></span><span class="pl-badge ${ok ? "ok" : "warn"}">${ok ? "Aktiv" : "Offen"}</span></div>`;
-    shell("Anbieter & Einstellungen", `
-      <p class="pl-help">API-Schlüssel und Passwörter gehören <b>nie</b> in den Code oder in diese Seite. Sie werden in Supabase als <b>Secrets</b> hinterlegt – nur der Server kann sie lesen.</p>
+    const row = (label, ok, how, link) => `<div><span><b>${esc(label)}</b><small>${how}${link ? ` · <a href="${esc(link)}" target="_blank" rel="noopener">aç ↗</a>` : ""}</small></span><span class="pl-badge ${ok ? "ok" : "warn"}">${ok ? "Aktif" : "Eksik"}</span></div>`;
+    shell("Entegrasyonlar", `
+      <p class="pl-help">API anahtarları ve şifreler <b>asla</b> koda veya bu sayfaya yazılmaz. Supabase'de <b>secret</b> olarak saklanır – yalnızca sunucu okuyabilir.</p>
       <div class="pl-two">
-        <div class="pl-card"><h2>Anbieter-Schnittstellen</h2><div class="pl-check">
-          ${row("eSIM-Anbieter", s.esim, "Secrets ESIM_API_URL, ESIM_API_KEY (Einkaufspreise, Bestellung, Verbrauch)", dash("settings/functions"))}
-          ${row("Lounge-Anbieter", s.lounge, "Secrets LOUNGE_API_URL, LOUNGE_API_KEY", dash("settings/functions"))}
-          ${row("Fast-Track-Anbieter", s.fasttrack, "Secrets FASTTRACK_API_URL, FASTTRACK_API_KEY", dash("settings/functions"))}
-          ${row("Zahlungsanbieter", !!s.payment, "Secret PAYMENT_PROVIDER + Schlüssel des Anbieters", dash("settings/functions"))}
-          ${row("Testmodus aus", !s.testOrders, "ALLOW_TEST_ORDERS stellt Test-eSIMs ohne Zahlung aus – vor dem Start löschen", dash("settings/functions"))}
-          ${row("Währungen", true, `Aktiv: ${esc(s.currencies)} (Secret CURRENCIES)`, dash("settings/functions"))}
+        <div class="pl-card"><h2>Sağlayıcı arayüzleri</h2><div class="pl-check">
+          ${row("eSIM sağlayıcısı", s.esim, "Secret: ESIM_API_URL, ESIM_API_KEY (alış fiyatı, sipariş, kullanım)", dash("settings/functions"))}
+          ${row("Lounge sağlayıcısı", s.lounge, "Secret: LOUNGE_API_URL, LOUNGE_API_KEY", dash("settings/functions"))}
+          ${row("Fast Track sağlayıcısı", s.fasttrack, "Secret: FASTTRACK_API_URL, FASTTRACK_API_KEY", dash("settings/functions"))}
+          ${row("Ödeme sağlayıcısı", !!s.payment, "Secret: PAYMENT_PROVIDER + sağlayıcı anahtarları", dash("settings/functions"))}
+          ${row("Test modu kapalı", !s.testOrders, "ALLOW_TEST_ORDERS ödemesiz test eSIM'i üretir – yayından önce sil", dash("settings/functions"))}
+          ${row("Para birimleri", true, `Aktif: ${esc(s.currencies)} (secret CURRENCIES)`, dash("settings/functions"))}
         </div></div>
-        <div class="pl-card"><h2>Anmeldung & E-Mail</h2><div class="pl-check">
-          ${row("Google-Anmeldung", s.google, "Google Cloud: OAuth-Client, Weiterleitung …/auth/v1/callback", dash("auth/providers"))}
-          ${row("Apple-Anmeldung", s.apple, "Apple Developer: Services ID + Key", dash("auth/providers"))}
-          ${row("E-Mail-Vorlagen", true, "Inhalt aus supabase/templates einfügen", dash("auth/templates"))}
-          ${row("Eigener Mailversand (SMTP)", false, "Pflicht vor dem Start – z. B. Resend, Brevo, Postmark", dash("settings/auth"))}
-          ${row("Weiterleitungsadressen", true, "account.html der Live-Domain eintragen", dash("auth/url-configuration"))}
-          ${row("Inhalts-Editor (GitHub)", s.cmsGithub, "GitHub OAuth-App, Secrets GITHUB_CLIENT_ID/SECRET", dash("settings/functions"))}
+        <div class="pl-card"><h2>Giriş & e-posta</h2><div class="pl-check">
+          ${row("Google ile giriş", s.google, "Google Cloud: OAuth istemcisi, yönlendirme …/auth/v1/callback", dash("auth/providers"))}
+          ${row("Apple ile giriş", s.apple, "Apple Developer: Services ID + anahtar", dash("auth/providers"))}
+          ${row("E-posta şablonları", true, "supabase/templates içeriğini yapıştır", dash("auth/templates"))}
+          ${row("Kendi e-posta gönderimi (SMTP)", false, "Yayından önce zorunlu – ör. Resend, Brevo, Postmark", dash("settings/auth"))}
+          ${row("Bot koruması (CAPTCHA)", false, "Supabase → Authentication → Attack Protection → Turnstile/hCaptcha", dash("auth/protection"))}
+          ${row("Yönlendirme adresleri", true, "Yayındaki alan adının account.html adresini ekle", dash("auth/url-configuration"))}
+          ${row("İçerik editörü (GitHub)", s.cmsGithub, "GitHub OAuth uygulaması, GITHUB_CLIENT_ID/SECRET", dash("settings/functions"))}
         </div></div>
       </div>`);
   }
 
-  const VIEWS = { overview, orders, customers, esims, pricing, settings };
+  async function audit() {
+    loading("İşlem kaydı");
+    const d = await api("GET", "?view=audit");
+    shell("İşlem kaydı", `
+      <p class="pl-help">Yönetim panelindeki tüm değişiklikler: kim, ne zaman, ne yaptı.</p>
+      <div class="pl-card">${table(["Tarih", "Yönetici", "İşlem", "Hedef"], d.audit.map((a) => `<tr><td>${esc(date(a.created_at))}</td><td>${esc(a.admin_email)}</td><td>${esc(a.action)}</td><td><span class="mono">${esc(a.target || "–")}</span></td></tr>`), "Henüz kayıt yok.")}</div>`);
+  }
+
+  async function security() {
+    loading("Güvenlik");
+    const { data } = await sb.auth.mfa.listFactors();
+    const verified = (data?.totp || []).filter((f) => f.status === "verified");
+    shell("Güvenlik", `
+      <div class="pl-card" style="max-width:640px"><h2>İki adımlı doğrulama (2FA)</h2>
+        <p class="pl-help">Etkinleştirdikten sonra panele girişte şifrenin yanında doğrulama uygulamasındaki kod da istenir. Tüm yöneticiler için zorunlu kılmak için Supabase secret: <b>ADMIN_REQUIRE_MFA=true</b>.</p>
+        ${verified.length ? `<p><span class="pl-badge ok">Etkin</span> ${verified.map((f) => esc(f.friendly_name || "TOTP")).join(", ")}</p>` : `<button class="pl-btn pl-btn--green" data-mfa-start>Kurulumu başlat</button>`}
+      </div>`);
+  }
+
+  const VIEWS = { overview, orders, payments, refunds, support, questions, customers, esims, pricing, settings, audit, security };
+  let lastCsv = null;
   async function show() {
     view = VIEWS[location.hash.slice(1)] ? location.hash.slice(1) : "overview";
     try { await VIEWS[view](); }
     catch (err) {
       if (err.status === 401) return login();
-      if (err.status === 403) { await sb.auth.signOut(); return login("Dieses Konto hat keinen Admin-Zugriff. E-Mail im Supabase-Secret ADMIN_EMAILS eintragen (und E-Mail bestätigen)."); }
-      shell("Fehler", `<div class="pl-card"><p>Daten konnten nicht geladen werden (${esc(err.message)}). Ist die Funktion „admin“ veröffentlicht?</p></div>`);
+      if (err.message === "mfa_required") return mfaChallenge();
+      if (err.message === "mfa_setup_required") return mfaSetup("Yönetim için iki adımlı doğrulama zorunlu.");
+      if (err.status === 403) { await sb.auth.signOut(); return login("Bu hesabın yönetim yetkisi yok. E-postayı Supabase secret ADMIN_EMAILS listesine ekle (ve e-postanı doğrula)."); }
+      shell("Hata", `<div class="pl-card"><p>Veriler yüklenemedi (${esc(err.message)}). “admin” fonksiyonu yayında mı?</p></div>`);
     }
   }
+  const csvDownload = () => {
+    if (!lastCsv?.rows.length) return toast("İndirilecek veri yok.");
+    const cols = Object.keys(lastCsv.rows[0]);
+    const cell = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+    const text = "﻿" + [cols.join(";"), ...lastCsv.rows.map((r) => cols.map((c) => cell(r[c])).join(";"))].join("\r\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([text], { type: "text/csv;charset=utf-8" }));
+    a.download = `${lastCsv.name}-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  };
 
-  /* ---------- Ereignisse ---------- */
+  /* ---------- Olaylar ---------- */
   app.addEventListener("click", async (e) => {
     if (e.target.closest("[data-logout]")) { await sb.auth.signOut(); return login(); }
     if (e.target.closest("[data-menu]")) { $(".pl").classList.toggle("menu-open"); return; }
+    if (e.target.closest("[data-csv]")) return csvDownload();
+    if (e.target.closest("[data-mfa-start]")) return mfaSetup();
     const del = e.target.closest("[data-del]");
-    if (del) { del.disabled = true; await api("POST", "", { action: "competitor_delete", id: del.dataset.del }); toast("Gelöscht."); pricing(); }
+    if (del) { del.disabled = true; await api("POST", "", { action: "competitor_delete", id: del.dataset.del }); toast("Silindi."); return pricing(); }
+    const rf = e.target.closest("[data-refund]");
+    if (rf) {
+      const note = rf.dataset.decision === "reject" ? (prompt("Ret gerekçesi (müşteriye iletmek için not):") ?? null) : "";
+      if (note === null) return;
+      rf.disabled = true;
+      await api("POST", "", { action: "refund_decide", id: rf.dataset.refund, decision: rf.dataset.decision, note }).then(() => toast("Kaydedildi."), () => toast("Kaydedilemedi."));
+      return refunds();
+    }
+    const q = e.target.closest("[data-question]");
+    if (q) { q.disabled = true; await api("POST", "", { action: "question_handled", id: q.dataset.question }); toast("İşlendi."); return questions(); }
   });
   app.addEventListener("change", async (e) => {
     const o = e.target.closest("[data-order]");
-    if (o) { await api("POST", "", { action: "order_status", id: o.dataset.order, status: o.value }).then(() => toast("Status gespeichert."), () => toast("Fehler beim Speichern.")); return; }
+    if (o) { await api("POST", "", { action: "order_status", id: o.dataset.order, status: o.value }).then(() => toast("Durum kaydedildi."), () => toast("Kaydedilemedi.")); return; }
     const es = e.target.closest("[data-esim]");
-    if (es) { await api("POST", "", { action: "esim_status", id: es.dataset.esim, status: es.value }).then(() => toast("Status gespeichert."), () => toast("Fehler beim Speichern.")); return; }
+    if (es) { await api("POST", "", { action: "esim_status", id: es.dataset.esim, status: es.value }).then(() => toast("Durum kaydedildi."), () => toast("Kaydedilemedi.")); return; }
+    const t = e.target.closest("[data-ticket]");
+    if (t) { await api("POST", "", { action: "support_update", id: t.dataset.ticket, status: t.value }).then(() => toast("Durum kaydedildi."), () => toast("Kaydedilemedi.")); return; }
     if (e.target.matches("[data-ofilter]")) { sessionStorage.setItem("pl_ost", e.target.value); orders(); }
   });
   app.addEventListener("input", (e) => {
@@ -256,22 +404,22 @@
     if (e.target.matches("[data-pfilter]")) { const q = e.target.value.trim().toLowerCase(); $$("[data-prow]").forEach((r) => (r.hidden = !!q && !r.dataset.prow.includes(q))); }
   });
   app.addEventListener("submit", async (e) => {
+    const f = e.target;
+    if (!f.matches("[data-settings], [data-comp], [data-import]")) return;
     e.preventDefault();
-    const f = e.target, d = Object.fromEntries(new FormData(f));
+    const d = Object.fromEntries(new FormData(f));
     const btn = $("button[type=submit]", f); if (btn) btn.disabled = true;
     try {
-      if (f.matches("[data-settings]")) { await api("POST", "", { action: "pricing_settings", ...d, round_99: d.round_99 === "1" }); toast("Preisregel gespeichert – gilt sofort für die Webseite."); return pricing(); }
-      if (f.matches("[data-comp]")) { await api("POST", "", { action: "competitor_save", ...d }); toast("Wettbewerbspreis gespeichert."); return pricing(); }
-      if (f.matches("[data-import]")) {
-        const rows = String(d.csv || "").split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !/^produkt/i.test(l)).map((l) => {
-          const [item_key, gbv, days, price, currency, competitor, url] = l.split(/[;\t]/).map((x) => (x ?? "").trim());
-          return { item_key, gb: gbv, days, price: String(price || "").replace(",", "."), currency: currency || "EUR", competitor, url };
-        });
-        const r = await api("POST", "", { action: "competitor_import", rows });
-        toast(`${r.imported} importiert${r.skipped ? `, ${r.skipped} übersprungen (Format prüfen)` : ""}.`);
-        return pricing();
-      }
-    } catch (err) { toast(err.message === "invalid" ? "Eingaben prüfen." : "Fehler beim Speichern."); }
+      if (f.matches("[data-settings]")) { await api("POST", "", { action: "pricing_settings", ...d, round_99: d.round_99 === "1" }); toast("Fiyat kuralı kaydedildi – sitede hemen geçerli."); return pricing(); }
+      if (f.matches("[data-comp]")) { await api("POST", "", { action: "competitor_save", ...d }); toast("Rakip fiyatı kaydedildi."); return pricing(); }
+      const rows = String(d.csv || "").split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !/^(ürün|urun|produkt)/i.test(l)).map((l) => {
+        const [item_key, gbv, days, price, currency, competitor, url] = l.split(/[;\t]/).map((x) => (x ?? "").trim());
+        return { item_key, gb: gbv, days, price: String(price || "").replace(",", "."), currency: currency || "EUR", competitor, url };
+      });
+      const r = await api("POST", "", { action: "competitor_import", rows });
+      toast(`${r.imported} kayıt eklendi${r.skipped ? `, ${r.skipped} atlandı (biçimi kontrol et)` : ""}.`);
+      return pricing();
+    } catch (err) { toast(err.message === "invalid" ? "Girdileri kontrol et." : "Kaydedilemedi."); }
     finally { if (btn) btn.disabled = false; }
   });
   window.addEventListener("hashchange", () => { $(".pl")?.classList.remove("menu-open"); show(); });
@@ -280,6 +428,12 @@
     const { data: { session } } = await sb.auth.getSession();
     if (!session) return login();
     userEmail = session.user.email || "";
+    // İki adımlı doğrulaması olan hesaplar önce kodu girer
+    // (Der Server prüft die Stufe ohnehin selbst; ein Fehler hier blockiert das Panel nicht)
+    try {
+      const { data: aal } = await sb.auth.mfa.getAuthenticatorAssuranceLevel();
+      if (aal?.nextLevel === "aal2" && aal.currentLevel !== "aal2") return mfaChallenge();
+    } catch (_) { /* weiter, der Server entscheidet */ }
     show();
   }
   start();

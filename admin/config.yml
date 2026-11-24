@@ -17,7 +17,7 @@ backend:
     delete: "Inhalt: {{collection}} „{{slug}}“ gelöscht"
 
 local_backend: true
-locale: de
+locale: tr
 
 # Mehrsprachigkeit: alle Sprachen liegen in derselben Datei ({ "tr": …, "en": …, "de": … }).
 # Türkisch ist die Hauptsprache und enthält Bilder, Links, Preise-Schlüssel usw.; andere Sprachen nur die Texte.
@@ -35,123 +35,123 @@ collections:
   # ------------------------------------------------------------------------
   - name: seiten
     i18n: true
-    label: Startseite
+    label: "Ana sayfa"
     editor: { preview: false }
     files:
       - name: site
-        label: Startseite & Design
+        label: "Ana sayfa & tasarım"
         file: content/site.json
         i18n: true
         fields:
-          - label: Markenfarben
+          - label: "Marka renkleri"
             name: theme
             widget: object
             collapsed: true
             fields:
-              - { label: Akzentfarbe (Grün), name: green, widget: color }
-              - { label: Dunkle Farbe, name: dark, widget: color }
+              - { label: "Vurgu rengi (yeşil)", name: green, widget: color }
+              - { label: "Koyu renk", name: dark, widget: color }
 
-          - label: Preis-Schnittstelle
+          - label: "Fiyat arayüzü (API)"
             name: api
             widget: object
             i18n: true
             collapsed: true
             hint: "Alle Preise der Seite kommen von hier. Lokal: api/prices.json (Testdaten). Live: Adresse des Preis-Proxys, z. B. /.netlify/functions/prices"
             fields:
-              - { label: Adresse, name: pricesUrl, widget: string }
-              - { label: "Adresse für unbeantwortete Lina-Fragen (Supabase)", name: questionsUrl, widget: string, required: false }
-              - { label: "Text, wenn kein Preis verfügbar", name: unavailableText, widget: string, i18n: true }
-              - { label: "Hinweis im Paketfenster, wenn keine Preise verfügbar", name: modalUnavailableText, widget: text, i18n: true }
+              - { label: "Adres", name: pricesUrl, widget: string }
+              - { label: "Lina'nın yanıtlayamadığı sorular için adres (Supabase)", name: questionsUrl, widget: string, required: false }
+              - { label: "Fiyat yoksa gösterilecek metin", name: unavailableText, widget: string, i18n: true }
+              - { label: "Fiyat yoksa paket penceresindeki not", name: modalUnavailableText, widget: text, i18n: true }
 
-          - label: Vorschau-Hinweis
+          - label: "Önizleme notu"
             name: preview
             widget: object
             i18n: true
             collapsed: true
             hint: "Gelber Hinweis oben auf der Seite. Vor dem Livegang ausschalten (wenn echte Preise und Trustpilot angebunden sind)."
             fields:
-              - { label: Anzeigen, name: enabled, widget: boolean }
-              - { label: Text, name: text, widget: string, i18n: true }
+              - { label: "Göster", name: enabled, widget: boolean }
+              - { label: "Metin", name: text, widget: string, i18n: true }
 
-          - label: Marke
+          - label: "Marka"
             name: brand
             widget: object
             collapsed: true
             fields:
-              - { label: Name, name: name, widget: string, i18n: true }
-              - { label: Endung, name: suffix, widget: string, i18n: true }
+              - { label: "Ad", name: name, widget: string, i18n: true }
+              - { label: "Uzantı", name: suffix, widget: string, i18n: true }
 
-          - label: Ankündigungsleiste (ganz oben)
+          - label: "Duyuru çubuğu (en üstte)"
             name: announcement
             widget: object
             i18n: true
             collapsed: true
             fields:
-              - { label: Anzeigen, name: enabled, widget: boolean, default: false }
-              - { label: Text, name: text, widget: string, i18n: true }
-              - { label: Link, name: link, widget: string, required: false }
+              - { label: "Göster", name: enabled, widget: boolean, default: false }
+              - { label: "Metin", name: text, widget: string, i18n: true }
+              - { label: "Bağlantı", name: link, widget: string, required: false }
 
-          - label: Aufbau der Startseite
+          - label: "Ana sayfa düzeni"
             name: sections
             widget: list
             hint: "Reihenfolge per Ziehen ändern. Bereiche mit dem Schalter ein- oder ausblenden."
             summary: "{{fields.type}} {{fields.enabled}}"
             fields:
-              - label: Bereich
+              - label: "Bölüm"
                 name: type
                 widget: select
                 options:
-                  - { label: "Startbild (Hero)", value: hero }
-                  - { label: "Beliebte Reiseziele", value: destinations }
-                  - { label: "Regionale & globale Pakete", value: packages }
-                  - { label: "Was ist eine eSIM?", value: howto }
+                  - { label: "Giriş görseli (hero)", value: hero }
+                  - { label: "Popüler destinasyonlar", value: destinations }
+                  - { label: "Bölgesel & global paketler", value: packages }
+                  - { label: "eSIM nedir?", value: howto }
                   - { label: "Lounge & Fast Track", value: airport }
-                  - { label: "Bewertungen", value: reviews }
-                  - { label: "Digitaler Assistent & FAQ", value: assistant }
-                  - { label: "Magazin / Blog", value: blog }
-                  - { label: "Newsletter", value: newsletter }
-              - { label: Sichtbar, name: enabled, widget: boolean, default: true }
+                  - { label: "Değerlendirmeler", value: reviews }
+                  - { label: "Dijital asistan & SSS", value: assistant }
+                  - { label: "Dergi / blog", value: blog }
+                  - { label: "Bülten", value: newsletter }
+              - { label: "Görünür", name: enabled, widget: boolean, default: true }
 
-          - label: Menü
+          - label: "Menü"
             name: nav
             widget: list
             i18n: true
             collapsed: true
             summary: "{{fields.label}}"
             fields:
-              - { label: Text, name: label, widget: string, i18n: true }
-              - { label: Link, name: url, widget: string }
-              - { label: Kennzeichen (z. B. „bald“), name: badge, widget: string, required: false, i18n: true }
+              - { label: "Metin", name: label, widget: string, i18n: true }
+              - { label: "Bağlantı", name: url, widget: string }
+              - { label: "Etiket (ör. „yakında“)", name: badge, widget: string, required: false, i18n: true }
 
-          - label: "Bereich: Startbild (Hero)"
+          - label: "Bölüm: Giriş görseli (hero)"
             name: hero
             widget: object
             i18n: true
             collapsed: true
             fields:
-              - { label: Überzeile, name: kicker, widget: string, i18n: true }
-              - { label: Überschrift, name: title, widget: string, hint: "Preise nur als Platzhalter: {preis:esim}, {preis:lounge}, {preis:fasttrack}, {preis:country:tr}", i18n: true }
-              - { label: Unterzeile, name: subtitle, widget: string, hint: "Preise nur als Platzhalter, z. B. „Ab {preis:esim}, in zwei Minuten aktiv.“", i18n: true }
-              - { label: Hintergrundbild, name: image, widget: image, choose_url: true }
-              - { label: Platzhalter im Suchfeld, name: searchPlaceholder, widget: string, i18n: true }
-              - { label: Such-Button, name: searchButton, widget: string, i18n: true }
-              - label: Vertrauens-Punkte
+              - { label: "Üst başlık", name: kicker, widget: string, i18n: true }
+              - { label: "Başlık", name: title, widget: string, hint: "Preise nur als Platzhalter: {preis:esim}, {preis:lounge}, {preis:fasttrack}, {preis:country:tr}", i18n: true }
+              - { label: "Alt satır", name: subtitle, widget: string, hint: "Preise nur als Platzhalter, z. B. „Ab {preis:esim}, in zwei Minuten aktiv.“", i18n: true }
+              - { label: "Arka plan görseli", name: image, widget: image, choose_url: true }
+              - { label: "Arama kutusu ipucu", name: searchPlaceholder, widget: string, i18n: true }
+              - { label: "Arama düğmesi", name: searchButton, widget: string, i18n: true }
+              - label: "Güven maddeleri"
                 name: facts
                 widget: list
                 i18n: true
                 summary: "{{fields.text}}"
                 fields:
-                  - label: Symbol
+                  - label: "Simge"
                     name: icon
                     widget: select
                     options:
-                      - { label: Trustpilot-Stern, value: trustpilot }
-                      - { label: E-Mail, value: mail }
-                      - { label: Schild, value: shield }
-                      - { label: Haken, value: check }
-                  - { label: Text, name: text, widget: string, i18n: true }
-              - { label: Text vor den Zahlungslogos, name: paymentsLabel, widget: string, required: false, i18n: true }
-              - label: Zahlungslogos im Startbild
+                      - { label: "Trustpilot yıldızı", value: trustpilot }
+                      - { label: "E-posta", value: mail }
+                      - { label: "Kalkan", value: shield }
+                      - { label: "Onay işareti", value: check }
+                  - { label: "Metin", name: text, widget: string, i18n: true }
+              - { label: "Ödeme logolarından önceki metin", name: paymentsLabel, widget: string, required: false, i18n: true }
+              - label: "Giriş görselindeki ödeme logoları"
                 name: payments
                 widget: select
                 multiple: true
@@ -164,189 +164,189 @@ collections:
                   - { label: Visa, value: visa }
                   - { label: Mastercard, value: mastercard }
                   - { label: American Express, value: americanexpress }
-              - label: Produktleiste
+              - label: "Ürün çubuğu"
                 name: products
                 widget: list
                 i18n: true
                 summary: "{{fields.label}} – {{fields.price}}"
                 fields:
-                  - { label: Name, name: label, widget: string, i18n: true }
-                  - { label: Beschreibung, name: text, widget: string, i18n: true }
-                  - { label: "Preis aus der Schnittstelle", name: priceKey, widget: select, required: false, options: [{ label: "eSIM (günstigster Preis)", value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: Vignette, value: vignette }], hint: "Preise werden nie von Hand eingetragen – sie kommen live von den Anbietern." }
-                  - { label: Text statt Preis (nur bei „Demnächst“), name: soonText, widget: string, required: false, i18n: true }
-                  - { label: Link, name: url, widget: string, required: false }
-                  - { label: Demnächst (ausgegraut), name: comingSoon, widget: boolean, default: false }
+                  - { label: "Ad", name: label, widget: string, i18n: true }
+                  - { label: "Açıklama", name: text, widget: string, i18n: true }
+                  - { label: "API'den gelen fiyat", name: priceKey, widget: select, required: false, options: [{ label: "eSIM (en düşük fiyat)", value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: "Vinyet", value: vignette }], hint: "Preise werden nie von Hand eingetragen – sie kommen live von den Anbietern." }
+                  - { label: "Fiyat yerine metin (yalnızca „yakında“ ise)", name: soonText, widget: string, required: false, i18n: true }
+                  - { label: "Bağlantı", name: url, widget: string, required: false }
+                  - { label: "Yakında (soluk)", name: comingSoon, widget: boolean, default: false }
 
-          - label: "Bereich: Beliebte Reiseziele"
+          - label: "Bölüm: Popüler destinasyonlar"
             name: destinations
             widget: object
             i18n: true
             collapsed: true
             hint: "Welche Länder hier erscheinen, stellst du unter „eSIM-Länder & Pakete“ ein (Schalter „Beliebt“)."
             fields:
-              - { label: Überzeile, name: kicker, widget: string, i18n: true }
-              - { label: Überschrift, name: title, widget: string, i18n: true }
-              - { label: Zusätzliches Suchfeld anzeigen, name: showSearch, widget: boolean, default: false, required: false }
-              - { label: Platzhalter im Suchfeld, name: searchPlaceholder, widget: string, i18n: true }
-              - { label: Hinweis unter den Karten, name: hint, widget: string, i18n: true }
+              - { label: "Üst başlık", name: kicker, widget: string, i18n: true }
+              - { label: "Başlık", name: title, widget: string, i18n: true }
+              - { label: "Ek arama kutusu göster", name: showSearch, widget: boolean, default: false, required: false }
+              - { label: "Arama kutusu ipucu", name: searchPlaceholder, widget: string, i18n: true }
+              - { label: "Kartların altındaki not", name: hint, widget: string, i18n: true }
 
-          - label: "Bereich: Regionale & globale Pakete"
+          - label: "Bölüm: Bölgesel & global paketler"
             name: packages
             widget: object
             i18n: true
             collapsed: true
             fields:
-              - { label: Überzeile, name: kicker, widget: string, i18n: true }
-              - { label: Überschrift, name: title, widget: string, i18n: true }
-              - { label: Hinweistext, name: note, widget: string, i18n: true }
-              - { label: "Global: Name in der Auswahl", name: globalName, widget: string, i18n: true }
-              - { label: "Global: Zusatz in der Auswahl", name: globalNote, widget: string, i18n: true }
-              - { label: "Global: Überzeile", name: globalKicker, widget: string, i18n: true }
-              - { label: "Global: Überschrift", name: globalTitle, widget: string, i18n: true }
-              - { label: "Global: Text", name: globalText, widget: text, i18n: true }
-              - { label: "Global: Hintergrundbild", name: globalImage, widget: image, choose_url: true }
+              - { label: "Üst başlık", name: kicker, widget: string, i18n: true }
+              - { label: "Başlık", name: title, widget: string, i18n: true }
+              - { label: "Not metni", name: note, widget: string, i18n: true }
+              - { label: "Global: seçimdeki ad", name: globalName, widget: string, i18n: true }
+              - { label: "Global: seçimdeki ek", name: globalNote, widget: string, i18n: true }
+              - { label: "Global: üst başlık", name: globalKicker, widget: string, i18n: true }
+              - { label: "Global: başlık", name: globalTitle, widget: string, i18n: true }
+              - { label: "Global: metin", name: globalText, widget: text, i18n: true }
+              - { label: "Global: arka plan görseli", name: globalImage, widget: image, choose_url: true }
 
-          - label: "Bereich: Was ist eine eSIM?"
+          - label: "Bölüm: eSIM nedir?"
             name: howto
             widget: object
             i18n: true
             collapsed: true
             fields:
-              - { label: Überzeile, name: kicker, widget: string, i18n: true }
-              - { label: Überschrift, name: title, widget: string, i18n: true }
-              - { label: Text, name: text, widget: text, i18n: true }
-              - { label: Bild, name: image, widget: image, choose_url: true }
-              - { label: Bildunterschrift, name: imageCaption, widget: string, required: false, i18n: true }
-              - label: Schritte
+              - { label: "Üst başlık", name: kicker, widget: string, i18n: true }
+              - { label: "Başlık", name: title, widget: string, i18n: true }
+              - { label: "Metin", name: text, widget: text, i18n: true }
+              - { label: "Görsel", name: image, widget: image, choose_url: true }
+              - { label: "Görsel alt yazısı", name: imageCaption, widget: string, required: false, i18n: true }
+              - label: "Adımlar"
                 name: steps
                 widget: list
                 i18n: true
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: Titel, name: title, widget: string, i18n: true }
-                  - { label: Text, name: text, widget: text, i18n: true }
-              - { label: Button-Text, name: button, widget: string, i18n: true }
-              - { label: Link-Text zur Installationsanleitung, name: guideLink, widget: string, required: false, i18n: true }
+                  - { label: "Başlık", name: title, widget: string, i18n: true }
+                  - { label: "Metin", name: text, widget: text, i18n: true }
+              - { label: "Düğme metni", name: button, widget: string, i18n: true }
+              - { label: "Kurulum rehberi bağlantı metni", name: guideLink, widget: string, required: false, i18n: true }
 
-          - label: "Bereich: Lounge & Fast Track"
+          - label: "Bölüm: Lounge & Fast Track"
             name: airport
             widget: object
             i18n: true
             collapsed: true
             fields:
-              - { label: Überzeile, name: kicker, widget: string, i18n: true }
-              - { label: Überschrift, name: title, widget: string, i18n: true }
-              - { label: Hinweistext, name: note, widget: string, i18n: true }
-              - label: Karten
+              - { label: "Üst başlık", name: kicker, widget: string, i18n: true }
+              - { label: "Başlık", name: title, widget: string, i18n: true }
+              - { label: "Not metni", name: note, widget: string, i18n: true }
+              - label: "Kartlar"
                 name: cards
                 widget: list
                 i18n: true
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: Titel, name: title, widget: string, i18n: true }
-                  - { label: Text, name: text, widget: text, i18n: true }
-                  - { label: Bild, name: image, widget: image, choose_url: true }
-                  - { label: Vorteile, name: ticks, widget: list, field: { label: Vorteil, name: tick, widget: string }, i18n: true }
-                  - { label: "Preis aus der Schnittstelle", name: priceKey, widget: select, options: [{ label: "eSIM (günstigster Preis)", value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: Vignette, value: vignette }] }
-                  - { label: Button-Text, name: button, widget: string, i18n: true }
-              - { label: Flughäfen in der Suche, name: airports, widget: list, field: { label: Flughafen, name: airport, widget: string }, i18n: true }
-              - { label: Such-Button, name: searchButton, widget: string, i18n: true }
+                  - { label: "Başlık", name: title, widget: string, i18n: true }
+                  - { label: "Metin", name: text, widget: text, i18n: true }
+                  - { label: "Görsel", name: image, widget: image, choose_url: true }
+                  - { label: "Avantajlar", name: ticks, widget: list, field: { label: "Avantaj", name: tick, widget: string }, i18n: true }
+                  - { label: "API'den gelen fiyat", name: priceKey, widget: select, options: [{ label: "eSIM (en düşük fiyat)", value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: "Vinyet", value: vignette }] }
+                  - { label: "Düğme metni", name: button, widget: string, i18n: true }
+              - { label: "Aramadaki havalimanları", name: airports, widget: list, field: { label: "Havalimanı", name: airport, widget: string }, i18n: true }
+              - { label: "Arama düğmesi", name: searchButton, widget: string, i18n: true }
 
-          - label: "Bereich: Bewertungen"
+          - label: "Bölüm: Değerlendirmeler"
             name: reviews
             widget: object
             i18n: true
             collapsed: true
             hint: "Die einzelnen Bewertungen pflegst du unter „Bewertungen“. Später durch das Trustpilot-Widget ersetzen."
             fields:
-              - { label: Überzeile, name: kicker, widget: string, i18n: true }
-              - { label: "Durchschnitt (z. B. 4,8)", name: score, widget: string, i18n: true }
-              - { label: Bewertungswort, name: label, widget: string, i18n: true }
-              - { label: Anzahl Bewertungen, name: count, widget: string, i18n: true }
-              - { label: Link-Text, name: linkText, widget: string, i18n: true }
-              - { label: Link zu Trustpilot, name: linkUrl, widget: string }
+              - { label: "Üst başlık", name: kicker, widget: string, i18n: true }
+              - { label: "Ortalama (ör. 4,8)", name: score, widget: string, i18n: true }
+              - { label: "Değerlendirme kelimesi", name: label, widget: string, i18n: true }
+              - { label: "Değerlendirme sayısı", name: count, widget: string, i18n: true }
+              - { label: "Bağlantı metni", name: linkText, widget: string, i18n: true }
+              - { label: "Trustpilot bağlantısı", name: linkUrl, widget: string }
 
-          - label: "Bereich: Digitaler Assistent & FAQ"
+          - label: "Bölüm: Dijital asistan & SSS"
             name: assistant
             widget: object
             i18n: true
             collapsed: true
             hint: "Fragen, Antworten und Banner pflegst du unter „Assistent & FAQ“."
             fields:
-              - { label: Überzeile, name: kicker, widget: string, i18n: true }
-              - { label: Überschrift, name: title, widget: string, i18n: true }
-              - { label: Hinweistext, name: note, widget: text, i18n: true }
-              - { label: FAQ-Überschrift, name: faqTitle, widget: string, i18n: true }
-              - { label: FAQ-Text, name: faqText, widget: string, i18n: true }
+              - { label: "Üst başlık", name: kicker, widget: string, i18n: true }
+              - { label: "Başlık", name: title, widget: string, i18n: true }
+              - { label: "Not metni", name: note, widget: text, i18n: true }
+              - { label: "SSS başlığı", name: faqTitle, widget: string, i18n: true }
+              - { label: "SSS metni", name: faqText, widget: string, i18n: true }
 
-          - label: "Bereich: Magazin / Blog"
+          - label: "Bölüm: Dergi / blog"
             name: blog
             widget: object
             i18n: true
             collapsed: true
             fields:
-              - { label: Überzeile, name: kicker, widget: string, i18n: true }
-              - { label: Überschrift, name: title, widget: string, i18n: true }
-              - { label: Link-Text, name: linkText, widget: string, i18n: true }
-              - { label: Link, name: linkUrl, widget: string }
+              - { label: "Üst başlık", name: kicker, widget: string, i18n: true }
+              - { label: "Başlık", name: title, widget: string, i18n: true }
+              - { label: "Bağlantı metni", name: linkText, widget: string, i18n: true }
+              - { label: "Bağlantı", name: linkUrl, widget: string }
 
-          - label: "Bereich: Newsletter"
+          - label: "Bölüm: Bülten"
             name: newsletter
             widget: object
             i18n: true
             collapsed: true
             fields:
-              - { label: Überschrift, name: title, widget: string, i18n: true }
-              - { label: Text, name: text, widget: string, i18n: true }
-              - { label: Platzhalter, name: placeholder, widget: string, i18n: true }
-              - { label: Button-Text, name: button, widget: string, i18n: true }
-              - { label: Erfolgsmeldung, name: success, widget: text, i18n: true }
+              - { label: "Başlık", name: title, widget: string, i18n: true }
+              - { label: "Metin", name: text, widget: string, i18n: true }
+              - { label: "İpucu metni", name: placeholder, widget: string, i18n: true }
+              - { label: "Düğme metni", name: button, widget: string, i18n: true }
+              - { label: "Başarı mesajı", name: success, widget: text, i18n: true }
 
-          - label: Footer
+          - label: "Alt bilgi"
             name: footer
             widget: object
             i18n: true
             collapsed: true
             fields:
-              - { label: Kurztext unter dem Logo, name: tagline, widget: string, i18n: true }
-              - label: Spalten
+              - { label: "Logo altındaki kısa metin", name: tagline, widget: string, i18n: true }
+              - label: "Sütunlar"
                 name: columns
                 widget: list
                 i18n: true
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: Überschrift, name: title, widget: string, i18n: true }
-                  - label: Links
+                  - { label: "Başlık", name: title, widget: string, i18n: true }
+                  - label: "Bağlantılar"
                     name: links
                     widget: list
                     i18n: true
                     summary: "{{fields.label}}"
                     fields:
-                      - { label: Text, name: label, widget: string, i18n: true }
-                      - { label: Link, name: url, widget: string }
-              - { label: Zahlungslogos, name: payments, widget: select, multiple: true, options: *payments }
-              - label: Rechtliche Links
+                      - { label: "Metin", name: label, widget: string, i18n: true }
+                      - { label: "Bağlantı", name: url, widget: string }
+              - { label: "Ödeme logoları", name: payments, widget: select, multiple: true, options: *payments }
+              - label: "Yasal bağlantılar"
                 name: legal
                 widget: list
                 i18n: true
                 summary: "{{fields.label}}"
                 fields:
-                  - { label: Text, name: label, widget: string, i18n: true }
-                  - { label: Link, name: url, widget: string }
-              - { label: Copyright, name: copyright, widget: string, i18n: true }
+                  - { label: "Metin", name: label, widget: string, i18n: true }
+                  - { label: "Bağlantı", name: url, widget: string }
+              - { label: "Telif hakkı", name: copyright, widget: string, i18n: true }
 
   # ------------------------------------------------------------------------
   - name: produkte
     i18n: true
-    label: Produkte
+    label: "Ürünler"
     editor: { preview: false }
     files:
       - name: esim
-        label: eSIM-Länder & Pakete
+        label: "eSIM ülkeleri & paketler"
         file: content/esim.json
         i18n: true
         fields:
-          - label: Länder
+          - label: "Ülkeler"
             name: countries
             widget: list
             i18n: true
@@ -354,69 +354,69 @@ collections:
             summary: "{{fields.name}} – ab {{fields.from}} €"
             hint: "„Beliebt“ = erscheint im Slider „Beliebte Reiseziele“."
             fields:
-              - { label: "Ländercode (ISO, z. B. tr)", name: code, widget: string, hint: "Zwei Buchstaben, klein – bestimmt die Flagge." }
-              - { label: Name, name: name, widget: string, i18n: true }
-              - { label: Beliebt, name: popular, widget: boolean, default: false }
-              - { label: "Kennzeichen (z. B. Bestseller, 5G)", name: tag, widget: string, required: false, i18n: true }
-              - { label: Bild, name: image, widget: image, choose_url: true, required: false }
-          - label: Regionale Pakete
+              - { label: "Ülke kodu (ISO, ör. tr)", name: code, widget: string, hint: "Zwei Buchstaben, klein – bestimmt die Flagge." }
+              - { label: "Ad", name: name, widget: string, i18n: true }
+              - { label: "Popüler", name: popular, widget: boolean, default: false }
+              - { label: "Etiket (ör. Çok satan, 5G)", name: tag, widget: string, required: false, i18n: true }
+              - { label: "Görsel", name: image, widget: image, choose_url: true, required: false }
+          - label: "Bölgesel paketler"
             name: regional
             widget: list
             i18n: true
             collapsed: true
             summary: "{{fields.name}}"
             fields:
-              - { label: Kürzel, name: id, widget: string }
-              - { label: Name, name: name, widget: string, i18n: true }
-              - { label: Anzahl Länder, name: countries, widget: number }
-              - { label: Datenvolumen, name: data, widget: string, i18n: true }
-              - { label: Beschreibung, name: note, widget: string, i18n: true }
-              - { label: Bild, name: image, widget: image, choose_url: true, required: false }
-              - { label: Länder auf der Weltkarte, name: mapCodes, widget: list, required: false, hint: "ISO-Ländernummern (z. B. 276 = Deutschland, 792 = Türkei). Diese Länder werden auf der Karte grün markiert und eingekreist." }
+              - { label: "Kısaltma", name: id, widget: string }
+              - { label: "Ad", name: name, widget: string, i18n: true }
+              - { label: "Ülke sayısı", name: countries, widget: number }
+              - { label: "Veri miktarı", name: data, widget: string, i18n: true }
+              - { label: "Açıklama", name: note, widget: string, i18n: true }
+              - { label: "Görsel", name: image, widget: image, choose_url: true, required: false }
+              - { label: "Dünya haritasındaki ülkeler", name: mapCodes, widget: list, required: false, hint: "ISO-Ländernummern (z. B. 276 = Deutschland, 792 = Türkei). Diese Länder werden auf der Karte grün markiert und eingekreist." }
           # Globale Pakete und alle Paketgrößen/Preise kommen ausschließlich aus der Preis-Schnittstelle.
 
   # ------------------------------------------------------------------------
   - name: hilfe
     i18n: true
-    label: Hilfe-Center
+    label: "Yardım merkezi"
     editor: { preview: false }
     files:
       - name: assistant
-        label: Assistent & FAQ
+        label: "Asistan & SSS"
         file: content/assistant.json
         i18n: true
         fields:
-          - label: Digitale Assistentin
+          - label: "Dijital asistan"
             name: persona
             widget: object
             i18n: true
             hint: "Gesicht und Name des Assistenten. Bitte klar als „digital“ kennzeichnen, damit Kunden wissen, dass sie mit einer KI schreiben."
             fields:
-              - { label: Name, name: name, widget: string, i18n: true }
-              - { label: Rolle, name: role, widget: string, i18n: true }
-              - { label: Kennzeichnung, name: badge, widget: string, i18n: true }
-              - { label: Foto, name: image, widget: image, choose_url: true }
-              - { label: Vorstellungstext, name: intro, widget: text, i18n: true }
-          - { label: Begrüßung, name: greeting, widget: text, i18n: true }
-          - { label: "Antwort, wenn nichts gefunden wird", name: fallback, widget: text, i18n: true }
-          - { label: Kontakt-Text (Übergabe ans Team), name: contactText, widget: text, i18n: true }
-          - { label: Kontakt-E-Mail, name: contactEmail, widget: string }
-          - label: Die drei großen Banner
+              - { label: "Ad", name: name, widget: string, i18n: true }
+              - { label: "Rol", name: role, widget: string, i18n: true }
+              - { label: "Etiket", name: badge, widget: string, i18n: true }
+              - { label: "Fotoğraf", name: image, widget: image, choose_url: true }
+              - { label: "Tanıtım metni", name: intro, widget: text, i18n: true }
+          - { label: "Karşılama", name: greeting, widget: text, i18n: true }
+          - { label: "Bir şey bulunamazsa yanıt", name: fallback, widget: text, i18n: true }
+          - { label: "İletişim metni (ekibe aktarım)", name: contactText, widget: text, i18n: true }
+          - { label: "İletişim e-postası", name: contactEmail, widget: string }
+          - label: "Yardım konuları (soru şeridinin başında)"
             name: banners
             widget: list
             i18n: true
             max: 3
             summary: "{{fields.title}}"
             fields:
-              - { label: Titel, name: title, widget: string, i18n: true }
-              - { label: Text, name: text, widget: string, i18n: true }
-              - label: Symbol
+              - { label: "Başlık", name: title, widget: string, i18n: true }
+              - { label: "Metin", name: text, widget: string, i18n: true }
+              - label: "Simge"
                 name: icon
                 widget: select
-                options: [{ label: Handy, value: phone }, { label: QR-Code, value: qr }, { label: SIM-Karte, value: sim }, { label: Sprechblase, value: chat }]
-              - { label: "Aktion", name: action, widget: string, hint: "„device-check“ öffnet den Geräte-Check. Sonst die ID einer FAQ (z. B. install-esim) – der Assistent beantwortet dann diese Frage." }
-          - { label: Schnellfragen unter dem Chat, name: suggestions, widget: list, field: { label: Frage, name: q, widget: string }, i18n: true }
-          - label: Fragen & Antworten
+                options: [{ label: "Telefon", value: phone }, { label: "QR kod", value: qr }, { label: "SIM kart", value: sim }, { label: "Konuşma balonu", value: chat }]
+              - { label: "Eylem", name: action, widget: string, hint: "„device-check“ öffnet den Geräte-Check. Sonst die ID einer FAQ (z. B. install-esim) – der Assistent beantwortet dann diese Frage." }
+          - { label: "Hızlı sorular", name: suggestions, widget: list, field: { label: "Soru", name: q, widget: string }, i18n: true }
+          - label: "Sorular & yanıtlar"
             name: faqs
             widget: list
             i18n: true
@@ -424,98 +424,98 @@ collections:
             summary: "{{fields.question}}"
             hint: "Jede Frage erscheint in der FAQ und wird vom Assistenten genutzt."
             fields:
-              - { label: ID, name: id, widget: string, hint: "Eindeutig, nur Kleinbuchstaben und Bindestriche, z. B. lounge-kinder" }
-              - label: Kategorie
+              - { label: "Kimlik", name: id, widget: string, hint: "Eindeutig, nur Kleinbuchstaben und Bindestriche, z. B. lounge-kinder" }
+              - label: "Kategori"
                 name: category
                 widget: select
-                options: [{ label: eSIM, value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: Zahlung & Erstattung, value: zahlung }, { label: Allgemein, value: allgemein }]
-              - { label: Frage, name: question, widget: string, i18n: true }
-              - { label: Antwort, name: answer, widget: text, hint: "**fett**, neue Zeile mit „- “ = Aufzählung, Leerzeile = neuer Absatz, [Linktext](https://…)", i18n: true }
-              - { label: Suchbegriffe, name: keywords, widget: list, hint: "Wörter, mit denen Kunden danach fragen könnten (auch Umgangssprache, Tippfehler).", i18n: true }
-              - { label: Wie oft gefragt, name: views, widget: number, hint: "Höhere Zahl = weiter oben in der FAQ. Die 3 höchsten bekommen „Häufig gefragt“." }
-          - { label: eSIM-fähige Geräte, name: devices, widget: list, collapsed: true, field: { label: Gerät, name: device, widget: string } }
+                options: [{ label: eSIM, value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: "Ödeme & iade", value: zahlung }, { label: "Genel", value: allgemein }]
+              - { label: "Soru", name: question, widget: string, i18n: true }
+              - { label: "Yanıt", name: answer, widget: text, hint: "**fett**, neue Zeile mit „- “ = Aufzählung, Leerzeile = neuer Absatz, [Linktext](https://…)", i18n: true }
+              - { label: "Arama kelimeleri", name: keywords, widget: list, hint: "Wörter, mit denen Kunden danach fragen könnten (auch Umgangssprache, Tippfehler).", i18n: true }
+              - { label: "Kaç kez soruldu", name: views, widget: number, hint: "Höhere Zahl = weiter oben in der FAQ. Die 3 höchsten bekommen „Häufig gefragt“." }
+          - { label: "eSIM uyumlu cihazlar", name: devices, widget: list, collapsed: true, field: { label: "Cihaz", name: device, widget: string } }
 
       - name: install
-        label: Installationsanleitung (Unterseite)
+        label: "Kurulum rehberi (alt sayfa)"
         file: content/install.json
         i18n: true
         fields:
-          - { label: Überzeile, name: kicker, widget: string, i18n: true }
-          - { label: Überschrift, name: title, widget: string, i18n: true }
-          - { label: Einleitung, name: intro, widget: text, i18n: true }
-          - { label: "Checkliste: Überschrift", name: beforeTitle, widget: string, i18n: true }
-          - { label: "Checkliste: Punkte", name: before, widget: list, field: { label: Punkt, name: item, widget: string }, i18n: true }
-          - label: Geräte / Betriebssysteme
+          - { label: "Üst başlık", name: kicker, widget: string, i18n: true }
+          - { label: "Başlık", name: title, widget: string, i18n: true }
+          - { label: "Giriş metni", name: intro, widget: text, i18n: true }
+          - { label: "Kontrol listesi: başlık", name: beforeTitle, widget: string, i18n: true }
+          - { label: "Kontrol listesi: maddeler", name: before, widget: list, field: { label: "Madde", name: item, widget: string }, i18n: true }
+          - label: "Cihazlar / işletim sistemleri"
             name: platforms
             widget: list
             i18n: true
             summary: "{{fields.label}}"
             fields:
-              - { label: Kürzel, name: id, widget: string, hint: "z. B. ios, samsung, pixel" }
-              - { label: Name im Tab, name: label, widget: string, i18n: true }
-              - { label: Zusatz (Version), name: sub, widget: string, required: false, i18n: true }
-              - label: Schritte
+              - { label: "Kısaltma", name: id, widget: string, hint: "z. B. ios, samsung, pixel" }
+              - { label: "Sekmedeki ad", name: label, widget: string, i18n: true }
+              - { label: "Ek (sürüm)", name: sub, widget: string, required: false, i18n: true }
+              - label: "Adımlar"
                 name: steps
                 widget: list
                 i18n: true
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: Titel, name: title, widget: string, i18n: true }
-                  - { label: Text, name: text, widget: text, hint: "**fett** für Menüpunkte", i18n: true }
-                  - { label: Tipp (gelber Kasten), name: tip, widget: text, required: false, i18n: true }
-                  - label: Handy-Bildschirm
+                  - { label: "Başlık", name: title, widget: string, i18n: true }
+                  - { label: "Metin", name: text, widget: text, hint: "**fett** für Menüpunkte", i18n: true }
+                  - { label: "İpucu (sarı kutu)", name: tip, widget: text, required: false, i18n: true }
+                  - label: "Telefon ekranı"
                     name: screen
                     widget: object
                     i18n: true
                     fields:
-                      - label: Art
+                      - label: "Tür"
                         name: type
                         widget: select
-                        options: [{ label: "Menü / Liste", value: list }, { label: "Auswahl (Radio)", value: choice }, { label: "QR-Code scannen", value: qr }, { label: "Fertig / Verbunden", value: done }]
-                      - label: Stil
+                        options: [{ label: "Menü / liste", value: list }, { label: "Seçim (radyo)", value: choice }, { label: "QR kod tarama", value: qr }, { label: "Tamam / bağlandı", value: done }]
+                      - label: "Stil"
                         name: style
                         widget: select
                         required: false
                         options: [{ label: iPhone, value: ios }, { label: Android, value: android }]
-                      - { label: Titel oben, name: title, widget: string, required: false, i18n: true }
-                      - { label: Untertitel (bei QR / Fertig), name: caption, widget: string, required: false, i18n: true }
-                      - label: Zeilen
+                      - { label: "Üst başlık", name: title, widget: string, required: false, i18n: true }
+                      - { label: "Alt başlık (QR / tamam)", name: caption, widget: string, required: false, i18n: true }
+                      - label: "Satırlar"
                         name: items
                         widget: list
                         i18n: true
                         required: false
                         summary: "{{fields.label}}"
                         fields:
-                          - { label: Text, name: label, widget: string, i18n: true }
-                          - { label: Wert rechts / darunter, name: value, widget: string, required: false, i18n: true }
-                          - { label: Symbolfarbe, name: color, widget: color, required: false }
-                          - label: Schalter
+                          - { label: "Metin", name: label, widget: string, i18n: true }
+                          - { label: "Sağdaki / alttaki değer", name: value, widget: string, required: false, i18n: true }
+                          - { label: "Simge rengi", name: color, widget: color, required: false }
+                          - label: "Anahtar"
                             name: toggle
                             widget: select
                             required: false
-                            options: [{ label: An, value: "on" }, { label: Aus, value: "off" }]
-                          - { label: "Hier tippen (grün markiert)", name: tap, widget: boolean, required: false }
-                          - { label: Als Link (blau), name: accent, widget: boolean, required: false }
-                          - { label: Ausgewählt (bei Auswahl), name: selected, widget: boolean, required: false }
-          - { label: "Hilfe bei Problemen: Überschrift", name: troubleTitle, widget: string, i18n: true }
-          - label: "Hilfe bei Problemen"
+                            options: [{ label: "Açık", value: "on" }, { label: "Kapalı", value: "off" }]
+                          - { label: "Buraya dokun (yeşil işaretli)", name: tap, widget: boolean, required: false }
+                          - { label: "Bağlantı olarak (mavi)", name: accent, widget: boolean, required: false }
+                          - { label: "Seçili (seçimde)", name: selected, widget: boolean, required: false }
+          - { label: "Sorun giderme: başlık", name: troubleTitle, widget: string, i18n: true }
+          - label: "Sorun giderme"
             name: trouble
             widget: list
             i18n: true
             summary: "{{fields.q}}"
             fields:
-              - { label: Problem, name: q, widget: string, i18n: true }
-              - { label: Lösung, name: a, widget: text, i18n: true }
-          - { label: "Kontakt: Überschrift", name: helpTitle, widget: string, i18n: true }
-          - { label: "Kontakt: Text", name: helpText, widget: text, i18n: true }
-          - { label: "Kontakt: Button", name: helpButton, widget: string, i18n: true }
+              - { label: "Sorun", name: q, widget: string, i18n: true }
+              - { label: "Çözüm", name: a, widget: text, i18n: true }
+          - { label: "İletişim: başlık", name: helpTitle, widget: string, i18n: true }
+          - { label: "İletişim: metin", name: helpText, widget: text, i18n: true }
+          - { label: "İletişim: düğme", name: helpButton, widget: string, i18n: true }
 
   # ------------------------------------------------------------------------
   # Blog: jeder Artikel ist eine Datei in content/posts/ (Dateiname = Adresse, z. B. blog.html?p=japonya-esim).
   # Die Übersicht content/blog.json wird beim Veröffentlichen automatisch daraus erzeugt.
   - name: posts
-    label: Blog-Artikel
-    label_singular: Artikel
+    label: "Blog yazıları"
+    label_singular: "Yazı"
     folder: content/posts
     extension: json
     format: json
@@ -527,47 +527,47 @@ collections:
     sortable_fields: [date, title]
     editor: { preview: false }
     fields:
-      - { label: Titel (auch Seitentitel für Google), name: title, widget: string, i18n: true }
-      - { label: Kurztext (auch Beschreibung für Google), name: excerpt, widget: text, i18n: true }
-      - { label: Kategorie, name: category, widget: string, i18n: true }
-      - { label: Lesezeit, name: readTime, widget: string, i18n: true, hint: "z. B. 5 dk / 5 Min." }
-      - { label: Datum, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
-      - { label: Bild, name: image, widget: image, choose_url: true, required: false, hint: "Leer lassen = Bild des Reiseziels" }
-      - { label: "Reiseziel (Ländercode, z. B. jp)", name: country, widget: string, required: false, hint: "Zeigt am Ende die eSIM-Pakete dieses Landes" }
-      - { label: Abschluss-Box, name: cta, widget: select, options: [esim, airport], default: esim, required: false }
-      - { label: Text, name: body, widget: markdown, i18n: true, hint: "Zwischenüberschriften mit ##. Preise nur als Platzhalter, z. B. {fiyat:country:jp} oder {fiyat:lounge}." }
-      - { label: Entwurf (nicht veröffentlichen), name: draft, widget: boolean, default: false, required: false }
+      - { label: "Başlık (Google sayfa başlığı)", name: title, widget: string, i18n: true }
+      - { label: "Kısa metin (Google açıklaması)", name: excerpt, widget: text, i18n: true }
+      - { label: "Kategori", name: category, widget: string, i18n: true }
+      - { label: "Okuma süresi", name: readTime, widget: string, i18n: true, hint: "z. B. 5 dk / 5 Min." }
+      - { label: "Tarih", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
+      - { label: "Görsel", name: image, widget: image, choose_url: true, required: false, hint: "Leer lassen = Bild des Reiseziels" }
+      - { label: "Destinasyon (ülke kodu, ör. jp)", name: country, widget: string, required: false, hint: "Zeigt am Ende die eSIM-Pakete dieses Landes" }
+      - { label: "Kapanış kutusu", name: cta, widget: select, options: [esim, airport], default: esim, required: false }
+      - { label: "Metin", name: body, widget: markdown, i18n: true, hint: "Zwischenüberschriften mit ##. Preise nur als Platzhalter, z. B. {fiyat:country:jp} oder {fiyat:lounge}." }
+      - { label: "Taslak (yayınlama)", name: draft, widget: boolean, default: false, required: false }
 
   # ------------------------------------------------------------------------
   - name: inhaltsseiten
-    label: Seiten & Rechtliches
+    label: "Sayfalar & yasal metinler"
     i18n: true
     editor: { preview: false }
     files:
       - name: pages
-        label: Über uns, Impressum, Datenschutz, AGB, Widerruf, Fernabsatz
+        label: "Hakkımızda, künye, gizlilik, koşullar, cayma, mesafeli satış"
         file: content/pages.json
         i18n: true
         fields:
-          - label: Seiten
+          - label: "Sayfalar"
             name: pages
             widget: list
             i18n: true
             summary: "{{fields.title}}"
             hint: "Platzhalter in [ECKIGEN KLAMMERN] ausfüllen. Adresse der Seite: page.html?p=<Kennung>"
             fields:
-              - { label: Kennung (nicht ändern), name: id, widget: string }
-              - { label: Titel, name: title, widget: string, i18n: true }
-              - { label: Text, name: body, widget: markdown, i18n: true }
+              - { label: "Kimlik (değiştirme)", name: id, widget: string }
+              - { label: "Başlık", name: title, widget: string, i18n: true }
+              - { label: "Metin", name: body, widget: markdown, i18n: true }
 
   # ------------------------------------------------------------------------
   - name: konto
-    label: Kundenkonto-Texte
+    label: "Müşteri hesabı metinleri"
     i18n: true
     editor: { preview: false }
     files:
       - name: account
-        label: Texte der Kontoseite
+        label: "Hesap sayfası metinleri"
         file: content/account.json
         i18n: true
         fields:
@@ -685,36 +685,36 @@ collections:
   # ------------------------------------------------------------------------
   - name: magazin
     i18n: true
-    label: Bewertungen
+    label: "Değerlendirmeler"
     editor: { preview: false }
     files:
       - name: reviews
-        label: Bewertungen
+        label: "Değerlendirmeler"
         file: content/reviews.json
         i18n: true
         fields:
-          - { label: Hinweis, name: note, widget: string, i18n: true }
-          - label: Bewertungen
+          - { label: "Not", name: note, widget: string, i18n: true }
+          - label: "Değerlendirmeler"
             name: items
             widget: list
             i18n: true
             summary: "{{fields.stars}}★ {{fields.title}}"
             fields:
-              - { label: Name, name: name, widget: string, i18n: true }
-              - { label: Sterne, name: stars, widget: number, min: 1, max: 5 }
-              - { label: Datum, name: date, widget: string, i18n: true }
-              - { label: Titel, name: title, widget: string, i18n: true }
-              - { label: Text, name: text, widget: text, i18n: true }
+              - { label: "Ad", name: name, widget: string, i18n: true }
+              - { label: "Yıldız", name: stars, widget: number, min: 1, max: 5 }
+              - { label: "Tarih", name: date, widget: string, i18n: true }
+              - { label: "Başlık", name: title, widget: string, i18n: true }
+              - { label: "Metin", name: text, widget: text, i18n: true }
 
 
   # ------------------------------------------------------------------------
   - name: oberflaeche
-    label: Oberflächentexte
+    label: "Arayüz metinleri"
     i18n: true
     editor: { preview: false }
     files:
       - name: ui
-        label: Buttons, Hinweise & Meldungen
+        label: "Düğmeler, notlar ve mesajlar"
         file: content/ui.json
         i18n: true
         description: "Kleine Texte der Seite. {p} = Preis, {n} = Zahl, {name}/{country}/{q} = Platzhalter – bitte stehen lassen."
@@ -767,6 +767,12 @@ collections:
           - { label: "reviewsLabel", name: reviewsLabel, widget: string, i18n: true }
           - { label: "helloIam", name: helloIam, widget: string, i18n: true }
           - { label: "talkHuman", name: talkHuman, widget: string, i18n: true }
+          - { label: "handoffName", name: handoffName, widget: string, i18n: true }
+          - { label: "handoffEmail", name: handoffEmail, widget: string, i18n: true }
+          - { label: "handoffMsg", name: handoffMsg, widget: string, i18n: true }
+          - { label: "handoffSend", name: handoffSend, widget: string, i18n: true }
+          - { label: "handoffSent", name: handoffSent, widget: string, i18n: true }
+          - { label: "handoffErr", name: handoffErr, widget: string, i18n: true }
           - { label: "myAccount", name: myAccount, widget: string, i18n: true }
           - { label: "blogMetaTitle", name: blogMetaTitle, widget: string, i18n: true }
           - { label: "blogIntro", name: blogIntro, widget: string, i18n: true }

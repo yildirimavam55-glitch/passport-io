@@ -166,13 +166,39 @@ window.PP_ACCOUNT = function (ctx) {
       body = a.esims.length ? `<div class="esim-grid">${a.esims.map(esimCard).join("")}</div>`
         : `<div class="acct-empty">${icon("sim")}<h3>${esc(A("emptyTitle"))}</h3><p>${esc(A("emptyText"))}</p><a class="btn btn--green" href="index.html#esim">${esc(A("emptyCta"))}</a></div>`;
     } else if (state.tab === "orders") {
-      body = a.orders.length ? `<div class="orders">${a.orders.map((o) => `
-        <div class="order"><div><b>${esc(countryName((o.item_key || "").split(":")[1]))}</b><span>${esc(fmtDate(o.created_at))} · ${esc((o.title || "").replace(/·\s*(\d+)$/, (m, n) => "· " + A("days", { n })))}</span></div>
-        <div class="order__right"><b>${esc(money(o.amount, o.currency))}</b><span class="order__st order__st--${esc(o.status)}">${esc(A("order_" + o.status))}${o.test ? " · Test" : ""}</span></div></div>`).join("")}</div>`
+      // Retoure: nur bezahlte Bestellungen innerhalb der Frist, deren eSIM noch nicht installiert ist
+      const refundable = (o) => {
+        if (!["paid", "fulfilled"].includes(o.status)) return false;
+        if (Date.now() - new Date(o.created_at).getTime() > (a.refundDays || 30) * 864e5) return false;
+        return !(a.esims || []).some((e) => e.order_id === o.id && (!["ready", "cancelled"].includes(e.status) || e.activated_at));
+      };
+      body = a.orders.length ? `<div class="orders">${a.orders.map((o) => {
+        const rr = (a.refunds || []).find((r) => r.order_id === o.id);
+        return `
+        <div class="order order--wrap"><div><b>${esc(countryName((o.item_key || "").split(":")[1]))}</b><span>${esc(fmtDate(o.created_at))} · ${esc((o.title || "").replace(/·\s*(\d+)$/, (m, n) => "· " + A("days", { n })))}</span></div>
+        <div class="order__right"><b>${esc(money(o.amount, o.currency))}</b><span class="order__st order__st--${esc(o.status)}">${esc(A("order_" + o.status))}${o.test ? " · Test" : ""}</span></div>
+        ${rr ? `<p class="order__refund order__refund--${esc(rr.status)}">${esc(A("refund_" + rr.status))}</p>`
+          : refundable(o) ? `<details class="order__more"><summary>${esc(A("refundBtn"))}</summary>
+            <form data-form="refund" data-order="${esc(o.id)}" class="acct-panel acct-panel--inline">
+              <p class="acct-hint">${esc(A("refundText", { days: a.refundDays || 30 }))}</p>
+              <label class="acct-field"><span>${esc(A("refundReason"))}</span><input name="reason" maxlength="1000"></label>
+              <button class="btn btn--line btn--sm acct-submit" type="submit">${esc(A("refundSend"))}</button>
+              <p class="acct-msg" role="status"></p>
+            </form></details>` : ""}
+        </div>`; }).join("")}</div>`
         : `<div class="acct-empty"><p>${esc(A("ordersEmpty"))}</p></div>`;
     } else {
       const provs = (a.user.providers || []).map((x) => (x === "email" ? A("email") : x[0].toUpperCase() + x.slice(1))).join(", ");
       body = `
+        <form class="acct-panel" data-form="support">
+          <h3>${esc(A("supportTitle"))}</h3>
+          <p class="acct-hint">${esc(A("supportText"))}</p>
+          <label class="acct-field"><span>${esc(A("supportSubject"))}</span><input name="subject" maxlength="160"></label>
+          <label class="acct-field"><span>${esc(A("supportMessage"))}</span><textarea name="message" rows="4" maxlength="4000" required></textarea></label>
+          <button class="btn btn--dark acct-submit" type="submit">${esc(A("supportSend"))}</button>
+          <p class="acct-msg" role="status"></p>
+          ${(a.tickets || []).length ? `<p class="acct-hint"><b>${esc(A("supportHistory"))}:</b> ${(a.tickets || []).map((tk) => `${esc(fmtDate(tk.created_at))} · ${esc(tk.subject || "–")} (${esc(A("ticket_" + tk.status))})`).join(" · ")}</p>` : ""}
+        </form>
         <form class="acct-panel" data-form="profile">
           <h3>${esc(A("profileTitle"))}</h3>
           <label class="acct-field"><span>${esc(A("name"))}</span><input name="full_name" maxlength="120" value="${esc(p.full_name || "")}" autocomplete="name"></label>
@@ -363,6 +389,14 @@ window.PP_ACCOUNT = function (ctx) {
         const { error } = await sb.auth.updateUser({ password: d.password });
         if (error) throw error;
         f.reset(); msg(A("passwordSaved"), true);
+      } else if (kind === "refund") {
+        const res = await api("POST", { action: "refund_request", orderId: f.dataset.order, reason: d.reason });
+        if (res.error) throw new Error(res.error); // 409-Antworten (Frist, bereits beantragt …) werfen in api() nicht
+        toast(A("refundSent"));
+        state.account = await api("GET"); render();
+      } else if (kind === "support") {
+        await api("POST", { action: "support", subject: d.subject, message: d.message });
+        f.reset(); msg(A("supportSent"), true);
       } else if (kind === "delete") {
         if (String(d.confirm || "").trim().toLocaleUpperCase(LOCALE) !== A("deleteWord").toLocaleUpperCase(LOCALE)) throw userErr(A("deleteConfirm", { word: A("deleteWord") }));
         await api("POST", { action: "delete" });
@@ -371,7 +405,8 @@ window.PP_ACCOUNT = function (ctx) {
       }
     } catch (err) {
       const known = !!err.user;
-      (kind === "profile" || kind === "password" || kind === "delete" ? msg : say)(known ? err.message : errText(err));
+      const apiMsg = { too_late: "errTooLate", esim_used: "errEsimUsed", already_requested: "errAlready", rate_limited: "errRate", invalid: "errGeneric" }[err.message];
+      (["profile", "password", "delete", "refund", "support"].includes(kind) ? msg : say)(known ? err.message : apiMsg ? A(apiMsg) : errText(err));
     } finally { busy(f, false); }
   });
 

@@ -1354,7 +1354,33 @@
     // Land in der Frage erkennen – in jeder unterstützten Sprache („Mısır'da“, „in Ägypten“, „in Egypt“)
     const findCountry = (text) => { const q = " " + norm(text) + " "; return ESIM.countries.find((c) => (c.names || [norm(c.name)]).some((n) => n.length > 2 && q.includes(" " + n + " "))); };
 
-    const contact = () => add(`${esc(AI.contactText)}<div class="msg__action"><a class="btn btn--dark btn--sm" href="mailto:${esc(AI.contactEmail)}">${icon("mail")} ${esc(t("writeEmail"))}</a></div>`);
+    // „Mit einem Menschen sprechen“: kurzes Formular → Anfrage landet im Verwaltungspanel (Destek talepleri).
+    // Ohne konfigurierte Adresse bleibt der E-Mail-Link als Ausweg.
+    const contact = () => {
+      const url = SITE.api?.questionsUrl;
+      if (!url) return add(`${esc(AI.contactText)}<div class="msg__action"><a class="btn btn--dark btn--sm" href="mailto:${esc(AI.contactEmail)}">${icon("mail")} ${esc(t("writeEmail"))}</a></div>`);
+      add(`${esc(AI.contactText)}
+        <form class="handoff" data-handoff-form novalidate>
+          <input name="name" placeholder="${esc(t("handoffName"))}" maxlength="120" autocomplete="name">
+          <input name="email" type="email" placeholder="${esc(t("handoffEmail"))}" maxlength="254" autocomplete="email" required>
+          <textarea name="message" rows="3" placeholder="${esc(t("handoffMsg"))}" maxlength="4000" required></textarea>
+          <input name="website" tabindex="-1" autocomplete="off" class="handoff__hp" aria-hidden="true">
+          <button class="btn btn--dark btn--sm" type="submit">${icon("send")} ${esc(t("handoffSend"))}</button>
+        </form>`);
+    };
+    el.addEventListener("submit", async (e) => {
+      const f = e.target.closest("[data-handoff-form]");
+      if (!f) return;
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(f));
+      if (!/^\S+@\S+\.\S+$/.test(d.email || "") || String(d.message || "").trim().length < 5) { toast(t("handoffErr")); return; }
+      f.querySelector("button").disabled = true;
+      try {
+        const r = await fetch(SITE.api.questionsUrl, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind: "support", ...d, page: `${location.pathname} · ${LANG}` }) });
+        if (!r.ok) throw new Error(String(r.status));
+        f.outerHTML = `<p class="handoff__ok">${esc(t("handoffSent"))}</p>`;
+      } catch (_) { f.querySelector("button").disabled = false; toast(t("handoffErr")); }
+    });
 
     function respond(text, forced) {
       const dots = typing();

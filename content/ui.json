@@ -108,7 +108,13 @@
     "blogCtaEsimTitle": "Yolculuğun için doğru eSIM",
     "blogCtaAirport": "Lounge ve Fast Track'e göz at",
     "blogCtaAirportTitle": "Havalimanında daha fazla huzur",
-    "myAccount": "Hesabım"
+    "myAccount": "Hesabım",
+    "handoffName": "Adın (isteğe bağlı)",
+    "handoffEmail": "E-posta adresin",
+    "handoffMsg": "Nasıl yardımcı olabiliriz?",
+    "handoffSend": "Ekibe gönder",
+    "handoffSent": "Teşekkürler! Ekibimiz en kısa sürede e-postayla dönüş yapacak.",
+    "handoffErr": "Lütfen geçerli bir e-posta ve kısa bir mesaj gir."
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -219,7 +225,13 @@
     "blogCtaEsimTitle": "The right eSIM for your trip",
     "blogCtaAirport": "Explore lounges and Fast Track",
     "blogCtaAirportTitle": "More calm at the airport",
-    "myAccount": "My account"
+    "myAccount": "My account",
+    "handoffName": "Your name (optional)",
+    "handoffEmail": "Your email",
+    "handoffMsg": "How can we help?",
+    "handoffSend": "Send to the team",
+    "handoffSent": "Thanks! Our team will reply by email shortly.",
+    "handoffErr": "Please enter a valid email and a short message."
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -330,7 +342,13 @@
     "blogCtaEsimTitle": "Die passende eSIM für deine Reise",
     "blogCtaAirport": "Lounges und Fast Track ansehen",
     "blogCtaAirportTitle": "Mehr Ruhe am Flughafen",
-    "myAccount": "Mein Konto"
+    "myAccount": "Mein Konto",
+    "handoffName": "Dein Name (optional)",
+    "handoffEmail": "Deine E-Mail",
+    "handoffMsg": "Wie können wir helfen?",
+    "handoffSend": "An das Team senden",
+    "handoffSent": "Danke! Unser Team antwortet dir bald per E-Mail.",
+    "handoffErr": "Bitte gib eine gültige E-Mail und eine kurze Nachricht ein."
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -441,7 +459,13 @@
     "blogCtaEsimTitle": "شريحة eSIM المناسبة لرحلتك",
     "blogCtaAirport": "استكشف الصالات والمسار السريع",
     "blogCtaAirportTitle": "هدوء أكثر في المطار",
-    "myAccount": "حسابي"
+    "myAccount": "حسابي",
+    "handoffName": "اسمك (اختياري)",
+    "handoffEmail": "بريدك الإلكتروني",
+    "handoffMsg": "كيف يمكننا المساعدة؟",
+    "handoffSend": "إرسال إلى الفريق",
+    "handoffSent": "شكرًا! سيرد فريقنا عليك بالبريد قريبًا.",
+    "handoffErr": "يرجى إدخال بريد صحيح ورسالة قصيرة."
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -552,7 +576,13 @@
     "blogCtaEsimTitle": "Подходящая eSIM для поездки",
     "blogCtaAirport": "Бизнес-залы и Fast Track",
     "blogCtaAirportTitle": "Больше спокойствия в аэропорту",
-    "myAccount": "Мой аккаунт"
+    "myAccount": "Мой аккаунт",
+    "handoffName": "Ваше имя (необязательно)",
+    "handoffEmail": "Ваш e-mail",
+    "handoffMsg": "Чем мы можем помочь?",
+    "handoffSend": "Отправить команде",
+    "handoffSent": "Спасибо! Команда скоро ответит по почте.",
+    "handoffErr": "Введите корректный e-mail и короткое сообщение."
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -663,7 +693,13 @@
     "blogCtaEsimTitle": "La bonne eSIM pour votre voyage",
     "blogCtaAirport": "Découvrir salons et Fast Track",
     "blogCtaAirportTitle": "Plus de sérénité à l'aéroport",
-    "myAccount": "Mon compte"
+    "myAccount": "Mon compte",
+    "handoffName": "Votre nom (facultatif)",
+    "handoffEmail": "Votre e-mail",
+    "handoffMsg": "Comment pouvons-nous aider ?",
+    "handoffSend": "Envoyer à l'équipe",
+    "handoffSent": "Merci ! Notre équipe vous répondra bientôt par e-mail.",
+    "handoffErr": "Saisissez un e-mail valide et un court message."
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -774,6 +810,12 @@
     "blogCtaEsimTitle": "La eSIM adecuada para tu viaje",
     "blogCtaAirport": "Ver salas VIP y Fast Track",
     "blogCtaAirportTitle": "Más calma en el aeropuerto",
-    "myAccount": "Mi cuenta"
+    "myAccount": "Mi cuenta",
+    "handoffName": "Tu nombre (opcional)",
+    "handoffEmail": "Tu correo",
+    "handoffMsg": "¿Cómo podemos ayudarte?",
+    "handoffSend": "Enviar al equipo",
+    "handoffSent": "¡Gracias! Nuestro equipo te responderá pronto por correo.",
+    "handoffErr": "Introduce un correo válido y un mensaje corto."
   }
 }

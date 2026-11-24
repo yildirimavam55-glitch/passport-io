@@ -79,3 +79,16 @@ td select { height: 32px; border-radius: 8px; border: 1px solid var(--line); pad
   .pl.menu-open .pl-side { transform: none; }
   .pl-burger { display: inline-flex; }
 }
+
+/* Dashboard-Ergänzungen */
+.pl-count { margin-left: auto; min-width: 22px; height: 20px; padding: 0 7px; border-radius: 99px; background: var(--green); color: var(--dark); font-size: 12px; font-weight: 700; display: inline-grid; place-items: center; }
+.pl-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pl-link { text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; }
+.pl-link:hover { border-color: var(--ink); transform: translateY(-2px); }
+.pl-kpi b.warn { color: var(--amber); }
+.pl-chart { width: 100%; height: auto; display: block; }
+.pl-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.pl-note { color: var(--ink3); }
+.pl-msgcell { max-width: 420px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.mono { font-family: ui-monospace, Consolas, monospace; font-size: 12px; overflow-wrap: anywhere; }
+@media (max-width: 800px) { .pl-grid--3 { grid-template-columns: 1fr; } }
