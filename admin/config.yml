@@ -1,12 +1,20 @@
 # ==========================================================================
 # passport.io – Redaktionsoberfläche (Decap CMS)
 # Lokal testen:   node server.js   und   npx decap-server   ->  http://localhost:5173/admin/
-# Live (z. B. Netlify + GitHub): "backend" unten auf git-gateway oder github umstellen.
+# Online: Anmeldung mit GitHub über die Supabase-Funktion cms-auth (siehe ANLEITUNG.md → „Start-Checkliste“).
+# Bearbeiten kann, wer im GitHub-Repository Schreibrechte hat. Jede Änderung wird automatisch veröffentlicht.
 # ==========================================================================
 
 backend:
-  name: git-gateway
+  name: github
+  repo: yildirimavam55-glitch/passport-io
   branch: main
+  base_url: https://sbzwibctxezprpefwxzn.supabase.co
+  auth_endpoint: functions/v1/cms-auth
+  commit_messages:
+    create: "Inhalt: {{collection}} „{{slug}}“ angelegt"
+    update: "Inhalt: {{collection}} „{{slug}}“ geändert"
+    delete: "Inhalt: {{collection}} „{{slug}}“ gelöscht"
 
 local_backend: true
 locale: de
@@ -21,7 +29,7 @@ site_url: /
 display_url: /
 
 media_folder: img/uploads
-public_folder: /img/uploads
+public_folder: img/uploads
 
 collections:
   # ------------------------------------------------------------------------
@@ -531,6 +539,128 @@ collections:
       - { label: Entwurf (nicht veröffentlichen), name: draft, widget: boolean, default: false, required: false }
 
   # ------------------------------------------------------------------------
+  - name: konto
+    label: Kundenkonto-Texte
+    i18n: true
+    editor: { preview: false }
+    files:
+      - name: account
+        label: Texte der Kontoseite
+        file: content/account.json
+        i18n: true
+        fields:
+          - { label: "title", name: title, widget: string, i18n: true }
+          - { label: "notConfigured", name: notConfigured, widget: string, i18n: true }
+          - { label: "loading", name: loading, widget: string, i18n: true }
+          - { label: "loginTitle", name: loginTitle, widget: string, i18n: true }
+          - { label: "loginSub", name: loginSub, widget: string, i18n: true }
+          - { label: "registerTitle", name: registerTitle, widget: string, i18n: true }
+          - { label: "registerSub", name: registerSub, widget: string, i18n: true }
+          - { label: "email", name: email, widget: string, i18n: true }
+          - { label: "password", name: password, widget: string, i18n: true }
+          - { label: "name", name: name, widget: string, i18n: true }
+          - { label: "passwordHint", name: passwordHint, widget: string, i18n: true }
+          - { label: "showPassword", name: showPassword, widget: string, i18n: true }
+          - { label: "login", name: login, widget: string, i18n: true }
+          - { label: "register", name: register, widget: string, i18n: true }
+          - { label: "or", name: or, widget: string, i18n: true }
+          - { label: "google", name: google, widget: string, i18n: true }
+          - { label: "apple", name: apple, widget: string, i18n: true }
+          - { label: "noAccount", name: noAccount, widget: string, i18n: true }
+          - { label: "haveAccount", name: haveAccount, widget: string, i18n: true }
+          - { label: "forgot", name: forgot, widget: string, i18n: true }
+          - { label: "termsAccept", name: termsAccept, widget: string, i18n: true }
+          - { label: "marketing", name: marketing, widget: string, i18n: true }
+          - { label: "verifyTitle", name: verifyTitle, widget: string, i18n: true }
+          - { label: "verifySub", name: verifySub, widget: string, i18n: true }
+          - { label: "code", name: code, widget: string, i18n: true }
+          - { label: "verify", name: verify, widget: string, i18n: true }
+          - { label: "resend", name: resend, widget: string, i18n: true }
+          - { label: "resent", name: resent, widget: string, i18n: true }
+          - { label: "resendIn", name: resendIn, widget: string, i18n: true }
+          - { label: "forgotTitle", name: forgotTitle, widget: string, i18n: true }
+          - { label: "forgotSub", name: forgotSub, widget: string, i18n: true }
+          - { label: "sendCode", name: sendCode, widget: string, i18n: true }
+          - { label: "resetTitle", name: resetTitle, widget: string, i18n: true }
+          - { label: "resetSub", name: resetSub, widget: string, i18n: true }
+          - { label: "resetSubLink", name: resetSubLink, widget: string, i18n: true }
+          - { label: "newPassword", name: newPassword, widget: string, i18n: true }
+          - { label: "savePassword", name: savePassword, widget: string, i18n: true }
+          - { label: "passwordSaved", name: passwordSaved, widget: string, i18n: true }
+          - { label: "back", name: back, widget: string, i18n: true }
+          - { label: "buyLogin", name: buyLogin, widget: string, i18n: true }
+          - { label: "buying", name: buying, widget: string, i18n: true }
+          - { label: "buyDone", name: buyDone, widget: string, i18n: true }
+          - { label: "payMissing", name: payMissing, widget: string, i18n: true }
+          - { label: "hello", name: hello, widget: string, i18n: true }
+          - { label: "helloNoName", name: helloNoName, widget: string, i18n: true }
+          - { label: "logout", name: logout, widget: string, i18n: true }
+          - { label: "tabEsims", name: tabEsims, widget: string, i18n: true }
+          - { label: "tabOrders", name: tabOrders, widget: string, i18n: true }
+          - { label: "tabProfile", name: tabProfile, widget: string, i18n: true }
+          - { label: "emptyTitle", name: emptyTitle, widget: string, i18n: true }
+          - { label: "emptyText", name: emptyText, widget: string, i18n: true }
+          - { label: "emptyCta", name: emptyCta, widget: string, i18n: true }
+          - { label: "status_ready", name: status_ready, widget: string, i18n: true }
+          - { label: "status_installed", name: status_installed, widget: string, i18n: true }
+          - { label: "status_active", name: status_active, widget: string, i18n: true }
+          - { label: "status_depleted", name: status_depleted, widget: string, i18n: true }
+          - { label: "status_expired", name: status_expired, widget: string, i18n: true }
+          - { label: "status_cancelled", name: status_cancelled, widget: string, i18n: true }
+          - { label: "testBadge", name: testBadge, widget: string, i18n: true }
+          - { label: "dataUsed", name: dataUsed, widget: string, i18n: true }
+          - { label: "dataLeft", name: dataLeft, widget: string, i18n: true }
+          - { label: "remaining", name: remaining, widget: string, i18n: true }
+          - { label: "daysLeft", name: daysLeft, widget: string, i18n: true }
+          - { label: "validity", name: validity, widget: string, i18n: true }
+          - { label: "validUntilLabel", name: validUntilLabel, widget: string, i18n: true }
+          - { label: "startsOnUse", name: startsOnUse, widget: string, i18n: true }
+          - { label: "showQr", name: showQr, widget: string, i18n: true }
+          - { label: "install", name: install, widget: string, i18n: true }
+          - { label: "updated", name: updated, widget: string, i18n: true }
+          - { label: "days", name: days, widget: string, i18n: true }
+          - { label: "ordersEmpty", name: ordersEmpty, widget: string, i18n: true }
+          - { label: "order_pending", name: order_pending, widget: string, i18n: true }
+          - { label: "order_paid", name: order_paid, widget: string, i18n: true }
+          - { label: "order_fulfilled", name: order_fulfilled, widget: string, i18n: true }
+          - { label: "order_failed", name: order_failed, widget: string, i18n: true }
+          - { label: "order_refunded", name: order_refunded, widget: string, i18n: true }
+          - { label: "order_cancelled", name: order_cancelled, widget: string, i18n: true }
+          - { label: "profileTitle", name: profileTitle, widget: string, i18n: true }
+          - { label: "language", name: language, widget: string, i18n: true }
+          - { label: "currency", name: currency, widget: string, i18n: true }
+          - { label: "save", name: save, widget: string, i18n: true }
+          - { label: "saved", name: saved, widget: string, i18n: true }
+          - { label: "securityTitle", name: securityTitle, widget: string, i18n: true }
+          - { label: "connected", name: connected, widget: string, i18n: true }
+          - { label: "memberSince", name: memberSince, widget: string, i18n: true }
+          - { label: "changePassword", name: changePassword, widget: string, i18n: true }
+          - { label: "deleteTitle", name: deleteTitle, widget: string, i18n: true }
+          - { label: "deleteText", name: deleteText, widget: string, i18n: true }
+          - { label: "deleteConfirm", name: deleteConfirm, widget: string, i18n: true }
+          - { label: "deleteWord", name: deleteWord, widget: string, i18n: true }
+          - { label: "deleteBtn", name: deleteBtn, widget: string, i18n: true }
+          - { label: "deleted", name: deleted, widget: string, i18n: true }
+          - { label: "qrTitle", name: qrTitle, widget: string, i18n: true }
+          - { label: "qrSub", name: qrSub, widget: string, i18n: true }
+          - { label: "iosInstall", name: iosInstall, widget: string, i18n: true }
+          - { label: "smdp", name: smdp, widget: string, i18n: true }
+          - { label: "activation", name: activation, widget: string, i18n: true }
+          - { label: "copy", name: copy, widget: string, i18n: true }
+          - { label: "copied", name: copied, widget: string, i18n: true }
+          - { label: "qrWarn", name: qrWarn, widget: string, i18n: true }
+          - { label: "close", name: close, widget: string, i18n: true }
+          - { label: "errInvalid", name: errInvalid, widget: string, i18n: true }
+          - { label: "errExists", name: errExists, widget: string, i18n: true }
+          - { label: "errWeak", name: errWeak, widget: string, i18n: true }
+          - { label: "errCode", name: errCode, widget: string, i18n: true }
+          - { label: "errRate", name: errRate, widget: string, i18n: true }
+          - { label: "errNetwork", name: errNetwork, widget: string, i18n: true }
+          - { label: "errGeneric", name: errGeneric, widget: string, i18n: true }
+          - { label: "errNotConfirmed", name: errNotConfirmed, widget: string, i18n: true }
+          - { label: "errTerms", name: errTerms, widget: string, i18n: true }
+
+  # ------------------------------------------------------------------------
   - name: magazin
     i18n: true
     label: Bewertungen
@@ -615,6 +745,7 @@ collections:
           - { label: "reviewsLabel", name: reviewsLabel, widget: string, i18n: true }
           - { label: "helloIam", name: helloIam, widget: string, i18n: true }
           - { label: "talkHuman", name: talkHuman, widget: string, i18n: true }
+          - { label: "myAccount", name: myAccount, widget: string, i18n: true }
           - { label: "blogMetaTitle", name: blogMetaTitle, widget: string, i18n: true }
           - { label: "blogIntro", name: blogIntro, widget: string, i18n: true }
           - { label: "blogAll", name: blogAll, widget: string, i18n: true }

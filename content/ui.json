@@ -107,7 +107,8 @@
     "blogCtaEsim": "eSIM paketlerini gör",
     "blogCtaEsimTitle": "Yolculuğun için doğru eSIM",
     "blogCtaAirport": "Lounge ve Fast Track'e göz at",
-    "blogCtaAirportTitle": "Havalimanında daha fazla huzur"
+    "blogCtaAirportTitle": "Havalimanında daha fazla huzur",
+    "myAccount": "Hesabım"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -217,7 +218,8 @@
     "blogCtaEsim": "See eSIM plans",
     "blogCtaEsimTitle": "The right eSIM for your trip",
     "blogCtaAirport": "Explore lounges and Fast Track",
-    "blogCtaAirportTitle": "More calm at the airport"
+    "blogCtaAirportTitle": "More calm at the airport",
+    "myAccount": "My account"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -327,7 +329,8 @@
     "blogCtaEsim": "eSIM-Tarife ansehen",
     "blogCtaEsimTitle": "Die passende eSIM für deine Reise",
     "blogCtaAirport": "Lounges und Fast Track ansehen",
-    "blogCtaAirportTitle": "Mehr Ruhe am Flughafen"
+    "blogCtaAirportTitle": "Mehr Ruhe am Flughafen",
+    "myAccount": "Mein Konto"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -437,7 +440,8 @@
     "blogCtaEsim": "عرض باقات eSIM",
     "blogCtaEsimTitle": "شريحة eSIM المناسبة لرحلتك",
     "blogCtaAirport": "استكشف الصالات والمسار السريع",
-    "blogCtaAirportTitle": "هدوء أكثر في المطار"
+    "blogCtaAirportTitle": "هدوء أكثر في المطار",
+    "myAccount": "حسابي"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -547,7 +551,8 @@
     "blogCtaEsim": "Смотреть тарифы eSIM",
     "blogCtaEsimTitle": "Подходящая eSIM для поездки",
     "blogCtaAirport": "Бизнес-залы и Fast Track",
-    "blogCtaAirportTitle": "Больше спокойствия в аэропорту"
+    "blogCtaAirportTitle": "Больше спокойствия в аэропорту",
+    "myAccount": "Мой аккаунт"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -657,7 +662,8 @@
     "blogCtaEsim": "Voir les forfaits eSIM",
     "blogCtaEsimTitle": "La bonne eSIM pour votre voyage",
     "blogCtaAirport": "Découvrir salons et Fast Track",
-    "blogCtaAirportTitle": "Plus de sérénité à l'aéroport"
+    "blogCtaAirportTitle": "Plus de sérénité à l'aéroport",
+    "myAccount": "Mon compte"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -767,6 +773,7 @@
     "blogCtaEsim": "Ver planes eSIM",
     "blogCtaEsimTitle": "La eSIM adecuada para tu viaje",
     "blogCtaAirport": "Ver salas VIP y Fast Track",
-    "blogCtaAirportTitle": "Más calma en el aeropuerto"
+    "blogCtaAirportTitle": "Más calma en el aeropuerto",
+    "myAccount": "Mi cuenta"
   }
 }

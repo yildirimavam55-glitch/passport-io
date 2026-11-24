@@ -27,7 +27,7 @@
     if (base && typeof base === "object") { const out = { ...base }; for (const k of Object.keys(over)) out[k] = merge(base[k], over[k]); return out; }
     return over;
   }
-  let SITE, ESIM, AI, BLOG, REVIEWS, INSTALL, UI, LANGS, LANG, LOCALE, CUR, RTL = false, PRICES = null, POST = null;
+  let SITE, ESIM, AI, BLOG, REVIEWS, INSTALL, UI, LANGS, LANG, LOCALE, CUR, RTL = false, PRICES = null, POST = null, ACC = null, AUTH = null;
   const POST_ID = PAGE === "blog" ? (new URLSearchParams(location.search).get("p") || "").replace(/[^a-z0-9-]/gi, "") : "";
   try {
     LANGS = await getJSON("content/languages.json");
@@ -70,6 +70,10 @@
       POST_ID ? getJSON(`content/posts/${POST_ID}.json`).catch(() => null) : null, // Artikel (fehlt er → Übersicht)
     ])).map(loc);
     if (POST) POST.id = POST_ID;
+    if (PAGE === "account") {
+      // Texte des Kundenkontos und öffentliche Supabase-Angaben (auth.json wird beim Veröffentlichen erzeugt)
+      [ACC, AUTH] = await Promise.all([getJSON("content/account.json").then(loc), getJSON("content/auth.json").catch(() => null)]);
+    }
   } catch (err) {
     document.getElementById("page").innerHTML = `<p style="padding:120px 24px;text-align:center">İçerik yüklenemedi · Content could not be loaded.</p>`;
     console.error(err);
@@ -440,7 +444,7 @@
         const r = e.target.closest("[data-region]");
         if (r) openPlans(ESIM.regional.find((x) => x.id === r.dataset.region));
         const g = e.target.closest("[data-global]");
-        if (g) { const p = plansOf("global")[+g.dataset.global]; if (p) toast(t("globalCheckout", { name: p.name || "Global", gb: p.gb })); }
+        if (g) { const p = plansOf("global")[+g.dataset.global]; if (p?.id) location.href = `account.html?buy=global&plan=${encodeURIComponent(p.id)}`; }
       });
     },
   };
@@ -748,6 +752,26 @@
     },
   };
 
+  /* ---------- UNTERSEITE: KUNDENKONTO (Logik in js/account.js) ---------- */
+  sections.accountPage = {
+    render: () => `<section class="acct-page"><div class="container" id="account-root"><div class="acct-loading">${esc(ACC?.loading || "…")}</div></div></section>`,
+    async init(el) {
+      const A = (k, v = {}) => String(ACC?.[k] ?? k).replace(/\{(\w+)\}/g, (m, x) => (x in v ? v[x] : m));
+      const cfg = AUTH?.url && AUTH?.anonKey ? { ...AUTH, accountUrl: AUTH.accountUrl || `${AUTH.url}/functions/v1/account` } : null;
+      try {
+        if (cfg) await Promise.all([
+          loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"),
+          loadScript("https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"),
+        ]);
+        await loadScript(`js/account.js?v=${encodeURIComponent(document.querySelector('script[src*="app.js"]')?.src.split("v=")[1] || "1")}`);
+        window.PP_ACCOUNT({ root: $("#account-root", el), A, ACC, esc, icon, flag, LANG, LOCALE, LANGS, CUR, ESIM, toast, cfg });
+      } catch (err) {
+        console.error(err);
+        $("#account-root", el).innerHTML = `<p class="acct-sub">${esc(A("errNetwork"))}</p>`;
+      }
+    },
+  };
+
   sections.blog = {
     render: (c = SITE.blog) => `
       <section class="section" id="blog">
@@ -955,7 +979,7 @@
   if (previewOn) document.body.insertAdjacentHTML("afterbegin", `<div class="preview-bar">${esc(SITE.preview.text)}${PRICES?.source === "mock" ? esc(t("previewMock")) : ""}</div>`);
 
   // Seitentitel, Beschreibung und Sprachversionen für Suchmaschinen (hreflang)
-  document.title = POST ? `${POST.title} | passport.io` : t(PAGE === "install" ? "installMetaTitle" : PAGE === "blog" ? "blogMetaTitle" : "metaTitle");
+  document.title = POST ? `${POST.title} | passport.io` : PAGE === "account" ? `${ACC?.title || "Account"} | passport.io` : t(PAGE === "install" ? "installMetaTitle" : PAGE === "blog" ? "blogMetaTitle" : "metaTitle");
   document.querySelector('meta[name="description"]')?.setAttribute("content", POST ? (POST.excerpt || "") : PAGE === "blog" ? t("blogIntro") : t("metaDescription"));
   if (POST) {
     // Artikel-Angaben für Suchmaschinen (strukturierte Daten)
@@ -990,11 +1014,15 @@
 
   // Navigation
   const brand = `<span>${esc(SITE.brand.name)}<em>${esc(SITE.brand.suffix)}</em></span>`;
+  // Angemeldet? (Supabase legt die Sitzung unter sb-<projekt>-auth-token ab – ohne die Bibliothek zu laden)
+  const sbRef = (() => { try { return new URL(SITE.api?.pricesUrl || "").hostname.split(".")[0]; } catch (_) { return ""; } })();
+  const signedIn = (() => { try { return !!(sbRef && localStorage.getItem(`sb-${sbRef}-auth-token`)); } catch (_) { return false; } })();
   $("#nav").innerHTML = `
     <div class="nav__inner container">
       <a href="index.html" class="logo" aria-label="${esc(t("home"))}"><svg class="logo__mark"><use href="#i-pass"/></svg>${brand}</a>
       <nav class="nav__links" aria-label="${esc(t("mainNav"))}">
         ${(SITE.nav || []).map((n) => `<a href="${esc(href(n.url))}">${esc(n.label)}${n.badge ? ` <small>${esc(n.badge)}</small>` : ""}</a>`).join("")}
+        <a href="account.html" class="nav__account">${esc(t(signedIn ? "myAccount" : "login"))}</a>
       </nav>
       <div class="nav__actions">
         <button class="theme-btn" type="button" data-theme-toggle aria-label="${esc(t(document.documentElement.dataset.theme === "dark" ? "themeLight" : "themeDark"))}">
@@ -1014,7 +1042,7 @@
             </div>
           </div>
         </div>
-        <a href="#" class="nav__login">${esc(t("login"))}</a>
+        <a href="account.html" class="nav__login">${esc(t(signedIn ? "myAccount" : "login"))}</a>
         <button class="nav__burger" type="button" aria-label="${esc(t("menuOpen"))}" aria-expanded="false">${icon("menu")}</button>
       </div>
     </div>`;
@@ -1050,6 +1078,7 @@
   const page = $("#page");
   const active = PAGE === "install" ? [{ type: "installGuide" }]
     : PAGE === "blog" ? [{ type: "blogPage" }]
+    : PAGE === "account" ? [{ type: "accountPage" }]
     : (SITE.sections || []).filter((s) => s.enabled !== false && sections[s.type]);
   page.innerHTML = active.map((s) => sections[s.type].render()).join("");
   active.forEach((s, i) => sections[s.type].init?.(page.children[i]));
@@ -1221,7 +1250,13 @@
       $$(".plan", modal).forEach((l) => l.classList.toggle("is-active", l.contains(e.target)));
       $(".plan-buy span", modal).textContent = eur(plans[+e.target.value].price);
     });
-    $(".plan-buy", modal)?.addEventListener("click", () => { close(); toast(t("checkoutToast", { name: item.name })); });
+    // Kaufen → Kundenkonto (Anmeldung, dann Bestellung; Preis prüft der Server über die Preis-Schnittstelle)
+    $(".plan-buy", modal)?.addEventListener("click", () => {
+      const plan = plans[+($("input[name=plan]:checked", modal)?.value ?? pre)];
+      if (!plan) return;
+      const key = item.code ? "country:" + item.code : "region:" + item.id;
+      location.href = `account.html?buy=${encodeURIComponent(key)}&plan=${encodeURIComponent(plan.id)}`;
+    });
     $("input:checked", modal)?.focus();
   }
 

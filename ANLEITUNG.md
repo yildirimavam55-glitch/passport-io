@@ -16,6 +16,9 @@ npx decap-server        # Admin-Dienst (nur lokal nötig)
 Dann **http://localhost:5173/admin/** öffnen. Änderungen werden direkt in die
 Dateien in `content/` gespeichert, die Webseite nach dem Neuladen aktualisiert.
 
+**Online:** `<Live-Adresse>/admin/` öffnen und mit GitHub anmelden (Einrichtung siehe
+„Start-Checkliste“, Punkt 2). Jede gespeicherte Änderung geht automatisch online.
+
 ## Was wo bearbeitet wird
 
 | Im Admin                        | Was                                                         |
@@ -108,6 +111,62 @@ Einmalig einrichten:
   `<Seitenadresse>/sitemap.xml`. Eigene Domain später als GitHub-Variable `SITE_URL` eintragen.
 - Jede Artikelseite setzt Titel, Beschreibung, Sprachversionen (hreflang) und
   Artikel-Daten für Google automatisch.
+
+## Kundenkonto (account.html)
+
+- Anmeldung mit E-Mail + Passwort (6-stelliger Code per E-Mail), Google oder Apple.
+- Passwort vergessen: Code per E-Mail (zusätzlich Link), dann neues Passwort.
+- Profil: gebuchte eSIMs mit QR-Code, SM-DP+-Adresse und Aktivierungscode zum Kopieren,
+  „Direkt auf dem iPhone installieren“, Verbrauch (GB), Restlaufzeit, Ablaufdatum, Status;
+  Bestellungen; Name, Sprache, Währung, Newsletter; Passwort ändern; Konto löschen.
+- Technik: Supabase Auth; Tabellen `profiles`, `orders`, `esims` (jede Person sieht nur
+  ihre Daten); Funktion `account` (Profil, Bestellung, Löschen). Preise prüft der Server
+  über die Preis-Schnittstelle – nie aus dem Browser.
+- Texte: `content/account.json` (alle 7 Sprachen).
+
+## Start-Checkliste (einmalig, von euch selbst einzurichten)
+
+Alle Schlüssel und Passwörter tragt ihr selbst ein – nie in den Code.
+
+**1. Supabase → Authentication**
+- *URL Configuration*: Site URL = Live-Adresse; Redirect URLs:
+  `https://yildirimavam55-glitch.github.io/passport-io/account.html`,
+  `http://localhost:5173/account.html`, später `https://passport.io/account.html`.
+- *Sign In / Providers → Email*: „Confirm email“ an, OTP-Länge 6, Mindestlänge Passwort 8
+  (Buchstaben + Ziffern).
+- *Email Templates*: Inhalt von `supabase/templates/confirm-signup.html` in „Confirm signup“
+  und `reset-password.html` in „Reset Password“ einfügen (Betreff steht oben in der Datei).
+  Die Mails erscheinen automatisch in der Sprache der Registrierung.
+- *SMTP*: **Pflicht vor dem Start.** Ohne eigenen Mailversand verschickt Supabase nur
+  wenige Test-Mails. Einen Dienst wie Resend, Brevo oder Postmark anlegen, Absender z. B.
+  `no-reply@passport.io`, Zugangsdaten unter *SMTP Settings* eintragen.
+- *Google*: In der Google Cloud Console einen OAuth-Client (Web) anlegen, erlaubte
+  Weiterleitung `https://sbzwibctxezprpefwxzn.supabase.co/auth/v1/callback`; Client-ID und
+  Secret in Supabase bei *Google* eintragen.
+- *Apple*: Apple-Developer-Konto nötig. Services ID + Key anlegen, Return URL wie oben
+  (`…/auth/v1/callback`), Team ID, Key ID und Key in Supabase bei *Apple* eintragen.
+
+**2. Admin-Bereich online (/admin)**
+- GitHub → Settings → Developer settings → OAuth Apps → *New OAuth App*:
+  Homepage = Live-Adresse, Callback =
+  `https://sbzwibctxezprpefwxzn.supabase.co/functions/v1/cms-auth/callback`.
+- In Supabase → Edge Functions → Secrets: `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`.
+- Wer Inhalte bearbeiten soll, braucht Schreibrechte im GitHub-Repository.
+
+**3. Anbieter anbinden (Secrets in Supabase)**
+- eSIM: `ESIM_API_URL`, `ESIM_API_KEY` – Anbindung in `supabase/functions/_shared/esim-provider.ts`.
+- Zahlung: `PAYMENT_PROVIDER` + Schlüssel – Anbindung in `supabase/functions/account/index.ts`
+  (Stelle „TODO Zahlung“). Bis dahin bleiben Bestellungen „Zahlung ausstehend“.
+- Nur zum Testen: `ALLOW_TEST_ORDERS=true` stellt ohne Zahlung eine **Test-eSIM** aus
+  (funktioniert auf keinem echten Handy). Vor dem Start wieder entfernen.
+
+**4. Rechtliches (vor dem Start)**
+- Impressum, Datenschutzerklärung (DSGVO + KVKK), AGB bzw. Mesafeli Satış Sözleşmesi,
+  Widerrufs-/Rückgaberegeln, Cookie-Hinweis. Die Footer-Links zeigen noch auf Platzhalter.
+
+**5. Domain**
+- `passport.io` in GitHub → Settings → Pages als Custom Domain eintragen, DNS beim
+  Domain-Anbieter setzen, Repository-Variable `SITE_URL=https://passport.io/`.
 
 ## Was Lina nicht beantworten konnte
 

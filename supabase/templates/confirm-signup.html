@@ -1,0 +1,18 @@
+<!-- Supabase → Authentication → Email Templates → „Confirm signup“
+     Betreff:  passport.io · {{ .Token }}
+     Die Sprache kommt aus der Registrierung (user_metadata.language). Standard: Türkisch. -->
+<div style="background:#f3f4f1;padding:32px 16px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0a0d0c">
+  <div style="max-width:480px;margin:0 auto;background:#ffffff;border-radius:20px;padding:32px;{{ if eq .Data.language "ar" }}direction:rtl;text-align:right{{ end }}">
+    <p style="margin:0 0 24px;font-size:20px;font-weight:700">passport<span style="color:#0a7a43">.io</span></p>
+    <h1 style="margin:0 0 8px;font-size:22px">
+      {{ if eq .Data.language "en" }}Your verification code{{ else if eq .Data.language "de" }}Dein Bestätigungscode{{ else if eq .Data.language "ar" }}رمز التحقق الخاص بك{{ else if eq .Data.language "ru" }}Ваш код подтверждения{{ else if eq .Data.language "fr" }}Votre code de vérification{{ else if eq .Data.language "es" }}Tu código de verificación{{ else }}Doğrulama kodun{{ end }}
+    </h1>
+    <p style="margin:0 0 20px;font-size:15px;color:#3b423f">
+      {{ if eq .Data.language "en" }}Enter this code on passport.io to finish creating your account.{{ else if eq .Data.language "de" }}Gib diesen Code auf passport.io ein, um dein Konto fertig zu erstellen.{{ else if eq .Data.language "ar" }}أدخل هذا الرمز في passport.io لإكمال إنشاء حسابك.{{ else if eq .Data.language "ru" }}Введите этот код на passport.io, чтобы завершить регистрацию.{{ else if eq .Data.language "fr" }}Saisissez ce code sur passport.io pour finaliser votre compte.{{ else if eq .Data.language "es" }}Introduce este código en passport.io para terminar de crear tu cuenta.{{ else }}Hesabını tamamlamak için bu kodu passport.io'da gir.{{ end }}
+    </p>
+    <p style="margin:0 0 20px;padding:18px;border-radius:14px;background:#0a0d0c;color:#2ef58a;font-size:32px;font-weight:700;letter-spacing:8px;text-align:center;direction:ltr">{{ .Token }}</p>
+    <p style="margin:0;font-size:13px;color:#6d7571">
+      {{ if eq .Data.language "en" }}The code is valid for a limited time. If you didn't sign up, you can ignore this email.{{ else if eq .Data.language "de" }}Der Code ist nur kurze Zeit gültig. Wenn du dich nicht registriert hast, ignoriere diese E-Mail.{{ else if eq .Data.language "ar" }}الرمز صالح لفترة محدودة. إذا لم تقم بالتسجيل فتجاهل هذه الرسالة.{{ else if eq .Data.language "ru" }}Код действует ограниченное время. Если вы не регистрировались, просто проигнорируйте письмо.{{ else if eq .Data.language "fr" }}Le code est valable peu de temps. Si vous ne vous êtes pas inscrit, ignorez cet e-mail.{{ else if eq .Data.language "es" }}El código es válido durante poco tiempo. Si no te has registrado, ignora este correo.{{ else }}Kod kısa bir süre geçerlidir. Kayıt olmadıysan bu e-postayı dikkate alma.{{ end }}
+    </p>
+  </div>
+</div>
