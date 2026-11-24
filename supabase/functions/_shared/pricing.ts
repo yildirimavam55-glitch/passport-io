@@ -3,20 +3,24 @@
    --------------------------------------------------------------------------
    Grundlage ist immer der EINKAUFSPREIS aus der Anbieter-API (Grundregel: keine erfundenen Preise).
    1. Gibt es für dasselbe Produkt (gleiches Land/Region, gleiches Volumen, gleiche Laufzeit)
-      einen aktiven Wettbewerbspreis → günstigster Wettbewerber minus „ein Tick“ (undercut_eur).
-   2. Sonst → Einkaufspreis × markup_factor (Standard 2), auf ,99 gerundet.
-   3. Untergrenzen: nie unter min_price_eur (2,99 €) und nie unter Einkauf + min_margin_pct.
+      einen aktiven Wettbewerbspreis (z. B. Airalo) → einen Tick darunter, auf ,99 abgerundet:
+      höchster ,99-Preis, der unter dem günstigsten Wettbewerber liegt (10,06 → 9,99 · 9,99 → 8,99).
+   2. Sonst → Einkaufspreis × markup_factor (Standard 2), auf den nächsten ,99-Preis gerundet.
+   3. Untergrenzen: nie unter min_price_eur (2,99 €) und nie unter Einkauf + min_margin_pct
+      (Schutz vor Verkauf mit Verlust; 0 % = nie unter Einkauf).
    Der Einkaufspreis wird nie öffentlich ausgeliefert.
    ========================================================================== */
 // deno-lint-ignore-file no-explicit-any
 export type Settings = { markup_factor: number; undercut_eur: number; min_price_eur: number; min_margin_pct: number; round_99: boolean };
 export type Competitor = { item_key: string; gb: number | null; days: number | null; price: number; currency: string; competitor: string; active?: boolean };
-export const DEFAULTS: Settings = { markup_factor: 2, undercut_eur: 0.1, min_price_eur: 2.99, min_margin_pct: 10, round_99: true };
+export const DEFAULTS: Settings = { markup_factor: 2, undercut_eur: 0.01, min_price_eur: 2.99, min_margin_pct: 10, round_99: true };
 
 const r2 = (n: number) => Math.round(n * 100) / 100;
 // Nächstgelegener ,99-Preis (14,00 → 13,99 · 7,80 → 7,99); die Untergrenzen werden danach geprüft
 const up99 = (n: number) => { const lo = Math.floor(n) - 0.01, hi = Math.floor(n) + 0.99; return r2(n - lo <= hi - n ? lo : hi); };
 const ceil99 = (n: number) => { const c = Math.ceil(n) - 0.01; return r2(c >= n ? c : c + 1); };
+// Höchster ,99-Preis ≤ n (10,05 → 9,99 · 9,98 → 8,99 · 9,99 → 9,99)
+const floor99 = (n: number) => { const c = Math.floor(r2(n)) + 0.99; return r2(c <= r2(n) ? c : c - 1); };
 
 export async function loadSettings(db: any): Promise<Settings> {
   const { data } = await db.from("pricing_settings").select("*").eq("id", 1).maybeSingle();
@@ -47,12 +51,14 @@ export function applyPricing(body: any, s: Settings, comps: Competitor[], toBase
     let value: number, rule: string, competitor: string | undefined;
     if (prices.length) {
       const best = prices.reduce((a, b) => (b.v < a.v ? b : a));
-      value = r2(best.v - undercut); rule = "competitor"; competitor = `${best.c.competitor} ${r2(best.v)}`;
+      // „Ein Tick“ darunter (mind. 1 Cent), dann auf ,99 abrunden → immer günstiger als der Wettbewerber
+      const target = best.v - Math.max(undercut, 0.01);
+      value = s.round_99 ? floor99(target) : r2(target); rule = "competitor"; competitor = `${best.c.competitor} ${r2(best.v)}`;
     } else {
       value = cost * s.markup_factor; rule = "markup";
       if (s.round_99) value = up99(value);
     }
-    if (value < floor) { value = s.round_99 && rule === "markup" ? ceil99(floor) : r2(Math.ceil(floor * 100) / 100); rule += "+floor"; }
+    if (value < floor) { value = s.round_99 ? ceil99(floor) : r2(Math.ceil(floor * 100) / 100); rule += "+floor"; }
     return { value: r2(value), rule, competitor };
   };
 

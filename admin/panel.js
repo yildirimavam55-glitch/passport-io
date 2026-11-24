@@ -266,10 +266,10 @@
     const ruleLabel = (r) => ({ competitor: "Rakip − 1 tık", markup: "Alış × çarpan" }[String(r).split("+")[0]] || r) + (String(r).includes("+floor") ? " → alt sınır" : "");
     shell("Fiyatlar & rakipler", `
       <div class="pl-card" style="margin-bottom:14px"><h2>Fiyat kuralı</h2>
-        <p class="pl-help">Aynı ürün için (aynı ülke, veri miktarı, süre) <b>rakip fiyatı</b> varsa, en ucuz rakibin <b>bir tık altında</b> satarız. Yoksa <b>alış fiyatı × çarpan</b>. Fiyat hiçbir zaman <b>en düşük fiyatın</b> ve <b>alış + asgari kâr marjının</b> altına inmez (zararına satış koruması).</p>
+        <p class="pl-help">Aynı ürün için (aynı ülke, veri miktarı, süre) <b>rakip fiyatı</b> varsa (ör. Airalo), en ucuz rakibin <b>bir tık altındaki ,99 fiyatı</b> kullanılır (10,06 € → 9,99 € · 9,99 € → 8,99 €). Yoksa <b>alış fiyatı × çarpan</b>, en yakın ,99'a yuvarlanır. Fiyat hiçbir zaman <b>en düşük fiyatın</b> (2,99 €) ve <b>alış + asgari kâr marjının</b> altına inmez (zararına satış koruması; 0 % = alış fiyatının altına inmez).</p>
         <form class="pl-form" data-settings>
           <label class="pl-field">Çarpan (rakip yoksa)<input name="markup_factor" type="number" step="0.01" min="1" value="${esc(s.markup_factor)}"></label>
-          <label class="pl-field">Rakibin altında (€)<input name="undercut_eur" type="number" step="0.01" min="0" value="${esc(s.undercut_eur)}"></label>
+          <label class="pl-field">Rakibin altında (€, sonra ,99'a yuvarlanır)<input name="undercut_eur" type="number" step="0.01" min="0" value="${esc(s.undercut_eur)}"></label>
           <label class="pl-field">En düşük fiyat (€)<input name="min_price_eur" type="number" step="0.01" min="0" value="${esc(s.min_price_eur)}"></label>
           <label class="pl-field">Asgari kâr marjı (%)<input name="min_margin_pct" type="number" step="1" min="0" value="${esc(s.min_margin_pct)}"></label>
           <label class="pl-field">,99'a yuvarla<select name="round_99"><option value="1" ${s.round_99 ? "selected" : ""}>Evet</option><option value="0" ${s.round_99 ? "" : "selected"}>Hayır</option></select></label>

@@ -142,8 +142,9 @@ Einmalig einrichten:
 
 Grundlage ist immer der **Einkaufspreis aus der Anbieter-API**:
 1. Gibt es einen Wettbewerbspreis für dasselbe Produkt (Land/Region, Volumen, Laufzeit) →
-   **günstigster Wettbewerber minus „ein Tick“** (Standard 0,10 €).
-2. Sonst → **Einkaufspreis × 2** (auf ,99 gerundet).
+   **ein Tick unter dem günstigsten Wettbewerber (z. B. Airalo), auf ,99 abgerundet**
+   (Airalo 10,06 € → 9,99 € · Airalo 9,99 € → 8,99 €).
+2. Sonst → **Einkaufspreis × 2**, auf den nächsten ,99-Preis gerundet.
 3. **Nie unter 2,99 €** und nie unter Einkauf + Mindestmarge (Standard 10 %, Schutz vor
    Verlustverkäufen, falls ein Wettbewerber extrem günstig ist).
 
