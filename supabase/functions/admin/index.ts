@@ -49,7 +49,7 @@ async function providerStatus() {
 /** Preisvorschau: Einkaufspreise (Cache oder Testdaten) mit angewandter Regel */
 async function pricingPreview() {
   let raw: any;
-  if (providerConfigured()) { const { data } = await db.from("price_cache").select("body").eq("id", "current4").maybeSingle(); raw = data?.body; }
+  if (providerConfigured()) { const { data } = await db.from("price_cache").select("body").eq("id", "current5").maybeSingle(); raw = data?.body; }
   raw = raw ?? { ...structuredClone(MOCK), source: "mock" };
   const base = raw.currency ?? "EUR";
   const { data: fxRow } = await db.from("price_cache").select("body").eq("id", `fx:${base}`).maybeSingle();

@@ -160,7 +160,7 @@ Deno.serve(async (req) => {
     // Noch kein Anbieter angebunden → Testdaten (auf der Seite als „Testdaten“ gekennzeichnet)
     body = { ...structuredClone(MOCK), source: "mock" };
   } else {
-    const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", "current4").maybeSingle();
+    const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", "current5").maybeSingle();
     body = row?.body ?? null;
     const age = row ? (Date.now() - new Date(row.updated_at).getTime()) / 1000 : Infinity;
     // Leerer Katalog (z. B. Schlüssel falsch) → nach 60 s erneut versuchen statt 15 min warten
@@ -171,7 +171,7 @@ Deno.serve(async (req) => {
     if (!body || age > CACHE_SECONDS || ((empty || pending) && age > 60)) {
       try {
         body = await fetchAll(body);
-        await db.from("price_cache").upsert({ id: "current4", body, updated_at: new Date().toISOString() });
+        await db.from("price_cache").upsert({ id: "current5", body, updated_at: new Date().toISOString() });
       } catch (err) {
         console.error(err);
         if (!body) return json({ error: "prices_unavailable" }, 503);

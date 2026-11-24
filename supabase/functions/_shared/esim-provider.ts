@@ -116,10 +116,10 @@ export async function esimAccessCatalog(toEur: (n: number, cur: string) => numbe
   return cat;
 }
 
-/** Unlimited-Stufe von eSIM Go (Secret ESIMGO_UNLIMITED_TIER = lite | essential | plus, Standard lite)
+/** Unlimited-Stufe von eSIM Go (Secret ESIMGO_UNLIMITED_TIER = lite | essential | plus, Standard essential)
  *  lite = 1 GB/Tag, danach 512 kbit/s · essential = 1 GB/Tag, danach 1,28 Mbit/s · plus = 2 GB/Tag, danach 2 Mbit/s */
 const TIER_PREFIX: Record<string, string> = { lite: "esim_UL_", essential: "esim_ULE_", plus: "esim_ULP_" };
-export const goTier = () => { const t = (env("ESIMGO_UNLIMITED_TIER") || "lite").toLowerCase().trim(); return TIER_PREFIX[t] ? t : "lite"; };
+export const goTier = () => { const t = (env("ESIMGO_UNLIMITED_TIER") || "essential").toLowerCase().trim(); return TIER_PREFIX[t] ? t : "essential"; };
 const tierOf = (name: string) => /^esim_ULP_/i.test(name) ? "plus" : /^esim_ULE_/i.test(name) ? "essential" : /^esim_UL_/i.test(name) ? "lite" : null;
 export async function esimGoCatalog(toEur: (n: number, cur: string) => number | null): Promise<Catalog | null> {
   if (!goOn()) return null;
