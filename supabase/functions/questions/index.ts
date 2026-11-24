@@ -1,39 +1,44 @@
 /* ==========================================================================
-   passport.io – Fragen, die Lina nicht beantworten konnte
+   passport.io – Fragen an Lina und Kontaktanfragen
    --------------------------------------------------------------------------
-   Die Webseite schickt unbeantwortete Fragen hierher. Das Team sieht sie in
-   Supabase → Table Editor → unanswered_questions und ergänzt daraus neue
-   FAQ-Einträge im Admin. So sinken die Support-Anfragen Schritt für Schritt.
-   Gespeichert wird nur der Fragetext (max. 300 Zeichen) und die Seite –
-   keine IP-Adresse, keine Personendaten.
+   1. {question, page}            → Frage, die Lina nicht beantworten konnte (ohne Personendaten)
+   2. {kind:"support", name, email, message, page, website}
+                                   → Anfrage „Mit einem Menschen sprechen“ (Panel → Anfragen)
+      „website“ ist ein unsichtbares Lockfeld gegen Bots: ist es ausgefüllt, wird nichts gespeichert.
+      Höchstens 3 Anfragen pro E-Mail und Stunde.
    ========================================================================== */
-
 import { createClient } from "jsr:@supabase/supabase-js@2";
+import { cors, env } from "../_shared/http.ts";
 
-const env = (k: string) => Deno.env.get(k) ?? "";
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
-
-function cors(req: Request) {
-  const allowed = env("ALLOWED_ORIGINS").split(",").map((s) => s.trim()).filter(Boolean);
-  const origin = req.headers.get("origin") ?? "";
-  return {
-    "Access-Control-Allow-Origin": !allowed.length || allowed.includes(origin) ? origin || "*" : allowed[0],
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "authorization, apikey, content-type",
-    Vary: "Origin",
-  };
-}
+const EMAIL = /^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,24}$/i;
 
 Deno.serve(async (req) => {
-  const headers = cors(req);
+  const headers = cors(req, "POST, OPTIONS");
   if (req.method === "OPTIONS") return new Response(null, { headers });
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405, headers });
 
   try {
-    const { question, page } = await req.json();
-    const q = String(question ?? "").trim().slice(0, 300);
+    const body = await req.json();
+
+    if (body.kind === "support") {
+      if (body.website) return new Response(null, { status: 204, headers }); // Bot
+      const email = String(body.email ?? "").trim().toLowerCase().slice(0, 254);
+      const message = String(body.message ?? "").trim().slice(0, 4000);
+      if (!EMAIL.test(email) || message.length < 5) return new Response(JSON.stringify({ error: "invalid" }), { status: 400, headers });
+      const since = new Date(Date.now() - 3600 * 1000).toISOString();
+      const { count } = await db.from("support_requests").select("id", { count: "exact", head: true }).eq("email", email).gte("created_at", since);
+      if ((count ?? 0) >= 3) return new Response(JSON.stringify({ error: "rate_limited" }), { status: 429, headers });
+      const { error } = await db.from("support_requests").insert({
+        email, name: String(body.name ?? "").trim().slice(0, 120) || null, subject: "Lina", message, page: String(body.page ?? "").slice(0, 120),
+      });
+      if (error) throw error;
+      return new Response(null, { status: 204, headers });
+    }
+
+    const q = String(body.question ?? "").trim().slice(0, 300);
     if (q.length < 3) return new Response(null, { status: 204, headers });
-    const { error } = await db.from("unanswered_questions").insert({ question: q, page: String(page ?? "").slice(0, 100) });
+    const { error } = await db.from("unanswered_questions").insert({ question: q, page: String(body.page ?? "").slice(0, 100) });
     if (error) throw error;
     return new Response(null, { status: 204, headers });
   } catch (err) {

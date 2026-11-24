@@ -72,17 +72,36 @@ Deno.serve(async (req) => {
   const user = auth?.user;
   if (!user) return json({ error: "unauthorized" }, 401, headers);
   if (!user.email_confirmed_at || !admins().includes((user.email ?? "").toLowerCase())) return json({ error: "forbidden" }, 403, headers);
+  // Zwei-Faktor-Anmeldung: Pflicht, sobald die Person eine Authenticator-App eingerichtet hat
+  // (oder für alle Admins mit ADMIN_REQUIRE_MFA=true). Die Stufe steht im geprüften Token (aal).
+  let aal = "aal1";
+  try { aal = JSON.parse(atob(token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))).aal ?? "aal1"; } catch (_) { /* aal1 */ }
+  const hasFactor = (user.factors ?? []).some((f: any) => f.status === "verified");
+  if ((hasFactor || env("ADMIN_REQUIRE_MFA") === "true") && aal !== "aal2") return json({ error: hasFactor ? "mfa_required" : "mfa_setup_required" }, 403, headers);
+  const audit = (action: string, target: string, details: unknown = null) =>
+    db.from("admin_audit").insert({ admin_email: user.email, action, target, details }).then(() => {}, () => {});
 
   try {
     if (req.method === "GET") {
       const view = new URL(req.url).searchParams.get("view") ?? "overview";
       if (view === "overview") {
-        const [{ data: orders }, { count: esimCount }, { count: activeCount }, users, status] = await Promise.all([
-          db.from("orders").select("id, user_id, item_key, title, amount, currency, status, test, created_at").order("created_at", { ascending: false }).limit(1000),
+        const [{ data: orders }, { count: esimCount }, { count: activeCount }, users, status, { count: openRefunds }, { count: openSupport }, { count: openQuestions }] = await Promise.all([
+          db.from("orders").select("id, user_id, customer_email, item_key, title, amount, currency, status, test, created_at").order("created_at", { ascending: false }).limit(2000),
           db.from("esims").select("id", { count: "exact", head: true }),
           db.from("esims").select("id", { count: "exact", head: true }).in("status", ["active", "installed"]),
           emailMap(), providerStatus(),
+          db.from("refund_requests").select("id", { count: "exact", head: true }).eq("status", "open"),
+          db.from("support_requests").select("id", { count: "exact", head: true }).eq("status", "open"),
+          db.from("unanswered_questions").select("id", { count: "exact", head: true }).eq("handled", false),
         ]);
+        // Verlauf der letzten 30 Tage (bezahlte Bestellungen, ohne Testbestellungen)
+        const days: { day: string; orders: number; revenue: Record<string, number> }[] = [];
+        for (let i = 29; i >= 0; i--) days.push({ day: new Date(Date.now() - i * 864e5).toISOString().slice(0, 10), orders: 0, revenue: {} });
+        (orders ?? []).forEach((o: any) => {
+          if (o.test || !["paid", "fulfilled"].includes(o.status)) return;
+          const d = days.find((x) => x.day === String(o.created_at).slice(0, 10));
+          if (d) { d.orders++; d.revenue[o.currency] = Math.round(((d.revenue[o.currency] ?? 0) + Number(o.amount)) * 100) / 100; }
+        });
         const revenue: Record<string, number> = {};
         const last30 = Date.now() - 30 * 864e5;
         let orders30 = 0;
@@ -93,7 +112,9 @@ Deno.serve(async (req) => {
         const byStatus = ORDER_ST.reduce((a: any, s) => ((a[s] = (orders ?? []).filter((o: any) => o.status === s).length), a), {});
         return json({
           revenue, orders30, byStatus, customers: Object.keys(users).length, esims: esimCount ?? 0, esimsActive: activeCount ?? 0,
-          recent: (orders ?? []).slice(0, 8).map((o: any) => ({ ...o, email: users[o.user_id]?.email ?? "" })), status,
+          recent: (orders ?? []).slice(0, 8).map((o: any) => ({ ...o, email: users[o.user_id]?.email ?? o.customer_email ?? "" })), status,
+          days, openRefunds: openRefunds ?? 0, openSupport: openSupport ?? 0, openQuestions: openQuestions ?? 0,
+          mfa: { hasFactor, aal },
         }, 200, headers);
       }
       if (view === "orders") {
@@ -101,7 +122,29 @@ Deno.serve(async (req) => {
         let q = db.from("orders").select("*").order("created_at", { ascending: false }).limit(500);
         if (st && ORDER_ST.includes(st)) q = q.eq("status", st);
         const [{ data }, users] = await Promise.all([q, emailMap()]);
-        return json({ orders: (data ?? []).map((o: any) => ({ ...o, email: users[o.user_id]?.email ?? "" })) }, 200, headers);
+        return json({ orders: (data ?? []).map((o: any) => ({ ...o, email: users[o.user_id]?.email ?? o.customer_email ?? "" })) }, 200, headers);
+      }
+      if (view === "payments") {
+        const { data } = await db.from("orders").select("id, customer_email, item_key, title, amount, currency, status, payment_provider, payment_ref, paid_at, refunded_amount, test, created_at")
+          .in("status", ["paid", "fulfilled", "refunded"]).order("created_at", { ascending: false }).limit(1000);
+        const sum = (st: string[], f: (o: any) => number) => (data ?? []).filter((o: any) => !o.test && st.includes(o.status)).reduce((a: any, o: any) => ((a[o.currency] = Math.round(((a[o.currency] ?? 0) + f(o)) * 100) / 100), a), {});
+        return json({ payments: data ?? [], gross: sum(["paid", "fulfilled", "refunded"], (o) => Number(o.amount)), refunded: sum(["refunded"], (o) => Number(o.refunded_amount || o.amount)) }, 200, headers);
+      }
+      if (view === "refunds") {
+        const { data } = await db.from("refund_requests").select("*, orders(item_key, title, amount, currency, status, created_at)").order("created_at", { ascending: false }).limit(500);
+        return json({ refunds: data ?? [] }, 200, headers);
+      }
+      if (view === "support") {
+        const { data } = await db.from("support_requests").select("*").order("created_at", { ascending: false }).limit(500);
+        return json({ tickets: data ?? [] }, 200, headers);
+      }
+      if (view === "questions") {
+        const { data } = await db.from("unanswered_questions").select("*").order("created_at", { ascending: false }).limit(500);
+        return json({ questions: data ?? [] }, 200, headers);
+      }
+      if (view === "audit") {
+        const { data } = await db.from("admin_audit").select("*").order("created_at", { ascending: false }).limit(300);
+        return json({ audit: data ?? [] }, 200, headers);
       }
       if (view === "customers") {
         const [users, { data: profiles }, { data: orders }] = await Promise.all([
@@ -135,12 +178,43 @@ Deno.serve(async (req) => {
       if (!ORDER_ST.includes(b.status)) return json({ error: "status" }, 400, headers);
       const { error } = await db.from("orders").update({ status: b.status, updated_at: now }).eq("id", txt(b.id, 60));
       if (error) throw error;
+      await audit("order_status", txt(b.id, 60), { status: b.status });
       return json({ ok: true }, 200, headers);
     }
     if (b.action === "esim_status") {
       if (!ESIM_ST.includes(b.status)) return json({ error: "status" }, 400, headers);
       const { error } = await db.from("esims").update({ status: b.status }).eq("id", txt(b.id, 60));
       if (error) throw error;
+      await audit("esim_status", txt(b.id, 60), { status: b.status });
+      return json({ ok: true }, 200, headers);
+    }
+    if (b.action === "refund_decide") {
+      // Genehmigen: Bestellung „erstattet“, eSIMs gesperrt. Die Geldrückzahlung selbst läuft beim Zahlungsanbieter.
+      const decision = b.decision === "approve" ? "approved" : b.decision === "reject" ? "rejected" : null;
+      if (!decision) return json({ error: "invalid" }, 400, headers);
+      const { data: rr } = await db.from("refund_requests").select("id, order_id, status").eq("id", txt(b.id, 60)).maybeSingle();
+      if (!rr || rr.status !== "open") return json({ error: "not_open" }, 409, headers);
+      await db.from("refund_requests").update({ status: decision, admin_note: txt(b.note, 1000) || null, decided_by: user.email, decided_at: now }).eq("id", rr.id);
+      if (decision === "approved") {
+        const { data: o } = await db.from("orders").select("amount").eq("id", rr.order_id).maybeSingle();
+        await db.from("orders").update({ status: "refunded", refunded_amount: o?.amount ?? 0, updated_at: now }).eq("id", rr.order_id);
+        await db.from("esims").update({ status: "cancelled" }).eq("order_id", rr.order_id);
+      }
+      await audit("refund_" + decision, rr.order_id, { note: txt(b.note, 300) });
+      return json({ ok: true }, 200, headers);
+    }
+    if (b.action === "support_update") {
+      const st = ["open", "answered", "closed"].includes(b.status) ? b.status : null;
+      if (!st) return json({ error: "invalid" }, 400, headers);
+      const { error } = await db.from("support_requests").update({ status: st, admin_note: txt(b.note, 2000) || null, updated_at: now }).eq("id", txt(b.id, 60));
+      if (error) throw error;
+      await audit("support_" + st, txt(b.id, 60));
+      return json({ ok: true }, 200, headers);
+    }
+    if (b.action === "question_handled") {
+      const { error } = await db.from("unanswered_questions").update({ handled: true }).eq("id", Number(b.id));
+      if (error) throw error;
+      await audit("question_handled", String(b.id));
       return json({ ok: true }, 200, headers);
     }
     if (b.action === "pricing_settings") {
@@ -151,6 +225,7 @@ Deno.serve(async (req) => {
       if (Object.values(patch).some((v) => v === null)) return json({ error: "invalid" }, 400, headers);
       const { error } = await db.from("pricing_settings").upsert({ id: 1, ...patch });
       if (error) throw error;
+      await audit("pricing_settings", "1", patch);
       return json({ ok: true }, 200, headers);
     }
     const compRow = (c: any) => {
@@ -169,17 +244,19 @@ Deno.serve(async (req) => {
       const q = b.id ? db.from("competitor_prices").update(row).eq("id", Number(b.id)) : db.from("competitor_prices").insert(row);
       const { error } = await q;
       if (error) throw error;
+      await audit("competitor_save", row.item_key, row);
       return json({ ok: true }, 200, headers);
     }
     if (b.action === "competitor_delete") {
       const { error } = await db.from("competitor_prices").delete().eq("id", Number(b.id));
       if (error) throw error;
+      await audit("competitor_delete", String(b.id));
       return json({ ok: true }, 200, headers);
     }
     if (b.action === "competitor_import") {
       const rows = (Array.isArray(b.rows) ? b.rows : []).slice(0, 2000).map(compRow);
       const good = rows.filter(Boolean);
-      if (good.length) { const { error } = await db.from("competitor_prices").insert(good); if (error) throw error; }
+      if (good.length) { const { error } = await db.from("competitor_prices").insert(good); if (error) throw error; await audit("competitor_import", String(good.length)); }
       return json({ ok: true, imported: good.length, skipped: rows.length - good.length }, 200, headers);
     }
     return json({ error: "unknown_action" }, 400, headers);

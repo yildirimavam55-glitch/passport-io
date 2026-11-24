@@ -15,6 +15,8 @@ import { provision, usage } from "../_shared/esim-provider.ts";
 
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
 const LANGS = ["tr", "en", "de", "ar", "ru", "fr", "es"];
+// Geld-zurück-Frist für nicht installierte eSIMs (Secret REFUND_DAYS, Standard 30 – muss zu den Rechtstexten passen)
+const refundDays = () => Number(env("REFUND_DAYS") || 30);
 const CURS = (env("CURRENCIES") || "EUR,USD,GBP,TRY,CHF").split(",").map((s) => s.trim());
 
 /** Tarif und Preis direkt aus der Preis-Schnittstelle (Grundregel: keine Preise aus dem Browser) */
@@ -52,10 +54,12 @@ Deno.serve(async (req) => {
 
   try {
     if (req.method === "GET") {
-      const [{ data: profile }, { data: esims }, { data: orders }] = await Promise.all([
+      const [{ data: profile }, { data: esims }, { data: orders }, { data: refunds }, { data: tickets }] = await Promise.all([
         db.from("profiles").select("full_name, language, currency, marketing, created_at").eq("id", user.id).single(),
         db.from("esims").select("*").eq("user_id", user.id).order("created_at", { ascending: false }),
         db.from("orders").select("id, product, item_key, title, amount, currency, status, test, created_at").eq("user_id", user.id).order("created_at", { ascending: false }).limit(50),
+        db.from("refund_requests").select("order_id, status, created_at, decided_at").eq("user_id", user.id),
+        db.from("support_requests").select("id, subject, status, created_at").eq("user_id", user.id).order("created_at", { ascending: false }).limit(20),
       ]);
       // Verbrauch beim Anbieter auffrischen (höchstens alle 10 Minuten je eSIM)
       const fresh = await Promise.all((esims ?? []).map(async (e) => {
@@ -69,7 +73,8 @@ Deno.serve(async (req) => {
       }));
       return json({
         user: { email: user.email, providers: user.app_metadata?.providers ?? [], created_at: user.created_at },
-        profile, esims: fresh.map(view), orders,
+        profile, esims: fresh.map(view), orders, refunds: refunds ?? [], tickets: tickets ?? [],
+        refundDays: refundDays(),
       }, 200, headers);
     }
 
@@ -98,7 +103,7 @@ Deno.serve(async (req) => {
       if (!found) return json({ error: "plan_not_found" }, 400, headers);
       const { plan } = found;
       const { data: order, error } = await db.from("orders").insert({
-        user_id: user.id, product: "esim", item_key: item, plan_id: plan.id,
+        user_id: user.id, customer_email: user.email, product: "esim", item_key: item, plan_id: plan.id,
         title: `${plan.gb} GB · ${plan.days}`, amount: plan.price, currency: found.currency,
       }).select().single();
       if (error) throw error;
@@ -122,8 +127,39 @@ Deno.serve(async (req) => {
       return json({ order: { ...order, status: "fulfilled", test: true }, esim: view(esim) }, 200, headers);
     }
 
+    if (body.action === "refund_request") {
+      // Nur eigene, bezahlte Bestellungen innerhalb der Frist, deren eSIM noch nicht installiert/aktiv ist
+      const orderId = String(body.orderId ?? "").slice(0, 60);
+      const { data: order } = await db.from("orders").select("id, user_id, status, created_at").eq("id", orderId).maybeSingle();
+      if (!order || order.user_id !== user.id) return json({ error: "not_found" }, 404, headers);
+      if (!["paid", "fulfilled"].includes(order.status)) return json({ error: "not_refundable" }, 409, headers);
+      if (Date.now() - new Date(order.created_at).getTime() > refundDays() * 864e5) return json({ error: "too_late" }, 409, headers);
+      const { data: es } = await db.from("esims").select("status, activated_at").eq("order_id", order.id);
+      if ((es ?? []).some((e) => !["ready", "cancelled"].includes(e.status) || e.activated_at)) return json({ error: "esim_used" }, 409, headers);
+      const { error } = await db.from("refund_requests").insert({ order_id: order.id, user_id: user.id, customer_email: user.email, reason: String(body.reason ?? "").trim().slice(0, 1000) || null });
+      if (error) return json({ error: error.code === "23505" ? "already_requested" : "server" }, error.code === "23505" ? 409 : 500, headers);
+      return json({ ok: true }, 200, headers);
+    }
+
+    if (body.action === "support") {
+      // Höchstens 5 Anfragen pro Stunde und Konto
+      const since = new Date(Date.now() - 3600 * 1000).toISOString();
+      const { count } = await db.from("support_requests").select("id", { count: "exact", head: true }).eq("user_id", user.id).gte("created_at", since);
+      if ((count ?? 0) >= 5) return json({ error: "rate_limited" }, 429, headers);
+      const message = String(body.message ?? "").trim().slice(0, 4000);
+      if (message.length < 5) return json({ error: "invalid" }, 400, headers);
+      const orderId = String(body.orderId ?? "").slice(0, 60);
+      const { data: own } = orderId ? await db.from("orders").select("id").eq("id", orderId).eq("user_id", user.id).maybeSingle() : { data: null };
+      const { error } = await db.from("support_requests").insert({
+        user_id: user.id, email: user.email, subject: String(body.subject ?? "").trim().slice(0, 160) || null, message, order_id: own?.id ?? null, page: "account",
+      });
+      if (error) throw error;
+      return json({ ok: true }, 200, headers);
+    }
+
     if (body.action === "delete") {
-      // Löscht das Konto; Profil, Bestellungen und eSIM-Einträge werden automatisch mitgelöscht
+      // Löscht das Konto; Profil und eSIM-Einträge werden mitgelöscht. Bestellungen bleiben wegen der
+      // gesetzlichen Aufbewahrungspflicht für Rechnungsdaten erhalten, sind aber vom Konto getrennt.
       const { error } = await db.auth.admin.deleteUser(user.id);
       if (error) throw error;
       return json({ ok: true }, 200, headers);
