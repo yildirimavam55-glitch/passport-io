@@ -220,8 +220,7 @@
   sections.hero = {
     render: (c = SITE.hero) => `
       <section class="hero" id="top">
-        <img class="hero__img" src="${img(c.image, 2200)}" alt="" fetchpriority="high" />
-        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="hero__bg" aria-hidden="true"><img class="hero__img" src="${img(c.image, 2200)}" alt="" fetchpriority="high" /><div class="hero__shade"></div></div>
         <div class="container hero__content">
           <p class="kicker">${esc(c.kicker)}</p>
           <h1 class="hero__title">${fill(c.title)}<span>${fill(c.subtitle)}</span></h1>
@@ -854,13 +853,17 @@
   active.forEach((s, i) => sections[s.type].init?.(page.children[i]));
 
   // Inhalte beim Scrollen sanft einblenden (wie bei Apple/Samsung); bei „Bewegung reduzieren“ aus
-  if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  $$(".hero__content > *").forEach((n, i) => n.style.setProperty("--d", `${0.15 + i * 0.12}s`));
+  if (!calm && window.CSS?.supports?.("animation-timeline: view()")) {
+    // Moderne Browser: Bewegung hängt direkt am Scrollen (läuft rückwärts beim Hochscrollen) – siehe styles.css „has-scrolly“
+    document.documentElement.classList.add("has-scrolly");
+  } else if ("IntersectionObserver" in window && !calm) {
     document.documentElement.classList.add("has-reveal");
     const io = new IntersectionObserver((list) => list.forEach((e) => {
       if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
     }), { rootMargin: "0px 0px -8% 0px" });
     const mark = (sel, cls = "reveal") => $$(sel).forEach((n) => { n.classList.add(cls); io.observe(n); });
-    $$(".hero__content > *").forEach((n, i) => n.style.setProperty("--d", `${0.1 + i * 0.1}s`));
     $$(".blog > .post").forEach((n, i) => n.style.setProperty("--d", `${Math.min(i, 4) * 0.08}s`));
     mark(".hero__content > *, .strip, #page .head-split, .how2__head, .rail, .wmap, .airport-search, .reviews-bar, .marquee, .banners, .helpdesk, .faq__side, .faq__list, .blog > .post, .cta__inner, .footer__grid");
     mark(".how2__track, .airport", "reveal-kids");
