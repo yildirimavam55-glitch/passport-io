@@ -33,7 +33,7 @@ export const goCurrency = () => (env("ESIMGO_CURRENCY") || "USD").toUpperCase();
 async function ea(path: string, body: unknown = {}) {
   const r = await fetch(EA + path, {
     method: "POST", body: JSON.stringify(body), signal: AbortSignal.timeout(25_000),
-    headers: { "RT-AccessCode": env("ESIMACCESS_ACCESS_CODE"), "Content-Type": "application/json" },
+    headers: { "RT-AccessCode": env("ESIMACCESS_ACCESS_CODE").trim(), "Content-Type": "application/json" },
   });
   const j = await r.json().catch(() => null);
   if (!r.ok || !j?.success) { const e: any = new Error(`eSIM Access ${path}: ${j?.errorCode ?? r.status} ${j?.errorMsg ?? ""}`); e.code = j?.errorCode; throw e; }
@@ -42,7 +42,7 @@ async function ea(path: string, body: unknown = {}) {
 async function eg(path: string, init: RequestInit = {}) {
   const r = await fetch(EG + path, {
     ...init, signal: AbortSignal.timeout(25_000),
-    headers: { "X-API-Key": env("ESIMGO_API_KEY"), "Content-Type": "application/json", Accept: "application/json" },
+    headers: { "X-API-Key": env("ESIMGO_API_KEY").trim(), "Content-Type": "application/json", Accept: "application/json" },
   });
   if (!r.ok) throw new Error(`eSIM Go ${path}: HTTP ${r.status} ${(await r.text()).slice(0, 200)}`);
   return r.json();
