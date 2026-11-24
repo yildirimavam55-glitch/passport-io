@@ -804,6 +804,125 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 [dir="rtl"] .h2, [dir="rtl"] .hero__title, [dir="rtl"] h3 { letter-spacing: 0; }
 @media (max-width: 640px) { [dir="rtl"] .lang__group + .lang__group { border-right: 0; padding-right: 0; } [dir="rtl"] .lang__menu { left: 12px; right: 12px; } }
 
+/* ==========================================================================
+   Handy-Layout: kompakter, gruppiert, wischbar statt endlos gestapelt
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* Rhythmus & Typo */
+  .section, #howto.section, #airport.section, #blog.section { padding: 52px 0; }
+  .section--tight { padding: 40px 0; }
+  .head-split, #airport .head-split, #blog .head-split { margin-bottom: 22px; gap: 10px; }
+  .h2, #airport .h2, .how .h2 { font-size: 29px; line-height: 1.1; }
+  .kicker { font-size: 12px; margin-bottom: 10px; }
+  .head-split__note, .lead, .how .lead { font-size: 15px; line-height: 1.5; margin-top: 0; }
+  .how .lead { margin-top: 10px; }
+
+  /* Hero: Produkte schon auf dem ersten Bildschirm */
+  .hero { min-height: 0; }
+  .hero__content { padding-top: 104px; padding-bottom: 28px; }
+  .hero__title { font-size: 34px; }
+  .search--hero { margin-top: 24px; }
+  .hero__facts { margin-top: 18px; gap: 8px 18px; font-size: 14px; }
+  .hero__pay { margin-top: 16px; }
+  .strip__item { padding: 14px 16px; }
+  .strip__price { margin-top: 4px; }
+
+  /* Reiseziele: nächste Karte schaut hervor */
+  .rail { --dest-w: 66vw; --dest-h: 340px; gap: 10px; }
+  .dest__name { font-size: 20px; }
+  .rail-foot { margin-top: 10px; }
+  .rail-foot__hint { font-size: 13px; }
+
+  /* eSIM erklärt: ohne großes Foto, Schritte als Karten */
+  .how__media { display: none; }
+  .how__steps { border-top: 0; display: grid; gap: 8px; margin: 20px 0; }
+  .how__steps li { grid-template-columns: 36px 1fr; padding: 14px; border: 1px solid var(--line); border-radius: 14px; }
+  .how__steps h3 { font-size: 16px; }
+  .how__steps p { font-size: 14px; }
+  .how__actions { gap: 16px; }
+  .how__actions .btn { width: 100%; }
+
+  /* Lounge & Fast Track: Karten zum Wischen */
+  .airport { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); }
+  .airport::-webkit-scrollbar { display: none; }
+  .airport__card { flex: 0 0 86%; min-height: 420px; scroll-snap-align: center; }
+  .airport__body { padding: 20px; }
+  .airport__body h3 { font-size: 23px; }
+  .airport__body > p { font-size: 14px; }
+  .ticks { font-size: 13px; gap: 4px; flex-direction: column; }
+  .airport__foot b { font-size: 19px; }
+  .airport-search { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px; }
+  .airport-search > :first-child, .airport-search__toggle, .airport-search > .btn { grid-column: 1 / -1; }
+  .airport-search input[type="date"] { min-width: 0; width: 100%; }
+
+  /* Hilfe-Center: Kacheln als kompakte Zeilen */
+  .banners { gap: 8px; margin-bottom: 12px; }
+  .banner { min-height: 0; padding: 16px 60px 16px 66px; justify-content: center; border-radius: 16px; }
+  .banner__icon { top: 50%; left: 18px; width: 34px; height: 34px; margin-top: -17px; display: grid; place-items: center; border-radius: 10px; background: rgba(10,13,12,.08); }
+  .banner--2 .banner__icon { background: rgba(255,255,255,.1); }
+  .banner--3 .banner__icon { background: var(--paper); }
+  .banner__icon svg { width: 18px; height: 18px; }
+  .banner__go { top: 50%; right: 16px; width: 34px; height: 34px; margin-top: -17px; }
+  .banner h3 { font-size: 17px; max-width: none; }
+  .banner p { font-size: 13px; margin-top: 2px; }
+
+  /* Lina: kompakte Vorstellung statt großem Foto */
+  .persona { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: start; padding: 18px; min-height: 0; border-radius: 18px; }
+  .persona__img { position: static; align-self: start; width: 64px; height: 64px; border-radius: 50%; object-position: center 20%; box-shadow: 0 0 0 2px var(--dark), 0 0 0 3.5px var(--green); }
+  .persona__body { padding: 0; }
+  .persona__badge { display: none; }
+  .persona h3 { font-size: 20px; margin-top: 0; }
+  .persona__role { font-size: 14px; }
+  .persona__intro { font-size: 14px; margin-top: 6px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .persona__team { margin-top: 12px; font-size: 13px; text-align: start; align-items: flex-start; }
+  .persona__team svg { margin-top: 2px; }
+  .assistant__head { display: none; }
+  .helpdesk { gap: 10px; }
+  .helpdesk .assistant__log { min-height: 260px; max-height: 380px; padding: 18px 16px; }
+  .assistant__chips { padding: 0 16px 4px; }
+  .assistant__form { padding: 10px 12px 12px; }
+  .assistant__form input { height: 48px; }
+  .assistant__send { width: 48px; height: 48px; flex: none; }
+
+  /* FAQ */
+  .faq { margin-top: 48px; gap: 18px; grid-template-columns: minmax(0, 1fr); }
+  .faq > * { min-width: 0; }
+  .faq__side > p { margin: 6px 0 14px; font-size: 15px; }
+  .faq__filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); }
+  .faq__filters::-webkit-scrollbar { display: none; }
+  .faq__filters button { flex: 0 0 auto; }
+  .faq__q { padding: 16px 0; font-size: 16px; gap: 14px; }
+  .faq__hot { display: none; }
+  .faq__a > div > div { padding: 0 0 18px; font-size: 15px; }
+  .faq__more { margin-top: 18px; }
+
+  /* Bewertungen */
+  .reviews-bar { margin-bottom: 18px; }
+
+  /* Blog */
+  .post--lead .post__img { aspect-ratio: 16 / 9; }
+  .post--lead h3 { font-size: 20px; }
+  .post p { font-size: 15px; }
+  .post:not(.post--lead) { grid-template-columns: 92px minmax(0, 1fr); padding-bottom: 14px; }
+  .post:not(.post--lead) .post__img { aspect-ratio: 1; }
+  .post h3 { font-size: 16px; }
+
+  /* Newsletter & Footer */
+  .cta { padding: 44px 0; }
+  .cta h2 { font-size: 26px; }
+  .cta__inner { gap: 20px; }
+  .footer__grid { gap: 26px 16px; padding: 28px 0; }
+  .footer h4 { margin-bottom: 10px; }
+  .footer__grid > div:not(.footer__brand) { gap: 7px; font-size: 14px; }
+  .footer__pay { gap: 16px; padding: 18px 0; }
+}
+[dir="rtl"] .banner { text-align: right; }
+@media (max-width: 640px) {
+  [dir="rtl"] .banner { padding: 16px 66px 16px 60px; }
+  [dir="rtl"] .banner__icon { left: auto; right: 18px; }
+  [dir="rtl"] .banner__go { right: auto; left: 16px; }
+}
+
 /* Preise behalten ihre Zeichenfolge auch in arabischem Text */
 .price, .plan__price, .gpick strong, .plan-buy span, .lang__sym { unicode-bidi: isolate; }
 
