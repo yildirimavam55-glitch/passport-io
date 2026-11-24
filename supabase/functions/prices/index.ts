@@ -65,15 +65,22 @@ const round = (n: unknown) => Math.round(Number(n) * 100) / 100;
    Einkaufspreise werden in EUR umgerechnet (EZB-Kurs). Ohne Kurs fällt der Tarif weg – nie geschätzt.
    Jeder Katalog hat einen eigenen Zwischenspeicher: eSIM Access 1 h, eSIM Go 6 h (eSIM Go bittet um
    seltene Katalogabfragen). Fällt ein Anbieter aus, bleibt sein letzter gültiger Stand stehen. */
+// Zustand je Anbieter (nur Fehlercode/-text des Anbieters, nie Schlüssel) – hilft bei falschem Schlüssel o. Ä.
+const providerState: Record<string, string> = {};
+const countPlans = (c: Catalog | null) => c ? Object.values(c.countries).reduce((n, x) => n + x.plans.length, 0) + Object.values(c.regions).reduce((n, x) => n + x.plans.length, 0) + c.global.plans.length : 0;
 async function cachedCatalog(id: string, ttl: number, load: () => Promise<Catalog | null>): Promise<Catalog | null> {
+  const name = id.replace("cat:", "");
   const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", id).maybeSingle();
-  if (row && (Date.now() - new Date(row.updated_at).getTime()) / 1000 < ttl) return row.body;
+  if (row && countPlans(row.body) > 0 && (Date.now() - new Date(row.updated_at).getTime()) / 1000 < ttl) { providerState[name] = `ok (${countPlans(row.body)} Tarife, Zwischenspeicher)`; return row.body; }
   try {
     const cat = await load();
-    if (cat) await db.from("price_cache").upsert({ id, body: cat, updated_at: new Date().toISOString() });
+    if (!cat) { providerState[name] = "nicht eingerichtet"; return null; }
+    providerState[name] = `ok (${countPlans(cat)} Tarife)`;
+    if (countPlans(cat) > 0) await db.from("price_cache").upsert({ id, body: cat, updated_at: new Date().toISOString() });
     return cat;
   } catch (err) {
     console.error(err);
+    providerState[name] = "Fehler: " + String((err as Error).message).replace(/[A-Za-z0-9_-]{24,}/g, "…").slice(0, 200);
     return row?.body ?? null;
   }
 }
@@ -103,7 +110,7 @@ async function fetchAll(previous: Record<string, unknown> | null) {
   const results = await Promise.allSettled([esim(), fromPrice("LOUNGE"), fromPrice("FASTTRACK"), fromPrice("VIGNETTE")]);
   results.forEach((r) => r.status === "rejected" && console.error(r.reason));
   const keys = ["esim", "lounge", "fasttrack", "vignette"] as const;
-  const body: Record<string, unknown> = { source: "live", currency: "EUR", updatedAt: new Date().toISOString() };
+  const body: Record<string, unknown> = { source: "live", currency: "EUR", updatedAt: new Date().toISOString(), providers: { ...providerState } };
   keys.forEach((k, i) => {
     const r = results[i];
     // Anbieter ok → neuer Wert; Anbieter weg → letzter gültiger Stand; nie etwas Erfundenes
@@ -156,7 +163,9 @@ Deno.serve(async (req) => {
     const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", "current").maybeSingle();
     body = row?.body ?? null;
     const age = row ? (Date.now() - new Date(row.updated_at).getTime()) / 1000 : Infinity;
-    if (!body || age > CACHE_SECONDS) {
+    // Leerer Katalog (z. B. Schlüssel falsch) → nach 60 s erneut versuchen statt 15 min warten
+    const empty = !Object.keys(body?.esim?.countries ?? {}).length;
+    if (!body || age > CACHE_SECONDS || (empty && age > 60)) {
       try {
         body = await fetchAll(body);
         await db.from("price_cache").upsert({ id: "current", body, updated_at: new Date().toISOString() });
