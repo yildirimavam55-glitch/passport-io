@@ -226,10 +226,12 @@
           <p class="kicker">${esc(c.kicker)}</p>
           <h1 class="hero__title">${fill(c.title)}<span>${fill(c.subtitle)}</span></h1>
           ${searchForm("search--hero", c.searchPlaceholder, c.searchButton)}
-          <ul class="hero__facts">
-            ${(c.facts || []).map((f) => `<li>${f.icon === "trustpilot" ? `<span class="tp-mini">${icon("star")}</span>` : icon(f.icon || "check")}${fill(f.text)}</li>`).join("")}
-          </ul>
-          ${(c.payments || []).length ? `<div class="hero__pay"><span>${esc(c.paymentsLabel || "")}</span>${c.payments.map(payLogo).join("")}</div>` : ""}
+          <div class="hero__meta">
+            <ul class="hero__facts">
+              ${(c.facts || []).map((f) => `<li>${f.icon === "trustpilot" ? `<span class="tp-mini">${icon("star")}</span>` : icon(f.icon || "check")}${fill(f.text)}</li>`).join("")}
+            </ul>
+            ${(c.payments || []).length ? `<div class="hero__pay" role="group" aria-label="${esc(c.paymentsLabel || "")}">${c.payments.map(payLogo).join("")}</div>` : ""}
+          </div>
         </div>
         <div class="strip">
           <div class="container strip__inner">
