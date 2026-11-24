@@ -95,7 +95,8 @@
     "assistantFallbackName": "Asistan",
     "currency": "Para birimi",
     "themeDark": "Koyu moda geç",
-    "themeLight": "Açık moda geç"
+    "themeLight": "Açık moda geç",
+    "popularAsk": "Merak edilenler – dokun, Lina yanıtlasın"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -193,7 +194,8 @@
     "assistantFallbackName": "Assistant",
     "currency": "Currency",
     "themeDark": "Switch to dark mode",
-    "themeLight": "Switch to light mode"
+    "themeLight": "Switch to light mode",
+    "popularAsk": "Popular questions – tap and Lina answers"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -291,7 +293,8 @@
     "assistantFallbackName": "Assistent",
     "currency": "Währung",
     "themeDark": "Dunkelmodus einschalten",
-    "themeLight": "Hellmodus einschalten"
+    "themeLight": "Hellmodus einschalten",
+    "popularAsk": "Häufige Fragen – antippen, Lina antwortet"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -389,7 +392,8 @@
     "deviceNone": "«{q}» غير موجود في قائمتنا. هذا لا يعني أنه لا يعمل – جرّب اختبار <b>*#06#</b> أدناه أو اسأل مساعدتنا.",
     "assistantFallbackName": "المساعدة",
     "themeDark": "التبديل إلى الوضع الداكن",
-    "themeLight": "التبديل إلى الوضع الفاتح"
+    "themeLight": "التبديل إلى الوضع الفاتح",
+    "popularAsk": "أسئلة شائعة – اضغط وستجيبك لينا"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -487,7 +491,8 @@
     "deviceNone": "«{q}» нет в нашем списке. Это не значит, что eSIM не работает – выполните проверку <b>*#06#</b> ниже или спросите нашего ассистента.",
     "assistantFallbackName": "Ассистент",
     "themeDark": "Включить тёмную тему",
-    "themeLight": "Включить светлую тему"
+    "themeLight": "Включить светлую тему",
+    "popularAsk": "Частые вопросы – нажмите, и Лина ответит"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -585,7 +590,8 @@
     "deviceNone": "« {q} » ne figure pas dans notre liste. Cela ne veut pas dire qu'il n'est pas compatible – faites le test <b>*#06#</b> ci-dessous ou demandez à notre assistante.",
     "assistantFallbackName": "Assistante",
     "themeDark": "Passer en mode sombre",
-    "themeLight": "Passer en mode clair"
+    "themeLight": "Passer en mode clair",
+    "popularAsk": "Questions fréquentes – touchez, Lina répond"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -683,6 +689,7 @@
     "deviceNone": "«{q}» no está en nuestra lista. Eso no significa que no funcione – haz la prueba <b>*#06#</b> de abajo o pregunta a nuestra asistente.",
     "assistantFallbackName": "Asistente",
     "themeDark": "Cambiar a modo oscuro",
-    "themeLight": "Cambiar a modo claro"
+    "themeLight": "Cambiar a modo claro",
+    "popularAsk": "Preguntas frecuentes: toca y Lina responde"
   }
 }

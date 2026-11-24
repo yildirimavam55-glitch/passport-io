@@ -571,6 +571,27 @@
 
   /* ---------- DIGITALER ASSISTENT + FAQ ---------- */
   const PERSONA = AI.persona || { name: t("assistantFallbackName"), role: "", image: "", intro: "", badge: "" };
+  // Laufende Fragenleiste unter Lina: zuerst die Hilfe-Themen (Geräte-Check, Anleitung, Paketberatung),
+  // dann Schnellfragen und die meistgefragten FAQ. Zwei Reihen laufen gegeneinander; Antippen = Lina antwortet.
+  function questionBand() {
+    const seen = new Set(), items = [];
+    const push = (text, attr, ic) => { const k = String(text || "").trim().toLocaleLowerCase(LOCALE); if (!k || seen.has(k)) return; seen.add(k); items.push({ text, attr, ic }); };
+    (AI.banners || []).forEach((b) => push(b.title, `data-action="${esc(b.action)}"`, b.icon || "chat"));
+    (AI.suggestions || []).forEach((s) => push(s, `data-suggest="${esc(s)}"`, "chat"));
+    const linked = new Set((AI.banners || []).map((b) => b.action)); // FAQ, die schon ein Hilfe-Thema öffnet, nicht doppelt zeigen
+    [...(AI.faqs || [])].filter((f) => !linked.has(f.id)).sort((a, b) => (b.views || 0) - (a.views || 0)).slice(0, 10).forEach((f) => push(f.question, `data-faq="${esc(f.id)}"`, "chat"));
+    if (!items.length) return "";
+    const rows = [items.filter((_, i) => i % 2 === 0), items.filter((_, i) => i % 2 === 1)].filter((r) => r.length);
+    const chip = (it, dup) => `<button type="button" class="qchip" ${it.attr}${dup ? ' tabindex="-1" aria-hidden="true"' : ""}>${icon(it.ic)}<span>${esc(it.text)}</span></button>`;
+    return `
+      <div class="qband">
+        <p class="qband__title"><span class="dot"></span> ${esc(t("popularAsk"))}</p>
+        ${rows.map((r, i) => `
+          <div class="qband__row${i ? " qband__row--rev" : ""}">
+            <div class="qband__track" style="--qdur:${Math.max(28, r.length * 7)}s">${r.map((it) => chip(it)).join("")}${r.map((it) => chip(it, true)).join("")}</div>
+          </div>`).join("")}
+      </div>`;
+  }
   sections.assistant = {
     render: (c = SITE.assistant) => `
       <section class="section section--paper" id="assistant">
@@ -578,15 +599,6 @@
           <div class="head-split">
             <div><p class="kicker kicker--dark">${esc(c.kicker)}</p><h2 class="h2">${esc(c.title)}</h2></div>
             <p class="head-split__note">${esc(c.note)}</p>
-          </div>
-          <div class="banners">
-            ${(AI.banners || []).map((b, i) => `
-              <button class="banner banner--${i + 1}" type="button" data-action="${esc(b.action)}">
-                <span class="banner__icon">${icon(b.icon || "chat")}</span>
-                <span class="banner__go">${icon("arrow")}</span>
-                <h3>${esc(b.title)}</h3>
-                <p>${esc(b.text)}</p>
-              </button>`).join("")}
           </div>
           <div class="helpdesk">
           <aside class="persona">
@@ -605,13 +617,13 @@
               <div><b>${esc(PERSONA.name)}</b><small><span class="dot"></span> ${esc(PERSONA.badge)}</small></div>
             </div>
             <div class="assistant__log" id="assistant-log" aria-live="polite"></div>
-            <div class="assistant__chips">${(AI.suggestions || []).map((s) => `<button type="button" data-suggest>${esc(s)}</button>`).join("")}</div>
             <form class="assistant__form" id="assistant-form" autocomplete="off">
               <input type="text" id="assistant-input" placeholder="${esc(t("askPlaceholder"))}" aria-label="${esc(t("askLabel"))}" />
               <button type="submit" class="assistant__send" aria-label="${esc(t("send"))}">${icon("send")}</button>
             </form>
           </div>
           </div>
+          ${questionBand()}
           <div class="faq" id="faq">
             <div class="faq__side">
               <h3 class="h3">${esc(c.faqTitle)}</h3>
@@ -883,7 +895,7 @@
     }), { rootMargin: "0px 0px -8% 0px" });
     const mark = (sel, cls = "reveal") => $$(sel).forEach((n) => { n.classList.add(cls); io.observe(n); });
     $$(".blog > .post").forEach((n, i) => n.style.setProperty("--d", `${Math.min(i, 4) * 0.08}s`));
-    mark(".hero__content > *, .strip, #page .head-split, .how2__head, .rail, .wmap, .airport-search, .reviews-bar, .marquee, .banners, .helpdesk, .faq__side, .faq__list, .blog > .post, .cta__inner, .footer__grid");
+    mark(".hero__content > *, .strip, #page .head-split, .how2__head, .rail, .wmap, .airport-search, .reviews-bar, .marquee, .qband, .helpdesk, .faq__side, .faq__list, .blog > .post, .cta__inner, .footer__grid");
     mark(".how2__track, .airport", "reveal-kids");
   }
 
@@ -1113,9 +1125,12 @@
     const ask = (text, forced) => { add(esc(text), "user"); respond(text, forced); };
 
     el.addEventListener("click", (e) => {
-      const f = e.target.closest("[data-faq]"); if (f) { const it = byId[f.dataset.faq]; ask(it.question, it); return; }
+      // Frage aus der Leiste: Chat in den Blick holen, dann fragen
+      const fromBand = e.target.closest(".qband");
+      if (fromBand && e.target.closest("[data-faq], [data-suggest]")) $(".assistant", el).scrollIntoView({ behavior: "smooth", block: "center" });
+      const f = e.target.closest("[data-faq]"); if (f) { const it = byId[f.dataset.faq]; if (it) setTimeout(() => ask(it.question, it), fromBand ? 350 : 0); return; }
       const p = e.target.closest("[data-plans]"); if (p) { openPlans(ESIM.countries.find((c) => c.code === p.dataset.plans)); return; }
-      const s = e.target.closest("[data-suggest]"); if (s) { ask(s.textContent); return; }
+      const s = e.target.closest("[data-suggest]"); if (s) { const q = s.dataset.suggest || s.textContent.trim(); setTimeout(() => ask(q), fromBand ? 350 : 0); return; }
       const fb = e.target.closest("[data-fb]");
       if (fb) { fb.parentElement.innerHTML = fb.dataset.fb === "yes" ? esc(t("thanksFeedback")) : `${esc(t("pity"))} <button type="button" data-handoff>${esc(t("talkTeam"))}</button>`; return; }
       if (e.target.closest("[data-handoff]")) { add(esc(t("talkTeam")), "user"); setTimeout(contact, 350); return; }

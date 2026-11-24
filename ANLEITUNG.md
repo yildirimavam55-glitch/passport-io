@@ -22,7 +22,7 @@ Dateien in `content/` gespeichert, die Webseite nach dem Neuladen aktualisiert.
 |---------------------------------|-------------------------------------------------------------|
 | Startseite › Startseite & Design | Farben, Menü, Ankündigungsleiste, **Reihenfolge/Sichtbarkeit der Bereiche**, alle Texte und Bilder der Bereiche, Footer |
 | Produkte › eSIM-Länder & Pakete | Länder, Bilder, „Beliebt“-Schalter, regionale Pakete und Weltkarten-Regionen (Preise kommen von der API) |
-| Hilfe-Center › Assistent & FAQ  | Fragen & Antworten, Suchbegriffe, Banner, Schnellfragen, Geräteliste |
+| Hilfe-Center › Assistent & FAQ  | Fragen & Antworten, Suchbegriffe, Schnellfragen, Geräteliste. Die „Banner“ (Geräte-Check, Anleitung, Paketberatung) und Schnellfragen erscheinen zusammen mit den meistgefragten FAQ in der laufenden Fragenleiste unter Lina |
 | Magazin & Bewertungen           | Blog-Teaser, Bewertungen (Demo – später Trustpilot-Widget)  |
 
 ## Assistent füttern
