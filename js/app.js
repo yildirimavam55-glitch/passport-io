@@ -434,28 +434,60 @@
   };
 
   /* ---------- WAS IST EINE eSIM ---------- */
+  // Kleine Handy-Bildschirme für die drei Schritte (Pakete und Preise kommen aus der Schnittstelle)
+  function stepScreen(i, s, c) {
+    if (i === 0) {
+      const d = popular()[0];
+      const plans = d ? plansOf("country:" + d.code).slice(0, 4) : [];
+      return phoneScreen({ title: d ? d.name : s.title, type: "plans", items: plans });
+    }
+    if (i === 1) return phoneScreen({ type: "qr", caption: s.title });
+    return phoneScreen({ type: "done", title: s.title, caption: c.imageCaption || "" });
+  }
   sections.howto = {
     render: (c = SITE.howto) => `
       <section class="section" id="howto">
-        <div class="container how">
-          <figure class="how__media">
-            <img src="${img(c.image, 1100)}" alt="" loading="lazy" />
-            ${c.imageCaption ? `<figcaption><span class="dot"></span> ${esc(c.imageCaption)}</figcaption>` : ""}
-          </figure>
-          <div class="how__body">
+        <div class="container">
+          <div class="how2__head">
             <p class="kicker kicker--dark">${esc(c.kicker)}</p>
             <h2 class="h2">${esc(c.title)}</h2>
             <p class="lead">${esc(c.text)}</p>
-            <ol class="how__steps">
-              ${(c.steps || []).map((s, i) => `<li><span class="how__n">${String(i + 1).padStart(2, "0")}</span><div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div></li>`).join("")}
-            </ol>
-            <div class="how__actions">
-              <button class="btn btn--dark" type="button" data-open-device-check>${icon("phone")} ${esc(c.button)}</button>
-              ${c.guideLink ? `<a class="link-arrow" href="install.html">${esc(c.guideLink)} ${icon("arrow")}</a>` : ""}
-            </div>
+          </div>
+          <ol class="how2__track" data-steps>
+            ${(c.steps || []).map((s, i) => `
+              <li class="how2__card">
+                <div class="how2__visual">${stepScreen(i, s, c)}</div>
+                <div class="how2__body">
+                  <span class="how2__n">${String(i + 1).padStart(2, "0")}<i>/${String((c.steps || []).length).padStart(2, "0")}</i></span>
+                  <h3>${esc(s.title)}</h3>
+                  <p>${esc(s.text)}</p>
+                </div>
+              </li>`).join("")}
+          </ol>
+          <div class="how2__dots" aria-hidden="true">${(c.steps || []).map((_, i) => `<button type="button" tabindex="-1" class="${i ? "" : "is-active"}" data-dot="${i}"></button>`).join("")}</div>
+          <div class="how__actions how2__actions">
+            <button class="btn btn--dark" type="button" data-open-device-check>${icon("phone")} ${esc(c.button)}</button>
+            ${c.guideLink ? `<a class="link-arrow" href="install.html">${esc(c.guideLink)} ${icon("arrow")}</a>` : ""}
           </div>
         </div>
       </section>`,
+    init(el) {
+      // Wischkarten: Punkte zeigen, welcher Schritt gerade sichtbar ist
+      const track = $("[data-steps]", el), dots = $$("[data-dot]", el);
+      if (!track || !dots.length) return;
+      const cards = [...track.children];
+      const sync = () => {
+        const mid = track.getBoundingClientRect().left + track.clientWidth / 2;
+        let best = 0, dist = Infinity;
+        cards.forEach((k, i) => { const r = k.getBoundingClientRect(); const d = Math.abs(r.left + r.width / 2 - mid); if (d < dist) { dist = d; best = i; } });
+        dots.forEach((d, i) => d.classList.toggle("is-active", i === best));
+      };
+      track.addEventListener("scroll", () => requestAnimationFrame(sync), { passive: true });
+      dots.forEach((d, i) => d.addEventListener("click", () => {
+        const r = cards[i].getBoundingClientRect(), tr = track.getBoundingClientRect();
+        track.scrollBy({ left: r.left + r.width / 2 - (tr.left + tr.width / 2), behavior: "smooth" });
+      }));
+    },
   };
 
   /* ---------- LOUNGE & FAST TRACK ---------- */
@@ -642,6 +674,12 @@
     let body = "";
     if (s.type === "qr") {
       body = `<div class="pscan"><div class="pscan__frame">${icon("qr")}<span class="pscan__line"></span></div><p>${esc(s.caption || "")}</p></div>`;
+    } else if (s.type === "plans") {
+      body = `<div class="plist">${(s.items || []).map((p) => `
+        <div class="prow ${p.popular ? "is-tap" : ""}">
+          <span class="prow__label"><b>${esc(p.gb)} GB</b><small>${esc(t("days", { n: p.days }))}</small></span>
+          <span class="prow__value price">${eur(p.price)}</span>
+        </div>`).join("")}</div>`;
     } else if (s.type === "done") {
       body = `<div class="pdone"><span class="pdone__icon">${icon("check")}</span><b>${esc(s.title)}</b><p>${icon("wifi")} ${esc(s.caption || "")}</p></div>`;
     } else {
@@ -814,6 +852,19 @@
     : (SITE.sections || []).filter((s) => s.enabled !== false && sections[s.type]);
   page.innerHTML = active.map((s) => sections[s.type].render()).join("");
   active.forEach((s, i) => sections[s.type].init?.(page.children[i]));
+
+  // Inhalte beim Scrollen sanft einblenden (wie bei Apple/Samsung); bei „Bewegung reduzieren“ aus
+  if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.documentElement.classList.add("has-reveal");
+    const io = new IntersectionObserver((list) => list.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+    }), { rootMargin: "0px 0px -8% 0px" });
+    const mark = (sel, cls = "reveal") => $$(sel).forEach((n) => { n.classList.add(cls); io.observe(n); });
+    $$(".hero__content > *").forEach((n, i) => n.style.setProperty("--d", `${0.1 + i * 0.1}s`));
+    $$(".blog > .post").forEach((n, i) => n.style.setProperty("--d", `${Math.min(i, 4) * 0.08}s`));
+    mark(".hero__content > *, .strip, #page .head-split, .how2__head, .rail, .wmap, .airport-search, .reviews-bar, .marquee, .banners, .helpdesk, .faq__side, .faq__list, .blog > .post, .cta__inner, .footer__grid");
+    mark(".how2__track, .airport", "reveal-kids");
+  }
 
   // Navigation liegt transparent über dem Hero, wenn er an erster Stelle steht
   const nav = $("#nav");

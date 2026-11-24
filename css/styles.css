@@ -964,6 +964,63 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
   .preview-bar { font-size: 11px; padding: 5px 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 }
 
+/* ---------- eSIM in 3 Schritten: Karten mit Handy-Bild ---------- */
+.how2__head { max-width: 660px; margin-bottom: 40px; }
+.how2__head .lead { margin-top: 14px; }
+.how2__track { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.how2__card { display: flex; flex-direction: column; background: var(--paper); border-radius: 26px; overflow: hidden; min-width: 0; }
+.how2__visual { position: relative; height: 300px; overflow: hidden; display: flex; justify-content: center; padding-top: 34px; background: radial-gradient(110% 80% at 50% 0%, rgba(46,245,138,.24), transparent 62%); }
+.how2__card:nth-child(2) .how2__visual { background: radial-gradient(110% 80% at 50% 0%, rgba(10,13,12,.14), transparent 62%); }
+.how2__visual .pmock { flex: none; width: 220px; max-width: none; margin: 0; transition: transform .8s var(--ease); box-shadow: 0 0 0 1px #2a2a2a, 0 18px 40px -18px rgba(0,0,0,.35); }
+.how2__card:hover .pmock { transform: translateY(-10px); }
+.how2__visual .plist .prow { padding: 12px; }
+.how2__visual .prow__label b { font-weight: 600; }
+.how2__visual .prow__value { color: #000; font-weight: 600; }
+.how2__body { padding: 22px 26px 28px; }
+.how2__n { font-size: 13px; font-weight: 700; letter-spacing: .08em; color: var(--green-ink); font-variant-numeric: tabular-nums; }
+.how2__n i { font-style: normal; font-weight: 500; color: var(--ink-3); }
+.how2__body h3 { font-size: 22px; letter-spacing: -.02em; margin: 8px 0 6px; }
+.how2__body p { color: var(--ink-2); font-size: 16px; }
+.how2__dots { display: none; }
+.how2__actions { margin-top: 32px; }
+@media (max-width: 1024px) {
+  .how2__track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); scroll-padding: 0 var(--gutter); }
+  .how2__track::-webkit-scrollbar { display: none; }
+  .how2__card { flex: 0 0 min(82%, 360px); scroll-snap-align: center; }
+  .how2__dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+  .how2__dots button { width: 8px; height: 8px; border-radius: 999px; background: var(--line); transition: width .35s var(--ease), background .35s; }
+  .how2__dots button.is-active { width: 24px; background: var(--green-ink); }
+}
+@media (max-width: 640px) {
+  .how2__head { margin-bottom: 24px; }
+  .how2__visual { height: 250px; padding-top: 26px; }
+  .how2__visual .pmock { width: 196px; }
+  .how2__body { padding: 18px 20px 22px; }
+  .how2__body h3 { font-size: 20px; }
+  .how2__body p { font-size: 15px; }
+  .how2__actions { margin-top: 24px; }
+}
+
+/* ---------- Sanftes Einblenden beim Scrollen (nur mit JavaScript, nicht bei „Bewegung reduzieren“) ---------- */
+.has-reveal .reveal { opacity: 0; transform: translate3d(0, 34px, 0); transition: opacity 1s var(--ease) var(--d, 0s), transform 1.2s cubic-bezier(.16, 1, .3, 1) var(--d, 0s); }
+.has-reveal .reveal.is-in { opacity: 1; transform: none; }
+.has-reveal .reveal-kids > * { opacity: 0; transform: translate3d(0, 44px, 0); transition: opacity 1s var(--ease), transform 1.2s cubic-bezier(.16, 1, .3, 1); }
+.has-reveal .reveal-kids.is-in > * { opacity: 1; transform: none; }
+.has-reveal .reveal-kids.is-in > :nth-child(2) { transition-delay: .12s; }
+.has-reveal .reveal-kids.is-in > :nth-child(3) { transition-delay: .24s; }
+.has-reveal .reveal-kids.is-in > :nth-child(4) { transition-delay: .36s; }
+.has-reveal .reveal-kids.is-in > :nth-child(n+5) { transition-delay: .48s; }
+.hero__img { animation: heroIn 2.4s cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes heroIn { from { transform: scale(1.08); opacity: .4; } }
+
+/* ---------- Weichere Übergänge zwischen dunklen und hellen Bereichen ---------- */
+:root { --soft: clamp(22px, 3vw, 40px); }
+.hero { border-radius: 0 0 var(--soft) var(--soft); }
+.hero__img, .hero__shade { border-radius: 0 0 var(--soft) var(--soft); }
+.strip { border-radius: 0 0 var(--soft) var(--soft); }
+#airport.section--dark { margin-inline: clamp(8px, 1.2vw, 16px); border-radius: var(--soft); overflow: hidden; }
+.cta { border-radius: var(--soft) var(--soft) 0 0; }
+
 /* Preise behalten ihre Zeichenfolge auch in arabischem Text */
 .price, .plan__price, .gpick strong, .plan-buy span { unicode-bidi: isolate; }
 
