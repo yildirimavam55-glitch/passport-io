@@ -605,6 +605,8 @@ collections:
           - { label: "reviewsLabel", name: reviewsLabel, widget: string, i18n: true }
           - { label: "helloIam", name: helloIam, widget: string, i18n: true }
           - { label: "talkHuman", name: talkHuman, widget: string, i18n: true }
+          - { label: "themeDark", name: themeDark, widget: string, i18n: true }
+          - { label: "themeLight", name: themeLight, widget: string, i18n: true }
           - { label: "askPlaceholder", name: askPlaceholder, widget: string, i18n: true }
           - { label: "askLabel", name: askLabel, widget: string, i18n: true }
           - { label: "send", name: send, widget: string, i18n: true }

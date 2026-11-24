@@ -813,6 +813,10 @@
         ${(SITE.nav || []).map((n) => `<a href="${esc(href(n.url))}">${esc(n.label)}${n.badge ? ` <small>${esc(n.badge)}</small>` : ""}</a>`).join("")}
       </nav>
       <div class="nav__actions">
+        <button class="theme-btn" type="button" data-theme-toggle aria-label="${esc(t(document.documentElement.dataset.theme === "dark" ? "themeLight" : "themeDark"))}">
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20.4 14.6A8.5 8.5 0 0 1 9.4 3.6a8.5 8.5 0 1 0 11 11Z"/></svg>
+        </button>
         <div class="lang">
           <button class="nav__locale" type="button" aria-haspopup="true" aria-expanded="false" aria-label="${esc(t("language"))} / ${esc(t("currency"))}">${langFlag(LANG_META)}<span>${esc(LANG.toUpperCase())}</span><b class="coin coin--sm">${esc(coin(SHOWN_CUR))}</b></button>
           <div class="lang__menu" hidden>
@@ -830,6 +834,20 @@
         <button class="nav__burger" type="button" aria-label="${esc(t("menuOpen"))}" aria-expanded="false">${icon("menu")}</button>
       </div>
     </div>`;
+  // Hell/Dunkel: Wahl speichern; ohne Wahl folgt die Seite der Systemeinstellung
+  const root = document.documentElement, themeBtn = $("[data-theme-toggle]");
+  const setTheme = (mode, save) => {
+    root.classList.add("theme-anim");
+    root.dataset.theme = mode;
+    if (save) { try { localStorage.setItem("pp_theme", mode); } catch (_) {} }
+    themeBtn?.setAttribute("aria-label", t(mode === "dark" ? "themeLight" : "themeDark"));
+    setTimeout(() => root.classList.remove("theme-anim"), 500);
+  };
+  themeBtn?.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark", true));
+  matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", (e) => {
+    let saved = null; try { saved = localStorage.getItem("pp_theme"); } catch (_) {}
+    if (!saved) setTheme(e.matches ? "dark" : "light", false);
+  });
   // Sprachumschalter
   const langBox = $(".lang"), langBtn = $(".nav__locale"), langMenu = $(".lang__menu");
   const setLangMenu = (open) => {

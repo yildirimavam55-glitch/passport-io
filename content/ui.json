@@ -93,7 +93,9 @@
     "deviceOk": "<b>{d}</b> eSIM uyumlu",
     "deviceNone": "„{q}“ listemizde yok. Bu, çalışmadığı anlamına gelmez – aşağıdaki <b>*#06#</b> testini yapın veya asistanımıza sorun.",
     "assistantFallbackName": "Asistan",
-    "currency": "Para birimi"
+    "currency": "Para birimi",
+    "themeDark": "Koyu moda geç",
+    "themeLight": "Açık moda geç"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -189,7 +191,9 @@
     "deviceOk": "<b>{d}</b> supports eSIM",
     "deviceNone": "“{q}” isn't on our list. That doesn't mean it won't work – try the <b>*#06#</b> test below or ask our assistant.",
     "assistantFallbackName": "Assistant",
-    "currency": "Currency"
+    "currency": "Currency",
+    "themeDark": "Switch to dark mode",
+    "themeLight": "Switch to light mode"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -285,7 +289,9 @@
     "deviceOk": "<b>{d}</b> ist eSIM-fähig",
     "deviceNone": "„{q}“ ist nicht in unserer Liste. Das heißt nicht, dass es nicht geht – mach den <b>*#06#</b>-Test unten oder frag unseren Assistenten.",
     "assistantFallbackName": "Assistent",
-    "currency": "Währung"
+    "currency": "Währung",
+    "themeDark": "Dunkelmodus einschalten",
+    "themeLight": "Hellmodus einschalten"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -381,7 +387,9 @@
     "deviceTip": "<b>اختبار سريع:</b> اطلب <code>*#06#</code>. إذا ظهر رقم <b>EID</b> فجهازك يدعم eSIM. ويجب أيضًا أن يكون غير مقفل على شبكة معيّنة.",
     "deviceOk": "<b>{d}</b> يدعم eSIM",
     "deviceNone": "«{q}» غير موجود في قائمتنا. هذا لا يعني أنه لا يعمل – جرّب اختبار <b>*#06#</b> أدناه أو اسأل مساعدتنا.",
-    "assistantFallbackName": "المساعدة"
+    "assistantFallbackName": "المساعدة",
+    "themeDark": "التبديل إلى الوضع الداكن",
+    "themeLight": "التبديل إلى الوضع الفاتح"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -477,7 +485,9 @@
     "deviceTip": "<b>Быстрая проверка:</b> наберите <code>*#06#</code>. Если отображается <b>EID</b>, устройство поддерживает eSIM. Кроме того, телефон не должен быть привязан к оператору.",
     "deviceOk": "<b>{d}</b> поддерживает eSIM",
     "deviceNone": "«{q}» нет в нашем списке. Это не значит, что eSIM не работает – выполните проверку <b>*#06#</b> ниже или спросите нашего ассистента.",
-    "assistantFallbackName": "Ассистент"
+    "assistantFallbackName": "Ассистент",
+    "themeDark": "Включить тёмную тему",
+    "themeLight": "Включить светлую тему"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -573,7 +583,9 @@
     "deviceTip": "<b>Test rapide :</b> composez <code>*#06#</code>. Si un <b>EID</b> s'affiche, votre appareil est compatible eSIM. Il doit aussi être désimlocké.",
     "deviceOk": "<b>{d}</b> est compatible eSIM",
     "deviceNone": "« {q} » ne figure pas dans notre liste. Cela ne veut pas dire qu'il n'est pas compatible – faites le test <b>*#06#</b> ci-dessous ou demandez à notre assistante.",
-    "assistantFallbackName": "Assistante"
+    "assistantFallbackName": "Assistante",
+    "themeDark": "Passer en mode sombre",
+    "themeLight": "Passer en mode clair"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -669,6 +681,8 @@
     "deviceTip": "<b>Prueba rápida:</b> marca <code>*#06#</code>. Si aparece un <b>EID</b>, tu dispositivo es compatible con eSIM. Además debe estar libre de operador.",
     "deviceOk": "<b>{d}</b> es compatible con eSIM",
     "deviceNone": "«{q}» no está en nuestra lista. Eso no significa que no funcione – haz la prueba <b>*#06#</b> de abajo o pregunta a nuestra asistente.",
-    "assistantFallbackName": "Asistente"
+    "assistantFallbackName": "Asistente",
+    "themeDark": "Cambiar a modo oscuro",
+    "themeLight": "Cambiar a modo claro"
   }
 }

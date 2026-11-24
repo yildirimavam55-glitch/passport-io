@@ -1052,6 +1052,76 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 #airport.section--dark { margin-inline: clamp(8px, 1.2vw, 16px); border-radius: var(--soft); overflow: clip; }
 .cta { border-radius: var(--soft) var(--soft) 0 0; }
 
+/* ==========================================================================
+   Dunkler Modus (data-theme="dark" auf <html>; Wahl wird gespeichert, sonst Systemeinstellung)
+   ========================================================================== */
+:root { --surface: #ffffff; }
+[data-theme="dark"] {
+  color-scheme: dark;
+  --white: #0b0f0d;
+  --paper: #121715;
+  --surface: #171d1a;
+  --ink: #eef2ef;
+  --ink-2: #b8c0bb;
+  --ink-3: #87908b;
+  --line: #27302c;
+  --green-ink: #2ef58a;
+}
+/* Flächen, die im hellen Modus weiß sind */
+[data-theme="dark"] :is(.btn--line, .icon-btn, .lang__menu, .search, .search__results, .rtab, .banner, .assistant, .modal__panel, .wmap__side, .wtab) { background: var(--surface); }
+[data-theme="dark"] .marquee .review,
+[data-theme="dark"] .msg__related button,
+[data-theme="dark"] .msg__feedback button,
+[data-theme="dark"] .assistant__chips button,
+[data-theme="dark"] .assistant__form input,
+[data-theme="dark"] .faq__filters button,
+[data-theme="dark"] .gpicks--light .gpick:hover { background: var(--surface); }
+[data-theme="dark"] .banner--1 { background: var(--green); }
+[data-theme="dark"] .banner--2 { background: #050706; border-color: var(--line); }
+[data-theme="dark"] .modal__tip code { background: var(--line); }
+[data-theme="dark"] .search--hero { border-color: rgba(255,255,255,.14); background: rgba(23,29,26,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+[data-theme="dark"] .search__input::placeholder { color: #7d8681; }
+/* Dunkle Elemente kehren sich um, damit sie sichtbar bleiben */
+[data-theme="dark"] :is(.btn--dark, .faq__filters button.is-active, .wtab.is-active) { background: var(--ink); border-color: var(--ink); color: #0a0d0c; }
+[data-theme="dark"] .btn--dark:hover { background: #fff; }
+[data-theme="dark"] :is(.rtab.is-active, .plan.is-active, .gpicks--light .gpick--featured, .btn--line:hover, .icon-btn:hover) { border-color: var(--ink); }
+[data-theme="dark"] .msg--user { background: var(--green); color: #0a0d0c; }
+/* Dunkle Bereiche heben sich leicht von der Seite ab */
+[data-theme="dark"] #airport.section--dark { background: #111714; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); }
+[data-theme="dark"] :is(.cta, .footer) { background: #060807; }
+[data-theme="dark"] .cta { box-shadow: inset 0 1px 0 rgba(255,255,255,.06); }
+[data-theme="dark"] :is(.persona, .wmap__map, .guide-help) { box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); }
+/* Sprachmenü */
+[data-theme="dark"] .lang__menu { box-shadow: 0 24px 60px rgba(0,0,0,.6), 0 0 0 1px var(--line); }
+[data-theme="dark"] :is(.lang__title, .lang__menu small) { color: var(--ink-3); }
+[data-theme="dark"] .lang__menu .coin { background: #0a0d0c; }
+[data-theme="dark"] .tp-stars span.is-empty { background: #3a423e; }
+[data-theme="dark"] .tp-part { background: linear-gradient(90deg, var(--tp) 80%, #3a423e 80%) !important; }
+[data-theme="dark"] .how2__card:nth-child(2) .how2__visual { background: radial-gradient(110% 80% at 50% 0%, rgba(255,255,255,.08), transparent 62%); }
+[data-theme="dark"] .marquee .review, [data-theme="dark"] .how2__card { box-shadow: inset 0 0 0 1px rgba(255,255,255,.04); }
+
+/* Umschalter Hell/Dunkel in der Navigation */
+.theme-btn { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: rgba(255,255,255,.78); border: 1.5px solid rgba(255,255,255,.18); transition: color .2s, border-color .2s, transform .5s var(--ease); }
+.theme-btn:hover { color: #fff; border-color: rgba(255,255,255,.5); }
+.theme-btn svg { width: 18px; height: 18px; }
+.theme-btn .i-moon { display: none; }
+[data-theme="dark"] .theme-btn .i-sun { display: none; }
+[data-theme="dark"] .theme-btn .i-moon { display: block; color: var(--green); }
+html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after { transition: background-color .45s ease, border-color .45s ease, color .45s ease !important; }
+@media (max-width: 1024px) { .nav__actions { margin-inline-start: auto; } }
+@media (max-width: 640px) {
+  .nav__inner { gap: 10px; }
+  .nav__actions { gap: 10px; }
+  .theme-btn { width: 34px; height: 34px; }
+}
+@media (max-width: 360px) {
+  .logo { font-size: 17px; gap: 6px; }
+  .logo__mark { width: 22px; height: 22px; }
+  .nav__actions { gap: 4px; }
+  .theme-btn { width: 32px; height: 32px; }
+  .nav__burger { width: 32px; }
+}
+
 /* Preise behalten ihre Zeichenfolge auch in arabischem Text */
 .price, .plan__price, .gpick strong, .plan-buy span { unicode-bidi: isolate; }
 
