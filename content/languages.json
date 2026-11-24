@@ -1,21 +1,21 @@
 {
-  "_hinweis": "Neue Sprache: hier eintragen, in admin/config.yml unter i18n.locales ergänzen und im Admin übersetzen. Fehlende Texte kommen automatisch aus der Standardsprache. Währungen: nur solche, die die Preisfunktion umrechnen kann (Secret CURRENCIES in Supabase).",
+  "_hinweis": "Neue Sprache: hier eintragen (flag = Ländercode für die Flagge), in admin/config.yml unter i18n.locales ergänzen und im Admin übersetzen. Fehlende Texte kommen automatisch aus der Standardsprache. Währungen: nur solche, die die Preisfunktion umrechnen kann (Secret CURRENCIES in Supabase).",
   "default": "tr",
   "languages": [
-    { "code": "tr", "name": "Türkçe", "locale": "tr-TR", "dir": "ltr", "currency": "TRY" },
-    { "code": "en", "name": "English", "locale": "en-GB", "dir": "ltr", "currency": "USD" },
-    { "code": "de", "name": "Deutsch", "locale": "de-DE", "dir": "ltr", "currency": "EUR" },
-    { "code": "ar", "name": "العربية", "locale": "ar-u-nu-latn", "dir": "rtl", "currency": "USD", "font": "IBM Plex Sans Arabic" },
-    { "code": "ru", "name": "Русский", "locale": "ru-RU", "dir": "ltr", "currency": "USD" },
-    { "code": "fr", "name": "Français", "locale": "fr-FR", "dir": "ltr", "currency": "EUR" },
-    { "code": "es", "name": "Español", "locale": "es-ES", "dir": "ltr", "currency": "EUR" }
+    { "code": "tr", "flag": "tr", "name": "Türkçe", "locale": "tr-TR", "dir": "ltr", "currency": "TRY" },
+    { "code": "en", "flag": "gb", "name": "English", "locale": "en-GB", "dir": "ltr", "currency": "USD" },
+    { "code": "de", "flag": "de", "name": "Deutsch", "locale": "de-DE", "dir": "ltr", "currency": "EUR" },
+    { "code": "ar", "flag": "sa", "name": "العربية", "locale": "ar-u-nu-latn", "dir": "rtl", "currency": "USD", "font": "IBM Plex Sans Arabic" },
+    { "code": "ru", "flag": "ru", "name": "Русский", "locale": "ru-RU", "dir": "ltr", "currency": "USD" },
+    { "code": "fr", "flag": "fr", "name": "Français", "locale": "fr-FR", "dir": "ltr", "currency": "EUR" },
+    { "code": "es", "flag": "es", "name": "Español", "locale": "es-ES", "dir": "ltr", "currency": "EUR" }
   ],
   "currencies": [
     { "code": "TRY", "name": "Türk lirası" },
     { "code": "EUR", "name": "Euro" },
     { "code": "USD", "name": "US Dollar" },
     { "code": "GBP", "name": "British Pound" },
-    { "code": "CHF", "name": "Schweizer Franken" }
+    { "code": "CHF", "name": "Schweizer Franken", "icon": "Fr" }
   ],
   "regionCurrency": { "TR": "TRY", "GB": "GBP", "US": "USD", "CH": "CHF", "LI": "CHF", "DE": "EUR", "AT": "EUR", "FR": "EUR", "ES": "EUR", "IT": "EUR", "NL": "EUR", "BE": "EUR", "PT": "EUR", "IE": "EUR", "FI": "EUR", "GR": "EUR", "LU": "EUR", "SK": "EUR", "SI": "EUR", "EE": "EUR", "LV": "EUR", "LT": "EUR", "HR": "EUR", "CY": "EUR", "MT": "EUR" }
 }

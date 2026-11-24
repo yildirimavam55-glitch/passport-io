@@ -230,7 +230,6 @@
             <ul class="hero__facts">
               ${(c.facts || []).map((f) => `<li>${f.icon === "trustpilot" ? `<span class="tp-mini">${icon("star")}</span>` : icon(f.icon || "check")}${fill(f.text)}</li>`).join("")}
             </ul>
-            ${(c.payments || []).length ? `<div class="hero__pay" role="group" aria-label="${esc(c.paymentsLabel || "")}">${c.payments.map(payLogo).join("")}</div>` : ""}
           </div>
         </div>
         <div class="strip">
@@ -750,7 +749,10 @@
   const langUrl = (code) => prefUrl("lang", code);
   // Angezeigte Währung = die, in der die Schnittstelle tatsächlich geliefert hat
   const SHOWN_CUR = PRICES?.currency || CUR;
-  const curSymbol = SYM;
+  // Flagge je Sprache (languages.json → flag) und Münz-Symbol je Währung (→ icon, sonst Währungszeichen)
+  const LANG_META = LANGS.languages.find((l) => l.code === LANG) || {};
+  const langFlag = (l) => (l.flag ? `<img class="lang__flag" src="https://flagcdn.com/w40/${esc(l.flag)}.png" srcset="https://flagcdn.com/w80/${esc(l.flag)}.png 2x" alt="" width="20" height="20">` : icon("globe"));
+  const coin = (code) => (LANGS.currencies || []).find((c) => c.code === code)?.icon || SYM(code);
   const curName = (c) => { try { const n = new Intl.DisplayNames([LOCALE], { type: "currency" }).of(c.code); return n ? n.charAt(0).toLocaleUpperCase(LOCALE) + n.slice(1) : c.name; } catch (_) { return c.name; } };
   const cleanUrl = (code) => location.origin + location.pathname + (code ? `?lang=${code}` : "");
   document.head.insertAdjacentHTML("beforeend", [...LANGS.languages.map((l) => `<link rel="alternate" hreflang="${esc(l.code)}" href="${esc(cleanUrl(l.code))}">`),
@@ -775,15 +777,15 @@
       </nav>
       <div class="nav__actions">
         <div class="lang">
-          <button class="nav__locale" type="button" aria-haspopup="true" aria-expanded="false" aria-label="${esc(t("language"))} / ${esc(t("currency"))}">${icon("globe")}<span>${esc(LANG.toUpperCase())} · ${esc(SHOWN_CUR)}</span></button>
+          <button class="nav__locale" type="button" aria-haspopup="true" aria-expanded="false" aria-label="${esc(t("language"))} / ${esc(t("currency"))}">${langFlag(LANG_META)}<span>${esc(LANG.toUpperCase())}</span><b class="coin coin--sm">${esc(coin(SHOWN_CUR))}</b></button>
           <div class="lang__menu" hidden>
             <div class="lang__group">
               <p class="lang__title">${esc(t("language"))}</p>
-              <ul>${LANGS.languages.map((l) => `<li><a href="${esc(prefUrl("lang", l.code))}" hreflang="${esc(l.code)}" lang="${esc(l.code)}" aria-current="${l.code === LANG}"><span dir="${esc(l.dir || "ltr")}">${esc(l.name)}</span> <small>${esc(l.code.toUpperCase())}</small></a></li>`).join("")}</ul>
+              <ul>${LANGS.languages.map((l) => `<li><a href="${esc(prefUrl("lang", l.code))}" hreflang="${esc(l.code)}" lang="${esc(l.code)}" aria-current="${l.code === LANG}"><span class="lang__item">${langFlag(l)}<span dir="${esc(l.dir || "ltr")}">${esc(l.name)}</span></span> <small>${esc(l.code.toUpperCase())}</small></a></li>`).join("")}</ul>
             </div>
             <div class="lang__group">
               <p class="lang__title">${esc(t("currency"))}</p>
-              <ul>${(LANGS.currencies || []).map((c) => `<li><a href="${esc(prefUrl("cur", c.code))}" aria-current="${c.code === SHOWN_CUR}"><span><b class="lang__sym">${esc(curSymbol(c.code))}</b> ${esc(curName(c))}</span> <small>${esc(c.code)}</small></a></li>`).join("")}</ul>
+              <ul>${(LANGS.currencies || []).map((c) => `<li><a href="${esc(prefUrl("cur", c.code))}" aria-current="${c.code === SHOWN_CUR}"><span class="lang__item"><b class="coin">${esc(coin(c.code))}</b>${esc(curName(c))}</span> <small>${esc(c.code)}</small></a></li>`).join("")}</ul>
             </div>
           </div>
         </div>
