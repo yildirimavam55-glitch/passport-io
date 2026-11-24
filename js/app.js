@@ -1290,12 +1290,16 @@
           </div>` : ""}
           <div class="plan-list" role="radiogroup" aria-label="${esc(t("dataVolume"))}">
           ${plans.map((p, i) => `
-            <label class="plan ${i === pre ? "is-active" : ""} ${p.unlimited ? "plan--unl" : ""}" data-kind="${p.unlimited ? "unl" : "data"}" ${hasData && hasUnl && !!p.unlimited !== !!plans[pre].unlimited ? "hidden" : ""}>
-              <input type="radio" name="plan" value="${i}" ${i === pre ? "checked" : ""}>
-              <span class="plan__gb">${esc(vol(p))}</span><span class="plan__days">${esc(t("days", { n: p.days }))}</span>
-              ${p.popular ? `<span class="plan__pop">${esc(t("popular"))}</span>` : ""}
-              <span class="plan__price">${eur(p.price)}</span>
-            </label>`).join("")}
+            <div class="plan-row" data-kind="${p.unlimited ? "unl" : "data"}" ${hasData && hasUnl && !!p.unlimited !== !!plans[pre].unlimited ? "hidden" : ""}>
+              <label class="plan ${i === pre ? "is-active" : ""} ${p.unlimited ? "plan--unl" : ""}">
+                <input type="radio" name="plan" value="${i}" ${i === pre ? "checked" : ""}>
+                <span class="plan__gb">${esc(vol(p))}</span><span class="plan__days">${esc(t("days", { n: p.days }))}</span>
+                ${p.popular ? `<span class="plan__pop">${esc(t("popular"))}</span>` : ""}
+                <span class="plan__price">${eur(p.price)}</span>
+                <button type="button" class="plan__info" data-info="${i}" aria-expanded="false" aria-controls="pd-${i}" aria-label="${esc(t("detToggle"))}" title="${esc(t("detToggle"))}">${icon("chev-r")}</button>
+              </label>
+              <div class="plan-det" id="pd-${i}" hidden></div>
+            </div>`).join("")}
         </div>
         ${hasUnl ? `<p class="plan-hint" ${hasData && !plans[pre].unlimited ? "hidden" : ""}>${icon("wifi")} ${esc(t("unlimitedHint"))}</p>` : ""}
         <button class="btn btn--dark plan-buy" type="button" style="width:100%;margin-top:18px">${esc(t("checkout"))} · <span>${eur(plans[pre].price)}</span></button>
@@ -1309,12 +1313,14 @@
     document.addEventListener("keydown", onKey);
     modal.addEventListener("click", (e) => {
       if (e.target.closest("[data-close-modal]")) return close();
+      const info = e.target.closest("[data-info]");
+      if (info) { e.preventDefault(); e.stopPropagation(); toggleDetails(info); return; }
       const tab = e.target.closest("[data-ptab]");
       if (!tab) return;
       // Reiter wechseln: passende Tarife zeigen und den ersten (bzw. beliebten) auswählen
       const kind = tab.dataset.ptab;
       $$(".plan-tab", modal).forEach((b) => { b.classList.toggle("is-active", b === tab); b.setAttribute("aria-selected", b === tab); });
-      const rows = $$(".plan", modal);
+      const rows = $(".plan-row", modal);
       rows.forEach((l) => (l.hidden = l.dataset.kind !== kind));
       const hint = $(".plan-hint", modal);
       if (hint) hint.hidden = kind !== "unl";
@@ -1334,6 +1340,48 @@
       location.href = `account.html?buy=${encodeURIComponent(key)}&plan=${encodeURIComponent(plan.id)}`;
     });
     $("input:checked", modal)?.focus();
+
+    /* ---- Tarif-Details (aus der Anbieter-API, pro Land einmal nachgeladen) ---- */
+    const itemKey = item.code ? "country:" + item.code : "region:" + item.id;
+    let details = null;
+    const loadDetails = () => details ??= (async () => {
+      try {
+        if (!SITE.api?.pricesUrl) return {};
+        const u = new URL(SITE.api.pricesUrl, location.href);
+        u.searchParams.set("item", itemKey);
+        const r = await fetch(u, { headers: { Accept: "application/json" } });
+        const d = r.ok ? await r.json() : null;
+        return Object.fromEntries((d?.plans || []).map((x) => [x.id, x.meta || null]));
+      } catch (_) { return {}; }
+    })();
+    const placeName = (code) => { const c = String(code).toUpperCase() === "UK" ? "GB" : String(code).toUpperCase(); try { return DN?.of(c) || c; } catch (_) { return c; } };
+    const detailRows = (p, m) => {
+      const rows = [];
+      const add = (k, v) => v && rows.push(`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`);
+      if (p.unlimited) add(t("detData"), m?.hs && m?.fup ? t("detDataUnl", { hs: String(m.hs).replace(".", ","), fup: m.fup }) : t("detDataUnlPlain"));
+      else { add(t("detData"), t("detDataStd", { gb: p.gb })); if (m?.fup) add(t("detAfter"), m.fup); }
+      add(t("detValidity"), t("detValidityTxt", { n: p.days }));
+      if (m) {
+        if (m.net?.length) add(t("detNetwork"), m.net.map((n) => (n.t ? `${n.n} (${n.t})` : n.n)).join(", "));
+        if (m.spd) add(t("detSpeed"), m.spd.split("/").join(" · "));
+        if (m.act) add(t("detActivation"), t(m.act === "network" ? "detActNetwork" : "detActInstall"));
+        if (m.win) add(t("detWindow"), t("detWindowTxt", { n: m.win }));
+        if (m.ip) add(t("detIp"), t("detIpTxt", { list: m.ip.split(/[/,]/).filter(Boolean).map(placeName).join(", ") }));
+        if (typeof m.top === "boolean") add(t("detTopup"), t(m.top ? "yes" : "no"));
+        if (!m.voice) add(t("detType"), t("detTypeTxt"));
+      }
+      return `<dl class="plan-det__list">${rows.join("")}</dl>${m ? "" : `<p class="plan-det__none">${esc(t("detNone"))}</p>`}`;
+    };
+    async function toggleDetails(btn) {
+      const i = +btn.dataset.info, box = $("#pd-" + i, modal), open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      box.hidden = open;
+      if (open || box.dataset.ready) return;
+      box.innerHTML = `<p class="plan-det__none">${esc(t("detLoading"))}</p>`;
+      const d = await loadDetails();
+      box.innerHTML = detailRows(plans[i], d[plans[i].id] || null);
+      box.dataset.ready = "1";
+    }
   }
 
   /* ---------- Geräte-Check ---------- */

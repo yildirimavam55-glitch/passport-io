@@ -22,7 +22,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 // Testdaten (gleiches Format wie die Live-Antwort) – nur solange KEIN eSIM-Anbieter eingetragen ist.
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { applyPricing, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
-import { accessOn, type Catalog, egSample, esimAccessCatalog, esimGoCatalog, goOn, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
+import { accessOn, type Catalog, esimAccessCatalog, goTier, esimGoCatalog, goOn, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
 
 const CACHE_SECONDS = 15 * 60;
 /* ---------- Währungen ----------
@@ -69,7 +69,7 @@ const round = (n: unknown) => Math.round(Number(n) * 100) / 100;
 const providerState: Record<string, string> = {};
 const countPlans = (c: Catalog | null) => c ? Object.values(c.countries).reduce((n, x) => n + x.plans.length, 0) + Object.values(c.regions).reduce((n, x) => n + x.plans.length, 0) + c.global.plans.length : 0;
 async function cachedCatalog(id: string, ttl: number, load: () => Promise<Catalog | null>): Promise<Catalog | null> {
-  const name = id.replace("cat:", "").replace(/[0-9]+$/, "");
+  const name = id.replace("cat:", "").replace(/[0-9]+(-[a-z]+)?$/, "");
   const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", id).maybeSingle();
   if (row && countPlans(row.body) > 0 && (Date.now() - new Date(row.updated_at).getTime()) / 1000 < ttl) { providerState[name] = `ok (${countPlans(row.body)} Tarife, Zwischenspeicher)`; return row.body; }
   try {
@@ -90,7 +90,7 @@ async function esim(): Promise<Esim | null> {
   const toEur = (n: number, cur: string) => { cur = (cur || "EUR").toUpperCase(); if (cur === "EUR") return n; const r = fx?.rates?.[cur]; return r ? n / r : null; };
   const [a, g] = await Promise.all([
     cachedCatalog("cat:esimaccess4", 3600, () => esimAccessCatalog(toEur)),
-    cachedCatalog("cat:esimgo5", 6 * 3600, () => esimGoCatalog(toEur)),
+    cachedCatalog(`cat:esimgo6-${goTier()}`, 6 * 3600, () => esimGoCatalog(toEur)),
   ]);
   if (!a && !g) throw new Error("Kein eSIM-Katalog verfügbar");
   return mergeCatalogs(a, g) as Esim;
@@ -189,7 +189,6 @@ Deno.serve(async (req) => {
     // deno-lint-ignore no-explicit-any
     return json({ item, plans: list.map((p: any) => ({ id: p.id, meta: p.meta ?? null })) });
   }
-  if (params.get("debug") === "eg") return json({ sample: egSample });
 
   // Preisregel anwenden (Einkauf → Verkaufspreis); Einkaufspreise verlassen die Funktion nie
   {

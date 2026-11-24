@@ -26,6 +26,7 @@ export type PlanMeta = {
   ip?: string | null;                             // Internet-Ausgang (Land), z. B. "HK"
   sms?: boolean; voice?: boolean;                 // nur Daten oder auch SMS/Telefonie
   desc?: string;                                  // Beschreibung des Anbieters
+  tier?: string;                                  // Unlimited-Stufe (lite / essential / plus)
 };
 export type CatalogPlan = { id: string; gb: number; days: number; price: number; unlimited?: boolean; name?: string; countries?: number; popular?: boolean; meta?: PlanMeta };
 export type Catalog = { countries: Record<string, { plans: CatalogPlan[] }>; regions: Record<string, { plans: CatalogPlan[] }>; global: { plans: CatalogPlan[] } };
@@ -115,25 +116,31 @@ export async function esimAccessCatalog(toEur: (n: number, cur: string) => numbe
   return cat;
 }
 
-/** Vorübergehend zur Prüfung: alle Unlimited-Varianten für einige Länder (Name, Beschreibung, Speed, Allowances) */
-export const egSample: any[] = [];
+/** Unlimited-Stufe von eSIM Go (Secret ESIMGO_UNLIMITED_TIER = lite | essential | plus, Standard lite)
+ *  lite = 1 GB/Tag, danach 512 kbit/s · essential = 1 GB/Tag, danach 1,28 Mbit/s · plus = 2 GB/Tag, danach 2 Mbit/s */
+const TIER_PREFIX: Record<string, string> = { lite: "esim_UL_", essential: "esim_ULE_", plus: "esim_ULP_" };
+export const goTier = () => { const t = (env("ESIMGO_UNLIMITED_TIER") || "lite").toLowerCase().trim(); return TIER_PREFIX[t] ? t : "lite"; };
+const tierOf = (name: string) => /^esim_ULP_/i.test(name) ? "plus" : /^esim_ULE_/i.test(name) ? "essential" : /^esim_UL_/i.test(name) ? "lite" : null;
 export async function esimGoCatalog(toEur: (n: number, cur: string) => number | null): Promise<Catalog | null> {
   if (!goOn()) return null;
   const cat: Catalog = { countries: {}, regions: {}, global: { plans: [] } };
   const cur = goCurrency();
+  const wantTier = goTier();
+  // Netzbetreiber stehen bei eSIM Go in countryNetworks: [{ country: { iso }, networks: [...] }]
+  const netsOf = (b: any) => (b.countryNetworks ?? []).flatMap((cn: any) => (cn.networks ?? []).map((n: any) => ({ n: String(n.brandName || n.name || "").trim(), t: (n.speeds ?? []).join("/") || undefined }))).filter((n: any) => n.n);
   for (let page = 1; page <= 40; page++) {
     const raw = await eg(`/catalogue?page=${page}&perPage=200`);
     const list: any[] = Array.isArray(raw) ? raw : raw?.bundles ?? [];
     for (const b of list) {
-      const iso0 = String(b.countries?.[0]?.iso ?? "").toLowerCase();
-      if (["tr", "de", "fr"].includes(iso0) && (b.countries ?? []).length === 1 && egSample.length < 80) egSample.push({ name: b.name, unl: b.unlimited, dur: b.duration, amt: b.dataAmount, desc: b.description, speed: b.speed, auto: b.autostart, groups: b.groups, allow: b.allowances, nets: (b.countries?.[0]?.countryNetworks?.networks ?? []).map((n: any) => n.brandName || n.name).slice(0, 6), keys: Object.keys(b) });
       if (!b.unlimited) continue;                                             // eSIM Go liefert bei uns nur Unlimited
+      const tier = tierOf(String(b.name ?? ""));
+      if (tier && tier !== wantTier) continue;                                // nur die gewählte Unlimited-Stufe
       const days = Number(b.duration), cost = toEur(Number(b.price), cur);
       if (!(days > 0) || !cost) continue;
       const isos = (b.countries ?? []).map((c: any) => String(c.iso ?? c.country?.iso ?? "").toLowerCase()).filter(Boolean);
       const al = (b.allowances ?? []) as any[];
       const data = al.find((a) => a.type === "DATA");
-      const nets = (b.countries ?? []).flatMap((c: any) => (c.countryNetworks?.networks ?? c.networks ?? []).map((n: any) => ({ n: String(n.brandName || n.name || "").trim(), t: (n.speeds ?? []).join("/") || undefined }))).filter((n: any) => n.n);
+      const nets = netsOf(b);
       const text = `${b.description ?? ""} ${data?.description ?? ""}`;
       // Fair-Use steht im Allowance-Code, z. B. "ESIM_UL_7D_ALL_U1000MB512KBPS" = 1000 MB pro Tag in voller
       // Geschwindigkeit, danach 512 kbit/s (Unlimited-Tarife von eSIM Go setzen das Volumen täglich zurück)
@@ -146,7 +153,7 @@ export async function esimGoCatalog(toEur: (n: number, cur: string) => number | 
         spd: (b.speed ?? []).join("/") || undefined,
         net: isos.length === 1 ? [...new Map(nets.map((o: any) => [o.n, o])).values()].slice(0, 8) as any : undefined,
         fup: fupTxt,
-        hs: hsGb, hsDay: !!(code || hsm),
+        hs: hsGb, hsDay: !!(code || hsm), tier: tier ?? undefined,
         act: b.autostart ? "network" : "install",
         top: true, ip: null,
         sms: al.some((a) => a.type === "SMS"), voice: al.some((a) => a.type === "VOICE"),
