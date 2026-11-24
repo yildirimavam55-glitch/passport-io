@@ -33,8 +33,12 @@ Yönetim panelinde **Genel bakış → “Yayına hazır mı?”** listesi canl�
 
 ## 3. Sağlayıcılar ve anahtarlar (Supabase → Edge Functions → Secrets)
 
-- [ ] eSIM: `ESIM_API_URL`, `ESIM_API_KEY` – alış fiyatı alanı, sipariş ve kullanım uç noktaları
-      `supabase/functions/_shared/esim-provider.ts` içinde sağlayıcıya göre eşleştirilmeli.
+- [ ] **eSIM Access** (veri paketleri): `ESIMACCESS_ACCESS_CODE` – console.esimaccess.com → Developer.
+      Hesaba bakiye yükle (siparişler bakiyeden düşer; sandbox yok, test eSIM'leri iptal edilerek iade edilir).
+- [ ] **eSIM Go** (sınırsız paketler): `ESIMGO_API_KEY` – sso.esim-go.com → Account Settings → API Details;
+      `ESIMGO_CURRENCY` = hesabın para birimi (ör. USD). Bakiye yükle. İade özelliği için hesap yöneticisine yaz.
+- [ ] İlk gerçek test: panelde siparişi **Ödendi** yap → **eSIM teslim et** → QR'ı gerçek telefonda dene →
+      eSIM Access siparişini iade talebiyle iptal et (alış bedeli bakiyeye döner).
 - [ ] Lounge / Fast Track: `LOUNGE_API_URL/KEY`, `FASTTRACK_API_URL/KEY`.
 - [ ] `ADMIN_EMAILS` = yönetici e-postaları; `ADMIN_REQUIRE_MFA=true` (tüm yöneticilere 2FA zorunlu).
 - [ ] `ALLOW_TEST_ORDERS` **silinmiş** olmalı.

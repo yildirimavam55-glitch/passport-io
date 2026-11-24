@@ -91,7 +91,7 @@ Einmalig einrichten:
    Quelle „GitHub Actions“ wählen. Ab dann geht jede Änderung auf `main`
    automatisch online (`.github/workflows/deploy.yml`).
 2. In Supabase unter **Edge Functions › Secrets** eintragen:
-   `ESIM_API_URL`, `ESIM_API_KEY`, `LOUNGE_API_URL`, `LOUNGE_API_KEY`,
+   `ESIMACCESS_ACCESS_CODE`, `ESIMGO_API_KEY`, `ESIMGO_CURRENCY`, `LOUNGE_API_URL`, `LOUNGE_API_KEY`,
    `FASTTRACK_API_URL`, `FASTTRACK_API_KEY`, `ALLOWED_ORIGINS`
    (z. B. `https://passport.io,https://<name>.github.io`).
 3. In GitHub unter **Settings › Secrets and variables › Actions**:
@@ -149,8 +149,9 @@ Grundlage ist immer der **Einkaufspreis aus der Anbieter-API**:
    Verlustverkäufen, falls ein Wettbewerber extrem günstig ist).
 
 Alle Werte sind im Panel einstellbar und gelten sofort. Einkaufspreise werden nie öffentlich
-ausgeliefert. Der eSIM-Adapter liest den Einkauf aus `wholesale_price` / `net_price` / `cost` /
-`price` der Anbieter-Antwort (in `supabase/functions/prices/index.ts` an den Anbieter anpassen).
+ausgeliefert. Einkauf = Preis aus eSIM Access (`price` ÷ 10 000, USD) bzw. eSIM Go (`price` in
+`ESIMGO_CURRENCY`), umgerechnet mit dem EZB-Kurs in EUR. Unlimited-Tarife werden mit Wettbewerbs-
+preisen verglichen, deren GB-Wert **0** ist.
 
 ## Rechtsseiten
 
@@ -195,7 +196,17 @@ Alle Schlüssel und Passwörter tragt ihr selbst ein – nie in den Code.
 - Wer Inhalte bearbeiten soll, braucht Schreibrechte im GitHub-Repository.
 
 **3. Anbieter anbinden (Secrets in Supabase)**
-- eSIM: `ESIM_API_URL`, `ESIM_API_KEY` – Anbindung in `supabase/functions/_shared/esim-provider.ts`.
+- **eSIM Access** (Tarife mit Datenvolumen): `ESIMACCESS_ACCESS_CODE` – zu finden unter
+  console.esimaccess.com → *Developer*. Guthaben aufladen; jede Bestellung wird davon abgebucht.
+  Es gibt keine Testumgebung: Test-eSIMs werden über eine Erstattung storniert (Einkauf kommt zurück).
+- **eSIM Go** (Unlimited-Tarife): `ESIMGO_API_KEY` – sso.esim-go.com → *Account Settings → API Details*;
+  `ESIMGO_CURRENCY` = Währung eures eSIM-Go-Kontos (z. B. `USD`). Guthaben aufladen.
+  Erstattungen bei eSIM Go sind standardmäßig gesperrt – beim Account-Manager freischalten lassen.
+- Sobald einer der Schlüssel gesetzt ist, verschwinden die Testdaten und die echten Tarife erscheinen
+  (Katalog eSIM Access stündlich, eSIM Go alle 6 Stunden aktualisiert). Angezeigt werden die Länder aus
+  `content/esim.json`; weitere Länder dort ergänzen.
+- **eSIM ausstellen ohne Zahlungsanbieter:** Panel → *Siparişler* → Status auf *Ödendi* →
+  **eSIM teslim et**. Das kauft die eSIM wirklich beim Anbieter und zeigt sie dem Kunden mit QR-Code.
 - Zahlung: `PAYMENT_PROVIDER` + Schlüssel – Anbindung in `supabase/functions/account/index.ts`
   (Stelle „TODO Zahlung“). Bis dahin bleiben Bestellungen „Zahlung ausstehend“.
 - Nur zum Testen: `ALLOW_TEST_ORDERS=true` stellt ohne Zahlung eine **Test-eSIM** aus
