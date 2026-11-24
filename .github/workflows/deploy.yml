@@ -37,6 +37,9 @@ jobs:
           mkdir _site
           cp -r index.html install.html css js content img admin api _site/
           touch _site/.nojekyll
+          # Versionsnummer anhängen, damit Besucher Änderungen sofort sehen
+          V=$(echo "$GITHUB_SHA" | cut -c1-8)
+          sed -i "s#css/styles.css\"#css/styles.css?v=$V\"#; s#js/app.js\"#js/app.js?v=$V\"#" _site/index.html _site/install.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
