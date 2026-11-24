@@ -171,6 +171,18 @@ Deno.serve(async (req) => {
         const { data } = await db.from("unanswered_questions").select("*").order("created_at", { ascending: false }).limit(500);
         return json({ questions: data ?? [] }, 200, headers);
       }
+      if (view === "newsletter") {
+        const data = await loadAllRows(db, "newsletter_subscribers");
+        const since = Date.now() - 30 * 864e5;
+        const active = data.filter((s: any) => !s.unsubscribed_at);
+        const byLang = active.reduce((a: any, s: any) => ((a[s.lang || "?"] = (a[s.lang || "?"] ?? 0) + 1), a), {});
+        return json({ subscribers: data.sort((a: any, b: any) => String(b.created_at).localeCompare(String(a.created_at))), total: data.length, active: active.length, new30: active.filter((s: any) => new Date(s.created_at).getTime() >= since).length, byLang }, 200, headers);
+      }
+      if (view === "discounts") {
+        const { data } = await db.from("discount_codes").select("*").order("created_at", { ascending: false }).limit(500);
+        const { data: used } = await db.from("orders").select("coupon, discount, currency, status").not("coupon", "is", null).limit(5000);
+        return json({ codes: data ?? [], usage: used ?? [] }, 200, headers);
+      }
       if (view === "audit") {
         const { data } = await db.from("admin_audit").select("*").order("created_at", { ascending: false }).limit(300);
         return json({ audit: data ?? [] }, 200, headers);
@@ -312,8 +324,54 @@ Deno.serve(async (req) => {
       return json({ ok: true, imported: good.length, skipped: rows.length - good.length }, 200, headers);
     }
 
+    /* ---------- Bülten ---------- */
+    if (b.action === "newsletter_unsub" || b.action === "newsletter_resub") {
+      const { error } = await db.from("newsletter_subscribers").update({ unsubscribed_at: b.action === "newsletter_unsub" ? now : null }).eq("id", Number(b.id));
+      if (error) throw error;
+      await audit(b.action, String(b.id));
+      return json({ ok: true }, 200, headers);
+    }
+    if (b.action === "newsletter_delete") {
+      // Endgültig löschen (z. B. auf Wunsch nach KVKK/DSGVO)
+      const { error } = await db.from("newsletter_subscribers").delete().eq("id", Number(b.id));
+      if (error) throw error;
+      await audit("newsletter_delete", String(b.id));
+      return json({ ok: true }, 200, headers);
+    }
+    if (b.action === "newsletter_add") {
+      const email = txt(b.email, 254).toLowerCase();
+      if (!/^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,24}$/i.test(email)) return json({ error: "invalid" }, 400, headers);
+      const { error } = await db.from("newsletter_subscribers").upsert({ email, lang: txt(b.lang, 5) || null, source: "panel", consent_text: txt(b.consent, 300) || "Panel üzerinden eklendi", unsubscribed_at: null }, { onConflict: "email" });
+      if (error) throw error;
+      await audit("newsletter_add", email);
+      return json({ ok: true }, 200, headers);
+    }
+
+    /* ---------- İndirim kodları ---------- */
+    if (b.action === "discount_save") {
+      const row: any = {
+        code: txt(b.code, 32).toUpperCase().replace(/[^A-Z0-9_-]/g, ""), kind: b.kind === "fixed" ? "fixed" : "percent",
+        value: num(b.value, 0.01, 100000), min_amount: num(b.min_amount ?? 0, 0, 100000) ?? 0,
+        starts_at: b.starts_at ? new Date(b.starts_at).toISOString() : null, ends_at: b.ends_at ? new Date(b.ends_at).toISOString() : null,
+        max_uses: b.max_uses === "" || b.max_uses == null ? null : num(b.max_uses, 1, 1e7), active: b.active !== false, note: txt(b.note, 200) || null,
+      };
+      if (!/^[A-Z0-9_-]{3,32}$/.test(row.code) || !row.value || (row.kind === "percent" && row.value > 100)) return json({ error: "invalid" }, 400, headers);
+      const q = b.id ? db.from("discount_codes").update(row).eq("id", Number(b.id)) : db.from("discount_codes").insert(row);
+      const { error } = await q;
+      if (error) return json({ error: error.code === "23505" ? "exists" : "server" }, error.code === "23505" ? 409 : 500, headers);
+      await audit("discount_save", row.code, row);
+      return json({ ok: true }, 200, headers);
+    }
+    if (b.action === "discount_toggle" || b.action === "discount_delete") {
+      const q = b.action === "discount_delete" ? db.from("discount_codes").delete().eq("id", Number(b.id)) : db.from("discount_codes").update({ active: !!b.active }).eq("id", Number(b.id));
+      const { error } = await q;
+      if (error) throw error;
+      await audit(b.action, String(b.id));
+      return json({ ok: true }, 200, headers);
+    }
+
     /* ---------- Mağaza editörü: Inhalte laden/speichern über GitHub (Secret GITHUB_CONTENT_TOKEN) ---------- */
-    if (b.action === "content_get" || b.action === "content_put" || b.action === "content_upload") {
+    if (["content_get", "content_put", "content_upload", "content_delete", "posts_list"].includes(b.action)) {
       const token = env("GITHUB_CONTENT_TOKEN"), repo = env("GITHUB_REPO") || "yildirimavam55-glitch/passport-io", branch = env("GITHUB_BRANCH") || "main";
       if (!token) return json({ error: "github_missing" }, 409, headers);
       const gh = (path: string, init: RequestInit = {}) => fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
@@ -321,6 +379,21 @@ Deno.serve(async (req) => {
       });
       const b64 = (s: string) => { const bytes = new TextEncoder().encode(s); let bin = ""; for (const x of bytes) bin += String.fromCharCode(x); return btoa(bin); };
       const unb64 = (s: string) => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g, "")), (c) => c.charCodeAt(0)));
+      if (b.action === "posts_list") {
+        // Alle Ratgeber/Artikel (auch Entwürfe) direkt aus GitHub
+        const r = await gh(`content/posts?ref=${branch}`);
+        if (!r.ok) return json({ error: "github", status: r.status }, 502, headers);
+        const list = ((await r.json()) as any[]).filter((f) => /[.]json$/.test(f.name)).slice(0, 200);
+        const posts = await Promise.all(list.map(async (f) => {
+          try {
+            const c = await (await gh(`${f.path}?ref=${branch}`)).json();
+            const d = JSON.parse(unb64(c.content)), tr = d.tr ?? d;
+            const langs = Object.keys(d).filter((k) => k !== "tr" && d[k]?.title);
+            return { id: f.name.replace(/[.]json$/, ""), title: tr.title ?? "", date: tr.date ?? "", category: tr.category ?? "", image: tr.image ?? "", draft: tr.draft === true, langs };
+          } catch (_) { return { id: f.name.replace(/[.]json$/, ""), title: "?", error: true }; }
+        }));
+        return json({ posts: posts.sort((a: any, b: any) => String(b.date).localeCompare(String(a.date))) }, 200, headers);
+      }
       if (b.action === "content_upload") {
         // Bild hochladen → img/uploads/<zeit>-<name>; nur Bilder bis 3 MB
         const name = txt(b.name, 80).toLowerCase().replace(/[^a-z0-9.-]+/g, "-").replace(/^-+|-+$/g, "");
@@ -336,6 +409,17 @@ Deno.serve(async (req) => {
       // Erlaubte Dateien: content/<name>.json und content/posts/<name>.json (nicht auth.json/blog.json – werden erzeugt)
       const file = txt(b.file, 120);
       if (!/^content\/(posts\/)?[a-z0-9-]+\.json$/.test(file) || /^content\/(auth|blog)\.json$/.test(file)) return json({ error: "file" }, 400, headers);
+      if (b.action === "content_delete") {
+        // Nur Artikel dürfen gelöscht werden
+        if (!/^content[/]posts[/][a-z0-9-]+[.]json$/.test(file)) return json({ error: "file" }, 400, headers);
+        const cur = await gh(`${file}?ref=${branch}`);
+        if (!cur.ok) return json({ error: "github", status: cur.status }, 502, headers);
+        const { sha } = await cur.json();
+        const r = await gh(file, { method: "DELETE", body: JSON.stringify({ message: `Artikel gelöscht: ${file} (${user.email})`, sha, branch }) });
+        if (!r.ok) return json({ error: "github", status: r.status }, 502, headers);
+        await audit("content_delete", file);
+        return json({ ok: true }, 200, headers);
+      }
       if (b.action === "content_get") {
         const r = await gh(`${file}?ref=${branch}`);
         if (r.status === 404) return json({ data: null, sha: null }, 200, headers);

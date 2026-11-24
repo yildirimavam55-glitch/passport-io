@@ -273,12 +273,15 @@
         <aside class="ed-right"></aside>
       </div>`;
     document.body.appendChild(root);
-    state = { lang: "tr", ltab: "home", file: null, data: null, sel: "hero", dirty: false, posts: [] };
+    const startFile = /^content[/](posts[/])?[a-z0-9-]+[.]json$/.test(c.file || "") ? c.file : "content/site.json";
+    state = { lang: "tr", ltab: startFile === "content/site.json" ? "home" : "files", file: null, data: null, sel: "hero", dirty: false, posts: [] };
     wire();
     (async () => {
       try { schema = await loadSchema(); } catch (e) { root.querySelector(".ed-left").innerHTML = `<p class="ed-empty">Şema yüklenemedi (config.yml).</p>`; return; }
       try { const blog = await fetch("../content/blog.json", { cache: "no-cache" }).then((r) => r.json()); state.posts = (blog.tr?.posts || blog.posts || []).map((p) => ({ id: p.id, title: p.title })); } catch (_) {}
-      openFile("content/site.json", "hero");
+      // neu angelegte Artikel stehen noch nicht in blog.json → in die Liste aufnehmen
+      if (startFile.startsWith("content/posts/") && !state.posts.some((p) => "content/posts/" + p.id + ".json" === startFile)) state.posts.unshift({ id: startFile.split("/").pop().replace(".json", ""), title: "Yeni rehber" });
+      openFile(startFile, startFile === "content/site.json" ? "hero" : undefined);
     })();
     window.addEventListener("beforeunload", beforeUnload);
   }

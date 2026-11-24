@@ -6,6 +6,8 @@
                                    → Anfrage „Mit einem Menschen sprechen“ (Panel → Anfragen)
       „website“ ist ein unsichtbares Lockfeld gegen Bots: ist es ausgefüllt, wird nichts gespeichert.
       Höchstens 3 Anfragen pro E-Mail und Stunde.
+   3. {kind:"newsletter", email, lang, page, consent, website}
+                                   → Bülten-Anmeldung (Panel → Bülten)
    ========================================================================== */
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { cors, env } from "../_shared/http.ts";
@@ -20,6 +22,19 @@ Deno.serve(async (req) => {
 
   try {
     const body = await req.json();
+
+    if (body.kind === "newsletter") {
+      // Bülten-Anmeldung: Lockfeld gegen Bots, gültige E-Mail; erneute Anmeldung hebt eine Abmeldung auf
+      if (body.website) return new Response(null, { status: 204, headers });
+      const email = String(body.email ?? "").trim().toLowerCase().slice(0, 254);
+      if (!EMAIL.test(email)) return new Response(JSON.stringify({ error: "invalid" }), { status: 400, headers });
+      const { error } = await db.from("newsletter_subscribers").upsert({
+        email, lang: String(body.lang ?? "").slice(0, 5) || null, source: String(body.page ?? "").slice(0, 120) || null,
+        consent_text: String(body.consent ?? "").slice(0, 300) || null, unsubscribed_at: null,
+      }, { onConflict: "email" });
+      if (error) throw error;
+      return new Response(null, { status: 204, headers });
+    }
 
     if (body.kind === "support") {
       if (body.website) return new Response(null, { status: 204, headers }); // Bot

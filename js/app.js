@@ -855,14 +855,31 @@
       <section class="cta">
         <div class="container cta__inner">
           <div><h2>${esc(c.title)}</h2><p>${esc(c.text)}</p></div>
-          <form class="cta__form" data-newsletter>
-            <input type="email" required placeholder="${esc(c.placeholder)}" aria-label="${esc(t("emailLabel"))}" />
-            <button class="btn btn--green" type="submit">${esc(c.button)}</button>
-          </form>
+          <div>
+            <form class="cta__form" data-newsletter>
+              <input type="email" name="email" required placeholder="${esc(c.placeholder)}" aria-label="${esc(t("emailLabel"))}" />
+              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+              <button class="btn btn--green" type="submit">${esc(c.button)}</button>
+            </form>
+            <p class="cta__consent">${esc(t("newsletterConsent"))}</p>
+          </div>
         </div>
       </section>`,
     init(el) {
-      $("[data-newsletter]", el).addEventListener("submit", (e) => { e.preventDefault(); e.currentTarget.outerHTML = `<p class="cta__ok">${esc(SITE.newsletter.success)}</p>`; });
+      // Anmeldung wird gespeichert (Panel → Bülten); Einwilligungstext wird mitgespeichert
+      $("[data-newsletter]", el).addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const f = e.currentTarget, btn = $("button", f);
+        btn.disabled = true;
+        try {
+          const url = SITE.api?.questionsUrl;
+          if (url) {
+            const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind: "newsletter", email: f.email.value.trim(), website: f.website.value, lang: LANG, page: location.pathname, consent: t("newsletterConsent") }) });
+            if (!r.ok && r.status !== 204) throw new Error(String(r.status));
+          }
+          f.parentElement.innerHTML = `<p class="cta__ok">${esc(SITE.newsletter.success)}</p>`;
+        } catch (_) { btn.disabled = false; f.email.setCustomValidity(t("newsletterError")); f.email.reportValidity(); setTimeout(() => f.email.setCustomValidity(""), 3000); }
+      });
     },
   };
 
@@ -1307,7 +1324,8 @@
               <div class="plan-det" id="pd-${i}" hidden></div>
             </div>`).join("")}
         </div>
-        <button class="btn btn--dark plan-buy" type="button" style="width:100%;margin-top:18px">${esc(t("checkout"))} · <span>${eur(plans[pre].price)}</span></button>
+        <details class="plan-coupon"><summary>${esc(t("couponToggle"))}</summary><input type="text" name="coupon" maxlength="32" autocomplete="off" placeholder="${esc(t("couponPlaceholder"))}" aria-label="${esc(t("couponToggle"))}"></details>
+        <button class="btn btn--dark plan-buy" type="button" style="width:100%;margin-top:14px">${esc(t("checkout"))} · <span>${eur(plans[pre].price)}</span></button>
         <p class="plan-note">${icon("shield")} ${esc(t("moneyBack"))}</p>`
         : `<div class="device-result__none">${esc(SITE.api?.modalUnavailableText || t("modalUnavailable"))}</div>`}
       </div>`;
@@ -1343,7 +1361,9 @@
       const plan = plans[+($("input[name=plan]:checked", modal)?.value ?? pre)];
       if (!plan) return;
       const key = item.code ? "country:" + item.code : "region:" + item.id;
-      location.href = `account.html?buy=${encodeURIComponent(key)}&plan=${encodeURIComponent(plan.id)}`;
+      // Rabattcode wird nur weitergereicht – geprüft und berechnet wird er auf dem Server
+      const coupon = ($("input[name=coupon]", modal)?.value || "").toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32);
+      location.href = `account.html?buy=${encodeURIComponent(key)}&plan=${encodeURIComponent(plan.id)}${coupon ? `&coupon=${encodeURIComponent(coupon)}` : ""}`;
     });
     $("input:checked", modal)?.focus();
 

@@ -30,7 +30,7 @@ window.PP_ACCOUNT = function (ctx) {
   const oauthError = new URLSearchParams(location.hash.slice(1)).get("error_description") || params.get("error_description");
 
   // Kauf aus dem Paket-Fenster: account.html?buy=country:jp&plan=jp-5gb-30d
-  const buy = params.get("buy") && params.get("plan") ? { item: params.get("buy"), plan: params.get("plan") } : null;
+  const buy = params.get("buy") && params.get("plan") ? { item: params.get("buy"), plan: params.get("plan"), coupon: (params.get("coupon") || "").toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32) || undefined } : null;
   if (buy) { try { sessionStorage.setItem("pp_buy", JSON.stringify(buy)); } catch (_) {} history.replaceState(null, "", location.pathname + location.hash); }
   const pendingBuy = () => { try { return JSON.parse(sessionStorage.getItem("pp_buy") || "null"); } catch (_) { return null; } };
 
@@ -302,7 +302,8 @@ window.PP_ACCOUNT = function (ctx) {
       try { sessionStorage.removeItem("pp_buy"); } catch (_) {}
       toast(A("buying"));
       try {
-        const r = await api("POST", { action: "order", item: b.item, planId: b.plan, currency: CUR });
+        const r = await api("POST", { action: "order", item: b.item, planId: b.plan, currency: CUR, coupon: b.coupon });
+        if (r.coupon === "invalid") toast(A("couponInvalid"));
         if (r.status === 409) toast(A("payMissing"));
         else if (r.esim) { toast(A("buyDone")); state.account = await api("GET"); }
       } catch (e) { toast(errText(e)); }

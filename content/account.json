@@ -135,7 +135,8 @@
     "unlimited": "Sınırsız",
     "dataUsedUnl": "{used} kullanıldı",
     "status_processing": "Hazırlanıyor",
-    "processingNote": "eSIM'iniz hazırlanıyor – genellikle birkaç dakika sürer. Sayfayı biraz sonra yenileyin."
+    "processingNote": "eSIM'iniz hazırlanıyor – genellikle birkaç dakika sürer. Sayfayı biraz sonra yenileyin.",
+    "couponInvalid": "İndirim kodu geçersiz veya süresi dolmuş – sipariş indirimsiz oluşturuldu."
   },
   "en": {
     "title": "My account",
@@ -273,7 +274,8 @@
     "unlimited": "Unlimited",
     "dataUsedUnl": "{used} used",
     "status_processing": "Preparing",
-    "processingNote": "Your eSIM is being prepared – this usually takes a few minutes. Refresh the page shortly."
+    "processingNote": "Your eSIM is being prepared – this usually takes a few minutes. Refresh the page shortly.",
+    "couponInvalid": "Discount code invalid or expired – order created without discount."
   },
   "de": {
     "title": "Mein Konto",
@@ -411,7 +413,8 @@
     "unlimited": "Unbegrenzt",
     "dataUsedUnl": "{used} verbraucht",
     "status_processing": "Wird vorbereitet",
-    "processingNote": "Deine eSIM wird vorbereitet – das dauert meist nur ein paar Minuten. Lade die Seite gleich neu."
+    "processingNote": "Deine eSIM wird vorbereitet – das dauert meist nur ein paar Minuten. Lade die Seite gleich neu.",
+    "couponInvalid": "Rabattcode ungültig oder abgelaufen – Bestellung ohne Rabatt angelegt."
   },
   "ar": {
     "title": "حسابي",
@@ -549,7 +552,8 @@
     "unlimited": "غير محدود",
     "dataUsedUnl": "تم استخدام {used}",
     "status_processing": "قيد التجهيز",
-    "processingNote": "يتم تجهيز شريحتك الإلكترونية – يستغرق ذلك عادةً بضع دقائق. حدّث الصفحة بعد قليل."
+    "processingNote": "يتم تجهيز شريحتك الإلكترونية – يستغرق ذلك عادةً بضع دقائق. حدّث الصفحة بعد قليل.",
+    "couponInvalid": "رمز الخصم غير صالح أو منتهي – تم إنشاء الطلب بدون خصم."
   },
   "ru": {
     "title": "Мой аккаунт",
@@ -687,7 +691,8 @@
     "unlimited": "Безлимит",
     "dataUsedUnl": "Использовано {used}",
     "status_processing": "Подготовка",
-    "processingNote": "Ваша eSIM готовится – обычно это занимает несколько минут. Обновите страницу чуть позже."
+    "processingNote": "Ваша eSIM готовится – обычно это занимает несколько минут. Обновите страницу чуть позже.",
+    "couponInvalid": "Промокод недействителен или истёк – заказ создан без скидки."
   },
   "fr": {
     "title": "Mon compte",
@@ -825,7 +830,8 @@
     "unlimited": "Illimité",
     "dataUsedUnl": "{used} utilisés",
     "status_processing": "En préparation",
-    "processingNote": "Votre eSIM est en préparation – cela prend généralement quelques minutes. Actualisez la page dans un instant."
+    "processingNote": "Votre eSIM est en préparation – cela prend généralement quelques minutes. Actualisez la page dans un instant.",
+    "couponInvalid": "Code promo invalide ou expiré – commande créée sans réduction."
   },
   "es": {
     "title": "Mi cuenta",
@@ -963,6 +969,7 @@
     "unlimited": "Ilimitado",
     "dataUsedUnl": "{used} usados",
     "status_processing": "Preparando",
-    "processingNote": "Tu eSIM se está preparando; suele tardar unos minutos. Actualiza la página en un momento."
+    "processingNote": "Tu eSIM se está preparando; suele tardar unos minutos. Actualiza la página en un momento.",
+    "couponInvalid": "Código no válido o caducado – pedido creado sin descuento."
   }
 }

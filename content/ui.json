@@ -147,7 +147,11 @@
     "detAfterStop": "İnternet durur",
     "infoLimit": "Hız sınırı",
     "infoNoLimit": "Yok – kota bitince internet durur, ek paket yükleyebilirsin",
-    "infoNoLimitStop": "Yok – kota bitince internet durur"
+    "infoNoLimitStop": "Yok – kota bitince internet durur",
+    "newsletterConsent": "Abone olarak kampanya ve seyahat ipucu e-postalarını almayı kabul edersin. İstediğin zaman çıkabilirsin.",
+    "newsletterError": "Kaydedilemedi, lütfen tekrar dene.",
+    "couponToggle": "İndirim kodun var mı?",
+    "couponPlaceholder": "Kodu gir"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -297,7 +301,11 @@
     "detAfterStop": "Data stops",
     "infoLimit": "Speed limit",
     "infoNoLimit": "None – data stops when used up, top-up available",
-    "infoNoLimitStop": "None – data stops when used up"
+    "infoNoLimitStop": "None – data stops when used up",
+    "newsletterConsent": "By subscribing you agree to receive offers and travel tips by email. You can unsubscribe at any time.",
+    "newsletterError": "Could not subscribe, please try again.",
+    "couponToggle": "Have a discount code?",
+    "couponPlaceholder": "Enter code"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -447,7 +455,11 @@
     "detAfterStop": "Daten stoppen",
     "infoLimit": "Drosselung",
     "infoNoLimit": "Keine – nach dem Volumen stoppen die Daten, Nachladen möglich",
-    "infoNoLimitStop": "Keine – nach dem Volumen stoppen die Daten"
+    "infoNoLimitStop": "Keine – nach dem Volumen stoppen die Daten",
+    "newsletterConsent": "Mit der Anmeldung stimmst du E-Mails mit Angeboten und Reisetipps zu. Abmeldung jederzeit möglich.",
+    "newsletterError": "Anmeldung fehlgeschlagen, bitte erneut versuchen.",
+    "couponToggle": "Rabattcode?",
+    "couponPlaceholder": "Code eingeben"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -597,7 +609,11 @@
     "detAfterStop": "يتوقف الإنترنت",
     "infoLimit": "حد السرعة",
     "infoNoLimit": "لا يوجد – تتوقف البيانات عند نفادها، ويمكن إعادة الشحن",
-    "infoNoLimitStop": "لا يوجد – تتوقف البيانات عند نفادها"
+    "infoNoLimitStop": "لا يوجد – تتوقف البيانات عند نفادها",
+    "newsletterConsent": "بالاشتراك توافق على تلقي العروض ونصائح السفر عبر البريد الإلكتروني. يمكنك إلغاء الاشتراك في أي وقت.",
+    "newsletterError": "تعذّر الاشتراك، حاول مرة أخرى.",
+    "couponToggle": "لديك رمز خصم؟",
+    "couponPlaceholder": "أدخل الرمز"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -747,7 +763,11 @@
     "detAfterStop": "Интернет отключается",
     "infoLimit": "Ограничение скорости",
     "infoNoLimit": "Нет – по окончании трафика интернет отключается, можно пополнить",
-    "infoNoLimitStop": "Нет – по окончании трафика интернет отключается"
+    "infoNoLimitStop": "Нет – по окончании трафика интернет отключается",
+    "newsletterConsent": "Подписываясь, вы соглашаетесь получать предложения и советы для путешествий по email. Отписаться можно в любой момент.",
+    "newsletterError": "Не удалось подписаться, попробуйте ещё раз.",
+    "couponToggle": "Есть промокод?",
+    "couponPlaceholder": "Введите код"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -897,7 +917,11 @@
     "detAfterStop": "La data s'arrête",
     "infoLimit": "Limite de débit",
     "infoNoLimit": "Aucune – la data s'arrête une fois épuisée, recharge possible",
-    "infoNoLimitStop": "Aucune – la data s'arrête une fois épuisée"
+    "infoNoLimitStop": "Aucune – la data s'arrête une fois épuisée",
+    "newsletterConsent": "En vous inscrivant, vous acceptez de recevoir des offres et conseils de voyage par e-mail. Désinscription possible à tout moment.",
+    "newsletterError": "Inscription impossible, veuillez réessayer.",
+    "couponToggle": "Un code promo ?",
+    "couponPlaceholder": "Saisir le code"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -1047,6 +1071,10 @@
     "detAfterStop": "Los datos se detienen",
     "infoLimit": "Límite de velocidad",
     "infoNoLimit": "Ninguno – los datos se detienen al agotarse, recarga disponible",
-    "infoNoLimitStop": "Ninguno – los datos se detienen al agotarse"
+    "infoNoLimitStop": "Ninguno – los datos se detienen al agotarse",
+    "newsletterConsent": "Al suscribirte aceptas recibir ofertas y consejos de viaje por email. Puedes darte de baja cuando quieras.",
+    "newsletterError": "No se pudo suscribir, inténtalo de nuevo.",
+    "couponToggle": "¿Tienes un código de descuento?",
+    "couponPlaceholder": "Introduce el código"
   }
 }

@@ -107,9 +107,9 @@
   /* ---------- İskelet ---------- */
   const NAV = [
     ["", "", "Genel"], ["overview", "◧", "Genel bakış"],
-    ["", "", "Satış"], ["orders", "🧾", "Siparişler"], ["payments", "💳", "Ödemeler"], ["refunds", "↩", "İade talepleri"], ["esims", "📶", "eSIM'ler"],
-    ["", "", "Müşteriler"], ["customers", "👥", "Müşteriler"], ["support", "✉", "Destek talepleri"], ["questions", "💬", "Lina soruları"],
-    ["", "", "Online mağaza"], ["editor", "✎", "Mağaza editörü"], ["pricing", "₺", "Fiyatlar & rakipler"],
+    ["", "", "Satış"], ["orders", "🧾", "Siparişler"], ["payments", "💳", "Ödemeler"], ["refunds", "↩", "İade talepleri"], ["esims", "📶", "eSIM'ler"], ["discounts", "🏷", "İndirim kodları"],
+    ["", "", "Müşteriler"], ["customers", "👥", "Müşteriler"], ["newsletter", "📨", "Bülten"], ["support", "✉", "Destek talepleri"], ["questions", "💬", "Lina soruları"],
+    ["", "", "Online mağaza"], ["editor", "✎", "Mağaza editörü"], ["guides", "📖", "Rehberler"], ["translations", "🌐", "Diller & çeviri"], ["pricing", "₺", "Fiyatlar & rakipler"],
     ["", "", "Ayarlar"], ["settings", "⚙", "Entegrasyonlar"], ["audit", "📜", "İşlem kaydı"], ["security", "🔒", "Güvenlik"],
   ];
   let view = "overview", userEmail = "", counts = {};
@@ -254,7 +254,8 @@
   /* ---------- Mağaza editörü (eigene Datei panel-editor.js) ---------- */
   async function editor() {
     if (!window.PPEditor) { shell("Mağaza editörü", `<div class="pl-card"><p>Editör yüklenemedi.</p></div>`); return; }
-    window.PPEditor.open({ api, toast, esc, close: () => { location.hash = "overview"; } });
+    const file = sessionStorage.getItem("pl_edfile") || undefined; sessionStorage.removeItem("pl_edfile");
+    window.PPEditor.open({ api, toast, esc, file, close: () => { location.hash = file?.startsWith("content/posts/") ? "guides" : "overview"; } });
   }
 
   function ordersTable(list, editable = true) {
@@ -422,7 +423,185 @@
       </div>`);
   }
 
-  const VIEWS = { overview, editor, orders, payments, refunds, support, questions, customers, esims, pricing, settings, audit, security };
+  /* ---------- Bülten (Newsletter) ---------- */
+  async function newsletter() {
+    loading("Bülten");
+    const d = await api("GET", "?view=newsletter");
+    const LN = { tr: "Türkçe", en: "English", de: "Deutsch", ar: "العربية", ru: "Русский", fr: "Français", es: "Español" };
+    const st = sessionStorage.getItem("pl_nl") || "active";
+    const list = d.subscribers.filter((s) => st === "all" ? true : st === "active" ? !s.unsubscribed_at : !!s.unsubscribed_at);
+    shell("Bülten", `
+      <div class="pl-grid">
+        <div class="pl-card pl-kpi pl-kpi--hero"><span>Aktif aboneler</span><b>${d.active}</b><div class="pl-kpi__meta"><span>+${d.new30} son 30 gün</span></div></div>
+        <div class="pl-card pl-kpi"><span>Toplam kayıt</span><b>${d.total}</b><div class="pl-kpi__meta"><span>${d.total - d.active} abonelikten çıktı</span></div></div>
+        <div class="pl-card pl-kpi" style="grid-column:span 2"><span>Dillere göre</span><div class="pl-bars" style="margin-top:10px">${Object.entries(d.byLang).sort((a, b) => b[1] - a[1]).map(([l, n]) => `<div class="pl-bar"><span>${esc(LN[l] || l)}</span><b>${n}</b><div class="pl-bar__track"><i style="width:${Math.round((n / Math.max(1, d.active)) * 100)}%"></i></div></div>`).join("") || `<p class="pl-help">Henüz abone yok.</p>`}</div></div>
+      </div>
+      <div class="pl-card">
+        <div class="pl-tools">
+          <label class="pl-field">Durum<select data-nlfilter><option value="active" ${st === "active" ? "selected" : ""}>Aktif</option><option value="unsub" ${st === "unsub" ? "selected" : ""}>Çıkanlar</option><option value="all" ${st === "all" ? "selected" : ""}>Tümü</option></select></label>
+          <label class="pl-field">Ara<input data-search placeholder="e-posta"></label>
+          <button class="pl-btn pl-btn--line" data-csv>CSV indir</button>
+          <form data-nladd style="display:flex;gap:8px;align-items:end;margin-left:auto"><label class="pl-field">Elle ekle<input name="email" type="email" placeholder="ornek@mail.com" required></label><button class="pl-btn pl-btn--green" type="submit">Ekle</button></form>
+        </div>
+        <p class="pl-help">Aboneler sitedeki bülten formundan gelir; onay metni kayıtla birlikte saklanır (KVKK). E-posta göndermek için listeyi CSV olarak <b>Brevo, Mailchimp veya Resend</b>'e aktar. Silme işlemi kalıcıdır (veri silme talebi).</p>
+        ${table(["Tarih", "E-posta", "Dil", "Kaynak", "Durum", ""], list.map((s) => `<tr data-row="${esc(s.email)}"><td>${esc(date(s.created_at))}</td><td>${esc(s.email)}</td><td>${esc(LN[s.lang] || s.lang || "–")}</td><td><span class="pl-note">${esc(s.source || "–")}</span></td>
+          <td>${s.unsubscribed_at ? `<span class="pl-badge bad">Çıktı</span>` : `<span class="pl-badge ok">Aktif</span>`}</td>
+          <td class="pl-actions">${s.unsubscribed_at ? `<button class="pl-btn pl-btn--sm" data-nl="newsletter_resub" data-id="${s.id}">Geri al</button>` : `<button class="pl-btn pl-btn--sm" data-nl="newsletter_unsub" data-id="${s.id}">Çıkar</button>`}<button class="pl-btn pl-btn--sm pl-btn--red" data-nl="newsletter_delete" data-id="${s.id}">Sil</button></td></tr>`), "Kayıt yok.")}
+      </div>`, `${d.active} aktif abone`);
+    lastCsv = { name: "bulten", rows: list.map((s) => ({ email: s.email, dil: s.lang || "", tarih: s.created_at, durum: s.unsubscribed_at ? "cikti" : "aktif", kaynak: s.source || "", onay: s.consent_text || "" })) };
+  }
+
+  /* ---------- Rehberler (Ratgeber / Blog) ---------- */
+  async function guides() {
+    loading("Rehberler");
+    let d, err = "";
+    try { d = await api("POST", "", { action: "posts_list" }); }
+    catch (e) {
+      err = e.message;
+      // Ohne GitHub-Token: veröffentlichte Artikel aus der Seite anzeigen
+      const blog = await fetch("../content/blog.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => ({}));
+      d = { posts: (blog.tr?.posts || []).map((p) => ({ id: p.id, title: p.title, date: p.date, category: p.category, image: p.image, draft: false, langs: [] })) };
+    }
+    const ro = err === "github_missing";
+    const img = (u) => !u ? "" : /^https?:/.test(u) ? (u.includes("images.unsplash.com") ? u.split("?")[0] + "?w=160&h=110&fit=crop&q=60" : u) : "../" + u;
+    shell("Rehberler", `
+      ${ro ? `<div class="pl-card" style="margin-bottom:14px;border-color:rgba(255,200,87,.35)"><p class="pl-help" style="margin:0;color:var(--amber)">Yazı eklemek, düzenlemek ve silmek için Supabase secret'ı <b>GITHUB_CONTENT_TOKEN</b> gerekli. Şu an yalnızca yayındaki yazılar listeleniyor.</p></div>` : ""}
+      <div class="pl-card">
+        <div class="pl-tools">
+          <label class="pl-field">Ara<input data-search placeholder="başlık"></label>
+          <form data-newpost style="display:flex;gap:8px;align-items:end;margin-left:auto"><label class="pl-field">Yeni rehber başlığı<input name="title" required placeholder="ör. İtalya'da internet: 2027 rehberi" style="min-width:280px"></label><button class="pl-btn pl-btn--green" type="submit" ${ro ? "disabled" : ""}>+ Yeni rehber</button></form>
+        </div>
+        <p class="pl-help">Rehberler sitede <b>Dergi / blog</b> bölümünde ve kendi sayfalarında görünür. <b>Taslak</b> yazılar yayınlanmaz. Düzenle → Mağaza editörü açılır (7 dil, görsel, metin).</p>
+        ${table(["", "Başlık", "Kategori", "Tarih", "Diller", "Durum", ""], d.posts.map((p) => `<tr data-row="${esc((p.title || "").toLowerCase())}">
+          <td>${p.image ? `<img src="${esc(img(p.image))}" alt="" style="width:64px;height:44px;object-fit:cover;border-radius:8px;display:block">` : ""}</td>
+          <td><b>${esc(p.title || p.id)}</b><br><span class="pl-note mono">${esc(p.id)}</span></td><td>${esc(p.category || "–")}</td><td>${esc(p.date || "–")}</td>
+          <td><span class="pl-note">TR${(p.langs || []).length ? " · " + p.langs.map((l) => l.toUpperCase()).join(" · ") : ""}</span></td>
+          <td>${p.draft ? `<span class="pl-badge warn">Taslak</span>` : `<span class="pl-badge ok">Yayında</span>`}</td>
+          <td class="pl-actions"><button class="pl-btn pl-btn--sm" data-editpost="${esc(p.id)}">Düzenle</button><a class="pl-btn pl-btn--sm" href="../blog.html?p=${esc(p.id)}" target="_blank" rel="noopener">Gör ↗</a>${ro ? "" : `<button class="pl-btn pl-btn--sm pl-btn--red" data-delpost="${esc(p.id)}">Sil</button>`}</td></tr>`), "Henüz rehber yok.")}
+      </div>`, `${d.posts.length} yazı`);
+  }
+
+  /* ---------- Diller & çeviri ---------- */
+  const T_LANGS = [["en", "English"], ["de", "Deutsch"], ["ar", "العربية"], ["ru", "Русский"], ["fr", "Français"], ["es", "Español"]];
+  const T_FILES = [["content/site.json", "Ana sayfa"], ["content/ui.json", "Arayüz metinleri"], ["content/assistant.json", "Lina & SSS"], ["content/install.json", "Kurulum rehberi"], ["content/account.json", "Müşteri hesabı"], ["content/pages.json", "Yasal sayfalar"], ["content/reviews.json", "Değerlendirmeler"], ["content/esim.json", "eSIM ülkeleri"]];
+  // Übersetzbare Texte: Zeichenketten, aber keine Links, Bilder, Codes, Farben, Daten
+  const T_SKIP = /^(image|images|img|url|href|link|icon|color|green|dark|code|id|type|date|cta|country|countryCode|pricesUrl|questionsUrl|mapCodes|slug|value|style|tap|toggle|kind|currency|email|phone|logo|flag)$/i;
+  function tLeaves(obj, path = [], out = []) {
+    if (typeof obj === "string") { const s = obj.trim(); if (s && !/^(https?:|\/|#|[a-z0-9_-]+\.(png|jpe?g|webp|svg)$)/i.test(s) && !/^[#0-9a-f]{4,7}$/i.test(s) && /\p{L}{2,}/u.test(s)) out.push({ path, text: obj }); return out; }
+    if (Array.isArray(obj)) { obj.forEach((v, i) => tLeaves(v, [...path, i], out)); return out; }
+    if (obj && typeof obj === "object") for (const [k, v] of Object.entries(obj)) { if (!T_SKIP.test(k)) tLeaves(v, [...path, k], out); }
+    return out;
+  }
+  const KF = (o) => (o && typeof o === "object" ? (o.id !== undefined ? "id" : o.code !== undefined ? "code" : null) : null);
+  // Fremdsprachen-Wert lesen/schreiben wie die Seite mischt (Listen mit id/code über den Schlüssel, sonst Index)
+  function tGet(data, lang, path) {
+    let b = data.tr, o = data[lang];
+    for (const p of path) {
+      if (o == null) return undefined;
+      if (typeof p === "number" && Array.isArray(b) && KF(b[p]) && Array.isArray(o)) { const k = KF(b[p]); o = o.find((x) => x && x[k] === b[p][k]); }
+      else o = o[p];
+      b = b?.[p];
+    }
+    return o;
+  }
+  function tSet(data, lang, path, value) {
+    data[lang] ??= {};
+    let b = data.tr, o = data[lang];
+    for (let i = 0; i < path.length; i++) {
+      const p = path[i], last = i === path.length - 1;
+      if (typeof p === "number" && Array.isArray(b) && KF(b[p])) {
+        const k = KF(b[p]); let el = o.find((x) => x && x[k] === b[p][k]);
+        if (!el) { el = { [k]: b[p][k] }; o.push(el); }
+        if (last) return; o = el;
+      } else if (last) { o[p] = value; return; }
+      else { if (o[p] == null) o[p] = Array.isArray(b?.[p]) ? [] : {}; o = o[p]; }
+      b = b?.[p];
+    }
+  }
+  async function translations() {
+    loading("Diller & çeviri");
+    const files = await Promise.all(T_FILES.map(async ([f, label]) => { try { return { f, label, data: await fetch("../" + f, { cache: "no-cache" }).then((r) => r.json()) }; } catch (_) { return { f, label, data: null }; } }));
+    const cov = files.filter((x) => x.data?.tr).map((x) => {
+      const leaves = tLeaves(x.data.tr);
+      const per = Object.fromEntries(T_LANGS.map(([l]) => [l, leaves.filter((lf) => { const v = tGet(x.data, l, lf.path); return typeof v === "string" && v.trim(); }).length]));
+      return { ...x, total: leaves.length, per };
+    });
+    const sel = sessionStorage.getItem("pl_tfile") || "content/site.json", lang = sessionStorage.getItem("pl_tlang") || "en", onlyMissing = sessionStorage.getItem("pl_tmiss") !== "0";
+    const cur = cov.find((c) => c.f === sel) || cov[0];
+    const pct = (n, t) => (t ? Math.round((n / t) * 100) : 100);
+    const leaves = cur ? tLeaves(cur.data.tr) : [];
+    const rows = leaves.map((lf, i) => ({ ...lf, i, val: tGet(cur.data, lang, lf.path) })).filter((r) => !onlyMissing || !(typeof r.val === "string" && r.val.trim()));
+    shell("Diller & çeviri", `
+      <div class="pl-card" style="margin-bottom:16px"><h2>Çeviri durumu <small>Türkçe ana dildir; boş metinlerde sitede Türkçe görünür</small></h2>
+        ${table(["İçerik", "#Metin", ...T_LANGS.map(([, n]) => "#" + n)], cov.map((c) => `<tr><td><b>${esc(c.label)}</b><br><span class="pl-note mono">${esc(c.f)}</span></td><td class="num">${c.total}</td>${T_LANGS.map(([l]) => { const p = pct(c.per[l], c.total); return `<td class="num"><span class="pl-badge ${p >= 95 ? "ok" : p >= 60 ? "warn" : "bad"}">%${p}</span></td>`; }).join("")}</tr>`), "İçerik yok.")}
+      </div>
+      <div class="pl-card">
+        <h2>Çevir</h2>
+        <div class="pl-tools">
+          <label class="pl-field">İçerik<select data-tfile>${cov.map((c) => `<option value="${esc(c.f)}" ${c.f === cur?.f ? "selected" : ""}>${esc(c.label)}</option>`).join("")}</select></label>
+          <label class="pl-field">Dil<select data-tlang>${T_LANGS.map(([l, n]) => `<option value="${l}" ${l === lang ? "selected" : ""}>${n}</option>`).join("")}</select></label>
+          <label class="pl-field">Göster<select data-tmiss><option value="1" ${onlyMissing ? "selected" : ""}>Sadece eksikler</option><option value="0" ${onlyMissing ? "" : "selected"}>Tümü</option></select></label>
+          <span style="margin-left:auto" class="pl-note">${rows.length} metin</span>
+          <button class="pl-btn pl-btn--green" data-tsave disabled>Kaydet</button>
+        </div>
+        <p class="pl-help">Soldaki Türkçe metni seçilen dile çevir ve kaydet. Kaydetme için <b>GITHUB_CONTENT_TOKEN</b> gerekli; değişiklik 1–2 dakikada yayında.</p>
+        <div class="pl-table-wrap"><table><thead><tr><th style="width:45%">Türkçe</th><th>${esc(T_LANGS.find((x) => x[0] === lang)?.[1] || lang)}</th></tr></thead><tbody>
+          ${rows.slice(0, 400).map((r) => `<tr><td style="vertical-align:top"><span class="pl-note mono" style="font-size:11px">${esc(r.path.join(" › "))}</span><br>${esc(r.text.length > 400 ? r.text.slice(0, 400) + " …" : r.text)}</td>
+            <td><textarea class="pl-tr" data-ti="${r.i}" rows="${Math.min(8, Math.max(2, Math.ceil(r.text.length / 60)))}" dir="${lang === "ar" ? "rtl" : "ltr"}" style="width:100%;border-radius:10px;border:1px solid var(--line2);background:var(--bg2);color:var(--ink);padding:8px 10px;font:inherit;resize:vertical">${esc(typeof r.val === "string" ? r.val : "")}</textarea></td></tr>`).join("") || `<tr><td colspan="2" class="pl-empty">Bu dilde eksik metin yok 🎉</td></tr>`}
+        </tbody></table></div>
+        ${rows.length > 400 ? `<p class="pl-help">İlk 400 metin gösteriliyor – kaydettikten sonra kalanlar görünür.</p>` : ""}
+      </div>`, "7 dil · eksik metinleri tamamla");
+    // Bearbeiten → beim Speichern frische Datei (mit sha) von GitHub holen, Änderungen einsetzen
+    const changed = new Map();
+    app.querySelectorAll(".pl-tr").forEach((ta) => ta.addEventListener("input", () => { changed.set(+ta.dataset.ti, ta.value); $("[data-tsave]").disabled = false; }));
+    $("[data-tsave]").addEventListener("click", async (e) => {
+      const btn = e.currentTarget; btn.disabled = true; btn.textContent = "Kaydediliyor …";
+      try {
+        const g = await api("POST", "", { action: "content_get", file: cur.f });
+        const data = g.data || cur.data;
+        for (const [i, v] of changed) tSet(data, lang, leaves[i].path, v.trim());
+        await api("POST", "", { action: "content_put", file: cur.f, data, sha: g.sha });
+        toast(`${changed.size} çeviri kaydedildi. Site 1–2 dakikada güncellenir.`);
+        changed.clear(); btn.textContent = "Kaydedildi";
+      } catch (err) { toast(err.message === "github_missing" ? "Kaydetmek için GITHUB_CONTENT_TOKEN gerekli." : "Kaydedilemedi: " + err.message); btn.disabled = false; btn.textContent = "Kaydet"; }
+    });
+  }
+
+  /* ---------- İndirim kodları ---------- */
+  async function discounts() {
+    loading("İndirim kodları");
+    const d = await api("GET", "?view=discounts");
+    const used = (code) => d.usage.filter((u) => u.coupon === code && ["paid", "fulfilled"].includes(u.status));
+    const dt = (v) => (v ? new Date(v).toISOString().slice(0, 16) : "");
+    const stateOf = (c) => { const n = Date.now(); if (!c.active) return ["Kapalı", ""]; if (c.ends_at && new Date(c.ends_at) < n) return ["Süresi doldu", "bad"]; if (c.starts_at && new Date(c.starts_at) > n) return ["Planlandı", "warn"]; if (c.max_uses && c.used_count >= c.max_uses) return ["Tükendi", "bad"]; return ["Aktif", "ok"]; };
+    shell("İndirim kodları", `
+      <div class="pl-card" style="margin-bottom:16px"><h2>Yeni indirim kodu</h2>
+        <form class="pl-form" data-disc style="grid-template-columns:repeat(4,minmax(0,1fr));">
+          <label class="pl-field">Kod<input name="code" required placeholder="YAZ25" style="text-transform:uppercase"></label>
+          <label class="pl-field">Tür<select name="kind"><option value="percent">Yüzde (%)</option><option value="fixed">Sabit tutar (€)</option></select></label>
+          <label class="pl-field">Değer<input name="value" type="number" step="0.01" min="0.01" required placeholder="10"></label>
+          <label class="pl-field">En az sepet (€)<input name="min_amount" type="number" step="0.01" min="0" value="0"></label>
+          <label class="pl-field">Başlangıç<input name="starts_at" type="datetime-local"></label>
+          <label class="pl-field">Bitiş<input name="ends_at" type="datetime-local"></label>
+          <label class="pl-field">Kullanım sınırı<input name="max_uses" type="number" min="1" placeholder="sınırsız"></label>
+          <label class="pl-field">Not<input name="note" placeholder="ör. Instagram kampanyası"></label>
+          <button class="pl-btn pl-btn--green" type="submit">Kodu oluştur</button>
+        </form>
+        <p class="pl-help" style="margin:12px 0 0">Müşteri kodu paket penceresindeki <b>“İndirim kodun var mı?”</b> alanına girer. Kod sunucuda kontrol edilir; indirim siparişte görünür. Sabit tutar ve en az sepet EUR cinsindendir, diğer para birimlerinde güncel kurla çevrilir.</p>
+      </div>
+      <div class="pl-card"><h2>Kodlar <small>${d.codes.length}</small></h2>
+        ${table(["Kod", "İndirim", "Geçerlilik", "#Kullanım", "#İndirim toplamı", "Durum", ""], d.codes.map((c) => { const [lbl, cls] = stateOf(c); const u = used(c.code); const sum = u.reduce((a, o) => ((a[o.currency] = (a[o.currency] || 0) + Number(o.discount || 0)), a), {});
+          return `<tr><td><b class="mono" style="font-size:14px">${esc(c.code)}</b>${c.note ? `<br><span class="pl-note">${esc(c.note)}</span>` : ""}</td>
+          <td>${c.kind === "percent" ? `%${Number(c.value)}` : esc(money(c.value, "EUR"))}${Number(c.min_amount) ? `<br><span class="pl-note">en az ${esc(money(c.min_amount, "EUR"))}</span>` : ""}</td>
+          <td><span class="pl-note">${c.starts_at ? esc(date(c.starts_at)) : "hemen"} → ${c.ends_at ? esc(date(c.ends_at)) : "süresiz"}</span></td>
+          <td class="num">${c.used_count}${c.max_uses ? ` / ${c.max_uses}` : ""}</td>
+          <td class="num">${Object.entries(sum).map(([cur, v]) => esc(money(v, cur))).join("<br>") || "–"}</td>
+          <td><span class="pl-badge ${cls}">${lbl}</span></td>
+          <td class="pl-actions"><button class="pl-btn pl-btn--sm" data-dtoggle="${c.id}" data-active="${c.active ? 0 : 1}">${c.active ? "Kapat" : "Aç"}</button><button class="pl-btn pl-btn--sm pl-btn--red" data-ddel="${c.id}">Sil</button></td></tr>`; }), "Henüz indirim kodu yok.")}
+      </div>`, "Kampanya kodları");
+  }
+
+  const VIEWS = { overview, editor, newsletter, guides, translations, discounts, orders, payments, refunds, support, questions, customers, esims, pricing, settings, audit, security };
   let lastCsv = null;
   async function show() {
     view = VIEWS[location.hash.slice(1)] ? location.hash.slice(1) : "overview";
@@ -473,6 +652,18 @@
     }
     const q = e.target.closest("[data-question]");
     if (q) { q.disabled = true; await api("POST", "", { action: "question_handled", id: q.dataset.question }); toast("İşlendi."); return questions(); }
+    // Zweistufige Bestätigung für endgültige Aktionen (kein Browser-Dialog)
+    const sure = (b, label) => { if (b.dataset.confirm) return true; b.dataset.confirm = "1"; const old = b.textContent; b.textContent = label || "Emin misin?"; setTimeout(() => { if (b.isConnected) { delete b.dataset.confirm; b.textContent = old; } }, 4000); return false; };
+    const nl = e.target.closest("[data-nl]");
+    if (nl) { if (nl.dataset.nl === "newsletter_delete" && !sure(nl, "Kalıcı sil?")) return; nl.disabled = true; await api("POST", "", { action: nl.dataset.nl, id: nl.dataset.id }).then(() => toast("Kaydedildi."), () => toast("Kaydedilemedi.")); return newsletter(); }
+    const ep = e.target.closest("[data-editpost]");
+    if (ep) { sessionStorage.setItem("pl_edfile", `content/posts/${ep.dataset.editpost}.json`); location.hash = "editor"; return; }
+    const dp = e.target.closest("[data-delpost]");
+    if (dp) { if (!sure(dp, "Kalıcı sil?")) return; dp.disabled = true; await api("POST", "", { action: "content_delete", file: `content/posts/${dp.dataset.delpost}.json` }).then(() => toast("Silindi – site 1–2 dakikada güncellenir."), (err) => toast("Silinemedi: " + err.message)); return guides(); }
+    const dt = e.target.closest("[data-dtoggle]");
+    if (dt) { dt.disabled = true; await api("POST", "", { action: "discount_toggle", id: dt.dataset.dtoggle, active: dt.dataset.active === "1" }).then(() => toast("Kaydedildi."), () => toast("Kaydedilemedi.")); return discounts(); }
+    const dd = e.target.closest("[data-ddel]");
+    if (dd) { if (!sure(dd, "Sil?")) return; dd.disabled = true; await api("POST", "", { action: "discount_delete", id: dd.dataset.ddel }).then(() => toast("Silindi."), () => toast("Silinemedi.")); return discounts(); }
   });
   app.addEventListener("change", async (e) => {
     const o = e.target.closest("[data-order]");
@@ -482,6 +673,10 @@
     const t = e.target.closest("[data-ticket]");
     if (t) { await api("POST", "", { action: "support_update", id: t.dataset.ticket, status: t.value }).then(() => toast("Durum kaydedildi."), () => toast("Kaydedilemedi.")); return; }
     if (e.target.matches("[data-ofilter]")) { sessionStorage.setItem("pl_ost", e.target.value); orders(); }
+    if (e.target.matches("[data-nlfilter]")) { sessionStorage.setItem("pl_nl", e.target.value); newsletter(); }
+    if (e.target.matches("[data-tfile]")) { sessionStorage.setItem("pl_tfile", e.target.value); translations(); }
+    if (e.target.matches("[data-tlang]")) { sessionStorage.setItem("pl_tlang", e.target.value); translations(); }
+    if (e.target.matches("[data-tmiss]")) { sessionStorage.setItem("pl_tmiss", e.target.value); translations(); }
   });
   app.addEventListener("input", (e) => {
     if (e.target.matches("[data-search]")) { const q = e.target.value.trim().toLowerCase(); $$("[data-row]").forEach((r) => (r.hidden = !!q && !r.dataset.row.includes(q))); }
@@ -489,6 +684,27 @@
   });
   app.addEventListener("submit", async (e) => {
     const f = e.target;
+    if (f.matches("[data-nladd], [data-newpost], [data-disc]")) {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(f));
+      const btn = $("button[type=submit]", f); if (btn) btn.disabled = true;
+      try {
+        if (f.matches("[data-nladd]")) { await api("POST", "", { action: "newsletter_add", email: d.email }); toast("Abone eklendi."); return newsletter(); }
+        if (f.matches("[data-disc]")) { await api("POST", "", { action: "discount_save", ...d }); toast("İndirim kodu oluşturuldu."); return discounts(); }
+        if (f.matches("[data-newpost]")) {
+          // Neuer Ratgeber als Entwurf; dann direkt im Editor öffnen
+          const slug = String(d.title).toLocaleLowerCase("tr").replace(/ı/g, "i").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "rehber-" + Date.now();
+          const file = `content/posts/${slug}.json`;
+          const ex = await api("POST", "", { action: "content_get", file });
+          if (ex.data) { toast("Bu adla bir yazı zaten var – başlığı değiştir."); if (btn) btn.disabled = false; return; }
+          const tr = { date: new Date().toISOString().slice(0, 10), title: d.title, excerpt: "", category: "eSIM Rehberi", readTime: "5 dk", image: "", body: "## Giriş\n\nMetni buraya yaz.", cta: "esim", draft: true };
+          await api("POST", "", { action: "content_put", file, data: { tr } });
+          toast("Taslak oluşturuldu – editör açılıyor.");
+          sessionStorage.setItem("pl_edfile", file); location.hash = "editor"; return;
+        }
+      } catch (err) { toast(err.message === "exists" ? "Bu kod zaten var." : err.message === "github_missing" ? "Bunun için GITHUB_CONTENT_TOKEN gerekli." : "Kaydedilemedi: " + err.message); if (btn) btn.disabled = false; }
+      return;
+    }
     if (!f.matches("[data-settings], [data-comp], [data-import]")) return;
     e.preventDefault();
     const d = Object.fromEntries(new FormData(f));

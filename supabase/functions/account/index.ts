@@ -31,6 +31,23 @@ async function findPlan(item: string, planId: string, currency: string) {
   return plan ? { plan, currency: p.currency as string } : null;
 }
 
+/** Rabattcode anwenden – Betrag in der Bestellwährung; fester Rabatt und Mindestwert sind in EUR hinterlegt */
+async function applyCoupon(raw: string, price: number, currency: string): Promise<{ code: string | null; discount: number; state?: string }> {
+  const code = raw.toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32);
+  if (!code) return { code: null, discount: 0 };
+  const { data: c } = await db.from("discount_codes").select("*").eq("code", code).maybeSingle();
+  const now = Date.now();
+  if (!c || !c.active || (c.starts_at && new Date(c.starts_at).getTime() > now) || (c.ends_at && new Date(c.ends_at).getTime() < now) || (c.max_uses && c.used_count >= c.max_uses)) return { code: null, discount: 0, state: "invalid" };
+  // EUR → Bestellwährung (EZB-Kurs aus dem Zwischenspeicher)
+  let rate = 1;
+  if (currency !== "EUR") { const { data: fx } = await db.from("price_cache").select("body").eq("id", "fx:EUR").maybeSingle(); rate = Number(fx?.body?.rates?.[currency]) || 0; if (!rate) return { code: null, discount: 0, state: "invalid" }; }
+  if (price < Number(c.min_amount || 0) * rate) return { code: null, discount: 0, state: "invalid" };
+  const discount = c.kind === "percent" ? price * (Number(c.value) / 100) : Number(c.value) * rate;
+  const { data: ok } = await db.rpc("use_discount", { p_code: code });
+  if (!ok) return { code: null, discount: 0, state: "invalid" };
+  return { code, discount: Math.min(price, Math.round(discount * 100) / 100) };
+}
+
 /** Status und Restlaufzeit berechnen */
 function view(e: Record<string, unknown>) {
   const exp = e.expires_at ? new Date(String(e.expires_at)) : null;
@@ -103,23 +120,27 @@ Deno.serve(async (req) => {
       const found = await findPlan(item, planId, currency);
       if (!found) return json({ error: "plan_not_found" }, 400, headers);
       const { plan } = found;
+      // Rabattcode prüfen (nur serverseitig): aktiv, im Zeitraum, Nutzungen frei, Mindestbestellwert erreicht
+      const disc = await applyCoupon(String(body.coupon ?? ""), Number(plan.price), found.currency);
+      const amount = Math.max(0, Math.round((Number(plan.price) - disc.discount) * 100) / 100);
       const { data: order, error } = await db.from("orders").insert({
         user_id: user.id, customer_email: user.email, product: "esim", item_key: item, plan_id: plan.id,
-        title: `${plan.unlimited ? "Unlimited" : plan.gb + " GB"} · ${plan.days}`, amount: plan.price, currency: found.currency,
+        title: `${plan.unlimited ? "Unlimited" : plan.gb + " GB"} · ${plan.days}`, amount, currency: found.currency,
         plan_meta: { gb: plan.gb, days: plan.days, unlimited: !!plan.unlimited },
+        coupon: disc.code, discount: disc.discount,
       }).select().single();
       if (error) throw error;
 
       if (env("PAYMENT_PROVIDER")) {
         // TODO Zahlung: hier die Zahlungssitzung beim Anbieter erzeugen und die Weiterleitungsadresse zurückgeben.
         // Nach erfolgreicher Zahlung (Webhook) → status "paid" → provision() → eSIM speichern.
-        return json({ order, payment: { status: "not_implemented" } }, 501, headers);
+        return json({ order, coupon: disc.state, payment: { status: "not_implemented" } }, 501, headers);
       }
-      if (env("ALLOW_TEST_ORDERS") !== "true") return json({ order, payment: { status: "provider_missing" } }, 409, headers);
+      if (env("ALLOW_TEST_ORDERS") !== "true") return json({ order, coupon: disc.state, payment: { status: "provider_missing" } }, 409, headers);
 
       // Testmodus: ohne Zahlung sofort eine Test-eSIM ausstellen – NIE eine echte (kostenpflichtige) eSIM
       const done = await fulfillOrder(db, order.id, { test: true });
-      return json({ order: { ...done.order, test: true }, esim: done.esim ? view(done.esim) : null }, 200, headers);
+      return json({ order: { ...done.order, test: true }, coupon: disc.state, esim: done.esim ? view(done.esim) : null }, 200, headers);
     }
 
     if (body.action === "refund_request") {
