@@ -96,7 +96,18 @@
     "currency": "Para birimi",
     "themeDark": "Koyu moda geç",
     "themeLight": "Açık moda geç",
-    "popularAsk": "Merak edilenler – dokun, Lina yanıtlasın"
+    "popularAsk": "Merak edilenler – dokun, Lina yanıtlasın",
+    "prevStep": "Önceki adım",
+    "nextStep": "Sonraki adım",
+    "blogMetaTitle": "Seyahat dergisi – eSIM, lounge ve Fast Track rehberleri | passport.io",
+    "blogIntro": "Yurt dışında internet, havalimanında konfor ve popüler rotalar için pratik rehberler.",
+    "blogAll": "Tüm yazılar",
+    "blogRelated": "Bunları da okuyabilirsin",
+    "blogCtaKicker": "Yolculuğa hazır mısın?",
+    "blogCtaEsim": "eSIM paketlerini gör",
+    "blogCtaEsimTitle": "Yolculuğun için doğru eSIM",
+    "blogCtaAirport": "Lounge ve Fast Track'e göz at",
+    "blogCtaAirportTitle": "Havalimanında daha fazla huzur"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -195,7 +206,18 @@
     "currency": "Currency",
     "themeDark": "Switch to dark mode",
     "themeLight": "Switch to light mode",
-    "popularAsk": "Popular questions – tap and Lina answers"
+    "popularAsk": "Popular questions – tap and Lina answers",
+    "prevStep": "Previous step",
+    "nextStep": "Next step",
+    "blogMetaTitle": "Travel magazine – guides to eSIM, lounges and Fast Track | passport.io",
+    "blogIntro": "Practical guides to mobile data abroad, airport comfort and popular destinations.",
+    "blogAll": "All articles",
+    "blogRelated": "You might also like",
+    "blogCtaKicker": "Ready for your trip?",
+    "blogCtaEsim": "See eSIM plans",
+    "blogCtaEsimTitle": "The right eSIM for your trip",
+    "blogCtaAirport": "Explore lounges and Fast Track",
+    "blogCtaAirportTitle": "More calm at the airport"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -294,7 +316,18 @@
     "currency": "Währung",
     "themeDark": "Dunkelmodus einschalten",
     "themeLight": "Hellmodus einschalten",
-    "popularAsk": "Häufige Fragen – antippen, Lina antwortet"
+    "popularAsk": "Häufige Fragen – antippen, Lina antwortet",
+    "prevStep": "Vorheriger Schritt",
+    "nextStep": "Nächster Schritt",
+    "blogMetaTitle": "Reisemagazin – Ratgeber zu eSIM, Lounges und Fast Track | passport.io",
+    "blogIntro": "Praktische Ratgeber zu mobilem Internet im Ausland, Komfort am Flughafen und beliebten Reisezielen.",
+    "blogAll": "Alle Artikel",
+    "blogRelated": "Das könnte dich auch interessieren",
+    "blogCtaKicker": "Bereit für die Reise?",
+    "blogCtaEsim": "eSIM-Tarife ansehen",
+    "blogCtaEsimTitle": "Die passende eSIM für deine Reise",
+    "blogCtaAirport": "Lounges und Fast Track ansehen",
+    "blogCtaAirportTitle": "Mehr Ruhe am Flughafen"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -393,7 +426,18 @@
     "assistantFallbackName": "المساعدة",
     "themeDark": "التبديل إلى الوضع الداكن",
     "themeLight": "التبديل إلى الوضع الفاتح",
-    "popularAsk": "أسئلة شائعة – اضغط وستجيبك لينا"
+    "popularAsk": "أسئلة شائعة – اضغط وستجيبك لينا",
+    "prevStep": "الخطوة السابقة",
+    "nextStep": "الخطوة التالية",
+    "blogMetaTitle": "مجلة السفر – أدلة eSIM والصالات والمسار السريع | passport.io",
+    "blogIntro": "أدلة عملية للإنترنت في الخارج والراحة في المطار وأشهر الوجهات.",
+    "blogAll": "كل المقالات",
+    "blogRelated": "قد يعجبك أيضًا",
+    "blogCtaKicker": "هل أنت مستعد للسفر؟",
+    "blogCtaEsim": "عرض باقات eSIM",
+    "blogCtaEsimTitle": "شريحة eSIM المناسبة لرحلتك",
+    "blogCtaAirport": "استكشف الصالات والمسار السريع",
+    "blogCtaAirportTitle": "هدوء أكثر في المطار"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -492,7 +536,18 @@
     "assistantFallbackName": "Ассистент",
     "themeDark": "Включить тёмную тему",
     "themeLight": "Включить светлую тему",
-    "popularAsk": "Частые вопросы – нажмите, и Лина ответит"
+    "popularAsk": "Частые вопросы – нажмите, и Лина ответит",
+    "prevStep": "Предыдущий шаг",
+    "nextStep": "Следующий шаг",
+    "blogMetaTitle": "Журнал о путешествиях – гиды по eSIM, бизнес-залам и Fast Track | passport.io",
+    "blogIntro": "Практичные гиды: мобильный интернет за границей, комфорт в аэропорту и популярные направления.",
+    "blogAll": "Все статьи",
+    "blogRelated": "Вам также может понравиться",
+    "blogCtaKicker": "Готовы к поездке?",
+    "blogCtaEsim": "Смотреть тарифы eSIM",
+    "blogCtaEsimTitle": "Подходящая eSIM для поездки",
+    "blogCtaAirport": "Бизнес-залы и Fast Track",
+    "blogCtaAirportTitle": "Больше спокойствия в аэропорту"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -591,7 +646,18 @@
     "assistantFallbackName": "Assistante",
     "themeDark": "Passer en mode sombre",
     "themeLight": "Passer en mode clair",
-    "popularAsk": "Questions fréquentes – touchez, Lina répond"
+    "popularAsk": "Questions fréquentes – touchez, Lina répond",
+    "prevStep": "Étape précédente",
+    "nextStep": "Étape suivante",
+    "blogMetaTitle": "Magazine voyage – guides eSIM, salons et Fast Track | passport.io",
+    "blogIntro": "Des guides pratiques sur l'internet mobile à l'étranger, le confort à l'aéroport et les destinations populaires.",
+    "blogAll": "Tous les articles",
+    "blogRelated": "À lire aussi",
+    "blogCtaKicker": "Prêt pour le voyage ?",
+    "blogCtaEsim": "Voir les forfaits eSIM",
+    "blogCtaEsimTitle": "La bonne eSIM pour votre voyage",
+    "blogCtaAirport": "Découvrir salons et Fast Track",
+    "blogCtaAirportTitle": "Plus de sérénité à l'aéroport"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -690,6 +756,17 @@
     "assistantFallbackName": "Asistente",
     "themeDark": "Cambiar a modo oscuro",
     "themeLight": "Cambiar a modo claro",
-    "popularAsk": "Preguntas frecuentes: toca y Lina responde"
+    "popularAsk": "Preguntas frecuentes: toca y Lina responde",
+    "prevStep": "Paso anterior",
+    "nextStep": "Paso siguiente",
+    "blogMetaTitle": "Revista de viajes – guías de eSIM, salas VIP y Fast Track | passport.io",
+    "blogIntro": "Guías prácticas sobre internet móvil en el extranjero, comodidad en el aeropuerto y destinos populares.",
+    "blogAll": "Todos los artículos",
+    "blogRelated": "También te puede interesar",
+    "blogCtaKicker": "¿Listo para el viaje?",
+    "blogCtaEsim": "Ver planes eSIM",
+    "blogCtaEsimTitle": "La eSIM adecuada para tu viaje",
+    "blogCtaAirport": "Ver salas VIP y Fast Track",
+    "blogCtaAirportTitle": "Más calma en el aeropuerto"
   }
 }

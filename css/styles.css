@@ -1052,6 +1052,82 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 #airport.section--dark { margin-inline: clamp(8px, 1.2vw, 16px); border-radius: var(--soft); overflow: clip; }
 .cta { border-radius: var(--soft) var(--soft) 0 0; }
 
+/* ---------- Magazin: Übersicht und Artikel ---------- */
+.mag-hero, .art-hero { padding-bottom: 56px; border-radius: 0 0 var(--soft) var(--soft); }
+.mag__filters { margin-bottom: 28px; }
+.mag__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px 24px; }
+.mag-card { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.mag-card[hidden] { display: none; }
+.mag-card .post__img { aspect-ratio: 4 / 3; margin-bottom: 6px; }
+.mag-card h2 { font-size: 20px; line-height: 1.3; letter-spacing: -.015em; text-wrap: balance; }
+.mag-card p { color: var(--ink-2); font-size: 15px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.mag-card:hover h2 { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
+.mag-card:hover .post__img img { transform: scale(1.04); }
+.art__narrow { max-width: 780px; }
+.art-hero .guide-hero__title { font-size: clamp(32px, 4.4vw, 52px); }
+.art__meta { margin-top: 18px; font-size: 14px; color: rgba(255,255,255,.6); }
+.art__img { margin: 36px 0 0; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16 / 9; background: var(--paper); }
+.art__img img { width: 100%; height: 100%; object-fit: cover; }
+.art__body { margin-top: 36px; font-size: 18px; line-height: 1.7; color: var(--ink-2); }
+.art__body > * + * { margin-top: 18px; }
+.art__body h2 { margin-top: 44px; font-size: clamp(24px, 2.6vw, 30px); color: var(--ink); letter-spacing: -.02em; line-height: 1.2; }
+.art__body h3 { margin-top: 30px; font-size: 21px; color: var(--ink); }
+.art__body b { color: var(--ink); }
+.art__body ul, .art__body ol { padding-inline-start: 22px; }
+.art__body li + li { margin-top: 8px; }
+.art__body li::marker { color: var(--green-ink); font-weight: 700; }
+.art__body a { color: var(--green-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.art__body blockquote { margin: 26px 0 0; padding: 18px 22px; border-radius: 16px; background: var(--paper); border-inline-start: 3px solid var(--green-ink); color: var(--ink); font-size: 17px; }
+.art__body .price { color: var(--ink); font-weight: 700; }
+.art-cta { margin: 48px 0 0; display: flex; align-items: center; justify-content: space-between; gap: 18px 28px; flex-wrap: wrap; padding: 28px 30px; border-radius: var(--radius-lg); background: var(--dark); color: #fff; }
+.art-cta h3 { font-size: 24px; letter-spacing: -.02em; }
+.art-cta p:not(.kicker) { margin-top: 4px; color: rgba(255,255,255,.7); }
+.art-cta .kicker { margin-bottom: 6px; }
+.art-more { margin-top: 24px; }
+.art-more .h3 { margin-bottom: 26px; }
+[data-theme="dark"] .art-cta { background: #060807; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); }
+@media (max-width: 1024px) { .mag__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .mag__grid { grid-template-columns: 1fr; gap: 28px; }
+  .mag-hero, .art-hero { padding-bottom: 40px; }
+  .art__img { margin-top: 24px; border-radius: 18px; }
+  .art__body { font-size: 17px; margin-top: 26px; }
+  .art__body h2 { margin-top: 34px; }
+  .art-cta { padding: 22px; }
+  .art-cta .btn { width: 100%; }
+}
+
+/* ---------- Installationsanleitung: Wisch-Galerie ---------- */
+.gcar { --slide: 270px; }
+.gcar[hidden] { display: none; }
+.gcar__track { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 12px calc(50% - var(--slide) / 2) 18px; margin: 0 calc(var(--gutter) * -1); outline: 0; }
+.gcar__track::-webkit-scrollbar { display: none; }
+.gcar__slide { flex: 0 0 var(--slide); margin: 0; scroll-snap-align: center; cursor: pointer; opacity: .35; transform: scale(.9); transition: opacity .45s var(--ease), transform .6s var(--ease); }
+.gcar__slide.is-active { opacity: 1; transform: none; cursor: default; }
+.gcar__slide .pmock { max-width: none; }
+.gcar__nav { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 10px auto 0; max-width: 520px; }
+.gcar__btn { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; flex: none; background: var(--dark); color: #fff; transition: transform .2s, opacity .2s, background .2s; }
+.gcar__btn svg { width: 22px; height: 22px; }
+.gcar__btn:hover:not(:disabled) { transform: scale(1.06); }
+.gcar__btn:disabled { opacity: .25; cursor: default; }
+.gcar__mid { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.gcar__count { font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--green-ink); font-variant-numeric: tabular-nums; }
+.gcar__bar { width: 100%; height: 4px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.gcar__bar i { display: block; height: 100%; border-radius: inherit; background: var(--green-ink); transition: width .5s var(--ease); }
+.gcar__texts { max-width: 640px; margin: 26px auto 0; text-align: center; }
+.gcar__text { animation: fadeIn .45s var(--ease); }
+.gcar__text h3 { font-size: clamp(22px, 2.4vw, 28px); letter-spacing: -.02em; margin: 6px 0 10px; }
+.gcar__text .gstep__text { font-size: 16px; }
+.gcar__text .gstep__tip { text-align: start; max-width: 520px; margin: 16px auto 0; }
+[data-theme="dark"] .gcar__btn { background: var(--ink); color: #0a0d0c; }
+@media (max-width: 640px) {
+  .gcar { --slide: 220px; }
+  .gcar__track { gap: 14px; }
+  .gcar__btn { width: 46px; height: 46px; }
+  .gcar__texts { margin-top: 20px; }
+  .gcar__text .gstep__text { font-size: 15px; }
+}
+
 /* ---------- Laufende Fragenleiste unter Lina ---------- */
 .qband { margin-top: 14px; padding: 22px 0 24px; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--line); overflow: hidden; }
 .qband__title { display: flex; align-items: center; gap: 8px; padding: 0 24px; margin-bottom: 16px; font-size: 15px; font-weight: 600; color: var(--ink); }

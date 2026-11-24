@@ -503,29 +503,39 @@ collections:
           - { label: "Kontakt: Button", name: helpButton, widget: string, i18n: true }
 
   # ------------------------------------------------------------------------
+  # Blog: jeder Artikel ist eine Datei in content/posts/ (Dateiname = Adresse, z. B. blog.html?p=japonya-esim).
+  # Die Übersicht content/blog.json wird beim Veröffentlichen automatisch daraus erzeugt.
+  - name: posts
+    label: Blog-Artikel
+    label_singular: Artikel
+    folder: content/posts
+    extension: json
+    format: json
+    create: true
+    i18n: true
+    identifier_field: title
+    slug: "{{slug}}"
+    summary: "{{date}} · {{title}}"
+    sortable_fields: [date, title]
+    editor: { preview: false }
+    fields:
+      - { label: Titel (auch Seitentitel für Google), name: title, widget: string, i18n: true }
+      - { label: Kurztext (auch Beschreibung für Google), name: excerpt, widget: text, i18n: true }
+      - { label: Kategorie, name: category, widget: string, i18n: true }
+      - { label: Lesezeit, name: readTime, widget: string, i18n: true, hint: "z. B. 5 dk / 5 Min." }
+      - { label: Datum, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
+      - { label: Bild, name: image, widget: image, choose_url: true, required: false, hint: "Leer lassen = Bild des Reiseziels" }
+      - { label: "Reiseziel (Ländercode, z. B. jp)", name: country, widget: string, required: false, hint: "Zeigt am Ende die eSIM-Pakete dieses Landes" }
+      - { label: Abschluss-Box, name: cta, widget: select, options: [esim, airport], default: esim, required: false }
+      - { label: Text, name: body, widget: markdown, i18n: true, hint: "Zwischenüberschriften mit ##. Preise nur als Platzhalter, z. B. {fiyat:country:jp} oder {fiyat:lounge}." }
+      - { label: Entwurf (nicht veröffentlichen), name: draft, widget: boolean, default: false, required: false }
+
+  # ------------------------------------------------------------------------
   - name: magazin
     i18n: true
-    label: Magazin & Bewertungen
+    label: Bewertungen
     editor: { preview: false }
     files:
-      - name: blog
-        label: Blogartikel (Startseite)
-        file: content/blog.json
-        i18n: true
-        fields:
-          - label: Artikel
-            name: posts
-            widget: list
-            i18n: true
-            hint: "Die ersten 5 erscheinen auf der Startseite, der erste groß."
-            summary: "{{fields.title}}"
-            fields:
-              - { label: Kategorie, name: category, widget: string, i18n: true }
-              - { label: Titel, name: title, widget: string, i18n: true }
-              - { label: Kurztext, name: excerpt, widget: text, i18n: true }
-              - { label: Lesezeit, name: readTime, widget: string, i18n: true }
-              - { label: Bild, name: image, widget: image, choose_url: true }
-              - { label: Link zum Artikel, name: url, widget: string }
       - name: reviews
         label: Bewertungen
         file: content/reviews.json
@@ -605,6 +615,17 @@ collections:
           - { label: "reviewsLabel", name: reviewsLabel, widget: string, i18n: true }
           - { label: "helloIam", name: helloIam, widget: string, i18n: true }
           - { label: "talkHuman", name: talkHuman, widget: string, i18n: true }
+          - { label: "blogMetaTitle", name: blogMetaTitle, widget: string, i18n: true }
+          - { label: "blogIntro", name: blogIntro, widget: string, i18n: true }
+          - { label: "blogAll", name: blogAll, widget: string, i18n: true }
+          - { label: "blogRelated", name: blogRelated, widget: string, i18n: true }
+          - { label: "blogCtaKicker", name: blogCtaKicker, widget: string, i18n: true }
+          - { label: "blogCtaEsim", name: blogCtaEsim, widget: string, i18n: true }
+          - { label: "blogCtaEsimTitle", name: blogCtaEsimTitle, widget: string, i18n: true }
+          - { label: "blogCtaAirport", name: blogCtaAirport, widget: string, i18n: true }
+          - { label: "blogCtaAirportTitle", name: blogCtaAirportTitle, widget: string, i18n: true }
+          - { label: "prevStep", name: prevStep, widget: string, i18n: true }
+          - { label: "nextStep", name: nextStep, widget: string, i18n: true }
           - { label: "popularAsk", name: popularAsk, widget: string, i18n: true }
           - { label: "themeDark", name: themeDark, widget: string, i18n: true }
           - { label: "themeLight", name: themeLight, widget: string, i18n: true }

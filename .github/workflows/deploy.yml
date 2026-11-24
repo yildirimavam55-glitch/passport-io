@@ -30,13 +30,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Nur die öffentlichen Dateien einpacken
+        env:
+          # Eigene Domain später als Repository-Variable SITE_URL eintragen (z. B. https://passport.io/)
+          SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
         run: |
           mkdir _site
-          cp -r index.html install.html css js content img admin api _site/
+          # Blog-Übersicht aus content/posts erzeugen, dazu sitemap.xml und robots.txt
+          node tools/build-blog.js _site "${SITE_URL}"
+          cp -r index.html install.html blog.html css js content img admin api _site/
           touch _site/.nojekyll
           # Versionsnummer anhängen, damit Besucher Änderungen sofort sehen
           V=$(echo "$GITHUB_SHA" | cut -c1-8)
-          sed -i "s#css/styles.css\"#css/styles.css?v=$V\"#; s#js/app.js\"#js/app.js?v=$V\"#" _site/index.html _site/install.html
+          sed -i "s#css/styles.css\"#css/styles.css?v=$V\"#; s#js/app.js\"#js/app.js?v=$V\"#" _site/index.html _site/install.html _site/blog.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

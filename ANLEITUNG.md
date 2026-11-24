@@ -23,7 +23,8 @@ Dateien in `content/` gespeichert, die Webseite nach dem Neuladen aktualisiert.
 | Startseite › Startseite & Design | Farben, Menü, Ankündigungsleiste, **Reihenfolge/Sichtbarkeit der Bereiche**, alle Texte und Bilder der Bereiche, Footer |
 | Produkte › eSIM-Länder & Pakete | Länder, Bilder, „Beliebt“-Schalter, regionale Pakete und Weltkarten-Regionen (Preise kommen von der API) |
 | Hilfe-Center › Assistent & FAQ  | Fragen & Antworten, Suchbegriffe, Schnellfragen, Geräteliste. Die „Banner“ (Geräte-Check, Anleitung, Paketberatung) und Schnellfragen erscheinen zusammen mit den meistgefragten FAQ in der laufenden Fragenleiste unter Lina |
-| Magazin & Bewertungen           | Blog-Teaser, Bewertungen (Demo – später Trustpilot-Widget)  |
+| Blog-Artikel                    | Ein Eintrag = ein Artikel (Seite `blog.html?p=<name>`), in allen Sprachen. Die neuesten 5 erscheinen auf der Startseite. Preise im Text nur als Platzhalter, z. B. `{fiyat:country:jp}` |
+| Bewertungen                     | Bewertungen (Demo – später Trustpilot-Widget)               |
 
 ## Assistent füttern
 
@@ -96,6 +97,17 @@ Einmalig einrichten:
 4. Im Admin unter **Startseite & Design › Preis-Schnittstelle** eintragen:
    - Adresse: `https://<projekt>.supabase.co/functions/v1/prices`
    - Lina-Fragen: `https://<projekt>.supabase.co/functions/v1/questions`
+
+## Blog und Google
+
+- Artikel liegen in `content/posts/` (eine Datei je Artikel, alle Sprachen darin).
+  Die Übersicht `content/blog.json` wird beim Veröffentlichen automatisch erzeugt
+  (lokal: `node tools/build-blog.js`).
+- Beim Veröffentlichen entstehen außerdem `sitemap.xml` (alle Seiten in allen Sprachen)
+  und `robots.txt`. In der Google Search Console die Sitemap einreichen:
+  `<Seitenadresse>/sitemap.xml`. Eigene Domain später als GitHub-Variable `SITE_URL` eintragen.
+- Jede Artikelseite setzt Titel, Beschreibung, Sprachversionen (hreflang) und
+  Artikel-Daten für Google automatisch.
 
 ## Was Lina nicht beantworten konnte
 

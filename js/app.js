@@ -27,7 +27,8 @@
     if (base && typeof base === "object") { const out = { ...base }; for (const k of Object.keys(over)) out[k] = merge(base[k], over[k]); return out; }
     return over;
   }
-  let SITE, ESIM, AI, BLOG, REVIEWS, INSTALL, UI, LANGS, LANG, LOCALE, CUR, RTL = false, PRICES = null;
+  let SITE, ESIM, AI, BLOG, REVIEWS, INSTALL, UI, LANGS, LANG, LOCALE, CUR, RTL = false, PRICES = null, POST = null;
+  const POST_ID = PAGE === "blog" ? (new URLSearchParams(location.search).get("p") || "").replace(/[^a-z0-9-]/gi, "") : "";
   try {
     LANGS = await getJSON("content/languages.json");
     const params = new URLSearchParams(location.search);
@@ -36,9 +37,15 @@
     // Sprache
     const codes = LANGS.languages.map((l) => l.code);
     const pick = (c) => { c = String(c || "").toLowerCase().split(/[-_]/)[0]; return codes.includes(c) ? c : null; };
+    // Sprache: Link (?lang=) gilt nur für diesen Besuch; dauerhaft gemerkt wird nur die Wahl im Umschalter (&keep=1).
+    // Ohne beides gilt die Sprache des Handys/Browsers – z. B. spanisches Handy in Frankreich → Spanisch.
+    const keep = params.get("keep") === "1";
     const fromUrl = pick(params.get("lang"));
-    const savedLang = pick(store("pp_lang", fromUrl)); // Auswahl aus dem Umschalter merken
-    LANG = fromUrl || savedLang || devLangs.map(pick).find(Boolean) || LANGS.default;
+    const session = (k, v) => { try { if (v) sessionStorage.setItem(k, v); return sessionStorage.getItem(k); } catch (_) { return null; } };
+    const visitLang = pick(session("pp_lang_visit", fromUrl));
+    const savedLang = pick(store("pp_lang", keep ? fromUrl : null));
+    LANG = fromUrl || visitLang || savedLang || devLangs.map(pick).find(Boolean) || LANGS.default;
+    if (keep) { params.delete("keep"); history.replaceState(null, "", location.pathname + (params.toString() ? "?" + params : "") + location.hash); }
     const meta = LANGS.languages.find((l) => l.code === LANG);
     LOCALE = meta.locale || LANG;
     RTL = meta.dir === "rtl";
@@ -54,13 +61,15 @@
     const pickCur = (c) => { c = String(c || "").toUpperCase(); return curCodes.includes(c) ? c : null; };
     const curUrl = pickCur(params.get("cur"));
     const region = devLangs.map((l) => (String(l).split(/[-_]/)[1] || "").toUpperCase()).find(Boolean);
-    const savedCur = pickCur(store("pp_cur", curUrl));
+    const savedCur = pickCur(store("pp_cur", keep ? curUrl : null)) || pickCur(session("pp_cur_visit", curUrl));
     CUR = curUrl || savedCur || pickCur(LANGS.regionCurrency?.[region]) || pickCur(meta.currency) || curCodes[0] || "EUR";
     const loc = (d) => d && merge(d[LANGS.default], d[LANG]);
-    [SITE, ESIM, AI, BLOG, REVIEWS, UI, INSTALL] = (await Promise.all([
+    [SITE, ESIM, AI, BLOG, REVIEWS, UI, INSTALL, POST] = (await Promise.all([
       ...["site", "esim", "assistant", "blog", "reviews", "ui"].map((n) => getJSON(`content/${n}.json`)),
       PAGE === "install" ? getJSON("content/install.json") : null,
+      POST_ID ? getJSON(`content/posts/${POST_ID}.json`).catch(() => null) : null, // Artikel (fehlt er → Übersicht)
     ])).map(loc);
+    if (POST) POST.id = POST_ID;
   } catch (err) {
     document.getElementById("page").innerHTML = `<p style="padding:120px 24px;text-align:center">İçerik yüklenemedi · Content could not be loaded.</p>`;
     console.error(err);
@@ -108,7 +117,11 @@
     const inline = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
     return s.trim().split(/\n{2,}/).map((block) => {
       const lines = block.split("\n");
+      const h = /^(#{2,3}) (.+)$/.exec(block.trim());
+      if (h && lines.length === 1) return `<h${h[1].length}>${inline(h[2])}</h${h[1].length}>`;
       if (lines.every((l) => /^\s*[-*] /.test(l))) return `<ul>${lines.map((l) => `<li>${inline(l.replace(/^\s*[-*] /, ""))}</li>`).join("")}</ul>`;
+      if (lines.every((l) => /^\s*\d+[.)] /.test(l))) return `<ol>${lines.map((l) => `<li>${inline(l.replace(/^\s*\d+[.)] /, ""))}</li>`).join("")}</ol>`;
+      if (lines.every((l) => /^> /.test(l))) return `<blockquote>${lines.map((l) => inline(l.slice(2))).join("<br>")}</blockquote>`;
       return `<p>${lines.map(inline).join("<br>")}</p>`;
     }).join("");
   };
@@ -638,6 +651,103 @@
   };
 
   /* ---------- BLOG ---------- */
+  // Artikel-Adresse und -Bild (ohne eigenes Bild: Bild des Reiseziels aus esim.json)
+  const postUrl = (p) => p.url && p.url !== "#" ? p.url : `blog.html?p=${encodeURIComponent(p.id || "")}`;
+  const postImage = (p) => p.image || ESIM.countries.find((c) => c.code === p.country)?.image || SITE.hero?.image;
+  const postDate = (d) => { try { return new Intl.DateTimeFormat(LOCALE, { day: "numeric", month: "long", year: "numeric" }).format(new Date(d)); } catch (_) { return d || ""; } };
+  const mdFill = (s) => md(s).replace(/\{(?:preis|price|fiyat):([a-z]+(?::[a-z0-9-]+)?)\}/gi, (_, k) => P(k.toLowerCase(), "", true));
+
+  /* ---------- UNTERSEITE: MAGAZIN (Übersicht + Artikel) ---------- */
+  sections.blogPage = {
+    render: () => {
+      const all = BLOG.posts || [];
+      if (!POST) {
+        const cats = [...new Set(all.map((p) => p.category).filter(Boolean))];
+        return `<div class="mag-page">
+          <section class="guide-hero mag-hero">
+            <div class="container">
+              <a class="guide-back" href="index.html">${icon("chev-l")} ${esc(t("home"))}</a>
+              <p class="kicker">${esc(SITE.blog?.kicker || "")}</p>
+              <h1 class="guide-hero__title">${esc(SITE.blog?.title || "")}</h1>
+              <p class="guide-hero__intro">${esc(t("blogIntro"))}</p>
+            </div>
+          </section>
+          <section class="section mag">
+            <div class="container">
+              <div class="faq__filters mag__filters">
+                <button type="button" class="is-active" data-cat="">${esc(t("blogAll"))}</button>
+                ${cats.map((c) => `<button type="button" data-cat="${esc(c)}">${esc(c)}</button>`).join("")}
+              </div>
+              <div class="mag__grid">
+                ${all.map((p) => `
+                  <a class="mag-card" href="${esc(postUrl(p))}" data-cat="${esc(p.category || "")}">
+                    <div class="post__img"><img src="${img(postImage(p), 800)}" alt="" loading="lazy"></div>
+                    <span class="post__meta"><b>${esc(p.category || "")}</b> · ${esc(t("readTime", { t: p.readTime || "" }))}</span>
+                    <h2>${esc(p.title)}</h2>
+                    <p>${esc(p.excerpt || "")}</p>
+                  </a>`).join("")}
+              </div>
+            </div>
+          </section></div>`;
+      }
+      const meta = all.find((p) => p.id === POST.id) || {};
+      const country = POST.country ? ESIM.countries.find((c) => c.code === POST.country) : null;
+      const related = all.filter((p) => p.id !== POST.id).slice(0, 3);
+      const cta = country
+        ? `<div class="art-cta">
+             <div><p class="kicker">${esc(t("blogCtaKicker"))}</p><h3>${esc(t("plansFor", { country: country.name }))}</h3><p>${P("country:" + country.code, t("priceFrom"))}</p></div>
+             <button class="btn btn--green" type="button" data-plans="${esc(country.code)}">${esc(t("blogCtaEsim"))} ${icon("arrow")}</button>
+           </div>`
+        : `<div class="art-cta">
+             <div><p class="kicker">${esc(t("blogCtaKicker"))}</p><h3>${esc(t(POST.cta === "airport" ? "blogCtaAirportTitle" : "blogCtaEsimTitle"))}</h3><p>${POST.cta === "airport" ? P("lounge", t("priceFromPerson")) : P("esim", t("priceFrom"))}</p></div>
+             <a class="btn btn--green" href="index.html#${POST.cta === "airport" ? "airport" : "esim"}">${esc(t(POST.cta === "airport" ? "blogCtaAirport" : "blogCtaEsim"))} ${icon("arrow")}</a>
+           </div>`;
+      return `
+        <article class="art">
+          <header class="guide-hero art-hero">
+            <div class="container art__narrow">
+              <a class="guide-back" href="blog.html">${icon("chev-l")} ${esc(t("blogAll"))}</a>
+              <p class="kicker">${esc(POST.category || meta.category || "")}</p>
+              <h1 class="guide-hero__title">${esc(POST.title || meta.title || "")}</h1>
+              <p class="guide-hero__intro">${esc(POST.excerpt || meta.excerpt || "")}</p>
+              <p class="art__meta">${esc(postDate(POST.date))} · ${esc(t("readTime", { t: POST.readTime || meta.readTime || "" }))}</p>
+            </div>
+          </header>
+          <div class="container art__narrow">
+            <figure class="art__img"><img src="${img(postImage({ ...meta, ...POST }), 1400)}" alt="" fetchpriority="high"></figure>
+            <div class="art__body">${mdFill(POST.body || "")}</div>
+            ${cta}
+          </div>
+          ${related.length ? `
+          <section class="section art-more">
+            <div class="container">
+              <h2 class="h3">${esc(t("blogRelated"))}</h2>
+              <div class="mag__grid">
+                ${related.map((p) => `
+                  <a class="mag-card" href="${esc(postUrl(p))}">
+                    <div class="post__img"><img src="${img(postImage(p), 800)}" alt="" loading="lazy"></div>
+                    <span class="post__meta"><b>${esc(p.category || "")}</b> · ${esc(t("readTime", { t: p.readTime || "" }))}</span>
+                    <h2>${esc(p.title)}</h2>
+                  </a>`).join("")}
+              </div>
+            </div>
+          </section>` : ""}
+        </article>`;
+    },
+    init(el) {
+      el.addEventListener("click", (e) => {
+        const f = e.target.closest("[data-cat]");
+        if (f && f.tagName === "BUTTON") {
+          $$(".mag__filters button", el).forEach((b) => b.classList.toggle("is-active", b === f));
+          $$(".mag-card", el).forEach((c) => (c.hidden = !!f.dataset.cat && c.dataset.cat !== f.dataset.cat));
+          return;
+        }
+        const p = e.target.closest("[data-plans]");
+        if (p) openPlans(ESIM.countries.find((c) => c.code === p.dataset.plans));
+      });
+    },
+  };
+
   sections.blog = {
     render: (c = SITE.blog) => `
       <section class="section" id="blog">
@@ -648,8 +758,8 @@
           </div>
           <div class="blog">
             ${(BLOG.posts || []).slice(0, 5).map((p, i) => `
-              <a class="post ${i === 0 ? "post--lead" : ""}" href="${esc(p.url || "#")}">
-                <div class="post__img"><img src="${img(p.image, i === 0 ? 1200 : 700)}" alt="" loading="lazy"></div>
+              <a class="post ${i === 0 ? "post--lead" : ""}" href="${esc(postUrl(p))}">
+                <div class="post__img"><img src="${img(postImage(p), i === 0 ? 1200 : 700)}" alt="" loading="lazy"></div>
                 <span class="post__meta"><b>${esc(p.category)}</b> · ${esc(t("readTime", { t: p.readTime }))}</span>
                 <h3>${esc(p.title)}</h3>
                 ${i === 0 ? `<p>${esc(p.excerpt)}</p>` : ""}
@@ -735,17 +845,26 @@
             <ul>${(c.before || []).map((b) => `<li>${icon("check")}<span>${esc(b)}</span></li>`).join("")}</ul>
           </div>
           ${(c.platforms || []).map((p, pi) => `
-            <div class="guide-steps" data-panel="${esc(p.id)}" ${pi === 0 ? "" : "hidden"} role="tabpanel">
-              ${(p.steps || []).map((st, i) => `
-                <article class="gstep">
-                  ${phoneScreen(st.screen)}
-                  <div class="gstep__body">
-                    <span class="gstep__n">${esc(t("stepOf", { i: i + 1, n: p.steps.length }))}</span>
+            <div class="gcar" data-panel="${esc(p.id)}" ${pi === 0 ? "" : "hidden"} role="tabpanel">
+              <div class="gcar__track" tabindex="0" aria-label="${esc(p.label)}">
+                ${(p.steps || []).map((st, i) => `<figure class="gcar__slide${i ? "" : " is-active"}" data-i="${i}">${phoneScreen(st.screen)}</figure>`).join("")}
+              </div>
+              <div class="gcar__nav">
+                <button type="button" class="gcar__btn" data-dir="-1" aria-label="${esc(t("prevStep"))}" disabled>${icon("chev-l")}</button>
+                <div class="gcar__mid">
+                  <span class="gcar__count">${esc(t("stepOf", { i: 1, n: (p.steps || []).length }))}</span>
+                  <span class="gcar__bar"><i style="width:${100 / Math.max(1, (p.steps || []).length)}%"></i></span>
+                </div>
+                <button type="button" class="gcar__btn" data-dir="1" aria-label="${esc(t("nextStep"))}">${icon("chev-r")}</button>
+              </div>
+              <div class="gcar__texts" aria-live="polite">
+                ${(p.steps || []).map((st, i) => `
+                  <article class="gcar__text" data-i="${i}" ${i ? "hidden" : ""}>
                     <h3>${esc(st.title)}</h3>
                     <div class="gstep__text">${md(st.text)}</div>
                     ${st.tip ? `<div class="gstep__tip">${icon("bulb")}<div>${md(st.tip)}</div></div>` : ""}
-                  </div>
-                </article>`).join("")}
+                  </article>`).join("")}
+              </div>
             </div>`).join("")}
 
           <div class="guide-trouble">
@@ -768,9 +887,53 @@
       </section></div>`,
     init(el) {
       const tabs = $$(".guide-tab", el);
+      // Wisch-Galerie je Gerät: Bilder nach rechts/links, Pfeile darunter, darunter die Beschreibung des aktuellen Schritts
+      const cars = $$(".gcar", el).map((car) => {
+        const track = $(".gcar__track", car), slides = $$(".gcar__slide", car), texts = $$(".gcar__text", car);
+        const [prev, next] = $$(".gcar__btn", car), count = $(".gcar__count", car), bar = $(".gcar__bar i", car);
+        const n = slides.length; let cur = 0;
+        const show = (i) => {
+          if (i === cur && slides[i].classList.contains("is-active")) return;
+          cur = i;
+          slides.forEach((s, k) => s.classList.toggle("is-active", k === i));
+          texts.forEach((x, k) => (x.hidden = k !== i));
+          count.textContent = t("stepOf", { i: i + 1, n });
+          bar.style.width = `${((i + 1) / n) * 100}%`;
+          prev.disabled = i === 0; next.disabled = i === n - 1;
+        };
+        let target = null, unlock = 0; // während des Sprungs per Pfeil keine Zwischenschritte anzeigen
+        const go = (i, smooth = true) => {
+          i = Math.max(0, Math.min(n - 1, i));
+          target = i; clearTimeout(unlock); unlock = setTimeout(() => (target = null), 1500);
+          const r = slides[i].getBoundingClientRect(), tr = track.getBoundingClientRect();
+          track.scrollBy({ left: r.left + r.width / 2 - (tr.left + tr.width / 2), behavior: smooth ? "smooth" : "auto" });
+          show(i);
+        };
+        let raf = 0;
+        track.addEventListener("scroll", () => {
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => {
+            const mid = track.getBoundingClientRect().left + track.clientWidth / 2;
+            let best = 0, dist = Infinity;
+            slides.forEach((s, k) => { const r = s.getBoundingClientRect(); const d = Math.abs(r.left + r.width / 2 - mid); if (d < dist) { dist = d; best = k; } });
+            if (target !== null) { if (best !== target) return; target = null; }
+            show(best);
+          });
+        }, { passive: true });
+        prev.addEventListener("click", () => go(cur - 1));
+        next.addEventListener("click", () => go(cur + 1));
+        slides.forEach((s, k) => s.addEventListener("click", () => go(k)));
+        const rtl = document.documentElement.dir === "rtl";
+        track.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight") { e.preventDefault(); go(cur + (rtl ? -1 : 1)); }
+          if (e.key === "ArrowLeft") { e.preventDefault(); go(cur + (rtl ? 1 : -1)); }
+        });
+        return { car, reset: () => go(0, false) };
+      });
       const pick = (id) => {
         tabs.forEach((t) => { const on = t.dataset.platform === id; t.classList.toggle("is-active", on); t.setAttribute("aria-selected", on); });
         $$("[data-panel]", el).forEach((p) => (p.hidden = p.dataset.panel !== id));
+        cars.find((c) => c.car.dataset.panel === id)?.reset();
       };
       tabs.forEach((t) => t.addEventListener("click", () => pick(t.dataset.platform)));
       // Gerät automatisch vorwählen
@@ -792,9 +955,17 @@
   if (previewOn) document.body.insertAdjacentHTML("afterbegin", `<div class="preview-bar">${esc(SITE.preview.text)}${PRICES?.source === "mock" ? esc(t("previewMock")) : ""}</div>`);
 
   // Seitentitel, Beschreibung und Sprachversionen für Suchmaschinen (hreflang)
-  document.title = t(PAGE === "install" ? "installMetaTitle" : "metaTitle");
-  document.querySelector('meta[name="description"]')?.setAttribute("content", t("metaDescription"));
-  const prefUrl = (k, v) => { const u = new URL(location.href); v ? u.searchParams.set(k, v) : u.searchParams.delete(k); return u.pathname + u.search + u.hash; };
+  document.title = POST ? `${POST.title} | passport.io` : t(PAGE === "install" ? "installMetaTitle" : PAGE === "blog" ? "blogMetaTitle" : "metaTitle");
+  document.querySelector('meta[name="description"]')?.setAttribute("content", POST ? (POST.excerpt || "") : PAGE === "blog" ? t("blogIntro") : t("metaDescription"));
+  if (POST) {
+    // Artikel-Angaben für Suchmaschinen (strukturierte Daten)
+    const ld = { "@context": "https://schema.org", "@type": "Article", headline: POST.title, description: POST.excerpt, inLanguage: LANG, datePublished: POST.date, dateModified: POST.date,
+      image: [img(postImage(POST), 1400)], author: { "@type": "Organization", name: "passport.io" }, publisher: { "@type": "Organization", name: "passport.io" },
+      mainEntityOfPage: location.origin + location.pathname + `?p=${POST.id}&lang=${LANG}` };
+    document.head.insertAdjacentHTML("beforeend", `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`);
+  }
+  // Links im Umschalter: Wahl dauerhaft merken (keep=1)
+  const prefUrl = (k, v) => { const u = new URL(location.href); v ? u.searchParams.set(k, v) : u.searchParams.delete(k); u.searchParams.set("keep", "1"); return u.pathname + u.search + u.hash; };
   const langUrl = (code) => prefUrl("lang", code);
   // Angezeigte Währung = die, in der die Schnittstelle tatsächlich geliefert hat
   const SHOWN_CUR = PRICES?.currency || CUR;
@@ -803,7 +974,8 @@
   const langFlag = (l) => (l.flag ? `<img class="lang__flag" src="https://flagcdn.com/w40/${esc(l.flag)}.png" srcset="https://flagcdn.com/w80/${esc(l.flag)}.png 2x" alt="" width="20" height="20">` : icon("globe"));
   const coin = (code) => (LANGS.currencies || []).find((c) => c.code === code)?.icon || SYM(code);
   const curName = (c) => { try { const n = new Intl.DisplayNames([LOCALE], { type: "currency" }).of(c.code); return n ? n.charAt(0).toLocaleUpperCase(LOCALE) + n.slice(1) : c.name; } catch (_) { return c.name; } };
-  const cleanUrl = (code) => location.origin + location.pathname + (code ? `?lang=${code}` : "");
+  const cleanUrl = (code) => { const q = new URLSearchParams(); if (POST) q.set("p", POST.id); if (code) q.set("lang", code); const s = q.toString(); return location.origin + location.pathname + (s ? "?" + s : ""); };
+  document.head.insertAdjacentHTML("beforeend", `<link rel="canonical" href="${esc(cleanUrl(LANG))}">`);
   document.head.insertAdjacentHTML("beforeend", [...LANGS.languages.map((l) => `<link rel="alternate" hreflang="${esc(l.code)}" href="${esc(cleanUrl(l.code))}">`),
     `<link rel="alternate" hreflang="x-default" href="${esc(cleanUrl(null))}">`].join(""));
   // Feste Texte im HTML-Gerüst (Geräte-Check) übersetzen
@@ -876,8 +1048,8 @@
 
   // Bereiche in der Reihenfolge aus dem CMS
   const page = $("#page");
-  const active = PAGE === "install"
-    ? [{ type: "installGuide" }]
+  const active = PAGE === "install" ? [{ type: "installGuide" }]
+    : PAGE === "blog" ? [{ type: "blogPage" }]
     : (SITE.sections || []).filter((s) => s.enabled !== false && sections[s.type]);
   page.innerHTML = active.map((s) => sections[s.type].render()).join("");
   active.forEach((s, i) => sections[s.type].init?.(page.children[i]));

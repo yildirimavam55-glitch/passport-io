@@ -37,7 +37,7 @@
       },
       {
         "label": "Dergi",
-        "url": "#blog"
+        "url": "blog.html"
       }
     ],
     "sections": [
@@ -243,7 +243,7 @@
       "kicker": "Dergi",
       "title": "Hazırlıklı seyahat et.",
       "linkText": "Tüm yazılar",
-      "linkUrl": "#"
+      "linkUrl": "blog.html"
     },
     "newsletter": {
       "title": "İlk eSIM'inde %10 indirim.",
@@ -306,7 +306,7 @@
             },
             {
               "label": "Dergi",
-              "url": "#blog"
+              "url": "blog.html"
             },
             {
               "label": "Ortaklık programı",
