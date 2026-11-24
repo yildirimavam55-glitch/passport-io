@@ -76,7 +76,8 @@ export async function esimAccessCatalog(toEur: (n: number, cur: string) => numbe
     if ((p.durationUnit ?? "DAY") !== "DAY") continue;
     const gb = Math.round((Number(p.volume) / GB) * 100) / 100, days = Number(p.duration);
     const cost = toEur(Number(p.price) / 10000, p.currencyCode || "USD");   // price = USD × 10 000
-    if (!(gb >= 1) || !(days > 0) || !cost) continue;
+    // 999 GB u. Ä. sind verkappte Unlimited-Tarife – Unlimited kommt von eSIM Go
+    if (!(gb >= 1) || gb > 200 || !(days > 0) || !cost) continue;
     const locs = String(p.location ?? "").split(",").map((s) => s.trim()).filter(Boolean);
     const plan: CatalogPlan = { id: `ea:${p.packageCode}`, gb, days, price: Math.round(cost * 100) / 100 };
     if (locs.length === 1) add(cat, "country", locs[0].toLowerCase(), plan);

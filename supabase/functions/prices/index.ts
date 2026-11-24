@@ -69,7 +69,7 @@ const round = (n: unknown) => Math.round(Number(n) * 100) / 100;
 const providerState: Record<string, string> = {};
 const countPlans = (c: Catalog | null) => c ? Object.values(c.countries).reduce((n, x) => n + x.plans.length, 0) + Object.values(c.regions).reduce((n, x) => n + x.plans.length, 0) + c.global.plans.length : 0;
 async function cachedCatalog(id: string, ttl: number, load: () => Promise<Catalog | null>): Promise<Catalog | null> {
-  const name = id.replace("cat:", "");
+  const name = id.replace("cat:", "").replace(/d+$/, "");
   const { data: row } = await db.from("price_cache").select("body, updated_at").eq("id", id).maybeSingle();
   if (row && countPlans(row.body) > 0 && (Date.now() - new Date(row.updated_at).getTime()) / 1000 < ttl) { providerState[name] = `ok (${countPlans(row.body)} Tarife, Zwischenspeicher)`; return row.body; }
   try {
@@ -89,7 +89,7 @@ async function esim(): Promise<Esim | null> {
   const fx = await rates("EUR");
   const toEur = (n: number, cur: string) => { cur = (cur || "EUR").toUpperCase(); if (cur === "EUR") return n; const r = fx?.rates?.[cur]; return r ? n / r : null; };
   const [a, g] = await Promise.all([
-    cachedCatalog("cat:esimaccess", 3600, () => esimAccessCatalog(toEur)),
+    cachedCatalog("cat:esimaccess2", 3600, () => esimAccessCatalog(toEur)),
     cachedCatalog("cat:esimgo", 6 * 3600, () => esimGoCatalog(toEur)),
   ]);
   if (!a && !g) throw new Error("Kein eSIM-Katalog verfügbar");
