@@ -1053,6 +1053,39 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 #airport.section--dark { margin-inline: clamp(8px, 1.2vw, 16px); border-radius: var(--soft); overflow: clip; }
 .cta { border-radius: var(--soft) var(--soft) 0 0; }
 
+/* ---------- Lounge & Fast Track: Karten wie die eSIM-Reiseziele (Ab-Preis, Details beim Darüberfahren/Antippen) ---------- */
+.airport__card { height: clamp(360px, 46vh, 430px); min-height: 0; cursor: pointer; outline: 0; transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+.airport__card::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(10,13,12,.97) 0%, rgba(10,13,12,.78) 55%, rgba(10,13,12,.2) 100%); opacity: 0; transition: opacity .5s var(--ease); }
+.airport__body { position: relative; }
+.airport__body h3 { font-size: clamp(24px, 2.4vw, 30px); }
+.airport__price { margin-top: 4px !important; font-size: 15px !important; color: rgba(255,255,255,.78) !important; }
+.airport__price .price { color: #fff; font-weight: 700; font-size: 17px; }
+.airport__more { display: flex; flex-direction: column; max-height: 0; opacity: 0; overflow: hidden; transform: translateY(12px); transition: max-height .55s var(--ease), opacity .3s, transform .45s var(--ease); }
+.airport__text { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.18); font-size: 15px; color: rgba(255,255,255,.82); max-width: 460px; }
+.airport__more .ticks { margin-top: 12px; }
+.airport__cta { margin-top: 18px; align-self: flex-start; }
+.airport__cta svg { width: 16px; height: 16px; }
+.airport__plus { position: absolute; top: 16px; inset-inline-end: 16px; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: transform .4s var(--ease), background .3s; }
+.airport__plus svg { width: 18px; height: 18px; }
+.airport__card.is-open, .airport__card:focus-visible { transform: translateY(-6px); box-shadow: 0 26px 50px -22px rgba(0,0,0,.7); }
+.airport__card.is-open::after, .airport__card:focus-visible::after { opacity: 1; }
+.airport__card.is-open img, .airport__card:focus-visible img { transform: scale(1.06); }
+.airport__card.is-open .airport__more, .airport__card:focus-visible .airport__more, .airport__card:has(.airport__cta:focus-visible) .airport__more { max-height: 320px; opacity: 1; transform: none; transition: max-height .55s var(--ease), opacity .4s .12s, transform .45s var(--ease) .08s; }
+.airport__card.is-open .airport__plus, .airport__card:focus-visible .airport__plus { transform: rotate(45deg); background: var(--green); color: var(--dark); border-color: var(--green); }
+.airport__card:has(.airport__cta:focus-visible)::after { opacity: 1; }
+@media (hover: hover) {
+  .airport__card:hover { transform: translateY(-6px); box-shadow: 0 26px 50px -22px rgba(0,0,0,.7); }
+  .airport__card:hover::after { opacity: 1; }
+  .airport__card:hover img { transform: scale(1.06); }
+  .airport__card:hover .airport__more { max-height: 320px; opacity: 1; transform: none; transition: max-height .55s var(--ease), opacity .4s .12s, transform .45s var(--ease) .08s; }
+  .airport__card:hover .airport__plus { transform: rotate(45deg); background: var(--green); color: var(--dark); border-color: var(--green); }
+}
+@media (max-width: 640px) {
+  .airport__card { height: 400px; }
+  .airport__body h3 { font-size: 23px; }
+  .airport__text { font-size: 14px; }
+}
+
 /* ---------- Magazin: Übersicht und Artikel ---------- */
 .mag-hero, .art-hero { padding-bottom: 56px; border-radius: 0 0 var(--soft) var(--soft); }
 .mag__filters { margin-bottom: 28px; }

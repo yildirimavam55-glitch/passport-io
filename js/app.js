@@ -526,13 +526,17 @@
           </div>
           <div class="airport">
             ${(c.cards || []).map((k) => `
-              <article class="airport__card">
+              <article class="airport__card" tabindex="0" aria-expanded="false" data-product="${esc(k.priceKey || "")}">
                 <img src="${img(k.image, 1200)}" alt="" loading="lazy" />
+                <span class="airport__plus" aria-hidden="true">${icon("plus")}</span>
                 <div class="airport__body">
                   <h3>${esc(k.title)}</h3>
-                  <p>${esc(k.text)}</p>
-                  <ul class="ticks">${(k.ticks || []).map((t) => `<li>${icon("check")}${esc(t)}</li>`).join("")}</ul>
-                  <div class="airport__foot"><span>${P(k.priceKey, t("priceFromPerson"))}</span><a href="#ap-from" class="btn btn--green btn--sm">${esc(k.button)}</a></div>
+                  <p class="airport__price">${P(k.priceKey, t("priceFromPerson"))}</p>
+                  <div class="airport__more">
+                    <p class="airport__text">${esc(k.text)}</p>
+                    <ul class="ticks">${(k.ticks || []).map((t) => `<li>${icon("check")}${esc(t)}</li>`).join("")}</ul>
+                    <a href="#ap-from" class="btn btn--green btn--sm airport__cta" data-pick="${esc(k.priceKey || "")}">${esc(k.button)} ${icon("arrow")}</a>
+                  </div>
                 </div>
               </article>`).join("")}
           </div>
@@ -544,13 +548,34 @@
             </div>
             <div class="airport-search__field"><label for="ap-date">${esc(t("departDate"))}</label><input id="ap-date" type="date" /></div>
             <div class="airport-search__field airport-search__field--sm"><label for="ap-pax">${esc(t("persons"))}</label><select id="ap-pax"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option></select></div>
-            <div class="airport-search__toggle" role="group" aria-label="${esc(t("product"))}"><label><input type="checkbox" checked /> ${esc(t("catLounge"))}</label><label><input type="checkbox" /> ${esc(t("catFasttrack"))}</label></div>
+            <div class="airport-search__toggle" role="group" aria-label="${esc(t("product"))}"><label><input type="checkbox" value="lounge" checked /> ${esc(t("catLounge"))}</label><label><input type="checkbox" value="fasttrack" /> ${esc(t("catFasttrack"))}</label></div>
             <button class="btn btn--green" type="submit">${esc(c.searchButton)}</button>
           </form>
         </div>
       </section>`,
     init(el) {
       $("#ap-date", el).valueAsDate = new Date(Date.now() + 7 * 864e5);
+      // Karten wie bei den eSIM-Reisezielen: Darüberfahren (CSS) oder Antippen öffnet die Details
+      const cards = $$(".airport__card", el);
+      const touch = !matchMedia("(hover: hover)").matches;
+      const openCard = (card) => cards.forEach((c) => { const on = c === card && !c.classList.contains("is-open"); c.classList.toggle("is-open", on); c.setAttribute("aria-expanded", on); });
+      el.addEventListener("click", (e) => {
+        const pick = e.target.closest("[data-pick]");
+        if (pick) {
+          // Zur Suche springen und das passende Produkt vorauswählen
+          e.preventDefault();
+          $$(".airport-search__toggle input", el).forEach((i) => (i.checked = i.value === pick.dataset.pick));
+          $(".airport-search", el).scrollIntoView({ behavior: "smooth", block: "center" });
+          setTimeout(() => $("#ap-from", el).focus({ preventScroll: true }), 500);
+          return;
+        }
+        const card = e.target.closest(".airport__card");
+        if (card && (touch || !card.matches(":hover"))) openCard(card);
+      });
+      el.addEventListener("keydown", (e) => {
+        const card = e.target.closest?.(".airport__card");
+        if (card && e.target === card && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openCard(card); }
+      });
       $("[data-airport-search]", el).addEventListener("submit", (e) => {
         e.preventDefault();
         const ap = $("#ap-from", el).value.trim();
