@@ -32,6 +32,7 @@ Prüfen: GitHub-Workflow `check-secrets.yml` (nur Namen) – `gh workflow run ch
 
 ## Arbeiten / Deploy (Windows)
 - PATH für gh/git: `/c/Users/Yildi/AppData/Local/Microsoft/WinGet/Packages/GitHub.cli_Microsoft.Winget.Source_8wekyb3d8bbwe/bin`
+- **Vor jeder Arbeit `git pull --rebase`**: Der Mağaza editörü im Panel committet Inhalte direkt auf main.
 - Push auf main → `gh run watch` → Jobs: Seite bauen, GitHub Pages, Supabase (Migrationen + Funktionen).
 - Lokal: `.claude/launch.json` „passport“ (node server.js, Port 5173). Lokale Seite nutzt Live-Supabase.
 - Syntaxcheck TS: Datei nach `$TEMP/x.mts` kopieren, `node --check`.
