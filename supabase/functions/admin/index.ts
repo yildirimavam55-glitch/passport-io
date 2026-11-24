@@ -10,7 +10,7 @@
 // deno-lint-ignore-file no-explicit-any
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { cors, env, json } from "../_shared/http.ts";
-import { applyPricing, DEFAULTS, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
+import { applyPricing, DEFAULTS, loadAllRows, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { accessOn, cancel, fulfillOrder, goOn, providerConfigured } from "../_shared/esim-provider.ts";
 
@@ -164,7 +164,7 @@ Deno.serve(async (req) => {
       }
       if (view === "pricing") {
         const [settings, { data: comps }, preview] = await Promise.all([
-          loadSettings(db), db.from("competitor_prices").select("*").order("item_key").limit(5000), pricingPreview(),
+          loadSettings(db), loadAllRows(db, "competitor_prices").then((data) => ({ data: data.sort((a: any, b: any) => String(a.item_key).localeCompare(String(b.item_key))) })), pricingPreview(),
         ]);
         return json({ settings, defaults: DEFAULTS, competitors: comps ?? [], preview }, 200, headers);
       }

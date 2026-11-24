@@ -29,8 +29,25 @@ export async function loadSettings(db: any): Promise<Settings> {
     min_margin_pct: Number(data.min_margin_pct), round_99: !!data.round_99,
   } : DEFAULTS;
 }
+export async function loadAllRows(db: any, table: string, select = "*", order = "id") {
+  const out: any[] = [];
+  for (let from = 0; from < 50000; from += 1000) {
+    const { data: page, error } = await db.from(table).select(select).order(order).range(from, from + 999);
+    if (error || !page?.length) break;
+    out.push(...page);
+    if (page.length < 1000) break;
+  }
+  return out;
+}
 export async function loadCompetitors(db: any): Promise<Competitor[]> {
-  const { data } = await db.from("competitor_prices").select("item_key, gb, days, price, currency, competitor").eq("active", true).limit(5000);
+  // Supabase liefert höchstens 1000 Zeilen pro Abfrage → seitenweise laden
+  const data: any[] = [];
+  for (let from = 0; from < 50000; from += 1000) {
+    const { data: page, error } = await db.from("competitor_prices").select("id, item_key, gb, days, price, currency, competitor").eq("active", true).order("id").range(from, from + 999);
+    if (error || !page?.length) break;
+    data.push(...page);
+    if (page.length < 1000) break;
+  }
   return (data ?? []).map((c: any) => ({ ...c, gb: c.gb == null ? null : Number(c.gb), days: c.days == null ? null : Number(c.days), price: Number(c.price) }));
 }
 
