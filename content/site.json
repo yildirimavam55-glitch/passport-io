@@ -133,9 +133,7 @@
       "paymentsLabel": "Ödeme seçenekleri",
       "payments": [
         "applepay",
-        "googlepay",
-        "klarna",
-        "paypal"
+        "googlepay"
       ]
     },
     "destinations": {

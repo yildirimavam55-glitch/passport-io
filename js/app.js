@@ -119,7 +119,8 @@
   const flag = (code) => `https://flagcdn.com/w80/${code}.png`;
   /* Zahlungslogos (Simple Icons, monochrom) */
   const PAY = { applepay: "Apple Pay", googlepay: "Google Pay", klarna: "Klarna", paypal: "PayPal", visa: "Visa", mastercard: "Mastercard", americanexpress: "American Express" };
-  const payLogo = (slug) => `<img class="pay-logo pay-logo--${esc(slug)}" src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/${esc(slug)}.svg" alt="${esc(PAY[slug] || slug)}" title="${esc(PAY[slug] || slug)}" loading="lazy">`;
+  // Logos liegen selbst gehostet in img/pay (kein Drittanbieter-CDN, keine IP-Weitergabe)
+  const payLogo = (slug) => `<img class="pay-logo pay-logo--${esc(slug)}" src="img/pay/${esc(slug)}.svg" alt="${esc(PAY[slug] || slug)}" title="${esc(PAY[slug] || slug)}" loading="lazy">`;
   /* Für Suche & Assistent: Kleinschreibung, ohne Akzente (ü→u, ş→s, ı→i …), nur Buchstaben/Ziffern */
   const normFor = (loc) => (s) => String(s).toLocaleLowerCase(loc).replace(/ı/g, "i").replace(/ß/g, "ss").normalize("NFD").replace(/[̀-ًͯ-ٰٟ]/g, "").replace(/ى/g, "ي").replace(/ة/g, "ه").replace(/ё/g, "е").replace(/[^\p{L}\p{N} ]+/gu, " ").replace(/\s+/g, " ").trim();
   const norm = normFor(LOCALE);
@@ -269,6 +270,7 @@
             <ul class="hero__facts">
               ${(c.facts || []).map((f) => `<li>${f.icon === "trustpilot" ? `<span class="tp-mini">${icon("star")}</span>` : icon(f.icon || "check")}${fill(f.text)}</li>`).join("")}
             </ul>
+            ${(c.payments || []).length ? `<div class="hero__pay" role="group" aria-label="${esc(c.paymentsLabel || t("payMethods"))}">${c.payments.map(payLogo).join("")}</div>` : ""}
           </div>
         </div>
         <div class="strip">
@@ -864,7 +866,7 @@
           <div>
             <form class="cta__form" data-newsletter>
               <input type="email" name="email" required placeholder="${esc(c.placeholder)}" aria-label="${esc(t("emailLabel"))}" />
-              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="handoff__hp">
               <button class="btn btn--green" type="submit">${esc(c.button)}</button>
             </form>
             <p class="cta__consent">${esc(t("newsletterConsent"))}</p>
@@ -1231,6 +1233,9 @@
       if (n.startsWith(nq)) return 4;
       if (n.split(" ").some((w) => w.startsWith(nq))) return 3;
       if ((it.names || []).some((a) => a.startsWith(nq) || a.split(" ").some((w) => w.startsWith(nq)))) return 2;
+      // „U.S. Virgin Islands“ ~ „US Virgin Islands“, „St. Vincent & Grenadines“ ~ „St Vincent & the Grenadines“
+      const words = nq.split(" ").filter(Boolean), flat = nq.replace(/ /g, "");
+      if ([n, ...(it.names || [])].some((a) => a.replace(/ /g, "").startsWith(flat) || words.every((q) => a.split(" ").some((w) => w.startsWith(q))))) return 2;
       return n.includes(nq) ? 1 : 0;
     };
     const find = (q) => {

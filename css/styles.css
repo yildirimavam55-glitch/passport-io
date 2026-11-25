@@ -375,7 +375,8 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .handoff input, .handoff textarea { width: 100%; padding: 10px 12px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; font-size: 15px; outline: 0; resize: vertical; }
 .handoff input:focus, .handoff textarea:focus { border-color: var(--ink); }
 .handoff .btn { justify-self: start; }
-.handoff__hp { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0; }
+/* Lockfeld gegen Bots: unsichtbar, ohne die Seite zu verbreitern (auch bei Arabisch/RTL) */
+.handoff__hp { position: absolute !important; inset-inline-start: 0; top: 0; width: 1px !important; height: 1px !important; padding: 0 !important; border: 0 !important; overflow: hidden; clip-path: inset(50%); white-space: nowrap; opacity: 0; pointer-events: none; }
 .handoff__ok { margin-top: 10px; font-weight: 600; color: var(--green-ink); }
 .typing { display: inline-flex; gap: 4px; padding: 16px 18px; }
 .typing span { width: 7px; height: 7px; border-radius: 50%; background: #a8aeaa; animation: blink 1.2s infinite; }
@@ -1013,11 +1014,11 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .hero__facts { font-size: 14px; gap: 8px 22px; color: rgba(255,255,255,.72); }
 .hero__pay { gap: 14px; padding-left: 28px; border-left: 1px solid rgba(255,255,255,.18); }
 .hero__pay span { display: none; }
-.hero__pay .pay-logo { height: 18px; opacity: .7; }
-.hero__pay .pay-logo--applepay, .hero__pay .pay-logo--googlepay { height: 24px; }
+.hero__pay .pay-logo { height: 20px; opacity: .85; }
+.hero__pay .pay-logo--applepay, .hero__pay .pay-logo--googlepay { height: 28px; }
 [dir="rtl"] .hero__pay { padding-left: 0; border-left: 0; padding-right: 28px; border-right: 1px solid rgba(255,255,255,.18); }
 @media (max-width: 1024px) {
-  .hero__pay { display: none; }
+  .hero__pay { padding-left: 18px; gap: 12px; }
 }
 @media (max-width: 640px) {
   /* Nur das Wesentliche: Titel, eine Zeile, Suche, ein Vertrauenssignal, Produkte als ruhige Leiste */
@@ -1031,6 +1032,10 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
   .hero__meta { margin-top: 14px; }
   .hero__facts { font-size: 13px; }
   .hero__facts li:nth-child(n+2) { display: none; }
+  .hero__meta { gap: 10px 16px; }
+  .hero__pay { padding-left: 16px; gap: 10px; }
+  .hero__pay .pay-logo--applepay, .hero__pay .pay-logo--googlepay { height: 22px; }
+  [dir="rtl"] .hero__pay { padding-left: 0; padding-right: 16px; }
   .strip { background: rgba(10,13,12,.75); }
   .strip__inner { display: flex; overflow-x: auto; scrollbar-width: none; gap: 0; padding: 0 var(--gutter); }
   .strip__inner::-webkit-scrollbar { display: none; }
