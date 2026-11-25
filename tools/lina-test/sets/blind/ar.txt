@@ -1,0 +1,6 @@
+أي باقة لثلاثة أسابيع في اليابان | which-package
+هل يجب طباعة رمز qr | install-esim,manual-install,install-iphone,install-android
+يوتيوب بطيء جدا | slow-internet
+مشاركة الإنترنت مع الحاسوب | hotspot,hotspot-setup
+متى يعود المال | refund,refund-how
+الدفع بالدولار | currency

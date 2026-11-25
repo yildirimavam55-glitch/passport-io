@@ -1,0 +1,54 @@
+hilfe mein internet geht gar nicht | no-internet
+hab die esim drauf aber kein netz zum surfen | no-internet
+steht verbunden aber nix lädt | no-internet
+bin in istanbul gelandet handy findet kein netz | no-service
+oben steht nur sos | no-service
+qr gescannt und es kommt ein fehler | code-invalid,cannot-add
+iphone sagt tarif kann nicht hinzugefügt werden | cannot-add
+wie tippe ich den code ein ich hab nur ein handy | manual-install
+internet ist mega langsam | slow-internet
+whatsapp anrufe brechen ab | slow-internet
+mein ganzes datenvolumen ist nach einem tag weg | data-fast
+hab die esim aus versehen gelöscht | deleted-esim
+handy runtergefallen display kaputt was ist mit der esim | new-phone
+ist mein telekom handy gesperrt | sim-lock
+was soll ich beim apn eintragen | apn
+hängt seit 20 minuten bei aktivierung | activating-stuck
+zahle ich dann auch roaming bei o2 | avoid-roaming-costs
+bleibt meine whatsapp gleich | whatsapp
+kommen meine tan sms noch an | bank-sms
+wie viel gb hab ich noch | check-usage
+kann ich mehr daten kaufen | topup
+was passiert wenn die tage um sind | expired
+soll ich die esim nach dem urlaub löschen | remove-after
+wann soll ich die esim kaufen vor dem flug | buy-when
+kann ich die im flugzeug installieren | install-internet,buy-when
+geht das auch auf meinem tablet | tablet-watch
+wird bei unlimited gedrosselt | unlimited
+krieg ich da eine nummer | phone-number
+geht das auch auf dem schiff | cruise-flight
+warum ist google auf einmal türkisch | ip-location
+fliege nach china geht dann google | china
+fahre in die heimat türkei was muss ich beachten | turkey
+für meinen papa kaufen geht das | gift
+habe keine mail bekommen | no-email
+wo bleibt meine bestellung | order-status,delivery,no-email
+will mein geld zurück noch nicht installiert | refund,refund-how
+geld weg aber keine esim | payment-failed
+gibts ein abo oder einmalig | hidden-costs
+gutschein klappt nicht | discount-code
+brauche eine rechnung für die firma | invoice
+kann ich in lira zahlen | currency
+gestern war der preis anders | prices
+komme nicht in mein konto | account-login
+löscht bitte meinen account | account-delete
+will keine werbung mehr | newsletter
+kann ich mit einem menschen sprechen | contact
+dürfen kinder in die lounge | lounge-kids
+gibt es essen in der lounge | lounge-what
+wo ist der fast track | fasttrack-where
+funktioniert das mit vpn | vpn
+ist das seriös | safe
+geht das mit samsung s20 | device-compatible
+was ist das überhaupt eine esim | what-is-esim
+wie wird das wetter morgen | -

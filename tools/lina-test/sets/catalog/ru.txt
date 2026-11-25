@@ -1,0 +1,63 @@
+что такое esim | what-is-esim
+esim или роуминг что дешевле | esim-vs-roaming
+это безопасно | safe
+мой телефон поддерживает esim | device-compatible
+есть ли esim в iphone 12 | device-compatible
+телефон заблокирован оператором | sim-lock
+работает на ipad | tablet-watch
+какой тариф выбрать | which-package
+сколько гб на неделю | which-package
+безлимит действительно безлимитный | unlimited
+почему изменилась цена | prices
+сменить валюту | currency
+один пакет на всю европу | coverage-countries
+есть 5g | 5g
+какие способы оплаты | payment
+оплата не прошла | payment-failed
+скрытые платежи | hidden-costs
+это подписка | hidden-costs
+куда вводить промокод | discount-code
+можно получить счёт | invoice
+купить для друга | gift
+заказ для компании | business
+не пришло письмо | no-email
+заказ в обработке | order-status
+как установить esim | install-esim,install-iphone,install-android
+не могу отсканировать qr | manual-install
+нужен ли wifi для установки | install-internet
+когда покупать esim | buy-when
+не удалось добавить esim | cannot-add
+код больше недействителен | code-invalid
+когда включать esim | when-activate,line-on
+зависла на активации | activating-stuck
+какой apn | apn
+нет интернета | no-internet
+нет сети | no-service
+интернет очень медленный | slow-internet
+быстро заканчивается трафик | data-fast
+удалил esim | deleted-esim
+потерял телефон | new-phone
+раздача интернета | hotspot,hotspot-setup
+можно ли использовать vpn | vpn
+работает ли whatsapp | whatsapp
+смс от банка | bank-sms
+можно звонить | calls
+остаток трафика | check-usage
+докупить трафик | topup
+что будет когда закончится срок | expired
+еду в турцию | turkey
+whatsapp в китае | china
+в круизе | cruise-flight
+возврат денег | refund,refund-how
+как запросить возврат | refund-how
+забыл пароль | account-login
+удалить аккаунт | account-delete
+отписаться от рассылки | newsletter
+связаться с поддержкой | contact
+что есть в бизнес зале | lounge-what
+забронировать лаунж | lounge-access
+дети в лаунже | lounge-kids
+что такое fast track | fasttrack-how
+где fast track | fasttrack-where
+нужна ли виза | -
+продаёте авиабилеты | -

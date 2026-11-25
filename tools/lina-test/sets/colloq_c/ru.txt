@@ -1,0 +1,5 @@
+esim активна но страницы не грузятся | no-internet
+сколько гб я потратил | check-usage
+потерял телефон что будет с esim | new-phone
+сколько идёт возврат | refund,refund-how
+удалить аккаунт навсегда | account-delete

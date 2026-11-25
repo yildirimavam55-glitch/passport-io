@@ -1,0 +1,15 @@
+esim active but pages wont load | no-internet
+in bodrum and not a single bar | no-service
+scanned the code and it says already used | code-invalid
+iphone could not add cellular plan | cannot-add
+instagram videos take forever | slow-internet
+bought yesterday already empty today | data-fast
+lost my phone what happens to the esim | new-phone
+how much gb have i used | check-usage
+can i add more data to my plan | topup
+does whatsapp work in china | china
+order email missing | no-email
+how long does a refund take | refund,refund-how
+money taken no order | payment-failed
+password reset email not arriving | account-login
+delete my account permanently | account-delete

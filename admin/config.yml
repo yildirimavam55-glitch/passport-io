@@ -60,6 +60,7 @@ collections:
             fields:
               - { label: "Adres", name: pricesUrl, widget: string }
               - { label: "Lina'nın yanıtlayamadığı sorular için adres (Supabase)", name: questionsUrl, widget: string, required: false }
+              - { label: "Lina yapay zekâ adresi (Supabase, isteğe bağlı)", name: linaUrl, widget: string, required: false }
               - { label: "Fiyat yoksa gösterilecek metin", name: unavailableText, widget: string, i18n: true }
               - { label: "Fiyat yoksa paket penceresindeki not", name: modalUnavailableText, widget: text, i18n: true }
 
@@ -428,10 +429,11 @@ collections:
               - label: "Kategori"
                 name: category
                 widget: select
-                options: [{ label: eSIM, value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: "Ödeme & iade", value: zahlung }, { label: "Genel", value: allgemein }]
+                options: [{ label: eSIM, value: esim }, { label: Lounge, value: lounge }, { label: Fast Track, value: fasttrack }, { label: "Sorun giderme", value: probleme }, { label: "Ödeme & iade", value: zahlung }, { label: "Genel", value: allgemein }]
               - { label: "Soru", name: question, widget: string, i18n: true }
               - { label: "Yanıt", name: answer, widget: text, hint: "**fett**, neue Zeile mit „- “ = Aufzählung, Leerzeile = neuer Absatz, [Linktext](https://…)", i18n: true }
               - { label: "Arama kelimeleri", name: keywords, widget: list, hint: "Wörter, mit denen Kunden danach fragen könnten (auch Umgangssprache, Tippfehler).", i18n: true }
+              - { label: "Sonraki adımlar", name: next, widget: list, required: false, hint: "Kimlik (id) anderer Fragen, die als Knöpfe unter der Antwort erscheinen – z. B. data-roaming, network-select." }
               - { label: "Kaç kez soruldu", name: views, widget: number, hint: "Höhere Zahl = weiter oben in der FAQ. Die 3 höchsten bekommen „Häufig gefragt“." }
           - { label: "eSIM uyumlu cihazlar", name: devices, widget: list, collapsed: true, field: { label: "Cihaz", name: device, widget: string } }
 

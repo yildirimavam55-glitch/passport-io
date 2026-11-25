@@ -1,0 +1,17 @@
+mein samsung zeigt keine esim option | device-compatible
+welches paket für 3 wochen thailand | which-package
+startet die laufzeit schon beim kauf | when-activate,buy-when,line-on
+muss ich den qr code ausdrucken | install-esim,manual-install,install-iphone,install-android
+esim taucht nach installation nicht auf | code-invalid,cannot-add
+whatsapp lädt nicht obwohl verbunden | no-internet,whatsapp
+youtube extrem langsam | slow-internet
+kann ich das internet mit meinem laptop teilen | hotspot,hotspot-setup
+zahlungsseite lädt nicht | payment-failed
+bestellung nicht im konto sichtbar | no-email,order-status
+wann ist das geld wieder auf meinem konto | refund,refund-how
+installiert aber nie benutzt erstattung möglich | refund,refund-how
+sms kommen im ausland nicht an | bank-sms
+was muss ich am lounge eingang zeigen | lounge-access
+brauche ich für fast track die bordkarte | fasttrack-how
+in dollar bezahlen | currency
+wo kann ich gut essen in berlin | -

@@ -1,0 +1,43 @@
+esim installed but mobile data doesnt work | no-internet
+shows bars but no internet | no-internet
+arrived in izmir zero signal | no-service
+it says code already used when i scan | code-invalid
+error adding the esim | cannot-add,code-invalid
+where do i enter the activation code manually | manual-install
+youtube keeps freezing | slow-internet
+my package was empty after one day | data-fast
+removed the esim by mistake now what | deleted-esim
+phone got stolen is my plan gone | new-phone
+im on a contract will it work | sim-lock
+been activating for hours | activating-stuck
+will i pay extra on my home sim | avoid-roaming-costs
+whatsapp stays on my old number right | whatsapp
+can i still get texts from my bank | bank-sms
+where can i see remaining gb | check-usage
+out of data can i buy more | topup
+install before the trip or there | buy-when,when-activate,line-on
+does unlimited have a speed cap | unlimited
+do i get a phone number too | phone-number
+pages open in a different language why | ip-location
+going to turkey this summer will it work there | turkey
+buy for my daughter and send it to her | gift
+nothing arrived after ordering | no-email
+order processing how long | order-status,delivery
+refund if never used | refund,refund-how
+paid but got an error | payment-failed
+gift card code gives no discount | discount-code
+can you invoice my company | invoice
+pay in euros | currency
+why do prices change so much | prices
+login asks for a code that never comes | account-login
+delete my data and account | account-delete
+unsubscribe please | newsletter
+i want to speak to customer service | contact
+how many hours in the lounge | lounge-hours
+can my wife come into the lounge | lounge-kids
+are there showers in the lounge | lounge-what
+which entrance is fast track | fasttrack-where
+is this site fake | safe
+does it work on huawei | device-compatible
+which plan for 2 weeks | which-package
+bus ticket to london | -

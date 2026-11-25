@@ -19,6 +19,18 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 - Shared: `_shared/esim-provider.ts` (eSIM Access = Datenvolumen, eSIM Go = Unlimited Stufe essential), `pricing.ts`, `assortment.ts`.
 - Panel: `admin/panel.html|js|css` + `admin/panel-editor.js` (Shopify-artiger Editor, Felder aus `admin/config.yml`, Speichern über Admin-Funktion → GitHub).
 
+## Lina (Assistent)
+- 77 FAQs in `content/assistant.json`, alle 7 Sprachen; Kategorie `probleme` = Sorun giderme. Schritt-für-Schritt je Handy (iPhone/Samsung/Pixel/Xiaomi): data-roaming, data-line, network-select, line-on, install-iphone, install-android, reset-network, hotspot-setup.
+- Feld `next` (nur tr): IDs, die als Knöpfe „nächster Schritt“ unter der Antwort erscheinen (z. B. no-internet → Roaming → Datenleitung → Netzwahl → APN → Zurücksetzen).
+- **Sprache der Frage:** Lina sucht in allen Sprachen (Schrift + Wortschatz der Sprache) und antwortet in der Sprache, in der gefragt wurde – unabhängig von der Seitensprache.
+- **Umgangssprache:** `content/lina-synonyms.json` (je Sprache: Kundenwörter → einheitlicher Begriff, gilt für Frage und FAQ-Texte). Neue Kundenformulierungen dort ergänzen.
+- **Suche** (`initAssistant` in app.js): Stichwörter mit Wortstamm-Vergleich, seltene Wörter wiegen mehr (IDF), Frage voll, Antwort halb. Sicher = Score ≥ 3 oder ≥ 2 mit 1,5 Abstand → Antwort; sonst „Meintest du…?“ + Team-Button.
+- **KI (optional):** `supabase/functions/lina` + `SITE.api.linaUrl`. Aktiv erst mit Supabase-Secret `ANTHROPIC_API_KEY`; ohne → 503 → nur Stichwortsuche. KI wird nur gefragt, wenn die Suche unsicher ist (Score < 5), antwortet nur aus den FAQs.
+- **Mehr Kundenformulierungen:** Workflow „Lina übersetzen“ von Hand starten mit expand=25 → KI schreibt je FAQ und Sprache bis zu 25 echte Formulierungen als Stichwörter; wird nur übernommen, wenn der Test danach besser ist.
+- **Neue FAQ:** nur auf Türkisch im Editor anlegen → Workflow „Lina übersetzen“ (`tools/lina-translate.mjs`) übersetzt in alle Sprachen + ergänzt Stichwörter, braucht GitHub-Secret `ANTHROPIC_API_KEY`. Fingerabdrücke: `tools/lina-sync.json`.
+- **Test:** `node tools/lina-test/eval.mjs [-v] [--set=colloq_c] [--ai]` · GitHub-Workflow „Lina testen“ (mit KI, wenn Secret gesetzt). Stand ohne KI: Katalog 97 %, neue Kundensprache (colloq_c) 68 % direkt / 79 % inkl. Vorschlag. Suche dort ist eine Kopie aus app.js – bei Änderungen beide anpassen. KI-Aufgabe: `supabase/functions/_shared/lina-prompt.js`.
+- Stichwörter: Kundensprache (2–4 Wörter), keine allgemeinen Einzelwörter („çalışmıyor“, „lounge“, „qr“).
+
 ## Preis- und Sortimentslogik
 - Wettbewerbspreise in Tabelle `competitor_prices` (Airalo, Saily, Nomad; gb=0 = Unlimited). Laden seitenweise (Supabase max 1000 Zeilen).
 - Regel: Wettbewerber vorhanden → nächster ,99-Preis darunter; sonst Einkauf × 2 auf ,99; min 2,99 €; Verlustschutz Einkauf + min_margin_pct (Panel → Fiyatlar).
@@ -41,6 +53,7 @@ Prüfen: GitHub-Workflow `check-secrets.yml` (nur Namen) – `gh workflow run ch
 
 ## Offen
 - Zahlungsanbieter (iyzico/PayTR vs. Stripe) – Entscheidung des Nutzers fehlt; Rabattnutzung zählt derzeit bei Bestellanlage.
-- Lounge/Fast Track-Anbieter; Newsletter-Versand (Export nach Brevo/Mailchimp); Lina & SSS nur ~55 % übersetzt.
+- Lounge/Fast Track-Anbieter; Newsletter-Versand (Export nach Brevo/Mailchimp).
+- Lina-FAQ „payment“ nennt Apple Pay/Klarna usw. – an den echten Zahlungsanbieter anpassen; FAQ „invoice“ verweist vorerst aufs Support-Formular (e-Fatura offen).
 - Rechtliches: BTK-Klärung, ETBİS, e-Fatura, KVKK, Rechtstexte (siehe YAYINA-HAZIRLIK.md, ANLEITUNG.md).
 - Echte Testbestellung auf Handy noch nicht gemacht.

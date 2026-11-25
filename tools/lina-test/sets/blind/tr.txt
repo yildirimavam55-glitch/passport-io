@@ -1,0 +1,26 @@
+telefonda esim seçeneği yok | device-compatible
+iphone se 2020 esim destekliyor mu | device-compatible
+almanyadan türkiyeye gidiyorum hangi paket | which-package,turkey
+3 gb yeterli olur mu 5 gün için | which-package
+paket süresi uçakta başlar mı | when-activate,buy-when,line-on
+qr kodu yazdırmam gerekiyor mu | install-esim,manual-install,install-iphone,install-android
+kurulumdan sonra esim listede görünmüyor | code-invalid,cannot-add
+operatör seçimi otomatik mi olmalı | no-service,no-internet,network-select
+internet var ama whatsapp çalışmıyor | no-internet,whatsapp
+youtube açılmıyor çok yavaş | slow-internet
+ana hattım kapalı olursa arama gelir mi | keep-number,calls
+eşimin telefonuna da paylaşabilir miyim | hotspot,hotspot-setup
+kartımdan iki kez çekim yapıldı | payment-failed
+ödeme sayfası açılmıyor | payment-failed
+sipariş verdim ama hesabımda görünmüyor | no-email,order-status
+iade ne kadar sürede yatar | refund,refund-how
+kurulu ama hiç kullanmadım iade olur mu | refund,refund-how
+kodu nasıl kopyalarım | manual-install
+yurtdışında sms gelmiyor | bank-sms
+esimi kapatıp açabilir miyim | remove-after,multiple-esims,line-on
+lounge girişinde ne göstermeliyim | lounge-access
+lounge a kaç kişi girebilir | lounge-kids
+fast track için biniş kartı gerekli mi | fasttrack-how
+şirket adına toplu alım | business
+dolar ile ödeme | currency
+istanbulda en iyi kebapçı | -

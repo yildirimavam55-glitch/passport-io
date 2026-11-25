@@ -90,6 +90,10 @@ jobs:
         run: supabase secrets set --project-ref "$PROJECT_REF" ALLOWED_ORIGINS="https://${{ github.repository_owner }}.github.io,https://passport.io,https://www.passport.io,http://localhost:5173"
       - run: supabase functions deploy prices --no-verify-jwt --project-ref "$PROJECT_REF"
       - run: supabase functions deploy questions --no-verify-jwt --project-ref "$PROJECT_REF"
+      # Lina mit KI: holt die FAQ-Texte von der Webseite; aktiv erst, wenn ANTHROPIC_API_KEY in Supabase eingetragen ist
+      - name: Adresse der Webseite für Lina (nicht geheim)
+        run: supabase secrets set --project-ref "$PROJECT_REF" SITE_URL="${{ vars.SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}"
+      - run: supabase functions deploy lina --no-verify-jwt --project-ref "$PROJECT_REF"
       # Konto: prüft die Anmeldung selbst (Token im Authorization-Header)
       - run: supabase functions deploy account --no-verify-jwt --project-ref "$PROJECT_REF"
       # Admin-Anmeldung (GitHub) für /admin

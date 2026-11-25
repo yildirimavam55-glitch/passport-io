@@ -1,0 +1,91 @@
+what is an esim | what-is-esim
+is esim cheaper than roaming | esim-vs-roaming
+is it safe | safe
+is my phone compatible | device-compatible
+does iphone 13 support esim | device-compatible
+does samsung s23 have esim | device-compatible
+is my phone carrier locked | sim-lock
+can i use it on my ipad | tablet-watch
+which plan should i choose | which-package
+how many gb do i need for a week | which-package
+is unlimited really unlimited | unlimited
+why did the price change | prices
+can i pay in pounds | currency
+change currency | currency
+one plan for all of europe | coverage-countries
+does it work in other countries | coverage-countries
+does it support 5g | 5g
+when does the validity start | when-activate,buy-when,line-on
+what payment methods do you accept | payment
+payment failed | payment-failed
+card declined | payment-failed
+charged twice | payment-failed
+are there hidden fees | hidden-costs
+is it a subscription | hidden-costs
+where do i enter a promo code | discount-code
+can i get an invoice | invoice
+buy esim for a friend | gift
+bulk order for my company | business
+when will i receive my esim | delivery,no-email
+didn't get the email | no-email
+order says processing | order-status
+what does payment pending mean | order-status
+how do i install the esim | install-esim,install-iphone,install-android
+install on android | install-esim,install-iphone,install-android
+can't scan the qr code | manual-install
+where is the activation code | manual-install
+do i need wifi to install | install-internet
+when should i buy it | buy-when
+esim cannot be added | cannot-add
+code no longer valid | code-invalid
+when should i turn on the esim | when-activate,line-on
+should i turn on data roaming | when-activate,no-internet,avoid-roaming-costs,data-roaming,line-on
+will my home carrier charge me | avoid-roaming-costs
+stuck on activating | activating-stuck
+what apn should i use | apn
+no internet | no-internet
+connected but no data | no-internet
+no service | no-service
+internet is slow | slow-internet
+data runs out fast | data-fast
+i deleted my esim | deleted-esim
+lost my phone | new-phone
+move esim to new phone | new-phone
+hotspot not working | hotspot,hotspot-setup
+can i use a vpn | vpn
+does whatsapp work | whatsapp
+will i get bank sms | bank-sms
+can i make calls | calls
+do i get a phone number | phone-number
+will my number still work | keep-number
+how much data is left | check-usage
+can i top up | topup
+what happens when it expires | expired
+should i delete the esim after the trip | remove-after
+can i have two esims | multiple-esims
+why does google show another country | ip-location
+travelling to turkey | turkey
+imei registration turkey | turkey
+does whatsapp work in china | china
+does it work on a cruise | cruise-flight
+can i get a refund | refund,refund-how
+how do i request a refund | refund-how
+cancel my order | refund-how,refund
+forgot password | account-login
+can't log in | account-login
+delete my account | account-delete
+unsubscribe from newsletter | newsletter
+how do i contact support | contact
+is there live chat | contact
+what's in an airport lounge | lounge-what
+how do i book a lounge | lounge-access
+how long can i stay in the lounge | lounge-hours
+can kids enter the lounge | lounge-kids
+lounge was full | lounge-denied
+flight delayed lounge | lounge-delay
+what is fast track | fasttrack-how
+where is fast track | fasttrack-where
+how long is fast track valid | fasttrack-time
+do i need a visa | -
+do you sell flights | -
+best restaurants in rome | -

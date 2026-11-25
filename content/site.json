@@ -346,6 +346,7 @@
     "api": {
       "pricesUrl": "https://sbzwibctxezprpefwxzn.supabase.co/functions/v1/prices",
       "questionsUrl": "https://sbzwibctxezprpefwxzn.supabase.co/functions/v1/questions",
+      "linaUrl": "https://sbzwibctxezprpefwxzn.supabase.co/functions/v1/lina",
       "unavailableText": "Fiyat yakında",
       "modalUnavailableText": "Güncel fiyatlar şu anda yüklenemedi. Lütfen birazdan tekrar deneyin."
     },

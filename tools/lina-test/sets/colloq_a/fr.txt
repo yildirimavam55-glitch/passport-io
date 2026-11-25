@@ -1,0 +1,15 @@
+aide mon internet marche pas du tout | no-internet
+arrivé à istanbul aucun réseau | no-service
+erreur après avoir scanné le qr | code-invalid,cannot-add
+internet hyper lent | slow-internet
+toutes mes données parties en un jour | data-fast
+j'ai effacé l'esim par erreur | deleted-esim
+bloqué sur activation depuis longtemps | activating-stuck
+mon numéro whatsapp va changer | whatsapp
+combien de données il me reste | check-usage
+je veux être remboursé pas encore installé | refund,refund-how
+argent débité mais pas d'esim | payment-failed
+le code promo marche pas | discount-code
+je n'arrive pas à me connecter à mon compte | account-login
+parler à un humain | contact
+c'est quoi une esim en fait | what-is-esim

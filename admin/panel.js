@@ -485,7 +485,7 @@
   const T_LANGS = [["en", "English"], ["de", "Deutsch"], ["ar", "العربية"], ["ru", "Русский"], ["fr", "Français"], ["es", "Español"]];
   const T_FILES = [["content/site.json", "Ana sayfa"], ["content/ui.json", "Arayüz metinleri"], ["content/assistant.json", "Lina & SSS"], ["content/install.json", "Kurulum rehberi"], ["content/account.json", "Müşteri hesabı"], ["content/pages.json", "Yasal sayfalar"], ["content/reviews.json", "Değerlendirmeler"], ["content/esim.json", "eSIM ülkeleri"]];
   // Übersetzbare Texte: Zeichenketten, aber keine Links, Bilder, Codes, Farben, Daten
-  const T_SKIP = /^(image|images|img|url|href|link|icon|color|green|dark|code|id|type|date|cta|country|countryCode|pricesUrl|questionsUrl|mapCodes|slug|value|style|tap|toggle|kind|currency|email|phone|logo|flag)$/i;
+  const T_SKIP = /^(image|images|img|url|href|link|icon|color|green|dark|code|id|type|date|cta|country|countryCode|pricesUrl|questionsUrl|linaUrl|mapCodes|slug|value|style|tap|toggle|kind|currency|email|phone|logo|flag)$/i;
   function tLeaves(obj, path = [], out = []) {
     if (typeof obj === "string") { const s = obj.trim(); if (s && !/^(https?:|\/|#|[a-z0-9_-]+\.(png|jpe?g|webp|svg)$)/i.test(s) && !/^[#0-9a-f]{4,7}$/i.test(s) && /\p{L}{2,}/u.test(s)) out.push({ path, text: obj }); return out; }
     if (Array.isArray(obj)) { obj.forEach((v, i) => tLeaves(v, [...path, i], out)); return out; }

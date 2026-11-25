@@ -1,0 +1,60 @@
+# Lina: neue oder geänderte FAQs automatisch in alle Sprachen übersetzen
+# Läuft, wenn content/assistant.json oder content/languages.json auf main geändert wird (z. B. über den Editor).
+# Benötigtes Repository-Secret: ANTHROPIC_API_KEY (console.anthropic.com → API Keys).
+# Ohne Secret passiert nichts Schlimmes: Lina zeigt neue Fragen dann auf Türkisch, bis übersetzt ist.
+
+name: Lina übersetzen
+
+on:
+  push:
+    branches: [main]
+    paths: [content/assistant.json, content/languages.json]
+  workflow_dispatch:
+    inputs:
+      expand:
+        description: "Kundenformulierungen je FAQ und Sprache erzeugen (0 = aus, z. B. 25)"
+        default: "0"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: lina-translate
+  cancel-in-progress: false
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Fehlende Übersetzungen ergänzen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tools/lina-translate.mjs
+      - name: Kundenformulierungen erzeugen (nur wenn gewünscht) – und nur übernehmen, wenn Lina dadurch besser wird
+        if: ${{ github.event.inputs.expand && github.event.inputs.expand != '0' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          SAVE=/tmp/vorher.json node tools/lina-test/eval.mjs
+          cp content/assistant.json /tmp/assistant.json; cp tools/lina-sync.json /tmp/sync.json
+          node tools/lina-translate.mjs --expand "${{ github.event.inputs.expand }}"
+          SAVE=/tmp/nachher.json node tools/lina-test/eval.mjs
+          if ! node tools/lina-test/compare.mjs /tmp/vorher.json /tmp/nachher.json; then cp /tmp/assistant.json content/assistant.json; cp /tmp/sync.json tools/lina-sync.json; fi
+      - name: Speichern und Webseite neu veröffentlichen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- content/assistant.json tools/lina-sync.json; then echo "Keine Änderungen."; exit 0; fi
+          git config user.name "Lina (Übersetzung)"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/assistant.json tools/lina-sync.json
+          git commit -m "Lina: Übersetzungen/Kundenformulierungen automatisch ergänzt"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          # Commits dieses Workflows lösen keinen neuen Lauf aus – daher die Veröffentlichung direkt anstoßen
+          gh workflow run deploy.yml --ref main

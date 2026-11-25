@@ -1,0 +1,63 @@
+qué es una esim | what-is-esim
+esim o roaming cuál es más barato | esim-vs-roaming
+es seguro | safe
+mi teléfono es compatible | device-compatible
+iphone 12 tiene esim | device-compatible
+mi teléfono está bloqueado | sim-lock
+funciona en ipad | tablet-watch
+qué plan elijo | which-package
+cuántos gb para una semana | which-package
+ilimitado de verdad | unlimited
+por qué cambió el precio | prices
+cambiar la moneda | currency
+un plan para toda europa | coverage-countries
+tiene 5g | 5g
+qué métodos de pago hay | payment
+pago rechazado | payment-failed
+costes ocultos | hidden-costs
+es una suscripción | hidden-costs
+dónde pongo el código de descuento | discount-code
+puedo tener factura | invoice
+comprar para un amigo | gift
+pedido para mi empresa | business
+no me llegó el correo | no-email
+pedido en proceso | order-status
+cómo instalo la esim | install-esim,install-iphone,install-android
+no puedo escanear el qr | manual-install
+necesito wifi para instalar | install-internet
+cuándo comprar la esim | buy-when
+no se puede añadir la esim | cannot-add
+código ya no es válido | code-invalid
+cuándo activo la esim | when-activate,line-on
+se queda en activando | activating-stuck
+qué apn pongo | apn
+no tengo internet | no-internet
+sin servicio | no-service
+internet muy lento | slow-internet
+se me acaban los datos | data-fast
+borré mi esim | deleted-esim
+perdí el teléfono | new-phone
+compartir datos hotspot | hotspot,hotspot-setup
+puedo usar vpn | vpn
+funciona whatsapp | whatsapp
+sms del banco | bank-sms
+puedo llamar | calls
+datos restantes | check-usage
+recargar datos | topup
+qué pasa cuando caduca | expired
+viajo a turquía | turkey
+whatsapp en china | china
+en un crucero | cruise-flight
+reembolso | refund,refund-how
+cómo pido un reembolso | refund-how
+olvidé la contraseña | account-login
+borrar mi cuenta | account-delete
+darme de baja del boletín | newsletter
+contactar con soporte | contact
+qué hay en una sala vip | lounge-what
+reservar sala vip | lounge-access
+niños en la sala vip | lounge-kids
+qué es fast track | fasttrack-how
+dónde está el fast track | fasttrack-where
+necesito visado | -
+venden vuelos | -

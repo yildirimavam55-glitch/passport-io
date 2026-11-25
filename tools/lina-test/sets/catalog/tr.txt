@@ -1,0 +1,247 @@
+# Format: Frage | akzeptierte FAQ-IDs (Komma)   ·   "-" = Lina soll NICHT antworten (themenfremd)
+## Grundlagen
+esim nedir | what-is-esim
+esim ne demek | what-is-esim
+e sim ne işe yarar | what-is-esim
+sanal sim kart nedir | what-is-esim
+esim ile normal sim arasındaki fark | what-is-esim,esim-vs-roaming
+fiziksel sim kartı çıkarmam gerekir mi | what-is-esim,keep-number
+esim mi roaming mi daha ucuz | esim-vs-roaming
+neden turist simi yerine esim alayım | esim-vs-roaming
+esim güvenli mi | safe
+esim hacklenir mi | safe
+passport.io güvenilir mi | safe
+## Uyumluluk
+telefonum esim destekliyor mu | device-compatible
+iphone 11 esim var mı | device-compatible
+iphone 15 uyumlu mu | device-compatible
+samsung a54 esim destekler mi | device-compatible
+samsung galaxy s21 esim | device-compatible
+xiaomi telefonlarda esim çalışır mı | device-compatible
+huawei p40 esim var mı | device-compatible
+redmi note 12 esim | device-compatible
+google pixel 7 uyumlu mu | device-compatible
+telefonumun esim olup olmadığını nasıl anlarım | device-compatible
+eid numarası nedir | device-compatible
+türkiyeden aldığım iphone esim destekler mi | device-compatible,turkey
+telefonum kilitli mi nasıl anlarım | sim-lock
+faturalı hattım var kilitli olabilir mi | sim-lock
+operatör kilidi nasıl açılır | sim-lock
+ipadde kullanabilir miyim | tablet-watch
+apple watch ile çalışır mı | tablet-watch
+laptopta kullanabilir miyim | tablet-watch,hotspot,hotspot-setup
+## Paket seçimi & fiyat
+hangi paketi almalıyım | which-package
+1 haftalık tatil için kaç gb lazım | which-package
+10 gün için ne kadar internet gerekir | which-package
+instagram için kaç gb yeter | which-package
+netflix izlersem kaç gb gider | which-package
+sınırsız paket var mı | unlimited
+sınırsız gerçekten sınırsız mı | unlimited
+sınırsızda hız düşüyor mu | unlimited
+günlük kota ne demek | unlimited
+fiyatlar neden değişiyor | prices
+dün daha ucuzdu neden fiyat arttı | prices
+fiyatlara vergi dahil mi | prices,invoice
+en ucuz paket hangisi | prices,which-package
+fiyatlar euro mu tl mi | currency
+tl ile ödeyebilir miyim | currency
+para birimini nasıl değiştiririm | currency
+dolar olarak görebilir miyim | currency
+avrupa için tek paket var mı | coverage-countries
+birden fazla ülkeye gideceğim | coverage-countries
+aktarmalı uçuşta transit ülkede çalışır mı | coverage-countries
+global paket var mı | coverage-countries
+5g destekli mi | 5g
+hangi operatörü kullanıyor | coverage-countries,5g
+esimin geçerlilik süresi ne zaman başlar | when-activate,buy-when,line-on
+satın aldığım gün süre başlar mı | when-activate,buy-when,line-on
+## Satın alma & ödeme
+hangi ödeme yöntemleri var | payment
+kredi kartı ile ödeyebilir miyim | payment
+paypal var mı | payment
+taksit yapılıyor mu | payment
+ödeme başarısız oldu | payment-failed
+kartım reddedildi | payment-failed
+para çekildi ama sipariş yok | payment-failed
+iki kere para çekildi | payment-failed
+3d secure şifresi gelmedi | payment-failed
+gizli ücret var mı | hidden-costs
+abonelik mi her ay para çekilir mi | hidden-costs
+otomatik yenileme var mı | hidden-costs,expired
+indirim kodu nereye yazılır | discount-code
+kupon kodum geçersiz diyor | discount-code
+indirim kodu var mı | discount-code
+fatura alabilir miyim | invoice
+şirket adına fatura | invoice,business
+kdv dahil fatura | invoice
+e fatura gönderiyor musunuz | invoice
+annem için esim alabilir miyim | gift
+hediye olarak esim almak | gift
+şirketimiz için toplu esim almak istiyoruz | business
+grup için 20 tane esim | business
+## Teslimat & sipariş
+siparişim ne zaman gelir | delivery,no-email
+qr kod ne zaman gelir | delivery,no-email
+qr kod gelmedi | no-email
+mail gelmedi | no-email
+spam klasörüne de baktım yok | no-email
+siparişim hazırlanıyor yazıyor | order-status
+ödeme bekleniyor yazıyor | order-status
+kurulmaya hazır ne demek | order-status
+sipariş durumu ne anlama geliyor | order-status
+esimim nerede | no-email,check-usage
+## Kurulum
+esim nasıl kurulur | install-esim,install-iphone,install-android
+iphone a esim nasıl yüklenir | install-esim,install-iphone,install-android
+samsungda esim kurulumu | install-esim,install-android,install-iphone
+androidde esim nasıl eklenir | install-esim,install-iphone,install-android
+qr kodu nasıl okuturum | install-esim,manual-install,install-iphone,install-android
+qr kodu aynı telefondan okutamıyorum | manual-install
+kamera qr kodu okumuyor | manual-install
+manuel kurulum nasıl yapılır | manual-install
+sm dp adresi nerede | manual-install
+aktivasyon kodunu nereye girerim | manual-install
+iphonea direkt yükle butonu | manual-install,install-esim,install-iphone,install-android
+kurulum için wifi şart mı | install-internet
+internet olmadan kurabilir miyim | install-internet
+yola çıkmadan mı kurmalıyım | buy-when,when-activate,line-on
+uçakta kurabilir miyim | install-internet,buy-when
+ne zaman satın almalıyım | buy-when
+havalimanında almak mantıklı mı | buy-when
+esim eklenemiyor hatası | cannot-add
+hücresel plan eklenemiyor | cannot-add
+bu kod artık geçerli değil | code-invalid
+qr kod geçersiz diyor | code-invalid
+kurulum yarıda kaldı | code-invalid,cannot-add
+esimi iki telefona kurabilir miyim | gift,new-phone,multiple-esims
+## Aktivasyon & ayarlar
+esimi ne zaman açmalıyım | when-activate,line-on
+indikten sonra ne yapmalıyım | when-activate,no-internet,line-on
+veri dolaşımını açmalı mıyım | when-activate,no-internet,avoid-roaming-costs,data-roaming,line-on
+roaming açarsam para yazar mı | avoid-roaming-costs
+türk hattımdan ücret çıkar mı | avoid-roaming-costs
+ana hattımı kapatmalı mıyım | avoid-roaming-costs,keep-number
+mobil veri hattı hangisi olmalı | no-internet,avoid-roaming-costs,data-line
+etkinleştiriliyor yazıyor bekliyor | activating-stuck
+esim aktif olmadı | activating-stuck
+apn ne yazmalıyım | apn
+apn ayarı boş | apn
+## Sorunlar
+internet yok | no-internet
+internetim çalışmıyor | no-internet
+bağlı görünüyor ama internet yok | no-internet
+sayfalar açılmıyor | no-internet
+whatsapp mesaj gitmiyor | no-internet,whatsapp
+servis yok yazıyor | no-service
+şebeke bulamıyor | no-service
+sinyal yok | no-service
+sadece acil arama yazıyor | no-service
+internet çok yavaş | slow-internet
+video donuyor | slow-internet
+hız düştü | slow-internet,unlimited
+verim çok çabuk bitti | data-fast
+gb nereye gidiyor | data-fast
+veri tasarrufu nasıl yaparım | data-fast
+esimi sildim | deleted-esim
+yanlışlıkla kaldırdım geri yükleyebilir miyim | deleted-esim
+telefonum çalındı | new-phone
+telefonum bozuldu esim ne olacak | new-phone
+yeni telefona geçiyorum esimi taşıyabilir miyim | new-phone
+hotspot çalışmıyor | hotspot,hotspot-setup
+hotspot açabilir miyim | hotspot,hotspot-setup
+bilgisayara internet paylaşabilir miyim | hotspot,hotspot-setup
+vpn kullanabilir miyim | vpn
+vpn açınca internet gitti | vpn
+## Kullanım
+whatsapp çalışır mı | whatsapp
+whatsapp numaram değişir mi | whatsapp
+instagram açılır mı | whatsapp,no-internet
+bankadan sms gelir mi | bank-sms
+e devlet şifresi sms gelir mi | bank-sms
+arama yapabilir miyim | calls
+normal arama yapılır mı | calls
+sms atabilir miyim | phone-number,calls
+yerel numara veriyor musunuz | phone-number
+numaram aynı kalır mı | keep-number,whatsapp
+kendi numaramdan aranabilir miyim | keep-number
+kalan internetimi nasıl görürüm | check-usage
+kaç gb kaldı | check-usage
+kaç gün kaldı | check-usage
+ek paket alabilir miyim | topup
+internet bitti tekrar yükleme | topup,expired
+paket bitince ne olur | expired
+süresi dolunca ne olur | expired
+aynı esimi bir sonraki tatilde kullanabilir miyim | remove-after,expired
+tatilden sonra esimi silmeli miyim | remove-after
+telefonumda kaç esim olabilir | multiple-esims
+iki esim aynı anda | multiple-esims
+google neden başka dil gösteriyor | ip-location
+ip adresim başka ülke | ip-location
+netflix başka ülke kataloğu gösteriyor | ip-location
+## Özel ülkeler & durumlar
+türkiyeye gidiyorum | turkey
+memlekete izine gidiyorum ne yapmalıyım | turkey
+imei kaydı gerekli mi | turkey
+telefonum 120 gün sonra kapanır mı | turkey
+türkiyede esim indirilebilir mi | turkey
+çinde whatsapp çalışır mı | china
+çine gidiyorum google açılır mı | china
+gemi turunda çalışır mı | cruise-flight
+uçakta internet olur mu | cruise-flight
+feribotta internet | cruise-flight
+## İade
+iade alabilir miyim | refund,refund-how
+iade nasıl yapılır | refund-how
+paramı geri istiyorum | refund-how,refund
+kurulu esim iade edilir mi | refund,refund-how
+esim hiç çalışmadı iade | refund-how,refund
+kaç gün içinde iade | refund,refund-how
+siparişi iptal etmek istiyorum | refund-how,refund
+## Hesap
+hesap açmak zorunlu mu | account-login,install-esim,install-iphone,install-android
+şifremi unuttum | account-login
+giriş yapamıyorum | account-login
+doğrulama kodu gelmiyor | account-login
+google ile giriş | account-login
+hesabımı silmek istiyorum | account-delete
+kişisel verilerimi silin kvkk | account-delete
+hesap silinince esim çalışır mı | account-delete
+bültenden çıkmak istiyorum | newsletter
+reklam maillerini durdur | newsletter
+kampanya e postaları gelsin istiyorum | newsletter
+e posta adresimi değiştirmek istiyorum | contact,account-login
+## İletişim
+müşteri hizmetlerine nasıl ulaşırım | contact
+canlı destek var mı | contact
+telefon numaranız var mı | contact
+destek ekibine yazmak istiyorum | contact
+ne kadar sürede cevap veriyorsunuz | contact
+## Lounge & Fast Track
+lounge nedir | lounge-what,lounge-access
+lounge içinde ne var | lounge-what
+lounge da yemek var mı | lounge-what
+lounge duş var mı | lounge-what
+lounge nasıl rezerve edilir | lounge-access
+lounge voucher nerede | lounge-access
+lounge da ne kadar kalabilirim | lounge-hours
+lounge a kaç saat önce girebilirim | lounge-hours
+çocuğumu götürebilir miyim | lounge-kids
+eşim de girebilir mi | lounge-kids
+lounge dolu diye almadılar | lounge-denied
+uçuşum rötar yaptı lounge | lounge-delay
+lounge iptal edebilir miyim | refund,lounge-delay
+fast track nedir | fasttrack-how
+fast track ne kadar zaman kazandırır | fasttrack-how
+fast track nerede | fasttrack-where
+fast track ne kadar süre geçerli | fasttrack-time
+fast track hangi saatlerde kullanılır | fasttrack-time
+## Konu dışı
+vize gerekiyor mu | -
+uçak bileti satıyor musunuz | -
+otel önerir misin | -
+istanbulda hava nasıl | -
+telefonum ısınıyor | -
+şarjım çabuk bitiyor | -
+kurulumda sorun var | cannot-add,install-esim,manual-install,install-iphone,install-android
+esimi kuramıyorum | cannot-add,install-esim,install-iphone,install-android

@@ -1,0 +1,15 @@
+esim installée mais les données mobiles ne marchent pas | no-internet
+arrivé à izmir zéro réseau | no-service
+code déjà utilisé quand je scanne | code-invalid
+youtube n'arrête pas de bloquer | slow-internet
+mon forfait était vide après un jour | data-fast
+téléphone volé mon forfait est perdu | new-phone
+whatsapp reste sur mon ancien numéro | whatsapp
+où voir les go restants | check-usage
+plus de données je peux en racheter | topup
+je pars en turquie cet été ça marche | turkey
+rien reçu après la commande | no-email
+remboursement si jamais utilisé | refund,refund-how
+j'ai payé mais erreur | payment-failed
+je veux parler au service client | contact
+quel forfait pour 2 semaines | which-package

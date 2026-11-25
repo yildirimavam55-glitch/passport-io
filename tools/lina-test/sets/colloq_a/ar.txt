@@ -1,0 +1,15 @@
+ساعدوني النت ما يشتغل أبدا | no-internet
+وصلت إسطنبول وما في شبكة | no-service
+خطأ بعد مسح الكود | code-invalid,cannot-add
+النت بطيء مرة | slow-internet
+خلصت كل البيانات في يوم | data-fast
+مسحت الشريحة بالغلط | deleted-esim
+التفعيل معلق من زمان | activating-stuck
+هل يتغير رقم الواتساب | whatsapp
+كم باقي عندي بيانات | check-usage
+أبغى أسترجع فلوسي ما ركبتها | refund,refund-how
+انسحبت الفلوس وما وصلت الشريحة | payment-failed
+كود الخصم ما يشتغل | discount-code
+ما أقدر أدخل حسابي | account-login
+أبغى أكلم موظف | contact
+وش يعني esim | what-is-esim

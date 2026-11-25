@@ -1,0 +1,21 @@
+# Lina testen: stellt alle Testfragen (tools/lina-test/sets) an Lina – mit KI, wenn ANTHROPIC_API_KEY gesetzt ist.
+# Start: GitHub → Actions → „Lina testen“ → Run workflow. Ergebnis steht in der Zusammenfassung des Laufs.
+name: Lina testen
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Nur Stichwortsuche
+        run: node tools/lina-test/eval.mjs
+      - name: Mit KI (wie auf der Webseite)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tools/lina-test/eval.mjs --ai -v

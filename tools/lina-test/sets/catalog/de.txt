@@ -1,0 +1,165 @@
+## Grundlagen
+was ist eine esim | what-is-esim
+was bedeutet esim | what-is-esim
+unterschied esim und normale sim | what-is-esim,esim-vs-roaming
+muss ich meine sim karte rausnehmen | what-is-esim,keep-number
+ist esim günstiger als roaming | esim-vs-roaming
+lohnt sich eine esim | esim-vs-roaming
+ist eine esim sicher | safe
+ist passport.io seriös | safe
+## Kompatibilität
+ist mein handy esim fähig | device-compatible
+hat das iphone 12 esim | device-compatible
+geht das mit samsung galaxy a55 | device-compatible
+unterstützt mein pixel 8 esim | device-compatible
+xiaomi esim kompatibel | device-compatible
+wie finde ich die eid | device-compatible
+hat mein handy simlock | sim-lock
+vertragshandy gesperrt was tun | sim-lock
+geht das auf dem ipad | tablet-watch
+funktioniert es mit der apple watch | tablet-watch
+## Paket & Preis
+welches paket brauche ich | which-package
+wie viel gb für 2 wochen urlaub | which-package
+reichen 5 gb für eine woche | which-package
+gibt es unbegrenzte daten | unlimited
+ist unlimited wirklich unbegrenzt | unlimited
+was heißt drosselung nach tagesvolumen | unlimited
+warum ändern sich die preise | prices
+gestern war es billiger | prices
+sind steuern im preis enthalten | prices,invoice
+kann ich in euro bezahlen | currency
+währung ändern | currency
+preise in franken anzeigen | currency
+gibt es ein paket für ganz europa | coverage-countries
+ich reise durch mehrere länder | coverage-countries
+funktioniert es beim umsteigen in einem anderen land | coverage-countries
+gibt es 5g | 5g
+wann beginnt die laufzeit | when-activate,buy-when,line-on
+## Kauf & Zahlung
+welche zahlungsarten gibt es | payment
+kann ich mit paypal zahlen | payment
+geht apple pay | payment
+zahlung fehlgeschlagen | payment-failed
+karte wird abgelehnt | payment-failed
+geld abgebucht aber keine bestellung | payment-failed
+doppelt abgebucht | payment-failed
+gibt es versteckte kosten | hidden-costs
+ist das ein abo | hidden-costs
+verlängert sich das automatisch | hidden-costs,expired
+wo gebe ich den gutscheincode ein | discount-code
+rabattcode ungültig | discount-code
+kann ich eine rechnung bekommen | invoice
+rechnung mit mehrwertsteuer für die firma | invoice,business
+kann ich die esim verschenken | gift
+esim für meine tochter kaufen | gift
+firmenkunden mehrere esims | business
+gruppenreise 15 esims | business
+## Lieferung & Bestellung
+wann bekomme ich meine esim | delivery,no-email
+keine email bekommen | no-email
+qr code nicht erhalten | no-email
+im spam ist auch nichts | no-email
+bestellung steht auf in bearbeitung | order-status
+was bedeutet zahlung ausstehend | order-status
+was heißt bereit zur installation | order-status
+## Installation
+wie installiere ich die esim | install-esim,install-iphone,install-android
+esim auf iphone installieren | install-esim,install-iphone,install-android
+esim auf samsung einrichten | install-esim,install-iphone,install-android
+qr code mit demselben handy scannen | manual-install
+kamera erkennt den qr code nicht | manual-install
+manuell installieren | manual-install
+wo finde ich die sm-dp adresse | manual-install
+brauche ich wlan zum installieren | install-internet
+kann ich ohne internet installieren | install-internet
+wann sollte ich die esim kaufen | buy-when
+schon zu hause installieren | buy-when,when-activate,line-on
+esim kann nicht hinzugefügt werden | cannot-add
+mobilfunktarif kann nicht hinzugefügt werden | cannot-add
+code ist nicht mehr gültig | code-invalid
+installation abgebrochen | code-invalid,cannot-add
+## Aktivierung & Einstellungen
+wann soll ich die esim einschalten | when-activate,line-on
+was muss ich nach der landung machen | when-activate,no-internet,line-on
+muss ich daten roaming einschalten | when-activate,no-internet,avoid-roaming-costs,data-roaming,line-on
+kostet roaming auf meiner deutschen sim | avoid-roaming-costs
+soll ich meine haupt sim ausschalten | avoid-roaming-costs,keep-number
+esim hängt bei wird aktiviert | activating-stuck
+welchen apn muss ich eintragen | apn
+## Probleme
+kein internet | no-internet
+internet geht nicht | no-internet
+verbunden aber keine daten | no-internet
+seiten laden nicht | no-internet
+kein netz | no-service
+kein dienst | no-service
+nur notrufe | no-service
+internet sehr langsam | slow-internet
+videos ruckeln | slow-internet
+datenvolumen schnell weg | data-fast
+wie spare ich daten | data-fast
+esim gelöscht | deleted-esim
+handy gestohlen | new-phone
+esim auf neues handy übertragen | new-phone
+hotspot geht nicht | hotspot,hotspot-setup
+darf ich einen hotspot machen | hotspot,hotspot-setup
+kann ich vpn nutzen | vpn
+mit vpn kein internet | vpn
+## Nutzung
+geht whatsapp | whatsapp
+bleibt meine whatsapp nummer | whatsapp
+bekomme ich sms von meiner bank | bank-sms
+kann ich telefonieren | calls
+bekomme ich eine telefonnummer | phone-number
+bleibt meine nummer erreichbar | keep-number
+wie viel volumen habe ich noch | check-usage
+wie viele tage noch | check-usage
+datenvolumen nachbuchen | topup
+was passiert wenn das paket abläuft | expired
+kann ich die esim beim nächsten urlaub wieder nutzen | remove-after,expired
+esim nach dem urlaub löschen | remove-after
+mehrere esims auf einem handy | multiple-esims
+warum ist google auf einer anderen sprache | ip-location
+## Länder & Sonderfälle
+ich fliege in die türkei | turkey
+heimaturlaub türkei imei | turkey
+wird mein handy in der türkei gesperrt | turkey
+geht whatsapp in china | china
+funktioniert die esim auf der kreuzfahrt | cruise-flight
+internet im flugzeug | cruise-flight
+## Erstattung
+kann ich mein geld zurück bekommen | refund,refund-how
+wie beantrage ich eine erstattung | refund-how
+esim hat nie funktioniert geld zurück | refund-how,refund
+bestellung stornieren | refund-how,refund
+## Konto
+passwort vergessen | account-login
+ich kann mich nicht anmelden | account-login
+bestätigungscode kommt nicht | account-login
+konto löschen | account-delete
+meine daten löschen dsgvo | account-delete
+newsletter abbestellen | newsletter
+keine werbemails mehr | newsletter
+## Kontakt
+wie erreiche ich den kundenservice | contact
+gibt es einen live chat | contact
+habt ihr eine telefonnummer | contact
+wie schnell antwortet ihr | contact
+## Lounge & Fast Track
+was gibt es in der lounge | lounge-what
+gibt es essen in der lounge | lounge-what
+wie buche ich eine lounge | lounge-access
+wie lange darf ich in der lounge bleiben | lounge-hours
+kann mein kind mit in die lounge | lounge-kids
+lounge war voll | lounge-denied
+flug verspätet lounge buchung | lounge-delay
+lounge stornieren | refund,lounge-delay
+was ist fast track | fasttrack-how
+wo ist der fast track eingang | fasttrack-where
+wie lange ist fast track gültig | fasttrack-time
+## Themenfremd
+brauche ich ein visum | -
+verkauft ihr flüge | -
+mein akku ist leer | -
+wie wird das wetter in antalya | -

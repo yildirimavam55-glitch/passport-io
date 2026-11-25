@@ -1,0 +1,15 @@
+instalé la esim pero los datos móviles no funcionan | no-internet
+llegué a esmirna y cero señal | no-service
+dice código ya usado al escanear | code-invalid
+youtube se congela todo el rato | slow-internet
+el paquete se vació en un día | data-fast
+me robaron el móvil perdí el plan | new-phone
+whatsapp sigue con mi número de siempre | whatsapp
+dónde veo los gb que quedan | check-usage
+sin datos puedo comprar más | topup
+voy a turquía este verano funciona allí | turkey
+no recibí nada después de pedir | no-email
+reembolso si nunca la usé | refund,refund-how
+pagué pero dio error | payment-failed
+quiero hablar con atención al cliente | contact
+qué plan para 2 semanas | which-package

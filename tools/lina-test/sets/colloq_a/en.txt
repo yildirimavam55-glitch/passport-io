@@ -1,0 +1,40 @@
+help my internet isnt working at all | no-internet
+installed esim but cant browse anything | no-internet
+landed in dubai phone says no signal | no-service
+got an error after scanning the qr | code-invalid,cannot-add
+iphone says unable to add cellular plan | cannot-add
+how do i type the code i only have one phone | manual-install
+internet is super slow cant even load instagram | slow-internet
+all my data gone in one day | data-fast
+accidentally removed the esim | deleted-esim
+dropped my phone screen broken what about esim | new-phone
+not sure if my phone is unlocked | sim-lock
+stuck on activating for ages | activating-stuck
+will vodafone charge me roaming | avoid-roaming-costs
+will my whatsapp number change | whatsapp
+how much data do i have | check-usage
+can i buy more data | topup
+what happens when days run out | expired
+when should i buy before flying | buy-when
+can i use it on my tablet | tablet-watch
+does unlimited get throttled | unlimited
+works on a cruise ship | cruise-flight
+going home to turkey what should i know | turkey
+buying for my dad how | gift
+no email received | no-email
+where is my order | order-status,delivery,no-email
+want my money back havent installed | refund,refund-how
+money taken but no esim | payment-failed
+is this a subscription or one time | hidden-costs
+coupon doesnt work | discount-code
+need an invoice for work | invoice
+cant get into my account | account-login
+please delete my account | account-delete
+stop sending me emails | newsletter
+can i talk to a human | contact
+can kids go in the lounge | lounge-kids
+is there food in the lounge | lounge-what
+does it work with vpn | vpn
+is this legit | safe
+what is an esim anyway | what-is-esim
+whats the weather tomorrow | -

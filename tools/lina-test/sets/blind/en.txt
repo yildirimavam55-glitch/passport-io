@@ -1,0 +1,14 @@
+my phone has no add esim option | device-compatible
+which plan for 3 weeks in japan | which-package
+does validity start when i buy | when-activate,buy-when,line-on
+do i need to print the qr code | install-esim,manual-install,install-iphone,install-android
+esim not showing after install | code-invalid,cannot-add
+youtube extremely slow | slow-internet
+can i share internet with my laptop | hotspot,hotspot-setup
+payment page won't load | payment-failed
+order not showing in my account | no-email,order-status
+when will i get my money back | refund,refund-how
+not receiving sms abroad | bank-sms
+what do i show at the lounge entrance | lounge-access
+pay in dollars | currency
+best pizza in naples | -

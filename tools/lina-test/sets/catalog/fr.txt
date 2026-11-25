@@ -1,0 +1,63 @@
+c'est quoi une esim | what-is-esim
+esim ou itinérance moins cher | esim-vs-roaming
+est ce sécurisé | safe
+mon téléphone est il compatible | device-compatible
+iphone 12 compatible esim | device-compatible
+mon téléphone est bloqué opérateur | sim-lock
+ça marche sur ipad | tablet-watch
+quel forfait choisir | which-package
+combien de go pour une semaine | which-package
+illimité vraiment illimité | unlimited
+pourquoi le prix a changé | prices
+changer la devise | currency
+un forfait pour toute l'europe | coverage-countries
+compatible 5g | 5g
+quels moyens de paiement | payment
+paiement refusé | payment-failed
+frais cachés | hidden-costs
+c'est un abonnement | hidden-costs
+où mettre le code promo | discount-code
+puis je avoir une facture | invoice
+acheter pour un ami | gift
+commande pour mon entreprise | business
+pas reçu l'e-mail | no-email
+commande en cours de traitement | order-status
+comment installer l'esim | install-esim,install-iphone,install-android
+je ne peux pas scanner le qr | manual-install
+faut il du wifi pour installer | install-internet
+quand acheter l'esim | buy-when
+impossible d'ajouter l'esim | cannot-add
+code plus valide | code-invalid
+quand activer l'esim | when-activate,line-on
+bloqué sur activation | activating-stuck
+quel apn | apn
+pas d'internet | no-internet
+pas de service | no-service
+internet très lent | slow-internet
+mes données partent vite | data-fast
+j'ai supprimé mon esim | deleted-esim
+téléphone perdu | new-phone
+partage de connexion | hotspot,hotspot-setup
+puis je utiliser un vpn | vpn
+whatsapp fonctionne | whatsapp
+sms de ma banque | bank-sms
+puis je appeler | calls
+données restantes | check-usage
+recharger des données | topup
+que se passe t il à l'expiration | expired
+je pars en turquie | turkey
+whatsapp en chine | china
+en croisière | cruise-flight
+remboursement | refund,refund-how
+comment demander un remboursement | refund-how
+mot de passe oublié | account-login
+supprimer mon compte | account-delete
+se désabonner de la newsletter | newsletter
+contacter le support | contact
+que trouve t on dans un salon | lounge-what
+réserver un salon | lounge-access
+enfants dans le salon | lounge-kids
+c'est quoi fast track | fasttrack-how
+où est le fast track | fasttrack-where
+ai je besoin d'un visa | -
+vendez vous des billets d'avion | -

@@ -1,0 +1,15 @@
+помогите вообще не работает интернет | no-internet
+прилетел в стамбул сети нет | no-service
+ошибка после сканирования qr | code-invalid,cannot-add
+интернет ужасно медленный | slow-internet
+весь трафик ушёл за день | data-fast
+случайно удалил esim | deleted-esim
+долго висит активация | activating-stuck
+поменяется ли номер в ватсапе | whatsapp
+сколько у меня осталось гигов | check-usage
+хочу вернуть деньги ещё не установил | refund,refund-how
+деньги списали а esim нет | payment-failed
+промокод не подходит | discount-code
+не могу зайти в аккаунт | account-login
+хочу поговорить с человеком | contact
+что вообще такое esim | what-is-esim

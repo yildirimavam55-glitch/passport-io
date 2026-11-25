@@ -1,0 +1,618 @@
+{
+ "what-is-esim": {
+  "en": "f1c0be952319",
+  "de": "f1c0be952319",
+  "ar": "f1c0be952319",
+  "ru": "f1c0be952319",
+  "fr": "f1c0be952319",
+  "es": "f1c0be952319"
+ },
+ "device-compatible": {
+  "en": "11b643814065",
+  "de": "11b643814065",
+  "ar": "11b643814065",
+  "ru": "11b643814065",
+  "fr": "11b643814065",
+  "es": "11b643814065"
+ },
+ "install-esim": {
+  "en": "6251fd989d7f",
+  "de": "6251fd989d7f",
+  "ar": "6251fd989d7f",
+  "ru": "6251fd989d7f",
+  "fr": "6251fd989d7f",
+  "es": "6251fd989d7f"
+ },
+ "when-activate": {
+  "en": "aa844e36cdec",
+  "de": "aa844e36cdec",
+  "ar": "aa844e36cdec",
+  "ru": "aa844e36cdec",
+  "fr": "aa844e36cdec",
+  "es": "aa844e36cdec"
+ },
+ "which-package": {
+  "en": "89bee48870b4",
+  "de": "89bee48870b4",
+  "ar": "89bee48870b4",
+  "ru": "89bee48870b4",
+  "fr": "89bee48870b4",
+  "es": "89bee48870b4"
+ },
+ "calls": {
+  "en": "3b40e15e75cc",
+  "de": "3b40e15e75cc",
+  "ar": "3b40e15e75cc",
+  "ru": "3b40e15e75cc",
+  "fr": "3b40e15e75cc",
+  "es": "3b40e15e75cc"
+ },
+ "keep-number": {
+  "en": "244f68fb79b0",
+  "de": "244f68fb79b0",
+  "ar": "244f68fb79b0",
+  "ru": "244f68fb79b0",
+  "fr": "244f68fb79b0",
+  "es": "244f68fb79b0"
+ },
+ "hotspot": {
+  "en": "51a93622ccea",
+  "de": "51a93622ccea",
+  "ar": "51a93622ccea",
+  "ru": "51a93622ccea",
+  "fr": "51a93622ccea",
+  "es": "51a93622ccea"
+ },
+ "topup": {
+  "en": "e0c832c06c49",
+  "de": "e0c832c06c49",
+  "ar": "e0c832c06c49",
+  "ru": "e0c832c06c49",
+  "fr": "e0c832c06c49",
+  "es": "e0c832c06c49"
+ },
+ "lounge-access": {
+  "en": "b1cf016e5e33",
+  "de": "b1cf016e5e33",
+  "ar": "b1cf016e5e33",
+  "ru": "b1cf016e5e33",
+  "fr": "b1cf016e5e33",
+  "es": "b1cf016e5e33"
+ },
+ "lounge-hours": {
+  "en": "94912ef6233d",
+  "de": "94912ef6233d",
+  "ar": "94912ef6233d",
+  "ru": "94912ef6233d",
+  "fr": "94912ef6233d",
+  "es": "94912ef6233d"
+ },
+ "fasttrack-how": {
+  "en": "09eeb889c8f6",
+  "de": "09eeb889c8f6",
+  "ar": "09eeb889c8f6",
+  "ru": "09eeb889c8f6",
+  "fr": "09eeb889c8f6",
+  "es": "09eeb889c8f6"
+ },
+ "refund": {
+  "en": "925163b83ae1",
+  "de": "925163b83ae1",
+  "ar": "925163b83ae1",
+  "ru": "925163b83ae1",
+  "fr": "925163b83ae1",
+  "es": "925163b83ae1"
+ },
+ "payment": {
+  "en": "e150e40b45e7",
+  "de": "e150e40b45e7",
+  "ar": "e150e40b45e7",
+  "ru": "e150e40b45e7",
+  "fr": "e150e40b45e7",
+  "es": "e150e40b45e7"
+ },
+ "delivery": {
+  "en": "96481c1c55fb",
+  "de": "96481c1c55fb",
+  "ar": "96481c1c55fb",
+  "ru": "96481c1c55fb",
+  "fr": "96481c1c55fb",
+  "es": "96481c1c55fb"
+ },
+ "contact": {
+  "en": "3543f72eae3d",
+  "de": "3543f72eae3d",
+  "ar": "3543f72eae3d",
+  "ru": "3543f72eae3d",
+  "fr": "3543f72eae3d",
+  "es": "3543f72eae3d"
+ },
+ "no-internet": {
+  "en": "2ef1f3c92893",
+  "de": "2ef1f3c92893",
+  "ar": "2ef1f3c92893",
+  "ru": "2ef1f3c92893",
+  "fr": "2ef1f3c92893",
+  "es": "2ef1f3c92893"
+ },
+ "no-service": {
+  "en": "d1ec1b8767c0",
+  "de": "d1ec1b8767c0",
+  "ar": "d1ec1b8767c0",
+  "ru": "d1ec1b8767c0",
+  "fr": "d1ec1b8767c0",
+  "es": "d1ec1b8767c0"
+ },
+ "code-invalid": {
+  "en": "5ccde7cbb089",
+  "de": "5ccde7cbb089",
+  "ar": "5ccde7cbb089",
+  "ru": "5ccde7cbb089",
+  "fr": "5ccde7cbb089",
+  "es": "5ccde7cbb089"
+ },
+ "cannot-add": {
+  "en": "7d070a2847a4",
+  "de": "7d070a2847a4",
+  "ar": "7d070a2847a4",
+  "ru": "7d070a2847a4",
+  "fr": "7d070a2847a4",
+  "es": "7d070a2847a4"
+ },
+ "manual-install": {
+  "en": "40fec12d612c",
+  "de": "40fec12d612c",
+  "ar": "40fec12d612c",
+  "ru": "40fec12d612c",
+  "fr": "40fec12d612c",
+  "es": "40fec12d612c"
+ },
+ "slow-internet": {
+  "en": "6cc659458ea2",
+  "de": "6cc659458ea2",
+  "ar": "6cc659458ea2",
+  "ru": "6cc659458ea2",
+  "fr": "6cc659458ea2",
+  "es": "6cc659458ea2"
+ },
+ "data-fast": {
+  "en": "87e070632c0c",
+  "de": "87e070632c0c",
+  "ar": "87e070632c0c",
+  "ru": "87e070632c0c",
+  "fr": "87e070632c0c",
+  "es": "87e070632c0c"
+ },
+ "deleted-esim": {
+  "en": "b1d9556f8889",
+  "de": "b1d9556f8889",
+  "ar": "b1d9556f8889",
+  "ru": "b1d9556f8889",
+  "fr": "b1d9556f8889",
+  "es": "b1d9556f8889"
+ },
+ "new-phone": {
+  "en": "76a780da994a",
+  "de": "76a780da994a",
+  "ar": "76a780da994a",
+  "ru": "76a780da994a",
+  "fr": "76a780da994a",
+  "es": "76a780da994a"
+ },
+ "sim-lock": {
+  "en": "0aabbe7b2156",
+  "de": "0aabbe7b2156",
+  "ar": "0aabbe7b2156",
+  "ru": "0aabbe7b2156",
+  "fr": "0aabbe7b2156",
+  "es": "0aabbe7b2156"
+ },
+ "apn": {
+  "en": "c25611bf5bbb",
+  "de": "c25611bf5bbb",
+  "ar": "c25611bf5bbb",
+  "ru": "c25611bf5bbb",
+  "fr": "c25611bf5bbb",
+  "es": "c25611bf5bbb"
+ },
+ "activating-stuck": {
+  "en": "3461bc539e4f",
+  "de": "3461bc539e4f",
+  "ar": "3461bc539e4f",
+  "ru": "3461bc539e4f",
+  "fr": "3461bc539e4f",
+  "es": "3461bc539e4f"
+ },
+ "avoid-roaming-costs": {
+  "en": "1a2bae60a99c",
+  "de": "1a2bae60a99c",
+  "ar": "1a2bae60a99c",
+  "ru": "1a2bae60a99c",
+  "fr": "1a2bae60a99c",
+  "es": "1a2bae60a99c"
+ },
+ "whatsapp": {
+  "en": "5ccc0304e3b0",
+  "de": "5ccc0304e3b0",
+  "ar": "5ccc0304e3b0",
+  "ru": "5ccc0304e3b0",
+  "fr": "5ccc0304e3b0",
+  "es": "5ccc0304e3b0"
+ },
+ "bank-sms": {
+  "en": "281c3ce3865c",
+  "de": "281c3ce3865c",
+  "ar": "281c3ce3865c",
+  "ru": "281c3ce3865c",
+  "fr": "281c3ce3865c",
+  "es": "281c3ce3865c"
+ },
+ "check-usage": {
+  "en": "63d61cd6a1b4",
+  "de": "63d61cd6a1b4",
+  "ar": "63d61cd6a1b4",
+  "ru": "63d61cd6a1b4",
+  "fr": "63d61cd6a1b4",
+  "es": "63d61cd6a1b4"
+ },
+ "expired": {
+  "en": "6eae23a20a70",
+  "de": "6eae23a20a70",
+  "ar": "6eae23a20a70",
+  "ru": "6eae23a20a70",
+  "fr": "6eae23a20a70",
+  "es": "6eae23a20a70"
+ },
+ "remove-after": {
+  "en": "c6f83a637ed8",
+  "de": "c6f83a637ed8",
+  "ar": "c6f83a637ed8",
+  "ru": "c6f83a637ed8",
+  "fr": "c6f83a637ed8",
+  "es": "c6f83a637ed8"
+ },
+ "buy-when": {
+  "en": "03fb459891c4",
+  "de": "03fb459891c4",
+  "ar": "03fb459891c4",
+  "ru": "03fb459891c4",
+  "fr": "03fb459891c4",
+  "es": "03fb459891c4"
+ },
+ "install-internet": {
+  "en": "8a13ab4a5b44",
+  "de": "8a13ab4a5b44",
+  "ar": "8a13ab4a5b44",
+  "ru": "8a13ab4a5b44",
+  "fr": "8a13ab4a5b44",
+  "es": "8a13ab4a5b44"
+ },
+ "multiple-esims": {
+  "en": "31d14fb9baf5",
+  "de": "31d14fb9baf5",
+  "ar": "31d14fb9baf5",
+  "ru": "31d14fb9baf5",
+  "fr": "31d14fb9baf5",
+  "es": "31d14fb9baf5"
+ },
+ "tablet-watch": {
+  "en": "e9d8805e4112",
+  "de": "e9d8805e4112",
+  "ar": "e9d8805e4112",
+  "ru": "e9d8805e4112",
+  "fr": "e9d8805e4112",
+  "es": "e9d8805e4112"
+ },
+ "unlimited": {
+  "en": "e6b7f4c289bb",
+  "de": "e6b7f4c289bb",
+  "ar": "e6b7f4c289bb",
+  "ru": "e6b7f4c289bb",
+  "fr": "e6b7f4c289bb",
+  "es": "e6b7f4c289bb"
+ },
+ "5g": {
+  "en": "0f6cddb5ba70",
+  "de": "0f6cddb5ba70",
+  "ar": "0f6cddb5ba70",
+  "ru": "0f6cddb5ba70",
+  "fr": "0f6cddb5ba70",
+  "es": "0f6cddb5ba70"
+ },
+ "phone-number": {
+  "en": "b8d7a8668c3b",
+  "de": "b8d7a8668c3b",
+  "ar": "b8d7a8668c3b",
+  "ru": "b8d7a8668c3b",
+  "fr": "b8d7a8668c3b",
+  "es": "b8d7a8668c3b"
+ },
+ "coverage-countries": {
+  "en": "8fdd3225c109",
+  "de": "8fdd3225c109",
+  "ar": "8fdd3225c109",
+  "ru": "8fdd3225c109",
+  "fr": "8fdd3225c109",
+  "es": "8fdd3225c109"
+ },
+ "cruise-flight": {
+  "en": "fb837891276e",
+  "de": "fb837891276e",
+  "ar": "fb837891276e",
+  "ru": "fb837891276e",
+  "fr": "fb837891276e",
+  "es": "fb837891276e"
+ },
+ "ip-location": {
+  "en": "0d312014deb1",
+  "de": "0d312014deb1",
+  "ar": "0d312014deb1",
+  "ru": "0d312014deb1",
+  "fr": "0d312014deb1",
+  "es": "0d312014deb1"
+ },
+ "china": {
+  "en": "6877cc53eed5",
+  "de": "6877cc53eed5",
+  "ar": "6877cc53eed5",
+  "ru": "6877cc53eed5",
+  "fr": "6877cc53eed5",
+  "es": "6877cc53eed5"
+ },
+ "turkey": {
+  "en": "55f692bbb87a",
+  "de": "55f692bbb87a",
+  "ar": "55f692bbb87a",
+  "ru": "55f692bbb87a",
+  "fr": "55f692bbb87a",
+  "es": "55f692bbb87a"
+ },
+ "gift": {
+  "en": "64e3bebc0398",
+  "de": "64e3bebc0398",
+  "ar": "64e3bebc0398",
+  "ru": "64e3bebc0398",
+  "fr": "64e3bebc0398",
+  "es": "64e3bebc0398"
+ },
+ "esim-vs-roaming": {
+  "en": "779016c7e98d",
+  "de": "779016c7e98d",
+  "ar": "779016c7e98d",
+  "ru": "779016c7e98d",
+  "fr": "779016c7e98d",
+  "es": "779016c7e98d"
+ },
+ "safe": {
+  "en": "1200d0e91e1a",
+  "de": "1200d0e91e1a",
+  "ar": "1200d0e91e1a",
+  "ru": "1200d0e91e1a",
+  "fr": "1200d0e91e1a",
+  "es": "1200d0e91e1a"
+ },
+ "no-email": {
+  "en": "346ebde8a120",
+  "de": "346ebde8a120",
+  "ar": "346ebde8a120",
+  "ru": "346ebde8a120",
+  "fr": "346ebde8a120",
+  "es": "346ebde8a120"
+ },
+ "refund-how": {
+  "en": "7e647d6e1843",
+  "de": "7e647d6e1843",
+  "ar": "7e647d6e1843",
+  "ru": "7e647d6e1843",
+  "fr": "7e647d6e1843",
+  "es": "7e647d6e1843"
+ },
+ "payment-failed": {
+  "en": "72d0de1b090d",
+  "de": "72d0de1b090d",
+  "ar": "72d0de1b090d",
+  "ru": "72d0de1b090d",
+  "fr": "72d0de1b090d",
+  "es": "72d0de1b090d"
+ },
+ "hidden-costs": {
+  "en": "24182dd61f80",
+  "de": "24182dd61f80",
+  "ar": "24182dd61f80",
+  "ru": "24182dd61f80",
+  "fr": "24182dd61f80",
+  "es": "24182dd61f80"
+ },
+ "discount-code": {
+  "en": "483dfabc6d38",
+  "de": "483dfabc6d38",
+  "ar": "483dfabc6d38",
+  "ru": "483dfabc6d38",
+  "fr": "483dfabc6d38",
+  "es": "483dfabc6d38"
+ },
+ "account-login": {
+  "en": "7b64a5c23b11",
+  "de": "7b64a5c23b11",
+  "ar": "7b64a5c23b11",
+  "ru": "7b64a5c23b11",
+  "fr": "7b64a5c23b11",
+  "es": "7b64a5c23b11"
+ },
+ "lounge-kids": {
+  "en": "71731c1663cd",
+  "de": "71731c1663cd",
+  "ar": "71731c1663cd",
+  "ru": "71731c1663cd",
+  "fr": "71731c1663cd",
+  "es": "71731c1663cd"
+ },
+ "lounge-denied": {
+  "en": "cd54a0152c1f",
+  "de": "cd54a0152c1f",
+  "ar": "cd54a0152c1f",
+  "ru": "cd54a0152c1f",
+  "fr": "cd54a0152c1f",
+  "es": "cd54a0152c1f"
+ },
+ "lounge-delay": {
+  "en": "e60975745c3f",
+  "de": "e60975745c3f",
+  "ar": "e60975745c3f",
+  "ru": "e60975745c3f",
+  "fr": "e60975745c3f",
+  "es": "e60975745c3f"
+ },
+ "fasttrack-where": {
+  "en": "63d3503901e0",
+  "de": "63d3503901e0",
+  "ar": "63d3503901e0",
+  "ru": "63d3503901e0",
+  "fr": "63d3503901e0",
+  "es": "63d3503901e0"
+ },
+ "order-status": {
+  "en": "a800f3ee9895",
+  "de": "a800f3ee9895",
+  "ar": "a800f3ee9895",
+  "ru": "a800f3ee9895",
+  "fr": "a800f3ee9895",
+  "es": "a800f3ee9895"
+ },
+ "currency": {
+  "en": "958ff1ef0f2e",
+  "de": "958ff1ef0f2e",
+  "ar": "958ff1ef0f2e",
+  "ru": "958ff1ef0f2e",
+  "fr": "958ff1ef0f2e",
+  "es": "958ff1ef0f2e"
+ },
+ "prices": {
+  "en": "acff8dd39fc3",
+  "de": "acff8dd39fc3",
+  "ar": "acff8dd39fc3",
+  "ru": "acff8dd39fc3",
+  "fr": "acff8dd39fc3",
+  "es": "acff8dd39fc3"
+ },
+ "invoice": {
+  "en": "9752d896a4ed",
+  "de": "9752d896a4ed",
+  "ar": "9752d896a4ed",
+  "ru": "9752d896a4ed",
+  "fr": "9752d896a4ed",
+  "es": "9752d896a4ed"
+ },
+ "business": {
+  "en": "d7c426872d03",
+  "de": "d7c426872d03",
+  "ar": "d7c426872d03",
+  "ru": "d7c426872d03",
+  "fr": "d7c426872d03",
+  "es": "d7c426872d03"
+ },
+ "account-delete": {
+  "en": "40b7cd8250ea",
+  "de": "40b7cd8250ea",
+  "ar": "40b7cd8250ea",
+  "ru": "40b7cd8250ea",
+  "fr": "40b7cd8250ea",
+  "es": "40b7cd8250ea"
+ },
+ "newsletter": {
+  "en": "9f2a9571bfbe",
+  "de": "9f2a9571bfbe",
+  "ar": "9f2a9571bfbe",
+  "ru": "9f2a9571bfbe",
+  "fr": "9f2a9571bfbe",
+  "es": "9f2a9571bfbe"
+ },
+ "vpn": {
+  "en": "287810652c2f",
+  "de": "287810652c2f",
+  "ar": "287810652c2f",
+  "ru": "287810652c2f",
+  "fr": "287810652c2f",
+  "es": "287810652c2f"
+ },
+ "lounge-what": {
+  "en": "0cb80798c200",
+  "de": "0cb80798c200",
+  "ar": "0cb80798c200",
+  "ru": "0cb80798c200",
+  "fr": "0cb80798c200",
+  "es": "0cb80798c200"
+ },
+ "fasttrack-time": {
+  "en": "67ba70c9f96d",
+  "de": "67ba70c9f96d",
+  "ar": "67ba70c9f96d",
+  "ru": "67ba70c9f96d",
+  "fr": "67ba70c9f96d",
+  "es": "67ba70c9f96d"
+ },
+ "data-roaming": {
+  "en": "ed3d03623fb8",
+  "de": "ed3d03623fb8",
+  "ar": "ed3d03623fb8",
+  "ru": "ed3d03623fb8",
+  "fr": "ed3d03623fb8",
+  "es": "ed3d03623fb8"
+ },
+ "data-line": {
+  "en": "fe32a5d97c66",
+  "de": "fe32a5d97c66",
+  "ar": "fe32a5d97c66",
+  "ru": "fe32a5d97c66",
+  "fr": "fe32a5d97c66",
+  "es": "fe32a5d97c66"
+ },
+ "network-select": {
+  "en": "b6312c92e517",
+  "de": "b6312c92e517",
+  "ar": "b6312c92e517",
+  "ru": "b6312c92e517",
+  "fr": "b6312c92e517",
+  "es": "b6312c92e517"
+ },
+ "line-on": {
+  "en": "3d68e40ffe7d",
+  "de": "3d68e40ffe7d",
+  "ar": "3d68e40ffe7d",
+  "ru": "3d68e40ffe7d",
+  "fr": "3d68e40ffe7d",
+  "es": "3d68e40ffe7d"
+ },
+ "install-iphone": {
+  "en": "82e5f348ed2c",
+  "de": "82e5f348ed2c",
+  "ar": "82e5f348ed2c",
+  "ru": "82e5f348ed2c",
+  "fr": "82e5f348ed2c",
+  "es": "82e5f348ed2c"
+ },
+ "install-android": {
+  "en": "51e706c34388",
+  "de": "51e706c34388",
+  "ar": "51e706c34388",
+  "ru": "51e706c34388",
+  "fr": "51e706c34388",
+  "es": "51e706c34388"
+ },
+ "reset-network": {
+  "en": "0239b0abc7ee",
+  "de": "0239b0abc7ee",
+  "ar": "0239b0abc7ee",
+  "ru": "0239b0abc7ee",
+  "fr": "0239b0abc7ee",
+  "es": "0239b0abc7ee"
+ },
+ "hotspot-setup": {
+  "en": "d4a062671f10",
+  "de": "d4a062671f10",
+  "ar": "d4a062671f10",
+  "ru": "d4a062671f10",
+  "fr": "d4a062671f10",
+  "es": "d4a062671f10"
+ }
+}

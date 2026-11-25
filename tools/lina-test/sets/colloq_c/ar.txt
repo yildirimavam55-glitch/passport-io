@@ -1,0 +1,5 @@
+الشريحة مفعلة بس الصفحات ما تفتح | no-internet
+كم جيجا استخدمت | check-usage
+فقدت جوالي وش يصير للشريحة | new-phone
+كم يأخذ الاسترداد | refund,refund-how
+احذف حسابي نهائيا | account-delete

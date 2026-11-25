@@ -1,0 +1,20 @@
+esim aktiv aber seiten laden nicht | no-internet
+bin in bodrum und hab keinen einzigen balken | no-service
+beim scannen steht code schon benutzt | code-invalid
+iphone konnte den mobilfunktarif nicht hinzufügen | cannot-add
+wie gebe ich den code manuell ein | manual-install
+instagram videos laden ewig | slow-internet
+gestern gekauft heute schon leer | data-fast
+handy verloren was passiert mit der esim | new-phone
+zahle ich in der türkei roaming auf meiner deutschen nummer | avoid-roaming-costs,turkey
+wie viel gb habe ich verbraucht | check-usage
+kann ich das paket aufstocken | topup
+wann startet das paket | when-activate,buy-when,line-on
+gibt es ein tageslimit bei unlimited | unlimited
+geht whatsapp in china | china
+mail zur bestellung fehlt | no-email
+wie lange dauert die erstattung | refund,refund-how
+geld abgebucht keine bestellung | payment-failed
+wo gebe ich den promo code ein | discount-code
+passwort zurücksetzen mail kommt nicht | account-login
+konto dauerhaft löschen | account-delete

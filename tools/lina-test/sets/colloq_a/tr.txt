@@ -1,0 +1,73 @@
+abi internetim gitmiyor ne yapcam | no-internet
+esimi yükledim ama hiç net yok | no-internet
+bağlandı yazıyo ama hiçbişey açılmıyo | no-internet
+4g işareti var ama internet yok | no-internet
+antalyaya indim telefon hiç çekmiyor | no-service
+telefonda arama yapılıyor yazıyo sürekli | no-service
+şebeke seçemiyorum hiç operatör çıkmıyor | no-service
+qr okuttum hata verdi | code-invalid,cannot-add
+kod geçersiz diyor ne saçmalık | code-invalid
+plan eklenemedi diyor iphone | cannot-add
+esim ekle diyorum olmuyor | cannot-add
+kodu nereye yazıcam anlamadım | manual-install
+tek telefonum var qr ı nasıl okutayım | manual-install
+çok yavaş be instagram açılmıyor bile | slow-internet
+internet kaplumbağa gibi | slow-internet
+whatsapp sesli arama kesiliyor | slow-internet
+1 günde 3 gb gitti nasıl ya | data-fast
+verim bitti hemen | data-fast,topup
+yanlışlıkla sildim esimi geri gelir mi | deleted-esim
+telefonu düşürdüm kırıldı esim ne olacak | new-phone
+yeni iphone aldım esimi taşıcam | new-phone
+telefonum kilitli mi bilmiyorum turkcellden aldım | sim-lock
+apn ayarı ne olmalı | apn
+etkinleştiriliyor yazıp duruyor yarım saattir | activating-stuck
+türk hattıma fatura gelir mi yurtdışında | avoid-roaming-costs
+roaming açınca para keser mi | avoid-roaming-costs
+whatsappım değişir mi numaram aynı kalcak mı | whatsapp
+bankadan şifre gelmezse ne yapcam | bank-sms
+ne kadar internetim kaldı nerden bakıcam | check-usage
+paket kaç gün sonra bitiyor | check-usage
+internet bitince ekstra para çeker mi | expired,hidden-costs
+paketi uzatabilir miyim | topup
+dönünce esimi silelim mi | remove-after
+kaç gün önceden almam lazım | buy-when
+otelde kursam olur mu | install-internet,buy-when
+iki tane esim olur mu telefonda | multiple-esims
+ipadime de takabilir miyim | tablet-watch
+sınırsız diyorsunuz yavaşlıyor mu | unlimited
+5g çeker mi | 5g
+numara veriyo musunuz arama için | phone-number,calls
+almanyaya gidiyorum orda da olur mu türk paketi | coverage-countries
+gemi turunda internet olacak mı | cruise-flight
+google neden almanca açılıyor | ip-location
+çinde instagram açılır mı | china
+izine geliyorum türkiyeye ne almam lazım | turkey
+telefonum 120 gün sonra kapanır mı yurtdışı telefon | turkey
+annem için alcam nasıl kurarız | gift
+mail gelmedi qr nerde | no-email
+siparişim nerede kaldı | order-status,delivery,no-email
+param iade olur mu kurmadım daha | refund,refund-how
+para çekildi ama esim yok | payment-failed
+kart kabul etmedi | payment-failed
+abonelik gibi her ay çekiyo musunuz | hidden-costs
+indirim kodu çalışmıyo | discount-code
+fatura lazım şirkete | invoice
+tl ile alabilir miyim | currency
+fiyat dün başkaydı | prices
+şifremi unuttum giremiyorum | account-login
+hesabımı silin | account-delete
+mail atmayın artık | newsletter
+canlı destek yok mu | contact
+biriyle konuşmak istiyorum | contact
+lounge ne kadar süre kalabiliyoz | lounge-hours
+lounge a çocukla girilir mi | lounge-kids
+uçak rötar yaptı lounge yandı mı | lounge-delay
+lounge içerde yemek var mı | lounge-what
+fast track nerden giriliyor | fasttrack-where
+vpn ile çalışır mı | vpn
+esim güvenli mi dolandırıcılık mı | safe
+uyumlu mu telefonum samsung a52 | device-compatible
+esim nedir anlamadım | what-is-esim
+istanbulda hava kaç derece | -
+vize lazım mı amerikaya | -

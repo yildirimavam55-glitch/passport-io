@@ -34,7 +34,7 @@
     if (base && typeof base === "object") { const out = { ...base }; for (const k of Object.keys(over)) out[k] = merge(base[k], over[k]); return out; }
     return over;
   }
-  let SITE, ESIM, AI, BLOG, REVIEWS, INSTALL, UI, LANGS, LANG, LOCALE, CUR, RTL = false, PRICES = null, POST = null, ACC = null, AUTH = null, CONTENT_PAGE = null;
+  let RAW_AI, RAW_UI, RAW_SYN = {}, SITE, ESIM, AI, BLOG, REVIEWS, INSTALL, UI, LANGS, LANG, LOCALE, CUR, RTL = false, PRICES = null, POST = null, ACC = null, AUTH = null, CONTENT_PAGE = null;
   const POST_ID = PAGE === "blog" ? (new URLSearchParams(location.search).get("p") || "").replace(/[^a-z0-9-]/gi, "") : "";
   try {
     LANGS = await getJSON("content/languages.json");
@@ -71,11 +71,16 @@
     const savedCur = pickCur(store("pp_cur", keep ? curUrl : null)) || pickCur(session("pp_cur_visit", curUrl));
     CUR = curUrl || savedCur || pickCur(LANGS.regionCurrency?.[region]) || pickCur(meta.currency) || curCodes[0] || "EUR";
     const loc = (d) => d && merge(d[LANGS.default], d[LANG]);
-    [SITE, ESIM, AI, BLOG, REVIEWS, UI, INSTALL, POST] = (await Promise.all([
+    const synP = getJSON("content/lina-synonyms.json").catch(() => ({})); // Umgangssprache → einheitliche Begriffe (Lina)
+    const raw = await Promise.all([
       ...["site", "esim", "assistant", "blog", "reviews", "ui"].map((n) => getJSON(`content/${n}.json`)),
       PAGE === "install" ? getJSON("content/install.json") : null,
       POST_ID ? getJSON(`content/posts/${POST_ID}.json`).catch(() => null) : null, // Artikel (fehlt er → Übersicht)
-    ])).map(loc);
+    ]);
+    [SITE, ESIM, AI, BLOG, REVIEWS, UI, INSTALL, POST] = raw.map(loc);
+    [RAW_AI, RAW_UI] = [raw[2], raw[5]]; // Lina antwortet in der Sprache der Frage – dafür alle Sprachen
+    RAW_SYN = await synP;
+
     if (POST) POST.id = POST_ID;
     if (PAGE === "page") {
       const pid = (params.get("p") || "").replace(/[^a-z0-9-]/gi, "");
@@ -116,7 +121,8 @@
   const PAY = { applepay: "Apple Pay", googlepay: "Google Pay", klarna: "Klarna", paypal: "PayPal", visa: "Visa", mastercard: "Mastercard", americanexpress: "American Express" };
   const payLogo = (slug) => `<img class="pay-logo pay-logo--${esc(slug)}" src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/${esc(slug)}.svg" alt="${esc(PAY[slug] || slug)}" title="${esc(PAY[slug] || slug)}" loading="lazy">`;
   /* Für Suche & Assistent: Kleinschreibung, ohne Akzente (ü→u, ş→s, ı→i …), nur Buchstaben/Ziffern */
-  const norm = (s) => String(s).toLocaleLowerCase(LOCALE).replace(/ı/g, "i").replace(/ß/g, "ss").normalize("NFD").replace(/[̀-ًͯ-ٰٟ]/g, "").replace(/ى/g, "ي").replace(/ة/g, "ه").replace(/ё/g, "е").replace(/[^\p{L}\p{N} ]+/gu, " ").replace(/\s+/g, " ").trim();
+  const normFor = (loc) => (s) => String(s).toLocaleLowerCase(loc).replace(/ı/g, "i").replace(/ß/g, "ss").normalize("NFD").replace(/[̀-ًͯ-ٰٟ]/g, "").replace(/ى/g, "ي").replace(/ة/g, "ه").replace(/ё/g, "е").replace(/[^\p{L}\p{N} ]+/gu, " ").replace(/\s+/g, " ").trim();
+  const norm = normFor(LOCALE);
   /* Ländernamen kommen automatisch in der Sprache des Besuchers (Browser); Suche kennt alle Sprachen */
   const regionNames = (loc) => { try { return new Intl.DisplayNames([loc], { type: "region" }); } catch (_) { return null; } };
   const DN = regionNames(LOCALE), ALT = LANGS.languages.map((l) => regionNames(l.locale)).filter(Boolean);
@@ -1456,21 +1462,97 @@
   function initAssistant(el) {
     const log = $("#assistant-log", el);
     const faqs = AI.faqs || [];
-    const byId = Object.fromEntries(faqs.map((f) => [f.id, f]));
 
-    const add = (html, who = "bot") => { const m = document.createElement("div"); m.className = `msg msg--${who}`; m.innerHTML = html; log.appendChild(m); log.scrollTop = log.scrollHeight; return m; };
+    const add = (html, who = "bot", P) => {
+      const m = document.createElement("div"); m.className = `msg msg--${who}`; m.innerHTML = html;
+      if (P && P.code !== LANG) { m.lang = P.code; m.dir = P.dir; } // Antwort in anderer Sprache als die Seite
+      log.appendChild(m); log.scrollTop = log.scrollHeight; return m;
+    };
     const typing = () => { const t = add(`<span class="typing"><span></span><span></span><span></span></span>`); t.style.padding = "0"; return t; };
 
-    const rank = (text) => {
-      const q = " " + norm(text) + " ";
-      const tokens = q.trim().split(" ").filter((w) => w.length > 3);
-      return faqs.map((f) => {
-        let s = 0;
-        (f.keywords || []).forEach((k) => { const nk = norm(k); if (nk && (q.includes(" " + nk) || q.includes(nk + " "))) s += 2 + nk.split(" ").length; });
-        const fq = norm(f.question).split(" ");
-        tokens.forEach((t) => { if (fq.some((w) => w.length > 3 && (w.startsWith(t) || t.startsWith(w)))) s += 1; });
-        return { f, s };
-      }).sort((a, b) => b.s - a.s);
+    // Treffer-Suche: Stichwörter (auch mit Endungen/Tippfehlern), Fragetext voll, Antworttext halb.
+    // Häufige Wörter („esim“, „lounge“) zählen weniger als seltene.
+    const same = (a, b) => {
+      if (a === b) return true;
+      const m = Math.min(a.length, b.length);
+      if (m < 4) return false;
+      let i = 0; while (i < m && a[i] === b[i]) i++;
+      return i === m || i >= Math.max(5, m - 2);
+    };
+    const makeRanker = (list, nrm) => {
+      const idx = list.map((f) => {
+        const kws = (f.keywords || []).map((k) => nrm(k)).filter(Boolean).map((k) => ({ k, w: k.split(" ") }));
+        const qw = nrm(f.question).split(" ").filter((w) => w.length > 3);
+        const aw = [...new Set(nrm(String(f.answer || "").replace(/\]\([^)]*\)/g, " ")).split(" ").filter((w) => w.length > 3))];
+        return { f, kws, qw, aw, words: new Set([...kws.flatMap((x) => x.w), ...qw]) };
+      });
+      const df = new Map();
+      idx.forEach((e) => e.words.forEach((w) => df.set(w, (df.get(w) || 0) + 1)));
+      const common = (w) => (df.get(w) || 0) > Math.max(3, idx.length * 0.1);
+      const weight = (w) => { const ds = w.filter((x) => x.length > 2).map((x) => df.get(x) || 1); const d = ds.length ? Math.max(1, Math.min(...ds)) : 1; return 1 / (1 + Math.log2(d) / 3); };
+      return (text) => {
+        const nq = nrm(text), q = " " + nq + " ";
+        const toks = nq.split(" ").filter(Boolean);
+        return idx.map(({ f, kws, qw, aw }) => {
+          let s = 0; const used = new Set();
+          // Jedes Suchwort zählt pro FAQ nur einmal – viele Varianten desselben Stichworts blähen sonst auf
+          const hit = (w) => { const t = w.map((x) => toks.findIndex((y) => (x.length < 4 ? y === x : same(y, x)))); return t.every((i) => i >= 0) ? t : null; };
+          // Erst exakte Treffer, dann ähnliche – sonst „verbraucht“ ein ähnliches Stichwort das Wort vor dem exakten
+          const isExact = ({ k, w }) => q.includes(" " + k + " ") || (w.length > 1 && (q.includes(" " + k) || q.includes(k + " ")));
+          [...kws.filter(isExact), ...kws.filter((x) => !isExact(x))].forEach(({ k, w }) => {
+            const weak = w.length === 1 && common(k);
+            const exact = isExact({ k, w });
+            const t = exact || (!weak && w.some((x) => x.length >= 4)) ? hit(w) : null;
+            if (!t && !exact) return;
+            if (t && t.every((i) => used.has(i))) return;
+            (t || []).forEach((i) => used.add(i));
+            s += (exact ? (weak ? 1 : 2 + w.length) : 0.5 + w.length) * (weak ? 1 : weight(w));
+          });
+          toks.forEach((t) => { if (t.length <= 3 || common(t)) return; if (qw.some((w) => same(t, w))) s += 1; else if (aw.some((w) => same(t, w))) s += 0.5; });
+          return { f, s };
+        }).sort((a, b) => b.s - a.s);
+      };
+    };
+
+    // Umgangssprache → einheitliche Begriffe (content/lina-synonyms.json), auf Frage UND FAQ-Texte angewendet
+    const canonFor = (rules, nrm) => {
+      const list = Object.entries(rules || {}).filter(([k]) => !k.startsWith("_"))
+        .flatMap(([vars, canon]) => vars.split("|").map((v) => [nrm(v), nrm(canon)]))
+        .filter(([v]) => v).sort((a, b) => b[0].length - a[0].length);
+      return (s) => { let x = " " + nrm(s) + " "; for (const [v, c] of list) if (x.includes(" " + v + " ")) x = x.split(" " + v + " ").join(" " + c + " "); return x.trim().replace(/\s+/g, " "); };
+    };
+    // Ein Paket pro Sprache: Texte (fehlende aus der Standardsprache), Suche und Wortschatz zur Spracherkennung
+    const SCRIPT = { ar: /[\u0600-\u06ff]/, ru: /[\u0400-\u04ff]/ };
+    const scriptOf = (s) => Object.keys(SCRIPT).find((c) => SCRIPT[c].test(s)) || "latn";
+    const PACKS = LANGS.languages.map((l) => {
+      const own = (RAW_AI && RAW_AI[l.code]) || {};
+      const data = l.code === LANG ? AI : merge(RAW_AI[LANGS.default], own);
+      const ui = l.code === LANG ? UI : merge(RAW_UI[LANGS.default], RAW_UI[l.code]);
+      const nrm = l.code === LANG ? norm : normFor(l.locale);
+      const vocab = new Set(nrm([own.greeting, own.fallback, ...(own.suggestions || []), ...(own.faqs || []).flatMap((f) => [f.question, f.answer, ...(f.keywords || [])])].join(" ")).split(" ").filter((w) => w.length > 1));
+      return { code: l.code, dir: l.dir || "ltr", script: SCRIPT[l.code] ? l.code : "latn", data, ui, norm: nrm, vocab,
+        rank: makeRanker(data.faqs || [], canonFor(RAW_SYN[l.code], nrm)), byId: Object.fromEntries((data.faqs || []).map((f) => [f.id, f])) };
+    });
+    const HOME = PACKS.find((p) => p.code === LANG);
+    const packOf = (code) => PACKS.find((p) => p.code === code) || HOME;
+    const tx = (P, k, v) => (P.ui && P.ui[k] != null ? String(P.ui[k]).replace(/\{(\w+)\}/g, (m, x) => (v && x in v ? v[x] : m)) : t(k, v));
+    // Sprache der Frage: Schrift (Arabisch/Kyrillisch), sonst Wörter, die nur in einer Sprache vorkommen.
+    // Unklar → die Sprache, deren Antworten am besten passen; im Zweifel die Seitensprache.
+    const detect = (text, cands) => {
+      const sc = cands.map((x) => ({ x, s: 0 }));
+      [...new Set(cands[0].p.norm(text).split(" ").filter((w) => w.length > 1))].forEach((tok) => { const inL = sc.filter((y) => y.x.p.vocab.has(tok)); inL.forEach((y) => (y.s += 1 / inL.length)); });
+      sc.sort((a, b) => b.s - a.s);
+      return sc.length === 1 || (sc[0].s >= 0.5 && sc[0].s - (sc[1] ? sc[1].s : 0) >= 0.5) ? sc[0].x : null;
+    };
+    const search = (text) => {
+      const sc = scriptOf(text);
+      let res = PACKS.filter((p) => p.script === sc).map((p) => ({ p, r: p.rank(text) }));
+      if (!res.length) res = [{ p: HOME, r: HOME.rank(text) }];
+      const det = detect(text, res);
+      if (det) return det;
+      const own = res.find((x) => x.p === HOME);
+      const best = res.reduce((a, b) => (b.r[0].s > a.r[0].s ? b : a));
+      return !own || best.r[0].s - own.r[0].s >= (own.r[0].s >= 3 ? 2 : 1) ? best : own;
     };
     // Land in der Frage erkennen – in jeder unterstützten Sprache („Mısır'da“, „in Ägypten“, „in Egypt“)
     const findCountry = (text) => { const q = " " + norm(text) + " "; return ESIM.countries.find((c) => (c.names || [norm(c.name)]).some((n) => n.length > 2 && q.includes(" " + n + " "))); };
@@ -1503,35 +1585,77 @@
       } catch (_) { f.querySelector("button").disabled = false; toast(t("handoffErr")); }
     });
 
-    function respond(text, forced) {
+    // Lina mit KI (optional, SITE.api.linaUrl): formuliert aus den passendsten FAQs eine Antwort in der Sprache der Frage.
+    // Nur wenn die Stichwortsuche nicht ganz sicher ist; ist die KI aus oder langsam, bleibt es bei der Stichwortsuche.
+    let aiOff = !SITE.api?.linaUrl;
+    const askAI = async (text, hit) => {
+      if (aiOff) return null;
+      const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 9000);
+      try {
+        const ids = hit.r.filter((r) => r.s > 0).slice(0, 6).map((r) => r.f.id);
+        const r = await fetch(SITE.api.linaUrl, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: text, lang: hit.p.code, ids }), signal: ctl.signal });
+        if (r.status === 503) { aiOff = true; return null; } // KI nicht eingerichtet → für diesen Besuch nicht mehr fragen
+        if (!r.ok) return null;
+        return await r.json();
+      } catch (_) { return null; } finally { clearTimeout(timer); }
+    };
+
+    function respond(text, forced, forcedLang) {
       const dots = typing();
-      setTimeout(() => {
+      const hit = forced ? { p: packOf(forcedLang), r: [{ f: forced, s: 99 }] } : search(text);
+      const top = hit.r[0];
+      const useAI = !forced && !aiOff && !(top && top.s >= 5) && !findCountry(text);
+      const started = Date.now();
+      (useAI ? askAI(text, hit) : Promise.resolve(null)).then((ai) => setTimeout(() => {
         dots.remove();
-        const ranked = forced ? [{ f: forced, s: 99 }] : rank(text);
+        const P = hit.p, ranked = hit.r;
+        if (ai && ai.answer) {
+          const PA = P; // Antwortsprache = Sprache der Frage
+          const steps = ((PA.byId[ai.faq] || {}).next || []).map((id) => PA.byId[id]).filter(Boolean);
+          const rel = [...steps, ...ranked.filter((r) => r.s >= 2).map((r) => r.f)].filter((f, i, a) => f.id !== ai.faq && a.findIndex((x) => x.id === f.id) === i).slice(0, 4);
+          const btns = rel.map((f) => `<button type="button" data-faq="${esc(f.id)}" data-lang="${esc(PA.code)}">${esc(f.question)}</button>`).join("");
+          add(md(String(ai.answer).replace(/</g, "‹"))
+            + (btns ? `<div class="msg__related">${btns}</div>` : "")
+            + (ai.handoff
+              ? `<div class="msg__action"><button class="btn btn--dark btn--sm" type="button" data-handoff>${icon("chat")} ${esc(tx(PA, "talkTeam"))}</button></div>`
+              : `<div class="msg__feedback">${esc(tx(PA, "helpful"))} <button type="button" data-fb="yes">${esc(tx(PA, "yes"))}</button><button type="button" data-fb="no">${esc(tx(PA, "no"))}</button></div>`), "bot", PA);
+          track(ai.handoff ? "assistant_unanswered" : "assistant_answer", { faq_id: ai.faq || "", lang: PA.code, ai: 1, ...(ai.handoff ? { question: text } : {}) });
+          return;
+        }
         const best = ranked[0];
+        const second = ranked[1] ? ranked[1].s : 0;
+        // Sicher: Score ≥ 3 – oder ≥ 2 mit deutlichem Abstand zum Zweitplatzierten
+        const sure = best && (best.s >= 3 || (best.s >= 2 && best.s - second >= 1.5));
+        const btn = (f) => `<button type="button" data-faq="${esc(f.id)}" data-lang="${esc(P.code)}">${esc(f.question)}</button>`;
         const country = forced ? null : findCountry(text);
         if (country && (!best || best.s < 6)) {
           const cp = priceOf("country:" + country.code);
-          add(`${t("countryAnswer", { country: esc(country.name), price: cp != null ? t("countryPrice", { p: eur(cp) }) : "" })}<div class="msg__action"><button class="btn btn--green btn--sm" type="button" data-plans="${esc(country.code)}">${esc(t("plansFor", { country: country.name }))}</button></div>`);
-        } else if (best && best.s >= 3) {
-          const related = ranked.slice(1, 4).filter((r) => r.s >= 2);
+          add(`${tx(P, "countryAnswer", { country: esc(country.name), price: cp != null ? tx(P, "countryPrice", { p: eur(cp) }) : "" })}<div class="msg__action"><button class="btn btn--green btn--sm" type="button" data-plans="${esc(country.code)}">${esc(tx(P, "plansFor", { country: country.name }))}</button></div>`, "bot", P);
+        } else if (sure) {
+          // Erst die hinterlegten nächsten Schritte (z. B. Roaming → Datenleitung → Netzwahl), dann ähnliche Fragen
+          const steps = (best.f.next || []).map((id) => P.byId[id]).filter(Boolean);
+          const related = [...steps, ...ranked.slice(1, 4).filter((r) => r.s >= 2).map((r) => r.f)].filter((f, i, a) => f.id !== best.f.id && a.findIndex((x) => x.id === f.id) === i).slice(0, 5);
           add(md(best.f.answer)
-            + (related.length ? `<div class="msg__related">${related.map((r) => `<button type="button" data-faq="${esc(r.f.id)}">${esc(r.f.question)}</button>`).join("")}</div>` : "")
-            + `<div class="msg__feedback">${esc(t("helpful"))} <button type="button" data-fb="yes">${esc(t("yes"))}</button><button type="button" data-fb="no">${esc(t("no"))}</button></div>`);
-          track("assistant_answer", { faq_id: best.f.id });
+            + (related.length ? `<div class="msg__related">${related.map((f) => btn(f)).join("")}</div>` : "")
+            + `<div class="msg__feedback">${esc(tx(P, "helpful"))} <button type="button" data-fb="yes">${esc(tx(P, "yes"))}</button><button type="button" data-fb="no">${esc(tx(P, "no"))}</button></div>`, "bot", P);
+          track("assistant_answer", { faq_id: best.f.id, lang: P.code });
         } else {
-          add(`${esc(AI.fallback)}<div class="msg__action"><button class="btn btn--dark btn--sm" type="button" data-handoff>${icon("chat")} ${esc(t("talkTeam"))}</button></div>`);
-          track("assistant_unanswered", { question: text });
+          // Keine sichere Antwort: die naheliegendsten Fragen anbieten, bevor es zum Team geht
+          const near = ranked.filter((r) => r.s >= 1).slice(0, 3);
+          const fb = P.data.fallback || AI.fallback;
+          add((near.length ? `${esc(tx(P, "didYouMean"))}<div class="msg__related">${near.map((r) => btn(r.f)).join("")}</div><p class="msg__else">${esc(fb)}</p>` : esc(fb))
+            + `<div class="msg__action"><button class="btn btn--dark btn--sm" type="button" data-handoff>${icon("chat")} ${esc(tx(P, "talkTeam"))}</button></div>`, "bot", P);
+          track("assistant_unanswered", { question: text, lang: P.code });
         }
-      }, 450 + Math.random() * 450);
+      }, Math.max(0, 450 + Math.random() * 450 - (Date.now() - started))));
     }
-    const ask = (text, forced) => { add(esc(text), "user"); respond(text, forced); };
+    const ask = (text, forced, lang) => { add(esc(text), "user"); respond(text, forced, lang); };
 
     el.addEventListener("click", (e) => {
       // Frage aus der Leiste: Chat in den Blick holen, dann fragen
       const fromBand = e.target.closest(".qband");
       if (fromBand && e.target.closest("[data-faq], [data-suggest]")) $(".assistant", el).scrollIntoView({ behavior: "smooth", block: "center" });
-      const f = e.target.closest("[data-faq]"); if (f) { const it = byId[f.dataset.faq]; if (it) setTimeout(() => ask(it.question, it), fromBand ? 350 : 0); return; }
+      const f = e.target.closest("[data-faq]"); if (f) { const P = packOf(f.dataset.lang); const it = P.byId[f.dataset.faq]; if (it) setTimeout(() => ask(it.question, it, P.code), fromBand ? 350 : 0); return; }
       const p = e.target.closest("[data-plans]"); if (p) { openPlans(ESIM.countries.find((c) => c.code === p.dataset.plans)); return; }
       const s = e.target.closest("[data-suggest]"); if (s) { const q = s.dataset.suggest || s.textContent.trim(); setTimeout(() => ask(q), fromBand ? 350 : 0); return; }
       const fb = e.target.closest("[data-fb]");
@@ -1541,7 +1665,7 @@
       if (b) {
         if (b.dataset.action === "device-check") return openDeviceCheck();
         if (/\.html|^https?:|^\//.test(b.dataset.action)) { location.href = b.dataset.action; return; }
-        const it = byId[b.dataset.action];
+        const it = HOME.byId[b.dataset.action];
         $(".assistant", el).scrollIntoView({ behavior: "smooth", block: "center" });
         if (it) setTimeout(() => ask(it.question, it), 350);
       }
@@ -1550,7 +1674,7 @@
     add(esc(AI.greeting));
 
     /* FAQ – automatisch nach Häufigkeit sortiert */
-    const CATS = [["all", t("catAll")], ["esim", t("catEsim")], ["lounge", t("catLounge")], ["fasttrack", t("catFasttrack")], ["zahlung", t("catPayment")], ["allgemein", t("catGeneral")]]
+    const CATS = [["all", t("catAll")], ["esim", t("catEsim")], ["probleme", t("catTrouble")], ["lounge", t("catLounge")], ["fasttrack", t("catFasttrack")], ["zahlung", t("catPayment")], ["allgemein", t("catGeneral")]]
       .filter(([id]) => id === "all" || faqs.some((f) => f.category === id));
     const sorted = [...faqs].sort((a, b) => (b.views || 0) - (a.views || 0));
     const hot = new Set(sorted.slice(0, 3).map((f) => f.id));

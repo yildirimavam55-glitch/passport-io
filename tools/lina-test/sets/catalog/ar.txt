@@ -1,0 +1,63 @@
+ما هي الشريحة الإلكترونية esim | what-is-esim
+esim أم التجوال أيهما أرخص | esim-vs-roaming
+هل هي آمنة | safe
+هل هاتفي متوافق | device-compatible
+هل يدعم ايفون 12 esim | device-compatible
+هاتفي مقفل على المشغل | sim-lock
+هل تعمل على ipad | tablet-watch
+أي باقة أختار | which-package
+كم جيجا أحتاج لأسبوع | which-package
+غير محدود فعلا | unlimited
+لماذا تغير السعر | prices
+تغيير العملة | currency
+باقة لكل أوروبا | coverage-countries
+هل يوجد 5g | 5g
+ما طرق الدفع | payment
+فشل الدفع | payment-failed
+رسوم خفية | hidden-costs
+هل هو اشتراك | hidden-costs
+أين أكتب رمز الخصم | discount-code
+هل يمكن الحصول على فاتورة | invoice
+شراء لصديق | gift
+طلب لشركتي | business
+لم يصلني البريد | no-email
+الطلب قيد المعالجة | order-status
+كيف أثبت esim | install-esim,install-iphone,install-android
+لا أستطيع مسح رمز qr | manual-install
+هل أحتاج wifi للتثبيت | install-internet
+متى أشتري esim | buy-when
+تعذر إضافة esim | cannot-add
+الرمز لم يعد صالحا | code-invalid
+متى أفعل esim | when-activate,line-on
+عالقة على جار التفعيل | activating-stuck
+ما هو apn | apn
+لا يوجد إنترنت | no-internet
+لا توجد خدمة | no-service
+الإنترنت بطيء جدا | slow-internet
+البيانات تنفد بسرعة | data-fast
+حذفت esim | deleted-esim
+فقدت هاتفي | new-phone
+مشاركة نقطة الاتصال | hotspot,hotspot-setup
+هل يمكن استخدام vpn | vpn
+هل يعمل واتساب | whatsapp
+رسائل البنك | bank-sms
+هل يمكن الاتصال | calls
+البيانات المتبقية | check-usage
+شراء بيانات إضافية | topup
+ماذا يحدث عند انتهاء الصلاحية | expired
+أسافر إلى تركيا | turkey
+واتساب في الصين | china
+في رحلة بحرية | cruise-flight
+استرداد المال | refund,refund-how
+كيف أطلب استردادا | refund-how
+نسيت كلمة المرور | account-login
+حذف حسابي | account-delete
+إلغاء الاشتراك في النشرة | newsletter
+التواصل مع الدعم | contact
+ماذا يوجد في صالة المطار | lounge-what
+حجز صالة | lounge-access
+الأطفال في الصالة | lounge-kids
+ما هو fast track | fasttrack-how
+أين fast track | fasttrack-where
+هل أحتاج تأشيرة | -
+هل تبيعون تذاكر طيران | -

@@ -1,0 +1,30 @@
+esim aktif ama sayfalar yüklenmiyor | no-internet
+bodrumdayım telefonda hiç çubuk yok | no-service
+kodu okuttum zaten kullanılmış diyor | code-invalid
+iphone hücresel planı ekleyemedi diyor | cannot-add
+kodu manuel nasıl girerim | manual-install
+instagram videoları açılmıyor yavaşlıktan | slow-internet
+dün aldım bugün bitti gb | data-fast
+esim silindi kendiliğinden | deleted-esim
+telefonu kaybettim esim ne olacak | new-phone
+telefonum operatöre kilitli olabilir mi | sim-lock
+türkiyede kendi hattıma roaming ücreti yansır mı | avoid-roaming-costs,turkey
+whatsapp numaramı değiştirmem gerekir mi | whatsapp
+kaç gb kullandım | check-usage
+internet paketine ekleme yapabilir miyim | topup
+paket ne zaman başlıyor | when-activate,buy-when,line-on
+ipad pro da çalışır mı | tablet-watch
+sınırsız paket günlük limit var mı | unlimited
+yerel numara alabilir miyim | phone-number
+çine gidiyorum whatsapp açılır mı | china
+sıla yolu için esim lazım | turkey
+siparişimin maili gelmedi | no-email
+para iadesi kaç günde olur | refund,refund-how
+kartımdan para çekildi sipariş yok | payment-failed
+gizli ücret var mı | hidden-costs
+promosyon kodu nerede | discount-code
+kurumsal fatura istiyorum | invoice
+şifre sıfırlama maili gelmiyor | account-login
+hesabımı kalıcı silmek | account-delete
+destekle görüşmek istiyorum | contact
+lounge da çocuk ücretli mi | lounge-kids

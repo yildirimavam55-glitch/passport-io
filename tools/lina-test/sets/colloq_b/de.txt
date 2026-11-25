@@ -1,0 +1,52 @@
+esim installiert aber mobile daten gehen nicht | no-internet
+zeigt balken an aber internet will nicht | no-internet
+in izmir angekommen null empfang | no-service
+handy sagt kein dienst | no-service
+beim scannen kommt code bereits verwendet | code-invalid
+fehler beim hinzufügen der esim | cannot-add,code-invalid
+wo trage ich den aktivierungscode von hand ein | manual-install
+youtube hängt dauernd | slow-internet
+an einem tag war mein paket leer | data-fast
+esim aus versehen entfernt was jetzt | deleted-esim
+handy geklaut ist mein paket weg | new-phone
+wenn ich das handy wechsle geht die esim mit | new-phone
+hab einen vertrag geht die esim trotzdem | sim-lock
+seit stunden steht aktivierung | activating-stuck
+kostet mich das bei vodafone extra | avoid-roaming-costs
+bleibt whatsapp auf meiner alten nummer | whatsapp
+kriege ich sms von der sparkasse | bank-sms
+wo sehe ich wie viel gb noch da sind | check-usage
+gb alle kann ich nachkaufen | topup
+vor der reise installieren oder erst dort | buy-when,when-activate,line-on
+nach der landung einschalten | when-activate,line-on
+gibt es bei unlimited ein tempolimit | unlimited
+ist auch eine telefonnummer dabei | phone-number
+geht das auf einer kreuzfahrt | cruise-flight
+warum öffnen sich seiten auf englisch | ip-location
+geht google in shanghai | china
+fahre im sommer in die türkei geht die esim dort | turkey
+für meine tochter kaufen und ihr schicken | gift
+nach der bestellung kam gar nichts | no-email
+bestellung in bearbeitung wie lange dauert das | order-status,delivery
+geld zurück obwohl nie benutzt | refund,refund-how
+habe bezahlt aber es kam ein fehler | payment-failed
+wird jeden monat abgebucht | hidden-costs
+gutscheincode eingegeben aber kein rabatt | discount-code
+könnt ihr eine rechnung auf meine firma ausstellen | invoice
+in dollar bezahlen geht das | currency
+warum schwanken die preise so | prices
+beim login will es einen code der kommt nicht | account-login
+mitgliedschaft kündigen und daten löschen | account-delete
+newsletter abbestellen bitte | newsletter
+ich will den kundenservice sprechen | contact
+wie viele stunden darf man in die lounge | lounge-hours
+darf meine frau mit in die lounge | lounge-kids
+wurde an der lounge abgewiesen | lounge-denied
+gibt es duschen in der lounge | lounge-what
+an welchem eingang ist fast track | fasttrack-where
+installation mit vpn möglich | vpn
+ist die seite fake | safe
+geht das mit einem huawei | device-compatible
+wozu braucht man eine esim | what-is-esim
+welches paket für 2 wochen | which-package
+busticket nach münchen | -

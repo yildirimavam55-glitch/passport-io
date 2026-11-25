@@ -1,0 +1,56 @@
+kardeşim esim kurdum ama mobil veri çalışmıyor | no-internet
+telefonda tik var ama internete bağlanamıyorum | no-internet
+izmire geldim sinyal sıfır | no-service
+ekranda hizmet yok yazıyor | no-service
+qr ı okutunca kod kullanılmış dedi | code-invalid
+esim yüklerken hata çıktı | cannot-add,code-invalid
+telefon esimi kabul etmiyor | cannot-add,device-compatible
+aktivasyon kodunu elle girmem lazım nerde | manual-install
+youtube izleyemiyorum donuyor sürekli | slow-internet
+internet hızı berbat | slow-internet
+bir günde paketim bitti nasıl olur | data-fast
+esim i yanlışlıkla kaldırdım şimdi ne olcak | deleted-esim
+telefonum çalındı paketim yandı mı | new-phone
+telefonumu değiştirsem esim gelir mi | new-phone
+faturalı hattım var esim takılır mı | sim-lock
+saatlerdir etkinleştiriliyor diyor | activating-stuck
+vodafone hattımdan para gider mi | avoid-roaming-costs
+whatsapp eski numaramla devam eder mi | whatsapp
+garanti bankası sms gelir mi | bank-sms
+kalan gb ı göremiyorum | check-usage
+gb bitti ilave alabilir miyim | topup
+paketin süresi dolarsa para çekilir mi | expired,hidden-costs
+yolculuktan önce mi kurayım | buy-when,when-activate,line-on
+uçak inince mi açayım esimi | when-activate,line-on
+apple watch takabilir miyim | tablet-watch
+sınırsız pakette hız sınırı var mı | unlimited
+telefon numarası da geliyor mu | phone-number
+kruvaziyer gemide çalışır mı | cruise-flight
+neden sayfalar ingilizce açılıyor | ip-location
+şangayda google açılıyor mu | china
+türkiyeye yazın gidiyorum esim olur mu | turkey
+kızım için alıp ona göndercem | gift
+siparişten sonra hiçbir şey gelmedi | no-email
+siparişim hazırlanıyor diyor ne kadar sürer | order-status,delivery
+paramı geri alabilir miyim hiç kullanmadım | refund,refund-how
+ödeme yaptım ama hata verdi | payment-failed
+her ay ücret çekilir mi | hidden-costs
+kupon kodu girdim indirim olmadı | discount-code
+şirket için fatura kesebilir misiniz | invoice
+euro ile ödemek istiyorum | currency
+fiyatlar neden bu kadar oynuyor | prices
+giriş yapınca kod istiyor gelmiyor | account-login
+üyeliğimi iptal etmek istiyorum | account-delete
+bülten maillerini kapat | newsletter
+müşteri hizmetlerine bağlanmak istiyorum | contact
+lounge kaç saat kullanılabiliyor | lounge-hours
+lounge a eşimi de alabilir miyim | lounge-kids
+lounge girişte reddedildim | lounge-denied
+lounge da duş var mı | lounge-what
+fast track hangi kapıda | fasttrack-where
+vpn açıkken kurulum olur mu | vpn
+bu site dolandırıcı mı | safe
+huawei telefonum uyumlu mu | device-compatible
+esim tam olarak ne işe yarıyor | what-is-esim
+hangi paketi alsam 2 hafta için | which-package
+bayramda otobüs bileti | -
