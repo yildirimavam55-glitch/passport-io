@@ -602,7 +602,14 @@
   };
 
   /* ---------- BEWERTUNGEN ---------- */
-  const stars = (n) => Array.from({ length: 5 }, (_, i) => `<span class="${i < n ? "" : "is-empty"}">${icon("star")}</span>`).join("");
+  // Immer genau 5 Sterne; bei Kommawerten (z. B. 4,8) wird der letzte Stern anteilig gefüllt
+  const stars = (n) => {
+    const v = Math.max(0, Math.min(5, Number(String(n).replace(",", ".")) || 0));
+    return Array.from({ length: 5 }, (_, i) => {
+      const f = Math.max(0, Math.min(1, v - i));
+      return f >= 1 ? `<span>${icon("star")}</span>` : f <= 0 ? `<span class="is-empty">${icon("star")}</span>` : `<span class="tp-part" style="--p:${Math.round(f * 100)}%">${icon("star")}</span>`;
+    }).join("");
+  };
   sections.reviews = {
     render: (c = SITE.reviews) => `
       <section class="section section--tight" id="reviews">
@@ -611,7 +618,7 @@
           <div class="reviews-bar__score">
             <span class="reviews-bar__num">${esc(c.score)}</span>
             <div>
-              <div class="tp-stars" aria-label="${esc(t("starsOf", { n: c.score }))}">${stars(4)}<span class="tp-part">${icon("star")}</span></div>
+              <div class="tp-stars" aria-label="${esc(t("starsOf", { n: c.score }))}">${stars(c.score)}</div>
               <p><b>${esc(c.label)}</b> · ${esc(t("reviewsOn", { count: c.count }))}${previewOn ? ` <span class="demo-tag">${esc(t("reviewsDemo"))}</span>` : ""}</p>
             </div>
           </div>
