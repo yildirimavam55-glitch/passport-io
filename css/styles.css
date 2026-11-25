@@ -1499,6 +1499,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 .cart-btn { position: relative; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: rgba(255,255,255,.78); border: 1.5px solid rgba(255,255,255,.18); flex: none; }
 .cart-btn svg { width: 19px; height: 19px; }
 .cart-btn:hover { border-color: var(--green); }
+.cart-btn__n[hidden] { display: none; }
 .cart-btn__n { position: absolute; top: -4px; right: -4px; min-width: 19px; height: 19px; padding: 0 5px; border-radius: 99px; background: var(--green); color: #0a0d0c; font-size: 11px; font-weight: 800; display: grid; place-items: center; line-height: 1; }
 .cart { position: fixed; inset: 0; z-index: 200; }
 .cart[hidden] { display: none; }
