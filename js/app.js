@@ -1379,7 +1379,12 @@
       const coupon = ($("input[name=coupon]", modal)?.value || "").toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32);
       location.href = `account.html?buy=${encodeURIComponent(key)}&plan=${encodeURIComponent(plan.id)}${coupon ? `&coupon=${encodeURIComponent(coupon)}` : ""}`;
     });
-    $("input:checked", modal)?.focus();
+    // Fokus auf den vorgewählten Tarif, ohne dass das Fenster nach unten springt – Land und Bild bleiben oben sichtbar
+    const sel = $("input:checked", modal);
+    sel?.focus({ preventScroll: true });
+    $(".modal__panel", modal).scrollTop = 0;
+    const pl = $(".plan-list", modal), row = sel?.closest(".plan-list > *");
+    if (pl && row) { pl.scrollTop = 0; const r = row.getBoundingClientRect(), b = pl.getBoundingClientRect(); if (r.bottom > b.bottom) pl.scrollTop = r.bottom - b.bottom + 12; }
 
     /* ---- Tarif-Details (aus der Anbieter-API, pro Land einmal nachgeladen) ---- */
     const itemKey = item.code ? "country:" + item.code : "region:" + item.id;
