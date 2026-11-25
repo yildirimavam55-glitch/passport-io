@@ -155,7 +155,9 @@
     "couponToggle": "İndirim kodun var mı?",
     "couponPlaceholder": "Kodu gir",
     "moreFaq": "Daha fazla soru göster ({n})",
-    "lessFaq": "Daha az göster"
+    "lessFaq": "Daha az göster",
+    "deviceNo": "<b>{d}</b> eSIM desteklemiyor",
+    "deviceRegion": "Not: Çin, Hong Kong/Makao ve Tayvan modellerinde ve operatöre kilitli telefonlarda eSIM çoğu zaman çalışmaz. Emin olmak için <b>*#06#</b> çevir – EID görünüyorsa eSIM destekleniyor."
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -313,7 +315,9 @@
     "couponToggle": "Have a discount code?",
     "couponPlaceholder": "Enter code",
     "moreFaq": "Show more questions ({n})",
-    "lessFaq": "Show less"
+    "lessFaq": "Show less",
+    "deviceNo": "<b>{d}</b> does not support eSIM",
+    "deviceRegion": "Note: models from mainland China, Hong Kong/Macau and Taiwan and carrier-locked phones often can’t use eSIM. To be sure, dial <b>*#06#</b> – if an EID appears, eSIM works."
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -471,7 +475,9 @@
     "couponToggle": "Rabattcode?",
     "couponPlaceholder": "Code eingeben",
     "moreFaq": "Weitere Fragen anzeigen ({n})",
-    "lessFaq": "Weniger anzeigen"
+    "lessFaq": "Weniger anzeigen",
+    "deviceNo": "<b>{d}</b> ist nicht eSIM-fähig",
+    "deviceRegion": "Hinweis: Modelle aus China, Hongkong/Macau und Taiwan sowie netzgesperrte Handys können eSIM oft nicht nutzen. Sicher gehst du mit <b>*#06#</b> – erscheint eine EID, klappt eSIM."
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -629,7 +635,9 @@
     "couponToggle": "لديك رمز خصم؟",
     "couponPlaceholder": "أدخل الرمز",
     "moreFaq": "عرض المزيد من الأسئلة ({n})",
-    "lessFaq": "عرض أقل"
+    "lessFaq": "عرض أقل",
+    "deviceNo": "<b>{d}</b> لا يدعم eSIM",
+    "deviceRegion": "ملاحظة: الأجهزة القادمة من الصين وهونغ كونغ/ماكاو وتايوان والهواتف المقفلة على مشغّل غالبًا لا تدعم eSIM. للتأكد اطلب <b>*#06#</b> – إذا ظهر رقم EID فهاتفك يدعم eSIM."
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -787,7 +795,9 @@
     "couponToggle": "Есть промокод?",
     "couponPlaceholder": "Введите код",
     "moreFaq": "Показать ещё вопросы ({n})",
-    "lessFaq": "Свернуть"
+    "lessFaq": "Свернуть",
+    "deviceNo": "<b>{d}</b> не поддерживает eSIM",
+    "deviceRegion": "Важно: модели из материкового Китая, Гонконга/Макао и Тайваня, а также телефоны с блокировкой оператора часто не поддерживают eSIM. Чтобы проверить, наберите <b>*#06#</b> – если появился EID, eSIM работает."
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -945,7 +955,9 @@
     "couponToggle": "Un code promo ?",
     "couponPlaceholder": "Saisir le code",
     "moreFaq": "Afficher plus de questions ({n})",
-    "lessFaq": "Afficher moins"
+    "lessFaq": "Afficher moins",
+    "deviceNo": "<b>{d}</b> n’est pas compatible eSIM",
+    "deviceRegion": "À noter : les modèles de Chine continentale, Hong Kong/Macao et Taïwan ainsi que les téléphones bloqués opérateur ne peuvent souvent pas utiliser l’eSIM. Pour être sûr, composez <b>*#06#</b> – si un EID s’affiche, l’eSIM fonctionne."
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -1103,6 +1115,8 @@
     "couponToggle": "¿Tienes un código de descuento?",
     "couponPlaceholder": "Introduce el código",
     "moreFaq": "Ver más preguntas ({n})",
-    "lessFaq": "Ver menos"
+    "lessFaq": "Ver menos",
+    "deviceNo": "<b>{d}</b> no es compatible con eSIM",
+    "deviceRegion": "Nota: los modelos de China continental, Hong Kong/Macao y Taiwán y los móviles bloqueados por operador a menudo no admiten eSIM. Para asegurarte, marca <b>*#06#</b>: si aparece un EID, la eSIM funciona."
   }
 }

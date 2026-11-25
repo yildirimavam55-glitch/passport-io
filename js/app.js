@@ -1458,10 +1458,20 @@
   $("#device-input").addEventListener("input", (e) => {
     const q = norm(e.target.value), out = $("#device-result");
     if (q.length < 2) { out.innerHTML = ""; return; }
-    const terms = q.split(" ");
-    const hits = (AI.devices || []).filter((d) => terms.every((t) => norm(d).includes(t))).slice(0, 12);
+    // Wortanfänge vergleichen ("s24" findet "Galaxy S24", "8" aber nicht "iPhone 18"); "iphone15pro" ohne Leerzeichen geht auch
+    const terms = q.split(" "), flat = q.replace(/ /g, "");
+    const score = (d) => {
+      const n = norm(d), words = n.split(" "), f = n.replace(/ /g, "");
+      if (n === q || f === flat) return 3;
+      if (terms.every((t) => words.some((w) => w.startsWith(t)))) return 2;
+      return flat.length >= 4 && /\d/.test(flat) && /[a-z]/.test(flat) && f.includes(flat) ? 1 : 0;
+    };
+    const hits = [...(AI.devices || []).map((d) => ({ d, ok: true })), ...(AI.devicesNo || []).map((d) => ({ d, ok: false }))]
+      .map((h) => ({ ...h, s: score(h.d) })).filter((h) => h.s).sort((a, b) => b.s - a.s || a.d.length - b.d.length).slice(0, 12);
     out.innerHTML = hits.length
-      ? `<ul class="device-result__list">${hits.map((d) => `<li>${icon("check")}<span>${t("deviceOk", { d: esc(d) })}</span></li>`).join("")}</ul>`
+      ? `<ul class="device-result__list">${hits.map((h) => h.ok
+          ? `<li>${icon("check")}<span>${t("deviceOk", { d: esc(h.d) })}</span></li>`
+          : `<li class="is-no">${icon("x")}<span>${t("deviceNo", { d: esc(h.d) })}</span></li>`).join("")}</ul>${hits.some((h) => h.ok) ? `<p class="device-result__note">${t("deviceRegion")}</p>` : ""}`
       : `<div class="device-result__none">${t("deviceNone", { q: esc(e.target.value) })}</div>`;
   });
   }

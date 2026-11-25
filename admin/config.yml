@@ -436,6 +436,7 @@ collections:
               - { label: "Sonraki adımlar", name: next, widget: list, required: false, hint: "Kimlik (id) anderer Fragen, die als Knöpfe unter der Antwort erscheinen – z. B. data-roaming, network-select." }
               - { label: "Kaç kez soruldu", name: views, widget: number, hint: "Höhere Zahl = weiter oben in der FAQ. Die 3 höchsten bekommen „Häufig gefragt“." }
           - { label: "eSIM uyumlu cihazlar", name: devices, widget: list, collapsed: true, field: { label: "Cihaz", name: device, widget: string } }
+          - { label: "eSIM desteklemeyen cihazlar", name: devicesNo, widget: list, collapsed: true, required: false, field: { label: "Cihaz", name: device, widget: string } }
 
       - name: install
         label: "Kurulum rehberi (alt sayfa)"

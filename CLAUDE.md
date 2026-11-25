@@ -31,6 +31,8 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 - **Test:** `node tools/lina-test/eval.mjs [-v] [--set=colloq_c] [--ai]` · GitHub-Workflow „Lina testen“ (mit KI, wenn Secret gesetzt). Stand ohne KI: Katalog 97 %, neue Kundensprache (colloq_c) 68 % direkt / 79 % inkl. Vorschlag. Suche dort ist eine Kopie aus app.js – bei Änderungen beide anpassen. KI-Aufgabe: `supabase/functions/_shared/lina-prompt.js`.
 - Stichwörter: Kundensprache (2–4 Wörter), keine allgemeinen Einzelwörter („çalışmıyor“, „lounge“, „qr“).
 
+- Handy-Check (Modal): `devices` (eSIM-fähig, 217 Modelle bis iPhone 18 Pro/Galaxy S26/Pixel 11, Stand 11/2026) + `devicesNo` (bekannte Modelle ohne eSIM) in `content/assistant.json` (nur tr). Suche über Wortanfänge. Neue Modelle im Editor ergänzen.
+
 ## Preis- und Sortimentslogik
 - Wettbewerbspreise in Tabelle `competitor_prices` (Airalo, Saily, Nomad; gb=0 = Unlimited). Laden seitenweise (Supabase max 1000 Zeilen).
 - Regel: Wettbewerber vorhanden → nächster ,99-Preis darunter; sonst Einkauf × 2 auf ,99; min 2,99 €; Verlustschutz Einkauf + min_margin_pct (Panel → Fiyatlar).

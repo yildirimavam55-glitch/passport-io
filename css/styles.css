@@ -484,7 +484,9 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .modal__panel--plans .modal__close { background: rgba(255,255,255,.92); border-color: transparent; z-index: 2; }
 .device-result__list { list-style: none; padding: 0; margin: 12px 0 0; max-height: 220px; overflow: auto; border-top: 1px solid var(--line); }
 .device-result__list li { display: flex; align-items: center; gap: 10px; padding: 11px 2px; border-bottom: 1px solid var(--line); font-size: 15px; }
-.device-result__list svg { color: var(--green-ink); width: 20px; height: 20px; }
+.device-result__list svg { color: var(--green-ink); width: 20px; height: 20px; flex: none; }
+.device-result__list li.is-no svg { color: #c0392b; }
+.device-result__note { margin-top: 10px; font-size: 13px; color: var(--ink-2); }
 .device-result__none { margin-top: 12px; padding: 14px 16px; border-radius: 12px; background: #fff6dc; color: #5e4800; font-size: 14px; }
 .plan-list { display: grid; gap: 8px; max-height: min(46vh, 420px); overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; padding: 2px; }
 .plan[hidden], .plan-row[hidden] { display: none; }
