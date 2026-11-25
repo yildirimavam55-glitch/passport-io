@@ -1,10 +1,11 @@
 /* ==========================================================================
    passport.io – Kundenkonto
    --------------------------------------------------------------------------
-   Alle Anfragen brauchen die Anmeldung (Authorization: Bearer <Sitzungs-Token>).
+   Alle Anfragen außer coupon_check brauchen die Anmeldung (Authorization: Bearer <Sitzungs-Token>).
      GET                       → Profil, gebuchte eSIMs (mit aktuellem Verbrauch), Bestellungen
      POST {action:"profile"}   → Name, Sprache, Währung, Newsletter ändern
      POST {action:"order"}     → Bestellung anlegen; Preis kommt NUR aus der Preis-Schnittstelle
+     POST {action:"coupon_check", code, item, planId, currency} → Rabattcode für den Warenkorb prüfen (ohne Anmeldung, zählt nicht)
      POST {action:"delete"}    → Konto und alle Daten löschen (DSGVO / KVKK)
    Zahlung: Solange kein Zahlungsanbieter angebunden ist (PAYMENT_PROVIDER leer),
    bleiben Bestellungen „pending“. Nur mit ALLOW_TEST_ORDERS=true wird eine Test-eSIM erzeugt.
@@ -31,8 +32,8 @@ async function findPlan(item: string, planId: string, currency: string) {
   return plan ? { plan, currency: p.currency as string } : null;
 }
 
-/** Rabattcode anwenden – Betrag in der Bestellwährung; fester Rabatt und Mindestwert sind in EUR hinterlegt */
-async function applyCoupon(raw: string, price: number, currency: string): Promise<{ code: string | null; discount: number; state?: string }> {
+/** Rabattcode prüfen (ohne ihn zu verbrauchen) – Betrag in der Bestellwährung; fester Rabatt und Mindestwert sind in EUR hinterlegt */
+async function checkCoupon(raw: string, price: number, currency: string): Promise<{ code: string | null; discount: number; state?: string }> {
   const code = raw.toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32);
   if (!code) return { code: null, discount: 0 };
   const { data: c } = await db.from("discount_codes").select("*").eq("code", code).maybeSingle();
@@ -41,12 +42,23 @@ async function applyCoupon(raw: string, price: number, currency: string): Promis
   // EUR → Bestellwährung (EZB-Kurs aus dem Zwischenspeicher)
   let rate = 1;
   if (currency !== "EUR") { const { data: fx } = await db.from("price_cache").select("body").eq("id", "fx:EUR").maybeSingle(); rate = Number(fx?.body?.rates?.[currency]) || 0; if (!rate) return { code: null, discount: 0, state: "invalid" }; }
-  if (price < Number(c.min_amount || 0) * rate) return { code: null, discount: 0, state: "invalid" };
+  if (price < Number(c.min_amount || 0) * rate) return { code: null, discount: 0, state: "min_amount" };
   const discount = c.kind === "percent" ? price * (Number(c.value) / 100) : Number(c.value) * rate;
-  const { data: ok } = await db.rpc("use_discount", { p_code: code });
-  if (!ok) return { code: null, discount: 0, state: "invalid" };
   return { code, discount: Math.min(price, Math.round(discount * 100) / 100) };
 }
+
+/** Rabattcode anwenden = prüfen und einmal als benutzt zählen */
+async function applyCoupon(raw: string, price: number, currency: string): Promise<{ code: string | null; discount: number; state?: string }> {
+  const r = await checkCoupon(raw, price, currency);
+  if (!r.code) return r.state === "min_amount" ? { ...r, state: "invalid" } : r;
+  const { data: ok } = await db.rpc("use_discount", { p_code: r.code });
+  if (!ok) return { code: null, discount: 0, state: "invalid" };
+  return r;
+}
+
+// Einfache Bremse gegen Durchprobieren von Codes (pro Instanz): 20 Prüfungen je IP in 10 Minuten
+const checks = new Map<string, number[]>();
+const tooMany = (ip: string) => { const now = Date.now(); const a = (checks.get(ip) || []).filter((x) => now - x < 6e5); a.push(now); checks.set(ip, a); return a.length > 20; };
 
 /** Status und Restlaufzeit berechnen */
 function view(e: Record<string, unknown>) {
@@ -62,6 +74,20 @@ function view(e: Record<string, unknown>) {
 Deno.serve(async (req) => {
   const headers = cors(req);
   if (req.method === "OPTIONS") return new Response(null, { headers });
+
+  // Warenkorb: Rabattcode vor der Anmeldung prüfen (zählt nicht als Nutzung, Preis kommt aus der Preis-Schnittstelle)
+  if (req.method === "POST") {
+    const pre = await req.clone().json().catch(() => ({}));
+    if (pre?.action === "coupon_check") {
+      const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "?";
+      if (tooMany(ip)) return json({ error: "rate_limited" }, 429, headers);
+      const currency = CURS.includes(String(pre.currency)) ? String(pre.currency) : "EUR";
+      const found = await findPlan(String(pre.item ?? ""), String(pre.planId ?? ""), currency).catch(() => null);
+      if (!found) return json({ state: "invalid" }, 200, headers);
+      const r = await checkCoupon(String(pre.code ?? ""), Number(found.plan.price), found.currency);
+      return json(r.code ? { state: "ok", code: r.code, discount: r.discount, currency: found.currency } : { state: r.state || "invalid" }, 200, headers);
+    }
+  }
 
   // Angemeldete Person aus dem Token bestimmen
   const token = (req.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, "");

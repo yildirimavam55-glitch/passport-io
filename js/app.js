@@ -105,10 +105,10 @@
   /* Preis im Format der Sprache, in der Währung, die die Schnittstelle geliefert hat (kurzes Zeichen: $, €, ₺, £) */
   // Kurzes, international bekanntes Zeichen (manche Sprachen schreiben sonst „US$“ oder „UK£“)
   const SYM = (c) => { try { return new Intl.NumberFormat("en", { style: "currency", currency: c, currencyDisplay: "narrowSymbol" }).formatToParts(0).find((p) => p.type === "currency")?.value || c; } catch (_) { return c; } };
-  const eur = (n) => {
+  const eur = (n, fixed) => {
     const cur = PRICES?.currency || CUR || "EUR";
     try {
-      return new Intl.NumberFormat(LOCALE, { style: "currency", currency: cur, currencyDisplay: "narrowSymbol", minimumFractionDigits: Number.isInteger(Number(n)) ? 0 : 2 })
+      return new Intl.NumberFormat(LOCALE, { style: "currency", currency: cur, currencyDisplay: "narrowSymbol", minimumFractionDigits: fixed || !Number.isInteger(Number(n)) ? 2 : 0, maximumFractionDigits: 2 })
         .formatToParts(Number(n)).map((p) => (p.type === "currency" ? SYM(cur) : p.value)).join("");
     } catch (_) { return `${Number(n).toFixed(2)} ${cur}`; }
   };
@@ -469,7 +469,7 @@
         const r = e.target.closest("[data-region]");
         if (r) openPlans(ESIM.regional.find((x) => x.id === r.dataset.region));
         const g = e.target.closest("[data-global]");
-        if (g) { const p = plansOf("global")[+g.dataset.global]; if (p?.id) location.href = `account.html?buy=global&plan=${encodeURIComponent(p.id)}`; }
+        if (g) { const p = plansOf("global")[+g.dataset.global]; if (p?.id) cartAdd({ item: "global", plan: p.id }); }
       });
     },
   };
@@ -1130,6 +1130,109 @@
         <button class="nav__burger" type="button" aria-label="${esc(t("menuOpen"))}" aria-expanded="false">${icon("menu")}</button>
       </div>
     </div>`;
+  /* ---------- Warenkorb ----------
+     Inhalt im Browser (localStorage), Preise immer frisch aus der Preis-Schnittstelle.
+     Der Rabattcode wird im Warenkorb geprüft (zählt nicht) und erst bei der Bestellung verbraucht – für einen Artikel (den teuersten). */
+  const CART_KEY = "pp_cart", COUPON_KEY = "pp_cart_coupon";
+  const store = { get: (k, d) => { try { return JSON.parse(localStorage.getItem(k) || "null") ?? d; } catch (_) { return d; } }, set: (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, JSON.stringify(v)); } catch (_) {} } };
+  let cart = (store.get(CART_KEY, []) || []).filter((x) => x && x.item && x.plan).slice(0, 10);
+  let coupon = store.get(COUPON_KEY, null); // { code, state, discount, for }
+  const cartName = (e) => {
+    const [type, id] = e.item.split(":");
+    if (type === "country") return ESIM.countries.find((c) => c.code === id)?.name || id.toUpperCase();
+    if (type === "region") return ESIM.regional.find((r) => r.id === id)?.name || id;
+    return ESIM.regional.find((r) => r.kind === "global")?.name || t("cartGlobal");
+  };
+  const cartPlan = (e) => plansOf(e.item).find((p) => p.id === e.plan) || null;
+  const cartBadge = () => { const b = $(".cart-btn__n"); if (b) { b.textContent = cart.length; b.hidden = !cart.length; } };
+  const cartSave = () => { store.set(CART_KEY, cart); cartBadge(); };
+  const BAG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>`;
+  $(".nav__login")?.insertAdjacentHTML("beforebegin", `<button class="cart-btn" type="button" data-cart-open aria-label="${esc(t("cartTitle"))}">${BAG}<b class="cart-btn__n" hidden>0</b></button>`);
+  cartBadge();
+  function cartAdd(e) {
+    if (cart.length >= 10) { toast(t("cartFull")); return; }
+    cart.push({ item: e.item, plan: e.plan, at: Date.now() });
+    cartSave(); openCart(); toast(t("cartAdded"));
+  }
+  async function checkCoupon(code) {
+    const priced = cart.map((e) => ({ e, p: cartPlan(e) })).filter((x) => x.p);
+    if (!code || !priced.length) { coupon = null; store.set(COUPON_KEY, null); return; }
+    const best = priced.reduce((a, b) => (b.p.price > a.p.price ? b : a));
+    const url = (SITE.api?.pricesUrl || "").replace(/\/prices$/, "/account");
+    try {
+      const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "coupon_check", code, item: best.e.item, planId: best.e.plan, currency: PRICES?.currency || CUR }) });
+      const d = await r.json().catch(() => ({}));
+      coupon = d.state === "ok" ? { code: d.code, state: "ok", discount: d.discount, for: best.e.plan } : { code, state: r.status === 429 ? "busy" : d.state || "invalid" };
+    } catch (_) { coupon = { code, state: "error" }; }
+    store.set(COUPON_KEY, coupon?.state === "ok" ? coupon : null);
+  }
+  function cartHTML() {
+    const rows = cart.map((e, i) => ({ e, i, p: cartPlan(e) }));
+    const sum = rows.reduce((s, r) => s + (r.p?.price || 0), 0);
+    const disc = coupon?.state === "ok" && rows.some((r) => r.e.plan === coupon.for) ? Math.min(coupon.discount, sum) : 0;
+    const missing = rows.some((r) => !r.p);
+    const flagOf = (e) => (e.item.startsWith("country:") ? `<img class="cart__flag" src="${flag(e.item.slice(8))}" alt="">` : `<span class="cart__flag cart__flag--globe">${icon("globe")}</span>`);
+    const msg = { invalid: "couponBad", min_amount: "couponMin", busy: "couponBusy", error: "couponError" }[coupon?.state];
+    return `
+      <header class="cart__head"><h3>${esc(t("cartTitle"))}${cart.length ? ` <small>(${cart.length})</small>` : ""}</h3><button class="icon-btn" type="button" data-cart-close aria-label="${esc(t("close"))}">${icon("x")}</button></header>
+      ${cart.length ? `
+      <ul class="cart__items">${rows.map(({ e, i, p }) => `
+        <li class="cart__item">
+          ${flagOf(e)}
+          <div class="cart__info"><b>${esc(cartName(e))}</b><span>${p ? `${esc(vol(p))} · ${esc(t("days", { n: p.days }))}` : esc(t("cartGone"))}</span></div>
+          <strong class="cart__price">${p ? eur(p.price) : "–"}</strong>
+          <button class="cart__rm" type="button" data-cart-rm="${i}" aria-label="${esc(t("cartRemove"))}" title="${esc(t("cartRemove"))}">${icon("x")}</button>
+        </li>`).join("")}</ul>
+      <div class="cart__foot">
+        <form class="cart__coupon" data-cart-coupon>
+          <input id="cart-code" name="code" aria-label="${esc(t("couponToggle"))}" maxlength="32" autocomplete="off" placeholder="${esc(t("couponPlaceholder"))}" value="${esc(coupon?.code || "")}">
+          ${coupon?.state === "ok" ? `<button type="button" class="btn btn--line" data-coupon-rm>${esc(t("cartRemove"))}</button>` : `<button type="submit" class="btn btn--line">${esc(t("couponApply"))}</button>`}
+        </form>
+        ${coupon?.state === "ok" ? `<p class="cart__msg cart__msg--ok">${icon("check")} ${esc(t("couponOk", { code: coupon.code }))}</p>` : msg ? `<p class="cart__msg cart__msg--bad">${esc(t(msg))}</p>` : ""}
+        <dl class="cart__sum">
+          <div><dt>${esc(t("cartSubtotal"))}</dt><dd>${eur(sum, 1)}</dd></div>
+          ${disc ? `<div class="is-disc"><dt>${esc(t("cartDiscount"))}</dt><dd>−${eur(disc, 1)}</dd></div>` : ""}
+          <div class="is-total"><dt>${esc(t("cartTotal"))}</dt><dd>${eur(Math.max(0, Math.round((sum - disc) * 100) / 100), 1)}</dd></div>
+        </dl>
+        <button class="btn btn--dark cart__go" type="button" data-cart-checkout ${missing || !PRICES ? "disabled" : ""}>${esc(t("checkout"))}</button>
+        <p class="plan-note">${icon("shield")} ${esc(t("moneyBack"))}</p>
+      </div>` : `
+      <div class="cart__empty">${BAG}<p>${esc(t("cartEmpty"))}</p><a class="btn btn--dark" href="${esc(href("#esim"))}" data-cart-close>${esc(t("cartShop"))}</a></div>`}`;
+  }
+  function openCart() {
+    let el = $("#cart");
+    if (!el) {
+      el = document.createElement("div"); el.id = "cart"; el.className = "cart";
+      el.innerHTML = `<div class="cart__backdrop" data-cart-close></div><aside class="cart__panel" role="dialog" aria-modal="true" aria-label="${esc(t("cartTitle"))}"></aside>`;
+      document.body.appendChild(el);
+      el.addEventListener("click", async (ev) => {
+        if (ev.target.closest("[data-cart-close]")) return closeCart();
+        const rm = ev.target.closest("[data-cart-rm]");
+        if (rm) { cart.splice(+rm.dataset.cartRm, 1); cartSave(); if (coupon?.state === "ok") await checkCoupon(coupon.code); return draw(); }
+        if (ev.target.closest("[data-coupon-rm]")) { coupon = null; store.set(COUPON_KEY, null); return draw(); }
+        if (ev.target.closest("[data-cart-checkout]")) {
+          // Zur Kasse → Kundenkonto (Anmeldung, dann Bestellung; Preise prüft der Server über die Preis-Schnittstelle)
+          location.href = "account.html?cart=1";
+        }
+      });
+      el.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const code = String(new FormData(ev.target).get("code") || "").toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32);
+        const b = $("button[type=submit]", ev.target); if (b) b.disabled = true;
+        await checkCoupon(code); draw();
+      });
+    }
+    const draw = () => { $(".cart__panel", el).innerHTML = cartHTML(); };
+    el._draw = draw; draw();
+    el.hidden = false; document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => el.classList.add("is-open"));
+    if (coupon?.state === "ok") checkCoupon(coupon.code).then(draw);
+  }
+  function closeCart() { const el = $("#cart"); if (!el) return; el.classList.remove("is-open"); document.body.style.overflow = ""; setTimeout(() => (el.hidden = true), 250); }
+  document.addEventListener("click", (e) => { if (e.target.closest("[data-cart-open]")) openCart(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && $("#cart") && !$("#cart").hidden) closeCart(); });
+  if (new URLSearchParams(location.search).has("cart") && PAGE !== "account") setTimeout(openCart, 300);
+
   // Hell/Dunkel: Wahl speichern; ohne Wahl folgt die Seite der Systemeinstellung
   const root = document.documentElement, themeBtn = $("[data-theme-toggle]");
   const setTheme = (mode, save) => {
@@ -1338,8 +1441,7 @@
               <div class="plan-det" id="pd-${i}" hidden></div>
             </div>`).join("")}
         </div>
-        <details class="plan-coupon"><summary>${esc(t("couponToggle"))}</summary><input type="text" name="coupon" maxlength="32" autocomplete="off" placeholder="${esc(t("couponPlaceholder"))}" aria-label="${esc(t("couponToggle"))}"></details>
-        <button class="btn btn--dark plan-buy" type="button" style="width:100%;margin-top:14px">${esc(t("checkout"))} · <span>${eur(plans[pre].price)}</span></button>
+        <button class="btn btn--dark plan-buy" type="button" style="width:100%;margin-top:14px">${BAG} ${esc(t("addToCart"))} · <span>${eur(plans[pre].price)}</span></button>
         <p class="plan-note">${icon("shield")} ${esc(t("moneyBack"))}</p>`
         : `<div class="device-result__none">${esc(SITE.api?.modalUnavailableText || t("modalUnavailable"))}</div>`}
       </div>`;
@@ -1370,14 +1472,12 @@
       $$(".plan", modal).forEach((l) => l.classList.toggle("is-active", l.contains(e.target)));
       $(".plan-buy span", modal).textContent = eur(plans[+e.target.value].price);
     });
-    // Kaufen → Kundenkonto (Anmeldung, dann Bestellung; Preis prüft der Server über die Preis-Schnittstelle)
+    // In den Warenkorb (Rabattcode und Kasse kommen dort)
     $(".plan-buy", modal)?.addEventListener("click", () => {
       const plan = plans[+($("input[name=plan]:checked", modal)?.value ?? pre)];
       if (!plan) return;
-      const key = item.code ? "country:" + item.code : "region:" + item.id;
-      // Rabattcode wird nur weitergereicht – geprüft und berechnet wird er auf dem Server
-      const coupon = ($("input[name=coupon]", modal)?.value || "").toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32);
-      location.href = `account.html?buy=${encodeURIComponent(key)}&plan=${encodeURIComponent(plan.id)}${coupon ? `&coupon=${encodeURIComponent(coupon)}` : ""}`;
+      close();
+      cartAdd({ item: item.code ? "country:" + item.code : "region:" + item.id, plan: plan.id });
     });
     // Fokus auf den vorgewählten Tarif, ohne dass das Fenster nach unten springt – Land und Bild bleiben oben sichtbar
     const sel = $("input:checked", modal);

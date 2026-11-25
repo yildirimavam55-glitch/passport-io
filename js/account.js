@@ -32,6 +32,14 @@ window.PP_ACCOUNT = function (ctx) {
   // Kauf aus dem Paket-Fenster: account.html?buy=country:jp&plan=jp-5gb-30d
   const buy = params.get("buy") && params.get("plan") ? { item: params.get("buy"), plan: params.get("plan"), coupon: (params.get("coupon") || "").toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32) || undefined } : null;
   if (buy) { try { sessionStorage.setItem("pp_buy", JSON.stringify(buy)); } catch (_) {} history.replaceState(null, "", location.pathname + location.hash); }
+  // Kasse aus dem Warenkorb: account.html?cart=1 – Artikel und geprüfter Rabattcode liegen im Browser (app.js)
+  const readLS = (k) => { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (_) { return null; } };
+  if (params.has("cart")) {
+    const items = (readLS("pp_cart") || []).filter((x) => x && x.item && x.plan).slice(0, 10);
+    const c = readLS("pp_cart_coupon");
+    if (items.length) { try { sessionStorage.setItem("pp_buy", JSON.stringify({ cart: items.map((x) => ({ item: x.item, plan: x.plan })), coupon: c?.code, couponFor: c?.for })); } catch (_) {} }
+    history.replaceState(null, "", location.pathname + location.hash);
+  }
   const pendingBuy = () => { try { return JSON.parse(sessionStorage.getItem("pp_buy") || "null"); } catch (_) { return null; } };
 
   /* ---------- Fehlertexte ---------- */
@@ -301,11 +309,29 @@ window.PP_ACCOUNT = function (ctx) {
     if (b) {
       try { sessionStorage.removeItem("pp_buy"); } catch (_) {}
       toast(A("buying"));
+      // Ein Artikel (alter Weg) oder der ganze Warenkorb – je Artikel eine Bestellung, Rabattcode nur für den gewählten Artikel
+      const list = b.cart || [{ item: b.item, plan: b.plan }];
+      let couponLeft = b.coupon, done = 0; const okIdx = [];
       try {
-        const r = await api("POST", { action: "order", item: b.item, planId: b.plan, currency: CUR, coupon: b.coupon });
-        if (r.coupon === "invalid") toast(A("couponInvalid"));
-        if (r.status === 409) toast(A("payMissing"));
-        else if (r.esim) { toast(A("buyDone")); state.account = await api("GET"); }
+        for (const [k, it] of list.entries()) {
+          const useCoupon = couponLeft && (!b.cart || !b.couponFor || it.plan === b.couponFor);
+          const r = await api("POST", { action: "order", item: it.item, planId: it.plan, currency: CUR, coupon: useCoupon ? couponLeft : undefined });
+          if (useCoupon) { couponLeft = undefined; if (r.coupon === "invalid") toast(A("couponInvalid")); }
+          if (r.status === 409) { toast(A("payMissing")); break; }
+          if (r.esim) { done++; okIdx.push(k); }
+        }
+        if (done) {
+          toast(A("buyDone")); state.account = await api("GET");
+          // Bestellte Artikel aus dem Warenkorb nehmen (der Rest bleibt für später)
+          if (b.cart) {
+            try {
+              const left = readLS("pp_cart") || [];
+              for (const k of okIdx) { const at = left.findIndex((x) => x.item === list[k].item && x.plan === list[k].plan); if (at >= 0) left.splice(at, 1); }
+              localStorage.setItem("pp_cart", JSON.stringify(left));
+              if (!couponLeft) localStorage.removeItem("pp_cart_coupon");
+            } catch (_) {}
+          }
+        }
       } catch (e) { toast(errText(e)); }
     }
     state.view = "profile";
