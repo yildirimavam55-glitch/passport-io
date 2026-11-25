@@ -928,7 +928,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
   .how__steps li { grid-template-columns: 36px 1fr; padding: 14px; border: 1px solid var(--line); border-radius: 14px; }
   .how__steps h3 { font-size: 16px; }
   .how__steps p { font-size: 14px; }
-  .how__actions { gap: 16px; }
+  .how__actions { gap: 16px; justify-content: center; }
   .how__actions .btn { width: 100%; }
 
   /* Lounge & Fast Track: Karten zum Wischen */
