@@ -1683,26 +1683,28 @@
       .filter(([id]) => id === "all" || faqs.some((f) => f.category === id));
     const sorted = [...faqs].sort((a, b) => (b.views || 0) - (a.views || 0));
     const hot = new Set(sorted.slice(0, 3).map((f) => f.id));
-    let cat = "all", expanded = false;
+    const FIRST = 4, STEP = 8;
+    let cat = "all", shown = FIRST;
     const filters = $("#faq-filters", el), list = $("#faq-list", el);
     filters.innerHTML = CATS.map(([id, label], i) => `<button type="button" role="tab" data-cat="${id}" class="${i ? "" : "is-active"}" aria-selected="${!i}">${esc(label)}</button>`).join("");
     filters.addEventListener("click", (e) => {
       const b = e.target.closest("[data-cat]"); if (!b) return;
-      cat = b.dataset.cat; expanded = false;
+      cat = b.dataset.cat; shown = FIRST;
       $$("button", filters).forEach((x) => { x.classList.toggle("is-active", x === b); x.setAttribute("aria-selected", x === b); });
       renderFaq();
     });
     function renderFaq() {
       const items = sorted.filter((f) => cat === "all" || f.category === cat);
-      const limit = cat === "all" && !expanded ? 8 : items.length;
+      const limit = Math.min(shown, items.length), rest = items.length - limit;
       list.innerHTML = items.slice(0, limit).map((f) => `
         <div class="faq__item">
           <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-${esc(f.id)}"><span>${esc(f.question)}${hot.has(f.id) ? `<span class="faq__hot">${esc(t("hot"))}</span>` : ""}</span>${icon("plus")}</button>
           <div class="faq__a" id="faq-${esc(f.id)}"><div><div>${md(f.answer)}</div></div></div>
-        </div>`).join("") + (items.length > limit ? `<div class="faq__more"><button class="btn btn--line" type="button" data-more>${esc(t("showAll", { n: items.length }))}</button></div>` : "");
+        </div>`).join("") + (rest > 0 || limit > FIRST ? `<div class="faq__more">${rest > 0 ? `<button class="btn btn--line" type="button" data-more>${esc(t("moreFaq", { n: rest }))}</button>` : ""}${limit > FIRST ? `<button class="faq__less" type="button" data-less>${esc(t("lessFaq"))}</button>` : ""}</div>` : "");
     }
     list.addEventListener("click", (e) => {
-      if (e.target.closest("[data-more]")) { expanded = true; renderFaq(); return; }
+      if (e.target.closest("[data-more]")) { const n = shown; shown += STEP; renderFaq(); $$(".faq__q", list)[n]?.focus({ preventScroll: true }); return; }
+      if (e.target.closest("[data-less]")) { shown = FIRST; renderFaq(); $("#faq", el).scrollIntoView({ behavior: "smooth", block: "start" }); return; }
       const q = e.target.closest(".faq__q"); if (!q) return;
       const open = q.getAttribute("aria-expanded") !== "true";
       q.setAttribute("aria-expanded", open); q.nextElementSibling.classList.toggle("is-open", open);

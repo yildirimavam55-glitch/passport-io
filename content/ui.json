@@ -153,7 +153,9 @@
     "newsletterConsent": "Abone olarak kampanya ve seyahat ipucu e-postalarını almayı kabul edersin. İstediğin zaman çıkabilirsin.",
     "newsletterError": "Kaydedilemedi, lütfen tekrar dene.",
     "couponToggle": "İndirim kodun var mı?",
-    "couponPlaceholder": "Kodu gir"
+    "couponPlaceholder": "Kodu gir",
+    "moreFaq": "Daha fazla soru göster ({n})",
+    "lessFaq": "Daha az göster"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -309,7 +311,9 @@
     "newsletterConsent": "By subscribing you agree to receive offers and travel tips by email. You can unsubscribe at any time.",
     "newsletterError": "Could not subscribe, please try again.",
     "couponToggle": "Have a discount code?",
-    "couponPlaceholder": "Enter code"
+    "couponPlaceholder": "Enter code",
+    "moreFaq": "Show more questions ({n})",
+    "lessFaq": "Show less"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -465,7 +469,9 @@
     "newsletterConsent": "Mit der Anmeldung stimmst du E-Mails mit Angeboten und Reisetipps zu. Abmeldung jederzeit möglich.",
     "newsletterError": "Anmeldung fehlgeschlagen, bitte erneut versuchen.",
     "couponToggle": "Rabattcode?",
-    "couponPlaceholder": "Code eingeben"
+    "couponPlaceholder": "Code eingeben",
+    "moreFaq": "Weitere Fragen anzeigen ({n})",
+    "lessFaq": "Weniger anzeigen"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -621,7 +627,9 @@
     "newsletterConsent": "بالاشتراك توافق على تلقي العروض ونصائح السفر عبر البريد الإلكتروني. يمكنك إلغاء الاشتراك في أي وقت.",
     "newsletterError": "تعذّر الاشتراك، حاول مرة أخرى.",
     "couponToggle": "لديك رمز خصم؟",
-    "couponPlaceholder": "أدخل الرمز"
+    "couponPlaceholder": "أدخل الرمز",
+    "moreFaq": "عرض المزيد من الأسئلة ({n})",
+    "lessFaq": "عرض أقل"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -777,7 +785,9 @@
     "newsletterConsent": "Подписываясь, вы соглашаетесь получать предложения и советы для путешествий по email. Отписаться можно в любой момент.",
     "newsletterError": "Не удалось подписаться, попробуйте ещё раз.",
     "couponToggle": "Есть промокод?",
-    "couponPlaceholder": "Введите код"
+    "couponPlaceholder": "Введите код",
+    "moreFaq": "Показать ещё вопросы ({n})",
+    "lessFaq": "Свернуть"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -933,7 +943,9 @@
     "newsletterConsent": "En vous inscrivant, vous acceptez de recevoir des offres et conseils de voyage par e-mail. Désinscription possible à tout moment.",
     "newsletterError": "Inscription impossible, veuillez réessayer.",
     "couponToggle": "Un code promo ?",
-    "couponPlaceholder": "Saisir le code"
+    "couponPlaceholder": "Saisir le code",
+    "moreFaq": "Afficher plus de questions ({n})",
+    "lessFaq": "Afficher moins"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -1089,6 +1101,8 @@
     "newsletterConsent": "Al suscribirte aceptas recibir ofertas y consejos de viaje por email. Puedes darte de baja cuando quieras.",
     "newsletterError": "No se pudo suscribir, inténtalo de nuevo.",
     "couponToggle": "¿Tienes un código de descuento?",
-    "couponPlaceholder": "Introduce el código"
+    "couponPlaceholder": "Introduce el código",
+    "moreFaq": "Ver más preguntas ({n})",
+    "lessFaq": "Ver menos"
   }
 }
