@@ -1033,7 +1033,10 @@
           if (e.key === "ArrowRight") { e.preventDefault(); go(cur + (rtl ? -1 : 1)); }
           if (e.key === "ArrowLeft") { e.preventDefault(); go(cur + (rtl ? 1 : -1)); }
         });
-        return { car, reset: () => go(0, false) };
+        // Handy-Bild in fester Größe zeichnen und als Ganzes auf die Breite des Platzes verkleinern (Texte im Bild bleiben im Verhältnis)
+        const fit = () => { const w = slides[0]?.offsetWidth; if (w) slides.forEach((s) => { const m = s.firstElementChild; if (m) m.style.zoom = (w / 270).toFixed(3); }); };
+        fit(); addEventListener("resize", fit, { passive: true });
+        return { car, reset: () => { fit(); go(0, false); } };
       });
       const pick = (id) => {
         tabs.forEach((t) => { const on = t.dataset.platform === id; t.classList.toggle("is-active", on); t.setAttribute("aria-selected", on); });

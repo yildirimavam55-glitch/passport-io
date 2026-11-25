@@ -1338,9 +1338,9 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .gcar[hidden] { display: none; }
 .gcar__track { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 12px calc(50% - var(--slide) / 2) 18px; margin: 0 calc(var(--gutter) * -1); outline: 0; }
 .gcar__track::-webkit-scrollbar { display: none; }
-.gcar__slide { flex: 0 0 var(--slide); margin: 0; scroll-snap-align: center; cursor: pointer; opacity: .35; transform: scale(.9); transition: opacity .45s var(--ease), transform .6s var(--ease); }
+.gcar__slide { flex: 0 0 var(--slide); min-width: 0; margin: 0; scroll-snap-align: center; cursor: pointer; opacity: .35; transform: scale(.9); transition: opacity .45s var(--ease), transform .6s var(--ease); }
 .gcar__slide.is-active { opacity: 1; transform: none; cursor: default; }
-.gcar__slide .pmock { max-width: none; }
+.gcar__slide .pmock { width: 270px; max-width: none; }
 .gcar__nav { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 10px auto 0; max-width: 520px; }
 .gcar__btn { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; flex: none; background: var(--dark); color: #fff; transition: transform .2s, opacity .2s, background .2s; }
 .gcar__btn svg { width: 22px; height: 22px; }
@@ -1356,12 +1356,25 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .gcar__text .gstep__text { font-size: 16px; }
 .gcar__text .gstep__tip { text-align: start; max-width: 520px; margin: 16px auto 0; }
 [data-theme="dark"] .gcar__btn { background: var(--ink); color: #0a0d0c; }
+/* Bild, Pfeile und Beschreibung passen zusammen auf einen Bildschirm (Höhe des Handy-Bilds richtet sich nach der Fensterhöhe) */
+.gcar { scroll-margin-top: 84px; }
+@media (min-width: 900px) {
+  .gcar { --slide: clamp(190px, calc((100vh - 230px) / 1.86), 250px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "track texts" "nav texts"; column-gap: 56px; align-items: center; }
+  .gcar__track { grid-area: track; margin: 0; padding: 8px calc(50% - var(--slide) / 2) 12px; }
+  .gcar__nav { grid-area: nav; margin: 4px auto 0; width: 100%; max-width: 420px; }
+  .gcar__texts { grid-area: texts; margin: 0; max-width: 480px; text-align: start; align-self: center; }
+  .gcar__text .gstep__tip { margin: 16px 0 0; }
+  [dir="rtl"] .gcar__texts { text-align: right; }
+}
 @media (max-width: 640px) {
-  .gcar { --slide: 220px; }
-  .gcar__track { gap: 14px; }
-  .gcar__btn { width: 46px; height: 46px; }
-  .gcar__texts { margin-top: 20px; }
+  .gcar { --slide: clamp(140px, calc((100svh - 400px) / 1.86), 220px); scroll-margin-top: 70px; }
+  .gcar__track { gap: 12px; padding-top: 4px; padding-bottom: 8px; }
+  .gcar__nav { margin-top: 4px; gap: 12px; }
+  .gcar__btn { width: 42px; height: 42px; }
+  .gcar__texts { margin-top: 12px; }
+  .gcar__text h3 { font-size: 20px; margin: 0 0 6px; }
   .gcar__text .gstep__text { font-size: 15px; }
+  .gcar__text .gstep__tip { margin-top: 10px; padding: 10px 12px; font-size: 13px; }
 }
 
 /* ---------- Laufende Fragenleiste unter Lina ---------- */
