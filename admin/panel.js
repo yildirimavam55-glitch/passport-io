@@ -339,7 +339,7 @@
     shell("eSIM'ler", `
       <div class="pl-card">${table(["Tarih", "Müşteri", "Ülke", "Tarife", "ICCID", "#Kullanım", "Bitiş", "Durum"], d.esims.map((e) => `<tr><td>${esc(date(e.created_at))}</td><td>${esc(e.email)}</td><td>${esc((e.country || "").toUpperCase())}</td><td>${esc(e.plan_name || "")}${e.test ? ' <span class="pl-badge warn">Test</span>' : ""}</td><td><span class="mono">${esc(e.iccid || "–")}</span></td>
         <td class="num">${esc(gb(e.data_used_mb))} / ${esc(e.unlimited ? "Sınırsız" : gb(e.data_total_mb))}</td><td>${esc(e.expires_at ? date(e.expires_at) : "aktivasyonla başlar")}</td>
-        <td><select data-esim="${esc(e.id)}">${Object.entries(ESIM_ST).map(([k, l]) => `<option value="${k}" ${k === e.status ? "selected" : ""}>${l}</option>`).join("")}</select></td></tr>`), "Henüz eSIM yok.")}</div>`);
+        <td><select data-esim="${esc(e.id)}">${Object.entries(ESIM_ST).map(([k, l]) => `<option value="${k}" ${k === e.status ? "selected" : ""}>${l}</option>`).join("")}</select>${e.test ? `<button class="pl-btn pl-btn--sm" data-simulate="${esc(e.id)}" title="Yalnızca test eSIM: aktif, kullanım ve kalan süre ile göster">Aktif göster</button>` : ""}</td></tr>`), "Henüz eSIM yok.")}</div>`);
   }
 
   async function pricing() {
@@ -659,6 +659,8 @@
       return orders();
     }
     const q = e.target.closest("[data-question]");
+    const sim = e.target.closest("[data-simulate]");
+    if (sim) { sim.disabled = true; await api("POST", "", { action: "esim_simulate", id: sim.dataset.simulate }).then(() => toast("Test eSIM artık aktif görünüyor (müşteri hesabında kontrol et)."), (err) => toast("Olmadı: " + err.message)); return show(); }
     if (q) { q.disabled = true; await api("POST", "", { action: "question_handled", id: q.dataset.question }); toast("İşlendi."); return questions(); }
     // Zweistufige Bestätigung für endgültige Aktionen (kein Browser-Dialog)
     const sure = (b, label) => { if (b.dataset.confirm) return true; b.dataset.confirm = "1"; const old = b.textContent; b.textContent = label || "Emin misin?"; setTimeout(() => { if (b.isConnected) { delete b.dataset.confirm; b.textContent = old; } }, 4000); return false; };

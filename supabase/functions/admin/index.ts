@@ -229,6 +229,26 @@ Deno.serve(async (req) => {
       await audit("esim_status", txt(b.id, 60), { status: b.status });
       return json({ ok: true }, 200, headers);
     }
+    if (b.action === "esim_simulate") {
+      // Nur Test-eSIMs: als „aktiv“ mit Verbrauch und Laufzeit darstellen, damit man den Kundenbereich vorführen kann.
+      // Echte eSIMs werden nie verändert (deren Werte kommen vom Anbieter).
+      const id = txt(b.id, 60);
+      const { data: e } = await db.from("esims").select("id, test, data_total_mb, validity_days, unlimited").eq("id", id).maybeSingle();
+      if (!e) return json({ error: "not_found" }, 404, headers);
+      if (!e.test) return json({ error: "only_test" }, 409, headers);
+      const days = Number(e.validity_days) || 30, now = Date.now();
+      const usedShare = Math.min(0.9, Math.max(0, Number(b.used ?? 0.35)));
+      const total = e.unlimited ? null : Number(e.data_total_mb) || 5120;
+      const patch = {
+        status: "active", activated_at: new Date(now - Math.round(days * 0.3) * 864e5).toISOString(),
+        expires_at: new Date(now + Math.round(days * 0.7) * 864e5).toISOString(),
+        data_total_mb: total, data_used_mb: total ? Math.round(total * usedShare) : 2350, usage_checked_at: new Date().toISOString(),
+      };
+      const { error } = await db.from("esims").update(patch).eq("id", id);
+      if (error) throw error;
+      await audit("esim_simulate", id, patch);
+      return json({ ok: true }, 200, headers);
+    }
     if (b.action === "refund_decide") {
       // Genehmigen: Bestellung „erstattet“, eSIMs gesperrt. Die Geldrückzahlung selbst läuft beim Zahlungsanbieter.
       const decision = b.decision === "approve" ? "approved" : b.decision === "reject" ? "rejected" : null;
