@@ -215,20 +215,56 @@
     ];
     const done = check.filter((c) => c[1]).length;
     const hello = new Date().getHours() < 12 ? "Günaydın" : new Date().getHours() < 18 ? "İyi günler" : "İyi akşamlar";
-    const card = (label, v, prev, prevLabel, sp, hero) => `
-      <div class="pl-card pl-kpi ${hero ? "pl-kpi--hero" : ""}"><span>${esc(label)}</span><b>${esc(eurF(v.revenue || 0))}</b>
+    // Kennzahl-Karte (Hochformat): Betrag, Vergleich, Details und eigene Kurve über den Zeitraum
+    const fmtDay = (iso) => new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "short" }).format(new Date(iso + "T12:00:00Z"));
+    const miniChart = (win) => {
+      if (!win.length) return "";
+      const vals = win.map((x) => x.revenue || 0), max = Math.max(1, ...vals), w = 300, h = 96, step = w / Math.max(1, vals.length - 1);
+      const y = (v) => (h - 6 - (v / max) * (h - 16)).toFixed(1);
+      const pts = vals.map((v, i) => `${(i * step).toFixed(1)},${y(v)}`);
+      const gid = "g" + Math.random().toString(36).slice(2, 8);
+      return `<div class="pl-kpi__chart"><svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
+          <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2ef58a" stop-opacity=".35"/><stop offset="1" stop-color="#2ef58a" stop-opacity="0"/></linearGradient></defs>
+          <polygon points="0,${h} ${pts.join(" ")} ${w},${h}" fill="url(#${gid})"/>
+          <polyline points="${pts.join(" ")}" fill="none" stroke="#2ef58a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+        <div class="pl-kpi__axis"><span>${esc(fmtDay(win[0].day))}</span><span>en yüksek ${esc(eurF(Math.max(...vals)))}</span><span>${esc(fmtDay(win[win.length - 1].day))}</span></div></div>`;
+    };
+    const row = (l, val, cmp) => `<div class="pl-kpi__row"><span>${esc(l)}</span><b>${val}</b>${cmp != null ? `<small>${cmp}</small>` : ""}</div>`;
+    const card = (label, v, prev, prevLabel, winDays, hero) => {
+      const win = series.slice(-winDays), best = win.reduce((a, x) => ((x.revenue || 0) > (a?.revenue || 0) ? x : a), null);
+      const aov = v.orders ? v.revenue / v.orders : 0, paov = prev?.orders ? prev.revenue / prev.orders : 0;
+      return `
+      <div class="pl-card pl-kpi ${hero ? "pl-kpi--hero" : ""}">
+        <span class="pl-kpi__label">${esc(label)}</span><b class="pl-kpi__value">${esc(eurF(v.revenue || 0))}</b>
         <div class="pl-kpi__meta">${delta(v.revenue || 0, prev?.revenue || 0)}<span>${esc(prevLabel)}</span></div>
-        <div class="pl-kpi__meta"><span>${v.orders || 0} sipariş</span></div>${spark(sp)}</div>`;
+        <div class="pl-kpi__rows">
+          ${row("Sipariş", String(v.orders || 0), prev ? `önceki ${prev.orders || 0}` : null)}
+          ${row("Ø sepet", esc(eurF(aov)), prev ? `önceki ${esc(eurF(paov))}` : null)}
+          ${row("Önceki dönem", esc(eurF(prev?.revenue || 0)))}
+          ${row("En iyi gün", best && best.revenue ? `${esc(fmtDay(best.day))} · ${esc(eurF(best.revenue))}` : "–")}
+        </div>
+        ${miniChart(win)}<small class="pl-kpi__foot">Eğri: son ${winDays} gün</small>
+      </div>`;
+    };
     const top = d.topItems || [], topMax = Math.max(1, ...top.map((t) => t.revenue));
     shell("Genel bakış", `
-      <div class="pl-grid">
-        ${card("Bugün", k.today || {}, k.yesterday, "dün ile karşılaştırma", last(7), true)}
-        ${card("Son 7 gün", k.week || {}, k.prevWeek, "önceki 7 gün", last(14))}
-        ${card("Bu ay", k.month || {}, k.prevMonth, "geçen ayın aynı dönemi", last(30))}
-        <div class="pl-card pl-kpi"><span>Toplam ciro</span><b>${esc(eurF(k.total?.revenue || 0))}</b>
-          <div class="pl-kpi__meta"><span>${k.total?.orders || 0} sipariş · Ø ${esc(eurF(k.total?.orders ? k.total.revenue / k.total.orders : 0))}</span></div>
-          <div class="pl-kpi__meta"><span>${d.customers} müşteri · +${d.newCustomers30 || 0} (30 gün)</span></div>${spark(last(90))}</div>
+      <div class="pl-kpis" data-kpis>
+        ${card("Bugün", k.today || {}, k.yesterday, "dün ile karşılaştırma", 7, true)}
+        ${card("Son 7 gün", k.week || {}, k.prevWeek, "önceki 7 gün", 14)}
+        ${card("Bu ay", k.month || {}, k.prevMonth, "geçen ayın aynı dönemi", 30)}
+        <div class="pl-card pl-kpi">
+          <span class="pl-kpi__label">Toplam ciro</span><b class="pl-kpi__value">${esc(eurF(k.total?.revenue || 0))}</b>
+          <div class="pl-kpi__meta"><span>başlangıçtan bugüne</span></div>
+          <div class="pl-kpi__rows">
+            ${row("Sipariş", String(k.total?.orders || 0))}
+            ${row("Ø sepet", esc(eurF(k.total?.orders ? k.total.revenue / k.total.orders : 0)))}
+            ${row("Müşteri", String(d.customers || 0), `+${d.newCustomers30 || 0} son 30 gün`)}
+            ${row("Aktif eSIM", `${d.esimsActive || 0} / ${d.esims || 0}`)}
+          </div>
+          ${miniChart(series.slice(-90))}<small class="pl-kpi__foot">Eğri: son 90 gün</small>
+        </div>
       </div>
+      <div class="pl-dots" data-kpi-dots aria-hidden="true">${[0, 1, 2, 3].map((i) => `<i class="${i ? "" : "is-on"}"></i>`).join("")}</div>
       <div class="pl-two">
         <div class="pl-card pl-chartcard"><h2>Ciro gelişimi <span class="pl-seg" data-range>${[7, 30, 90].map((n) => `<button type="button" data-days="${n}" class="${n === 30 ? "is-active" : ""}">${n} gün</button>`).join("")}</span></h2><div data-chartbox>${areaChart(series.slice(-30))}</div></div>
         <div class="pl-card"><h2>Bekleyen işler</h2>
@@ -249,6 +285,13 @@
           <div class="pl-check">${check.map(([l, ok, how]) => `<div><span>${esc(l)}${ok ? "" : `<small>${esc(how)}</small>`}</span><span class="pl-badge ${ok ? "ok" : "warn"}">${ok ? "Tamam" : "Eksik"}</span></div>`).join("")}</div>
         </div>
       </div>`, `${hello} · ${new Intl.DateTimeFormat("tr-TR", { weekday: "long", day: "numeric", month: "long" }).format(new Date())}`);
+    // Wisch-Karten am Handy: Punkte unter den Karten zeigen die aktuelle Karte
+    const kp = $("[data-kpis]"), dots = $$("[data-kpi-dots] i");
+    kp?.addEventListener("scroll", () => {
+      const cards = [...kp.children], mid = kp.scrollLeft + kp.clientWidth / 2;
+      const i = cards.reduce((best, c, n) => (Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid) < Math.abs(cards[best].offsetLeft + cards[best].offsetWidth / 2 - mid) ? n : best), 0);
+      dots.forEach((d2, n) => d2.classList.toggle("is-on", n === i));
+    }, { passive: true });
     const box = $("[data-chartbox]");
     wireChart(box, series.slice(-30));
     $("[data-range]").addEventListener("click", (e) => {
