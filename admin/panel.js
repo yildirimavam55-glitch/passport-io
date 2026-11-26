@@ -694,7 +694,64 @@
         </div>
       </div>
       <div style="display:flex;gap:10px;margin-top:4px"><button class="pl-btn pl-btn--green" type="submit">Kaydet</button><a class="pl-btn" href="../index.html?popup=preview" target="_blank" rel="noopener">Sitede önizle ↗</a></div>
-      </form>`, "Ziyaretçilere gösterilen pencere");
+      </form>
+      <div class="pl-card" style="margin-top:22px" id="yeni-kod"><h2>Yeni kod veya kampanya oluştur</h2>
+        <form class="pl-form pl-form--code" data-pcode>
+          <label class="pl-field">Kod<input name="code" required minlength="3" maxlength="32" placeholder="ör. HOSGELDIN10" style="text-transform:uppercase" autocomplete="off"></label>
+          <label class="pl-field">Tür<select name="kind"><option value="percent">Yüzde (%)</option><option value="fixed">Sabit tutar (€)</option></select></label>
+          <label class="pl-field">Değer<input name="value" type="number" step="0.01" min="0.01" required placeholder="10"></label>
+          <label class="pl-field">En az sepet (€)<input name="min_amount" type="number" step="0.01" min="0" value="0"></label>
+          <label class="pl-field">Başlangıç (boş = hemen)<input name="starts_at" type="datetime-local"></label>
+          <label class="pl-field">Bitiş (boş = süresiz)<input name="ends_at" type="datetime-local"></label>
+          <label class="pl-field">Kullanım sınırı<input name="max_uses" type="number" min="1" placeholder="sınırsız"></label>
+          <label class="pl-field">Not<input name="note" placeholder="ör. Black Friday"></label>
+          <label class="pl-field pl-field--wide">Oluşturduktan sonra<select name="use">
+            <option value="">Sadece kodu oluştur</option>
+            <option value="welcome" ${n.welcomeCode ? "" : "selected"}>Bülten penceresinde hoş geldin kodu yap</option>
+            <option value="promo">Kampanya penceresinde göster (bülten yerine)</option></select></label>
+          <button class="pl-btn pl-btn--green pl-field--wide" type="submit">Oluştur</button>
+        </form>
+        <p class="pl-help" style="margin:12px 0 0">Kampanya seçersen başlangıç ve bitiş tarihi pencereye de aktarılır; kampanya bitince site otomatik olarak bülten penceresine döner.</p>
+      </div>
+      <div class="pl-card" style="margin-top:16px"><h2>Kodlar <small>${d.codes.length}</small></h2>
+        ${d.codes.length ? table(["Kod", "İndirim", "Geçerlilik", "Kullanım", "Pencerede", ""], d.codes.map((c) => {
+          const where = [c.code === n.welcomeCode ? '<span class="pl-badge ok">Hoş geldin</span>' : "", c.code === p.code && p.enabled ? '<span class="pl-badge ok">Kampanya</span>' : ""].join(" ") || '<span class="pl-note">–</span>';
+          const ok = usable.includes(c);
+          return `<tr><td><b class="mono" style="font-size:14px">${esc(c.code)}</b>${c.note ? `<br><span class="pl-note">${esc(c.note)}</span>` : ""}</td>
+            <td>${c.kind === "percent" ? `%${Number(c.value)}` : esc(money(c.value, "EUR"))}${Number(c.min_amount) ? `<br><span class="pl-note">en az ${esc(money(c.min_amount, "EUR"))}</span>` : ""}</td>
+            <td><span class="pl-note">${c.starts_at ? esc(date(c.starts_at)) : "hemen"} → ${c.ends_at ? esc(date(c.ends_at)) : "süresiz"}</span>${ok ? "" : '<br><span class="pl-badge bad">geçersiz</span>'}</td>
+            <td class="num">${c.used_count}${c.max_uses ? ` / ${c.max_uses}` : ""}</td>
+            <td>${where}</td>
+            <td class="pl-actions">${ok ? `<button class="pl-btn pl-btn--sm" type="button" data-puse="welcome" data-code="${esc(c.code)}">Hoş geldin</button><button class="pl-btn pl-btn--sm" type="button" data-puse="promo" data-code="${esc(c.code)}">Kampanya</button>` : ""}<button class="pl-btn pl-btn--sm" data-dtoggle="${c.id}" data-active="${c.active ? 0 : 1}">${c.active ? "Kapat" : "Aç"}</button><button class="pl-btn pl-btn--sm pl-btn--red" data-ddel="${c.id}">Sil</button></td></tr>`;
+        })) : '<p class="pl-help" style="margin:0">Henüz kod yok – yukarıdan ilkini oluştur.</p>'}
+      </div>`, "Pencere, kodlar ve kampanyalar – hepsi tek sayfada");
+    const assign = async (use, code, startsAt, endsAt) => {
+      const next = JSON.parse(JSON.stringify(st));
+      if (use === "welcome") { next.newsletter.welcomeCode = code; next.newsletter.enabled = true; }
+      if (use === "promo") { next.promo = { ...next.promo, enabled: true, code, startsAt: startsAt || null, endsAt: endsAt || null }; }
+      await api("POST", "", { action: "popup_save", settings: next });
+    };
+    $("[data-pcode]").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const f = e.target, fd = Object.fromEntries(new FormData(f)), btn = $("button[type=submit]", f);
+      const iso = (x) => (x ? new Date(x).toISOString() : "");
+      const row = { ...fd, code: String(fd.code).toUpperCase().replace(/[^A-Z0-9_-]/g, ""), starts_at: iso(fd.starts_at), ends_at: iso(fd.ends_at) };
+      delete row.use;
+      if (!/^[A-Z0-9_-]{3,32}$/.test(row.code)) return toast("Kod 3–32 harf/rakam olmalı.");
+      btn.disabled = true;
+      try {
+        await api("POST", "", { action: "discount_save", ...row });
+        if (fd.use) await assign(fd.use, row.code, row.starts_at, row.ends_at);
+        toast(fd.use === "welcome" ? "Kod oluşturuldu ve hoş geldin kodu yapıldı." : fd.use === "promo" ? "Kampanya oluşturuldu – sitede 1 dakika içinde görünür." : "Kod oluşturuldu.");
+        popup();
+      } catch (err) { btn.disabled = false; toast(err.message === "exists" ? "Bu kod zaten var." : err.message === "invalid" ? "Değerleri kontrol et (yüzde en fazla 100)." : "Kaydedilemedi: " + err.message); }
+    });
+    $$("[data-puse]").forEach((b) => b.addEventListener("click", async () => {
+      b.disabled = true;
+      const c = d.codes.find((x) => x.code === b.dataset.code);
+      try { await assign(b.dataset.puse, b.dataset.code, c?.starts_at, c?.ends_at); toast(b.dataset.puse === "welcome" ? "Hoş geldin kodu ayarlandı." : "Kampanya açıldı."); popup(); }
+      catch (err) { b.disabled = false; toast("Kaydedilemedi: " + err.message); }
+    }));
     $("[data-popup]").addEventListener("submit", async (e) => {
       e.preventDefault();
       const f = e.target, v = (k) => f.elements[k]?.value || "";
@@ -774,9 +831,9 @@
     const dp = e.target.closest("[data-delpost]");
     if (dp) { if (!sure(dp, "Kalıcı sil?")) return; dp.disabled = true; await api("POST", "", { action: "content_delete", file: `content/posts/${dp.dataset.delpost}.json` }).then(() => toast("Silindi – site 1–2 dakikada güncellenir."), (err) => toast("Silinemedi: " + err.message)); return guides(); }
     const dt = e.target.closest("[data-dtoggle]");
-    if (dt) { dt.disabled = true; await api("POST", "", { action: "discount_toggle", id: dt.dataset.dtoggle, active: dt.dataset.active === "1" }).then(() => toast("Kaydedildi."), () => toast("Kaydedilemedi.")); return discounts(); }
+    if (dt) { dt.disabled = true; await api("POST", "", { action: "discount_toggle", id: dt.dataset.dtoggle, active: dt.dataset.active === "1" }).then(() => toast("Kaydedildi."), () => toast("Kaydedilemedi.")); return show(); }
     const dd = e.target.closest("[data-ddel]");
-    if (dd) { if (!sure(dd, "Sil?")) return; dd.disabled = true; await api("POST", "", { action: "discount_delete", id: dd.dataset.ddel }).then(() => toast("Silindi."), () => toast("Silinemedi.")); return discounts(); }
+    if (dd) { if (!sure(dd, "Sil?")) return; dd.disabled = true; await api("POST", "", { action: "discount_delete", id: dd.dataset.ddel }).then(() => toast("Silindi."), () => toast("Silinemedi.")); return show(); }
   });
   app.addEventListener("change", async (e) => {
     const o = e.target.closest("[data-order]");

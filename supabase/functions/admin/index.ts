@@ -185,7 +185,7 @@ Deno.serve(async (req) => {
         return json({ codes: data ?? [], usage: used ?? [] }, 200, headers);
       }
       if (view === "popup") {
-        const { data: codes } = await db.from("discount_codes").select("code, kind, value, active, ends_at, max_uses, used_count").order("created_at", { ascending: false }).limit(200);
+        const { data: codes } = await db.from("discount_codes").select("id, code, kind, value, min_amount, active, starts_at, ends_at, max_uses, used_count, note").order("created_at", { ascending: false }).limit(200);
         const { count: subs } = await db.from("newsletter_subscribers").select("email", { count: "exact", head: true }).is("unsubscribed_at", null);
         return json({ settings: await loadPopup(db), live: await publicPopup(db), codes: codes ?? [], subscribers: subs ?? 0 }, 200, headers);
       }
