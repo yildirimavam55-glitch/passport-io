@@ -37,6 +37,8 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 
 - **Warenkorb** (app.js, `openCart`): Paketfenster → „In den Warenkorb“; Inhalt in localStorage `pp_cart` (max. 10), Preise immer live aus `prices`. Rabattcode nur im Warenkorb: `account` POST `{action:"coupon_check"}` (ohne Anmeldung, zählt nicht, 20/IP/10 min) → gilt für den teuersten Artikel. Kasse = `account.html?cart=1` → je Artikel eine Bestellung, Code wird erst dort verbraucht.
 
+- **Pop-up** (app.js `popupInit`, Panel → „Pop-up & kampanya“): Einstellungen in Tabelle `site_settings` (key `popup`, `_shared/popup.ts`). Aktive Aktion mit gültigem Rabattcode → Aktionsfenster, sonst Newsletter-Fenster (optional Willkommenscode, wird erst nach der Anmeldung von `questions` zurückgegeben). Öffentlich: `questions` GET `?popup=1`. Code landet als `pending` im Warenkorb. Weggeklickt = `everyDays` Ruhe (localStorage `pp_popup`), nach Anmeldung nie wieder (`pp_nl_done`). Vorschau: `index.html?popup=preview`.
+
 ## Preis- und Sortimentslogik
 - Wettbewerbspreise in Tabelle `competitor_prices` (Airalo, Saily, Nomad; gb=0 = Unlimited). Laden seitenweise (Supabase max 1000 Zeilen).
 - Regel: Wettbewerber vorhanden → nächster ,99-Preis darunter; sonst Einkauf × 2 auf ,99; min 2,99 €; Verlustschutz Einkauf + min_margin_pct (Panel → Fiyatlar).

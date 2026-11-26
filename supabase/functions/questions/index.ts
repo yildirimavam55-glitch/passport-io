@@ -9,6 +9,7 @@
    3. {kind:"newsletter", email, lang, page, consent, website}
                                    → Bülten-Anmeldung (Panel → Bülten)
    ========================================================================== */
+import { codeInfo, loadPopup, publicPopup } from "../_shared/popup.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { cors, env } from "../_shared/http.ts";
 
@@ -19,8 +20,15 @@ const hits = new Map<string, number[]>();
 const tooMany = (ip: string) => { const now = Date.now(); const a = (hits.get(ip) || []).filter((t) => now - t < 6e5); a.push(now); hits.set(ip, a); if (hits.size > 5000) hits.clear(); return a.length > 20; };
 
 Deno.serve(async (req) => {
-  const headers = cors(req, "POST, OPTIONS");
+  const headers = cors(req, "GET, POST, OPTIONS");
   if (req.method === "OPTIONS") return new Response(null, { headers });
+  // GET ?popup=1 → welches Pop-up die Website zeigen soll (Aktion oder Newsletter), kurz zwischengespeichert
+  if (req.method === "GET" && new URL(req.url).searchParams.has("popup")) {
+    try {
+      const p = await publicPopup(db);
+      return new Response(JSON.stringify(p), { headers: { ...headers, "Content-Type": "application/json", "Cache-Control": "public, max-age=60" } });
+    } catch (_) { return new Response(JSON.stringify({ type: null }), { headers: { ...headers, "Content-Type": "application/json" } }); }
+  }
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405, headers });
 
   const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "?";
@@ -39,6 +47,9 @@ Deno.serve(async (req) => {
         consent_text: String(body.consent ?? "").slice(0, 300) || null, unsubscribed_at: null,
       }, { onConflict: "email" });
       if (error) throw error;
+      // Willkommenscode aus dem Panel (falls gesetzt und gültig) direkt nach der Anmeldung zeigen
+      const w = await codeInfo(db, (await loadPopup(db)).newsletter.welcomeCode).catch(() => null);
+      if (w) return new Response(JSON.stringify({ ok: true, code: w.code, kind: w.kind, value: w.value, minAmount: w.minAmount }), { headers: { ...headers, "Content-Type": "application/json" } });
       return new Response(null, { status: 204, headers });
     }
 

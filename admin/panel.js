@@ -112,7 +112,7 @@
   const NAV = [
     ["", "", "Genel"], ["overview", "◧", "Genel bakış"],
     ["", "", "Satış"], ["orders", "🧾", "Siparişler"], ["payments", "💳", "Ödemeler"], ["refunds", "↩", "İade talepleri"], ["esims", "📶", "eSIM'ler"], ["discounts", "🏷", "İndirim kodları"],
-    ["", "", "Müşteriler"], ["customers", "👥", "Müşteriler"], ["newsletter", "📨", "Bülten"], ["support", "✉", "Destek talepleri"], ["questions", "💬", "Lina soruları"],
+    ["", "", "Müşteriler"], ["customers", "👥", "Müşteriler"], ["newsletter", "📨", "Bülten"], ["popup", "🎁", "Pop-up & kampanya"], ["support", "✉", "Destek talepleri"], ["questions", "💬", "Lina soruları"],
     ["", "", "Online mağaza"], ["editor", "✎", "Mağaza editörü"], ["guides", "📖", "Rehberler"], ["translations", "🌐", "Diller & çeviri"], ["pricing", "₺", "Fiyatlar & rakipler"],
     ["", "", "Ayarlar"], ["settings", "⚙", "Entegrasyonlar"], ["audit", "📜", "İşlem kaydı"], ["security", "🔒", "Güvenlik"],
   ];
@@ -638,7 +638,7 @@
           <label class="pl-field">Not<input name="note" placeholder="ör. Instagram kampanyası"></label>
           <button class="pl-btn pl-btn--green" type="submit">Kodu oluştur</button>
         </form>
-        <p class="pl-help" style="margin:12px 0 0">Müşteri kodu paket penceresindeki <b>“İndirim kodun var mı?”</b> alanına girer. Kod sunucuda kontrol edilir; indirim siparişte görünür. Sabit tutar ve en az sepet EUR cinsindendir, diğer para birimlerinde güncel kurla çevrilir.</p>
+        <p class="pl-help" style="margin:12px 0 0">Müşteri kodu <b>sepette</b> “Uygula” ile girer; kampanya kodunu “Pop-up & kampanya” ile sitede de gösterebilirsin. Kod sunucuda kontrol edilir; indirim siparişte görünür. Sabit tutar ve en az sepet EUR cinsindendir, diğer para birimlerinde güncel kurla çevrilir.</p>
       </div>
       <div class="pl-card"><h2>Kodlar <small>${d.codes.length}</small></h2>
         ${table(["Kod", "İndirim", "Geçerlilik", "#Kullanım", "#İndirim toplamı", "Durum", ""], d.codes.map((c) => { const [lbl, cls] = stateOf(c); const u = used(c.code); const sum = u.reduce((a, o) => ((a[o.currency] = (a[o.currency] || 0) + Number(o.discount || 0)), a), {});
@@ -652,7 +652,67 @@
       </div>`, "Kampanya kodları");
   }
 
-  const VIEWS = { overview, editor, newsletter, guides, translations, discounts, orders, payments, refunds, support, questions, customers, esims, pricing, settings, audit, security };
+  /* ---------- Pop-up & kampanya: Website-Fenster (Aktion mit Code – sonst Newsletter) ---------- */
+  async function popup() {
+    loading("Pop-up & kampanya");
+    const d = await api("GET", "?view=popup");
+    const st = d.settings, n = st.newsletter, p = st.promo;
+    const dt = (v) => { if (!v) return ""; const x = new Date(v); return new Date(x.getTime() - x.getTimezoneOffset() * 6e4).toISOString().slice(0, 16); }; // Ortszeit fürs Datumsfeld
+    const usable = d.codes.filter((c) => c.active && (!c.ends_at || new Date(c.ends_at) > Date.now()) && (!c.max_uses || c.used_count < c.max_uses));
+    const label = (c) => `${c.code} – ${c.kind === "percent" ? "%" + Number(c.value) : money(c.value, "EUR")}`;
+    const opts = (sel) => `<option value="">– seçilmedi –</option>` + d.codes.map((c) => `<option value="${esc(c.code)}" ${c.code === sel ? "selected" : ""} ${usable.includes(c) ? "" : "disabled"}>${esc(label(c))}${usable.includes(c) ? "" : " (geçersiz)"}</option>`).join("");
+    const L = [["tr", "Türkçe"], ["de", "Deutsch"], ["en", "English"], ["ar", "العربية"], ["ru", "Русский"], ["fr", "Français"], ["es", "Español"]];
+    const live = d.live || {};
+    const liveText = live.type === "promo" ? `<b>Kampanya</b> gösteriliyor: kod <b class="mono">${esc(live.code)}</b> (${live.kind === "percent" ? "%" + live.value : esc(money(live.value, "EUR"))})${live.endsAt ? " · bitiş " + esc(date(live.endsAt)) : ""}`
+      : live.type === "newsletter" ? `<b>Bülten penceresi</b> gösteriliyor${live.offer ? ` – kayıttan sonra hoş geldin kodu (${live.offer.kind === "percent" ? "%" + live.offer.value : esc(money(live.offer.value, "EUR"))})` : " – indirim vaadi olmadan"}`
+      : "Şu anda <b>hiçbir pencere</b> gösterilmiyor.";
+    shell("Pop-up & kampanya", `
+      <div class="pl-card" style="margin-bottom:16px"><h2>Şu an sitede</h2><p class="pl-help" style="margin:0">${liveText}</p>
+        <p class="pl-help" style="margin:10px 0 0">Kural: Aktif bir kampanya varsa bülten yerine kampanya penceresi açılır. Ziyaretçi pencereyi kapatırsa ${st.everyDays} gün boyunca tekrar görmez; bültene kaydolan bülten penceresini bir daha görmez. Hesap ve yönetim sayfalarında pencere açılmaz.</p></div>
+      <form data-popup>
+      <div class="pl-two">
+        <div class="pl-card"><h2>Bülten penceresi <small>${d.subscribers} abone</small></h2>
+          <label class="pl-switch"><input type="checkbox" name="nl_enabled" ${n.enabled ? "checked" : ""}> Bülten penceresini göster</label>
+          <div class="pl-form" style="grid-template-columns:1fr 1fr;margin-top:12px">
+            <label class="pl-field">Gecikme (saniye)<input name="nl_delay" type="number" min="0" max="60" value="${n.delay}"></label>
+            <label class="pl-field">Tekrar gösterme (gün)<input name="everyDays" type="number" min="1" max="90" value="${st.everyDays}"></label>
+            <label class="pl-field" style="grid-column:1/-1">Hoş geldin kodu (kayıttan hemen sonra gösterilir)<select name="nl_code">${opts(n.welcomeCode)}</select></label>
+          </div>
+          <p class="pl-help">Kod seçilirse pencere “E-postanı gir, %10 kazan” der ve kayıttan sonra kodu gösterir (kod sepete otomatik eklenir). Kod seçilmezse indirim vaat edilmez. Yeni kodu “İndirim kodları”nda oluştur – ör. HOSGELDIN10, %10.</p>
+        </div>
+        <div class="pl-card"><h2>Kampanya penceresi</h2>
+          <label class="pl-switch"><input type="checkbox" name="pr_enabled" ${p.enabled ? "checked" : ""}> Kampanyayı göster (bülten yerine)</label>
+          <div class="pl-form" style="grid-template-columns:1fr 1fr;margin-top:12px">
+            <label class="pl-field" style="grid-column:1/-1">Kampanya kodu<select name="pr_code">${opts(p.code)}</select></label>
+            <label class="pl-field">Başlangıç (boş = hemen)<input name="pr_start" type="datetime-local" value="${dt(p.startsAt)}"></label>
+            <label class="pl-field">Bitiş (boş = kodun bitişi)<input name="pr_end" type="datetime-local" value="${dt(p.endsAt)}"></label>
+          </div>
+          <p class="pl-help">Başlık ve metin boş kalırsa her dilde otomatik yazılır (ör. “Black Friday: %20 indirim”). Kendi metnini yazmak istersen aşağıdaki diller için doldur; boş diller otomatik metni kullanır.</p>
+          <details class="pl-details"><summary>Kendi başlık ve metnin (isteğe bağlı)</summary>
+            ${L.map(([c, nm]) => `<div class="pl-form" style="grid-template-columns:1fr 2fr;margin-top:8px"><label class="pl-field">${nm} başlık<input name="t_${c}" maxlength="80" value="${esc(p.title?.[c] || "")}" ${c === "ar" ? 'dir="rtl"' : ""}></label><label class="pl-field">${nm} metin<input name="x_${c}" maxlength="220" value="${esc(p.text?.[c] || "")}" ${c === "ar" ? 'dir="rtl"' : ""}></label></div>`).join("")}
+          </details>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:4px"><button class="pl-btn pl-btn--green" type="submit">Kaydet</button><a class="pl-btn" href="../index.html?popup=preview" target="_blank" rel="noopener">Sitede önizle ↗</a></div>
+      </form>`, "Ziyaretçilere gösterilen pencere");
+    $("[data-popup]").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const f = e.target, v = (k) => f.elements[k]?.value || "";
+      const loc = (x) => (x ? new Date(x).toISOString() : null);
+      const settings = {
+        newsletter: { enabled: f.nl_enabled.checked, delay: Number(v("nl_delay")), welcomeCode: v("nl_code") || null },
+        promo: { enabled: f.pr_enabled.checked, code: v("pr_code") || null, startsAt: loc(v("pr_start")), endsAt: loc(v("pr_end")),
+          title: Object.fromEntries(L.map(([c]) => [c, v("t_" + c)])), text: Object.fromEntries(L.map(([c]) => [c, v("x_" + c)])) },
+        everyDays: Number(v("everyDays")),
+      };
+      if (settings.promo.enabled && !settings.promo.code) return toast("Kampanya için bir kod seç.");
+      const btn = $("button[type=submit]", f); btn.disabled = true;
+      try { await api("POST", "", { action: "popup_save", settings }); toast("Kaydedildi – sitede 1 dakika içinde görünür."); popup(); }
+      catch (err) { btn.disabled = false; toast("Kaydedilemedi: " + err.message); }
+    });
+  }
+
+  const VIEWS = { overview, editor, newsletter, popup, guides, translations, discounts, orders, payments, refunds, support, questions, customers, esims, pricing, settings, audit, security };
   let lastCsv = null;
   async function show() {
     view = VIEWS[location.hash.slice(1)] ? location.hash.slice(1) : "overview";

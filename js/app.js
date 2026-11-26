@@ -1168,7 +1168,8 @@
   }
   async function checkCoupon(code) {
     const priced = cart.map((e) => ({ e, p: cartPlan(e) })).filter((x) => x.p);
-    if (!code || !priced.length) { coupon = null; store.set(COUPON_KEY, null); return; }
+    if (!code) { coupon = null; store.set(COUPON_KEY, null); return; }
+    if (!priced.length) { coupon = { code, state: "pending" }; store.set(COUPON_KEY, coupon); return; } // Code aus Pop-up merken, bis etwas im Warenkorb liegt
     const best = priced.reduce((a, b) => (b.p.price > a.p.price ? b : a));
     const url = (SITE.api?.pricesUrl || "").replace(/\/prices$/, "/account");
     try {
@@ -1238,12 +1239,102 @@
     el._draw = draw; draw();
     el.hidden = false; document.body.style.overflow = "hidden";
     requestAnimationFrame(() => el.classList.add("is-open"));
-    if (coupon?.state === "ok") checkCoupon(coupon.code).then(draw);
+    if (coupon?.state === "ok" || coupon?.state === "pending") checkCoupon(coupon.code).then(draw);
   }
   function closeCart() { const el = $("#cart"); if (!el) return; el.classList.remove("is-open"); document.body.style.overflow = ""; setTimeout(() => (el.hidden = true), 250); }
   document.addEventListener("click", (e) => { if (e.target.closest("[data-cart-open]")) openCart(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && $("#cart") && !$("#cart").hidden) closeCart(); });
   if (new URLSearchParams(location.search).has("cart") && PAGE !== "account") setTimeout(openCart, 300);
+
+  /* ---------- Pop-up: Aktion mit Rabattcode (wenn im Panel aktiv) – sonst Newsletter ----------
+     Einstellungen: Panel → „Pop-up & kampanya“ (Supabase site_settings). Weggeklickt = X Tage Ruhe; nach Anmeldung nie wieder.
+     Nicht auf Konto-Seite; ?popup=preview zeigt es sofort (Vorschau aus dem Panel). */
+  (async function popupInit() {
+    const preview = new URLSearchParams(location.search).get("popup") === "preview";
+    const url = SITE.api?.questionsUrl;
+    if (!url || PAGE === "account") return;
+    const seen = store.get("pp_popup", {}) || {};
+    let cfg;
+    try { cfg = await (await fetch(url + "?popup=1")).json(); } catch (_) { return; }
+    if (!cfg?.type) return;
+    if (!preview) {
+      if (cfg.type === "newsletter" && store.get("pp_nl_done", false)) return;
+      if (seen[cfg.id] && Date.now() < seen[cfg.id]) return;
+    }
+    const pct = (v) => new Intl.NumberFormat(LOCALE, { style: "percent", maximumFractionDigits: 0 }).format(v / 100);
+    const amount = (o) => (o.kind === "percent" ? pct(o.value) : new Intl.NumberFormat(LOCALE, { style: "currency", currency: "EUR", maximumFractionDigits: 2 }).format(o.value));
+    const until = (iso) => new Intl.DateTimeFormat(LOCALE, { day: "numeric", month: "long" }).format(new Date(iso));
+    const GIFT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18M12 8v13M12 8c-1.5-3-5-4-5.5-1.5S9.5 8 12 8Zm0 0c1.5-3 5-4 5.5-1.5S14.5 8 12 8Z"/></svg>`;
+    const useCode = (code) => { coupon = { code, state: "pending" }; store.set(COUPON_KEY, coupon); };
+    const codeBox = (code) => `<div class="popup__code"><span class="mono">${esc(code)}</span><button class="btn btn--line" type="button" data-pop-copy="${esc(code)}">${esc(t("popCopy"))}</button></div>`;
+    let body;
+    if (cfg.type === "promo") {
+      const title = cfg.title?.[LANG] || t("popPromoTitle", { v: amount(cfg) });
+      const text = cfg.text?.[LANG] || t("popPromoText");
+      body = `<span class="popup__kicker">${GIFT} ${esc(t("popPromoKicker"))}</span>
+        <h3 id="popup-title">${esc(title)}</h3><p>${esc(text)}</p>
+        ${codeBox(cfg.code)}
+        <p class="popup__small">${cfg.endsAt ? esc(t("popUntil", { d: until(cfg.endsAt) })) : ""}${cfg.minAmount ? `${cfg.endsAt ? " · " : ""}${esc(t("popMin", { v: amount({ kind: "fixed", value: cfg.minAmount }) }))}` : ""}</p>
+        <button class="btn btn--green popup__go" type="button" data-pop-use="${esc(cfg.code)}">${esc(t("popPromoCta"))}</button>`;
+    } else {
+      const offer = cfg.offer;
+      body = `<span class="popup__kicker">${GIFT} ${esc(t("popNlKicker"))}</span>
+        <h3 id="popup-title">${esc(offer ? t("popNlTitleOffer", { v: amount(offer) }) : t("popNlTitle"))}</h3>
+        <p>${esc(offer ? t("popNlTextOffer") : t("popNlText"))}</p>
+        <form class="popup__form" data-pop-form novalidate>
+          <input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="${esc(SITE.newsletter?.placeholder || "E-Mail")}" aria-label="${esc(SITE.newsletter?.placeholder || "E-Mail")}">
+          <input type="text" name="website" class="handoff__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn--green" type="submit">${esc(offer ? t("popNlCtaOffer") : t("popNlCta"))}</button>
+        </form>
+        <p class="popup__small">${esc(t("newsletterConsent"))}</p>`;
+    }
+    const el = document.createElement("div");
+    el.className = "popup"; el.hidden = true;
+    el.innerHTML = `<div class="popup__backdrop" data-pop-close></div>
+      <div class="popup__panel" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+        <button class="icon-btn popup__x" type="button" data-pop-close aria-label="${esc(t("close"))}">${icon("x")}</button>
+        <div class="popup__body">${body}</div>
+        <button class="popup__no" type="button" data-pop-close>${esc(t("popNo"))}</button>
+      </div>`;
+    document.body.appendChild(el);
+    const close = (remember = true) => {
+      if (remember && !preview) { seen[cfg.id] = Date.now() + (cfg.everyDays || 7) * 864e5; store.set("pp_popup", seen); }
+      el.classList.remove("is-open"); document.body.style.overflow = ""; setTimeout(() => el.remove(), 250);
+    };
+    const open = () => {
+      // nicht über einem offenen Fenster (Paket, Warenkorb, Handy-Check) – dann später erneut versuchen
+      if (document.querySelector(".modal:not([hidden]), #cart.is-open") && !preview) return setTimeout(open, 4000);
+      el.hidden = false; document.body.style.overflow = "hidden";
+      requestAnimationFrame(() => el.classList.add("is-open"));
+      setTimeout(() => $("input[type=email], [data-pop-use]", el)?.focus({ preventScroll: true }), 300);
+    };
+    el.addEventListener("click", async (e) => {
+      if (e.target.closest("[data-pop-close]")) return close();
+      const cp = e.target.closest("[data-pop-copy]");
+      if (cp) { try { await navigator.clipboard.writeText(cp.dataset.popCopy); } catch (_) {} useCode(cp.dataset.popCopy); cp.textContent = t("popCopied"); return; }
+      const use = e.target.closest("[data-pop-use]");
+      if (use) { useCode(use.dataset.popUse); close(); toast(t("popApplied")); $("#hero-search, .hero input[type=text]")?.focus(); }
+    });
+    el.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+    el.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const f = e.target, email = f.email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email)) { f.email.setCustomValidity(t("newsletterError")); f.email.reportValidity(); setTimeout(() => f.email.setCustomValidity(""), 2500); return; }
+      const btn = $("button[type=submit]", f); btn.disabled = true;
+      try {
+        const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind: "newsletter", email, lang: LANG, page: "popup:" + PAGE, consent: t("newsletterConsent"), website: f.website.value }) });
+        if (!r.ok && r.status !== 204) throw new Error(String(r.status));
+        const d = r.status === 204 ? {} : await r.json().catch(() => ({}));
+        store.set("pp_nl_done", true);
+        if (d.code) useCode(d.code);
+        $(".popup__body", el).innerHTML = d.code
+          ? `<span class="popup__kicker">${GIFT} ${esc(t("popNlKicker"))}</span><h3 id="popup-title">${esc(t("popDoneTitle"))}</h3><p>${esc(t("popDoneText", { v: amount(d) }))}</p>${codeBox(d.code)}<button class="btn btn--green popup__go" type="button" data-pop-use="${esc(d.code)}">${esc(t("popPromoCta"))}</button>`
+          : `<h3 id="popup-title">${esc(t("popThanks"))}</h3><p>${esc(t("popThanksText"))}</p>`;
+        $(".popup__no", el).textContent = t("close");
+      } catch (_) { btn.disabled = false; f.email.setCustomValidity(t("newsletterError")); f.email.reportValidity(); setTimeout(() => f.email.setCustomValidity(""), 2500); }
+    });
+    setTimeout(open, preview ? 300 : Math.max(0, Number(cfg.delay) || 0) * 1000);
+  })();
 
   // Hell/Dunkel: Wahl speichern; ohne Wahl folgt die Seite der Systemeinstellung
   const root = document.documentElement, themeBtn = $("[data-theme-toggle]");

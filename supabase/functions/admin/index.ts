@@ -13,6 +13,7 @@ import { cors, env, json } from "../_shared/http.ts";
 import { applyPricing, DEFAULTS, loadAllRows, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { accessOn, cancel, fulfillOrder, goOn, providerConfigured } from "../_shared/esim-provider.ts";
+import { cleanPopup, loadPopup, publicPopup } from "../_shared/popup.ts";
 
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
 const admins = () => (env("ADMIN_EMAILS") || env("ADMIN_MAIL")).split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
@@ -183,6 +184,11 @@ Deno.serve(async (req) => {
         const { data: used } = await db.from("orders").select("coupon, discount, currency, status").not("coupon", "is", null).limit(5000);
         return json({ codes: data ?? [], usage: used ?? [] }, 200, headers);
       }
+      if (view === "popup") {
+        const { data: codes } = await db.from("discount_codes").select("code, kind, value, active, ends_at, max_uses, used_count").order("created_at", { ascending: false }).limit(200);
+        const { count: subs } = await db.from("newsletter_subscribers").select("email", { count: "exact", head: true }).is("unsubscribed_at", null);
+        return json({ settings: await loadPopup(db), live: await publicPopup(db), codes: codes ?? [], subscribers: subs ?? 0 }, 200, headers);
+      }
       if (view === "audit") {
         const { data } = await db.from("admin_audit").select("*").order("created_at", { ascending: false }).limit(300);
         return json({ audit: data ?? [] }, 200, headers);
@@ -228,6 +234,13 @@ Deno.serve(async (req) => {
       if (error) throw error;
       await audit("esim_status", txt(b.id, 60), { status: b.status });
       return json({ ok: true }, 200, headers);
+    }
+    if (b.action === "popup_save") {
+      const value = cleanPopup(b.settings);
+      const { error } = await db.from("site_settings").upsert({ key: "popup", value, updated_at: new Date().toISOString() });
+      if (error) throw error;
+      await audit("popup_save", "popup", value);
+      return json({ ok: true, live: await publicPopup(db) }, 200, headers);
     }
     if (b.action === "esim_simulate") {
       // Nur Test-eSIMs: als „aktiv“ mit Verbrauch und Laufzeit darstellen, damit man den Kundenbereich vorführen kann.
