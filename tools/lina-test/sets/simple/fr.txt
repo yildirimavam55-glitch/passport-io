@@ -1,0 +1,715 @@
+## Einfache Kundenfragen (fr) – aus Vorlagen erzeugt (tools: gen_simple.py), 714 Fragen
+où sont mes forfaits | my-esims
+où trouver mes forfaits | my-esims
+où est mon esim après l'achat | my-esims
+j'ai acheté un forfait où est elle | my-esims
+où sont mes commandes | my-esims
+j'ai acheté un forfait où la trouver | my-esims
+où trouver mes esim | my-esims
+où voir les forfaits achetés | my-esims
+où trouver mes commandes | my-esims
+où sont mes commandes après l'achat | my-esims
+où voir mes commandes | my-esims
+j'ai acheté une esim où le voir | my-esims
+où sont mes commandes dans mon compte | my-esims
+comment voir mes achats | my-esims
+j'ai acheté une esim où est elle | my-esims
+où voir l'esim achetée | my-esims
+j'ai acheté un forfait où le voir | my-esims
+où trouver les forfaits achetés | my-esims
+j'ai acheté une esim où la trouver | my-esims
+je veux acheter une esim comment | how-to-buy
+où acheter une esim | how-to-buy
+où acheter un forfait | how-to-buy
+comment commander une esim | how-to-buy
+je veux acheter un forfait comment | how-to-buy
+comment acheter une esim | how-to-buy
+comment commander un forfait | how-to-buy
+comment passer commande | how-to-buy
+comment commander | how-to-buy
+comment acheter | how-to-buy
+comment acheter un forfait | how-to-buy
+salut je veux acheter une esim comment | how-to-buy
+petite question je veux acheter un forfait comment svp | how-to-buy
+bonjour comment acheter une esim | how-to-buy
+comment commander une esim merci | how-to-buy
+comment acheter ? | how-to-buy
+salut où acheter un forfait | how-to-buy
+comment acheter un forfait svp | how-to-buy
+comment passer commande ? | how-to-buy
+dois je m'inscrire pour acheter | need-account
+acheter sans inscription possible | need-account
+acheter en invité possible | need-account
+acheter sans compte possible | need-account
+faut il un compte | need-account
+faut il un compte pour acheter | need-account
+bonjour dois je m'inscrire pour acheter | need-account
+salut dois je m'inscrire pour acheter ? | need-account
+petite question acheter sans inscription possible | need-account
+acheter en invité possible merci | need-account
+salut acheter en invité possible merci | need-account
+salut acheter sans inscription possible | need-account
+salut acheter en invité possible ? | need-account
+petite question faut il un compte | need-account
+salut acheter sans inscription possible svp | need-account
+acheter sans inscription possible merci | need-account
+faut il un compte svp | need-account
+acheter sans compte possible ? | need-account
+salut faut il un compte pour acheter ? | need-account
+changer mon mot de passe | change-password
+changer le mot de passe | change-password
+je veux un nouveau mot de passe | change-password
+comment changer mon mot de passe | change-password
+modifier le mot de passe | change-password
+modifier mon mot de passe | change-password
+petite question modifier le mot de passe svp | change-password
+bonjour je veux un nouveau mot de passe | change-password
+salut changer le mot de passe | change-password
+petite question modifier mon mot de passe ? | change-password
+salut modifier le mot de passe | change-password
+bonjour je veux un nouveau mot de passe ? | change-password
+bonjour changer le mot de passe svp | change-password
+salut comment changer mon mot de passe svp | change-password
+bonjour je veux un nouveau mot de passe merci | change-password
+petite question modifier le mot de passe ? | change-password
+bonjour modifier le mot de passe ? | change-password
+salut comment changer mon mot de passe merci | change-password
+salut comment changer mon mot de passe | change-password
+changer l' e mail | change-email
+modifier l' e mail | change-email
+comment changer mon e mail | change-email
+j'ai mis le mauvais e mail | change-email
+comment changer mon adresse e mail | change-email
+modifier mon e mail | change-email
+changer mon e mail | change-email
+petite question comment changer mon adresse e mail | change-email
+salut changer mon e mail merci | change-email
+salut j'ai mis le mauvais e mail svp | change-email
+j'ai mis le mauvais e mail svp | change-email
+petite question comment changer mon e mail svp | change-email
+petite question modifier l' e mail svp | change-email
+salut changer mon e mail | change-email
+bonjour comment changer mon e mail | change-email
+changer mon e mail merci | change-email
+petite question changer l' e mail | change-email
+bonjour modifier l' e mail | change-email
+comment changer mon adresse e mail merci | change-email
+le code de confirmation n'arrive pas | account-login
+mot de passe oublié | account-login
+je n'arrive pas à me connecter | account-login
+je n'arrive pas à accéder à mon compte | account-login
+le code de confirmation n'arrive pas svp | account-login
+salut je n'arrive pas à me connecter ? | account-login
+petite question je n'arrive pas à me connecter merci | account-login
+salut je n'arrive pas à me connecter | account-login
+bonjour le code de confirmation n'arrive pas | account-login
+salut mot de passe oublié | account-login
+le code de confirmation n'arrive pas merci | account-login
+petite question je n'arrive pas à me connecter | account-login
+petite question je n'arrive pas à accéder à mon compte ? | account-login
+je n'arrive pas à me connecter svp | account-login
+salut je n'arrive pas à accéder à mon compte ? | account-login
+salut mot de passe oublié ? | account-login
+le code de confirmation n'arrive pas ? | account-login
+petite question le code de confirmation n'arrive pas | account-login
+bonjour je n'arrive pas à me connecter ? | account-login
+c'est quoi une esim | what-is-esim
+qu'est ce qu'une esim | what-is-esim
+comment fonctionne une esim | what-is-esim
+salut qu'est ce qu'une esim svp | what-is-esim
+bonjour qu'est ce qu'une esim svp | what-is-esim
+salut comment fonctionne une esim merci | what-is-esim
+qu'est ce qu'une esim merci | what-is-esim
+comment fonctionne une esim ? | what-is-esim
+petite question comment fonctionne une esim ? | what-is-esim
+salut comment fonctionne une esim svp | what-is-esim
+salut qu'est ce qu'une esim merci | what-is-esim
+bonjour comment fonctionne une esim | what-is-esim
+bonjour qu'est ce qu'une esim | what-is-esim
+petite question c'est quoi une esim | what-is-esim
+salut c'est quoi une esim ? | what-is-esim
+salut c'est quoi une esim svp | what-is-esim
+qu'est ce qu'une esim ? | what-is-esim
+salut comment fonctionne une esim | what-is-esim
+qu'est ce qu'une esim svp | what-is-esim
+quels téléphones sont compatibles esim | device-compatible
+mon samsung est il compatible esim | device-compatible
+est ce que l'esim marche sur mon téléphone | device-compatible
+mon iphone est il compatible esim | device-compatible
+mon téléphone est il compatible esim | device-compatible
+petite question quels téléphones sont compatibles esim ? | device-compatible
+salut mon téléphone est il compatible esim svp | device-compatible
+bonjour quels téléphones sont compatibles esim svp | device-compatible
+salut mon téléphone est il compatible esim ? | device-compatible
+bonjour mon samsung est il compatible esim | device-compatible
+est ce que l'esim marche sur mon téléphone ? | device-compatible
+salut mon iphone est il compatible esim svp | device-compatible
+mon samsung est il compatible esim ? | device-compatible
+mon téléphone est il compatible esim ? | device-compatible
+bonjour mon téléphone est il compatible esim merci | device-compatible
+bonjour mon samsung est il compatible esim svp | device-compatible
+quels téléphones sont compatibles esim ? | device-compatible
+petite question est ce que l'esim marche sur mon téléphone | device-compatible
+mon iphone est il compatible esim ? | device-compatible
+installation esim | install-esim,install-iphone,install-android
+installation esim guide | install-esim,install-iphone,install-android
+comment activer l'esim | install-esim,install-iphone,install-android
+comment scanner le qr code | install-esim,install-iphone,install-android
+comment installer l'esim | install-esim,install-iphone,install-android
+petite question comment scanner le qr code | install-esim,install-iphone,install-android
+bonjour installation esim | install-esim,install-iphone,install-android
+petite question installation esim guide | install-esim,install-iphone,install-android
+petite question installation esim ? | install-esim,install-iphone,install-android
+installation esim guide svp | install-esim,install-iphone,install-android
+salut comment scanner le qr code | install-esim,install-iphone,install-android
+installation esim svp | install-esim,install-iphone,install-android
+salut comment activer l'esim svp | install-esim,install-iphone,install-android
+comment scanner le qr code svp | install-esim,install-iphone,install-android
+bonjour comment installer l'esim | install-esim,install-iphone,install-android
+comment activer l'esim merci | install-esim,install-iphone,install-android
+comment installer l'esim svp | install-esim,install-iphone,install-android
+salut comment scanner le qr code ? | install-esim,install-iphone,install-android
+salut installation esim ? | install-esim,install-iphone,install-android
+quand commence le forfait | when-activate,buy-when,line-on
+quand l'esim est elle active | when-activate,buy-when,line-on
+quand les jours commencent à compter | when-activate,buy-when,line-on
+quand démarre le forfait | when-activate,buy-when,line-on
+bonjour quand démarre le forfait | when-activate,buy-when,line-on
+quand démarre le forfait merci | when-activate,buy-when,line-on
+quand commence le forfait merci | when-activate,buy-when,line-on
+petite question quand les jours commencent à compter | when-activate,buy-when,line-on
+bonjour quand commence le forfait | when-activate,buy-when,line-on
+petite question quand l'esim est elle active svp | when-activate,buy-when,line-on
+quand l'esim est elle active ? | when-activate,buy-when,line-on
+petite question quand les jours commencent à compter ? | when-activate,buy-when,line-on
+salut quand l'esim est elle active svp | when-activate,buy-when,line-on
+quand les jours commencent à compter merci | when-activate,buy-when,line-on
+quand démarre le forfait ? | when-activate,buy-when,line-on
+bonjour quand commence le forfait ? | when-activate,buy-when,line-on
+salut quand les jours commencent à compter merci | when-activate,buy-when,line-on
+quand les jours commencent à compter ? | when-activate,buy-when,line-on
+bonjour quand l'esim est elle active | when-activate,buy-when,line-on
+combien de données | which-package
+combien de go en vacances | which-package
+quel forfait me faut il | which-package
+quel forfait choisir | which-package
+combien de go pour une semaine | which-package
+combien de données en vacances | which-package
+combien de go | which-package
+combien de données pour une semaine | which-package
+bonjour combien de go pour une semaine ? | which-package
+salut combien de go | which-package
+combien de go merci | which-package
+combien de go en vacances ? | which-package
+bonjour combien de données pour une semaine | which-package
+bonjour combien de go | which-package
+salut combien de données pour une semaine svp | which-package
+bonjour combien de go en vacances | which-package
+quel forfait choisir ? | which-package
+petite question combien de go ? | which-package
+quel forfait choisir merci | which-package
+peut on appeler avec l'esim | calls,phone-number
+appels inclus | calls,phone-number
+est ce que j'ai un numéro de téléphone | calls,phone-number
+sms inclus | calls,phone-number
+peut on téléphoner avec l'esim | calls,phone-number
+bonjour sms inclus svp | calls,phone-number
+peut on téléphoner avec l'esim ? | calls,phone-number
+petite question appels inclus ? | calls,phone-number
+petite question est ce que j'ai un numéro de téléphone | calls,phone-number
+petite question peut on téléphoner avec l'esim merci | calls,phone-number
+salut appels inclus svp | calls,phone-number
+bonjour est ce que j'ai un numéro de téléphone | calls,phone-number
+appels inclus ? | calls,phone-number
+peut on appeler avec l'esim merci | calls,phone-number
+appels inclus merci | calls,phone-number
+sms inclus svp | calls,phone-number
+petite question est ce que j'ai un numéro de téléphone merci | calls,phone-number
+sms inclus merci | calls,phone-number
+salut peut on téléphoner avec l'esim merci | calls,phone-number
+je garde mon numéro | keep-number
+mon numéro reste actif | keep-number
+que devient ma carte sim | keep-number
+bonjour mon numéro reste actif | keep-number
+que devient ma carte sim ? | keep-number
+bonjour que devient ma carte sim svp | keep-number
+mon numéro reste actif svp | keep-number
+petite question je garde mon numéro merci | keep-number
+salut que devient ma carte sim ? | keep-number
+salut je garde mon numéro ? | keep-number
+petite question que devient ma carte sim merci | keep-number
+petite question je garde mon numéro | keep-number
+mon numéro reste actif merci | keep-number
+je garde mon numéro merci | keep-number
+petite question mon numéro reste actif | keep-number
+petite question mon numéro reste actif svp | keep-number
+je garde mon numéro svp | keep-number
+bonjour que devient ma carte sim | keep-number
+le partage de connexion marche | hotspot,hotspot-setup
+peut on partager la connexion | hotspot,hotspot-setup
+peut on faire un hotspot | hotspot,hotspot-setup
+petite question peut on partager la connexion | hotspot,hotspot-setup
+salut peut on partager la connexion | hotspot,hotspot-setup
+petite question peut on partager la connexion merci | hotspot,hotspot-setup
+peut on partager la connexion ? | hotspot,hotspot-setup
+salut peut on faire un hotspot merci | hotspot,hotspot-setup
+peut on faire un hotspot svp | hotspot,hotspot-setup
+peut on faire un hotspot merci | hotspot,hotspot-setup
+peut on partager la connexion svp | hotspot,hotspot-setup
+petite question le partage de connexion marche svp | hotspot,hotspot-setup
+le partage de connexion marche merci | hotspot,hotspot-setup
+salut peut on faire un hotspot svp | hotspot,hotspot-setup
+petite question peut on faire un hotspot ? | hotspot,hotspot-setup
+bonjour le partage de connexion marche svp | hotspot,hotspot-setup
+bonjour peut on partager la connexion | hotspot,hotspot-setup
+petite question peut on faire un hotspot | hotspot,hotspot-setup
+comment recharger mon forfait | topup
+comment recharger des données | topup
+peut on ajouter des données | topup
+acheter plus de données | topup
+peut on recharger | topup
+acheter plus de go | topup
+bonjour acheter plus de go | topup
+salut comment recharger des données ? | topup
+bonjour peut on recharger svp | topup
+petite question acheter plus de données merci | topup
+peut on recharger ? | topup
+petite question peut on ajouter des données merci | topup
+petite question acheter plus de go | topup
+petite question acheter plus de données ? | topup
+peut on recharger merci | topup
+salut comment recharger des données | topup
+peut on recharger svp | topup
+comment recharger des données svp | topup
+peut on être remboursé | refund,refund-how
+comment être remboursé | refund,refund-how
+peut on annuler | refund,refund-how
+annuler ma commande | refund,refund-how
+petite question peut on être remboursé ? | refund,refund-how
+bonjour annuler ma commande | refund,refund-how
+salut comment être remboursé | refund,refund-how
+peut on annuler svp | refund,refund-how
+salut peut on être remboursé svp | refund,refund-how
+annuler ma commande ? | refund,refund-how
+annuler ma commande svp | refund,refund-how
+annuler ma commande merci | refund,refund-how
+comment être remboursé ? | refund,refund-how
+peut on être remboursé ? | refund,refund-how
+comment être remboursé merci | refund,refund-how
+petite question annuler ma commande | refund,refund-how
+bonjour peut on être remboursé merci | refund,refund-how
+peut on être remboursé merci | refund,refund-how
+quels moyens de paiement | payment
+comment payer | payment
+payer avec apple pay | payment
+payer par carte | payment
+payer avec paypal | payment
+bonjour quels moyens de paiement merci | payment
+payer par carte ? | payment
+comment payer svp | payment
+bonjour payer par carte | payment
+salut comment payer merci | payment
+petite question payer avec apple pay | payment
+petite question payer avec apple pay ? | payment
+salut comment payer svp | payment
+bonjour payer par carte svp | payment
+comment payer merci | payment
+petite question quels moyens de paiement ? | payment
+payer par carte svp | payment
+quels moyens de paiement merci | payment
+quand vais je recevoir l'esim | delivery
+quand arrive l'esim | delivery
+quand arrive le qr code | delivery
+combien de temps pour la livraison | delivery
+petite question quand arrive le qr code svp | delivery
+salut quand vais je recevoir l'esim svp | delivery
+salut combien de temps pour la livraison svp | delivery
+bonjour combien de temps pour la livraison | delivery
+petite question quand vais je recevoir l'esim | delivery
+salut quand arrive le qr code merci | delivery
+salut quand arrive le qr code | delivery
+combien de temps pour la livraison ? | delivery
+bonjour quand arrive le qr code ? | delivery
+quand vais je recevoir l'esim svp | delivery
+petite question combien de temps pour la livraison | delivery
+petite question quand arrive le qr code | delivery
+quand arrive le qr code merci | delivery
+combien de temps pour la livraison merci | delivery
+je veux parler à un humain | contact
+je veux parler à un conseiller | contact
+comment vous contacter | contact
+contacter le support | contact
+contacter le service client | contact
+petite question contacter le support merci | contact
+salut comment vous contacter | contact
+salut contacter le service client | contact
+petite question je veux parler à un conseiller merci | contact
+petite question je veux parler à un conseiller | contact
+petite question je veux parler à un humain ? | contact
+je veux parler à un conseiller svp | contact
+salut je veux parler à un conseiller ? | contact
+contacter le service client merci | contact
+petite question je veux parler à un conseiller ? | contact
+petite question comment vous contacter | contact
+bonjour je veux parler à un conseiller | contact
+je veux parler à un conseiller merci | contact
+pas d'internet à l'étranger | no-internet
+esim installée mais pas d'internet | no-internet
+pourquoi internet ne marche pas | no-internet
+esim active mais pas d'internet | no-internet
+pas d'internet avec l'esim | no-internet
+pas d'internet | no-internet
+petite question esim active mais pas d'internet merci | no-internet
+pourquoi internet ne marche pas ? | no-internet
+bonjour pourquoi internet ne marche pas ? | no-internet
+bonjour pas d'internet avec l'esim merci | no-internet
+bonjour pas d'internet à l'étranger merci | no-internet
+petite question esim active mais pas d'internet | no-internet
+salut esim installée mais pas d'internet | no-internet
+pas d'internet svp | no-internet
+petite question pourquoi internet ne marche pas ? | no-internet
+pas d'internet à l'étranger merci | no-internet
+salut pas d'internet avec l'esim | no-internet
+salut esim installée mais pas d'internet svp | no-internet
+où voir les données restantes | check-usage
+combien de données il me reste | check-usage
+vérifier ma consommation | check-usage
+combien de go il me reste | check-usage
+salut combien de données il me reste svp | check-usage
+bonjour combien de données il me reste | check-usage
+salut où voir les données restantes svp | check-usage
+petite question vérifier ma consommation svp | check-usage
+combien de go il me reste merci | check-usage
+vérifier ma consommation ? | check-usage
+combien de données il me reste svp | check-usage
+petite question combien de go il me reste merci | check-usage
+vérifier ma consommation svp | check-usage
+bonjour vérifier ma consommation ? | check-usage
+bonjour combien de go il me reste svp | check-usage
+petite question combien de données il me reste merci | check-usage
+petite question vérifier ma consommation merci | check-usage
+petite question où voir les données restantes svp | check-usage
+combien coûte une esim | prices
+combien coûte un forfait | prices
+prix des esim | prices
+petite question combien coûte un forfait | prices
+salut combien coûte une esim merci | prices
+prix des esim svp | prices
+bonjour prix des esim | prices
+combien coûte un forfait ? | prices
+petite question combien coûte une esim svp | prices
+combien coûte une esim svp | prices
+salut combien coûte un forfait | prices
+combien coûte une esim ? | prices
+combien coûte une esim merci | prices
+salut combien coûte une esim | prices
+bonjour combien coûte une esim | prices
+petite question combien coûte une esim merci | prices
+bonjour combien coûte un forfait svp | prices
+petite question combien coûte une esim ? | prices
+avez vous un code promo | discount-code
+où entrer le code de réduction | discount-code
+où entrer le coupon | discount-code
+où entrer le code promo | discount-code
+où entrer le code de réduction merci | discount-code
+où entrer le coupon merci | discount-code
+bonjour où entrer le code de réduction merci | discount-code
+bonjour où entrer le code de réduction | discount-code
+bonjour où entrer le code promo svp | discount-code
+avez vous un code promo merci | discount-code
+où entrer le coupon ? | discount-code
+où entrer le coupon svp | discount-code
+petite question où entrer le code de réduction | discount-code
+petite question avez vous un code promo | discount-code
+où entrer le code promo svp | discount-code
+petite question où entrer le code de réduction merci | discount-code
+où entrer le code promo merci | discount-code
+salut avez vous un code promo ? | discount-code
+puis je avoir une facture | invoice
+où est ma facture | invoice
+où est ma facture ? | invoice
+où est ma facture svp | invoice
+où est ma facture merci | invoice
+petite question où est ma facture merci | invoice
+puis je avoir une facture merci | invoice
+bonjour où est ma facture | invoice
+puis je avoir une facture svp | invoice
+salut où est ma facture svp | invoice
+bonjour puis je avoir une facture | invoice
+salut puis je avoir une facture merci | invoice
+bonjour puis je avoir une facture svp | invoice
+salut où est ma facture ? | invoice
+petite question puis je avoir une facture ? | invoice
+petite question où est ma facture ? | invoice
+petite question puis je avoir une facture | invoice
+salut puis je avoir une facture | invoice
+supprimer mon compte | account-delete
+supprimer mes données | account-delete
+comment supprimer mon compte | account-delete
+petite question comment supprimer mon compte merci | account-delete
+salut supprimer mon compte | account-delete
+bonjour comment supprimer mon compte | account-delete
+comment supprimer mon compte ? | account-delete
+supprimer mes données merci | account-delete
+bonjour supprimer mes données | account-delete
+petite question comment supprimer mon compte ? | account-delete
+salut supprimer mes données merci | account-delete
+bonjour comment supprimer mon compte merci | account-delete
+bonjour supprimer mon compte ? | account-delete
+salut supprimer mes données svp | account-delete
+salut supprimer mon compte ? | account-delete
+supprimer mon compte merci | account-delete
+petite question comment supprimer mon compte | account-delete
+salut supprimer mes données | account-delete
+que signifie en traitement | order-status
+que signifie paiement en attente | order-status
+que signifie prêt à installer | order-status
+statut de commande signification | order-status
+bonjour que signifie en traitement | order-status
+petite question que signifie paiement en attente | order-status
+bonjour statut de commande signification | order-status
+statut de commande signification ? | order-status
+bonjour statut de commande signification ? | order-status
+statut de commande signification svp | order-status
+que signifie paiement en attente merci | order-status
+salut que signifie prêt à installer svp | order-status
+salut que signifie prêt à installer | order-status
+que signifie prêt à installer svp | order-status
+bonjour que signifie prêt à installer | order-status
+que signifie en traitement ? | order-status
+que signifie paiement en attente ? | order-status
+que signifie paiement en attente svp | order-status
+comment marche le forfait illimité | unlimited
+l'illimité est il vraiment illimité | unlimited
+l'illimité est il vraiment illimité merci | unlimited
+salut comment marche le forfait illimité merci | unlimited
+petite question comment marche le forfait illimité | unlimited
+petite question l'illimité est il vraiment illimité merci | unlimited
+salut l'illimité est il vraiment illimité | unlimited
+comment marche le forfait illimité ? | unlimited
+bonjour l'illimité est il vraiment illimité merci | unlimited
+comment marche le forfait illimité svp | unlimited
+bonjour comment marche le forfait illimité svp | unlimited
+bonjour l'illimité est il vraiment illimité | unlimited
+petite question comment marche le forfait illimité merci | unlimited
+salut l'illimité est il vraiment illimité ? | unlimited
+petite question l'illimité est il vraiment illimité svp | unlimited
+bonjour l'illimité est il vraiment illimité svp | unlimited
+petite question comment marche le forfait illimité svp | unlimited
+l'illimité est il vraiment illimité svp | unlimited
+whatsapp marche avec l'esim | whatsapp
+whatsapp marche | whatsapp
+puis je utiliser whatsapp | whatsapp
+petite question puis je utiliser whatsapp svp | whatsapp
+whatsapp marche ? | whatsapp
+salut whatsapp marche svp | whatsapp
+whatsapp marche avec l'esim svp | whatsapp
+whatsapp marche svp | whatsapp
+puis je utiliser whatsapp ? | whatsapp
+salut puis je utiliser whatsapp merci | whatsapp
+salut puis je utiliser whatsapp | whatsapp
+bonjour whatsapp marche merci | whatsapp
+whatsapp marche avec l'esim ? | whatsapp
+salut whatsapp marche merci | whatsapp
+salut whatsapp marche avec l'esim | whatsapp
+petite question puis je utiliser whatsapp | whatsapp
+bonjour whatsapp marche avec l'esim ? | whatsapp
+bonjour whatsapp marche ? | whatsapp
+changé de téléphone que devient l'esim | new-phone,deleted-esim
+transférer l'esim sur un autre téléphone | new-phone,deleted-esim
+j'ai supprimé l'esim que faire | new-phone,deleted-esim
+nouveau téléphone que devient l'esim | new-phone,deleted-esim
+bonjour changé de téléphone que devient l'esim ? | new-phone,deleted-esim
+changé de téléphone que devient l'esim svp | new-phone,deleted-esim
+petite question transférer l'esim sur un autre téléphone | new-phone,deleted-esim
+bonjour transférer l'esim sur un autre téléphone svp | new-phone,deleted-esim
+nouveau téléphone que devient l'esim merci | new-phone,deleted-esim
+petite question j'ai supprimé l'esim que faire svp | new-phone,deleted-esim
+j'ai supprimé l'esim que faire ? | new-phone,deleted-esim
+changé de téléphone que devient l'esim merci | new-phone,deleted-esim
+salut transférer l'esim sur un autre téléphone | new-phone,deleted-esim
+transférer l'esim sur un autre téléphone ? | new-phone,deleted-esim
+j'ai supprimé l'esim que faire svp | new-phone,deleted-esim
+petite question transférer l'esim sur un autre téléphone svp | new-phone,deleted-esim
+petite question changé de téléphone que devient l'esim | new-phone,deleted-esim
+bonjour nouveau téléphone que devient l'esim | new-phone,deleted-esim
+acheter une esim pour quelqu'un d'autre | gift
+acheter une esim pour ma mère | gift
+acheter une esim en cadeau | gift
+petite question acheter une esim en cadeau svp | gift
+bonjour acheter une esim pour quelqu'un d'autre | gift
+acheter une esim en cadeau ? | gift
+salut acheter une esim en cadeau merci | gift
+salut acheter une esim pour quelqu'un d'autre svp | gift
+petite question acheter une esim pour ma mère ? | gift
+salut acheter une esim pour quelqu'un d'autre | gift
+bonjour acheter une esim en cadeau | gift
+acheter une esim pour quelqu'un d'autre merci | gift
+bonjour acheter une esim pour ma mère ? | gift
+salut acheter une esim en cadeau svp | gift
+acheter une esim en cadeau svp | gift
+petite question acheter une esim pour ma mère svp | gift
+acheter une esim pour ma mère merci | gift
+salut acheter une esim en cadeau | gift
+le site est il fiable | safe
+passport io est il sûr | safe
+le site est il sûr | safe
+passport io est il fiable | safe
+c'est une arnaque | safe
+le site est il sûr svp | safe
+salut passport io est il fiable ? | safe
+petite question le site est il fiable ? | safe
+bonjour le site est il sûr | safe
+salut passport io est il fiable | safe
+salut passport io est il sûr svp | safe
+passport io est il fiable ? | safe
+petite question c'est une arnaque | safe
+le site est il sûr merci | safe
+le site est il fiable svp | safe
+passport io est il sûr merci | safe
+petite question c'est une arnaque svp | safe
+passport io est il sûr ? | safe
+changer la devise | currency
+afficher les prix en dollars | currency
+afficher les prix en euros | currency
+petite question afficher les prix en euros svp | currency
+petite question afficher les prix en dollars svp | currency
+changer la devise svp | currency
+petite question changer la devise merci | currency
+afficher les prix en euros ? | currency
+bonjour afficher les prix en dollars ? | currency
+afficher les prix en dollars merci | currency
+afficher les prix en dollars ? | currency
+bonjour afficher les prix en euros svp | currency
+petite question afficher les prix en euros ? | currency
+salut afficher les prix en euros | currency
+bonjour changer la devise | currency
+afficher les prix en euros svp | currency
+afficher les prix en euros merci | currency
+bonjour changer la devise svp | currency
+c'est quoi un salon d'aéroport | lounge-what
+qu'y a t il dans le salon | lounge-what
+petite question qu'y a t il dans le salon svp | lounge-what
+bonjour qu'y a t il dans le salon svp | lounge-what
+salut qu'y a t il dans le salon svp | lounge-what
+qu'y a t il dans le salon svp | lounge-what
+qu'y a t il dans le salon ? | lounge-what
+qu'y a t il dans le salon merci | lounge-what
+bonjour qu'y a t il dans le salon merci | lounge-what
+c'est quoi un salon d'aéroport svp | lounge-what
+c'est quoi un salon d'aéroport merci | lounge-what
+bonjour c'est quoi un salon d'aéroport | lounge-what
+petite question c'est quoi un salon d'aéroport | lounge-what
+petite question qu'y a t il dans le salon | lounge-what
+salut qu'y a t il dans le salon merci | lounge-what
+c'est quoi un salon d'aéroport ? | lounge-what
+salut c'est quoi un salon d'aéroport | lounge-what
+petite question c'est quoi un salon d'aéroport ? | lounge-what
+comment marche le fast track | fasttrack-how
+c'est quoi le fast track | fasttrack-how
+petite question c'est quoi le fast track merci | fasttrack-how
+salut c'est quoi le fast track | fasttrack-how
+c'est quoi le fast track ? | fasttrack-how
+c'est quoi le fast track svp | fasttrack-how
+salut c'est quoi le fast track ? | fasttrack-how
+petite question c'est quoi le fast track svp | fasttrack-how
+bonjour c'est quoi le fast track ? | fasttrack-how
+petite question comment marche le fast track svp | fasttrack-how
+comment marche le fast track svp | fasttrack-how
+petite question comment marche le fast track ? | fasttrack-how
+petite question c'est quoi le fast track ? | fasttrack-how
+salut comment marche le fast track ? | fasttrack-how
+petite question comment marche le fast track | fasttrack-how
+salut c'est quoi le fast track svp | fasttrack-how
+bonjour comment marche le fast track merci | fasttrack-how
+salut comment marche le fast track merci | fasttrack-how
+peut on avoir plusieurs esim | multiple-esims
+peut on avoir deux esim | multiple-esims
+petite question peut on avoir plusieurs esim ? | multiple-esims
+peut on avoir plusieurs esim svp | multiple-esims
+petite question peut on avoir deux esim svp | multiple-esims
+peut on avoir deux esim ? | multiple-esims
+petite question peut on avoir deux esim | multiple-esims
+bonjour peut on avoir deux esim svp | multiple-esims
+salut peut on avoir plusieurs esim | multiple-esims
+peut on avoir deux esim svp | multiple-esims
+peut on avoir plusieurs esim merci | multiple-esims
+bonjour peut on avoir plusieurs esim merci | multiple-esims
+bonjour peut on avoir plusieurs esim svp | multiple-esims
+peut on avoir deux esim merci | multiple-esims
+petite question peut on avoir plusieurs esim merci | multiple-esims
+salut peut on avoir deux esim ? | multiple-esims
+salut peut on avoir plusieurs esim merci | multiple-esims
+petite question peut on avoir deux esim merci | multiple-esims
+faut il supprimer l'esim après le voyage | remove-after
+bonjour faut il supprimer l'esim après le voyage | remove-after
+bonjour faut il supprimer l'esim après le voyage ? | remove-after
+faut il supprimer l'esim après le voyage ? | remove-after
+salut faut il supprimer l'esim après le voyage | remove-after
+petite question faut il supprimer l'esim après le voyage | remove-after
+faut il supprimer l'esim après le voyage merci | remove-after
+salut faut il supprimer l'esim après le voyage merci | remove-after
+salut faut il supprimer l'esim après le voyage svp | remove-after
+faut il supprimer l'esim après le voyage svp | remove-after
+bonjour faut il supprimer l'esim après le voyage merci | remove-after
+petite question faut il supprimer l'esim après le voyage ? | remove-after
+bonjour faut il supprimer l'esim après le voyage svp | remove-after
+petite question faut il supprimer l'esim après le voyage svp | remove-after
+salut faut il supprimer l'esim après le voyage ? | remove-after
+petite question faut il supprimer l'esim après le voyage merci | remove-after
+plus de données que faire | expired
+forfait épuisé que faire | expired
+forfait épuisé que faire svp | expired
+forfait épuisé que faire merci | expired
+plus de données que faire svp | expired
+bonjour plus de données que faire merci | expired
+salut plus de données que faire ? | expired
+petite question forfait épuisé que faire | expired
+bonjour forfait épuisé que faire svp | expired
+petite question plus de données que faire | expired
+salut forfait épuisé que faire | expired
+salut forfait épuisé que faire svp | expired
+petite question plus de données que faire merci | expired
+petite question forfait épuisé que faire merci | expired
+bonjour plus de données que faire ? | expired
+salut plus de données que faire | expired
+bonjour forfait épuisé que faire ? | expired
+salut plus de données que faire merci | expired
+je n'ai pas reçu de qr code | no-email,my-esims
+où est mon qr code | no-email,my-esims
+petite question je n'ai pas reçu de qr code ? | no-email,my-esims
+petite question je n'ai pas reçu de qr code merci | no-email,my-esims
+où est mon qr code svp | no-email,my-esims
+salut je n'ai pas reçu de qr code | no-email,my-esims
+petite question où est mon qr code svp | no-email,my-esims
+bonjour je n'ai pas reçu de qr code svp | no-email,my-esims
+où est mon qr code merci | no-email,my-esims
+petite question je n'ai pas reçu de qr code svp | no-email,my-esims
+où est mon qr code ? | no-email,my-esims
+je n'ai pas reçu de qr code svp | no-email,my-esims
+petite question je n'ai pas reçu de qr code | no-email,my-esims
+salut je n'ai pas reçu de qr code ? | no-email,my-esims
+bonjour je n'ai pas reçu de qr code merci | no-email,my-esims
+salut je n'ai pas reçu de qr code merci | no-email,my-esims
+je n'ai pas reçu de qr code merci | no-email,my-esims
+je n'ai pas reçu de qr code ? | no-email,my-esims
+avez vous une esim pour les usa | coverage-countries
+avez vous une esim pour le maroc | coverage-countries
+avez vous une esim pour la thaïlande | coverage-countries
+dans quels pays ça marche | coverage-countries
+avez vous une esim pour le japon | coverage-countries
+salut avez vous une esim pour les usa ? | coverage-countries
+petite question avez vous une esim pour les usa | coverage-countries
+salut avez vous une esim pour les usa merci | coverage-countries
+avez vous une esim pour le japon ? | coverage-countries
+avez vous une esim pour les usa ? | coverage-countries
+petite question avez vous une esim pour le japon ? | coverage-countries
+petite question avez vous une esim pour le japon merci | coverage-countries
+salut avez vous une esim pour le maroc | coverage-countries
+salut avez vous une esim pour le japon svp | coverage-countries
+avez vous une esim pour la thaïlande svp | coverage-countries
+avez vous une esim pour les usa svp | coverage-countries
+bonjour dans quels pays ça marche svp | coverage-countries
+bonjour avez vous une esim pour le maroc merci | coverage-countries
+où voir l'esim achetée merci | my-esims
+bonjour je veux acheter une esim comment | how-to-buy

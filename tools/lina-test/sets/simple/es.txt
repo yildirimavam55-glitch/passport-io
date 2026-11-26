@@ -1,0 +1,715 @@
+## Einfache Kundenfragen (es) – aus Vorlagen erzeugt (tools: gen_simple.py), 714 Fragen
+compré un paquete dónde la veo | my-esims
+dónde veo la esim que compré | my-esims
+dónde encuentro mis paquetes | my-esims
+dónde veo los paquetes comprados | my-esims
+dónde encuentro los paquetes comprados | my-esims
+compré una esim dónde está | my-esims
+dónde están mis paquetes | my-esims
+dónde están mis pedidos en mi cuenta | my-esims
+dónde están mis paquetes en mi cuenta | my-esims
+cómo veo mis compras | my-esims
+dónde veo mis pedidos | my-esims
+cómo veo mis esim | my-esims
+dónde encuentro la esim que compré | my-esims
+dónde está mi esim después de comprar | my-esims
+dónde encuentro mis esim | my-esims
+dónde están mis pedidos | my-esims
+dónde está mi esim | my-esims
+compré un paquete dónde lo encuentro | my-esims
+dónde están mis pedidos después de comprar | my-esims
+cómo pido un paquete | how-to-buy
+cómo compro un paquete | how-to-buy
+cómo compro una esim | how-to-buy
+cómo hago un pedido | how-to-buy
+cómo pido una esim | how-to-buy
+dónde compro una esim | how-to-buy
+dónde compro un paquete | how-to-buy
+quiero comprar un paquete cómo | how-to-buy
+cómo pido | how-to-buy
+quiero comprar una esim cómo | how-to-buy
+cómo compro | how-to-buy
+cómo pido una esim? | how-to-buy
+una pregunta quiero comprar una esim cómo | how-to-buy
+una pregunta cómo compro una esim | how-to-buy
+quiero comprar una esim cómo gracias | how-to-buy
+cómo hago un pedido por favor | how-to-buy
+una pregunta cómo pido una esim | how-to-buy
+hola cómo compro un paquete? | how-to-buy
+cómo pido? | how-to-buy
+necesito una cuenta | need-account
+puedo comprar como invitado | need-account
+puedo comprar sin cuenta | need-account
+tengo que registrarme para comprar | need-account
+puedo comprar sin registrarme | need-account
+necesito una cuenta para comprar | need-account
+necesito una cuenta para comprar gracias | need-account
+buenas puedo comprar sin registrarme | need-account
+necesito una cuenta para comprar? | need-account
+buenas puedo comprar sin cuenta por favor | need-account
+puedo comprar sin registrarme por favor | need-account
+hola necesito una cuenta por favor | need-account
+hola necesito una cuenta para comprar por favor | need-account
+hola puedo comprar sin cuenta gracias | need-account
+necesito una cuenta para comprar por favor | need-account
+tengo que registrarme para comprar? | need-account
+puedo comprar sin cuenta gracias | need-account
+hola necesito una cuenta para comprar | need-account
+buenas tengo que registrarme para comprar | need-account
+modificar la contraseña | change-password
+cómo cambio mi contraseña | change-password
+modificar mi contraseña | change-password
+quiero una contraseña nueva | change-password
+cambiar mi contraseña | change-password
+cambiar la contraseña | change-password
+quiero una contraseña nueva? | change-password
+buenas modificar la contraseña gracias | change-password
+una pregunta cambiar mi contraseña | change-password
+cambiar mi contraseña? | change-password
+cambiar mi contraseña gracias | change-password
+buenas cómo cambio mi contraseña | change-password
+buenas cambiar la contraseña por favor | change-password
+hola cambiar mi contraseña | change-password
+modificar la contraseña por favor | change-password
+cambiar la contraseña? | change-password
+cómo cambio mi contraseña? | change-password
+hola cambiar la contraseña | change-password
+una pregunta quiero una contraseña nueva? | change-password
+cambiar mi correo | change-email
+puse mal mi correo | change-email
+cómo cambio mi email | change-email
+modificar el correo | change-email
+cómo cambio mi correo | change-email
+modificar mi correo | change-email
+cambiar el correo | change-email
+una pregunta cómo cambio mi email gracias | change-email
+hola cambiar el correo? | change-email
+cambiar el correo? | change-email
+hola modificar mi correo por favor | change-email
+hola puse mal mi correo por favor | change-email
+buenas modificar el correo | change-email
+buenas modificar mi correo | change-email
+buenas cambiar mi correo | change-email
+puse mal mi correo gracias | change-email
+buenas cómo cambio mi email gracias | change-email
+una pregunta modificar mi correo? | change-email
+una pregunta cambiar el correo | change-email
+no llega el código de confirmación | account-login
+no puedo iniciar sesión | account-login
+olvidé mi contraseña | account-login
+no puedo entrar a mi cuenta | account-login
+una pregunta no llega el código de confirmación | account-login
+no puedo entrar a mi cuenta? | account-login
+hola no puedo iniciar sesión | account-login
+olvidé mi contraseña por favor | account-login
+no puedo iniciar sesión gracias | account-login
+una pregunta olvidé mi contraseña gracias | account-login
+buenas no llega el código de confirmación | account-login
+no puedo iniciar sesión? | account-login
+olvidé mi contraseña? | account-login
+olvidé mi contraseña gracias | account-login
+una pregunta no puedo iniciar sesión | account-login
+no puedo iniciar sesión por favor | account-login
+hola no puedo iniciar sesión por favor | account-login
+no llega el código de confirmación gracias | account-login
+hola olvidé mi contraseña | account-login
+qué significa esim | what-is-esim
+qué es una esim | what-is-esim
+cómo funciona una esim | what-is-esim
+qué es una esim gracias | what-is-esim
+una pregunta qué significa esim? | what-is-esim
+qué es una esim? | what-is-esim
+buenas qué es una esim? | what-is-esim
+una pregunta cómo funciona una esim por favor | what-is-esim
+buenas cómo funciona una esim? | what-is-esim
+buenas cómo funciona una esim por favor | what-is-esim
+una pregunta qué significa esim gracias | what-is-esim
+hola qué significa esim gracias | what-is-esim
+cómo funciona una esim gracias | what-is-esim
+hola qué es una esim | what-is-esim
+una pregunta qué es una esim por favor | what-is-esim
+qué significa esim por favor | what-is-esim
+qué significa esim gracias | what-is-esim
+una pregunta qué es una esim | what-is-esim
+una pregunta qué significa esim por favor | what-is-esim
+mi iphone es compatible con esim | device-compatible
+qué móviles admiten esim | device-compatible
+funciona la esim en mi teléfono | device-compatible
+mi móvil es compatible con esim | device-compatible
+mi samsung es compatible con esim | device-compatible
+mi iphone es compatible con esim por favor | device-compatible
+una pregunta mi samsung es compatible con esim | device-compatible
+una pregunta funciona la esim en mi teléfono por favor | device-compatible
+buenas mi samsung es compatible con esim | device-compatible
+buenas qué móviles admiten esim | device-compatible
+una pregunta qué móviles admiten esim | device-compatible
+qué móviles admiten esim gracias | device-compatible
+funciona la esim en mi teléfono? | device-compatible
+funciona la esim en mi teléfono por favor | device-compatible
+buenas funciona la esim en mi teléfono gracias | device-compatible
+una pregunta mi iphone es compatible con esim | device-compatible
+buenas qué móviles admiten esim por favor | device-compatible
+mi samsung es compatible con esim gracias | device-compatible
+una pregunta mi samsung es compatible con esim por favor | device-compatible
+cómo activo la esim | install-esim,install-iphone,install-android
+cómo instalo la esim | install-esim,install-iphone,install-android
+cómo escaneo el código qr | install-esim,install-iphone,install-android
+instalar esim | install-esim,install-iphone,install-android
+instalar esim guía | install-esim,install-iphone,install-android
+cómo activo la esim? | install-esim,install-iphone,install-android
+instalar esim guía? | install-esim,install-iphone,install-android
+instalar esim guía por favor | install-esim,install-iphone,install-android
+instalar esim gracias | install-esim,install-iphone,install-android
+una pregunta instalar esim | install-esim,install-iphone,install-android
+hola instalar esim guía por favor | install-esim,install-iphone,install-android
+hola cómo activo la esim por favor | install-esim,install-iphone,install-android
+buenas cómo activo la esim gracias | install-esim,install-iphone,install-android
+cómo escaneo el código qr gracias | install-esim,install-iphone,install-android
+buenas instalar esim guía | install-esim,install-iphone,install-android
+una pregunta instalar esim por favor | install-esim,install-iphone,install-android
+cómo activo la esim por favor | install-esim,install-iphone,install-android
+cómo activo la esim gracias | install-esim,install-iphone,install-android
+una pregunta cómo escaneo el código qr | install-esim,install-iphone,install-android
+cuándo empiezan a contar los días | when-activate,buy-when,line-on
+cuándo está activa la esim | when-activate,buy-when,line-on
+cuándo empieza el paquete | when-activate,buy-when,line-on
+cuándo se activa el paquete | when-activate,buy-when,line-on
+buenas cuándo empiezan a contar los días gracias | when-activate,buy-when,line-on
+cuándo está activa la esim gracias | when-activate,buy-when,line-on
+hola cuándo empiezan a contar los días gracias | when-activate,buy-when,line-on
+una pregunta cuándo se activa el paquete? | when-activate,buy-when,line-on
+cuándo empieza el paquete? | when-activate,buy-when,line-on
+buenas cuándo empieza el paquete por favor | when-activate,buy-when,line-on
+hola cuándo empieza el paquete | when-activate,buy-when,line-on
+cuándo empiezan a contar los días? | when-activate,buy-when,line-on
+una pregunta cuándo empiezan a contar los días por favor | when-activate,buy-when,line-on
+cuándo empieza el paquete gracias | when-activate,buy-when,line-on
+hola cuándo empieza el paquete por favor | when-activate,buy-when,line-on
+cuándo empiezan a contar los días por favor | when-activate,buy-when,line-on
+una pregunta cuándo empieza el paquete gracias | when-activate,buy-when,line-on
+hola cuándo empieza el paquete? | when-activate,buy-when,line-on
+cuándo está activa la esim? | when-activate,buy-when,line-on
+cuántos gb necesito | which-package
+cuántos datos necesito para una semana | which-package
+qué paquete necesito | which-package
+qué paquete elijo | which-package
+cuántos datos necesito | which-package
+cuántos datos necesito en vacaciones | which-package
+cuántos gb necesito en vacaciones | which-package
+cuántos gb necesito para una semana | which-package
+hola cuántos datos necesito en vacaciones por favor | which-package
+cuántos datos necesito en vacaciones por favor | which-package
+cuántos datos necesito en vacaciones? | which-package
+qué paquete necesito por favor | which-package
+hola qué paquete elijo por favor | which-package
+buenas cuántos datos necesito en vacaciones gracias | which-package
+hola qué paquete elijo? | which-package
+cuántos datos necesito gracias | which-package
+buenas cuántos gb necesito gracias | which-package
+cuántos gb necesito por favor | which-package
+una pregunta qué paquete elijo por favor | which-package
+me dan un número de teléfono | calls,phone-number
+sms incluidos | calls,phone-number
+puedo llamar con la esim | calls,phone-number
+puedo hacer llamadas con la esim | calls,phone-number
+llamadas incluidos | calls,phone-number
+buenas me dan un número de teléfono por favor | calls,phone-number
+buenas puedo hacer llamadas con la esim por favor | calls,phone-number
+hola puedo llamar con la esim gracias | calls,phone-number
+buenas sms incluidos | calls,phone-number
+hola puedo hacer llamadas con la esim? | calls,phone-number
+llamadas incluidos? | calls,phone-number
+una pregunta llamadas incluidos | calls,phone-number
+hola puedo hacer llamadas con la esim por favor | calls,phone-number
+hola sms incluidos gracias | calls,phone-number
+hola me dan un número de teléfono por favor | calls,phone-number
+buenas puedo llamar con la esim | calls,phone-number
+buenas llamadas incluidos? | calls,phone-number
+buenas puedo hacer llamadas con la esim? | calls,phone-number
+hola puedo hacer llamadas con la esim | calls,phone-number
+qué pasa con mi tarjeta sim | keep-number
+mantengo mi número | keep-number
+mi número sigue activo | keep-number
+hola qué pasa con mi tarjeta sim por favor | keep-number
+buenas mi número sigue activo | keep-number
+buenas qué pasa con mi tarjeta sim gracias | keep-number
+una pregunta qué pasa con mi tarjeta sim | keep-number
+mi número sigue activo? | keep-number
+buenas mi número sigue activo? | keep-number
+hola qué pasa con mi tarjeta sim | keep-number
+hola mi número sigue activo? | keep-number
+hola mantengo mi número gracias | keep-number
+buenas qué pasa con mi tarjeta sim | keep-number
+buenas mantengo mi número gracias | keep-number
+una pregunta mantengo mi número | keep-number
+una pregunta mi número sigue activo | keep-number
+buenas mantengo mi número por favor | keep-number
+una pregunta qué pasa con mi tarjeta sim gracias | keep-number
+puedo hacer hotspot | hotspot,hotspot-setup
+puedo compartir internet | hotspot,hotspot-setup
+funciona el punto de acceso | hotspot,hotspot-setup
+hola funciona el punto de acceso | hotspot,hotspot-setup
+hola puedo compartir internet | hotspot,hotspot-setup
+una pregunta puedo compartir internet gracias | hotspot,hotspot-setup
+puedo compartir internet por favor | hotspot,hotspot-setup
+buenas puedo hacer hotspot | hotspot,hotspot-setup
+puedo hacer hotspot? | hotspot,hotspot-setup
+funciona el punto de acceso gracias | hotspot,hotspot-setup
+puedo hacer hotspot por favor | hotspot,hotspot-setup
+hola puedo compartir internet por favor | hotspot,hotspot-setup
+funciona el punto de acceso por favor | hotspot,hotspot-setup
+funciona el punto de acceso? | hotspot,hotspot-setup
+una pregunta puedo hacer hotspot? | hotspot,hotspot-setup
+una pregunta puedo hacer hotspot gracias | hotspot,hotspot-setup
+puedo compartir internet gracias | hotspot,hotspot-setup
+buenas puedo compartir internet gracias | hotspot,hotspot-setup
+cómo recargo el paquete | topup
+puedo añadir datos | topup
+puedo recargar | topup
+comprar más gb | topup
+cómo recargo datos | topup
+comprar más datos | topup
+hola cómo recargo datos gracias | topup
+buenas puedo recargar por favor | topup
+cómo recargo el paquete gracias | topup
+cómo recargo datos? | topup
+comprar más gb por favor | topup
+hola cómo recargo el paquete | topup
+buenas comprar más gb | topup
+una pregunta puedo recargar | topup
+buenas comprar más gb gracias | topup
+una pregunta puedo recargar? | topup
+hola cómo recargo datos por favor | topup
+cómo recargo el paquete? | topup
+cómo recupero mi dinero | refund,refund-how
+cancelar mi pedido | refund,refund-how
+puedo pedir reembolso | refund,refund-how
+puedo cancelar | refund,refund-how
+cómo recupero mi dinero? | refund,refund-how
+buenas cómo recupero mi dinero por favor | refund,refund-how
+una pregunta cómo recupero mi dinero gracias | refund,refund-how
+buenas cancelar mi pedido | refund,refund-how
+puedo cancelar por favor | refund,refund-how
+cancelar mi pedido por favor | refund,refund-how
+puedo cancelar? | refund,refund-how
+una pregunta cómo recupero mi dinero | refund,refund-how
+una pregunta puedo cancelar | refund,refund-how
+buenas cancelar mi pedido gracias | refund,refund-how
+cancelar mi pedido gracias | refund,refund-how
+hola puedo pedir reembolso | refund,refund-how
+hola cómo recupero mi dinero gracias | refund,refund-how
+buenas cómo recupero mi dinero gracias | refund,refund-how
+qué métodos de pago hay | payment
+pagar con paypal | payment
+cómo puedo pagar | payment
+pagar con tarjeta | payment
+pagar con apple pay | payment
+qué métodos de pago hay gracias | payment
+hola qué métodos de pago hay | payment
+buenas cómo puedo pagar | payment
+hola pagar con apple pay gracias | payment
+buenas pagar con paypal gracias | payment
+hola pagar con tarjeta gracias | payment
+una pregunta qué métodos de pago hay gracias | payment
+buenas qué métodos de pago hay por favor | payment
+cómo puedo pagar gracias | payment
+hola pagar con tarjeta por favor | payment
+pagar con tarjeta? | payment
+una pregunta pagar con paypal | payment
+una pregunta pagar con apple pay? | payment
+cuándo recibo la esim | delivery
+cuándo llega la esim | delivery
+cuándo llega el código qr | delivery
+cuánto tarda la entrega | delivery
+buenas cuándo recibo la esim? | delivery
+buenas cuándo recibo la esim gracias | delivery
+cuándo llega la esim? | delivery
+una pregunta cuánto tarda la entrega por favor | delivery
+buenas cuándo llega la esim | delivery
+una pregunta cuánto tarda la entrega? | delivery
+una pregunta cuándo llega la esim por favor | delivery
+hola cuándo llega la esim? | delivery
+buenas cuándo llega la esim gracias | delivery
+hola cuándo llega la esim por favor | delivery
+buenas cuándo llega el código qr gracias | delivery
+buenas cuánto tarda la entrega? | delivery
+buenas cuándo llega el código qr | delivery
+cuándo llega la esim gracias | delivery
+contactar soporte | contact
+cómo contacto con soporte | contact
+quiero hablar con una persona | contact
+quiero hablar con un agente | contact
+contactar atención al cliente | contact
+cómo contacto con vosotros | contact
+una pregunta quiero hablar con un agente? | contact
+buenas cómo contacto con soporte | contact
+hola quiero hablar con una persona | contact
+buenas quiero hablar con una persona gracias | contact
+buenas quiero hablar con un agente gracias | contact
+una pregunta contactar soporte | contact
+buenas cómo contacto con vosotros | contact
+cómo contacto con vosotros por favor | contact
+buenas quiero hablar con una persona por favor | contact
+una pregunta cómo contacto con soporte | contact
+una pregunta contactar soporte gracias | contact
+una pregunta quiero hablar con un agente | contact
+por qué no funciona internet | no-internet
+no tengo internet en el extranjero | no-internet
+esim activa pero sin internet | no-internet
+esim instalada pero sin internet | no-internet
+no tengo internet con la esim | no-internet
+no tengo internet | no-internet
+hola esim activa pero sin internet | no-internet
+una pregunta por qué no funciona internet | no-internet
+buenas esim instalada pero sin internet por favor | no-internet
+por qué no funciona internet gracias | no-internet
+una pregunta no tengo internet por favor | no-internet
+no tengo internet en el extranjero gracias | no-internet
+hola no tengo internet? | no-internet
+por qué no funciona internet? | no-internet
+una pregunta no tengo internet en el extranjero por favor | no-internet
+esim activa pero sin internet por favor | no-internet
+buenas no tengo internet en el extranjero? | no-internet
+buenas por qué no funciona internet gracias | no-internet
+cuántos datos me quedan | check-usage
+cuántos gb me quedan | check-usage
+dónde veo los datos restantes | check-usage
+comprobar mi consumo | check-usage
+comprobar mi consumo? | check-usage
+hola comprobar mi consumo? | check-usage
+cuántos datos me quedan gracias | check-usage
+buenas cuántos datos me quedan | check-usage
+cuántos gb me quedan? | check-usage
+buenas cuántos datos me quedan por favor | check-usage
+una pregunta cuántos datos me quedan gracias | check-usage
+una pregunta comprobar mi consumo | check-usage
+cuántos datos me quedan por favor | check-usage
+hola comprobar mi consumo gracias | check-usage
+una pregunta cuántos gb me quedan? | check-usage
+cuántos gb me quedan gracias | check-usage
+comprobar mi consumo por favor | check-usage
+cuántos datos me quedan? | check-usage
+cuánto cuesta un paquete | prices
+cuánto cuesta una esim | prices
+precios de esim | prices
+buenas cuánto cuesta un paquete por favor | prices
+hola cuánto cuesta una esim | prices
+precios de esim? | prices
+buenas cuánto cuesta un paquete? | prices
+hola cuánto cuesta un paquete gracias | prices
+una pregunta cuánto cuesta un paquete | prices
+hola cuánto cuesta una esim por favor | prices
+buenas cuánto cuesta una esim | prices
+una pregunta cuánto cuesta una esim por favor | prices
+hola cuánto cuesta una esim gracias | prices
+cuánto cuesta un paquete? | prices
+cuánto cuesta un paquete por favor | prices
+hola precios de esim por favor | prices
+una pregunta precios de esim gracias | prices
+una pregunta precios de esim | prices
+dónde pongo el cupón | discount-code
+dónde pongo el código promocional | discount-code
+tenéis código de descuento | discount-code
+dónde pongo el código de descuento | discount-code
+buenas dónde pongo el código de descuento por favor | discount-code
+una pregunta dónde pongo el código de descuento | discount-code
+dónde pongo el código promocional? | discount-code
+una pregunta tenéis código de descuento? | discount-code
+dónde pongo el código de descuento? | discount-code
+dónde pongo el código de descuento por favor | discount-code
+hola dónde pongo el cupón | discount-code
+hola tenéis código de descuento por favor | discount-code
+buenas dónde pongo el cupón | discount-code
+dónde pongo el cupón por favor | discount-code
+hola tenéis código de descuento | discount-code
+dónde pongo el código promocional gracias | discount-code
+buenas tenéis código de descuento por favor | discount-code
+una pregunta dónde pongo el cupón | discount-code
+puedo tener una factura | invoice
+dónde está mi factura | invoice
+una pregunta dónde está mi factura | invoice
+una pregunta puedo tener una factura por favor | invoice
+dónde está mi factura? | invoice
+una pregunta puedo tener una factura? | invoice
+puedo tener una factura? | invoice
+buenas dónde está mi factura? | invoice
+dónde está mi factura gracias | invoice
+una pregunta dónde está mi factura? | invoice
+una pregunta dónde está mi factura por favor | invoice
+hola puedo tener una factura por favor | invoice
+buenas puedo tener una factura? | invoice
+dónde está mi factura por favor | invoice
+buenas puedo tener una factura | invoice
+hola puedo tener una factura gracias | invoice
+puedo tener una factura por favor | invoice
+puedo tener una factura gracias | invoice
+cómo borro mi cuenta | account-delete
+eliminar mis datos | account-delete
+eliminar mi cuenta | account-delete
+eliminar mi cuenta por favor | account-delete
+eliminar mis datos por favor | account-delete
+hola eliminar mi cuenta por favor | account-delete
+una pregunta eliminar mis datos | account-delete
+eliminar mis datos gracias | account-delete
+cómo borro mi cuenta? | account-delete
+hola eliminar mi cuenta | account-delete
+cómo borro mi cuenta gracias | account-delete
+hola eliminar mis datos | account-delete
+hola cómo borro mi cuenta por favor | account-delete
+buenas eliminar mis datos? | account-delete
+buenas cómo borro mi cuenta | account-delete
+hola eliminar mis datos por favor | account-delete
+buenas eliminar mis datos gracias | account-delete
+una pregunta eliminar mis datos gracias | account-delete
+qué significa en proceso | order-status
+qué significa listo para instalar | order-status
+estado del pedido qué significa | order-status
+qué significa pago pendiente | order-status
+estado del pedido qué significa? | order-status
+una pregunta estado del pedido qué significa gracias | order-status
+buenas estado del pedido qué significa por favor | order-status
+qué significa en proceso por favor | order-status
+buenas qué significa pago pendiente? | order-status
+qué significa pago pendiente? | order-status
+una pregunta qué significa listo para instalar | order-status
+hola qué significa en proceso por favor | order-status
+una pregunta qué significa pago pendiente | order-status
+hola qué significa en proceso? | order-status
+hola qué significa en proceso | order-status
+qué significa pago pendiente gracias | order-status
+estado del pedido qué significa por favor | order-status
+estado del pedido qué significa gracias | order-status
+cómo funciona el paquete ilimitado | unlimited
+el ilimitado es realmente ilimitado | unlimited
+hola el ilimitado es realmente ilimitado gracias | unlimited
+hola cómo funciona el paquete ilimitado? | unlimited
+una pregunta cómo funciona el paquete ilimitado | unlimited
+una pregunta el ilimitado es realmente ilimitado? | unlimited
+el ilimitado es realmente ilimitado gracias | unlimited
+buenas cómo funciona el paquete ilimitado por favor | unlimited
+hola el ilimitado es realmente ilimitado? | unlimited
+una pregunta cómo funciona el paquete ilimitado? | unlimited
+buenas cómo funciona el paquete ilimitado gracias | unlimited
+el ilimitado es realmente ilimitado por favor | unlimited
+cómo funciona el paquete ilimitado por favor | unlimited
+hola cómo funciona el paquete ilimitado gracias | unlimited
+hola el ilimitado es realmente ilimitado | unlimited
+hola cómo funciona el paquete ilimitado por favor | unlimited
+el ilimitado es realmente ilimitado? | unlimited
+buenas el ilimitado es realmente ilimitado? | unlimited
+puedo usar whatsapp | whatsapp
+funciona whatsapp con la esim | whatsapp
+funciona whatsapp | whatsapp
+buenas funciona whatsapp? | whatsapp
+puedo usar whatsapp por favor | whatsapp
+una pregunta funciona whatsapp con la esim? | whatsapp
+funciona whatsapp con la esim gracias | whatsapp
+una pregunta funciona whatsapp | whatsapp
+funciona whatsapp con la esim? | whatsapp
+hola funciona whatsapp con la esim | whatsapp
+buenas funciona whatsapp | whatsapp
+hola funciona whatsapp con la esim gracias | whatsapp
+una pregunta puedo usar whatsapp? | whatsapp
+buenas funciona whatsapp con la esim por favor | whatsapp
+hola funciona whatsapp | whatsapp
+hola puedo usar whatsapp | whatsapp
+hola funciona whatsapp con la esim por favor | whatsapp
+hola puedo usar whatsapp? | whatsapp
+móvil nuevo qué pasa con la esim | new-phone,deleted-esim
+borré la esim qué hago | new-phone,deleted-esim
+pasar la esim a otro móvil | new-phone,deleted-esim
+cambié de móvil qué pasa con la esim | new-phone,deleted-esim
+móvil nuevo qué pasa con la esim? | new-phone,deleted-esim
+móvil nuevo qué pasa con la esim gracias | new-phone,deleted-esim
+una pregunta cambié de móvil qué pasa con la esim | new-phone,deleted-esim
+pasar la esim a otro móvil? | new-phone,deleted-esim
+cambié de móvil qué pasa con la esim? | new-phone,deleted-esim
+buenas cambié de móvil qué pasa con la esim | new-phone,deleted-esim
+hola borré la esim qué hago | new-phone,deleted-esim
+pasar la esim a otro móvil por favor | new-phone,deleted-esim
+hola pasar la esim a otro móvil | new-phone,deleted-esim
+pasar la esim a otro móvil gracias | new-phone,deleted-esim
+borré la esim qué hago? | new-phone,deleted-esim
+hola cambié de móvil qué pasa con la esim | new-phone,deleted-esim
+buenas cambié de móvil qué pasa con la esim por favor | new-phone,deleted-esim
+una pregunta móvil nuevo qué pasa con la esim? | new-phone,deleted-esim
+comprar una esim para otra persona | gift
+comprar una esim para mi madre | gift
+comprar una esim de regalo | gift
+una pregunta comprar una esim para otra persona por favor | gift
+comprar una esim para mi madre gracias | gift
+comprar una esim para otra persona por favor | gift
+comprar una esim para mi madre? | gift
+buenas comprar una esim de regalo por favor | gift
+hola comprar una esim para mi madre | gift
+una pregunta comprar una esim para mi madre? | gift
+una pregunta comprar una esim de regalo gracias | gift
+buenas comprar una esim para mi madre por favor | gift
+una pregunta comprar una esim para otra persona? | gift
+hola comprar una esim para otra persona | gift
+comprar una esim para otra persona? | gift
+una pregunta comprar una esim de regalo | gift
+hola comprar una esim para mi madre por favor | gift
+comprar una esim para mi madre por favor | gift
+passport io es segura | safe
+passport io es fiable | safe
+es una estafa | safe
+la web es segura | safe
+la web es fiable | safe
+buenas passport io es fiable gracias | safe
+passport io es fiable por favor | safe
+buenas la web es segura gracias | safe
+buenas la web es segura | safe
+hola passport io es fiable gracias | safe
+passport io es fiable gracias | safe
+la web es fiable gracias | safe
+la web es fiable? | safe
+hola passport io es segura por favor | safe
+una pregunta la web es fiable | safe
+buenas passport io es segura gracias | safe
+la web es segura gracias | safe
+passport io es segura por favor | safe
+ver precios en euros | currency
+cambiar la moneda | currency
+ver precios en dólares | currency
+buenas ver precios en euros por favor | currency
+cambiar la moneda por favor | currency
+una pregunta ver precios en euros gracias | currency
+una pregunta ver precios en euros por favor | currency
+buenas ver precios en dólares | currency
+hola cambiar la moneda | currency
+cambiar la moneda? | currency
+hola ver precios en dólares por favor | currency
+una pregunta ver precios en dólares? | currency
+ver precios en dólares por favor | currency
+hola ver precios en dólares | currency
+ver precios en dólares? | currency
+buenas cambiar la moneda? | currency
+ver precios en euros por favor | currency
+ver precios en euros? | currency
+qué es una sala vip | lounge-what
+qué hay en la sala vip | lounge-what
+una pregunta qué es una sala vip | lounge-what
+hola qué es una sala vip? | lounge-what
+una pregunta qué hay en la sala vip por favor | lounge-what
+qué es una sala vip gracias | lounge-what
+buenas qué es una sala vip por favor | lounge-what
+hola qué es una sala vip | lounge-what
+qué hay en la sala vip? | lounge-what
+hola qué hay en la sala vip | lounge-what
+qué es una sala vip? | lounge-what
+qué es una sala vip por favor | lounge-what
+qué hay en la sala vip por favor | lounge-what
+hola qué es una sala vip gracias | lounge-what
+qué hay en la sala vip gracias | lounge-what
+buenas qué es una sala vip? | lounge-what
+una pregunta qué hay en la sala vip | lounge-what
+hola qué es una sala vip por favor | lounge-what
+cómo funciona el fast track | fasttrack-how
+qué es el fast track | fasttrack-how
+hola qué es el fast track gracias | fasttrack-how
+buenas qué es el fast track gracias | fasttrack-how
+una pregunta cómo funciona el fast track | fasttrack-how
+buenas cómo funciona el fast track por favor | fasttrack-how
+una pregunta qué es el fast track por favor | fasttrack-how
+una pregunta cómo funciona el fast track por favor | fasttrack-how
+qué es el fast track gracias | fasttrack-how
+buenas qué es el fast track? | fasttrack-how
+hola cómo funciona el fast track? | fasttrack-how
+hola qué es el fast track | fasttrack-how
+qué es el fast track? | fasttrack-how
+cómo funciona el fast track? | fasttrack-how
+hola qué es el fast track? | fasttrack-how
+una pregunta cómo funciona el fast track gracias | fasttrack-how
+una pregunta qué es el fast track gracias | fasttrack-how
+buenas qué es el fast track por favor | fasttrack-how
+puedo tener dos esim | multiple-esims
+puedo tener varias esim | multiple-esims
+una pregunta puedo tener dos esim | multiple-esims
+puedo tener dos esim por favor | multiple-esims
+buenas puedo tener varias esim | multiple-esims
+hola puedo tener varias esim por favor | multiple-esims
+buenas puedo tener dos esim? | multiple-esims
+puedo tener dos esim gracias | multiple-esims
+puedo tener varias esim? | multiple-esims
+hola puedo tener dos esim? | multiple-esims
+puedo tener varias esim gracias | multiple-esims
+puedo tener varias esim por favor | multiple-esims
+una pregunta puedo tener varias esim gracias | multiple-esims
+puedo tener dos esim? | multiple-esims
+buenas puedo tener dos esim por favor | multiple-esims
+una pregunta puedo tener dos esim? | multiple-esims
+buenas puedo tener varias esim por favor | multiple-esims
+una pregunta puedo tener varias esim por favor | multiple-esims
+tengo que borrar la esim después del viaje | remove-after
+buenas tengo que borrar la esim después del viaje por favor | remove-after
+hola tengo que borrar la esim después del viaje | remove-after
+tengo que borrar la esim después del viaje gracias | remove-after
+una pregunta tengo que borrar la esim después del viaje por favor | remove-after
+buenas tengo que borrar la esim después del viaje | remove-after
+buenas tengo que borrar la esim después del viaje gracias | remove-after
+tengo que borrar la esim después del viaje? | remove-after
+una pregunta tengo que borrar la esim después del viaje gracias | remove-after
+tengo que borrar la esim después del viaje por favor | remove-after
+hola tengo que borrar la esim después del viaje gracias | remove-after
+una pregunta tengo que borrar la esim después del viaje | remove-after
+hola tengo que borrar la esim después del viaje por favor | remove-after
+una pregunta tengo que borrar la esim después del viaje? | remove-after
+hola tengo que borrar la esim después del viaje? | remove-after
+buenas tengo que borrar la esim después del viaje? | remove-after
+sin datos qué hago | expired
+se acabó el paquete qué hago | expired
+una pregunta sin datos qué hago | expired
+una pregunta se acabó el paquete qué hago | expired
+hola sin datos qué hago? | expired
+hola sin datos qué hago | expired
+hola se acabó el paquete qué hago? | expired
+se acabó el paquete qué hago gracias | expired
+se acabó el paquete qué hago por favor | expired
+buenas sin datos qué hago? | expired
+hola se acabó el paquete qué hago por favor | expired
+una pregunta sin datos qué hago gracias | expired
+hola sin datos qué hago gracias | expired
+una pregunta se acabó el paquete qué hago gracias | expired
+sin datos qué hago? | expired
+una pregunta se acabó el paquete qué hago? | expired
+buenas se acabó el paquete qué hago | expired
+buenas sin datos qué hago gracias | expired
+dónde está mi código qr | no-email,my-esims
+no he recibido el código qr | no-email,my-esims
+una pregunta dónde está mi código qr? | no-email,my-esims
+hola no he recibido el código qr | no-email,my-esims
+una pregunta dónde está mi código qr | no-email,my-esims
+buenas no he recibido el código qr por favor | no-email,my-esims
+buenas dónde está mi código qr gracias | no-email,my-esims
+dónde está mi código qr por favor | no-email,my-esims
+no he recibido el código qr? | no-email,my-esims
+hola no he recibido el código qr gracias | no-email,my-esims
+hola dónde está mi código qr? | no-email,my-esims
+no he recibido el código qr gracias | no-email,my-esims
+una pregunta no he recibido el código qr? | no-email,my-esims
+dónde está mi código qr? | no-email,my-esims
+no he recibido el código qr por favor | no-email,my-esims
+hola no he recibido el código qr? | no-email,my-esims
+hola no he recibido el código qr por favor | no-email,my-esims
+dónde está mi código qr gracias | no-email,my-esims
+tenéis esim para tailandia | coverage-countries
+tenéis esim para marruecos | coverage-countries
+tenéis esim para eeuu | coverage-countries
+en qué países funciona | coverage-countries
+tenéis esim para japón | coverage-countries
+una pregunta en qué países funciona? | coverage-countries
+buenas tenéis esim para marruecos? | coverage-countries
+buenas tenéis esim para japón por favor | coverage-countries
+tenéis esim para japón? | coverage-countries
+hola tenéis esim para marruecos | coverage-countries
+buenas tenéis esim para japón | coverage-countries
+hola tenéis esim para marruecos gracias | coverage-countries
+una pregunta tenéis esim para eeuu? | coverage-countries
+hola tenéis esim para japón por favor | coverage-countries
+hola tenéis esim para japón? | coverage-countries
+tenéis esim para eeuu por favor | coverage-countries
+una pregunta tenéis esim para tailandia por favor | coverage-countries
+hola tenéis esim para marruecos por favor | coverage-countries
+hola necesito una cuenta gracias | need-account
+hola puse mal mi correo gracias | change-email

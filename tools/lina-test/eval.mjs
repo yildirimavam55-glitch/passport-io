@@ -3,7 +3,7 @@
 //   node tools/lina-test/eval.mjs -v --set=colloq_c  → ein Satz, mit Fehlerliste
 //   node tools/lina-test/eval.mjs --site=de       → Seite auf Deutsch, Fragen in allen Sprachen
 //   ANTHROPIC_API_KEY=… node tools/lina-test/eval.mjs --ai   → mit KI-Stufe (wie auf der Webseite)
-// Testsätze: sets/catalog (724, darauf optimiert) · blind · colloq_a/b (Umgangssprache, optimiert) · colloq_c (zuletzt, nicht optimiert)
+// Testsätze: sets/catalog (724, darauf optimiert) · blind · colloq_a/b (Umgangssprache, optimiert) · colloq_c (zuletzt, nicht optimiert) · simple (5000 einfache Fragen aus Vorlagen, simple-src/)
 // rank.mjs + lina.mjs sind eine Kopie der Suche aus js/app.js (initAssistant) – bei Änderungen dort beide anpassen.
 import fs from "node:fs";
 import { makeLina } from "./lina.mjs";
@@ -30,7 +30,8 @@ async function askAI(q, lang, ids) {
 }
 
 const out = [], lines = [];
-for (const set of fs.readdirSync(SETS).filter((s) => !only || s === only)) {
+// Mit KI wird der große Satz "simple" (5000 Fragen) nur auf ausdrücklichen Wunsch (--set=simple) geprüft – spart API-Kosten
+for (const set of fs.readdirSync(SETS).filter((s) => (only ? s === only : !(AIKEY && s === "simple")))) {
   const sum = { n: 0, richtig: 0, vorschlag: 0, falsch: 0, keine: 0 }; const fails = [];
   for (const f of fs.readdirSync(SETS + set).filter((x) => x.endsWith(".txt"))) {
     const qlang = f.replace(".txt", "");

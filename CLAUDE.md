@@ -22,7 +22,7 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 - **Keine Fremd-CDNs:** Schriften (`fonts/`, `css/fonts*.css`), Bibliotheken (`vendor/js`, Liste in `vendor/LICENSES.md`), Weltkarte (`vendor/data`) und Flaggen (`img/flags/1x1|4x3`, flag-icons) liegen im Repo. CSP-Meta in jeder HTML-Seite erlaubt nur `'self'`, Supabase und (Platzhalter-)Bilder von Unsplash. Neue externe Quellen nur mit CSP- und Datenschutz-Anpassung.
 
 ## Lina (Assistent)
-- 77 FAQs in `content/assistant.json`, alle 7 Sprachen; Kategorie `probleme` = Sorun giderme. Schritt-für-Schritt je Handy (iPhone/Samsung/Pixel/Xiaomi): data-roaming, data-line, network-select, line-on, install-iphone, install-android, reset-network, hotspot-setup.
+- 82 FAQs in `content/assistant.json`, alle 7 Sprachen; Kategorie `probleme` = Sorun giderme. Schritt-für-Schritt je Handy (iPhone/Samsung/Pixel/Xiaomi): data-roaming, data-line, network-select, line-on, install-iphone, install-android, reset-network, hotspot-setup.
 - Feld `next` (nur tr): IDs, die als Knöpfe „nächster Schritt“ unter der Antwort erscheinen (z. B. no-internet → Roaming → Datenleitung → Netzwahl → APN → Zurücksetzen).
 - **Sprache der Frage:** Lina sucht in allen Sprachen (Schrift + Wortschatz der Sprache) und antwortet in der Sprache, in der gefragt wurde – unabhängig von der Seitensprache.
 - **Umgangssprache:** `content/lina-synonyms.json` (je Sprache: Kundenwörter → einheitlicher Begriff, gilt für Frage und FAQ-Texte). Neue Kundenformulierungen dort ergänzen.
@@ -30,7 +30,8 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 - **KI (optional):** `supabase/functions/lina` + `SITE.api.linaUrl`. Aktiv erst mit Supabase-Secret `ANTHROPIC_API_KEY`; ohne → 503 → nur Stichwortsuche. KI wird nur gefragt, wenn die Suche unsicher ist (Score < 5), antwortet nur aus den FAQs.
 - **Mehr Kundenformulierungen:** Workflow „Lina übersetzen“ von Hand starten mit expand=25 → KI schreibt je FAQ und Sprache bis zu 25 echte Formulierungen als Stichwörter; wird nur übernommen, wenn der Test danach besser ist.
 - **Neue FAQ:** nur auf Türkisch im Editor anlegen → Workflow „Lina übersetzen“ (`tools/lina-translate.mjs`) übersetzt in alle Sprachen + ergänzt Stichwörter, braucht GitHub-Secret `ANTHROPIC_API_KEY`. Fingerabdrücke: `tools/lina-sync.json`.
-- **Test:** `node tools/lina-test/eval.mjs [-v] [--set=colloq_c] [--ai]` · GitHub-Workflow „Lina testen“ (mit KI, wenn Secret gesetzt). Stand ohne KI: Katalog 97 %, neue Kundensprache (colloq_c) 68 % direkt / 79 % inkl. Vorschlag. Suche dort ist eine Kopie aus app.js – bei Änderungen beide anpassen. KI-Aufgabe: `supabase/functions/_shared/lina-prompt.js`.
+- **Test:** `node tools/lina-test/eval.mjs [-v] [--set=colloq_c] [--ai]` · GitHub-Workflow „Lina testen“ (mit KI, wenn Secret gesetzt). Stand ohne KI: Katalog 97 %, einfache Fragen (`simple`, 5000 aus Vorlagen in `tools/lina-test/simple-src/`, mit KI nur per `--set=simple`) 88 % / 93 % inkl. Vorschlag, neue Kundensprache (colloq_c, nicht optimiert) 69 % / 79 %. Suche dort ist eine Kopie aus app.js – bei Änderungen beide anpassen. KI-Aufgabe: `supabase/functions/_shared/lina-prompt.js`.
+- Konto-FAQs (11/2026): my-esims (gekaufte eSIMs/Bestellungen → Mein Konto), how-to-buy, need-account, change-password, change-email (nur über Support).
 - Stichwörter: Kundensprache (2–4 Wörter), keine allgemeinen Einzelwörter („çalışmıyor“, „lounge“, „qr“).
 
 - Handy-Check (Modal): `devices` (eSIM-fähig, 217 Modelle bis iPhone 18 Pro/Galaxy S26/Pixel 11, Stand 11/2026) + `devicesNo` (bekannte Modelle ohne eSIM) in `content/assistant.json` (nur tr). Suche über Wortanfänge. Neue Modelle im Editor ergänzen.

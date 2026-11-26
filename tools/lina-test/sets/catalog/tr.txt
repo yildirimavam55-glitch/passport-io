@@ -210,7 +210,7 @@ hesap silinince esim çalışır mı | account-delete
 bültenden çıkmak istiyorum | newsletter
 reklam maillerini durdur | newsletter
 kampanya e postaları gelsin istiyorum | newsletter
-e posta adresimi değiştirmek istiyorum | contact,account-login
+e posta adresimi değiştirmek istiyorum | change-email,contact,account-login
 ## İletişim
 müşteri hizmetlerine nasıl ulaşırım | contact
 canlı destek var mı | contact

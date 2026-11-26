@@ -1,0 +1,715 @@
+## Einfache Kundenfragen (ru) – aus Vorlagen erzeugt (tools: gen_simple.py), 714 Fragen
+где мои заказы в аккаунте | my-esims
+купил esim где посмотреть | my-esims
+где посмотреть купленные пакеты | my-esims
+я купил esim где посмотреть | my-esims
+где мой пакет после покупки | my-esims
+где увидеть мои пакеты | my-esims
+купил esim где его найти | my-esims
+где найти мои пакеты | my-esims
+как посмотреть мои заказы | my-esims
+где увидеть мои esim | my-esims
+я купил пакет где она | my-esims
+где мои заказы | my-esims
+я купил пакет где его найти | my-esims
+где найти купленные пакеты | my-esims
+купил пакет где посмотреть | my-esims
+где найти купленную esim | my-esims
+где увидеть купленные пакеты | my-esims
+купил пакет где его найти | my-esims
+где посмотреть мои esim | my-esims
+как заказать пакет | how-to-buy
+как купить пакет | how-to-buy
+хочу купить esim как | how-to-buy
+как заказать esim | how-to-buy
+хочу купить пакет как | how-to-buy
+как заказать | how-to-buy
+как купить esim | how-to-buy
+как купить | how-to-buy
+где купить esim | how-to-buy
+как оформить заказ | how-to-buy
+где купить пакет | how-to-buy
+здравствуйте хочу купить пакет как | how-to-buy
+вопрос хочу купить пакет как | how-to-buy
+как заказать пожалуйста | how-to-buy
+здравствуйте как купить пакет? | how-to-buy
+вопрос где купить пакет пожалуйста | how-to-buy
+где купить пакет? | how-to-buy
+вопрос как заказать esim? | how-to-buy
+привет хочу купить esim как | how-to-buy
+нужен ли аккаунт для покупки | need-account
+можно купить как гость | need-account
+нужен ли аккаунт | need-account
+можно купить без аккаунта | need-account
+можно купить без регистрации | need-account
+обязательно регистрироваться | need-account
+вопрос можно купить без аккаунта | need-account
+здравствуйте обязательно регистрироваться | need-account
+вопрос можно купить как гость | need-account
+привет нужен ли аккаунт | need-account
+здравствуйте можно купить без регистрации? | need-account
+нужен ли аккаунт для покупки? | need-account
+можно купить без регистрации? | need-account
+нужен ли аккаунт? | need-account
+привет можно купить как гость | need-account
+здравствуйте нужен ли аккаунт пожалуйста | need-account
+можно купить как гость? | need-account
+вопрос можно купить без регистрации? | need-account
+нужен ли аккаунт пожалуйста | need-account
+хочу другой пароль | change-password
+как сменить пароль | change-password
+новый пароль как поставить | change-password
+как изменить пароль | change-password
+новый пароль | change-password
+как поменять пароль | change-password
+здравствуйте как сменить пароль | change-password
+новый пароль? | change-password
+как сменить пароль пожалуйста | change-password
+вопрос новый пароль как поставить | change-password
+вопрос новый пароль как поставить пожалуйста | change-password
+здравствуйте хочу другой пароль пожалуйста | change-password
+как поменять пароль? | change-password
+как изменить пароль пожалуйста | change-password
+новый пароль пожалуйста | change-password
+вопрос как сменить пароль | change-password
+хочу другой пароль? | change-password
+вопрос как изменить пароль | change-password
+здравствуйте новый пароль пожалуйста | change-password
+изменить почту | change-email
+как сменить email | change-email
+ошибся в почте при заказе | change-email
+как изменить почту | change-email
+как сменить почту | change-email
+поменять почту | change-email
+как изменить email | change-email
+вопрос как сменить email | change-email
+привет как сменить email? | change-email
+привет как изменить email пожалуйста | change-email
+ошибся в почте при заказе пожалуйста | change-email
+вопрос поменять почту пожалуйста | change-email
+поменять почту пожалуйста | change-email
+привет как изменить email? | change-email
+как изменить почту? | change-email
+как сменить email пожалуйста | change-email
+вопрос как сменить почту | change-email
+привет изменить почту пожалуйста | change-email
+как сменить почту пожалуйста | change-email
+не могу зайти в аккаунт | account-login
+не могу войти | account-login
+забыл пароль | account-login
+код подтверждения не приходит | account-login
+вопрос код подтверждения не приходит пожалуйста | account-login
+вопрос не могу зайти в аккаунт пожалуйста | account-login
+не могу зайти в аккаунт? | account-login
+не могу войти пожалуйста | account-login
+не могу зайти в аккаунт пожалуйста | account-login
+код подтверждения не приходит пожалуйста | account-login
+вопрос не могу войти | account-login
+здравствуйте не могу зайти в аккаунт пожалуйста | account-login
+не могу войти? | account-login
+здравствуйте не могу войти пожалуйста | account-login
+привет не могу зайти в аккаунт? | account-login
+забыл пароль пожалуйста | account-login
+здравствуйте не могу зайти в аккаунт | account-login
+привет не могу войти | account-login
+привет код подтверждения не приходит? | account-login
+что такое esim | what-is-esim
+как работает esim | what-is-esim
+esim это что | what-is-esim
+esim это что пожалуйста | what-is-esim
+как работает esim пожалуйста | what-is-esim
+esim это что? | what-is-esim
+что такое esim? | what-is-esim
+вопрос что такое esim? | what-is-esim
+здравствуйте что такое esim пожалуйста | what-is-esim
+вопрос как работает esim | what-is-esim
+как работает esim? | what-is-esim
+здравствуйте что такое esim | what-is-esim
+здравствуйте esim это что | what-is-esim
+привет как работает esim пожалуйста | what-is-esim
+здравствуйте как работает esim? | what-is-esim
+привет esim это что? | what-is-esim
+вопрос что такое esim | what-is-esim
+здравствуйте как работает esim | what-is-esim
+привет что такое esim? | what-is-esim
+работает ли esim на моем телефоне | device-compatible
+какие телефоны поддерживают esim | device-compatible
+самсунг поддерживает esim | device-compatible
+мой телефон поддерживает esim | device-compatible
+айфон поддерживает esim | device-compatible
+здравствуйте айфон поддерживает esim | device-compatible
+айфон поддерживает esim? | device-compatible
+работает ли esim на моем телефоне? | device-compatible
+вопрос самсунг поддерживает esim? | device-compatible
+привет айфон поддерживает esim? | device-compatible
+здравствуйте какие телефоны поддерживают esim пожалуйста | device-compatible
+привет какие телефоны поддерживают esim | device-compatible
+вопрос работает ли esim на моем телефоне пожалуйста | device-compatible
+какие телефоны поддерживают esim пожалуйста | device-compatible
+самсунг поддерживает esim пожалуйста | device-compatible
+здравствуйте мой телефон поддерживает esim? | device-compatible
+привет работает ли esim на моем телефоне? | device-compatible
+здравствуйте самсунг поддерживает esim пожалуйста | device-compatible
+самсунг поддерживает esim? | device-compatible
+как отсканировать qr код | install-esim,install-iphone,install-android
+установка esim инструкция | install-esim,install-iphone,install-android
+как установить esim | install-esim,install-iphone,install-android
+как настроить esim | install-esim,install-iphone,install-android
+установка esim | install-esim,install-iphone,install-android
+здравствуйте как установить esim | install-esim,install-iphone,install-android
+вопрос как настроить esim | install-esim,install-iphone,install-android
+установка esim? | install-esim,install-iphone,install-android
+как установить esim пожалуйста | install-esim,install-iphone,install-android
+как установить esim? | install-esim,install-iphone,install-android
+привет как установить esim пожалуйста | install-esim,install-iphone,install-android
+установка esim пожалуйста | install-esim,install-iphone,install-android
+здравствуйте как отсканировать qr код | install-esim,install-iphone,install-android
+привет установка esim инструкция | install-esim,install-iphone,install-android
+здравствуйте как отсканировать qr код? | install-esim,install-iphone,install-android
+установка esim инструкция? | install-esim,install-iphone,install-android
+как отсканировать qr код? | install-esim,install-iphone,install-android
+привет как настроить esim | install-esim,install-iphone,install-android
+как отсканировать qr код пожалуйста | install-esim,install-iphone,install-android
+когда начинается пакет | when-activate,buy-when,line-on
+когда esim становится активной | when-activate,buy-when,line-on
+когда начинают считаться дни | when-activate,buy-when,line-on
+когда активируется пакет | when-activate,buy-when,line-on
+вопрос когда esim становится активной? | when-activate,buy-when,line-on
+когда активируется пакет пожалуйста | when-activate,buy-when,line-on
+вопрос когда активируется пакет? | when-activate,buy-when,line-on
+здравствуйте когда начинается пакет | when-activate,buy-when,line-on
+здравствуйте когда начинают считаться дни | when-activate,buy-when,line-on
+здравствуйте когда активируется пакет | when-activate,buy-when,line-on
+вопрос когда начинается пакет | when-activate,buy-when,line-on
+когда esim становится активной? | when-activate,buy-when,line-on
+вопрос когда начинается пакет пожалуйста | when-activate,buy-when,line-on
+вопрос когда esim становится активной | when-activate,buy-when,line-on
+привет когда активируется пакет пожалуйста | when-activate,buy-when,line-on
+здравствуйте когда начинается пакет? | when-activate,buy-when,line-on
+привет когда активируется пакет? | when-activate,buy-when,line-on
+вопрос когда esim становится активной пожалуйста | when-activate,buy-when,line-on
+когда активируется пакет? | when-activate,buy-when,line-on
+сколько трафика нужно в отпуск | which-package
+сколько гб нужно | which-package
+сколько трафика нужно | which-package
+сколько трафика нужно на неделю | which-package
+сколько гб нужно на неделю | which-package
+какой пакет мне нужен | which-package
+какой пакет выбрать | which-package
+сколько гб нужно в отпуск | which-package
+привет какой пакет мне нужен | which-package
+здравствуйте сколько гб нужно на неделю | which-package
+сколько трафика нужно на неделю пожалуйста | which-package
+вопрос сколько трафика нужно в отпуск | which-package
+вопрос сколько трафика нужно на неделю | which-package
+здравствуйте сколько трафика нужно на неделю? | which-package
+вопрос сколько гб нужно пожалуйста | which-package
+сколько гб нужно в отпуск пожалуйста | which-package
+привет сколько гб нужно | which-package
+сколько трафика нужно на неделю? | which-package
+вопрос сколько гб нужно на неделю | which-package
+будет ли номер телефона | calls,phone-number
+можно ли делать звонки с esim | calls,phone-number
+можно ли звонить с esim | calls,phone-number
+смс включены | calls,phone-number
+звонки включены | calls,phone-number
+звонки включены пожалуйста | calls,phone-number
+можно ли делать звонки с esim пожалуйста | calls,phone-number
+привет можно ли звонить с esim | calls,phone-number
+смс включены? | calls,phone-number
+будет ли номер телефона? | calls,phone-number
+привет будет ли номер телефона | calls,phone-number
+смс включены пожалуйста | calls,phone-number
+здравствуйте звонки включены | calls,phone-number
+вопрос можно ли делать звонки с esim | calls,phone-number
+привет будет ли номер телефона пожалуйста | calls,phone-number
+здравствуйте звонки включены? | calls,phone-number
+здравствуйте будет ли номер телефона | calls,phone-number
+вопрос будет ли номер телефона | calls,phone-number
+вопрос можно ли звонить с esim | calls,phone-number
+что будет с моей sim картой | keep-number
+номер останется | keep-number
+сохранится ли мой номер | keep-number
+мой номер останется | keep-number
+здравствуйте что будет с моей sim картой | keep-number
+привет номер останется? | keep-number
+сохранится ли мой номер пожалуйста | keep-number
+здравствуйте номер останется | keep-number
+мой номер останется? | keep-number
+вопрос мой номер останется | keep-number
+здравствуйте сохранится ли мой номер пожалуйста | keep-number
+привет сохранится ли мой номер | keep-number
+привет что будет с моей sim картой? | keep-number
+здравствуйте мой номер останется | keep-number
+привет мой номер останется | keep-number
+привет номер останется | keep-number
+вопрос что будет с моей sim картой пожалуйста | keep-number
+вопрос номер останется | keep-number
+можно раздать wifi | hotspot,hotspot-setup
+работает ли точка доступа | hotspot,hotspot-setup
+можно раздавать интернет | hotspot,hotspot-setup
+здравствуйте можно раздать wifi пожалуйста | hotspot,hotspot-setup
+привет можно раздать wifi | hotspot,hotspot-setup
+можно раздать wifi пожалуйста | hotspot,hotspot-setup
+можно раздавать интернет пожалуйста | hotspot,hotspot-setup
+здравствуйте можно раздать wifi | hotspot,hotspot-setup
+привет можно раздавать интернет | hotspot,hotspot-setup
+вопрос можно раздавать интернет | hotspot,hotspot-setup
+привет работает ли точка доступа | hotspot,hotspot-setup
+вопрос можно раздавать интернет? | hotspot,hotspot-setup
+вопрос можно раздать wifi пожалуйста | hotspot,hotspot-setup
+привет можно раздать wifi? | hotspot,hotspot-setup
+здравствуйте можно раздавать интернет | hotspot,hotspot-setup
+можно раздать wifi? | hotspot,hotspot-setup
+вопрос можно раздать wifi | hotspot,hotspot-setup
+работает ли точка доступа пожалуйста | hotspot,hotspot-setup
+можно докупить трафик | topup
+купить еще трафик | topup
+можно пополнить | topup
+купить еще гб | topup
+как пополнить пакет | topup
+как пополнить трафик | topup
+купить еще трафик пожалуйста | topup
+привет как пополнить трафик пожалуйста | topup
+как пополнить пакет? | topup
+вопрос можно пополнить | topup
+можно докупить трафик? | topup
+привет можно пополнить | topup
+привет можно пополнить пожалуйста | topup
+купить еще трафик? | topup
+привет можно докупить трафик пожалуйста | topup
+привет как пополнить пакет | topup
+купить еще гб? | topup
+привет купить еще гб пожалуйста | topup
+можно вернуть деньги | refund,refund-how
+можно отменить | refund,refund-how
+как вернуть деньги | refund,refund-how
+отменить заказ | refund,refund-how
+можно отменить пожалуйста | refund,refund-how
+здравствуйте отменить заказ | refund,refund-how
+отменить заказ пожалуйста | refund,refund-how
+можно вернуть деньги? | refund,refund-how
+здравствуйте как вернуть деньги? | refund,refund-how
+можно вернуть деньги пожалуйста | refund,refund-how
+привет как вернуть деньги | refund,refund-how
+вопрос можно отменить? | refund,refund-how
+вопрос отменить заказ | refund,refund-how
+вопрос можно отменить | refund,refund-how
+здравствуйте можно отменить? | refund,refund-how
+здравствуйте можно вернуть деньги | refund,refund-how
+привет можно вернуть деньги пожалуйста | refund,refund-how
+отменить заказ? | refund,refund-how
+как можно оплатить | payment
+можно оплатить apple pay | payment
+какие способы оплаты | payment
+можно оплатить картой | payment
+как оплатить | payment
+можно оплатить paypal | payment
+здравствуйте можно оплатить paypal | payment
+какие способы оплаты пожалуйста | payment
+можно оплатить paypal пожалуйста | payment
+можно оплатить apple pay пожалуйста | payment
+вопрос как оплатить | payment
+привет можно оплатить картой? | payment
+вопрос можно оплатить apple pay | payment
+привет как можно оплатить пожалуйста | payment
+вопрос можно оплатить картой? | payment
+как оплатить пожалуйста | payment
+привет можно оплатить paypal пожалуйста | payment
+вопрос можно оплатить paypal? | payment
+когда придет esim | delivery
+когда придет qr код | delivery
+сколько ждать доставку | delivery
+когда получу esim | delivery
+когда придет qr код? | delivery
+вопрос сколько ждать доставку пожалуйста | delivery
+привет когда придет esim? | delivery
+привет сколько ждать доставку | delivery
+вопрос когда придет esim пожалуйста | delivery
+здравствуйте когда придет esim? | delivery
+здравствуйте когда придет qr код пожалуйста | delivery
+когда получу esim? | delivery
+здравствуйте когда придет qr код | delivery
+вопрос когда придет esim? | delivery
+здравствуйте когда получу esim? | delivery
+здравствуйте когда придет esim пожалуйста | delivery
+когда придет esim? | delivery
+привет когда получу esim? | delivery
+как связаться с поддержкой | contact
+служба поддержки контакты | contact
+хочу поговорить с человеком | contact
+поддержка контакты | contact
+хочу поговорить с оператором | contact
+как связаться с вами | contact
+как связаться с вами пожалуйста | contact
+поддержка контакты пожалуйста | contact
+как связаться с поддержкой пожалуйста | contact
+привет хочу поговорить с человеком | contact
+здравствуйте хочу поговорить с оператором | contact
+поддержка контакты? | contact
+привет поддержка контакты? | contact
+здравствуйте служба поддержки контакты | contact
+хочу поговорить с оператором? | contact
+хочу поговорить с человеком? | contact
+как связаться с поддержкой? | contact
+вопрос хочу поговорить с человеком пожалуйста | contact
+нет интернета | no-internet
+esim установлена но нет интернета | no-internet
+нет интернета с esim | no-internet
+esim активна но нет интернета | no-internet
+почему не работает интернет | no-internet
+нет интернета за границей | no-internet
+нет интернета за границей пожалуйста | no-internet
+здравствуйте esim активна но нет интернета | no-internet
+esim активна но нет интернета пожалуйста | no-internet
+нет интернета пожалуйста | no-internet
+esim установлена но нет интернета? | no-internet
+нет интернета за границей? | no-internet
+esim установлена но нет интернета пожалуйста | no-internet
+почему не работает интернет пожалуйста | no-internet
+привет нет интернета | no-internet
+привет esim активна но нет интернета пожалуйста | no-internet
+здравствуйте esim установлена но нет интернета пожалуйста | no-internet
+вопрос нет интернета с esim | no-internet
+сколько гб осталось | check-usage
+где посмотреть остаток трафика | check-usage
+где посмотреть остаток | check-usage
+проверить расход трафика | check-usage
+сколько трафика осталось | check-usage
+где посмотреть остаток? | check-usage
+где посмотреть остаток пожалуйста | check-usage
+сколько гб осталось? | check-usage
+вопрос где посмотреть остаток трафика? | check-usage
+привет где посмотреть остаток трафика? | check-usage
+здравствуйте сколько трафика осталось | check-usage
+здравствуйте где посмотреть остаток трафика? | check-usage
+сколько трафика осталось пожалуйста | check-usage
+сколько трафика осталось? | check-usage
+сколько гб осталось пожалуйста | check-usage
+вопрос сколько гб осталось? | check-usage
+здравствуйте где посмотреть остаток? | check-usage
+вопрос проверить расход трафика | check-usage
+сколько стоит esim | prices
+сколько стоит пакет | prices
+цены на esim | prices
+здравствуйте сколько стоит esim? | prices
+сколько стоит пакет? | prices
+сколько стоит esim? | prices
+здравствуйте сколько стоит пакет | prices
+здравствуйте сколько стоит пакет пожалуйста | prices
+здравствуйте сколько стоит esim | prices
+цены на esim? | prices
+привет сколько стоит esim пожалуйста | prices
+привет сколько стоит пакет пожалуйста | prices
+привет сколько стоит пакет | prices
+вопрос цены на esim | prices
+сколько стоит пакет пожалуйста | prices
+вопрос сколько стоит пакет? | prices
+привет сколько стоит esim | prices
+привет цены на esim | prices
+куда ввести промокод | discount-code
+куда ввести купон | discount-code
+есть ли скидка | discount-code
+есть ли промокод | discount-code
+куда ввести код скидки | discount-code
+привет есть ли скидка пожалуйста | discount-code
+здравствуйте есть ли скидка? | discount-code
+вопрос куда ввести купон пожалуйста | discount-code
+куда ввести промокод? | discount-code
+привет куда ввести промокод | discount-code
+вопрос куда ввести купон? | discount-code
+есть ли промокод? | discount-code
+вопрос куда ввести промокод | discount-code
+куда ввести купон? | discount-code
+здравствуйте куда ввести купон | discount-code
+вопрос куда ввести код скидки? | discount-code
+здравствуйте есть ли скидка | discount-code
+куда ввести код скидки? | discount-code
+где мой чек | invoice
+можно получить чек | invoice
+можно получить счет | invoice
+где мой счет | invoice
+вопрос где мой счет? | invoice
+привет можно получить счет | invoice
+где мой счет? | invoice
+здравствуйте можно получить счет? | invoice
+вопрос можно получить чек пожалуйста | invoice
+где мой чек пожалуйста | invoice
+привет где мой чек | invoice
+вопрос можно получить счет? | invoice
+привет можно получить чек пожалуйста | invoice
+привет можно получить чек? | invoice
+здравствуйте можно получить чек | invoice
+здравствуйте можно получить чек? | invoice
+привет где мой счет | invoice
+можно получить счет? | invoice
+как удалить аккаунт | account-delete
+удалить мои данные | account-delete
+удалить аккаунт | account-delete
+привет удалить аккаунт | account-delete
+вопрос как удалить аккаунт | account-delete
+вопрос удалить мои данные? | account-delete
+как удалить аккаунт пожалуйста | account-delete
+здравствуйте как удалить аккаунт | account-delete
+привет как удалить аккаунт | account-delete
+здравствуйте удалить аккаунт пожалуйста | account-delete
+как удалить аккаунт? | account-delete
+здравствуйте удалить аккаунт | account-delete
+удалить аккаунт пожалуйста | account-delete
+удалить мои данные? | account-delete
+вопрос удалить мои данные пожалуйста | account-delete
+привет удалить мои данные | account-delete
+здравствуйте удалить мои данные | account-delete
+здравствуйте как удалить аккаунт пожалуйста | account-delete
+статус заказа что значит | order-status
+что значит готово к установке | order-status
+что значит ожидает оплаты | order-status
+что значит в обработке | order-status
+привет статус заказа что значит | order-status
+привет что значит ожидает оплаты пожалуйста | order-status
+вопрос статус заказа что значит? | order-status
+здравствуйте статус заказа что значит | order-status
+что значит ожидает оплаты пожалуйста | order-status
+привет статус заказа что значит пожалуйста | order-status
+привет что значит в обработке? | order-status
+здравствуйте что значит готово к установке | order-status
+вопрос что значит готово к установке | order-status
+здравствуйте что значит готово к установке? | order-status
+здравствуйте что значит ожидает оплаты пожалуйста | order-status
+здравствуйте что значит ожидает оплаты? | order-status
+что значит ожидает оплаты? | order-status
+привет что значит ожидает оплаты? | order-status
+безлимит правда безлимитный | unlimited
+есть безлимитный пакет | unlimited
+безлимит как работает | unlimited
+привет безлимит как работает | unlimited
+здравствуйте безлимит правда безлимитный? | unlimited
+вопрос есть безлимитный пакет пожалуйста | unlimited
+привет безлимит правда безлимитный | unlimited
+есть безлимитный пакет пожалуйста | unlimited
+здравствуйте есть безлимитный пакет | unlimited
+вопрос безлимит как работает | unlimited
+здравствуйте безлимит как работает пожалуйста | unlimited
+безлимит как работает пожалуйста | unlimited
+вопрос безлимит правда безлимитный? | unlimited
+вопрос безлимит правда безлимитный | unlimited
+есть безлимитный пакет? | unlimited
+здравствуйте безлимит как работает | unlimited
+вопрос безлимит как работает пожалуйста | unlimited
+здравствуйте безлимит правда безлимитный | unlimited
+работает ли whatsapp с esim | whatsapp
+работает ли whatsapp | whatsapp
+можно пользоваться whatsapp | whatsapp
+привет работает ли whatsapp с esim | whatsapp
+здравствуйте работает ли whatsapp с esim пожалуйста | whatsapp
+вопрос можно пользоваться whatsapp пожалуйста | whatsapp
+вопрос работает ли whatsapp | whatsapp
+здравствуйте работает ли whatsapp пожалуйста | whatsapp
+привет можно пользоваться whatsapp | whatsapp
+вопрос работает ли whatsapp пожалуйста | whatsapp
+работает ли whatsapp пожалуйста | whatsapp
+вопрос работает ли whatsapp с esim | whatsapp
+привет можно пользоваться whatsapp? | whatsapp
+можно пользоваться whatsapp? | whatsapp
+вопрос работает ли whatsapp? | whatsapp
+здравствуйте работает ли whatsapp с esim | whatsapp
+работает ли whatsapp с esim? | whatsapp
+вопрос можно пользоваться whatsapp? | whatsapp
+удалил esim что делать | new-phone,deleted-esim
+сменил телефон что с esim | new-phone,deleted-esim
+новый телефон что с esim | new-phone,deleted-esim
+можно перенести esim на другой телефон | new-phone,deleted-esim
+вопрос сменил телефон что с esim | new-phone,deleted-esim
+здравствуйте удалил esim что делать? | new-phone,deleted-esim
+привет можно перенести esim на другой телефон? | new-phone,deleted-esim
+удалил esim что делать? | new-phone,deleted-esim
+удалил esim что делать пожалуйста | new-phone,deleted-esim
+вопрос сменил телефон что с esim пожалуйста | new-phone,deleted-esim
+сменил телефон что с esim пожалуйста | new-phone,deleted-esim
+привет сменил телефон что с esim | new-phone,deleted-esim
+можно перенести esim на другой телефон? | new-phone,deleted-esim
+вопрос новый телефон что с esim? | new-phone,deleted-esim
+привет удалил esim что делать? | new-phone,deleted-esim
+вопрос удалил esim что делать пожалуйста | new-phone,deleted-esim
+вопрос удалил esim что делать | new-phone,deleted-esim
+новый телефон что с esim? | new-phone,deleted-esim
+можно купить esim в подарок | gift
+можно купить esim для мамы | gift
+можно купить esim для другого человека | gift
+привет можно купить esim для мамы? | gift
+можно купить esim для мамы пожалуйста | gift
+здравствуйте можно купить esim для мамы | gift
+можно купить esim для другого человека пожалуйста | gift
+здравствуйте можно купить esim в подарок? | gift
+можно купить esim в подарок? | gift
+можно купить esim в подарок пожалуйста | gift
+вопрос можно купить esim для мамы? | gift
+привет можно купить esim для мамы | gift
+здравствуйте можно купить esim в подарок пожалуйста | gift
+можно купить esim для другого человека? | gift
+привет можно купить esim для другого человека? | gift
+здравствуйте можно купить esim для мамы пожалуйста | gift
+здравствуйте можно купить esim для другого человека | gift
+вопрос можно купить esim в подарок? | gift
+сайт надежный | safe
+это безопасно | safe
+это не обман | safe
+это надежно | safe
+здравствуйте сайт надежный | safe
+здравствуйте это безопасно | safe
+это не обман пожалуйста | safe
+привет сайт надежный | safe
+здравствуйте это не обман | safe
+это безопасно пожалуйста | safe
+сайт надежный пожалуйста | safe
+привет сайт надежный пожалуйста | safe
+здравствуйте это безопасно? | safe
+сайт надежный? | safe
+это не обман? | safe
+это безопасно? | safe
+вопрос сайт надежный? | safe
+привет это не обман? | safe
+можно сменить валюту | currency
+показать цены в долларах | currency
+показать цены в рублях | currency
+показать цены в евро | currency
+можно сменить валюту? | currency
+здравствуйте показать цены в евро? | currency
+привет можно сменить валюту? | currency
+показать цены в рублях пожалуйста | currency
+здравствуйте можно сменить валюту | currency
+здравствуйте показать цены в евро | currency
+показать цены в долларах пожалуйста | currency
+привет показать цены в долларах | currency
+вопрос показать цены в евро? | currency
+вопрос показать цены в долларах? | currency
+здравствуйте показать цены в рублях | currency
+показать цены в рублях? | currency
+вопрос можно сменить валюту? | currency
+показать цены в долларах? | currency
+что такое бизнес зал | lounge-what
+что есть в лаунж зоне | lounge-what
+вопрос что есть в лаунж зоне? | lounge-what
+что такое бизнес зал? | lounge-what
+что есть в лаунж зоне? | lounge-what
+вопрос что есть в лаунж зоне | lounge-what
+привет что такое бизнес зал | lounge-what
+привет что есть в лаунж зоне? | lounge-what
+привет что есть в лаунж зоне | lounge-what
+здравствуйте что есть в лаунж зоне | lounge-what
+вопрос что такое бизнес зал | lounge-what
+вопрос что такое бизнес зал? | lounge-what
+привет что такое бизнес зал? | lounge-what
+вопрос что есть в лаунж зоне пожалуйста | lounge-what
+что есть в лаунж зоне пожалуйста | lounge-what
+что такое бизнес зал пожалуйста | lounge-what
+здравствуйте что такое бизнес зал? | lounge-what
+здравствуйте что есть в лаунж зоне? | lounge-what
+что такое fast track | fasttrack-how
+как работает fast track | fasttrack-how
+вопрос как работает fast track | fasttrack-how
+что такое fast track пожалуйста | fasttrack-how
+здравствуйте что такое fast track | fasttrack-how
+вопрос как работает fast track пожалуйста | fasttrack-how
+вопрос что такое fast track пожалуйста | fasttrack-how
+привет как работает fast track | fasttrack-how
+как работает fast track? | fasttrack-how
+здравствуйте как работает fast track | fasttrack-how
+привет что такое fast track? | fasttrack-how
+вопрос что такое fast track | fasttrack-how
+привет как работает fast track? | fasttrack-how
+привет что такое fast track | fasttrack-how
+здравствуйте что такое fast track пожалуйста | fasttrack-how
+как работает fast track пожалуйста | fasttrack-how
+что такое fast track? | fasttrack-how
+здравствуйте как работает fast track пожалуйста | fasttrack-how
+можно иметь несколько esim | multiple-esims
+можно иметь две esim | multiple-esims
+привет можно иметь несколько esim | multiple-esims
+вопрос можно иметь несколько esim? | multiple-esims
+привет можно иметь несколько esim пожалуйста | multiple-esims
+здравствуйте можно иметь две esim? | multiple-esims
+можно иметь несколько esim пожалуйста | multiple-esims
+вопрос можно иметь две esim? | multiple-esims
+можно иметь несколько esim? | multiple-esims
+здравствуйте можно иметь несколько esim | multiple-esims
+можно иметь две esim? | multiple-esims
+здравствуйте можно иметь две esim пожалуйста | multiple-esims
+привет можно иметь две esim? | multiple-esims
+привет можно иметь две esim пожалуйста | multiple-esims
+здравствуйте можно иметь две esim | multiple-esims
+привет можно иметь две esim | multiple-esims
+вопрос можно иметь две esim | multiple-esims
+вопрос можно иметь несколько esim | multiple-esims
+нужно удалить esim после поездки | remove-after
+привет нужно удалить esim после поездки? | remove-after
+здравствуйте нужно удалить esim после поездки? | remove-after
+нужно удалить esim после поездки пожалуйста | remove-after
+нужно удалить esim после поездки? | remove-after
+здравствуйте нужно удалить esim после поездки | remove-after
+привет нужно удалить esim после поездки | remove-after
+привет нужно удалить esim после поездки пожалуйста | remove-after
+вопрос нужно удалить esim после поездки | remove-after
+здравствуйте нужно удалить esim после поездки пожалуйста | remove-after
+вопрос нужно удалить esim после поездки пожалуйста | remove-after
+вопрос нужно удалить esim после поездки? | remove-after
+трафик закончился что делать | expired
+пакет закончился что делать | expired
+здравствуйте пакет закончился что делать | expired
+вопрос пакет закончился что делать | expired
+пакет закончился что делать? | expired
+вопрос пакет закончился что делать пожалуйста | expired
+трафик закончился что делать? | expired
+привет трафик закончился что делать | expired
+привет пакет закончился что делать | expired
+здравствуйте пакет закончился что делать пожалуйста | expired
+вопрос трафик закончился что делать | expired
+привет трафик закончился что делать пожалуйста | expired
+привет пакет закончился что делать пожалуйста | expired
+вопрос трафик закончился что делать? | expired
+трафик закончился что делать пожалуйста | expired
+здравствуйте трафик закончился что делать пожалуйста | expired
+здравствуйте трафик закончился что делать | expired
+пакет закончился что делать пожалуйста | expired
+не получил qr код | no-email,my-esims
+не пришел qr код | no-email,my-esims
+где мой qr код | no-email,my-esims
+не получил qr код пожалуйста | no-email,my-esims
+вопрос не получил qr код | no-email,my-esims
+где мой qr код? | no-email,my-esims
+привет не пришел qr код пожалуйста | no-email,my-esims
+не пришел qr код пожалуйста | no-email,my-esims
+где мой qr код пожалуйста | no-email,my-esims
+здравствуйте не пришел qr код пожалуйста | no-email,my-esims
+здравствуйте не получил qr код пожалуйста | no-email,my-esims
+здравствуйте где мой qr код пожалуйста | no-email,my-esims
+здравствуйте где мой qr код | no-email,my-esims
+вопрос не пришел qr код | no-email,my-esims
+вопрос не получил qr код? | no-email,my-esims
+привет не получил qr код? | no-email,my-esims
+привет не получил qr код | no-email,my-esims
+здравствуйте не получил qr код | no-email,my-esims
+в каких странах работает | coverage-countries
+есть esim для таиланда | coverage-countries
+есть esim для сша | coverage-countries
+есть esim для японии | coverage-countries
+есть esim для марокко | coverage-countries
+есть esim для сша пожалуйста | coverage-countries
+привет есть esim для японии пожалуйста | coverage-countries
+есть esim для японии пожалуйста | coverage-countries
+привет есть esim для сша пожалуйста | coverage-countries
+здравствуйте есть esim для японии? | coverage-countries
+есть esim для марокко пожалуйста | coverage-countries
+вопрос есть esim для сша | coverage-countries
+привет в каких странах работает | coverage-countries
+привет есть esim для таиланда | coverage-countries
+вопрос есть esim для сша? | coverage-countries
+привет есть esim для марокко | coverage-countries
+здравствуйте есть esim для таиланда | coverage-countries
+вопрос есть esim для таиланда | coverage-countries
+здравствуйте где найти купленную esim | my-esims
+привет где купить пакет | how-to-buy
+привет можно купить без регистрации | need-account
+как изменить пароль? | change-password
+вопрос не могу зайти в аккаунт | account-login
+вопрос мой телефон поддерживает esim | device-compatible

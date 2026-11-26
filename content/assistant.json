@@ -53,7 +53,8 @@
           "nasıl çalışır",
           "esim ne demek",
           "normal sim farkı",
-          "arasındaki fark"
+          "arasındaki fark",
+          "ise yarar"
         ],
         "views": 980
       },
@@ -72,7 +73,6 @@
           "telefonumda çalışır mı",
           "uyumlu mu",
           "esim destekliyor mu",
-          "esim var mı",
           "huawei",
           "xiaomi",
           "redmi",
@@ -83,7 +83,9 @@
           "eid numarası",
           "esim seçeneği yok",
           "galaxy",
-          "samsung galaxy"
+          "samsung galaxy",
+          "samsung esim calisir",
+          "iphone esim calisir"
         ],
         "views": 1240
       },
@@ -107,7 +109,9 @@
           "samsungda kurulum",
           "androidde",
           "androide",
-          "qr yazdırmak"
+          "qr yazdırmak",
+          "kurulum rehberi",
+          "kurulum adimlari"
         ],
         "views": 1105,
         "next": [
@@ -131,7 +135,8 @@
           "süre başlar mı",
           "ne zaman etkinleştir",
           "veri dolaşımını açmalı",
-          "dolaşımı açmalı mıyım"
+          "dolaşımı açmalı mıyım",
+          "baslar"
         ],
         "views": 870,
         "next": [
@@ -158,7 +163,8 @@
           "netflix izlersem",
           "kaç gb gider",
           "hafta için",
-          "kaç haftalık"
+          "kaç haftalık",
+          "kac giga"
         ],
         "views": 760
       },
@@ -176,7 +182,10 @@
           "normal arama",
           "sesli arama",
           "telefon görüşmesi",
-          "arama yapılır mı"
+          "arama yapılır mı",
+          "sms dahil",
+          "konusabilir",
+          "arama dahil"
         ],
         "views": 640
       },
@@ -186,7 +195,6 @@
         "question": "Normal numaram kalır mı?",
         "answer": "Evet. eSIM ek olarak kurulur. Ana SIM kartın yerinde kalır – SMS için açık bırakıp mobil veri için passport.io eSIM'ini kullanabilirsin.",
         "keywords": [
-          "numara",
           "kalır",
           "ana sim",
           "ikinci",
@@ -197,7 +205,11 @@
           "aranabilir miyim",
           "ana hattım kapalı",
           "hattım kapalı olursa",
-          "arama gelir mi"
+          "arama gelir mi",
+          "numaram degisir",
+          "numaram",
+          "kendi hattim",
+          "kendi hattim calisir"
         ],
         "views": 420
       },
@@ -303,7 +315,8 @@
           "lounge iptal",
           "iptal edebilir miyim",
           "kurulmadı iade",
-          "param iade"
+          "param iade",
+          "iptal nasil yapilir"
         ],
         "views": 690
       },
@@ -336,7 +349,8 @@
           "ne kadar sürede gelir",
           "qr ne zaman gelir",
           "sipariş ne zaman",
-          "hemen gelir mi"
+          "hemen gelir mi",
+          "elime gecer"
         ],
         "views": 400
       },
@@ -357,7 +371,8 @@
           "size nasıl ulaşırım",
           "temsilci",
           "e posta adresimi değiştirmek",
-          "mail adresi değiştir"
+          "mail adresi değiştir",
+          "size nasil ulasabilirim"
         ],
         "views": 300
       },
@@ -690,7 +705,8 @@
           "imessage",
           "görüntülü arama",
           "numara değişir mi",
-          "whatsapp kullanabilir miyim"
+          "whatsapp kullanabilir miyim",
+          "whatsapp kullanilir"
         ],
         "views": 410
       },
@@ -701,7 +717,6 @@
         "answer": "Evet. Ana hattını **açık bırak** (sadece mobil veriyi eSIM'e ver) – SMS'ler ve banka onay kodları normal şekilde ana numarana gelir. Gelen SMS genelde ücretsizdir; kesin bilgi için operatörünün yurt dışı tarifesine bak.",
         "keywords": [
           "banka sms",
-          "onay kodu",
           "doğrulama kodu",
           "sms gelir mi",
           "tek kullanımlık şifre",
@@ -733,7 +748,8 @@
           "nereden bakarım",
           "ne zamana kadar",
           "geçerlilik",
-          "kaç gün kaldı"
+          "kaç gün kaldı",
+          "kullanimimi nasil kontrol"
         ],
         "views": 350
       },
@@ -752,10 +768,9 @@
           "ek ücret",
           "bitti ne yapmalıyım",
           "yeni paket",
-          "bitince",
           "bittiğinde",
-          "ne olur",
-          "ne oluyor"
+          "ne oluyor",
+          "bitti ne olacak"
         ],
         "views": 240
       },
@@ -832,7 +847,8 @@
           "aynı anda",
           "ikinci esim",
           "başka esim",
-          "eski esim"
+          "eski esim",
+          "iki paket ayni"
         ],
         "views": 130
       },
@@ -929,7 +945,10 @@
           "global paket",
           "hangi operatör",
           "operatör",
-          "türk paketi"
+          "türk paketi",
+          "amerika",
+          "japonya",
+          "tayland"
         ],
         "views": 230
       },
@@ -1094,7 +1113,9 @@
           "esim gelmedi",
           "mail yok",
           "onay maili",
-          "esimim nerede"
+          "esimim nerede",
+          "qr kod almadim",
+          "qr kod bulamiyorum"
         ],
         "views": 420
       },
@@ -1169,7 +1190,8 @@
           "indirim",
           "kampanya kodu",
           "geçersiz kupon",
-          "rabatt"
+          "rabatt",
+          "kupon kodu nereye"
         ],
         "views": 170
       },
@@ -1190,7 +1212,9 @@
           "hesabıma giremiyorum",
           "kayıt",
           "google ile giriş",
-          "apple ile giriş"
+          "apple ile giriş",
+          "onay kodu",
+          "şifre sıfırlama"
         ],
         "views": 150
       },
@@ -1207,7 +1231,6 @@
           "aile",
           "lounge çocuk",
           "kaç kişi",
-          "yanımda biri",
           "çocuğum",
           "çocuğumu",
           "çocuğu",
@@ -1258,7 +1281,6 @@
         "answer": "Fast Track şeridi genellikle güvenlik kontrolünün hemen girişinde, **\"Fast Track\"**, **\"Priority\"** veya **\"Premium Lane\"** tabelasıyla işaretlidir. Voucher'ında havalimanı ve terminale göre yol tarifi bulunur. Bulamazsan havalimanı personeline voucher'ını göster.",
         "keywords": [
           "fast track nerede",
-          "nerede",
           "şerit",
           "terminal",
           "giriş nerede",
@@ -1328,7 +1350,10 @@
           "fiyat farkı",
           "en ucuz",
           "fiyatlar güncel mi",
-          "vergi dahil mi"
+          "vergi dahil mi",
+          "paket fiyatlari",
+          "kac para",
+          "fiyati"
         ],
         "views": 150
       },
@@ -1346,7 +1371,8 @@
           "fatura kesiyor musunuz",
           "makbuz",
           "fiş",
-          "vergi numarası"
+          "vergi numarası",
+          "faturam"
         ],
         "views": 140
       },
@@ -1625,6 +1651,96 @@
           "tethering"
         ],
         "views": 130
+      },
+      {
+        "id": "my-esims",
+        "category": "allgemein",
+        "question": "Satın aldığım eSIM'leri / paketleri nerede görürüm?",
+        "answer": "Sağ üstteki **Hesabım**'a dokun ve satın alırken kullandığın e-posta ile giriş yap.\n\n- **eSIM'lerim:** Her eSIM için QR kod, manuel kurulum bilgileri (SM-DP+ adresi ve aktivasyon kodu), kalan veri ve kalan gün.\n- **Siparişler:** Tüm siparişlerin, durumları ve tutarları.\n\nSiparişi göremiyorsan başka bir e-posta ile giriş yapmış olabilirsin – onay e-postasındaki adresi kontrol et.",
+        "keywords": [
+          "aldığım paketler",
+          "satın aldığım esim",
+          "paketlerim nerede",
+          "esimlerim nerede",
+          "siparişlerimi görmek",
+          "aldığım esimi göremiyorum",
+          "esim nerede görürüm",
+          "qr kodu tekrar görmek",
+          "satın aldıklarım",
+          "hesabımda esim",
+          "paketimi bulamıyorum",
+          "aldiklarimi"
+        ],
+        "views": 120
+      },
+      {
+        "id": "how-to-buy",
+        "category": "allgemein",
+        "question": "eSIM nasıl satın alırım?",
+        "answer": "1. Ana sayfada **ülkeni ara** (ör. Türkiye, Almanya).\n2. **Paketi seç** (GB ve gün) ve **Sepete ekle**'ye dokun.\n3. Sepette istersen **indirim kodunu** gir, sonra **Kasaya git**.\n4. **Giriş yap** veya ücretsiz hesap oluştur ve **öde**.\n5. QR kod saniyeler içinde e-postana gelir ve **Hesabım → eSIM'lerim**'de durur.\n\nİpucu: eSIM'i yolculuktan önce Wi-Fi'de kur; paket genelde varış ülkesinde ilk bağlantıyla başlar.",
+        "keywords": [
+          "nasıl satın alırım",
+          "nasıl alırım",
+          "satın almak istiyorum",
+          "sipariş vermek",
+          "nasıl sipariş",
+          "esim almak",
+          "paket almak",
+          "nasıl alınır",
+          "satın alma adımları",
+          "almak için ne yapmalıyım",
+          "siparis ederim"
+        ],
+        "views": 110
+      },
+      {
+        "id": "need-account",
+        "category": "allgemein",
+        "question": "Satın almak için hesap gerekli mi?",
+        "answer": "Evet, kasada kısa bir **ücretsiz hesap** oluşturursun (e-posta + şifre). Böylece QR kodun, kurulum bilgilerin ve kalan verin her zaman **Hesabım**'da güvende olur – e-postayı silsen bile.\n\nKayıt bir dakika sürer; e-postana gelen kodla onaylarsın.",
+        "keywords": [
+          "hesap gerekli mi",
+          "üye olmadan",
+          "kayıt olmadan",
+          "hesapsız",
+          "üyelik şart mı",
+          "kayıt olmak zorunda",
+          "misafir olarak",
+          "hesap açmam lazım mı"
+        ],
+        "views": 60
+      },
+      {
+        "id": "change-password",
+        "category": "allgemein",
+        "question": "Şifremi nasıl değiştiririm?",
+        "answer": "**Hesabım → Profil**'e git, **yeni şifreni** gir ve kaydet. Şifre en az 8 karakter olmalı.\n\nŞifreni unuttuysan giriş ekranında **Şifremi unuttum**'a dokun – e-postana gelen kodla yeni şifre belirlersin.",
+        "keywords": [
+          "şifre değiştir",
+          "şifremi değiştirmek",
+          "yeni şifre",
+          "parola değiştir",
+          "şifre güncelle",
+          "şifremi yenilemek",
+          "parolamı değiştirmek"
+        ],
+        "views": 40
+      },
+      {
+        "id": "change-email",
+        "category": "allgemein",
+        "question": "E-posta adresimi değiştirebilir miyim?",
+        "answer": "E-posta adresi şu an hesapta kendin değiştirilemiyor. Bize **destek formu** üzerinden eski ve yeni adresini yaz, değişikliği biz yaparız.\n\nAdresi siparişte yanlış yazdıysan da destek formuna yaz – QR kodu doğru adrese yönlendiririz.",
+        "keywords": [
+          "e posta değiştir",
+          "mail adresi değiştir",
+          "email değiştirmek",
+          "yeni e posta",
+          "e posta yanlış yazdım",
+          "mailimi değiştirmek",
+          "farklı e posta"
+        ],
+        "views": 30
       }
     ],
     "devices": [
@@ -1939,7 +2055,8 @@
           "no esim option",
           "huawei",
           "xiaomi",
-          "galaxy"
+          "galaxy",
+          "capable"
         ]
       },
       {
@@ -1971,7 +2088,10 @@
           "when to turn on",
           "when should i turn on",
           "when to activate",
-          "validity start"
+          "validity start",
+          "days start counting",
+          "plan start",
+          "package start"
         ]
       },
       {
@@ -1987,7 +2107,8 @@
           "how much data do i need",
           "plan should i choose",
           "for weeks",
-          "weeks in"
+          "weeks in",
+          "need on holiday"
         ]
       },
       {
@@ -1999,7 +2120,8 @@
           "calls",
           "phone call",
           "make calls",
-          "can i call"
+          "can i call",
+          "sms included"
         ]
       },
       {
@@ -2014,7 +2136,8 @@
           "dual sim",
           "physical",
           "number still work",
-          "keep my number"
+          "keep my number",
+          "normal sim"
         ]
       },
       {
@@ -2025,7 +2148,8 @@
           "hotspot",
           "tethering",
           "share",
-          "laptop"
+          "laptop",
+          "tether"
         ]
       },
       {
@@ -2039,7 +2163,9 @@
           "extend",
           "recharge",
           "ran out",
-          "used up"
+          "used up",
+          "add data",
+          "more gb"
         ]
       },
       {
@@ -2105,7 +2231,8 @@
           "credit card",
           "apple pay",
           "klarna",
-          "payment method"
+          "payment method",
+          "pay with google"
         ]
       },
       {
@@ -2134,7 +2261,8 @@
           "customer service",
           "phone number for support",
           "talk to a agent",
-          "talk to agent"
+          "talk to agent",
+          "email for support"
         ]
       },
       {
@@ -2270,7 +2398,6 @@
         "question": "I accidentally deleted my eSIM – what now?",
         "answer": "A deleted eSIM usually **can't be reinstalled with the same QR code**, because the code is single-use.\n\n**Message us right away with your order number** – we'll check what can be done.\n\nTip: Never delete the eSIM while travelling; if something isn't working, try turning the line off and on first.",
         "keywords": [
-          "deleted",
           "accidentally deleted",
           "removed esim",
           "esim gone",
@@ -2288,12 +2415,12 @@
           "new phone",
           "changed phone",
           "transfer",
-          "move esim",
           "another phone",
           "lost my phone",
           "stolen",
           "broken phone",
-          "switch device"
+          "switch device",
+          "phone what happens"
         ]
       },
       {
@@ -2370,7 +2497,8 @@
           "facetime",
           "imessage",
           "video call",
-          "number change"
+          "number change",
+          "use whatsapp calls"
         ]
       },
       {
@@ -2422,7 +2550,10 @@
           "auto renewal",
           "extra charges",
           "data finished",
-          "buy again"
+          "buy again",
+          "package used up",
+          "data used up",
+          "package empty"
         ]
       },
       {
@@ -2481,7 +2612,8 @@
           "at the same time",
           "second esim",
           "another esim",
-          "old esim"
+          "old esim",
+          "packages on one"
         ]
       },
       {
@@ -2555,7 +2687,11 @@
           "covered countries",
           "which countries",
           "layover",
-          "all of europe"
+          "all of europe",
+          "thailand",
+          "packages for japan",
+          "packages for usa",
+          "morocco"
         ]
       },
       {
@@ -2652,7 +2788,6 @@
           "comparison",
           "tourist sim",
           "which is better",
-          "expensive",
           "cheaper"
         ]
       },
@@ -2688,7 +2823,8 @@
           "not delivered",
           "esim not received",
           "didn't get the email",
-          "email not received"
+          "email not received",
+          "qr code missing"
         ]
       },
       {
@@ -2767,7 +2903,11 @@
           "login",
           "sign in",
           "locked out",
-          "register"
+          "register",
+          "into my account",
+          "code not coming",
+          "password reset",
+          "reset password"
         ]
       },
       {
@@ -2779,7 +2919,6 @@
           "kids",
           "baby",
           "infant",
-          "guest",
           "partner",
           "family",
           "how many people",
@@ -2824,7 +2963,6 @@
         "answer": "The Fast Track lane is usually right at the entrance to security, signposted **\"Fast Track\"**, **\"Priority\"** or **\"Premium Lane\"**. Your voucher includes directions for your airport and terminal. Can't find it? Show your voucher to airport staff.",
         "keywords": [
           "where is fast track",
-          "where",
           "lane",
           "terminal",
           "entrance",
@@ -2877,7 +3015,8 @@
           "price went up",
           "cheapest",
           "tax included",
-          "price difference"
+          "price difference",
+          "package cost"
         ]
       },
       {
@@ -2923,7 +3062,9 @@
           "personal data",
           "gdpr",
           "privacy",
-          "remove account"
+          "remove account",
+          "remove my account",
+          "remove my data"
         ]
       },
       {
@@ -3097,6 +3238,95 @@
           "hotspot setup",
           "internet to laptop"
         ]
+      },
+      {
+        "id": "my-esims",
+        "question": "Where can I see the eSIMs / packages I bought?",
+        "answer": "Tap **My account** at the top right and sign in with the email address you used to buy.\n\n- **My eSIMs:** for every eSIM the QR code, the details for manual installation (SM-DP+ address and activation code), remaining data and days.\n- **Orders:** all your orders with status and amount.\n\nCan't see your order? You may be signed in with a different email – check the address in your confirmation email.",
+        "keywords": [
+          "purchased packages",
+          "bought esim",
+          "my packages",
+          "my esims",
+          "my orders",
+          "see my orders",
+          "purchased esim",
+          "where is my esim",
+          "find my esim",
+          "esim in my account",
+          "see qr code again",
+          "can't find my package",
+          "what i bought"
+        ]
+      },
+      {
+        "id": "how-to-buy",
+        "question": "How do I buy an eSIM?",
+        "answer": "1. On the home page **search for your country** (e.g. Turkey, Germany).\n2. **Choose a package** (GB and days) and tap **Add to cart**.\n3. In the cart you can enter a **discount code**, then tap **Checkout**.\n4. **Sign in** or create a free account and **pay**.\n5. The QR code arrives by email within seconds and is under **My account → My eSIMs**.\n\nTip: install the eSIM on Wi-Fi before you travel; the package usually starts with the first connection in the destination country.",
+        "keywords": [
+          "how do i buy",
+          "how to buy",
+          "how to order",
+          "buy an esim",
+          "buy a package",
+          "place an order",
+          "purchase esim",
+          "how can i buy",
+          "buying process",
+          "how does buying work",
+          "data plan",
+          "purchase a package",
+          "order a data"
+        ]
+      },
+      {
+        "id": "need-account",
+        "question": "Do I need an account to buy?",
+        "answer": "Yes, at checkout you quickly create a **free account** (email + password). That way your QR code, installation details and remaining data are always safe under **My account** – even if you delete the email.\n\nSigning up takes a minute; you confirm it with the code from the email.",
+        "keywords": [
+          "need an account",
+          "do i need an account",
+          "without account",
+          "without registering",
+          "buy without signing up",
+          "as a guest",
+          "guest checkout",
+          "must i register",
+          "buy as guest",
+          "need to register",
+          "register to buy",
+          "register to order"
+        ]
+      },
+      {
+        "id": "change-password",
+        "question": "How do I change my password?",
+        "answer": "Go to **My account → Profile**, enter your **new password** and save. It needs at least 8 characters.\n\nForgot your password? Tap **Forgot password** on the sign-in screen – set a new one with the code from the email.",
+        "keywords": [
+          "change password",
+          "change my password",
+          "new password",
+          "update password",
+          "different password",
+          "change login password",
+          "update my password"
+        ]
+      },
+      {
+        "id": "change-email",
+        "question": "Can I change my email address?",
+        "answer": "You can't change the email address in your account yourself at the moment. Send us your old and new address via the **support form** and we'll switch it.\n\nTypo in the email at checkout? Also just use the support form – we'll send the QR code to the right address.",
+        "keywords": [
+          "change email",
+          "change my email",
+          "new email",
+          "update email address",
+          "wrong email entered",
+          "different email",
+          "typo in email",
+          "update my email",
+          "update email"
+        ]
       }
     ]
   },
@@ -3164,7 +3394,8 @@
           "huawei",
           "xiaomi",
           "keine esim option",
-          "galaxy"
+          "galaxy",
+          "tauglich"
         ]
       },
       {
@@ -3172,7 +3403,6 @@
         "question": "Wie installiere ich meine eSIM?",
         "answer": "**iPhone:** Einstellungen → Mobilfunk → eSIM hinzufügen → QR-Code scannen.\n**Android:** Einstellungen → Verbindungen → SIM-Manager → eSIM hinzufügen → QR-Code scannen.\n\nTipp: Installiere die eSIM schon **zu Hause im WLAN** – aktivieren musst du sie erst am Reiseziel.\n\n[Zur bebilderten Schritt-für-Schritt-Anleitung](install.html)",
         "keywords": [
-          "installieren",
           "einrichten",
           "anleitung",
           "esim installieren",
@@ -3181,7 +3411,9 @@
           "auf iphone installieren",
           "auf samsung einrichten",
           "installationsanleitung",
-          "qr drucken"
+          "qr drucken",
+          "aktiviere",
+          "richte"
         ]
       },
       {
@@ -3196,7 +3428,11 @@
           "wann einschalten",
           "wann aktivieren",
           "laufzeit beginnt",
-          "wann beginnt die laufzeit"
+          "wann beginnt die laufzeit",
+          "startet",
+          "lauft das paket",
+          "ab wann zahlen",
+          "laufzeit"
         ]
       },
       {
@@ -3212,7 +3448,8 @@
           "wie viele gb",
           "paket empfehlung",
           "für wochen",
-          "wochen urlaub"
+          "wochen urlaub",
+          "daten brauche"
         ]
       },
       {
@@ -3239,7 +3476,8 @@
           "dual sim",
           "physische",
           "nummer erreichbar",
-          "bleibt meine nummer"
+          "bleibt meine nummer",
+          "bleibt meine handynummer"
         ]
       },
       {
@@ -3258,13 +3496,13 @@
         "question": "Kann ich Datenvolumen nachbuchen?",
         "answer": "Ist dein Volumen aufgebraucht, kaufst du einfach ein **neues Paket** für dasselbe Land – in wenigen Minuten bist du wieder online. Das neue Paket kommt als neue eSIM; den QR-Code findest du in deinem Konto.\n\nTipp: Dein Restvolumen siehst du jederzeit unter Mein Konto → Meine eSIMs.",
         "keywords": [
-          "nachbuchen",
           "aufladen",
           "mehr daten",
           "verlängern",
           "top up",
           "leer",
-          "aufgebraucht"
+          "mehr gb",
+          "nachkaufen"
         ]
       },
       {
@@ -3320,7 +3558,9 @@
           "rückerstattung",
           "widerruf",
           "lounge stornieren",
-          "geld zurück bekommen"
+          "geld zurück bekommen",
+          "stornierung",
+          "kauf stornieren"
         ]
       },
       {
@@ -3334,7 +3574,8 @@
           "kreditkarte",
           "apple pay",
           "klarna",
-          "zahlungsmethode"
+          "zahlungsmethode",
+          "google pay"
         ]
       },
       {
@@ -3447,7 +3688,6 @@
           "kamera erkennt nicht",
           "manuell",
           "von hand",
-          "aktivierungscode",
           "sm dp",
           "smdp",
           "code eingeben",
@@ -3498,7 +3738,6 @@
           "wo sind meine daten",
           "daten sparen",
           "datensparmodus",
-          "verbrauch",
           "schnell weg",
           "so schnell leer",
           "schnell verbraucht",
@@ -3616,7 +3855,8 @@
           "facetime",
           "imessage",
           "videoanruf",
-          "nummer ändern"
+          "nummer ändern",
+          "funktioniert whatsapp"
         ]
       },
       {
@@ -3671,7 +3911,10 @@
           "automatische verlängerung",
           "zusatzkosten",
           "volumen leer",
-          "neu kaufen"
+          "neu kaufen",
+          "paket aufgebraucht",
+          "paket ist leer",
+          "daten aufgebraucht"
         ]
       },
       {
@@ -3734,7 +3977,8 @@
           "gleichzeitig",
           "zweite esim",
           "andere esim",
-          "alte esim"
+          "alte esim",
+          "mehrere"
         ]
       },
       {
@@ -3811,7 +4055,10 @@
           "welche länder",
           "umsteigen",
           "ganz europa",
-          "für europa"
+          "für europa",
+          "thailand",
+          "habt ihr pakete",
+          "marokko"
         ]
       },
       {
@@ -3909,7 +4156,6 @@
           "vergleich",
           "touristen sim",
           "was ist besser",
-          "teuer",
           "günstiger",
           "lohnt sich"
         ]
@@ -3948,7 +4194,8 @@
           "mail erhalten",
           "keine bestätigung",
           "qr code nicht erhalten",
-          "nicht erhalten"
+          "nicht erhalten",
+          "qr code fehlt"
         ]
       },
       {
@@ -4027,14 +4274,15 @@
         "keywords": [
           "kann mich nicht anmelden",
           "passwort vergessen",
-          "passwort",
           "konto",
           "kein code",
           "bestätigungscode",
           "login",
-          "anmelden",
           "einloggen",
-          "registrieren"
+          "registrieren",
+          "anmeldung klappt",
+          "passwort zurücksetzen",
+          "passwort vergessen mail"
         ]
       },
       {
@@ -4091,7 +4339,6 @@
         "answer": "Die Fast-Track-Spur liegt meist direkt am Eingang der Sicherheitskontrolle und ist mit **\"Fast Track\"**, **\"Priority\"** oder **\"Premium Lane\"** ausgeschildert. Auf deinem Voucher steht eine Wegbeschreibung für Flughafen und Terminal. Findest du sie nicht, zeig dem Flughafenpersonal deinen Voucher.",
         "keywords": [
           "wo ist fast track",
-          "wo",
           "spur",
           "terminal",
           "eingang",
@@ -4112,7 +4359,8 @@
           "ausstehend",
           "wo ist meine bestellung",
           "bestellung nicht sichtbar",
-          "bestellung im konto"
+          "bestellung im konto",
+          "status meiner bestellung"
         ]
       },
       {
@@ -4144,7 +4392,8 @@
           "preis gestiegen",
           "günstigste",
           "steuern enthalten",
-          "preisunterschied"
+          "preisunterschied",
+          "kostet ein paket"
         ]
       },
       {
@@ -4190,7 +4439,8 @@
           "meine daten",
           "dsgvo",
           "datenschutz",
-          "abmelden konto"
+          "abmelden konto",
+          "konto entfernen"
         ]
       },
       {
@@ -4366,6 +4616,88 @@
           "hotspot einrichten",
           "internet für laptop"
         ]
+      },
+      {
+        "id": "my-esims",
+        "question": "Wo sehe ich meine gekauften eSIMs / Pakete?",
+        "answer": "Tippe oben rechts auf **Mein Konto** und melde dich mit der E-Mail-Adresse an, mit der du gekauft hast.\n\n- **Meine eSIMs:** zu jeder eSIM der QR-Code, die Daten für die manuelle Installation (SM-DP+-Adresse und Aktivierungscode), Restvolumen und Resttage.\n- **Bestellungen:** alle Bestellungen mit Status und Betrag.\n\nSiehst du deine Bestellung nicht, bist du vielleicht mit einer anderen E-Mail angemeldet – prüfe die Adresse in der Bestätigungsmail.",
+        "keywords": [
+          "gekaufte pakete",
+          "gekaufte esim",
+          "meine pakete",
+          "meine esims",
+          "meine bestellungen",
+          "bestellungen sehen",
+          "gekauftes paket",
+          "wo sehe ich meine esim",
+          "wo finde ich meine esim",
+          "esim im konto",
+          "qr code nochmal sehen",
+          "paket finde ich nicht",
+          "was ich gekauft habe"
+        ]
+      },
+      {
+        "id": "how-to-buy",
+        "question": "Wie kaufe ich eine eSIM?",
+        "answer": "1. Auf der Startseite **dein Land suchen** (z. B. Türkei, Deutschland).\n2. **Paket wählen** (GB und Tage) und auf **In den Warenkorb** tippen.\n3. Im Warenkorb optional den **Rabattcode** eingeben, dann **Zur Kasse**.\n4. **Anmelden** oder kostenlos registrieren und **bezahlen**.\n5. Der QR-Code kommt in Sekunden per E-Mail und liegt unter **Mein Konto → Meine eSIMs**.\n\nTipp: Installiere die eSIM vor der Reise im WLAN; das Paket startet meist erst mit der ersten Verbindung im Reiseland.",
+        "keywords": [
+          "wie kaufe ich",
+          "wie bestelle ich",
+          "esim kaufen",
+          "paket kaufen",
+          "wie kann ich kaufen",
+          "bestellung aufgeben",
+          "kauf ablauf",
+          "wie funktioniert der kauf"
+        ]
+      },
+      {
+        "id": "need-account",
+        "question": "Brauche ich ein Konto zum Kaufen?",
+        "answer": "Ja, an der Kasse legst du kurz ein **kostenloses Konto** an (E-Mail + Passwort). So liegen QR-Code, Installationsdaten und Restvolumen immer sicher unter **Mein Konto** – auch wenn du die E-Mail löschst.\n\nDie Registrierung dauert eine Minute; du bestätigst sie mit dem Code aus der E-Mail.",
+        "keywords": [
+          "konto nötig",
+          "brauche ich ein konto",
+          "ohne konto",
+          "ohne registrierung",
+          "ohne anmeldung kaufen",
+          "als gast",
+          "muss ich mich registrieren",
+          "konto erstellen pflicht",
+          "ohne anmeldung bestellen"
+        ]
+      },
+      {
+        "id": "change-password",
+        "question": "Wie ändere ich mein Passwort?",
+        "answer": "Geh zu **Mein Konto → Profil**, gib dein **neues Passwort** ein und speichere. Es muss mindestens 8 Zeichen lang sein.\n\nPasswort vergessen? Tippe bei der Anmeldung auf **Passwort vergessen** – mit dem Code aus der E-Mail setzt du ein neues.",
+        "keywords": [
+          "passwort ändern",
+          "neues passwort",
+          "kennwort ändern",
+          "passwort wechseln",
+          "passwort aktualisieren",
+          "passwort neu setzen",
+          "anderes passwort",
+          "passwort vergeben"
+        ]
+      },
+      {
+        "id": "change-email",
+        "question": "Kann ich meine E-Mail-Adresse ändern?",
+        "answer": "Die E-Mail-Adresse kannst du im Konto aktuell nicht selbst ändern. Schreib uns über das **Supportformular** deine alte und neue Adresse – wir stellen sie um.\n\nAuch wenn du dich bei der Bestellung vertippt hast: kurz über das Supportformular melden, wir leiten den QR-Code an die richtige Adresse.",
+        "keywords": [
+          "email ändern",
+          "e mail adresse ändern",
+          "neue email",
+          "mailadresse ändern",
+          "email falsch eingegeben",
+          "andere email",
+          "email adresse wechseln",
+          "e mail wechseln",
+          "tauschen"
+        ]
       }
     ]
   },
@@ -4406,12 +4738,14 @@
         "question": "ما هي شريحة eSIM؟",
         "answer": "شريحة eSIM هي شريحة اتصال رقمية مدمجة في هاتفك الذكي. بدلاً من إدخال بطاقة بلاستيكية، تحمّل باقة البيانات عبر رمز QR – في أقل من دقيقتين، دون متجر ودون انتظار.",
         "keywords": [
-          "ما هي",
           "eSIM",
           "شريحة رقمية",
           "شريحة الكترونية",
           "شرح",
-          "كيف تعمل"
+          "كيف تعمل",
+          "تعني esim",
+          "هي esim",
+          "هي الشريحه الالكترونيه"
         ]
       },
       {
@@ -4445,7 +4779,8 @@
           "اثبت الشريحة",
           "تركيب",
           "أركب",
-          "طباعة الرمز"
+          "طباعة الرمز",
+          "تثبيت esim"
         ]
       },
       {
@@ -4454,12 +4789,12 @@
         "answer": "يمكنك تثبيتها في أي وقت مسبقًا. تبدأ مدة الباقة عندما تتصل الشريحة بشبكة في وجهتك لأول مرة. لذا شغّل خط eSIM و**تجوال البيانات** بعد الهبوط فقط.",
         "keywords": [
           "تفعيل",
-          "افعل",
           "متى",
           "مدة",
           "تبدأ",
           "الهبوط",
-          "مسبقا"
+          "مسبقا",
+          "تفعل الباقه"
         ]
       },
       {
@@ -4474,7 +4809,8 @@
           "انصح",
           "مناسبة",
           "أي باقة أختار",
-          "كم جيجا"
+          "كم جيجا",
+          "كم بيانات احتاج"
         ]
       },
       {
@@ -4485,7 +4821,8 @@
           "مكالمة",
           "مكالمات",
           "اتصال",
-          "هل يمكن الاتصال"
+          "هل يمكن الاتصال",
+          "مشموله"
         ]
       },
       {
@@ -4497,8 +4834,9 @@
           "احتفظ",
           "الشريحة الاساسية",
           "ثانية",
-          "شريحتين",
-          "dual sim"
+          "dual sim",
+          "يبقي رقمي",
+          "يحدث لشريحتي العاديه"
         ]
       },
       {
@@ -4510,7 +4848,8 @@
           "هوت سبوت",
           "hotspot",
           "مشاركة",
-          "لابتوب"
+          "لابتوب",
+          "الهوتسبوت يعمل"
         ]
       },
       {
@@ -4523,7 +4862,9 @@
           "تعبئة",
           "تمديد",
           "نفدت",
-          "انتهت"
+          "انتهت",
+          "اشحن البيانات",
+          "اشحن الباقه"
         ]
       },
       {
@@ -4558,7 +4899,8 @@
           "تفتيش",
           "سريع",
           "طابور",
-          "انتظار"
+          "انتظار",
+          "هو fast track"
         ]
       },
       {
@@ -4570,7 +4912,8 @@
           "استرجاع",
           "الغاء",
           "ارجاع المبلغ",
-          "refund"
+          "refund",
+          "الالغاء"
         ]
       },
       {
@@ -4594,7 +4937,8 @@
         "keywords": [
           "متى استلم",
           "التسليم",
-          "تأخر"
+          "تأخر",
+          "تصل الشريحه"
         ]
       },
       {
@@ -4610,7 +4954,8 @@
           "مساعدة",
           "التواصل مع الدعم",
           "أريد التواصل",
-          "التواصل الدعم"
+          "التواصل الدعم",
+          "اتواصل معكم"
         ]
       },
       {
@@ -4738,7 +5083,8 @@
           "هاتف آخر",
           "فقدت هاتفي",
           "سرق",
-          "تعطل"
+          "تعطل",
+          "هاتفي ماذا يحدث"
         ]
       },
       {
@@ -4833,7 +5179,9 @@
           "الأيام المتبقية",
           "تاريخ الانتهاء",
           "متى تنتهي",
-          "التحقق"
+          "التحقق",
+          "بقي من البيانات",
+          "كم جيجا بقي"
         ]
       },
       {
@@ -4845,9 +5193,9 @@
           "نفدت",
           "انتهت الباقة",
           "انتهت الصلاحية",
-          "ماذا يحدث",
           "تجديد تلقائي",
-          "رسوم إضافية"
+          "رسوم إضافية",
+          "البيانات ماذا افعل"
         ]
       },
       {
@@ -4896,7 +5244,8 @@
           "شريحتان",
           "كم eSIM",
           "في نفس الوقت",
-          "eSIM ثانية"
+          "eSIM ثانية",
+          "امتلاك"
         ]
       },
       {
@@ -4924,7 +5273,9 @@
           "الاستخدام العادل",
           "تخفيض السرعة",
           "حد يومي",
-          "fup"
+          "fup",
+          "تعمل الباقه غير",
+          "غير المحدوده"
         ]
       },
       {
@@ -4965,7 +5316,8 @@
           "أي دول",
           "توقف",
           "لكل أوروبا",
-          "أوروبا"
+          "أوروبا",
+          "لديكم شريحه"
         ]
       },
       {
@@ -4991,7 +5343,6 @@
           "موقع خاطئ",
           "لغة جوجل",
           "بلد خاطئ",
-          "الموقع",
           "netflix"
         ]
       },
@@ -5079,7 +5430,9 @@
           "الطلب لم يصل",
           "لا يوجد رمز",
           "لا أجد",
-          "لم يصلني البريد"
+          "لم يصلني البريد",
+          "استلم رمز qr",
+          "يصلني رمز qr"
         ]
       },
       {
@@ -5133,7 +5486,9 @@
           "كود خصم",
           "الرمز لا يعمل",
           "خصم",
-          "كوبون غير صالح"
+          "كوبون غير صالح",
+          "ادخل الكوبون",
+          "يوجد خصم"
         ]
       },
       {
@@ -5144,11 +5499,12 @@
           "لا أستطيع الدخول",
           "نسيت كلمة المرور",
           "كلمة المرور",
-          "الحساب",
           "لا يصل الرمز",
           "رمز التحقق",
           "تسجيل الدخول",
-          "التسجيل"
+          "التسجيل",
+          "التاكيد لا يصل",
+          "إعادة تعيين كلمة المرور"
         ]
       },
       {
@@ -5198,7 +5554,6 @@
         "answer": "يقع مسار Fast Track عادةً عند مدخل التفتيش الأمني، مع لافتة **«Fast Track»** أو **«Priority»** أو **«Premium Lane»**. تتضمن قسيمتك إرشادات لمطارك ومبناك. إن لم تجده، أرِ القسيمة لموظفي المطار.",
         "keywords": [
           "أين fast track",
-          "أين",
           "المسار",
           "مبنى الركاب",
           "المدخل",
@@ -5217,7 +5572,8 @@
           "جاهزة للتثبيت",
           "مثبتة",
           "نشطة",
-          "أين طلبي"
+          "أين طلبي",
+          "تعني بانتظار الدفع"
         ]
       },
       {
@@ -5246,7 +5602,10 @@
           "أرخص أمس",
           "ارتفع السعر",
           "الأرخص",
-          "الضريبة"
+          "الضريبة",
+          "كم سعر الشريحه",
+          "كم سعر الباقه",
+          "اسعار esim"
         ]
       },
       {
@@ -5258,7 +5617,8 @@
           "إيصال",
           "ضريبة",
           "فاتورة شركة",
-          "الفوترة"
+          "الفوترة",
+          "فاتورتي"
         ]
       },
       {
@@ -5429,6 +5789,89 @@
           "تشغيل نقطة الاتصال",
           "هوت سبوت"
         ]
+      },
+      {
+        "id": "my-esims",
+        "question": "أين أرى شرائح eSIM / الباقات التي اشتريتها؟",
+        "answer": "اضغط على **حسابي** في أعلى اليمين وسجّل الدخول بالبريد الإلكتروني الذي استخدمته عند الشراء.\n\n- **شرائحي:** لكل شريحة رمز QR وبيانات التثبيت اليدوي (عنوان SM-DP+ ورمز التفعيل) والبيانات والأيام المتبقية.\n- **الطلبات:** كل طلباتك مع الحالة والمبلغ.\n\nلا ترى طلبك؟ ربما سجّلت الدخول ببريد آخر – تحقّق من العنوان في رسالة التأكيد.",
+        "keywords": [
+          "الباقات التي اشتريتها",
+          "الشريحة التي اشتريتها",
+          "باقاتي",
+          "طلباتي",
+          "أرى طلباتي",
+          "أين شريحتي",
+          "أين أجد الشريحة",
+          "الشريحة في حسابي",
+          "رمز qr مرة أخرى",
+          "لا أجد الباقة",
+          "ما اشتريته",
+          "اشتريت باقه",
+          "شرايحي"
+        ]
+      },
+      {
+        "id": "how-to-buy",
+        "question": "كيف أشتري شريحة eSIM؟",
+        "answer": "1. في الصفحة الرئيسية **ابحث عن بلدك** (مثل تركيا، ألمانيا).\n2. **اختر الباقة** (الجيجابايت والأيام) واضغط **أضف إلى السلة**.\n3. في السلة يمكنك إدخال **رمز الخصم**، ثم **إتمام الشراء**.\n4. **سجّل الدخول** أو أنشئ حسابًا مجانيًا و**ادفع**.\n5. يصلك رمز QR بالبريد خلال ثوانٍ ويكون في **حسابي ← شرائحي**.\n\nنصيحة: ثبّت الشريحة عبر Wi-Fi قبل السفر؛ تبدأ الباقة عادةً مع أول اتصال في بلد الوجهة.",
+        "keywords": [
+          "كيف أشتري",
+          "كيف أطلب",
+          "شراء شريحة",
+          "شراء باقة",
+          "أريد الشراء",
+          "طريقة الشراء",
+          "كيف يمكنني الشراء",
+          "خطوات الشراء",
+          "تقديم طلب",
+          "كيف أشتري esim",
+          "اشتري شريحه"
+        ]
+      },
+      {
+        "id": "need-account",
+        "question": "هل أحتاج إلى حساب للشراء؟",
+        "answer": "نعم، عند الدفع تنشئ **حسابًا مجانيًا** بسرعة (بريد + كلمة مرور). هكذا يبقى رمز QR وبيانات التثبيت والبيانات المتبقية دائمًا في **حسابي** – حتى لو حذفت البريد.\n\nالتسجيل يستغرق دقيقة؛ تؤكّده بالرمز الذي يصلك بالبريد.",
+        "keywords": [
+          "هل أحتاج حساب",
+          "بدون حساب",
+          "بدون تسجيل",
+          "الشراء كضيف",
+          "هل يجب التسجيل",
+          "إنشاء حساب ضروري",
+          "شراء بدون حساب",
+          "لازم أسجل"
+        ]
+      },
+      {
+        "id": "change-password",
+        "question": "كيف أغيّر كلمة المرور؟",
+        "answer": "اذهب إلى **حسابي ← الملف الشخصي**، أدخل **كلمة المرور الجديدة** واحفظ. يجب أن تكون 8 أحرف على الأقل.\n\nنسيت كلمة المرور؟ اضغط **نسيت كلمة المرور** في شاشة الدخول – تعيّن كلمة جديدة بالرمز الذي يصلك بالبريد.",
+        "keywords": [
+          "تغيير كلمة المرور",
+          "أغير كلمة السر",
+          "كلمة مرور جديدة",
+          "تحديث كلمة المرور",
+          "تغيير الباسورد",
+          "أغير الباسورد",
+          "كلمة سر جديدة",
+          "اغير كلمه المرور"
+        ]
+      },
+      {
+        "id": "change-email",
+        "question": "هل يمكنني تغيير بريدي الإلكتروني؟",
+        "answer": "لا يمكنك حاليًا تغيير البريد الإلكتروني في الحساب بنفسك. أرسل لنا العنوان القديم والجديد عبر **نموذج الدعم** وسنغيّره.\n\nأخطأت في كتابة البريد عند الطلب؟ راسلنا أيضًا عبر نموذج الدعم – سنرسل رمز QR إلى العنوان الصحيح.",
+        "keywords": [
+          "تغيير البريد",
+          "تغيير الإيميل",
+          "بريد جديد",
+          "تحديث البريد الإلكتروني",
+          "كتبت البريد خطأ",
+          "إيميل آخر",
+          "أغير الإيميل",
+          "الايميل"
+        ]
       }
     ]
   },
@@ -5491,7 +5934,8 @@
           "pixel",
           "eid",
           "поддерживает esim",
-          "есть ли esim"
+          "есть ли esim",
+          "моем телефоне"
         ]
       },
       {
@@ -5506,7 +5950,8 @@
           "установить esim",
           "как установить",
           "установке",
-          "печать qr"
+          "печать qr",
+          "отсканировать qr код"
         ]
       },
       {
@@ -5515,11 +5960,12 @@
         "answer": "Установить её можно заранее в любое время. Срок действия начинается, когда eSIM впервые подключается к сети в стране назначения. Просто включите линию eSIM и **роуминг данных** после посадки.",
         "keywords": [
           "активировать",
-          "когда",
           "срок",
           "начинается",
           "посадка",
-          "заранее"
+          "заранее",
+          "активируется пакет",
+          "становится активнои"
         ]
       },
       {
@@ -5533,7 +5979,8 @@
           "какой тариф",
           "сколько гб",
           "на недели",
-          "пакет на"
+          "пакет на",
+          "пакет мне нужен"
         ]
       },
       {
@@ -5543,7 +5990,8 @@
         "keywords": [
           "звонить",
           "звонки",
-          "позвонить"
+          "позвонить",
+          "смс включены"
         ]
       },
       {
@@ -5556,7 +6004,8 @@
           "основная сим",
           "вторая",
           "две сим",
-          "dual sim"
+          "dual sim",
+          "будет с моеи"
         ]
       },
       {
@@ -5582,7 +6031,8 @@
           "больше трафика",
           "продлить",
           "закончился",
-          "кончился"
+          "кончился",
+          "купить еще трафик"
         ]
       },
       {
@@ -5651,7 +6101,8 @@
         "answer": "Сразу. QR-код eSIM и ваучеры приходят на e-mail в течение нескольких секунд и также доступны в вашем аккаунте passport.io.",
         "keywords": [
           "когда получу",
-          "доставка"
+          "доставка",
+          "сколько ждать доставку"
         ]
       },
       {
@@ -5795,7 +6246,8 @@
           "другой телефон",
           "потерял телефон",
           "украли",
-          "сломался"
+          "сломался",
+          "сменил телефон"
         ]
       },
       {
@@ -5895,7 +6347,8 @@
           "осталось дней",
           "срок действия",
           "когда закончится",
-          "проверить"
+          "проверить",
+          "посмотреть остаток"
         ]
       },
       {
@@ -5904,12 +6357,12 @@
         "answer": "Интернет просто отключится — **никаких доплат и автопродления**. Нужно больше — купи новый пакет для той же страны. Истёкшую eSIM можно удалить после поездки.",
         "keywords": [
           "истёк",
-          "закончился",
           "пакет закончился",
           "срок закончился",
           "что будет",
           "автопродление",
-          "доплата"
+          "доплата",
+          "закончился что делать"
         ]
       },
       {
@@ -6027,7 +6480,11 @@
           "какие страны",
           "пересадка",
           "всю европу",
-          "на всю европу"
+          "на всю европу",
+          "таиланда",
+          "японии",
+          "марокко",
+          "каких странах работает"
         ]
       },
       {
@@ -6126,7 +6583,8 @@
           "мошенничество",
           "конфиденциальность",
           "взлом",
-          "надёжно"
+          "надёжно",
+          "саит надежныи"
         ]
       },
       {
@@ -6141,7 +6599,8 @@
           "спам",
           "заказ не пришёл",
           "нет кода",
-          "не могу найти"
+          "не могу найти",
+          "получил qr код"
         ]
       },
       {
@@ -6195,7 +6654,8 @@
           "скидка",
           "код не работает",
           "код на скидку",
-          "неверный купон"
+          "неверный купон",
+          "куда ввести код"
         ]
       },
       {
@@ -6210,7 +6670,8 @@
           "не приходит код",
           "код подтверждения",
           "вход",
-          "регистрация"
+          "регистрация",
+          "сброс пароля"
         ]
       },
       {
@@ -6259,7 +6720,6 @@
         "answer": "Дорожка Fast Track обычно находится у входа на досмотр и обозначена **«Fast Track»**, **«Priority»** или **«Premium Lane»**. В ваучере есть описание маршрута для твоего аэропорта и терминала. Не нашёл — покажи ваучер сотрудникам аэропорта.",
         "keywords": [
           "где fast track",
-          "где",
           "дорожка",
           "терминал",
           "вход",
@@ -6276,7 +6736,6 @@
           "в обработке",
           "ожидает оплаты",
           "готова к установке",
-          "установлена",
           "активна",
           "где мой заказ"
         ]
@@ -6293,7 +6752,8 @@
           "фунт",
           "франк",
           "лира",
-          "оплатить в"
+          "оплатить в",
+          "цены в рублях"
         ]
       },
       {
@@ -6307,7 +6767,8 @@
           "вчера дешевле",
           "цена выросла",
           "самый дешёвый",
-          "налоги включены"
+          "налоги включены",
+          "сколько стоит"
         ]
       },
       {
@@ -6385,7 +6846,8 @@
           "еда в лаунже",
           "душ",
           "напитки",
-          "wifi в лаунже"
+          "wifi в лаунже",
+          "такое бизнес зал"
         ]
       },
       {
@@ -6493,6 +6955,88 @@
           "включить раздачу",
           "раздать интернет"
         ]
+      },
+      {
+        "id": "my-esims",
+        "question": "Где посмотреть купленные eSIM / пакеты?",
+        "answer": "Нажми **Мой аккаунт** вверху справа и войди с той почтой, на которую делал покупку.\n\n- **Мои eSIM:** для каждой eSIM QR-код, данные для ручной установки (адрес SM-DP+ и код активации), остаток трафика и дней.\n- **Заказы:** все заказы со статусом и суммой.\n\nНе видишь заказ? Возможно, ты вошёл с другой почтой – проверь адрес в письме-подтверждении.",
+        "keywords": [
+          "купленные пакеты",
+          "купленная esim",
+          "мои пакеты",
+          "мои esim",
+          "мои заказы",
+          "посмотреть заказы",
+          "где моя esim",
+          "найти мою esim",
+          "esim в аккаунте",
+          "qr код еще раз",
+          "не могу найти пакет",
+          "что я купил",
+          "купил пакет"
+        ]
+      },
+      {
+        "id": "how-to-buy",
+        "question": "Как купить eSIM?",
+        "answer": "1. На главной странице **найди свою страну** (например, Турция, Германия).\n2. **Выбери пакет** (ГБ и дни) и нажми **В корзину**.\n3. В корзине можно ввести **промокод**, затем **Оформить заказ**.\n4. **Войди** или создай бесплатный аккаунт и **оплати**.\n5. QR-код придёт на почту за секунды и будет в **Мой аккаунт → Мои eSIM**.\n\nСовет: установи eSIM по Wi-Fi до поездки; пакет обычно стартует при первом подключении в стране поездки.",
+        "keywords": [
+          "как купить",
+          "как заказать",
+          "купить esim",
+          "купить пакет",
+          "оформить заказ",
+          "хочу купить",
+          "как можно купить",
+          "процесс покупки",
+          "как оплатить заказ",
+          "как приобрести"
+        ]
+      },
+      {
+        "id": "need-account",
+        "question": "Нужен ли аккаунт для покупки?",
+        "answer": "Да, при оформлении ты быстро создаёшь **бесплатный аккаунт** (почта + пароль). Так QR-код, данные для установки и остаток трафика всегда в **Мой аккаунт** – даже если удалишь письмо.\n\nРегистрация занимает минуту; подтверждаешь её кодом из письма.",
+        "keywords": [
+          "нужен ли аккаунт",
+          "без аккаунта",
+          "без регистрации",
+          "купить без регистрации",
+          "как гость",
+          "обязательно регистрироваться",
+          "надо регистрироваться",
+          "нужна регистрация",
+          "купить как гость"
+        ]
+      },
+      {
+        "id": "change-password",
+        "question": "Как сменить пароль?",
+        "answer": "Открой **Мой аккаунт → Профиль**, введи **новый пароль** и сохрани. Минимум 8 символов.\n\nЗабыл пароль? На экране входа нажми **Забыли пароль** – задашь новый с кодом из письма.",
+        "keywords": [
+          "сменить пароль",
+          "изменить пароль",
+          "новый пароль",
+          "поменять пароль",
+          "обновить пароль",
+          "другой пароль"
+        ]
+      },
+      {
+        "id": "change-email",
+        "question": "Можно ли сменить адрес почты?",
+        "answer": "Сейчас сменить почту в аккаунте самому нельзя. Напиши нам через **форму поддержки** старый и новый адрес – мы поменяем.\n\nОшибся в почте при заказе? Тоже напиши в форму поддержки – отправим QR-код на правильный адрес.",
+        "keywords": [
+          "сменить почту",
+          "изменить email",
+          "новая почта",
+          "поменять почту",
+          "ошибся в почте",
+          "другая почта",
+          "изменить адрес почты",
+          "изменить почту",
+          "сменить email"
+        ]
       }
     ]
   },
@@ -6564,7 +7108,8 @@
           "guide",
           "installer l esim",
           "comment installer",
-          "imprimer qr"
+          "imprimer qr",
+          "installation"
         ]
       },
       {
@@ -6575,9 +7120,9 @@
           "activer",
           "quand",
           "validité",
-          "commence",
           "atterrissage",
-          "avance"
+          "avance",
+          "demarre le forfait"
         ]
       },
       {
@@ -6585,7 +7130,6 @@
         "question": "Quel forfait data me convient ?",
         "answer": "En règle générale par jour :\n\n- **Messageries et cartes :** env. 0,3 Go\n- **Réseaux sociaux et navigation :** env. 0,7–1 Go\n- **Streaming et partage de connexion :** 2 Go+\n\nPour 7 jours de vacances, **3–5 Go** suffisent à la plupart des voyageurs. Vous visitez plusieurs pays ? Un forfait régional ou monde est plus avantageux.",
         "keywords": [
-          "forfait",
           "conseil",
           "quel forfait",
           "combien de go",
@@ -6600,7 +7144,8 @@
         "keywords": [
           "téléphoner",
           "appeler",
-          "appel"
+          "appel",
+          "sms inclus"
         ]
       },
       {
@@ -6613,7 +7158,8 @@
           "sim principale",
           "deuxième",
           "double sim",
-          "dual sim"
+          "dual sim",
+          "devient ma carte"
         ]
       },
       {
@@ -6625,7 +7171,8 @@
           "hotspot",
           "modem",
           "partager",
-          "ordinateur"
+          "ordinateur",
+          "faire un hotspot"
         ]
       },
       {
@@ -6638,7 +7185,8 @@
           "plus de data",
           "prolonger",
           "épuisé",
-          "plus de données"
+          "plus de données",
+          "ajouter des donnees"
         ]
       },
       {
@@ -6659,7 +7207,6 @@
         "keywords": [
           "combien de temps",
           "durée",
-          "rester",
           "combien de temps dans le salon"
         ]
       },
@@ -6684,7 +7231,9 @@
           "remboursement",
           "annuler",
           "annulation",
-          "rétractation"
+          "rétractation",
+          "etre rembourse",
+          "annuler ma commande"
         ]
       },
       {
@@ -6708,7 +7257,8 @@
         "keywords": [
           "quand recevoir",
           "livraison",
-          "quand vais je recevoir"
+          "quand vais je recevoir",
+          "arrive le qr"
         ]
       },
       {
@@ -6788,7 +7338,6 @@
         "question": "Je ne peux pas scanner le QR code – comment installer l'eSIM manuellement ?",
         "answer": "L'appareil photo ne peut pas scanner un QR code affiché sur le même téléphone. Solutions :\n\n- Ouvre le QR code sur **un autre écran** (ordinateur, tablette).\n- Ou **installe-la manuellement :** Mon compte → Mes eSIM affiche l'**adresse SM-DP+** et le **code d'activation**.\n- **iPhone :** Réglages → Données cellulaires → Ajouter une eSIM → Utiliser un code QR → **Saisir les informations manuellement**.\n- **Android :** Réglages → Connexions → Gestionnaire SIM → Ajouter une eSIM → **Saisir le code d'activation**.\n\nCopie-colle le code sans espaces.",
         "keywords": [
-          "scanner",
           "qr ne scanne pas",
           "manuel",
           "manuellement",
@@ -7085,7 +7634,8 @@
           "mondial",
           "quels pays",
           "escale",
-          "toute l europe"
+          "toute l europe",
+          "thailande"
         ]
       },
       {
@@ -7270,7 +7820,8 @@
           "pas de code",
           "code de vérification",
           "se connecter",
-          "inscription"
+          "inscription",
+          "réinitialiser mot de passe"
         ]
       },
       {
@@ -7280,7 +7831,6 @@
         "keywords": [
           "enfants",
           "bébé",
-          "invité",
           "partenaire",
           "famille",
           "combien de personnes",
@@ -7319,7 +7869,6 @@
         "answer": "La file Fast Track se trouve généralement à l'entrée du contrôle de sécurité, signalée **« Fast Track »**, **« Priority »** ou **« Premium Lane »**. Ton voucher indique l'itinéraire pour ton aéroport et ton terminal. Sinon, montre-le au personnel de l'aéroport.",
         "keywords": [
           "où est le fast track",
-          "où",
           "file",
           "terminal",
           "entrée",
@@ -7339,7 +7888,8 @@
           "installée",
           "active",
           "en attente",
-          "où est ma commande"
+          "où est ma commande",
+          "signifie en traitement"
         ]
       },
       {
@@ -7368,7 +7918,8 @@
           "moins cher hier",
           "prix augmenté",
           "le moins cher",
-          "taxes incluses"
+          "taxes incluses",
+          "combien coute"
         ]
       },
       {
@@ -7554,6 +8105,86 @@
           "activer hotspot",
           "partager internet"
         ]
+      },
+      {
+        "id": "my-esims",
+        "question": "Où voir les eSIM / forfaits que j'ai achetés ?",
+        "answer": "Touche **Mon compte** en haut à droite et connecte-toi avec l'adresse e-mail utilisée lors de l'achat.\n\n- **Mes eSIM :** pour chaque eSIM le QR code, les infos d'installation manuelle (adresse SM-DP+ et code d'activation), les données et jours restants.\n- **Commandes :** toutes tes commandes avec statut et montant.\n\nTu ne vois pas ta commande ? Tu es peut-être connecté avec un autre e-mail – vérifie l'adresse dans l'e-mail de confirmation.",
+        "keywords": [
+          "forfaits achetés",
+          "esim achetée",
+          "mes forfaits",
+          "mes esim",
+          "mes commandes",
+          "voir mes commandes",
+          "où est mon esim",
+          "trouver mon esim",
+          "esim dans mon compte",
+          "revoir le qr code",
+          "je ne trouve pas mon forfait",
+          "ce que j'ai acheté",
+          "j ai achete"
+        ]
+      },
+      {
+        "id": "how-to-buy",
+        "question": "Comment acheter une eSIM ?",
+        "answer": "1. Sur la page d'accueil, **cherche ton pays** (ex. Turquie, Allemagne).\n2. **Choisis un forfait** (Go et jours) et touche **Ajouter au panier**.\n3. Dans le panier, tu peux saisir un **code promo**, puis **Commander**.\n4. **Connecte-toi** ou crée un compte gratuit et **paie**.\n5. Le QR code arrive par e-mail en quelques secondes et se trouve dans **Mon compte → Mes eSIM**.\n\nAstuce : installe l'eSIM en Wi-Fi avant le voyage ; le forfait démarre généralement à la première connexion dans le pays de destination.",
+        "keywords": [
+          "comment acheter",
+          "comment commander",
+          "acheter une esim",
+          "acheter un forfait",
+          "passer commande",
+          "je veux acheter",
+          "comment puis je acheter",
+          "étapes d'achat",
+          "comment payer ma commande",
+          "procédure d'achat"
+        ]
+      },
+      {
+        "id": "need-account",
+        "question": "Faut-il un compte pour acheter ?",
+        "answer": "Oui, au paiement tu crées rapidement un **compte gratuit** (e-mail + mot de passe). Ainsi ton QR code, tes infos d'installation et tes données restantes sont toujours dans **Mon compte** – même si tu supprimes l'e-mail.\n\nL'inscription prend une minute ; tu la confirmes avec le code reçu par e-mail.",
+        "keywords": [
+          "faut il un compte",
+          "besoin d'un compte",
+          "sans compte",
+          "sans inscription",
+          "acheter sans compte",
+          "en tant qu'invité",
+          "obligé de m'inscrire",
+          "créer un compte obligatoire",
+          "acheter en invite"
+        ]
+      },
+      {
+        "id": "change-password",
+        "question": "Comment changer mon mot de passe ?",
+        "answer": "Va dans **Mon compte → Profil**, saisis ton **nouveau mot de passe** et enregistre. Il faut au moins 8 caractères.\n\nMot de passe oublié ? Touche **Mot de passe oublié** à la connexion – tu en définis un nouveau avec le code reçu par e-mail.",
+        "keywords": [
+          "changer mot de passe",
+          "changer mon mot de passe",
+          "nouveau mot de passe",
+          "modifier mot de passe",
+          "mettre à jour mot de passe",
+          "autre mot de passe"
+        ]
+      },
+      {
+        "id": "change-email",
+        "question": "Puis-je changer mon adresse e-mail ?",
+        "answer": "Pour l'instant, tu ne peux pas modifier toi-même l'adresse e-mail du compte. Envoie-nous l'ancienne et la nouvelle adresse via le **formulaire de support** et nous la changerons.\n\nFaute de frappe dans l'e-mail à la commande ? Écris aussi via le formulaire de support – nous enverrons le QR code à la bonne adresse.",
+        "keywords": [
+          "changer e mail",
+          "changer mon adresse e mail",
+          "nouvel e mail",
+          "modifier e mail",
+          "mauvais e mail",
+          "autre adresse e mail",
+          "erreur dans l'e mail"
+        ]
       }
     ]
   },
@@ -7612,7 +8243,8 @@
           "pixel",
           "eid",
           "teléfono compatible",
-          "tiene esim"
+          "tiene esim",
+          "moviles admiten"
         ]
       },
       {
@@ -7625,7 +8257,8 @@
           "guía",
           "instalo la esim",
           "cómo instalar",
-          "imprimir qr"
+          "imprimir qr",
+          "escaneo el codigo"
         ]
       },
       {
@@ -7652,7 +8285,8 @@
           "cuántos gb",
           "qué plan elijo",
           "plan para semanas",
-          "qué plan para"
+          "qué plan para",
+          "paquete elijo"
         ]
       },
       {
@@ -7662,7 +8296,8 @@
         "keywords": [
           "llamar",
           "llamadas",
-          "llamada"
+          "llamada",
+          "sms incluidos"
         ]
       },
       {
@@ -7675,7 +8310,8 @@
           "sim principal",
           "segunda",
           "doble sim",
-          "dual sim"
+          "dual sim",
+          "tarjeta sim"
         ]
       },
       {
@@ -7700,7 +8336,10 @@
           "más datos",
           "ampliar",
           "agotado",
-          "se acabaron"
+          "se acabaron",
+          "recargo",
+          "comprar mas gb",
+          "comprar mas"
         ]
       },
       {
@@ -7745,7 +8384,9 @@
           "devolución",
           "cancelar",
           "cancelación",
-          "desistimiento"
+          "desistimiento",
+          "recupero mi dinero",
+          "cancelar mi pedido"
         ]
       },
       {
@@ -7797,7 +8438,9 @@
           "no cargan las páginas",
           "sin conexión",
           "conectado pero",
-          "no funciona internet"
+          "no funciona internet",
+          "activa pero sin",
+          "instalada pero sin"
         ]
       },
       {
@@ -7915,7 +8558,10 @@
           "perdí mi teléfono",
           "robado",
           "roto",
-          "perdí el teléfono"
+          "perdí el teléfono",
+          "cambie de movil",
+          "movil que pasa",
+          "otro movil"
         ]
       },
       {
@@ -8026,7 +8672,6 @@
           "se acabó",
           "plan terminado",
           "validez terminada",
-          "qué pasa",
           "renovación automática",
           "cargos extra"
         ]
@@ -8144,7 +8789,9 @@
           "global",
           "qué países",
           "escala",
-          "toda europa"
+          "toda europa",
+          "marruecos",
+          "tailandia"
         ]
       },
       {
@@ -8270,8 +8917,7 @@
           "devolver dinero",
           "cancelar pedido",
           "reembolso",
-          "pido un reembolso",
-          "cómo pido"
+          "pido un reembolso"
         ]
       },
       {
@@ -8329,7 +8975,8 @@
           "no llega el código",
           "código de verificación",
           "iniciar sesión",
-          "registro"
+          "registro",
+          "restablecer contraseña"
         ]
       },
       {
@@ -8378,7 +9025,6 @@
         "answer": "El carril Fast Track suele estar en la entrada del control de seguridad, señalizado como **«Fast Track»**, **«Priority»** o **«Premium Lane»**. Tu voucher incluye indicaciones para tu aeropuerto y terminal. Si no lo encuentras, enseña el voucher al personal.",
         "keywords": [
           "dónde está el fast track",
-          "dónde",
           "carril",
           "terminal",
           "entrada",
@@ -8395,7 +9041,6 @@
           "en proceso",
           "pago pendiente",
           "lista para instalar",
-          "instalada",
           "activa",
           "pendiente",
           "dónde está mi pedido"
@@ -8427,7 +9072,8 @@
           "ayer más barato",
           "subió el precio",
           "el más barato",
-          "impuestos incluidos"
+          "impuestos incluidos",
+          "cuanto cuesta"
         ]
       },
       {
@@ -8466,7 +9112,9 @@
           "cerrar cuenta",
           "borrar mis datos",
           "datos personales",
-          "rgpd"
+          "rgpd",
+          "eliminar mis datos",
+          "borro mi cuenta"
         ]
       },
       {
@@ -8612,6 +9260,88 @@
           "zona wifi",
           "activar hotspot",
           "módem"
+        ]
+      },
+      {
+        "id": "my-esims",
+        "question": "¿Dónde veo las eSIM / paquetes que he comprado?",
+        "answer": "Toca **Mi cuenta** arriba a la derecha e inicia sesión con el correo que usaste al comprar.\n\n- **Mis eSIM:** para cada eSIM el código QR, los datos para la instalación manual (dirección SM-DP+ y código de activación), los datos y días restantes.\n- **Pedidos:** todos tus pedidos con estado e importe.\n\n¿No ves tu pedido? Quizá iniciaste sesión con otro correo – revisa la dirección del correo de confirmación.",
+        "keywords": [
+          "paquetes comprados",
+          "esim comprada",
+          "mis paquetes",
+          "mis esim",
+          "mis pedidos",
+          "ver mis pedidos",
+          "dónde está mi esim",
+          "encontrar mi esim",
+          "esim en mi cuenta",
+          "ver el qr otra vez",
+          "no encuentro mi paquete",
+          "lo que compré"
+        ]
+      },
+      {
+        "id": "how-to-buy",
+        "question": "¿Cómo compro una eSIM?",
+        "answer": "1. En la página de inicio **busca tu país** (p. ej. Turquía, Alemania).\n2. **Elige un paquete** (GB y días) y toca **Añadir al carrito**.\n3. En el carrito puedes introducir un **código de descuento** y luego **Pagar**.\n4. **Inicia sesión** o crea una cuenta gratis y **paga**.\n5. El código QR llega por correo en segundos y está en **Mi cuenta → Mis eSIM**.\n\nConsejo: instala la eSIM con Wi-Fi antes del viaje; el paquete suele empezar con la primera conexión en el país de destino.",
+        "keywords": [
+          "cómo compro",
+          "cómo comprar",
+          "cómo pedir",
+          "comprar una esim",
+          "comprar un paquete",
+          "hacer un pedido",
+          "quiero comprar",
+          "cómo puedo comprar",
+          "pasos de compra",
+          "proceso de compra",
+          "hago un pedido",
+          "compro"
+        ]
+      },
+      {
+        "id": "need-account",
+        "question": "¿Necesito una cuenta para comprar?",
+        "answer": "Sí, al pagar creas rápidamente una **cuenta gratuita** (correo + contraseña). Así tu código QR, los datos de instalación y los datos restantes están siempre en **Mi cuenta**, aunque borres el correo.\n\nEl registro tarda un minuto; lo confirmas con el código del correo.",
+        "keywords": [
+          "necesito una cuenta",
+          "hace falta cuenta",
+          "sin cuenta",
+          "sin registrarme",
+          "comprar sin cuenta",
+          "como invitado",
+          "tengo que registrarme",
+          "registro obligatorio"
+        ]
+      },
+      {
+        "id": "change-password",
+        "question": "¿Cómo cambio mi contraseña?",
+        "answer": "Ve a **Mi cuenta → Perfil**, escribe tu **nueva contraseña** y guarda. Debe tener al menos 8 caracteres.\n\n¿Olvidaste la contraseña? Toca **Olvidé mi contraseña** al iniciar sesión – pones una nueva con el código del correo.",
+        "keywords": [
+          "cambiar contraseña",
+          "cambiar mi contraseña",
+          "nueva contraseña",
+          "modificar contraseña",
+          "actualizar contraseña",
+          "otra contraseña",
+          "modificar la contrasena"
+        ]
+      },
+      {
+        "id": "change-email",
+        "question": "¿Puedo cambiar mi correo electrónico?",
+        "answer": "Por ahora no puedes cambiar tú mismo el correo de la cuenta. Envíanos la dirección antigua y la nueva mediante el **formulario de soporte** y la cambiamos.\n\n¿Te equivocaste al escribir el correo en el pedido? Escríbenos también por el formulario – enviaremos el QR a la dirección correcta.",
+        "keywords": [
+          "cambiar correo",
+          "cambiar mi email",
+          "nuevo correo",
+          "modificar correo",
+          "correo mal escrito",
+          "otro correo",
+          "cambiar dirección de correo",
+          "mal mi correo"
         ]
       }
     ]

@@ -614,5 +614,45 @@
   "ru": "d4a062671f10",
   "fr": "d4a062671f10",
   "es": "d4a062671f10"
+ },
+ "my-esims": {
+  "en": "95558489b114",
+  "de": "95558489b114",
+  "ar": "95558489b114",
+  "ru": "95558489b114",
+  "fr": "95558489b114",
+  "es": "95558489b114"
+ },
+ "how-to-buy": {
+  "en": "d26ab2df2376",
+  "de": "d26ab2df2376",
+  "ar": "d26ab2df2376",
+  "ru": "d26ab2df2376",
+  "fr": "d26ab2df2376",
+  "es": "d26ab2df2376"
+ },
+ "need-account": {
+  "en": "8484f081c59e",
+  "de": "8484f081c59e",
+  "ar": "8484f081c59e",
+  "ru": "8484f081c59e",
+  "fr": "8484f081c59e",
+  "es": "8484f081c59e"
+ },
+ "change-password": {
+  "en": "19fb59a908f2",
+  "de": "19fb59a908f2",
+  "ar": "19fb59a908f2",
+  "ru": "19fb59a908f2",
+  "fr": "19fb59a908f2",
+  "es": "19fb59a908f2"
+ },
+ "change-email": {
+  "en": "e9af77afac84",
+  "de": "e9af77afac84",
+  "ar": "e9af77afac84",
+  "ru": "e9af77afac84",
+  "fr": "e9af77afac84",
+  "es": "e9af77afac84"
  }
 }

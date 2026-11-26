@@ -1,0 +1,715 @@
+## Einfache Kundenfragen (ar) – aus Vorlagen erzeugt (tools: gen_simple.py), 714 Fragen
+كيف أرى طلباتي | my-esims
+أين أجد شرائحي | my-esims
+كيف أرى شرائحي | my-esims
+أين طلباتي | my-esims
+اشتريت باقة أين أراها | my-esims
+أين باقتي في الحساب | my-esims
+أين باقتي بعد الشراء | my-esims
+أين أجد باقاتي | my-esims
+أين أرى باقاتي | my-esims
+أين أجد الباقات التي اشتريتها | my-esims
+اشتريت باقة أين أجدها | my-esims
+كيف أرى مشترياتي | my-esims
+أين طلباتي بعد الشراء | my-esims
+اشتريت شريحة أين أراها | my-esims
+أين باقتي | my-esims
+أين أرى طلباتي | my-esims
+أين شريحتي | my-esims
+أين شريحتي في الحساب | my-esims
+أين طلباتي في الحساب | my-esims
+أريد شراء شريحة كيف | how-to-buy
+كيف أطلب شريحة | how-to-buy
+طريقة الشراء كيف | how-to-buy
+كيف أطلب | how-to-buy
+من أين أشتري باقة | how-to-buy
+من أين أشتري شريحة | how-to-buy
+كيف أشتري شريحة | how-to-buy
+كيف أشتري | how-to-buy
+كيف أشتري باقة | how-to-buy
+كيف أشتري eSIM | how-to-buy
+أريد شراء باقة كيف | how-to-buy
+طريقة الشراء | how-to-buy
+كيف أطلب باقة | how-to-buy
+كيف أطلب eSIM | how-to-buy
+من أين أشتري شريحة؟ | how-to-buy
+السلام عليكم كيف أطلب؟ | how-to-buy
+السلام عليكم كيف أشتري eSIM | how-to-buy
+مرحبا كيف أطلب؟ | how-to-buy
+سؤال كيف أشتري | how-to-buy
+هل أحتاج إلى حساب للشراء | need-account
+هل يمكن الشراء كضيف | need-account
+هل يمكن الشراء بدون حساب | need-account
+هل أحتاج حساب للشراء | need-account
+هل يمكن الشراء بدون تسجيل | need-account
+هل يجب التسجيل للشراء | need-account
+هل يجب التسجيل | need-account
+هل أحتاج إلى حساب | need-account
+هل أحتاج حساب | need-account
+هل يجب التسجيل؟ | need-account
+مرحبا هل يجب التسجيل | need-account
+مرحبا هل أحتاج إلى حساب للشراء؟ | need-account
+هل يمكن الشراء بدون تسجيل؟ | need-account
+السلام عليكم هل أحتاج حساب | need-account
+السلام عليكم هل يجب التسجيل | need-account
+السلام عليكم هل يجب التسجيل للشراء | need-account
+السلام عليكم هل يمكن الشراء بدون حساب من فضلك | need-account
+مرحبا هل يجب التسجيل؟ | need-account
+السلام عليكم هل يمكن الشراء كضيف | need-account
+كيف أغير كلمة المرور | change-password
+أريد كلمة مرور جديدة | change-password
+تحديث كلمة المرور | change-password
+تغيير كلمة المرور | change-password
+تغيير كلمة المرور؟ | change-password
+كيف أغير كلمة المرور؟ | change-password
+مرحبا أريد كلمة مرور جديدة؟ | change-password
+السلام عليكم أريد كلمة مرور جديدة | change-password
+مرحبا أريد كلمة مرور جديدة | change-password
+السلام عليكم أريد كلمة مرور جديدة من فضلك | change-password
+تغيير كلمة المرور من فضلك | change-password
+مرحبا أريد كلمة مرور جديدة من فضلك | change-password
+مرحبا تحديث كلمة المرور | change-password
+سؤال تحديث كلمة المرور؟ | change-password
+السلام عليكم كيف أغير كلمة المرور من فضلك | change-password
+سؤال تغيير كلمة المرور من فضلك | change-password
+أريد كلمة مرور جديدة من فضلك | change-password
+مرحبا كيف أغير كلمة المرور | change-password
+سؤال تحديث كلمة المرور من فضلك | change-password
+تحديث الإيميل | change-email
+تحديث البريد | change-email
+كيف أغير الإيميل | change-email
+تغيير البريد | change-email
+كتبت الإيميل خطأ | change-email
+تغيير الإيميل | change-email
+كتبت البريد خطأ | change-email
+كيف أغير البريد الإلكتروني | change-email
+كيف أغير البريد الإلكتروني؟ | change-email
+سؤال تغيير الإيميل | change-email
+كتبت البريد خطأ من فضلك | change-email
+سؤال كيف أغير الإيميل؟ | change-email
+سؤال تحديث الإيميل | change-email
+كيف أغير البريد الإلكتروني من فضلك | change-email
+سؤال كيف أغير الإيميل | change-email
+سؤال تحديث البريد من فضلك | change-email
+السلام عليكم كتبت الإيميل خطأ؟ | change-email
+السلام عليكم كيف أغير البريد الإلكتروني | change-email
+سؤال تغيير البريد | change-email
+لا أستطيع تسجيل الدخول | account-login
+لا أستطيع الدخول إلى حسابي | account-login
+رمز التأكيد لا يصل | account-login
+نسيت كلمة المرور | account-login
+السلام عليكم لا أستطيع الدخول إلى حسابي | account-login
+رمز التأكيد لا يصل؟ | account-login
+السلام عليكم نسيت كلمة المرور؟ | account-login
+سؤال لا أستطيع تسجيل الدخول | account-login
+مرحبا نسيت كلمة المرور | account-login
+سؤال نسيت كلمة المرور؟ | account-login
+السلام عليكم لا أستطيع تسجيل الدخول من فضلك | account-login
+مرحبا رمز التأكيد لا يصل | account-login
+سؤال لا أستطيع الدخول إلى حسابي | account-login
+سؤال نسيت كلمة المرور | account-login
+لا أستطيع تسجيل الدخول؟ | account-login
+السلام عليكم نسيت كلمة المرور | account-login
+لا أستطيع الدخول إلى حسابي من فضلك | account-login
+السلام عليكم رمز التأكيد لا يصل من فضلك | account-login
+مرحبا لا أستطيع الدخول إلى حسابي؟ | account-login
+كيف تعمل eSIM | what-is-esim
+ما هي eSIM | what-is-esim
+ماذا تعني eSIM | what-is-esim
+ما هي الشريحة الإلكترونية | what-is-esim
+سؤال ما هي الشريحة الإلكترونية | what-is-esim
+مرحبا كيف تعمل eSIM من فضلك | what-is-esim
+مرحبا كيف تعمل eSIM؟ | what-is-esim
+ما هي eSIM من فضلك | what-is-esim
+مرحبا ماذا تعني eSIM | what-is-esim
+السلام عليكم ما هي eSIM؟ | what-is-esim
+كيف تعمل eSIM من فضلك | what-is-esim
+ما هي الشريحة الإلكترونية من فضلك | what-is-esim
+مرحبا ما هي eSIM؟ | what-is-esim
+كيف تعمل eSIM؟ | what-is-esim
+سؤال كيف تعمل eSIM | what-is-esim
+السلام عليكم ما هي الشريحة الإلكترونية؟ | what-is-esim
+سؤال ما هي eSIM من فضلك | what-is-esim
+سؤال ما هي eSIM | what-is-esim
+ماذا تعني eSIM؟ | what-is-esim
+هل سامسونج يدعم eSIM | device-compatible
+ما الهواتف التي تدعم eSIM | device-compatible
+هل الآيفون يدعم eSIM | device-compatible
+هل يعمل eSIM على هاتفي | device-compatible
+هل هاتفي يدعم eSIM | device-compatible
+السلام عليكم هل يعمل eSIM على هاتفي من فضلك | device-compatible
+السلام عليكم هل الآيفون يدعم eSIM | device-compatible
+مرحبا هل يعمل eSIM على هاتفي من فضلك | device-compatible
+مرحبا هل هاتفي يدعم eSIM؟ | device-compatible
+مرحبا هل هاتفي يدعم eSIM | device-compatible
+هل هاتفي يدعم eSIM من فضلك | device-compatible
+مرحبا هل يعمل eSIM على هاتفي | device-compatible
+مرحبا هل الآيفون يدعم eSIM؟ | device-compatible
+السلام عليكم هل سامسونج يدعم eSIM | device-compatible
+هل يعمل eSIM على هاتفي من فضلك | device-compatible
+هل الآيفون يدعم eSIM؟ | device-compatible
+هل الآيفون يدعم eSIM من فضلك | device-compatible
+مرحبا هل سامسونج يدعم eSIM من فضلك | device-compatible
+مرحبا هل الآيفون يدعم eSIM من فضلك | device-compatible
+تفعيل eSIM | install-esim,install-iphone,install-android
+كيف أمسح رمز QR | install-esim,install-iphone,install-android
+كيف أفعّل الشريحة | install-esim,install-iphone,install-android
+تثبيت eSIM كيف | install-esim,install-iphone,install-android
+تثبيت eSIM | install-esim,install-iphone,install-android
+تفعيل eSIM كيف | install-esim,install-iphone,install-android
+كيف أثبت الشريحة | install-esim,install-iphone,install-android
+مرحبا تفعيل eSIM من فضلك | install-esim,install-iphone,install-android
+سؤال كيف أثبت الشريحة من فضلك | install-esim,install-iphone,install-android
+مرحبا تثبيت eSIM كيف | install-esim,install-iphone,install-android
+السلام عليكم تفعيل eSIM كيف؟ | install-esim,install-iphone,install-android
+كيف أفعّل الشريحة من فضلك | install-esim,install-iphone,install-android
+تفعيل eSIM من فضلك | install-esim,install-iphone,install-android
+السلام عليكم كيف أثبت الشريحة | install-esim,install-iphone,install-android
+سؤال تثبيت eSIM كيف | install-esim,install-iphone,install-android
+كيف أثبت الشريحة من فضلك | install-esim,install-iphone,install-android
+مرحبا كيف أفعّل الشريحة؟ | install-esim,install-iphone,install-android
+تفعيل eSIM كيف؟ | install-esim,install-iphone,install-android
+مرحبا كيف أثبت الشريحة؟ | install-esim,install-iphone,install-android
+متى تبدأ الأيام | when-activate,buy-when,line-on
+متى تبدأ الباقة | when-activate,buy-when,line-on
+متى تصبح الشريحة فعالة | when-activate,buy-when,line-on
+متى تفعّل الباقة | when-activate,buy-when,line-on
+السلام عليكم متى تفعّل الباقة من فضلك | when-activate,buy-when,line-on
+السلام عليكم متى تبدأ الباقة | when-activate,buy-when,line-on
+سؤال متى تبدأ الباقة؟ | when-activate,buy-when,line-on
+متى تفعّل الباقة من فضلك | when-activate,buy-when,line-on
+مرحبا متى تبدأ الباقة | when-activate,buy-when,line-on
+سؤال متى تبدأ الأيام؟ | when-activate,buy-when,line-on
+مرحبا متى تبدأ الأيام من فضلك | when-activate,buy-when,line-on
+سؤال متى تبدأ الأيام | when-activate,buy-when,line-on
+سؤال متى تصبح الشريحة فعالة | when-activate,buy-when,line-on
+السلام عليكم متى تصبح الشريحة فعالة من فضلك | when-activate,buy-when,line-on
+سؤال متى تفعّل الباقة | when-activate,buy-when,line-on
+مرحبا متى تفعّل الباقة من فضلك | when-activate,buy-when,line-on
+مرحبا متى تصبح الشريحة فعالة | when-activate,buy-when,line-on
+السلام عليكم متى تصبح الشريحة فعالة | when-activate,buy-when,line-on
+متى تبدأ الباقة؟ | when-activate,buy-when,line-on
+كم جيجا أحتاج للعطلة | which-package
+كم بيانات أحتاج للعطلة | which-package
+أي باقة تناسبني | which-package
+كم جيجا أحتاج لأسبوع | which-package
+كم بيانات أحتاج لأسبوع | which-package
+أي باقة أختار | which-package
+كم بيانات أحتاج | which-package
+كم جيجا أحتاج | which-package
+السلام عليكم كم بيانات أحتاج لأسبوع من فضلك | which-package
+السلام عليكم كم جيجا أحتاج من فضلك | which-package
+كم بيانات أحتاج؟ | which-package
+كم جيجا أحتاج لأسبوع؟ | which-package
+مرحبا كم بيانات أحتاج | which-package
+كم بيانات أحتاج من فضلك | which-package
+سؤال كم بيانات أحتاج للعطلة؟ | which-package
+سؤال كم بيانات أحتاج لأسبوع؟ | which-package
+مرحبا كم جيجا أحتاج لأسبوع؟ | which-package
+كم بيانات أحتاج للعطلة؟ | which-package
+كم جيجا أحتاج؟ | which-package
+هل يمكنني إجراء مكالمات بالشريحة | calls,phone-number
+هل أحصل على رقم هاتف | calls,phone-number
+هل الرسائل مشمولة | calls,phone-number
+هل يمكنني الاتصال بالشريحة | calls,phone-number
+هل المكالمات مشمولة | calls,phone-number
+هل المكالمات مشمولة؟ | calls,phone-number
+هل أحصل على رقم هاتف؟ | calls,phone-number
+السلام عليكم هل الرسائل مشمولة من فضلك | calls,phone-number
+مرحبا هل يمكنني إجراء مكالمات بالشريحة؟ | calls,phone-number
+سؤال هل أحصل على رقم هاتف | calls,phone-number
+مرحبا هل الرسائل مشمولة | calls,phone-number
+السلام عليكم هل يمكنني الاتصال بالشريحة من فضلك | calls,phone-number
+سؤال هل يمكنني إجراء مكالمات بالشريحة | calls,phone-number
+هل الرسائل مشمولة؟ | calls,phone-number
+السلام عليكم هل الرسائل مشمولة؟ | calls,phone-number
+هل يمكنني إجراء مكالمات بالشريحة من فضلك | calls,phone-number
+سؤال هل الرسائل مشمولة من فضلك | calls,phone-number
+سؤال هل أحصل على رقم هاتف من فضلك | calls,phone-number
+السلام عليكم هل يمكنني إجراء مكالمات بالشريحة | calls,phone-number
+هل أحتفظ برقمي | keep-number
+ماذا يحدث لشريحتي العادية | keep-number
+هل يبقى رقمي | keep-number
+ماذا يحدث لشريحتي العادية من فضلك | keep-number
+هل أحتفظ برقمي من فضلك | keep-number
+ماذا يحدث لشريحتي العادية؟ | keep-number
+سؤال هل أحتفظ برقمي | keep-number
+السلام عليكم هل أحتفظ برقمي | keep-number
+سؤال ماذا يحدث لشريحتي العادية | keep-number
+مرحبا هل يبقى رقمي | keep-number
+هل يبقى رقمي؟ | keep-number
+هل يبقى رقمي من فضلك | keep-number
+السلام عليكم ماذا يحدث لشريحتي العادية؟ | keep-number
+السلام عليكم هل يبقى رقمي | keep-number
+هل أحتفظ برقمي؟ | keep-number
+سؤال هل يبقى رقمي؟ | keep-number
+السلام عليكم هل يبقى رقمي؟ | keep-number
+السلام عليكم هل يبقى رقمي من فضلك | keep-number
+هل الهوتسبوت يعمل | hotspot,hotspot-setup
+هل يمكنني مشاركة الإنترنت | hotspot,hotspot-setup
+هل يمكنني استخدام نقطة الاتصال | hotspot,hotspot-setup
+مرحبا هل الهوتسبوت يعمل | hotspot,hotspot-setup
+السلام عليكم هل يمكنني مشاركة الإنترنت | hotspot,hotspot-setup
+هل يمكنني مشاركة الإنترنت من فضلك | hotspot,hotspot-setup
+هل يمكنني استخدام نقطة الاتصال؟ | hotspot,hotspot-setup
+مرحبا هل يمكنني استخدام نقطة الاتصال | hotspot,hotspot-setup
+السلام عليكم هل يمكنني استخدام نقطة الاتصال | hotspot,hotspot-setup
+مرحبا هل يمكنني استخدام نقطة الاتصال من فضلك | hotspot,hotspot-setup
+سؤال هل الهوتسبوت يعمل | hotspot,hotspot-setup
+سؤال هل الهوتسبوت يعمل؟ | hotspot,hotspot-setup
+مرحبا هل الهوتسبوت يعمل؟ | hotspot,hotspot-setup
+هل الهوتسبوت يعمل؟ | hotspot,hotspot-setup
+سؤال هل يمكنني استخدام نقطة الاتصال | hotspot,hotspot-setup
+هل الهوتسبوت يعمل من فضلك | hotspot,hotspot-setup
+السلام عليكم هل يمكنني استخدام نقطة الاتصال؟ | hotspot,hotspot-setup
+هل يمكنني مشاركة الإنترنت؟ | hotspot,hotspot-setup
+هل يمكنني الشحن | topup
+كيف أشحن البيانات | topup
+هل يمكنني إضافة بيانات | topup
+كيف أشحن الباقة | topup
+شراء بيانات إضافية | topup
+سؤال كيف أشحن البيانات؟ | topup
+سؤال شراء بيانات إضافية من فضلك | topup
+السلام عليكم شراء بيانات إضافية؟ | topup
+سؤال شراء بيانات إضافية | topup
+شراء بيانات إضافية؟ | topup
+مرحبا كيف أشحن البيانات | topup
+مرحبا هل يمكنني الشحن من فضلك | topup
+كيف أشحن البيانات؟ | topup
+هل يمكنني الشحن؟ | topup
+سؤال كيف أشحن الباقة من فضلك | topup
+سؤال هل يمكنني إضافة بيانات | topup
+سؤال كيف أشحن البيانات | topup
+سؤال كيف أشحن الباقة | topup
+إلغاء الطلب | refund,refund-how
+هل يمكنني الإلغاء | refund,refund-how
+هل يمكنني استرداد المال | refund,refund-how
+كيف أسترد أموالي | refund,refund-how
+السلام عليكم كيف أسترد أموالي | refund,refund-how
+كيف أسترد أموالي من فضلك | refund,refund-how
+هل يمكنني استرداد المال؟ | refund,refund-how
+مرحبا هل يمكنني استرداد المال؟ | refund,refund-how
+السلام عليكم هل يمكنني الإلغاء | refund,refund-how
+مرحبا هل يمكنني استرداد المال | refund,refund-how
+هل يمكنني استرداد المال من فضلك | refund,refund-how
+إلغاء الطلب من فضلك | refund,refund-how
+سؤال هل يمكنني الإلغاء | refund,refund-how
+مرحبا كيف أسترد أموالي من فضلك | refund,refund-how
+هل يمكنني الإلغاء؟ | refund,refund-how
+مرحبا كيف أسترد أموالي | refund,refund-how
+مرحبا هل يمكنني استرداد المال من فضلك | refund,refund-how
+سؤال هل يمكنني استرداد المال؟ | refund,refund-how
+هل يمكن الدفع بباي بال | payment
+ما طرق الدفع | payment
+هل يمكن الدفع بالبطاقة | payment
+هل يمكن الدفع بأبل باي | payment
+كيف يمكنني الدفع | payment
+مرحبا هل يمكن الدفع بالبطاقة من فضلك | payment
+هل يمكن الدفع بالبطاقة من فضلك | payment
+سؤال هل يمكن الدفع بالبطاقة | payment
+مرحبا ما طرق الدفع | payment
+مرحبا هل يمكن الدفع بأبل باي؟ | payment
+هل يمكن الدفع بأبل باي من فضلك | payment
+سؤال هل يمكن الدفع بباي بال من فضلك | payment
+هل يمكن الدفع بباي بال من فضلك | payment
+سؤال ما طرق الدفع؟ | payment
+سؤال هل يمكن الدفع بأبل باي من فضلك | payment
+ما طرق الدفع؟ | payment
+مرحبا هل يمكن الدفع بباي بال من فضلك | payment
+سؤال ما طرق الدفع | payment
+متى تصل الشريحة | delivery
+متى أستلم الشريحة | delivery
+متى يصل رمز QR | delivery
+كم يستغرق التسليم | delivery
+متى تصل الشريحة من فضلك | delivery
+السلام عليكم متى أستلم الشريحة؟ | delivery
+متى أستلم الشريحة من فضلك | delivery
+مرحبا متى أستلم الشريحة؟ | delivery
+متى تصل الشريحة؟ | delivery
+متى يصل رمز QR من فضلك | delivery
+متى أستلم الشريحة؟ | delivery
+سؤال متى يصل رمز QR | delivery
+سؤال متى أستلم الشريحة؟ | delivery
+السلام عليكم متى تصل الشريحة؟ | delivery
+السلام عليكم متى تصل الشريحة | delivery
+السلام عليكم متى أستلم الشريحة | delivery
+السلام عليكم متى أستلم الشريحة من فضلك | delivery
+مرحبا كم يستغرق التسليم؟ | delivery
+كيف أتواصل مع الدعم | contact
+أريد التحدث مع موظف | contact
+أريد التحدث مع شخص | contact
+التواصل مع خدمة العملاء | contact
+كيف أتواصل معكم | contact
+كيف أتواصل معكم من فضلك | contact
+مرحبا أريد التحدث مع موظف | contact
+سؤال التواصل مع خدمة العملاء | contact
+سؤال التواصل مع خدمة العملاء من فضلك | contact
+سؤال أريد التحدث مع شخص | contact
+سؤال كيف أتواصل مع الدعم | contact
+سؤال كيف أتواصل معكم | contact
+التواصل مع خدمة العملاء؟ | contact
+سؤال كيف أتواصل مع الدعم من فضلك | contact
+مرحبا كيف أتواصل معكم من فضلك | contact
+أريد التحدث مع شخص من فضلك | contact
+مرحبا أريد التحدث مع شخص؟ | contact
+مرحبا التواصل مع خدمة العملاء؟ | contact
+لماذا لا يعمل الإنترنت | no-internet
+لا يوجد إنترنت مع الشريحة | no-internet
+لا يوجد إنترنت في السفر | no-internet
+الشريحة مفعلة لكن لا يوجد إنترنت | no-internet
+لا يوجد إنترنت | no-internet
+سؤال الشريحة مفعلة لكن لا يوجد إنترنت من فضلك | no-internet
+لا يوجد إنترنت في السفر؟ | no-internet
+سؤال لا يوجد إنترنت في السفر | no-internet
+لا يوجد إنترنت في السفر من فضلك | no-internet
+لا يوجد إنترنت مع الشريحة من فضلك | no-internet
+السلام عليكم لا يوجد إنترنت مع الشريحة | no-internet
+مرحبا لا يوجد إنترنت من فضلك | no-internet
+لماذا لا يعمل الإنترنت؟ | no-internet
+سؤال لا يوجد إنترنت؟ | no-internet
+مرحبا لماذا لا يعمل الإنترنت | no-internet
+السلام عليكم الشريحة مفعلة لكن لا يوجد إنترنت | no-internet
+مرحبا لا يوجد إنترنت | no-internet
+لا يوجد إنترنت مع الشريحة؟ | no-internet
+كم بقي من البيانات | check-usage
+كم جيجا بقي | check-usage
+أين أرى البيانات المتبقية | check-usage
+التحقق من الاستهلاك | check-usage
+مرحبا أين أرى البيانات المتبقية؟ | check-usage
+كم بقي من البيانات؟ | check-usage
+كم جيجا بقي من فضلك | check-usage
+التحقق من الاستهلاك؟ | check-usage
+مرحبا التحقق من الاستهلاك | check-usage
+سؤال التحقق من الاستهلاك | check-usage
+أين أرى البيانات المتبقية؟ | check-usage
+السلام عليكم كم بقي من البيانات من فضلك | check-usage
+سؤال كم بقي من البيانات من فضلك | check-usage
+أين أرى البيانات المتبقية من فضلك | check-usage
+كم بقي من البيانات من فضلك | check-usage
+مرحبا كم بقي من البيانات | check-usage
+السلام عليكم أين أرى البيانات المتبقية؟ | check-usage
+مرحبا كم جيجا بقي | check-usage
+كم سعر الشريحة | prices
+أسعار eSIM | prices
+كم سعر الباقة | prices
+أسعار eSIM من فضلك | prices
+كم سعر الباقة من فضلك | prices
+كم سعر الشريحة؟ | prices
+كم سعر الباقة؟ | prices
+سؤال أسعار eSIM من فضلك | prices
+السلام عليكم أسعار eSIM | prices
+السلام عليكم كم سعر الشريحة | prices
+سؤال كم سعر الشريحة | prices
+سؤال كم سعر الباقة | prices
+السلام عليكم كم سعر الباقة | prices
+سؤال كم سعر الشريحة من فضلك | prices
+كم سعر الشريحة من فضلك | prices
+سؤال أسعار eSIM | prices
+سؤال كم سعر الشريحة؟ | prices
+مرحبا كم سعر الشريحة؟ | prices
+هل يوجد خصم | discount-code
+أين أدخل الكوبون | discount-code
+أين أدخل كود الخصم | discount-code
+أين أدخل رمز الخصم | discount-code
+هل يوجد كود خصم | discount-code
+مرحبا أين أدخل الكوبون؟ | discount-code
+السلام عليكم أين أدخل رمز الخصم | discount-code
+هل يوجد خصم من فضلك | discount-code
+مرحبا أين أدخل الكوبون من فضلك | discount-code
+سؤال أين أدخل رمز الخصم من فضلك | discount-code
+سؤال أين أدخل رمز الخصم؟ | discount-code
+مرحبا أين أدخل رمز الخصم من فضلك | discount-code
+سؤال هل يوجد كود خصم | discount-code
+أين أدخل الكوبون؟ | discount-code
+مرحبا هل يوجد كود خصم | discount-code
+مرحبا هل يوجد كود خصم؟ | discount-code
+أين أدخل كود الخصم؟ | discount-code
+هل يوجد كود خصم؟ | discount-code
+هل يمكنني الحصول على فاتورة | invoice
+أين فاتورتي | invoice
+أين فاتورتي من فضلك | invoice
+مرحبا هل يمكنني الحصول على فاتورة | invoice
+مرحبا أين فاتورتي | invoice
+مرحبا هل يمكنني الحصول على فاتورة من فضلك | invoice
+السلام عليكم هل يمكنني الحصول على فاتورة | invoice
+السلام عليكم هل يمكنني الحصول على فاتورة من فضلك | invoice
+أين فاتورتي؟ | invoice
+هل يمكنني الحصول على فاتورة؟ | invoice
+سؤال أين فاتورتي | invoice
+هل يمكنني الحصول على فاتورة من فضلك | invoice
+مرحبا هل يمكنني الحصول على فاتورة؟ | invoice
+السلام عليكم أين فاتورتي من فضلك | invoice
+سؤال هل يمكنني الحصول على فاتورة | invoice
+السلام عليكم أين فاتورتي | invoice
+مرحبا أين فاتورتي؟ | invoice
+السلام عليكم أين فاتورتي؟ | invoice
+حذف الحساب | account-delete
+أريد حذف بياناتي | account-delete
+كيف أحذف حسابي | account-delete
+السلام عليكم حذف الحساب | account-delete
+السلام عليكم كيف أحذف حسابي؟ | account-delete
+كيف أحذف حسابي من فضلك | account-delete
+سؤال حذف الحساب من فضلك | account-delete
+أريد حذف بياناتي من فضلك | account-delete
+السلام عليكم أريد حذف بياناتي من فضلك | account-delete
+سؤال أريد حذف بياناتي؟ | account-delete
+كيف أحذف حسابي؟ | account-delete
+سؤال أريد حذف بياناتي من فضلك | account-delete
+سؤال أريد حذف بياناتي | account-delete
+سؤال حذف الحساب | account-delete
+مرحبا كيف أحذف حسابي؟ | account-delete
+مرحبا حذف الحساب؟ | account-delete
+مرحبا حذف الحساب | account-delete
+حذف الحساب؟ | account-delete
+حالة الطلب ماذا تعني | order-status
+ماذا تعني بانتظار الدفع | order-status
+ماذا تعني جاهز للتثبيت | order-status
+ماذا تعني قيد المعالجة | order-status
+السلام عليكم ماذا تعني قيد المعالجة من فضلك | order-status
+السلام عليكم حالة الطلب ماذا تعني | order-status
+مرحبا ماذا تعني قيد المعالجة | order-status
+ماذا تعني قيد المعالجة من فضلك | order-status
+السلام عليكم ماذا تعني جاهز للتثبيت؟ | order-status
+مرحبا حالة الطلب ماذا تعني | order-status
+ماذا تعني بانتظار الدفع من فضلك | order-status
+حالة الطلب ماذا تعني؟ | order-status
+حالة الطلب ماذا تعني من فضلك | order-status
+سؤال حالة الطلب ماذا تعني؟ | order-status
+ماذا تعني جاهز للتثبيت من فضلك | order-status
+مرحبا حالة الطلب ماذا تعني؟ | order-status
+السلام عليكم حالة الطلب ماذا تعني؟ | order-status
+سؤال ماذا تعني قيد المعالجة | order-status
+هل غير المحدود غير محدود فعلا | unlimited
+هل غير المحدود حقيقي | unlimited
+كيف تعمل الباقة غير المحدودة | unlimited
+مرحبا هل غير المحدود حقيقي | unlimited
+السلام عليكم هل غير المحدود غير محدود فعلا؟ | unlimited
+هل غير المحدود غير محدود فعلا من فضلك | unlimited
+مرحبا هل غير المحدود غير محدود فعلا؟ | unlimited
+كيف تعمل الباقة غير المحدودة من فضلك | unlimited
+السلام عليكم كيف تعمل الباقة غير المحدودة | unlimited
+السلام عليكم هل غير المحدود غير محدود فعلا | unlimited
+سؤال هل غير المحدود غير محدود فعلا | unlimited
+مرحبا كيف تعمل الباقة غير المحدودة من فضلك | unlimited
+السلام عليكم هل غير المحدود غير محدود فعلا من فضلك | unlimited
+مرحبا كيف تعمل الباقة غير المحدودة؟ | unlimited
+السلام عليكم هل غير المحدود حقيقي | unlimited
+كيف تعمل الباقة غير المحدودة؟ | unlimited
+هل غير المحدود حقيقي؟ | unlimited
+هل غير المحدود غير محدود فعلا؟ | unlimited
+هل يمكنني استخدام واتساب | whatsapp
+هل يعمل واتساب مع الشريحة | whatsapp
+هل يعمل واتساب | whatsapp
+السلام عليكم هل يعمل واتساب مع الشريحة | whatsapp
+هل يعمل واتساب مع الشريحة من فضلك | whatsapp
+سؤال هل يعمل واتساب | whatsapp
+هل يمكنني استخدام واتساب من فضلك | whatsapp
+السلام عليكم هل يعمل واتساب مع الشريحة؟ | whatsapp
+هل يعمل واتساب؟ | whatsapp
+مرحبا هل يعمل واتساب من فضلك | whatsapp
+هل يعمل واتساب من فضلك | whatsapp
+السلام عليكم هل يعمل واتساب؟ | whatsapp
+هل يمكنني استخدام واتساب؟ | whatsapp
+مرحبا هل يعمل واتساب مع الشريحة من فضلك | whatsapp
+السلام عليكم هل يمكنني استخدام واتساب | whatsapp
+مرحبا هل يمكنني استخدام واتساب | whatsapp
+هل يعمل واتساب مع الشريحة؟ | whatsapp
+السلام عليكم هل يعمل واتساب مع الشريحة من فضلك | whatsapp
+حذفت الشريحة ماذا أفعل | new-phone,deleted-esim
+هل يمكن نقل الشريحة إلى هاتف آخر | new-phone,deleted-esim
+هاتف جديد ماذا يحدث للشريحة | new-phone,deleted-esim
+غيرت هاتفي ماذا يحدث للشريحة | new-phone,deleted-esim
+السلام عليكم حذفت الشريحة ماذا أفعل؟ | new-phone,deleted-esim
+سؤال هاتف جديد ماذا يحدث للشريحة من فضلك | new-phone,deleted-esim
+السلام عليكم حذفت الشريحة ماذا أفعل | new-phone,deleted-esim
+مرحبا غيرت هاتفي ماذا يحدث للشريحة | new-phone,deleted-esim
+هاتف جديد ماذا يحدث للشريحة؟ | new-phone,deleted-esim
+مرحبا غيرت هاتفي ماذا يحدث للشريحة؟ | new-phone,deleted-esim
+حذفت الشريحة ماذا أفعل؟ | new-phone,deleted-esim
+السلام عليكم هاتف جديد ماذا يحدث للشريحة؟ | new-phone,deleted-esim
+السلام عليكم هل يمكن نقل الشريحة إلى هاتف آخر | new-phone,deleted-esim
+سؤال هاتف جديد ماذا يحدث للشريحة | new-phone,deleted-esim
+حذفت الشريحة ماذا أفعل من فضلك | new-phone,deleted-esim
+السلام عليكم غيرت هاتفي ماذا يحدث للشريحة؟ | new-phone,deleted-esim
+غيرت هاتفي ماذا يحدث للشريحة؟ | new-phone,deleted-esim
+سؤال غيرت هاتفي ماذا يحدث للشريحة؟ | new-phone,deleted-esim
+هل يمكنني شراء شريحة كهدية | gift
+هل يمكنني شراء شريحة لشخص آخر | gift
+هل يمكنني شراء شريحة لعائلتي | gift
+هل يمكنني شراء شريحة لشخص آخر من فضلك | gift
+السلام عليكم هل يمكنني شراء شريحة لشخص آخر؟ | gift
+سؤال هل يمكنني شراء شريحة لشخص آخر | gift
+مرحبا هل يمكنني شراء شريحة كهدية؟ | gift
+السلام عليكم هل يمكنني شراء شريحة لعائلتي من فضلك | gift
+مرحبا هل يمكنني شراء شريحة لشخص آخر من فضلك | gift
+السلام عليكم هل يمكنني شراء شريحة لعائلتي | gift
+سؤال هل يمكنني شراء شريحة كهدية؟ | gift
+سؤال هل يمكنني شراء شريحة لعائلتي؟ | gift
+السلام عليكم هل يمكنني شراء شريحة لشخص آخر | gift
+هل يمكنني شراء شريحة لعائلتي؟ | gift
+سؤال هل يمكنني شراء شريحة لشخص آخر من فضلك | gift
+هل يمكنني شراء شريحة كهدية من فضلك | gift
+هل يمكنني شراء شريحة لشخص آخر؟ | gift
+سؤال هل يمكنني شراء شريحة لعائلتي | gift
+هل الموقع موثوق | safe
+هل الموقع آمن | safe
+هل هذا احتيال | safe
+السلام عليكم هل الموقع آمن | safe
+سؤال هل هذا احتيال | safe
+السلام عليكم هل هذا احتيال | safe
+السلام عليكم هل الموقع آمن؟ | safe
+هل هذا احتيال من فضلك | safe
+هل الموقع آمن؟ | safe
+سؤال هل الموقع موثوق | safe
+هل الموقع موثوق من فضلك | safe
+هل الموقع آمن من فضلك | safe
+هل هذا احتيال؟ | safe
+هل الموقع موثوق؟ | safe
+مرحبا هل الموقع آمن | safe
+سؤال هل هذا احتيال؟ | safe
+مرحبا هل هذا احتيال؟ | safe
+مرحبا هل الموقع موثوق من فضلك | safe
+عرض الأسعار بالدولار | currency
+عرض الأسعار باليورو | currency
+هل يمكنني تغيير العملة | currency
+مرحبا هل يمكنني تغيير العملة من فضلك | currency
+السلام عليكم عرض الأسعار باليورو | currency
+سؤال عرض الأسعار بالدولار | currency
+السلام عليكم هل يمكنني تغيير العملة من فضلك | currency
+هل يمكنني تغيير العملة؟ | currency
+السلام عليكم عرض الأسعار بالدولار | currency
+عرض الأسعار بالدولار؟ | currency
+السلام عليكم عرض الأسعار باليورو من فضلك | currency
+سؤال عرض الأسعار باليورو من فضلك | currency
+مرحبا هل يمكنني تغيير العملة | currency
+عرض الأسعار باليورو؟ | currency
+مرحبا عرض الأسعار بالدولار | currency
+سؤال هل يمكنني تغيير العملة؟ | currency
+السلام عليكم هل يمكنني تغيير العملة | currency
+عرض الأسعار بالدولار من فضلك | currency
+ما هي الصالة | lounge-what
+ماذا يوجد في الصالة | lounge-what
+مرحبا ما هي الصالة | lounge-what
+ما هي الصالة؟ | lounge-what
+ما هي الصالة من فضلك | lounge-what
+سؤال ما هي الصالة | lounge-what
+ماذا يوجد في الصالة من فضلك | lounge-what
+السلام عليكم ماذا يوجد في الصالة | lounge-what
+مرحبا ما هي الصالة؟ | lounge-what
+ماذا يوجد في الصالة؟ | lounge-what
+مرحبا ما هي الصالة من فضلك | lounge-what
+السلام عليكم ماذا يوجد في الصالة من فضلك | lounge-what
+مرحبا ماذا يوجد في الصالة | lounge-what
+سؤال ما هي الصالة؟ | lounge-what
+السلام عليكم ما هي الصالة من فضلك | lounge-what
+السلام عليكم ماذا يوجد في الصالة؟ | lounge-what
+السلام عليكم ما هي الصالة؟ | lounge-what
+مرحبا ماذا يوجد في الصالة من فضلك | lounge-what
+كيف يعمل المسار السريع | fasttrack-how
+ما هو fast track | fasttrack-how
+السلام عليكم ما هو fast track من فضلك | fasttrack-how
+ما هو fast track من فضلك | fasttrack-how
+مرحبا كيف يعمل المسار السريع | fasttrack-how
+سؤال كيف يعمل المسار السريع من فضلك | fasttrack-how
+السلام عليكم ما هو fast track؟ | fasttrack-how
+سؤال ما هو fast track؟ | fasttrack-how
+سؤال ما هو fast track | fasttrack-how
+السلام عليكم كيف يعمل المسار السريع | fasttrack-how
+مرحبا كيف يعمل المسار السريع من فضلك | fasttrack-how
+سؤال ما هو fast track من فضلك | fasttrack-how
+ما هو fast track؟ | fasttrack-how
+مرحبا ما هو fast track؟ | fasttrack-how
+كيف يعمل المسار السريع من فضلك | fasttrack-how
+السلام عليكم كيف يعمل المسار السريع من فضلك | fasttrack-how
+مرحبا ما هو fast track | fasttrack-how
+كيف يعمل المسار السريع؟ | fasttrack-how
+هل يمكنني امتلاك عدة شرائح | multiple-esims
+هل يمكنني امتلاك شريحتين | multiple-esims
+هل يمكنني امتلاك شريحتين؟ | multiple-esims
+هل يمكنني امتلاك عدة شرائح؟ | multiple-esims
+السلام عليكم هل يمكنني امتلاك شريحتين؟ | multiple-esims
+سؤال هل يمكنني امتلاك عدة شرائح | multiple-esims
+مرحبا هل يمكنني امتلاك عدة شرائح | multiple-esims
+مرحبا هل يمكنني امتلاك شريحتين | multiple-esims
+السلام عليكم هل يمكنني امتلاك عدة شرائح من فضلك | multiple-esims
+هل يمكنني امتلاك شريحتين من فضلك | multiple-esims
+سؤال هل يمكنني امتلاك شريحتين | multiple-esims
+سؤال هل يمكنني امتلاك عدة شرائح؟ | multiple-esims
+السلام عليكم هل يمكنني امتلاك عدة شرائح؟ | multiple-esims
+هل يمكنني امتلاك عدة شرائح من فضلك | multiple-esims
+مرحبا هل يمكنني امتلاك عدة شرائح من فضلك | multiple-esims
+سؤال هل يمكنني امتلاك شريحتين من فضلك | multiple-esims
+مرحبا هل يمكنني امتلاك شريحتين من فضلك | multiple-esims
+سؤال هل يمكنني امتلاك عدة شرائح من فضلك | multiple-esims
+هل أحذف الشريحة بعد السفر | remove-after
+هل أحذف الشريحة بعد السفر؟ | remove-after
+سؤال هل أحذف الشريحة بعد السفر؟ | remove-after
+سؤال هل أحذف الشريحة بعد السفر | remove-after
+السلام عليكم هل أحذف الشريحة بعد السفر | remove-after
+هل أحذف الشريحة بعد السفر من فضلك | remove-after
+مرحبا هل أحذف الشريحة بعد السفر | remove-after
+مرحبا هل أحذف الشريحة بعد السفر من فضلك | remove-after
+سؤال هل أحذف الشريحة بعد السفر من فضلك | remove-after
+مرحبا هل أحذف الشريحة بعد السفر؟ | remove-after
+السلام عليكم هل أحذف الشريحة بعد السفر من فضلك | remove-after
+السلام عليكم هل أحذف الشريحة بعد السفر؟ | remove-after
+نفدت البيانات ماذا أفعل | expired
+انتهت الباقة ماذا أفعل | expired
+السلام عليكم انتهت الباقة ماذا أفعل من فضلك | expired
+السلام عليكم نفدت البيانات ماذا أفعل؟ | expired
+نفدت البيانات ماذا أفعل من فضلك | expired
+انتهت الباقة ماذا أفعل؟ | expired
+سؤال نفدت البيانات ماذا أفعل | expired
+السلام عليكم انتهت الباقة ماذا أفعل؟ | expired
+السلام عليكم نفدت البيانات ماذا أفعل | expired
+مرحبا انتهت الباقة ماذا أفعل من فضلك | expired
+نفدت البيانات ماذا أفعل؟ | expired
+انتهت الباقة ماذا أفعل من فضلك | expired
+سؤال نفدت البيانات ماذا أفعل؟ | expired
+السلام عليكم انتهت الباقة ماذا أفعل | expired
+سؤال انتهت الباقة ماذا أفعل | expired
+سؤال انتهت الباقة ماذا أفعل؟ | expired
+مرحبا نفدت البيانات ماذا أفعل؟ | expired
+مرحبا انتهت الباقة ماذا أفعل | expired
+أين رمز QR الخاص بي | no-email,my-esims
+أين رمز QR | no-email,my-esims
+لم أستلم رمز QR | no-email,my-esims
+لم يصلني رمز QR | no-email,my-esims
+لم أستلم رمز QR؟ | no-email,my-esims
+سؤال أين رمز QR | no-email,my-esims
+سؤال لم يصلني رمز QR من فضلك | no-email,my-esims
+سؤال لم أستلم رمز QR | no-email,my-esims
+أين رمز QR الخاص بي من فضلك | no-email,my-esims
+السلام عليكم لم يصلني رمز QR من فضلك | no-email,my-esims
+مرحبا لم يصلني رمز QR؟ | no-email,my-esims
+مرحبا أين رمز QR من فضلك | no-email,my-esims
+مرحبا أين رمز QR؟ | no-email,my-esims
+سؤال لم أستلم رمز QR من فضلك | no-email,my-esims
+السلام عليكم أين رمز QR | no-email,my-esims
+سؤال أين رمز QR الخاص بي؟ | no-email,my-esims
+السلام عليكم أين رمز QR؟ | no-email,my-esims
+مرحبا أين رمز QR الخاص بي من فضلك | no-email,my-esims
+هل لديكم شريحة لأمريكا | coverage-countries
+في أي دول تعمل الشريحة | coverage-countries
+هل لديكم شريحة للمغرب | coverage-countries
+هل لديكم شريحة لليابان | coverage-countries
+هل لديكم شريحة لتايلاند | coverage-countries
+هل لديكم شريحة لليابان من فضلك | coverage-countries
+السلام عليكم هل لديكم شريحة لأمريكا؟ | coverage-countries
+هل لديكم شريحة لأمريكا من فضلك | coverage-countries
+السلام عليكم هل لديكم شريحة لليابان من فضلك | coverage-countries
+هل لديكم شريحة لليابان؟ | coverage-countries
+مرحبا هل لديكم شريحة لأمريكا | coverage-countries
+السلام عليكم هل لديكم شريحة لليابان | coverage-countries
+سؤال هل لديكم شريحة لليابان | coverage-countries
+السلام عليكم هل لديكم شريحة لليابان؟ | coverage-countries
+السلام عليكم هل لديكم شريحة لتايلاند من فضلك | coverage-countries
+سؤال هل لديكم شريحة لليابان؟ | coverage-countries
+هل لديكم شريحة للمغرب؟ | coverage-countries
+هل لديكم شريحة لأمريكا؟ | coverage-countries
+مرحبا أين شريحتي بعد الشراء من فضلك | my-esims
+سؤال كيف أشتري؟ | how-to-buy
+هل أحتاج إلى حساب للشراء؟ | need-account
+مرحبا لا أستطيع الدخول إلى حسابي من فضلك | account-login
+السلام عليكم ما هي eSIM | what-is-esim
+السلام عليكم هل هاتفي يدعم eSIM | device-compatible

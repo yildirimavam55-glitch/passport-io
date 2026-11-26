@@ -1,0 +1,716 @@
+## Einfache Kundenfragen (en) – aus Vorlagen erzeugt (tools: gen_simple.py), 715 Fragen
+show my esims | my-esims
+view my orders | my-esims
+view my purchases | my-esims
+i bought an esim where can i find it | my-esims
+where is my esim after buying | my-esims
+where can i see the package i bought | my-esims
+how do i get to my orders | my-esims
+where can i see the esims i bought | my-esims
+i purchased a package where do i see it | my-esims
+show my orders | my-esims
+where are the esims i bought | my-esims
+see my orders | my-esims
+i purchased a package where can i find it | my-esims
+i bought a package where do i see it | my-esims
+where do i find my purchased packages | my-esims
+where can i see my orders | my-esims
+where are my packages | my-esims
+where do i find my packages | my-esims
+where is my esim after purchase | my-esims
+how to purchase a package | how-to-buy
+how do i buy an esim | how-to-buy
+how to buy | how-to-buy
+how to purchase an esim | how-to-buy
+how can i purchase | how-to-buy
+how to order an esim | how-to-buy
+i'd like to buy a package how | how-to-buy
+how can i order a package | how-to-buy
+how does buying work | how-to-buy
+how can i order a data plan | how-to-buy
+i'd like to order an esim how | how-to-buy
+how do i buy a package | how-to-buy
+how can i purchase a data plan | how-to-buy
+where can i buy a package | how-to-buy
+how to purchase | how-to-buy
+i'd like to buy an esim how | how-to-buy
+how can i buy an esim | how-to-buy
+how can i purchase a package | how-to-buy
+how to order a data plan | how-to-buy
+can i buy without signing up | need-account
+can i buy without an account | need-account
+can i order without an account | need-account
+buy as guest | need-account
+buy as guest possible | need-account
+do i need to register to buy | need-account
+do i have an account to buy | need-account
+do i need an account to order | need-account
+guest checkout | need-account
+do i have to register to buy | need-account
+do i have an account to order | need-account
+can i order without signing up | need-account
+can i order without registering | need-account
+do i need to register to order | need-account
+is an account required | need-account
+guest checkout possible | need-account
+do i need an account to buy | need-account
+do i have to register to order | need-account
+can i buy without registering | need-account
+change password | change-password
+change my password | change-password
+i want a different password | change-password
+i want a new password | change-password
+reset password | change-password
+where can i set a new password | change-password
+how do i change my password | change-password
+reset my password | change-password
+update password | change-password
+update my password | change-password
+hey lina update my password? | change-password
+hello update password please | change-password
+quick question update password | change-password
+hi where can i set a new password? | change-password
+where can i set a new password? | change-password
+quick question i want a new password? | change-password
+hey lina reset password? | change-password
+where can i set a new password please | change-password
+hey lina reset password please | change-password
+i entered the wrong email | change-email
+how do i change my email address | change-email
+can i change my email | change-email
+change my email | change-email
+i typed the wrong email | change-email
+update email | change-email
+update my email | change-email
+change email | change-email
+how do i change my email | change-email
+quick question how do i change my email | change-email
+hey lina update my email | change-email
+hi update my email? | change-email
+quick question how do i change my email address | change-email
+update email? | change-email
+hey lina update email thanks | change-email
+can i change my email thanks | change-email
+how do i change my email address? | change-email
+update my email please | change-email
+hi change my email please | change-email
+i cannot sign in | account-login
+sign in doesn't work | account-login
+forgot password | account-login
+verification code didn't arrive | account-login
+i can't log in | account-login
+login doesn't work | account-login
+i cannot log in | account-login
+i cannot get into my account | account-login
+verification code not coming | account-login
+forgot my password | account-login
+i can't get into my account | account-login
+login not working | account-login
+i can't sign in | account-login
+sign in not working | account-login
+hello i can't get into my account please | account-login
+hi i can't get into my account please | account-login
+verification code not coming please | account-login
+hey lina i cannot sign in? | account-login
+forgot password please | account-login
+what is an esim | what-is-esim
+esim explained | what-is-esim
+what does esim mean | what-is-esim
+what is esim | what-is-esim
+how does an esim work | what-is-esim
+esim meaning | what-is-esim
+hello esim meaning? | what-is-esim
+hey lina how does an esim work please | what-is-esim
+hi esim explained thanks | what-is-esim
+hi what is an esim? | what-is-esim
+quick question esim explained thanks | what-is-esim
+what is esim? | what-is-esim
+hi esim meaning | what-is-esim
+quick question how does an esim work? | what-is-esim
+esim meaning please | what-is-esim
+esim meaning thanks | what-is-esim
+quick question how does an esim work thanks | what-is-esim
+hi what does esim mean | what-is-esim
+esim explained thanks | what-is-esim
+will esim work on my samsung | device-compatible
+will esim work on my iphone | device-compatible
+does esim work with my samsung | device-compatible
+does esim work on my iphone | device-compatible
+will esim work on my phone | device-compatible
+is my phone esim compatible | device-compatible
+does esim work with my phone | device-compatible
+will esim work with my samsung | device-compatible
+is my phone esim capable | device-compatible
+which phones support esim | device-compatible
+does esim work on my samsung | device-compatible
+does my phone support esim | device-compatible
+is my iphone esim capable | device-compatible
+will esim work with my iphone | device-compatible
+will esim work with my phone | device-compatible
+does esim work with my iphone | device-compatible
+does esim work on my phone | device-compatible
+is my iphone esim compatible | device-compatible
+quick question will esim work with my samsung please | device-compatible
+install esim guide | install-esim,install-iphone,install-android
+install esim how | install-esim,install-iphone,install-android
+how do i set up the esim | install-esim,install-iphone,install-android
+set up esim how | install-esim,install-iphone,install-android
+install esim | install-esim,install-iphone,install-android
+installation instructions | install-esim,install-iphone,install-android
+installation guide | install-esim,install-iphone,install-android
+set up esim | install-esim,install-iphone,install-android
+how to install the qr code | install-esim,install-iphone,install-android
+how to activate the qr code | install-esim,install-iphone,install-android
+how do i install the esim | install-esim,install-iphone,install-android
+set up esim guide | install-esim,install-iphone,install-android
+how to install the package | install-esim,install-iphone,install-android
+how to activate the package | install-esim,install-iphone,install-android
+hey lina set up esim guide | install-esim,install-iphone,install-android
+hey lina how do i set up the esim | install-esim,install-iphone,install-android
+hey lina set up esim please | install-esim,install-iphone,install-android
+hi set up esim | install-esim,install-iphone,install-android
+installation guide please | install-esim,install-iphone,install-android
+when is the esim activated | when-activate,buy-when,line-on
+when does the package start | when-activate,buy-when,line-on
+when does the esim start | when-activate,buy-when,line-on
+when does the plan start | when-activate,buy-when,line-on
+when is the esim active | when-activate,buy-when,line-on
+when do the days start counting | when-activate,buy-when,line-on
+hello when does the plan start | when-activate,buy-when,line-on
+hey lina when is the esim active | when-activate,buy-when,line-on
+when is the esim activated? | when-activate,buy-when,line-on
+when does the plan start please | when-activate,buy-when,line-on
+hi when is the esim active please | when-activate,buy-when,line-on
+quick question when do the days start counting | when-activate,buy-when,line-on
+hello when do the days start counting thanks | when-activate,buy-when,line-on
+when is the esim activated thanks | when-activate,buy-when,line-on
+when is the esim active? | when-activate,buy-when,line-on
+when does the package start please | when-activate,buy-when,line-on
+quick question when do the days start counting? | when-activate,buy-when,line-on
+hey lina when does the esim start please | when-activate,buy-when,line-on
+hello when is the esim activated thanks | when-activate,buy-when,line-on
+how much gb do i need for 2 weeks | which-package
+how much data do i need for a week | which-package
+how much data do i need | which-package
+which package do i need | which-package
+how much gb do i need on holiday | which-package
+how much data do i need on holiday | which-package
+how much gb do i need for a week | which-package
+which plan do you recommend | which-package
+how much data do i need for 2 weeks | which-package
+which package is right for me | which-package
+how much gb do i need | which-package
+which package should i take | which-package
+hello which package should i take? | which-package
+how much data do i need thanks | which-package
+which package is right for me? | which-package
+hi which plan do you recommend thanks | which-package
+how much data do i need please | which-package
+quick question how much gb do i need for a week thanks | which-package
+how much gb do i need on holiday please | which-package
+do i get a phone number | calls,phone-number
+are calls included | calls,phone-number
+are sms included | calls,phone-number
+can i call with the esim | calls,phone-number
+can i make calls with the esim | calls,phone-number
+do i get a number | calls,phone-number
+is sms included | calls,phone-number
+is calls included | calls,phone-number
+can i send sms | calls,phone-number
+are calls included thanks | calls,phone-number
+is sms included? | calls,phone-number
+do i get a number please | calls,phone-number
+quick question can i send sms | calls,phone-number
+quick question is sms included thanks | calls,phone-number
+hello do i get a number please | calls,phone-number
+hi are calls included | calls,phone-number
+hey lina are calls included thanks | calls,phone-number
+hey lina can i call with the esim | calls,phone-number
+do i get a phone number thanks | calls,phone-number
+will i keep my phone number | keep-number
+do i keep my number | keep-number
+do i keep my phone number | keep-number
+what happens to my number | keep-number
+will i keep my whatsapp number | keep-number
+can i keep my sim in | keep-number
+what happens to my normal sim | keep-number
+will i keep my number | keep-number
+what happens to my sim card | keep-number
+do i keep my whatsapp number | keep-number
+can i keep my sim in? | keep-number
+hello what happens to my normal sim thanks | keep-number
+hello do i keep my phone number thanks | keep-number
+can i keep my sim in thanks | keep-number
+quick question will i keep my number | keep-number
+will i keep my number please | keep-number
+do i keep my whatsapp number thanks | keep-number
+hi will i keep my whatsapp number? | keep-number
+hi do i keep my number please | keep-number
+can i use hotspot work | hotspot,hotspot-setup
+can i use tethering | hotspot,hotspot-setup
+does hotspot with the esim | hotspot,hotspot-setup
+is hotspot allowed | hotspot,hotspot-setup
+can i use hotspot with the esim | hotspot,hotspot-setup
+can i share internet | hotspot,hotspot-setup
+can i tether | hotspot,hotspot-setup
+does hotspot work | hotspot,hotspot-setup
+hey lina can i use hotspot work thanks | hotspot,hotspot-setup
+does hotspot with the esim? | hotspot,hotspot-setup
+hello can i use hotspot with the esim? | hotspot,hotspot-setup
+can i use hotspot with the esim? | hotspot,hotspot-setup
+can i tether thanks | hotspot,hotspot-setup
+can i use hotspot with the esim please | hotspot,hotspot-setup
+hey lina is hotspot allowed | hotspot,hotspot-setup
+hi is hotspot allowed | hotspot,hotspot-setup
+hi can i use hotspot with the esim thanks | hotspot,hotspot-setup
+quick question can i use hotspot work? | hotspot,hotspot-setup
+get more gb | topup
+can i top up | topup
+get more data | topup
+how do i top up | topup
+how do i add more data | topup
+can i recharge | topup
+buy more gb | topup
+buy more data | topup
+can i add data | topup
+quick question can i add data thanks | topup
+hi can i recharge? | topup
+hey lina get more data thanks | topup
+hi can i add data | topup
+get more data? | topup
+hi can i top up? | topup
+hey lina can i add data? | topup
+hey lina can i add data thanks | topup
+hi can i add data? | topup
+can i get a refund | refund,refund-how
+cancel my order | refund,refund-how
+refund how | refund,refund-how
+cancel the purchase | refund,refund-how
+how do i get my money back | refund,refund-how
+how do i get a refund | refund,refund-how
+refund possible | refund,refund-how
+can i get my money back | refund,refund-how
+cancellation how | refund,refund-how
+refund policy | refund,refund-how
+cancellation policy | refund,refund-how
+cancellation possible | refund,refund-how
+can i cancel | refund,refund-how
+hello can i get a refund thanks | refund,refund-how
+hey lina cancellation possible? | refund,refund-how
+hello can i cancel | refund,refund-how
+hey lina cancellation possible please | refund,refund-how
+can i cancel? | refund,refund-how
+can i pay with google pay | payment
+how can i pay | payment
+which payment methods do you accept | payment
+can i pay with credit card | payment
+can i pay with paypal | payment
+can i pay with apple pay | payment
+which payment methods are there | payment
+payment options | payment
+hello can i pay with credit card thanks | payment
+hey lina payment options | payment
+hey lina can i pay with apple pay thanks | payment
+quick question can i pay with paypal | payment
+quick question can i pay with credit card | payment
+quick question can i pay with google pay? | payment
+hey lina which payment methods do you accept | payment
+hello payment options thanks | payment
+which payment methods do you accept thanks | payment
+quick question can i pay with apple pay | payment
+when do i get the esim | delivery
+when will i receive the esim | delivery
+when do i get my order | delivery
+when will i receive the qr code | delivery
+when will i receive my order | delivery
+how fast do i get the qr code | delivery
+when do i get my esim | delivery
+how long does delivery take | delivery
+when do i get the qr code | delivery
+how fast does the esim arrive | delivery
+when will i receive my esim | delivery
+hello when do i get my esim | delivery
+quick question how fast do i get the qr code? | delivery
+how fast does the esim arrive? | delivery
+hey lina how fast does the esim arrive please | delivery
+when do i get my order? | delivery
+when do i get the qr code please | delivery
+hi when will i receive the qr code please | delivery
+do you have a chat for support | contact
+how do i reach support | contact
+do you have a phone number for support | contact
+do you have a phone number | contact
+i want to talk to a person | contact
+do you have an email | contact
+contact support | contact
+i want to talk to an agent | contact
+do you have an email for support | contact
+do you have a chat | contact
+how do i contact you | contact
+i want to talk to a human | contact
+how do i reach customer service | contact
+contact customer service | contact
+hey lina how do i contact you please | contact
+hello contact support thanks | contact
+hello do you have an email for support | contact
+how do i reach customer service please | contact
+no internet with the esim | no-internet
+no internet | no-internet
+esim installed but no internet | no-internet
+esim active but no internet | no-internet
+no internet abroad | no-internet
+why is the internet not working | no-internet
+why don't i have internet | no-internet
+hey lina no internet abroad thanks | no-internet
+why is the internet not working thanks | no-internet
+hey lina no internet abroad | no-internet
+hi why don't i have internet? | no-internet
+hello no internet abroad thanks | no-internet
+hi esim installed but no internet thanks | no-internet
+hi no internet abroad | no-internet
+quick question esim active but no internet | no-internet
+hey lina esim installed but no internet | no-internet
+no internet please | no-internet
+hi esim active but no internet? | no-internet
+where do i see my remaining data | check-usage
+how long is my esim still valid | check-usage
+where do i see how much is left | check-usage
+how much data do i have left | check-usage
+check remaining data | check-usage
+how much gb do i have left | check-usage
+check data usage | check-usage
+where do i see my usage | check-usage
+hi how long is my esim still valid please | check-usage
+where do i see how much is left thanks | check-usage
+hello where do i see my remaining data thanks | check-usage
+hello where do i see how much is left thanks | check-usage
+quick question where do i see how much is left thanks | check-usage
+how much gb do i have left thanks | check-usage
+hello where do i see my remaining data | check-usage
+quick question how much data do i have left | check-usage
+check remaining data? | check-usage
+hi where do i see my usage thanks | check-usage
+how much is a package | prices
+how much does a package cost | prices
+how expensive is a package | prices
+how much does an esim cost | prices
+esim prices | prices
+how much is an esim | prices
+esim price | prices
+how expensive is an esim | prices
+how much does it cost | prices
+hello how much is a package? | prices
+quick question how much does a package cost please | prices
+hey lina how much is a package? | prices
+hi how much does it cost | prices
+hi esim prices | prices
+how much does an esim cost please | prices
+hey lina how expensive is a package? | prices
+hi how expensive is an esim | prices
+hi esim prices please | prices
+do you have a discount code | discount-code
+where do i enter the coupon | discount-code
+enter discount code | discount-code
+do you have coupons | discount-code
+redeem coupon code | discount-code
+where do i redeem the promo code | discount-code
+where do i redeem the discount code | discount-code
+do you have any discount | discount-code
+enter coupon code | discount-code
+where do i enter the discount code | discount-code
+redeem promo code | discount-code
+where do i redeem the coupon | discount-code
+redeem discount code | discount-code
+enter promo code | discount-code
+where do i enter the promo code | discount-code
+where do i enter the coupon thanks | discount-code
+hey lina redeem discount code? | discount-code
+enter coupon code thanks | discount-code
+invoice for business | invoice
+where is my invoice | invoice
+can i get an invoice | invoice
+where is my receipt | invoice
+invoice for my company | invoice
+invoice for my company? | invoice
+where is my invoice thanks | invoice
+invoice for my company please | invoice
+hello where is my receipt | invoice
+hey lina can i get an invoice? | invoice
+quick question where is my invoice | invoice
+hi where is my receipt please | invoice
+where is my receipt? | invoice
+hello can i get an invoice | invoice
+quick question invoice for my company | invoice
+hey lina where is my receipt? | invoice
+can i get an invoice thanks | invoice
+hi can i get an invoice please | invoice
+remove my account | account-delete
+how do i delete my account | account-delete
+delete my account | account-delete
+delete account | account-delete
+remove my data | account-delete
+hello delete my account? | account-delete
+hey lina delete account | account-delete
+delete my account please | account-delete
+quick question remove my account | account-delete
+hey lina delete my account please | account-delete
+hi remove my data thanks | account-delete
+hi remove my data | account-delete
+quick question delete account | account-delete
+hello how do i delete my account | account-delete
+remove my account? | account-delete
+hey lina remove my account please | account-delete
+hello remove my data | account-delete
+hey lina how do i delete my account please | account-delete
+what does ready to install mean | order-status
+my order is still processing | order-status
+what does payment pending mean | order-status
+order status meaning | order-status
+order status explained | order-status
+what does processing mean | order-status
+hello order status explained thanks | order-status
+hey lina what does processing mean | order-status
+hey lina order status meaning please | order-status
+quick question my order is still processing? | order-status
+hello my order is still processing thanks | order-status
+what does payment pending mean thanks | order-status
+quick question what does payment pending mean | order-status
+hello what does processing mean please | order-status
+order status meaning thanks | order-status
+hello order status explained | order-status
+hi what does processing mean? | order-status
+what does processing mean thanks | order-status
+how does unlimited work | unlimited
+do you have unlimited data | unlimited
+is unlimited really unlimited | unlimited
+is unlimited truly unlimited | unlimited
+how does the unlimited plan work | unlimited
+hey lina how does unlimited work please | unlimited
+do you have unlimited data please | unlimited
+hi how does the unlimited plan work | unlimited
+is unlimited really unlimited thanks | unlimited
+quick question is unlimited truly unlimited please | unlimited
+hello is unlimited really unlimited please | unlimited
+hey lina how does unlimited work thanks | unlimited
+hey lina is unlimited really unlimited thanks | unlimited
+hello how does unlimited work | unlimited
+quick question is unlimited really unlimited | unlimited
+quick question is unlimited truly unlimited | unlimited
+hello how does the unlimited plan work thanks | unlimited
+is unlimited really unlimited please | unlimited
+can i use whatsapp | whatsapp
+will whatsapp work with the esim | whatsapp
+will whatsapp work | whatsapp
+does whatsapp work | whatsapp
+can i use whatsapp calls | whatsapp
+does whatsapp work with the esim | whatsapp
+hey lina does whatsapp work? | whatsapp
+will whatsapp work please | whatsapp
+will whatsapp work thanks | whatsapp
+hi can i use whatsapp calls? | whatsapp
+hi will whatsapp work please | whatsapp
+hey lina can i use whatsapp | whatsapp
+hi can i use whatsapp thanks | whatsapp
+hi does whatsapp work | whatsapp
+hello will whatsapp work with the esim please | whatsapp
+does whatsapp work with the esim please | whatsapp
+quick question can i use whatsapp calls? | whatsapp
+hello does whatsapp work please | whatsapp
+deleted the esim what now | new-phone,deleted-esim
+esim deleted by mistake what now | new-phone,deleted-esim
+can i move the esim to my new phone | new-phone,deleted-esim
+can i move the esim to another phone | new-phone,deleted-esim
+new phone what happens to the esim | new-phone,deleted-esim
+can i transfer the esim to another phone | new-phone,deleted-esim
+changed phone what happens to the esim | new-phone,deleted-esim
+new phone what do i do | new-phone,deleted-esim
+can i transfer the esim to my new phone | new-phone,deleted-esim
+changed phone what do i do | new-phone,deleted-esim
+hey lina changed phone what happens to the esim? | new-phone,deleted-esim
+hello deleted the esim what now please | new-phone,deleted-esim
+new phone what happens to the esim thanks | new-phone,deleted-esim
+quick question can i transfer the esim to my new phone | new-phone,deleted-esim
+hey lina changed phone what do i do | new-phone,deleted-esim
+hey lina new phone what happens to the esim please | new-phone,deleted-esim
+changed phone what happens to the esim thanks | new-phone,deleted-esim
+can i move the esim to my new phone? | new-phone,deleted-esim
+buy esim for my mom | gift
+can i buy an esim for someone else | gift
+can i gift an esim | gift
+buy esim for my family | gift
+buy esim as a gift | gift
+hi can i buy an esim for someone else thanks | gift
+buy esim for my mom please | gift
+quick question can i gift an esim? | gift
+hey lina can i buy an esim for someone else | gift
+hey lina can i buy an esim for someone else thanks | gift
+can i gift an esim please | gift
+hey lina can i gift an esim thanks | gift
+hey lina can i gift an esim | gift
+hey lina buy esim as a gift | gift
+buy esim as a gift please | gift
+hi can i gift an esim? | gift
+hi can i gift an esim | gift
+hi buy esim for my mom thanks | gift
+is this trustworthy | safe
+is passport io legit | safe
+is this site trustworthy | safe
+is this site safe | safe
+is this legit | safe
+is this safe | safe
+is this a scam | safe
+is passport io safe | safe
+is passport io trustworthy | safe
+is this site legit | safe
+hey lina is passport io safe? | safe
+hello is this trustworthy | safe
+hey lina is this legit thanks | safe
+is passport io trustworthy thanks | safe
+is passport io legit? | safe
+quick question is this safe? | safe
+hello is this trustworthy thanks | safe
+is this site legit? | safe
+show prices in dollars | currency
+show prices in lira | currency
+can i change the currency | currency
+show prices in euro | currency
+which currency do i pay in | currency
+which currency do i pay in? | currency
+hi show prices in euro | currency
+can i change the currency thanks | currency
+hey lina show prices in dollars | currency
+show prices in dollars? | currency
+hello show prices in lira please | currency
+which currency do i pay in thanks | currency
+quick question can i change the currency | currency
+hello show prices in euro | currency
+quick question which currency do i pay in thanks | currency
+show prices in euro please | currency
+quick question show prices in dollars | currency
+show prices in euro? | currency
+what do i get in the lounge | lounge-what
+what is an lounge | lounge-what
+what is an airport lounge | lounge-what
+hey lina what is an airport lounge please | lounge-what
+quick question what is an lounge | lounge-what
+hi what do i get in the lounge please | lounge-what
+quick question what do i get in the lounge | lounge-what
+hey lina what do i get in the lounge? | lounge-what
+hi what is an lounge thanks | lounge-what
+hey lina what is an lounge? | lounge-what
+what is an lounge thanks | lounge-what
+what is an airport lounge? | lounge-what
+what is an lounge please | lounge-what
+hello what is an lounge | lounge-what
+hey lina what is an lounge | lounge-what
+what is an airport lounge thanks | lounge-what
+hi what is an airport lounge | lounge-what
+hi what is an airport lounge please | lounge-what
+what is fast track | fasttrack-how
+how does fast track work | fasttrack-how
+hey lina how does fast track work | fasttrack-how
+hello how does fast track work? | fasttrack-how
+hello what is fast track | fasttrack-how
+quick question what is fast track thanks | fasttrack-how
+hi what is fast track thanks | fasttrack-how
+how does fast track work thanks | fasttrack-how
+how does fast track work? | fasttrack-how
+what is fast track thanks | fasttrack-how
+quick question what is fast track | fasttrack-how
+hey lina how does fast track work thanks | fasttrack-how
+quick question how does fast track work | fasttrack-how
+hello how does fast track work please | fasttrack-how
+hi how does fast track work | fasttrack-how
+hi what is fast track please | fasttrack-how
+hey lina how does fast track work please | fasttrack-how
+hi what is fast track | fasttrack-how
+can i have two esims | multiple-esims
+can i have multiple esims | multiple-esims
+several packages on one phone | multiple-esims
+two packages on one phone | multiple-esims
+quick question two packages on one phone thanks | multiple-esims
+hi several packages on one phone? | multiple-esims
+hello two packages on one phone? | multiple-esims
+two packages on one phone please | multiple-esims
+several packages on one phone please | multiple-esims
+hello two packages on one phone | multiple-esims
+quick question can i have multiple esims thanks | multiple-esims
+hi two packages on one phone | multiple-esims
+hey lina can i have multiple esims? | multiple-esims
+hey lina several packages on one phone | multiple-esims
+hey lina can i have two esims | multiple-esims
+quick question can i have multiple esims? | multiple-esims
+several packages on one phone? | multiple-esims
+quick question two packages on one phone | multiple-esims
+should i delete the esim after the trip | remove-after
+should i delete the esim after travelling | remove-after
+do i have to delete the esim after travelling | remove-after
+remove esim after holiday | remove-after
+do i have to delete the esim after the trip | remove-after
+should i delete the esim after travelling thanks | remove-after
+quick question should i delete the esim after the trip | remove-after
+do i have to delete the esim after travelling thanks | remove-after
+hi should i delete the esim after the trip | remove-after
+do i have to delete the esim after the trip please | remove-after
+hi do i have to delete the esim after the trip please | remove-after
+should i delete the esim after the trip? | remove-after
+hi should i delete the esim after the trip please | remove-after
+hey lina do i have to delete the esim after the trip? | remove-after
+do i have to delete the esim after travelling please | remove-after
+do i have to delete the esim after the trip thanks | remove-after
+hello should i delete the esim after travelling? | remove-after
+hello remove esim after holiday please | remove-after
+package used up what now | expired
+package expired what now | expired
+package empty what now | expired
+data used up what do i do | expired
+esim expired what now | expired
+esim empty what now | expired
+esim used up what now | expired
+hi esim expired what now | expired
+quick question data used up what do i do? | expired
+hi package used up what now? | expired
+esim expired what now please | expired
+hi package empty what now please | expired
+esim expired what now thanks | expired
+hello package used up what now | expired
+hi esim empty what now | expired
+hey lina package expired what now please | expired
+hello esim used up what now? | expired
+quick question esim expired what now? | expired
+where is my qr code | no-email,my-esims
+qr code missing | no-email,my-esims
+i didn't get a qr code | no-email,my-esims
+i didn't receive a qr code | no-email,my-esims
+qr code not received | no-email,my-esims
+quick question where is my qr code | no-email,my-esims
+hey lina i didn't receive a qr code | no-email,my-esims
+hello i didn't get a qr code thanks | no-email,my-esims
+where is my qr code please | no-email,my-esims
+quick question i didn't receive a qr code | no-email,my-esims
+hello i didn't receive a qr code thanks | no-email,my-esims
+qr code missing? | no-email,my-esims
+hello qr code not received | no-email,my-esims
+hey lina where is my qr code? | no-email,my-esims
+hi i didn't get a qr code? | no-email,my-esims
+hello where is my qr code? | no-email,my-esims
+hi qr code not received? | no-email,my-esims
+hello qr code missing? | no-email,my-esims
+do you have packages for japan | coverage-countries
+do you have packages for thailand | coverage-countries
+do you have an esim for usa | coverage-countries
+do you have an esim for morocco | coverage-countries
+do you have packages for usa | coverage-countries
+which countries does it work in | coverage-countries
+which countries do you cover | coverage-countries
+do you have an esim for thailand | coverage-countries
+do you have an esim for japan | coverage-countries
+do you have packages for morocco | coverage-countries
+do you have an esim for japan please | coverage-countries
+quick question which countries does it work in please | coverage-countries
+hello do you have an esim for japan thanks | coverage-countries
+do you have packages for japan? | coverage-countries
+hey lina do you have an esim for japan | coverage-countries
+hi do you have packages for usa thanks | coverage-countries
+quick question do you have an esim for thailand | coverage-countries
+hi which countries do you cover | coverage-countries

@@ -1,0 +1,715 @@
+## Einfache Kundenfragen (tr) – aus Vorlagen erzeugt (tools: gen_simple.py), 714 Fragen
+esimlerim nerede | my-esims
+esimlerimi görmek istiyorum | my-esims
+esim aldım nerede görünüyor | my-esims
+aldığım paketleri nerede görürüm | my-esims
+satın aldığım esimleri nerede görürüm | my-esims
+hesabımda esim nerede | my-esims
+paket satın aldım nerede | my-esims
+aldığım paketi nerede görebilirim | my-esims
+aldığım paketi nerede bulurum | my-esims
+aldıklarımı nasıl görürüm | my-esims
+satın aldığım paketi nerede bulurum | my-esims
+paket satın aldım nerede görünüyor | my-esims
+esim satın aldım nereden bakacağım | my-esims
+satın aldığım paketi nerede görebilirim | my-esims
+aldığım esimi nerede bulurum | my-esims
+aldıklarımı görmek istiyorum | my-esims
+satın aldığım esimleri nerede görebilirim | my-esims
+aldığım paketi nerede görürüm | my-esims
+hesabımda paketim nerede | my-esims
+paket nasıl alırım | how-to-buy
+nasıl sipariş verebilirim | how-to-buy
+satın alma nasıl oluyor | how-to-buy
+paket nasıl sipariş ederim | how-to-buy
+esim nasıl satın alırım | how-to-buy
+esim nasıl sipariş ederim | how-to-buy
+esim almak istiyorum nasıl | how-to-buy
+internet paketi nasıl sipariş ederim | how-to-buy
+paket nasıl satın alırım | how-to-buy
+internet paketi nasıl alırım | how-to-buy
+esim nasıl alırım | how-to-buy
+paket almak istiyorum ne yapmalıyım | how-to-buy
+esim almak istiyorum ne yapmalıyım | how-to-buy
+nasıl satın alabilirim | how-to-buy
+satın alma adımları | how-to-buy
+paket almak istiyorum nasıl | how-to-buy
+internet paketi nasıl satın alırım | how-to-buy
+lina esim almak istiyorum nasıl | how-to-buy
+internet paketi nasıl sipariş ederim lütfen | how-to-buy
+almak için hesap lazım mı | need-account
+satın almak için hesap şart mı | need-account
+almak için hesap şart mı | need-account
+üye olmadan alabilir miyim | need-account
+kayıt olmadan alabilir miyim | need-account
+misafir olarak satın alma | need-account
+üye olmadan satın alınır mı | need-account
+kayıt olmadan satın alınır mı | need-account
+satın almak için hesap lazım mı | need-account
+hesapsız alabilir miyim | need-account
+kayıt olmak zorunda mıyım | need-account
+almak için hesap gerekli mi | need-account
+hesapsız satın alınır mı | need-account
+misafir olarak alabilir miyim | need-account
+satın almak için hesap gerekli mi | need-account
+misafir olarak satin alma? | need-account
+misafir olarak alabilir miyim acaba | need-account
+merhaba kayıt olmadan alabilir miyim | need-account
+selam uye olmadan satin alinir mi? | need-account
+şifre değiştirmek | change-password
+şifremi güncellemek istiyorum | change-password
+şifremi değiştirmek istiyorum | change-password
+yeni şifre nereden | change-password
+parola değiştirmek | change-password
+şifremi nasıl değiştiririm | change-password
+yeni şifre nasıl belirlerim | change-password
+bir sorum var yeni şifre nereden | change-password
+lina sifremi degistirmek istiyorum acaba | change-password
+bir sorum var yeni şifre nasıl belirlerim | change-password
+yeni şifre nasıl belirlerim lütfen | change-password
+selam parola değiştirmek lütfen | change-password
+bir sorum var yeni sifre nereden | change-password
+yeni sifre nereden | change-password
+parola değiştirmek lütfen | change-password
+yeni şifre nereden acaba | change-password
+merhaba yeni sifre nereden? | change-password
+bir sorum var sifremi guncellemek istiyorum | change-password
+bir sorum var şifremi nasıl değiştiririm | change-password
+mail adresimi değiştir | change-email
+e postamı yanlış yazdım | change-email
+email değiştirmek | change-email
+mail değiştirmek | change-email
+email adresimi değiştir | change-email
+e posta adresimi değiştirebilir miyim | change-email
+e posta adresimi nasıl değiştiririm | change-email
+email adresimi degistir | change-email
+bir sorum var email değiştirmek | change-email
+merhaba email adresimi değiştir | change-email
+merhaba email değiştirmek acaba | change-email
+mail degistirmek | change-email
+email adresimi değiştir? | change-email
+email değiştirmek lütfen | change-email
+e posta adresimi nasıl değiştiririm? | change-email
+bir sorum var mail adresimi değiştir lütfen | change-email
+e postami yanlis yazdim? | change-email
+mail adresimi degistir | change-email
+email değiştirmek acaba | change-email
+giriş yapamıyorum | account-login
+onay kodu gelmedi | account-login
+login yapamıyorum | account-login
+giriş olmuyor | account-login
+onay kodu gelmiyor | account-login
+hesabıma giremiyorum | account-login
+login çalışmıyor | account-login
+şifremi unuttum | account-login
+hesabıma giriş yapamıyorum | account-login
+login olmuyor | account-login
+giriş çalışmıyor | account-login
+lina hesabıma giriş yapamıyorum? | account-login
+login olmuyor? | account-login
+selam login çalışmıyor lütfen | account-login
+hesabıma giremiyorum lütfen | account-login
+giriş çalışmıyor acaba | account-login
+lina onay kodu gelmiyor | account-login
+merhaba giriş olmuyor | account-login
+bir sorum var hesabima giremiyorum lutfen | account-login
+esim nedir tam olarak | what-is-esim
+esim nedir | what-is-esim
+esim ne demek | what-is-esim
+esim ne işe yarar | what-is-esim
+esim ne | what-is-esim
+esim nasıl çalışır | what-is-esim
+lina esim nedir tam olarak? | what-is-esim
+esim ne acaba | what-is-esim
+bir sorum var esim ne işe yarar lütfen | what-is-esim
+selam esim nasil calisir? | what-is-esim
+lina esim nasil calisir? | what-is-esim
+esim ne işe yarar acaba | what-is-esim
+selam esim ne | what-is-esim
+esim ne ise yarar acaba | what-is-esim
+lina esim ne demek lütfen | what-is-esim
+bir sorum var esim nasil calisir acaba | what-is-esim
+merhaba esim ne acaba | what-is-esim
+merhaba esim ne demek lutfen | what-is-esim
+esim ne işe yarar? | what-is-esim
+telefonum esim uyumlu mu | device-compatible
+telefonumda esim olur mu | device-compatible
+iphone esim olur mu | device-compatible
+iphone esim çalışır mı | device-compatible
+hangi telefonlar esim destekliyor | device-compatible
+samsung esim çalışır mı | device-compatible
+samsung esim olur mu | device-compatible
+telefonumda esim çalışır mı | device-compatible
+telefonum esim destekliyor mu | device-compatible
+merhaba samsung esim çalışır mı | device-compatible
+bir sorum var hangi telefonlar esim destekliyor acaba | device-compatible
+lina telefonum esim destekliyor mu | device-compatible
+iphone esim çalışır mı lütfen | device-compatible
+samsung esim calisir mi | device-compatible
+selam telefonum esim destekliyor mu | device-compatible
+lina iphone esim olur mu acaba | device-compatible
+merhaba samsung esim calisir mi | device-compatible
+selam iphone esim olur mu acaba | device-compatible
+bir sorum var samsung esim olur mu acaba | device-compatible
+esim nasıl kurulur | install-esim,install-iphone,install-android
+esim kurulumu | install-esim,install-iphone,install-android
+esim kurulumu nasıl | install-esim,install-iphone,install-android
+kurulum rehberi | install-esim,install-iphone,install-android
+kurulum adımları | install-esim,install-iphone,install-android
+esim nasıl yüklenir | install-esim,install-iphone,install-android
+qr kodu nasıl okuturum | install-esim,install-iphone,install-android
+esim yükleme | install-esim,install-iphone,install-android
+qr kodu nasıl yüklerim | install-esim,install-iphone,install-android
+esim yükleme nasıl | install-esim,install-iphone,install-android
+esim nasıl kurarım | install-esim,install-iphone,install-android
+esim yükleme lütfen | install-esim,install-iphone,install-android
+selam esim nasıl kurulur lütfen | install-esim,install-iphone,install-android
+kurulum adimlari | install-esim,install-iphone,install-android
+esim kurulumu acaba | install-esim,install-iphone,install-android
+bir sorum var esim nasıl kurulur acaba | install-esim,install-iphone,install-android
+kurulum rehberi lütfen | install-esim,install-iphone,install-android
+esim yükleme? | install-esim,install-iphone,install-android
+esim nasil kurulur lutfen | install-esim,install-iphone,install-android
+paket ne zaman aktif olur | when-activate,buy-when,line-on
+paket ne zaman başlar | when-activate,buy-when,line-on
+günler ne zaman başlıyor | when-activate,buy-when,line-on
+günler ne zaman sayılmaya başlar | when-activate,buy-when,line-on
+esim ne zaman aktif olur | when-activate,buy-when,line-on
+merhaba paket ne zaman aktif olur | when-activate,buy-when,line-on
+selam günler ne zaman sayılmaya başlar acaba | when-activate,buy-when,line-on
+merhaba esim ne zaman aktif olur acaba | when-activate,buy-when,line-on
+merhaba paket ne zaman baslar | when-activate,buy-when,line-on
+bir sorum var esim ne zaman aktif olur acaba | when-activate,buy-when,line-on
+esim ne zaman aktif olur? | when-activate,buy-when,line-on
+bir sorum var gunler ne zaman basliyor? | when-activate,buy-when,line-on
+merhaba gunler ne zaman basliyor acaba | when-activate,buy-when,line-on
+esim ne zaman aktif olur acaba | when-activate,buy-when,line-on
+günler ne zaman sayılmaya başlar lütfen | when-activate,buy-when,line-on
+bir sorum var esim ne zaman aktif olur | when-activate,buy-when,line-on
+lina paket ne zaman aktif olur | when-activate,buy-when,line-on
+günler ne zaman sayılmaya başlar? | when-activate,buy-when,line-on
+merhaba gunler ne zaman sayilmaya baslar? | when-activate,buy-when,line-on
+kaç gb lazım tatil için | which-package
+kaç gb gerekir tatil için | which-package
+kaç giga gerekir bir hafta için | which-package
+kaç giga lazım bir hafta için | which-package
+bana hangi paket uygun | which-package
+kaç gb gerekir | which-package
+kaç giga gerekir tatil için | which-package
+kaç giga lazım tatil için | which-package
+kaç giga lazım | which-package
+hangi paketi seçmeliyim | which-package
+kaç gb gerekir bir hafta için | which-package
+kaç gb lazım bir hafta için | which-package
+kaç gb lazım | which-package
+hangi paketi almalıyım | which-package
+kaç giga gerekir | which-package
+bir sorum var hangi paketi almaliyim acaba | which-package
+bir sorum var kaç gb lazım bir hafta için lütfen | which-package
+bir sorum var kaç gb gerekir bir hafta için | which-package
+selam kaç gb lazım tatil için acaba | which-package
+numara veriliyor mu | calls,phone-number
+arama dahil mi | calls,phone-number
+telefon numarası veriliyor mu | calls,phone-number
+arama var mı | calls,phone-number
+esim ile konuşabilir miyim | calls,phone-number
+sms dahil mi | calls,phone-number
+esim ile arama yapabilir miyim | calls,phone-number
+sms var mı | calls,phone-number
+lina esim ile arama yapabilir miyim acaba | calls,phone-number
+merhaba arama dahil mi acaba | calls,phone-number
+bir sorum var sms var mi | calls,phone-number
+esim ile konusabilir miyim acaba | calls,phone-number
+lina sms dahil mi | calls,phone-number
+bir sorum var numara veriliyor mu? | calls,phone-number
+sms var mı? | calls,phone-number
+selam sms var mı | calls,phone-number
+sms dahil mi acaba | calls,phone-number
+esim ile konusabilir miyim? | calls,phone-number
+sms dahil mi lütfen | calls,phone-number
+kendi numaram değişir mi | keep-number
+numaram değişir mi | keep-number
+kendi numaram kalır mı | keep-number
+numaram kalır mı | keep-number
+whatsapp numaram kalır mı | keep-number
+whatsapp numaram değişir mi | keep-number
+normal sim kartıma ne olur | keep-number
+kendi hattım çalışır mı | keep-number
+kendi hattım açık kalır mı | keep-number
+numaram değişir mi lütfen | keep-number
+bir sorum var kendi numaram değişir mi? | keep-number
+merhaba kendi hattım çalışır mı? | keep-number
+kendi hattım çalışır mı? | keep-number
+merhaba kendi numaram değişir mi acaba | keep-number
+kendi numaram degisir mi | keep-number
+lina numaram değişir mi? | keep-number
+whatsapp numaram degisir mi acaba | keep-number
+selam kendi hattım çalışır mı acaba | keep-number
+hotspot çalışır mı | hotspot,hotspot-setup
+internet paylaşımı var mı | hotspot,hotspot-setup
+hotspot olur mu | hotspot,hotspot-setup
+internet paylaşımı yapılır mı | hotspot,hotspot-setup
+hotspot yapabilir miyim | hotspot,hotspot-setup
+bir sorum var hotspot yapabilir miyim? | hotspot,hotspot-setup
+selam hotspot olur mu lütfen | hotspot,hotspot-setup
+internet paylasimi var mi acaba | hotspot,hotspot-setup
+merhaba internet paylasimi yapilir mi? | hotspot,hotspot-setup
+hotspot çalışır mı acaba | hotspot,hotspot-setup
+internet paylaşımı var mı lütfen | hotspot,hotspot-setup
+merhaba hotspot calisir mi | hotspot,hotspot-setup
+internet paylaşımı var mı acaba | hotspot,hotspot-setup
+hotspot yapabilir miyim? | hotspot,hotspot-setup
+selam hotspot çalışır mı | hotspot,hotspot-setup
+selam hotspot yapabilir miyim lütfen | hotspot,hotspot-setup
+lina hotspot calisir mi | hotspot,hotspot-setup
+bir sorum var internet paylaşımı var mı lütfen | hotspot,hotspot-setup
+yükleme yapabilir miyim | topup
+ek gb alabilir miyim | topup
+internet nasıl yüklerim | topup
+ek paket alabilir miyim | topup
+paketime ilave gb almak | topup
+yükleme alabilir miyim | topup
+paketime ilave internet almak | topup
+ek paket yapabilir miyim | topup
+data nasıl yüklerim | topup
+paketime ek internet almak | topup
+paketime ek gb almak | topup
+veri nasıl yüklerim | topup
+ek gb yapabilir miyim | topup
+selam internet nasıl yüklerim acaba | topup
+ek paket alabilir miyim acaba | topup
+lina yukleme alabilir miyim acaba | topup
+merhaba paketime ilave gb almak lutfen | topup
+merhaba ek gb yapabilir miyim | topup
+iade nasıl yapılır | refund,refund-how
+siparişimi iptal etmek istiyorum | refund,refund-how
+iptal edebilir miyim | refund,refund-how
+paramı nasıl geri alırım | refund,refund-how
+satın almayı iptal etmek istiyorum | refund,refund-how
+iptal nasıl yapılır | refund,refund-how
+iade edebilir miyim | refund,refund-how
+merhaba iade edebilir miyim acaba | refund,refund-how
+lina paramı nasıl geri alırım lütfen | refund,refund-how
+selam parami nasil geri alirim acaba | refund,refund-how
+iade nasil yapilir acaba | refund,refund-how
+bir sorum var iptal nasil yapilir? | refund,refund-how
+lina parami nasil geri alirim? | refund,refund-how
+iptal nasıl yapılır? | refund,refund-how
+iptal edebilir miyim acaba | refund,refund-how
+iade nasıl yapılır acaba | refund,refund-how
+lina iade edebilir miyim? | refund,refund-how
+merhaba iade nasıl yapılır acaba | refund,refund-how
+paypal ile ödeyebilir miyim | payment
+hangi ödeme seçenekleri var | payment
+hangi ödeme yöntemleri var | payment
+paypal ile ödeme | payment
+apple pay ile ödeyebilir miyim | payment
+kredi kartı ile ödeme | payment
+nasıl ödeme yapabilirim | payment
+apple pay ile ödeme | payment
+kredi kartı ile ödeyebilir miyim | payment
+merhaba kredi karti ile odeme | payment
+lina paypal ile ödeyebilir miyim acaba | payment
+paypal ile ödeme? | payment
+selam kredi kartı ile ödeme | payment
+merhaba paypal ile ödeyebilir miyim acaba | payment
+lina nasıl ödeme yapabilirim? | payment
+selam hangi ödeme yöntemleri var acaba | payment
+hangi odeme yontemleri var | payment
+bir sorum var kredi kartı ile ödeyebilir miyim | payment
+teslimat ne kadar sürer | delivery
+qr kod ne zaman gelir | delivery
+esim ne zaman gelir | delivery
+esim ne zaman elime geçer | delivery
+bir sorum var qr kod ne zaman gelir lütfen | delivery
+esim ne zaman gelir lütfen | delivery
+selam qr kod ne zaman gelir | delivery
+selam qr kod ne zaman gelir lütfen | delivery
+selam teslimat ne kadar surer lutfen | delivery
+bir sorum var teslimat ne kadar sürer acaba | delivery
+bir sorum var qr kod ne zaman gelir? | delivery
+teslimat ne kadar sürer lütfen | delivery
+selam esim ne zaman gelir? | delivery
+merhaba teslimat ne kadar sürer lütfen | delivery
+esim ne zaman elime geçer? | delivery
+selam esim ne zaman elime geçer | delivery
+bir sorum var esim ne zaman elime geçer lütfen | delivery
+lina esim ne zaman elime geçer | delivery
+müşteri hizmetleri ile görüşmek | contact
+müşteri hizmetleri ile iletişim | contact
+size nasıl ulaşırım | contact
+bir insanla konuşmak istiyorum | contact
+size nasıl ulaşabilirim | contact
+canlı destek var mı | contact
+telefon numaranız var mı | contact
+bir temsilciyle konuşmak istiyorum | contact
+destek ile iletişim | contact
+destek ile görüşmek | contact
+lina destek ile iletisim acaba | contact
+bir temsilciyle konuşmak istiyorum lütfen | contact
+bir temsilciyle konusmak istiyorum acaba | contact
+size nasil ulasirim | contact
+telefon numaraniz var mi? | contact
+selam müşteri hizmetleri ile iletişim lütfen | contact
+lina size nasıl ulaşabilirim lütfen | contact
+bir sorum var canlı destek var mı | contact
+internet yok esim ile | no-internet
+internet yok | no-internet
+internet yok yurt dışında | no-internet
+internet çalışmıyor esim ile | no-internet
+internet çalışmıyor yurt dışında | no-internet
+neden internetim yok | no-internet
+esim kurulu ama internet yok | no-internet
+esim aktif ama internet yok | no-internet
+internet çalışmıyor | no-internet
+lina internet yok yurt dışında | no-internet
+lina esim kurulu ama internet yok acaba | no-internet
+selam internet calismiyor esim ile acaba | no-internet
+internet çalışmıyor esim ile? | no-internet
+internet yok lutfen | no-internet
+esim aktif ama internet yok acaba | no-internet
+merhaba esim kurulu ama internet yok | no-internet
+lina esim aktif ama internet yok lutfen | no-internet
+lina internet yok acaba | no-internet
+kalan günleri nasıl kontrol ederim | check-usage
+kullanımımı nasıl kontrol ederim | check-usage
+ne kadar gb kaldı | check-usage
+kalan internet nerede görünür | check-usage
+ne kadar veri kaldı | check-usage
+kalan veri nerede görünür | check-usage
+ne kadar internetim kaldı | check-usage
+kalan gb nerede görünür | check-usage
+merhaba kalan gb nerede gorunur acaba | check-usage
+ne kadar gb kaldi? | check-usage
+merhaba ne kadar internetim kaldi? | check-usage
+kalan veri nerede görünür lütfen | check-usage
+lina ne kadar gb kaldı? | check-usage
+kalan günleri nasıl kontrol ederim acaba | check-usage
+selam kullanımımı nasıl kontrol ederim | check-usage
+merhaba kalan günleri nasıl kontrol ederim | check-usage
+bir sorum var kalan gb nerede görünür | check-usage
+lina kalan gb nerede görünür lütfen | check-usage
+paket fiyatları nedir | prices
+esim fiyatı ne | prices
+esim ne kadar | prices
+esim kaç para | prices
+paket fiyatları ne kadar | prices
+paket fiyatları nedir lütfen | prices
+esim fiyatı ne? | prices
+merhaba esim kac para lutfen | prices
+esim ne kadar acaba | prices
+merhaba paket fiyatları ne kadar? | prices
+selam esim kaç para | prices
+esim ne kadar lütfen | prices
+bir sorum var paket fiyatları ne kadar | prices
+bir sorum var paket fiyatları ne kadar acaba | prices
+esim fiyati ne lutfen | prices
+selam esim ne kadar | prices
+selam paket fiyatları nedir lütfen | prices
+paket fiyatlari nedir | prices
+kupon kodu nereye | discount-code
+indirim kodu nasıl kullanılır | discount-code
+indirim kodu var mı | discount-code
+indirim kodunu nereye giririm | discount-code
+indirim kodu nereye | discount-code
+promosyon kodu nasıl kullanılır | discount-code
+promosyon kodu nereye | discount-code
+indirim kodunu nereye yazarım | discount-code
+kupon kodu nasıl kullanılır | discount-code
+bir sorum var kupon kodu nereye lütfen | discount-code
+lina promosyon kodu nasil kullanilir acaba | discount-code
+bir sorum var indirim kodu nasıl kullanılır lütfen | discount-code
+merhaba kupon kodu nereye? | discount-code
+lina kupon kodu nasıl kullanılır acaba | discount-code
+selam indirim kodu nereye? | discount-code
+kupon kodu nereye? | discount-code
+merhaba promosyon kodu nasıl kullanılır | discount-code
+kupon kodu nereye acaba | discount-code
+fatura var mı | invoice
+faturam nerede | invoice
+fatura alabilir miyim | invoice
+şirket için fatura | invoice
+bir sorum var şirket için fatura lütfen | invoice
+selam faturam nerede | invoice
+faturam nerede? | invoice
+fatura var mı? | invoice
+merhaba faturam nerede | invoice
+merhaba fatura alabilir miyim | invoice
+bir sorum var fatura var mı lütfen | invoice
+fatura alabilir miyim lutfen | invoice
+bir sorum var fatura alabilir miyim | invoice
+selam fatura alabilir miyim | invoice
+faturam nerede lutfen | invoice
+sirket icin fatura | invoice
+lina faturam nerede? | invoice
+şirket için fatura lütfen | invoice
+verilerimi silmek istiyorum | account-delete
+hesap kapatmak | account-delete
+hesap silmek | account-delete
+hesabımı nasıl silerim | account-delete
+bir sorum var verilerimi silmek istiyorum acaba | account-delete
+verilerimi silmek istiyorum? | account-delete
+lina hesap kapatmak | account-delete
+lina hesabimi nasil silerim lutfen | account-delete
+bir sorum var verilerimi silmek istiyorum | account-delete
+bir sorum var hesap kapatmak? | account-delete
+hesap silmek lutfen | account-delete
+selam hesap silmek acaba | account-delete
+selam hesabımı nasıl silerim lütfen | account-delete
+merhaba hesap silmek | account-delete
+lina hesap kapatmak? | account-delete
+hesap kapatmak lütfen | account-delete
+bir sorum var verilerimi silmek istiyorum lutfen | account-delete
+hesabımı nasıl silerim? | account-delete
+kuruluma hazır ne demek | order-status
+işleniyor ne demek | order-status
+ödeme bekleniyor ne demek | order-status
+siparişim hala işleniyor | order-status
+sipariş durumu ne anlama geliyor | order-status
+lina odeme bekleniyor ne demek | order-status
+merhaba kuruluma hazir ne demek acaba | order-status
+lina işleniyor ne demek lütfen | order-status
+siparisim hala isleniyor? | order-status
+işleniyor ne demek acaba | order-status
+selam kuruluma hazır ne demek | order-status
+ödeme bekleniyor ne demek? | order-status
+siparişim hala işleniyor acaba | order-status
+bir sorum var ödeme bekleniyor ne demek lütfen | order-status
+selam ödeme bekleniyor ne demek? | order-status
+selam kuruluma hazır ne demek lütfen | order-status
+merhaba siparis durumu ne anlama geliyor | order-status
+lina siparişim hala işleniyor acaba | order-status
+sınırsız nasıl çalışır | unlimited
+sınırsız paket var mı | unlimited
+sınırsız gerçekten sınırsız mı | unlimited
+lina sınırsız paket var mı lütfen | unlimited
+sinirsiz nasil calisir | unlimited
+sinirsiz paket var mi lutfen | unlimited
+lina sınırsız paket var mı | unlimited
+selam sınırsız gerçekten sınırsız mı acaba | unlimited
+sınırsız gerçekten sınırsız mı lütfen | unlimited
+lina sınırsız nasıl çalışır | unlimited
+lina sinirsiz gercekten sinirsiz mi acaba | unlimited
+merhaba sinirsiz gercekten sinirsiz mi? | unlimited
+sinirsiz gercekten sinirsiz mi | unlimited
+merhaba sınırsız gerçekten sınırsız mı | unlimited
+bir sorum var sinirsiz gercekten sinirsiz mi lutfen | unlimited
+sınırsız paket var mı? | unlimited
+selam sinirsiz nasil calisir acaba | unlimited
+selam sinirsiz paket var mi | unlimited
+whatsapp çalışır mı | whatsapp
+whatsapp kullanılır mı | whatsapp
+whatsapp ile arama yapabilir miyim | whatsapp
+merhaba whatsapp calisir mi? | whatsapp
+bir sorum var whatsapp çalışır mı | whatsapp
+bir sorum var whatsapp çalışır mı acaba | whatsapp
+whatsapp kullanılır mı? | whatsapp
+whatsapp kullanilir mi? | whatsapp
+merhaba whatsapp kullanılır mı | whatsapp
+whatsapp calisir mi lutfen | whatsapp
+whatsapp kullanılır mı acaba | whatsapp
+whatsapp çalışır mı acaba | whatsapp
+bir sorum var whatsapp kullanilir mi | whatsapp
+whatsapp çalışır mı? | whatsapp
+selam whatsapp ile arama yapabilir miyim | whatsapp
+selam whatsapp çalışır mı acaba | whatsapp
+whatsapp ile arama yapabilir miyim lütfen | whatsapp
+merhaba whatsapp çalışır mı? | whatsapp
+esimi başka telefona aktarabilir miyim | new-phone,deleted-esim
+telefon yeni telefon esim ne olacak | new-phone,deleted-esim
+esimi yanlışlıkla sildim ne yapmalıyım | new-phone,deleted-esim
+esimi sildim ne yapmalıyım | new-phone,deleted-esim
+esimi başka telefona taşıyabilir miyim | new-phone,deleted-esim
+telefon değiştirdim esim ne olacak | new-phone,deleted-esim
+lina esimi yanlislikla sildim ne yapmaliyim acaba | new-phone,deleted-esim
+bir sorum var esimi baska telefona aktarabilir miyim acaba | new-phone,deleted-esim
+selam telefon değiştirdim esim ne olacak acaba | new-phone,deleted-esim
+esimi baska telefona tasiyabilir miyim | new-phone,deleted-esim
+lina esimi sildim ne yapmalıyım acaba | new-phone,deleted-esim
+bir sorum var telefon değiştirdim esim ne olacak lütfen | new-phone,deleted-esim
+selam telefon değiştirdim esim ne olacak? | new-phone,deleted-esim
+esimi sildim ne yapmaliyim | new-phone,deleted-esim
+selam telefon yeni telefon esim ne olacak | new-phone,deleted-esim
+bir sorum var esimi baska telefona aktarabilir miyim | new-phone,deleted-esim
+selam telefon yeni telefon esim ne olacak? | new-phone,deleted-esim
+esimi başka telefona taşıyabilir miyim? | new-phone,deleted-esim
+annem için esim almak | gift
+ailem için esim alabilir miyim | gift
+esim hediye etmek | gift
+başkası için esim alabilir miyim | gift
+ailem için esim almak | gift
+annem için esim alabilir miyim | gift
+esim hediye edebilir miyim | gift
+başkası için esim almak | gift
+selam ailem icin esim alabilir miyim | gift
+selam annem için esim almak | gift
+lina başkası için esim almak | gift
+esim hediye etmek? | gift
+bir sorum var esim hediye etmek acaba | gift
+lina ailem icin esim alabilir miyim lutfen | gift
+merhaba baskasi icin esim alabilir miyim | gift
+lina esim hediye edebilir miyim | gift
+merhaba baskasi icin esim alabilir miyim? | gift
+ailem icin esim alabilir miyim lutfen | gift
+site güvenilir mi | safe
+passport io güvenilir mi | safe
+passport io güvenli mi | safe
+dolandırıcılık mı | safe
+site güvenli mi | safe
+merhaba site guvenli mi | safe
+bir sorum var passport io güvenilir mi lütfen | safe
+lina site güvenilir mi? | safe
+dolandırıcılık mı acaba | safe
+selam passport io guvenilir mi? | safe
+selam passport io güvenli mi? | safe
+merhaba passport io güvenilir mi | safe
+selam passport io güvenli mi | safe
+passport io güvenilir mi lütfen | safe
+selam dolandiricilik mi | safe
+lina site guvenli mi | safe
+merhaba site guvenli mi? | safe
+selam site guvenli mi lutfen | safe
+fiyatları tl olarak görmek | currency
+para birimini nasıl değiştiririm | currency
+fiyatları dolar olarak görmek | currency
+para birimini değiştirebilir miyim | currency
+fiyatları euro olarak görmek | currency
+fiyatlari tl olarak gormek lutfen | currency
+merhaba para birimini nasil degistiririm | currency
+selam para birimini nasil degistiririm lutfen | currency
+para birimini nasıl değiştiririm acaba | currency
+bir sorum var fiyatları tl olarak görmek acaba | currency
+merhaba para birimini nasıl değiştiririm? | currency
+para birimini degistirebilir miyim | currency
+fiyatlari euro olarak gormek? | currency
+fiyatları euro olarak görmek lütfen | currency
+bir sorum var para birimini değiştirebilir miyim | currency
+fiyatları tl olarak görmek acaba | currency
+para birimini nasil degistiririm acaba | currency
+lina fiyatları tl olarak görmek? | currency
+lounge'da ne var | lounge-what
+lounge nedir | lounge-what
+lounge nedir acaba | lounge-what
+merhaba lounge'da ne var | lounge-what
+selam lounge nedir lutfen | lounge-what
+bir sorum var lounge'da ne var | lounge-what
+merhaba lounge nedir acaba | lounge-what
+bir sorum var lounge'da ne var acaba | lounge-what
+lounge'da ne var lütfen | lounge-what
+selam lounge nedir? | lounge-what
+selam lounge nedir acaba | lounge-what
+bir sorum var lounge nedir? | lounge-what
+bir sorum var lounge'da ne var? | lounge-what
+lounge'da ne var? | lounge-what
+lounge nedir? | lounge-what
+bir sorum var lounge nedir | lounge-what
+lounge nedir lütfen | lounge-what
+selam lounge'da ne var? | lounge-what
+fast track nedir | fasttrack-how
+fast track nasıl çalışır | fasttrack-how
+bir sorum var fast track nedir lutfen | fasttrack-how
+bir sorum var fast track nasıl çalışır | fasttrack-how
+merhaba fast track nasıl çalışır acaba | fasttrack-how
+fast track nedir lütfen | fasttrack-how
+bir sorum var fast track nasıl çalışır lütfen | fasttrack-how
+lina fast track nasıl çalışır | fasttrack-how
+merhaba fast track nasil calisir acaba | fasttrack-how
+selam fast track nedir acaba | fasttrack-how
+lina fast track nedir | fasttrack-how
+fast track nedir lutfen | fasttrack-how
+fast track nedir acaba | fasttrack-how
+merhaba fast track nedir | fasttrack-how
+bir sorum var fast track nedir? | fasttrack-how
+fast track nedir? | fasttrack-how
+fast track nasil calisir lutfen | fasttrack-how
+merhaba fast track nasıl çalışır | fasttrack-how
+iki paket aynı telefonda | multiple-esims
+birden fazla esim olur mu | multiple-esims
+birden fazla esim kurabilir miyim | multiple-esims
+merhaba birden fazla esim olur mu acaba | multiple-esims
+birden fazla esim kurabilir miyim? | multiple-esims
+lina birden fazla esim kurabilir miyim | multiple-esims
+merhaba iki paket aynı telefonda lütfen | multiple-esims
+lina iki paket aynı telefonda? | multiple-esims
+birden fazla esim olur mu acaba | multiple-esims
+lina birden fazla esim olur mu | multiple-esims
+bir sorum var iki paket aynı telefonda acaba | multiple-esims
+selam birden fazla esim kurabilir miyim acaba | multiple-esims
+lina birden fazla esim olur mu acaba | multiple-esims
+bir sorum var birden fazla esim kurabilir miyim? | multiple-esims
+iki paket aynı telefonda acaba | multiple-esims
+merhaba birden fazla esim kurabilir miyim? | multiple-esims
+selam iki paket aynı telefonda lütfen | multiple-esims
+bir sorum var iki paket aynı telefonda | multiple-esims
+yolculuktan sonra esimi silmeli miyim | remove-after
+tatil bitince esimi kaldırmak | remove-after
+tatil bitince esimi silmem lazım mı | remove-after
+tatil bitince esimi silmem lazim mi lutfen | remove-after
+bir sorum var yolculuktan sonra esimi silmeli miyim | remove-after
+lina tatil bitince esimi kaldırmak? | remove-after
+merhaba tatil bitince esimi kaldırmak acaba | remove-after
+tatil bitince esimi kaldırmak? | remove-after
+selam yolculuktan sonra esimi silmeli miyim | remove-after
+tatil bitince esimi kaldırmak acaba | remove-after
+selam tatil bitince esimi silmem lazim mi | remove-after
+selam tatil bitince esimi silmem lazım mı acaba | remove-after
+tatil bitince esimi silmem lazim mi | remove-after
+yolculuktan sonra esimi silmeli miyim lutfen | remove-after
+lina yolculuktan sonra esimi silmeli miyim | remove-after
+merhaba tatil bitince esimi kaldırmak? | remove-after
+bir sorum var tatil bitince esimi silmem lazım mı | remove-after
+tatil bitince esimi silmem lazım mı? | remove-after
+süresi doldu ne yapmalıyım | expired
+internetim bitti ne yapmalıyım | expired
+paketim bitti ne yapmalıyım | expired
+veri bitti ne olacak | expired
+merhaba internetim bitti ne yapmaliyim acaba | expired
+lina paketim bitti ne yapmalıyım | expired
+lina internetim bitti ne yapmalıyım | expired
+merhaba veri bitti ne olacak acaba | expired
+lina internetim bitti ne yapmalıyım? | expired
+veri bitti ne olacak acaba | expired
+lina suresi doldu ne yapmaliyim | expired
+selam süresi doldu ne yapmalıyım | expired
+lina süresi doldu ne yapmalıyım lütfen | expired
+bir sorum var paketim bitti ne yapmalıyım | expired
+merhaba suresi doldu ne yapmaliyim lutfen | expired
+selam internetim bitti ne yapmalıyım acaba | expired
+internetim bitti ne yapmaliyim | expired
+lina veri bitti ne olacak | expired
+qr kod bulamıyorum | no-email,my-esims
+qr kod almadım | no-email,my-esims
+qr kod gelmedi | no-email,my-esims
+qr kodum nerede | no-email,my-esims
+qr kod gelmedi? | no-email,my-esims
+lina qr kod almadim | no-email,my-esims
+qr kod almadım? | no-email,my-esims
+qr kod almadim lutfen | no-email,my-esims
+merhaba qr kod almadim | no-email,my-esims
+qr kodum nerede acaba | no-email,my-esims
+qr kod bulamiyorum acaba | no-email,my-esims
+lina qr kodum nerede? | no-email,my-esims
+qr kod gelmedi acaba | no-email,my-esims
+bir sorum var qr kod almadım lütfen | no-email,my-esims
+qr kod almadım acaba | no-email,my-esims
+selam qr kod almadim | no-email,my-esims
+lina qr kod bulamıyorum acaba | no-email,my-esims
+bir sorum var qr kod almadım | no-email,my-esims
+fas için esim var mı | coverage-countries
+amerika için esim var mı | coverage-countries
+japonya için esim var mı | coverage-countries
+tayland için esim var mı | coverage-countries
+hangi ülkelerde geçerli | coverage-countries
+hangi ülkelerde çalışıyor | coverage-countries
+lina japonya için esim var mı | coverage-countries
+lina amerika için esim var mı? | coverage-countries
+selam hangi ülkelerde çalışıyor acaba | coverage-countries
+tayland icin esim var mi | coverage-countries
+amerika icin esim var mi? | coverage-countries
+bir sorum var hangi ülkelerde geçerli | coverage-countries
+lina amerika için esim var mı lütfen | coverage-countries
+bir sorum var hangi ülkelerde çalışıyor | coverage-countries
+bir sorum var amerika icin esim var mi | coverage-countries
+merhaba amerika icin esim var mi | coverage-countries
+hangi ulkelerde gecerli | coverage-countries
+selam japonya icin esim var mi lutfen | coverage-countries
