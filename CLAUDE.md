@@ -15,9 +15,11 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 ## Aufbau
 - Statische Seite: `index/install/blog/account/page.html`, `js/app.js` (rendert alles), `js/account.js`, `css/styles.css`.
 - Inhalte: `content/*.json` je `{tr,en,…}`; Fremdsprachen werden über `id`/`code` bzw. Index gemischt. Blog: `content/posts/*.json` → `tools/build-blog.js` erzeugt `blog.json` beim Deploy (draft=true wird ausgelassen).
-- Supabase-Funktionen (`supabase/functions`): `prices` (Katalog+Preisregel, `?item=` Details, `?currency=`), `account` (Bestellung, Rabattcode, Erstattung, Support), `admin` (Panel-API inkl. GitHub-Inhalte), `questions` (Lina-Fragen, Support, Newsletter), `cms-auth` (alt, ungenutzt).
+- Supabase-Funktionen (`supabase/functions`): `prices` (Katalog+Preisregel, `?item=` Details, `?currency=`), `account` (Bestellung, Rabattcode, Erstattung, Support), `admin` (Panel-API inkl. GitHub-Inhalte), `questions` (Lina-Fragen, Support, Newsletter), `lina` (KI, optional).
 - Shared: `_shared/esim-provider.ts` (eSIM Access = Datenvolumen, eSIM Go = Unlimited Stufe essential), `pricing.ts`, `assortment.ts`.
 - Panel: `admin/panel.html|js|css` + `admin/panel-editor.js` (Shopify-artiger Editor, Felder aus `admin/config.yml`, Speichern über Admin-Funktion → GitHub).
+
+- **Keine Fremd-CDNs:** Schriften (`fonts/`, `css/fonts*.css`), Bibliotheken (`vendor/js`, Liste in `vendor/LICENSES.md`), Weltkarte (`vendor/data`) und Flaggen (`img/flags/1x1|4x3`, flag-icons) liegen im Repo. CSP-Meta in jeder HTML-Seite erlaubt nur `'self'`, Supabase und (Platzhalter-)Bilder von Unsplash. Neue externe Quellen nur mit CSP- und Datenschutz-Anpassung.
 
 ## Lina (Assistent)
 - 77 FAQs in `content/assistant.json`, alle 7 Sprachen; Kategorie `probleme` = Sorun giderme. Schritt-für-Schritt je Handy (iPhone/Samsung/Pixel/Xiaomi): data-roaming, data-line, network-select, line-on, install-iphone, install-android, reset-network, hotspot-setup.

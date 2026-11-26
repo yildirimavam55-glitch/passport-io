@@ -19,7 +19,7 @@
 
   /* ---------- Schema aus admin/config.yml ---------- */
   async function loadSchema() {
-    if (!window.jsyaml) await loadScript("https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js");
+    if (!window.jsyaml) await loadScript("../vendor/js/js-yaml.min.js");
     const cfg = window.jsyaml.load(await fetch("config.yml", { cache: "no-cache" }).then((r) => r.text()));
     files = [];
     for (const col of cfg.collections || []) {
@@ -353,7 +353,7 @@
   }
   async function upload(path) {
     if (state.readonly) { ctx.toast("Yükleme için GITHUB_CONTENT_TOKEN gerekli."); return; }
-    const inp = document.createElement("input"); inp.type = "file"; inp.accept = "image/png,image/jpeg,image/webp,image/avif,image/gif,image/svg+xml";
+    const inp = document.createElement("input"); inp.type = "file"; inp.accept = "image/png,image/jpeg,image/webp,image/avif,image/gif";
     inp.onchange = async () => {
       const file = inp.files[0]; if (!file) return;
       if (file.size > 3 * 1024 * 1024) { ctx.toast("Görsel en fazla 3 MB olabilir."); return; }

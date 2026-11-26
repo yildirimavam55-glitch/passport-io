@@ -29,9 +29,17 @@ window.PP_ACCOUNT = function (ctx) {
   // Fehler aus einer abgebrochenen Google/Apple-Anmeldung (…#error=…) verständlich anzeigen
   const oauthError = new URLSearchParams(location.hash.slice(1)).get("error_description") || params.get("error_description");
 
-  // Kauf aus dem Paket-Fenster: account.html?buy=country:jp&plan=jp-5gb-30d
-  const buy = params.get("buy") && params.get("plan") ? { item: params.get("buy"), plan: params.get("plan"), coupon: (params.get("coupon") || "").toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32) || undefined } : null;
-  if (buy) { try { sessionStorage.setItem("pp_buy", JSON.stringify(buy)); } catch (_) {} history.replaceState(null, "", location.pathname + location.hash); }
+  // Alte Kauf-Links (account.html?buy=…&plan=…) bestellen nicht mehr direkt – ein fremder Link könnte sonst
+  // nach der Anmeldung eine Bestellung auslösen. Sie legen das Paket nur in den Warenkorb und öffnen ihn.
+  if (params.get("buy") && params.get("plan")) {
+    try {
+      const c = JSON.parse(localStorage.getItem("pp_cart") || "[]");
+      if (Array.isArray(c) && c.length < 10) c.push({ item: String(params.get("buy")).slice(0, 60), plan: String(params.get("plan")).slice(0, 80), at: Date.now() });
+      localStorage.setItem("pp_cart", JSON.stringify(c));
+    } catch (_) {}
+    location.replace("index.html?cart=1");
+    return;
+  }
   // Kasse aus dem Warenkorb: account.html?cart=1 – Artikel und geprüfter Rabattcode liegen im Browser (app.js)
   const readLS = (k) => { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (_) { return null; } };
   if (params.has("cart")) {

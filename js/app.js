@@ -5,6 +5,9 @@
    ========================================================================== */
 (async () => {
   "use strict";
+  // Schutz vor Clickjacking: Die Seite darf nicht in fremden Rahmen (iframes) laufen.
+  // (GitHub Pages erlaubt keine eigenen Sicherheits-Header wie X-Frame-Options.)
+  if (window.top !== window.self) { try { window.top.location = window.self.location.href; } catch (_) { document.documentElement.innerHTML = ""; } return; }
 
   /* ---------------- Sprache & Inhalte laden ----------------
      Jede Datei in content/ enthält alle Sprachen: { "tr": {...}, "en": {...}, "de": {...} }.
@@ -60,7 +63,7 @@
     document.documentElement.dir = meta.dir || "ltr";
     if (meta.font) {
       // Schrift mit arabischen Zeichen nachladen (Schibsted Grotesk hat keine)
-      document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=${encodeURIComponent(meta.font)}:wght@400;500;600;700&display=swap">`);
+      document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="css/fonts-${String(meta.font).toLowerCase().replace(/[^a-z0-9]+/g, "-")}.css">`); // selbst gehostet
       document.documentElement.style.setProperty("--font", `"${meta.font}", "Schibsted Grotesk", system-ui, sans-serif`);
     }
     // Währung: ?cur=… › gespeicherte Wahl › Land des Geräts › Standard der Sprache
@@ -116,7 +119,7 @@
   const icon = (id) => `<svg><use href="#i-${id}"/></svg>`;
   /* Anker-Links (#esim) zeigen auf Unterseiten zurück zur Startseite */
   const href = (u = "") => (PAGE !== "home" && u.startsWith("#") ? "index.html" + u : u);
-  const flag = (code) => `https://flagcdn.com/w80/${code}.png`;
+  const flag = (code) => `img/flags/1x1/${String(code).toLowerCase().replace(/[^a-z-]/g, "")}.svg`; // selbst gehostet (flag-icons, MIT)
   /* Zahlungslogos (Simple Icons, monochrom) */
   const PAY = { applepay: "Apple Pay", googlepay: "Google Pay", klarna: "Klarna", paypal: "PayPal", visa: "Visa", mastercard: "Mastercard", americanexpress: "American Express" };
   // Logos liegen selbst gehostet in img/pay (kein Drittanbieter-CDN, keine IP-Weitergabe)
@@ -297,7 +300,7 @@
             ${c.showSearch ? searchForm("search--inline", c.searchPlaceholder) : ""}
           </div>
         </div>
-        <div class="rail" id="popular-rail" tabindex="0" aria-label="${esc(t("railLabel"))}">
+        <div class="rail" id="popular-rail" tabindex="0" role="region" aria-label="${esc(t("railLabel"))}">
           ${popular().map((d, i) => {
             const plans = plansOf("country:" + d.code);
             const pop = plans.length ? popularPlan(plans) : null;
@@ -346,11 +349,11 @@
 
   /* ---------- REGIONALE & GLOBALE PAKETE (Weltkarte) ---------- */
   const MAP_LIBS = [
-    "https://cdn.jsdelivr.net/npm/d3-array@3.2.4/dist/d3-array.min.js",
-    "https://cdn.jsdelivr.net/npm/d3-geo@3.1.1/dist/d3-geo.min.js",
-    "https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js",
+    "vendor/js/d3-array.min.js",
+    "vendor/js/d3-geo.min.js",
+    "vendor/js/topojson-client.min.js",
   ];
-  const MAP_DATA = "https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json";
+  const MAP_DATA = "vendor/data/countries-110m.json";
   const loadScript = (src) => new Promise((ok, fail) => { const s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = fail; document.head.appendChild(s); });
 
   sections.packages = {
@@ -494,7 +497,7 @@
             <h2 class="h2">${esc(c.title)}</h2>
             <p class="lead">${esc(c.text)}</p>
           </div>
-          <ol class="how2__track" data-steps>
+          <ol class="how2__track" data-steps tabindex="0">
             ${(c.steps || []).map((s, i) => `
               <li class="how2__card">
                 <div class="how2__visual">${stepScreen(i, s, c)}</div>
@@ -618,17 +621,17 @@
           <div class="reviews-bar__score">
             <span class="reviews-bar__num">${esc(c.score)}</span>
             <div>
-              <div class="tp-stars" aria-label="${esc(t("starsOf", { n: c.score }))}">${stars(c.score)}</div>
+              <div class="tp-stars" role="img" aria-label="${esc(t("starsOf", { n: c.score }))}">${stars(c.score)}</div>
               <p><b>${esc(c.label)}</b> · ${esc(t("reviewsOn", { count: c.count }))}${previewOn ? ` <span class="demo-tag">${esc(t("reviewsDemo"))}</span>` : ""}</p>
             </div>
           </div>
           <a href="${esc(c.linkUrl)}" class="link-arrow" target="_blank" rel="noopener">${esc(c.linkText)} ${icon("arrow-ur")}</a>
         </div>
-        <div class="marquee" aria-label="${esc(t("reviewsLabel"))}">
+        <div class="marquee" role="region" aria-label="${esc(t("reviewsLabel"))}">
           <div class="marquee__track">
             ${[0, 1].map((copy) => (REVIEWS.items || []).map((r) => `
               <article class="review" ${copy ? 'aria-hidden="true"' : ""}>
-                <div class="tp-stars tp-stars--sm" aria-label="${esc(t("starsOf", { n: r.stars }))}">${stars(r.stars)}</div>
+                <div class="tp-stars tp-stars--sm" role="img" aria-label="${esc(t("starsOf", { n: r.stars }))}">${stars(r.stars)}</div>
                 <h4>${esc(r.title)}</h4>
                 <p>${esc(r.text)}</p>
                 <span class="review__foot"><b>${esc(r.name)}</b> · ${esc(r.date)}</span>
@@ -831,8 +834,8 @@
       const cfg = AUTH?.url && AUTH?.anonKey ? { ...AUTH, accountUrl: AUTH.accountUrl || `${AUTH.url}/functions/v1/account` } : null;
       try {
         if (cfg) await Promise.all([
-          loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"),
-          loadScript("https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"),
+          loadScript("vendor/js/supabase.js"),
+          loadScript("vendor/js/qrcode.js"),
         ]);
         await loadScript(`js/account.js?v=${encodeURIComponent(document.querySelector('script[src*="app.js"]')?.src.split("v=")[1] || "1")}`);
         window.PP_ACCOUNT({ root: $("#account-root", el), A, ACC, esc, icon, flag, LANG, LOCALE, LANGS, CUR, ESIM, toast, cfg });
@@ -958,7 +961,7 @@
           </div>
           ${(c.platforms || []).map((p, pi) => `
             <div class="gcar" data-panel="${esc(p.id)}" ${pi === 0 ? "" : "hidden"} role="tabpanel">
-              <div class="gcar__track" tabindex="0" aria-label="${esc(p.label)}">
+              <div class="gcar__track" tabindex="0" role="region" aria-label="${esc(p.label)}">
                 ${(p.steps || []).map((st, i) => `<figure class="gcar__slide${i ? "" : " is-active"}" data-i="${i}">${phoneScreen(st.screen)}</figure>`).join("")}
               </div>
               <div class="gcar__nav">
@@ -1086,7 +1089,7 @@
   const SHOWN_CUR = PRICES?.currency || CUR;
   // Flagge je Sprache (languages.json → flag) und Münz-Symbol je Währung (→ icon, sonst Währungszeichen)
   const LANG_META = LANGS.languages.find((l) => l.code === LANG) || {};
-  const langFlag = (l) => (l.flag ? `<img class="lang__flag" src="https://flagcdn.com/w40/${esc(l.flag)}.png" srcset="https://flagcdn.com/w80/${esc(l.flag)}.png 2x" alt="" width="20" height="20">` : icon("globe"));
+  const langFlag = (l) => (l.flag ? `<img class="lang__flag" src="${flag(l.flag)}" alt="" width="20" height="20">` : icon("globe"));
   const coin = (code) => (LANGS.currencies || []).find((c) => c.code === code)?.icon || SYM(code);
   const curName = (c) => { try { const n = new Intl.DisplayNames([LOCALE], { type: "currency" }).of(c.code); return n ? n.charAt(0).toLocaleUpperCase(LOCALE) + n.slice(1) : c.name; } catch (_) { return c.name; } };
   const cleanUrl = (code) => { const q = new URLSearchParams(); if (POST) q.set("p", POST.id); if (code) q.set("lang", code); const s = q.toString(); return location.origin + location.pathname + (s ? "?" + s : ""); };
@@ -1110,7 +1113,7 @@
   const signedIn = (() => { try { return !!(sbRef && localStorage.getItem(`sb-${sbRef}-auth-token`)); } catch (_) { return false; } })();
   $("#nav").innerHTML = `
     <div class="nav__inner container">
-      <a href="index.html" class="logo" aria-label="${esc(t("home"))}"><svg class="logo__mark"><use href="#i-pass"/></svg>${brand}</a>
+      <a href="index.html" class="logo" aria-label="passport.io – ${esc(t("home"))}"><svg class="logo__mark"><use href="#i-pass"/></svg>${brand}</a>
       <nav class="nav__links" aria-label="${esc(t("mainNav"))}">
         ${(SITE.nav || []).map((n) => `<a href="${esc(href(n.url))}">${esc(n.label)}${n.badge ? ` <small>${esc(n.badge)}</small>` : ""}</a>`).join("")}
         <a href="account.html" class="nav__account">${esc(t(signedIn ? "myAccount" : "login"))}</a>
@@ -1121,7 +1124,7 @@
           <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20.4 14.6A8.5 8.5 0 0 1 9.4 3.6a8.5 8.5 0 1 0 11 11Z"/></svg>
         </button>
         <div class="lang">
-          <button class="nav__locale" type="button" aria-haspopup="true" aria-expanded="false" aria-label="${esc(t("language"))} / ${esc(t("currency"))}">${langFlag(LANG_META)}<span>${esc(LANG.toUpperCase())}</span><b class="coin coin--sm">${esc(coin(SHOWN_CUR))}</b></button>
+          <button class="nav__locale" type="button" aria-haspopup="true" aria-expanded="false" aria-label="${esc(LANG.toUpperCase())} ${esc(coin(SHOWN_CUR))} – ${esc(t("language"))} / ${esc(t("currency"))}">${langFlag(LANG_META)}<span>${esc(LANG.toUpperCase())}</span><b class="coin coin--sm">${esc(coin(SHOWN_CUR))}</b></button>
           <div class="lang__menu" hidden>
             <div class="lang__group">
               <p class="lang__title">${esc(t("language"))}</p>
@@ -1312,7 +1315,7 @@
         <div class="footer__brand"><a href="index.html" class="logo"><svg class="logo__mark"><use href="#i-pass"/></svg>${brand}</a><p>${esc(F.tagline)}</p></div>
         ${(F.columns || []).map((col) => `<div><h4>${esc(col.title)}</h4>${(col.links || []).map((l) => `<a href="${esc(href(l.url))}">${esc(l.label)}</a>`).join("")}</div>`).join("")}
       </div>
-      <div class="footer__pay" aria-label="${esc(t("payMethods"))}">${(F.payments || []).map(payLogo).join("")}</div>
+      <div class="footer__pay" role="group" aria-label="${esc(t("payMethods"))}">${(F.payments || []).map(payLogo).join("")}</div>
       <div class="footer__bottom"><span>${esc(F.copyright)}</span><nav>${(F.legal || []).map((l) => `<a href="${esc(href(l.url))}">${esc(l.label)}</a>`).join("")}</nav></div>
     </div>`;
 
@@ -1426,7 +1429,7 @@
       <div class="modal__panel modal__panel--plans" role="dialog" aria-modal="true" aria-label="${esc(t("plansAria", { name: item.name }))}">
         <button class="modal__close icon-btn" type="button" data-close-modal aria-label="${esc(t("close"))}">${icon("x")}</button>
         <div class="modal__hero">
-          ${item.image ? `<img src="${img(item.image, 1000, 340)}" alt="">` : item.code ? `<img class="modal__hero-flag" src="https://flagcdn.com/w640/${esc(item.code)}.png" alt="">` : ""}
+          ${item.image ? `<img src="${img(item.image, 1000, 340)}" alt="">` : item.code ? `<img class="modal__hero-flag" src="img/flags/4x3/${esc(String(item.code).toLowerCase())}.svg" alt="">` : ""}
           <h3>${item.code ? `<img class="dest__flag" src="${flag(item.code)}" alt="">` : ""}${esc(item.name)}</h3>
         </div>
         <p class="modal__lead">${item.countries ? esc(t("modalCountries", { n: item.countries })) : ""}${esc(t("modalLead"))}</p>

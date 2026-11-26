@@ -10,11 +10,15 @@
    - Ohne Secret ANTHROPIC_API_KEY antwortet die Funktion 503 und die Seite nutzt nur die Stichwortsuche.
    Secrets: ANTHROPIC_API_KEY (geheim, von Hand in Supabase eintragen), SITE_URL (setzt die Veröffentlichung)
    ========================================================================== */
+import { createClient } from "jsr:@supabase/supabase-js@2";
 import { cors, env, json } from "../_shared/http.ts";
 import { buildPrompt, readAnswer } from "../_shared/lina-prompt.js";
 
 const MODEL = env("LINA_MODEL") || "claude-haiku-5-5";
 const PER_IP = 15; // Fragen pro IP in 10 Minuten
+// Kostendeckel: höchstens so viele KI-Antworten pro Tag (alle Besucher zusammen), danach nur noch Stichwortsuche
+const DAILY_MAX = Number(env("LINA_DAILY_MAX")) || 6000;
+const db = env("SUPABASE_URL") && env("SUPABASE_SERVICE_ROLE_KEY") ? createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY")) : null;
 const hits = new Map<string, number[]>();
 let cache: { at: number; data: any } = { at: 0, data: null };
 
@@ -40,6 +44,7 @@ Deno.serve(async (req) => {
   const list = (hits.get(ip) ?? []).filter((t) => now - t < 10 * 60 * 1000);
   if (list.length >= PER_IP) return json({ error: "rate_limited" }, 429, headers);
   hits.set(ip, [...list, now]);
+  if (hits.size > 5000) hits.clear();
 
   try {
     const body = await req.json();
@@ -48,6 +53,10 @@ Deno.serve(async (req) => {
     const data = await content();
     const lang = typeof body.lang === "string" && data[body.lang] ? body.lang : "tr";
     const ids: string[] = (Array.isArray(body.ids) ? body.ids : []).map(String).slice(0, 8);
+    if (db) {
+      const { data: ok, error } = await db.rpc("bump_usage", { p_name: "lina_ai", p_max: DAILY_MAX });
+      if (!error && ok === false) return json({ error: "daily_limit" }, 503, headers);
+    }
     const { system, user, ids: known } = buildPrompt(data, lang, question, ids);
 
     const r = await fetch("https://api.anthropic.com/v1/messages", {

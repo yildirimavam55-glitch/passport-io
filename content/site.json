@@ -248,7 +248,7 @@
       "text": "Ayrıca seyahat ipuçları ve fırsatlar, ayda yaklaşık bir kez. İstediğin zaman abonelikten çıkabilirsin.",
       "placeholder": "E-posta adresin",
       "button": "Kodu al",
-      "success": "Teşekkürler! Lütfen az önce gönderdiğimiz e-postadaki bağlantıyla kaydını onayla."
+      "success": "Teşekkürler, kaydın alındı! Bültenimiz başladığında onay e-postasını ve indirim kodunu sana göndereceğiz."
     },
     "footer": {
       "tagline": "Seyahatin için her şey. Dijital, anında ve adil fiyatlarla.",
@@ -520,7 +520,7 @@
       "text": "Plus travel tips and deals, about once a month. Unsubscribe anytime.",
       "placeholder": "Your email address",
       "button": "Get my code",
-      "success": "Thank you! Please confirm your subscription in the email we just sent you."
+      "success": "Thanks, you’re on the list! We’ll email you a confirmation link and your discount code as soon as our newsletter starts."
     },
     "footer": {
       "tagline": "Everything for your trip. Digital, instant and fairly priced.",
@@ -765,7 +765,7 @@
       "text": "Plus Reisetipps und Angebote, etwa einmal im Monat. Abmeldung jederzeit.",
       "placeholder": "Deine E-Mail-Adresse",
       "button": "Code sichern",
-      "success": "Danke! Bitte bestätige deine Anmeldung in der E-Mail, die wir dir gerade geschickt haben."
+      "success": "Danke, du bist vorgemerkt! Sobald unser Newsletter startet, schicken wir dir einen Bestätigungslink und deinen Rabattcode per E-Mail."
     },
     "footer": {
       "tagline": "Alles für deine Reise. Digital, sofort und zu fairen Preisen.",
@@ -1010,7 +1010,7 @@
       "text": "إضافة إلى نصائح وعروض السفر، مرة شهريًا تقريبًا. يمكنك إلغاء الاشتراك في أي وقت.",
       "placeholder": "بريدك الإلكتروني",
       "button": "احصل على الرمز",
-      "success": "شكرًا! يُرجى تأكيد اشتراكك من خلال الرسالة التي أرسلناها إليك للتو."
+      "success": "شكرًا، تم تسجيلك! سنرسل إليك رابط التأكيد ورمز الخصم عبر البريد الإلكتروني فور انطلاق نشرتنا الإخبارية."
     },
     "footer": {
       "tagline": "كل ما تحتاجه لرحلتك. رقمي وفوري وبأسعار عادلة.",
@@ -1255,7 +1255,7 @@
       "text": "А также советы и предложения для путешественников – примерно раз в месяц. Отписаться можно в любой момент.",
       "placeholder": "Ваш e-mail",
       "button": "Получить код",
-      "success": "Спасибо! Подтвердите подписку в письме, которое мы только что отправили."
+      "success": "Спасибо, вы в списке! Как только запустится рассылка, мы пришлём ссылку для подтверждения и код скидки на e-mail."
     },
     "footer": {
       "tagline": "Всё для вашей поездки. Цифровое, мгновенное и по честной цене.",
@@ -1500,7 +1500,7 @@
       "text": "Plus des conseils et offres de voyage, environ une fois par mois. Désinscription à tout moment.",
       "placeholder": "Votre adresse e-mail",
       "button": "Obtenir mon code",
-      "success": "Merci ! Veuillez confirmer votre inscription dans l'e-mail que nous venons de vous envoyer."
+      "success": "Merci, tu es inscrit·e ! Dès le lancement de notre newsletter, nous t’enverrons un lien de confirmation et ton code de réduction par e-mail."
     },
     "footer": {
       "tagline": "Tout pour votre voyage. Numérique, instantané et au juste prix.",
@@ -1745,7 +1745,7 @@
       "text": "Además, consejos y ofertas de viaje, más o menos una vez al mes. Puedes darte de baja cuando quieras.",
       "placeholder": "Tu correo electrónico",
       "button": "Conseguir código",
-      "success": "¡Gracias! Confirma tu suscripción en el e-mail que acabamos de enviarte."
+      "success": "¡Gracias, ya estás en la lista! En cuanto empiece nuestro boletín te enviaremos un enlace de confirmación y tu código de descuento por e-mail."
     },
     "footer": {
       "tagline": "Todo para tu viaje. Digital, inmediato y a precios justos.",

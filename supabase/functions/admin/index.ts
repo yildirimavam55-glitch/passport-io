@@ -397,7 +397,8 @@ Deno.serve(async (req) => {
       if (b.action === "content_upload") {
         // Bild hochladen → img/uploads/<zeit>-<name>; nur Bilder bis 3 MB
         const name = txt(b.name, 80).toLowerCase().replace(/[^a-z0-9.-]+/g, "-").replace(/^-+|-+$/g, "");
-        const ext = (name.match(/\.(jpe?g|png|webp|avif|gif|svg)$/) || [])[1];
+        // Kein SVG: SVG-Dateien können Skripte enthalten und würden auf derselben Adresse wie der Shop ausgeliefert
+        const ext = (name.match(/\.(jpe?g|png|webp|avif|gif)$/) || [])[1];
         const data = String(b.data ?? "");
         if (!ext || !/^[A-Za-z0-9+/=]+$/.test(data) || data.length > 4_200_000) return json({ error: "invalid_image" }, 400, headers);
         const path = `img/uploads/${Date.now()}-${name}`;

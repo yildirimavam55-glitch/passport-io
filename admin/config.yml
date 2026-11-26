@@ -1,8 +1,7 @@
 # ==========================================================================
-# passport.io – Redaktionsoberfläche (Decap CMS)
-# Lokal testen:   node server.js   und   npx decap-server   ->  http://localhost:5173/admin/
-# Online: Anmeldung mit GitHub über die Supabase-Funktion cms-auth (siehe ANLEITUNG.md → „Start-Checkliste“).
-# Bearbeiten kann, wer im GitHub-Repository Schreibrechte hat. Jede Änderung wird automatisch veröffentlicht.
+# passport.io – Felder für den Mağaza editörü im Panel (admin/panel-editor.js)
+# Gespeichert wird über die Supabase-Funktion admin (nur ADMIN_EMAILS) → GitHub → automatische Veröffentlichung.
+# Der Block „backend“ stammt vom früheren Decap CMS und wird nicht mehr genutzt.
 # ==========================================================================
 
 backend:
@@ -10,7 +9,6 @@ backend:
   repo: yildirimavam55-glitch/passport-io
   branch: main
   base_url: https://sbzwibctxezprpefwxzn.supabase.co
-  auth_endpoint: functions/v1/cms-auth
   commit_messages:
     create: "Inhalt: {{collection}} „{{slug}}“ angelegt"
     update: "Inhalt: {{collection}} „{{slug}}“ geändert"

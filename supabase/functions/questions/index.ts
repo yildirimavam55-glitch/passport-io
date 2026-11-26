@@ -14,11 +14,17 @@ import { cors, env } from "../_shared/http.ts";
 
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
 const EMAIL = /^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,24}$/i;
+// Bremse gegen Massen-Einträge (pro Instanz): höchstens 20 Einsendungen je IP in 10 Minuten
+const hits = new Map<string, number[]>();
+const tooMany = (ip: string) => { const now = Date.now(); const a = (hits.get(ip) || []).filter((t) => now - t < 6e5); a.push(now); hits.set(ip, a); if (hits.size > 5000) hits.clear(); return a.length > 20; };
 
 Deno.serve(async (req) => {
   const headers = cors(req, "POST, OPTIONS");
   if (req.method === "OPTIONS") return new Response(null, { headers });
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405, headers });
+
+  const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "?";
+  if (tooMany(ip)) return new Response(JSON.stringify({ error: "rate_limited" }), { status: 429, headers });
 
   try {
     const body = await req.json();

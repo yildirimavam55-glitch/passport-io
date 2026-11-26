@@ -37,7 +37,7 @@ jobs:
           mkdir _site
           # Blog-Übersicht aus content/posts erzeugen, dazu sitemap.xml und robots.txt
           node tools/build-blog.js _site "${SITE_URL}"
-          cp -r index.html install.html blog.html account.html page.html 404.html css js content img admin api _site/
+          cp -r index.html install.html blog.html account.html page.html 404.html css js content img admin api fonts vendor _site/
           touch _site/.nojekyll
           # Versionsnummer anhängen, damit Besucher Änderungen sofort sehen
           V=$(echo "$GITHUB_SHA" | cut -c1-8)
@@ -96,7 +96,7 @@ jobs:
       - run: supabase functions deploy lina --no-verify-jwt --project-ref "$PROJECT_REF"
       # Konto: prüft die Anmeldung selbst (Token im Authorization-Header)
       - run: supabase functions deploy account --no-verify-jwt --project-ref "$PROJECT_REF"
-      # Admin-Anmeldung (GitHub) für /admin
-      - run: supabase functions deploy cms-auth --no-verify-jwt --project-ref "$PROJECT_REF"
+      # Alte Admin-Anmeldung (Decap/GitHub) wird nicht mehr gebraucht – vorhandene Funktion entfernen
+      - run: supabase functions delete cms-auth --project-ref "$PROJECT_REF" || true
       # Shop-Verwaltung (/admin/panel.html) – Zugriff nur für ADMIN_EMAILS
       - run: supabase functions deploy admin --no-verify-jwt --project-ref "$PROJECT_REF"

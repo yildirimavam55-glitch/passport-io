@@ -58,7 +58,7 @@ async function applyCoupon(raw: string, price: number, currency: string): Promis
 
 // Einfache Bremse gegen Durchprobieren von Codes (pro Instanz): 20 Prüfungen je IP in 10 Minuten
 const checks = new Map<string, number[]>();
-const tooMany = (ip: string) => { const now = Date.now(); const a = (checks.get(ip) || []).filter((x) => now - x < 6e5); a.push(now); checks.set(ip, a); return a.length > 20; };
+const tooMany = (ip: string) => { const now = Date.now(); const a = (checks.get(ip) || []).filter((x) => now - x < 6e5); a.push(now); checks.set(ip, a); if (checks.size > 5000) checks.clear(); return a.length > 20; };
 
 /** Status und Restlaufzeit berechnen */
 function view(e: Record<string, unknown>) {
