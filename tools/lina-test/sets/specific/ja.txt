@@ -1,0 +1,715 @@
+## Spezifische Kundenfragen (ja) – aus Vorlagen erzeugt (simple-src/gen_specific.py), 714 Fragen
+iPhoneでデータローミングをオンにする方法 | data-roaming
+eSIMのためにローミングをオンにする必要はありますか | data-roaming
+アメリカでローミングをオンにする必要はありますか | data-roaming
+ギリシャでローミングをオンにする必要はありますか | data-roaming
+トルコでローミングをオンにする必要はありますか | data-roaming
+ドバイでローミングをオンにする必要はありますか | data-roaming
+タイでローミングをオンにする必要はありますか | data-roaming
+iPhone 15でデータローミングをオンにする方法 | data-roaming
+スペインでローミングをオンにする必要はありますか | data-roaming
+エジプトでローミングをオンにする必要はありますか | data-roaming
+Xiaomiでデータローミングをオンにする方法 | data-roaming
+Xperiaでデータローミングをオンにする方法 | data-roaming
+イタリアでローミングをオンにする必要はありますか | data-roaming
+Galaxyでデータローミングをオンにする方法 | data-roaming
+Pixel 8でデータローミングをオンにする方法 | data-roaming
+AQUOSでデータローミングをオンにする方法 | data-roaming
+Xperiaでデータローミングをオンにする方法？ | data-roaming
+iPhoneがまだ元のSIMでネットを使っている | data-line,line-on
+Galaxyがまだ元のSIMでネットを使っている | data-line,line-on
+AQUOSでeSIMをモバイルデータに設定する方法 | data-line,line-on
+Pixel 8でeSIMをモバイルデータに設定する方法 | data-line,line-on
+iPhoneでeSIMをモバイルデータに設定する方法 | data-line,line-on
+AQUOSがまだ元のSIMでネットを使っている | data-line,line-on
+XperiaでeSIMをモバイルデータに設定する方法 | data-line,line-on
+iPhone 15がまだ元のSIMでネットを使っている | data-line,line-on
+XiaomiでeSIMをモバイルデータに設定する方法 | data-line,line-on
+GalaxyでeSIMをモバイルデータに設定する方法 | data-line,line-on
+iPhone 15でeSIMをモバイルデータに設定する方法 | data-line,line-on
+Pixel 8がまだ元のSIMでネットを使っている | data-line,line-on
+Xperiaがまだ元のSIMでネットを使っている | data-line,line-on
+Xiaomiがまだ元のSIMでネットを使っている | data-line,line-on
+XiaomiでeSIMをモバイルデータに設定する方法？ | data-line,line-on
+AQUOSがまだ元のSIMでネットを使っている。 | data-line,line-on
+すみません、Galaxyがまだ元のSIMでネットを使っている | data-line,line-on
+トルコで圏外なので事業者を変えたい | network-select
+イタリアで圏外なので事業者を変えたい | network-select
+イタリアで違うネットワークなので事業者を変えたい | network-select
+AQUOSでネットワークを手動で選ぶ方法 | network-select
+iPhoneでネットワークを手動で選ぶ方法 | network-select
+タイで圏外なので事業者を変えたい | network-select
+タイで違うネットワークなので事業者を変えたい | network-select
+トルコで違うネットワークなので事業者を変えたい | network-select
+スペインで圏外なので事業者を変えたい | network-select
+エジプトで圏外なので事業者を変えたい | network-select
+Pixel 8でネットワークを手動で選ぶ方法 | network-select
+ギリシャで圏外なので事業者を変えたい | network-select
+ドバイで違うネットワークなので事業者を変えたい | network-select
+iPhone 15でネットワークを手動で選ぶ方法 | network-select
+スペインで違うネットワークなので事業者を変えたい | network-select
+Xiaomiでネットワークを手動で選ぶ方法 | network-select
+エジプトで違うネットワークなので事業者を変えたい | network-select
+イタリアのAPNは何ですか | apn
+AQUOSのAPN設定 | apn
+GalaxyのAPN設定 | apn
+ドバイのAPNは何ですか | apn
+スペインのAPNは何ですか | apn
+XperiaのAPN設定 | apn
+タイのAPNは何ですか | apn
+エジプトのAPNは何ですか | apn
+XiaomiのAPN設定 | apn
+Pixel 8のAPN設定 | apn
+ギリシャのAPNは何ですか | apn
+トルコのAPNは何ですか | apn
+eSIMのAPNは何ですか | apn
+アメリカのAPNは何ですか | apn
+iPhoneのAPN設定 | apn
+iPhone 15のAPN設定 | apn
+AQUOSのAPN設定？ | apn
+Xiaomiのネットワーク設定をリセットしたい | reset-network
+iPhoneのネットワーク設定をリセットしたい | reset-network
+Xperiaのネットワーク設定をリセットしたい | reset-network
+iPhone 15のネットワーク設定をリセットしたい | reset-network
+AQUOSのネットワーク設定をリセットしたい | reset-network
+ネットワーク設定をリセットするべきですか | reset-network
+Galaxyのネットワーク設定をリセットしたい | reset-network
+Pixel 8のネットワーク設定をリセットしたい | reset-network
+Xiaomiのネットワーク設定をリセットしたい？ | reset-network
+こんにちは。ネットワーク設定をリセットするべきですか。 | reset-network
+こんにちは。ネットワーク設定をリセットするべきですか | reset-network
+質問です。Pixel 8のネットワーク設定をリセットしたい？ | reset-network
+質問です。AQUOSのネットワーク設定をリセットしたい | reset-network
+こんにちは。iPhoneのネットワーク設定をリセットしたい | reset-network
+iPhoneのネットワーク設定をリセットしたい？ | reset-network
+質問です。Pixel 8のネットワーク設定をリセットしたい | reset-network
+質問です。iPhoneのネットワーク設定をリセットしたい？ | reset-network
+Xiaomiでテザリングをオンにする方法 | hotspot-setup,hotspot
+Xperiaでテザリングをオンにする方法 | hotspot-setup,hotspot
+XperiaでeSIMのテザリングができない | hotspot-setup,hotspot
+iPhoneでeSIMのテザリングができない | hotspot-setup,hotspot
+iPhoneでテザリングをオンにする方法 | hotspot-setup,hotspot
+AQUOSでeSIMのテザリングができない | hotspot-setup,hotspot
+iPhone 15でeSIMのテザリングができない | hotspot-setup,hotspot
+AQUOSでテザリングをオンにする方法 | hotspot-setup,hotspot
+Galaxyでテザリングをオンにする方法 | hotspot-setup,hotspot
+Pixel 8でeSIMのテザリングができない | hotspot-setup,hotspot
+GalaxyでeSIMのテザリングができない | hotspot-setup,hotspot
+XiaomiでeSIMのテザリングができない | hotspot-setup,hotspot
+iPhone 15でテザリングをオンにする方法 | hotspot-setup,hotspot
+Pixel 8でテザリングをオンにする方法 | hotspot-setup,hotspot
+質問です。iPhoneでeSIMのテザリングができない | hotspot-setup,hotspot
+すみません、iPhoneでeSIMのテザリングができない。 | hotspot-setup,hotspot
+AQUOSでテザリングをオンにする方法？ | hotspot-setup,hotspot
+iPhone 16にeSIMをインストールする方法 | install-iphone,install-esim
+iPhone 15にeSIMをインストールする方法 | install-iphone,install-esim
+iPhoneでモバイル通信プランを追加するには | install-iphone,install-esim
+iPhone 13にeSIMをインストールする方法 | install-iphone,install-esim
+すみません、iPhone 13にeSIMをインストールする方法 | install-iphone,install-esim
+すみません、iPhoneでモバイル通信プランを追加するには。 | install-iphone,install-esim
+すみません、iPhone 13にeSIMをインストールする方法？ | install-iphone,install-esim
+こんにちは。iPhone 15にeSIMをインストールする方法？ | install-iphone,install-esim
+質問です。iPhone 16にeSIMをインストールする方法 | install-iphone,install-esim
+質問です。iPhone 15にeSIMをインストールする方法 | install-iphone,install-esim
+すみません、iPhone 16にeSIMをインストールする方法 | install-iphone,install-esim
+質問です。iPhoneでモバイル通信プランを追加するには。 | install-iphone,install-esim
+こんにちは。iPhoneでモバイル通信プランを追加するには？ | install-iphone,install-esim
+すみません、iPhone 15にeSIMをインストールする方法。 | install-iphone,install-esim
+iPhone 16にeSIMをインストールする方法？ | install-iphone,install-esim
+iPhoneでモバイル通信プランを追加するには？ | install-iphone,install-esim
+こんにちは。iPhone 16にeSIMをインストールする方法 | install-iphone,install-esim
+Xiaomi 14にeSIMを入れる方法 | install-android,install-esim
+Galaxy S24にeSIMを入れる方法 | install-android,install-esim
+Pixel 9にeSIMを入れる方法 | install-android,install-esim
+SamsungでeSIMを追加するには | install-android,install-esim
+AndroidでeSIMを追加するには | install-android,install-esim
+すみません、Pixel 9にeSIMを入れる方法 | install-android,install-esim
+SamsungでeSIMを追加するには？ | install-android,install-esim
+質問です。AndroidでeSIMを追加するには？ | install-android,install-esim
+すみません、Xiaomi 14にeSIMを入れる方法？ | install-android,install-esim
+こんにちは。SamsungでeSIMを追加するには | install-android,install-esim
+こんにちは。Xiaomi 14にeSIMを入れる方法。 | install-android,install-esim
+質問です。SamsungでeSIMを追加するには。 | install-android,install-esim
+すみません、SamsungでeSIMを追加するには。 | install-android,install-esim
+AndroidでeSIMを追加するには？ | install-android,install-esim
+すみません、Galaxy S24にeSIMを入れる方法？ | install-android,install-esim
+こんにちは。Pixel 9にeSIMを入れる方法。 | install-android,install-esim
+こんにちは。SamsungでeSIMを追加するには？ | install-android,install-esim
+iPhone 15でeSIMがオフになっている | line-on,data-line
+Pixel 8でeSIMがオフになっている | line-on,data-line
+iPhoneでeSIMの回線をオンにする | line-on,data-line
+XperiaでeSIMの回線をオンにする | line-on,data-line
+Pixel 8でeSIMの回線をオンにする | line-on,data-line
+XperiaでeSIMがオフになっている | line-on,data-line
+XiaomiでeSIMの回線をオンにする | line-on,data-line
+AQUOSでeSIMの回線をオンにする | line-on,data-line
+GalaxyでeSIMの回線をオンにする | line-on,data-line
+iPhone 15でeSIMの回線をオンにする | line-on,data-line
+XiaomiでeSIMがオフになっている | line-on,data-line
+iPhoneでeSIMがオフになっている | line-on,data-line
+GalaxyでeSIMがオフになっている | line-on,data-line
+AQUOSでeSIMがオフになっている | line-on,data-line
+こんにちは。AQUOSでeSIMの回線をオンにする？ | line-on,data-line
+質問です。Pixel 8でeSIMがオフになっている？ | line-on,data-line
+すみません、iPhone 15でeSIMの回線をオンにする。 | line-on,data-line
+アメリカで圏外になる | no-service
+ドバイでSOSしか表示されない | no-service
+タイで圏外になる | no-service
+イタリアで圏外になる | no-service
+トルコで圏外になる | no-service
+エジプトで圏外になる | no-service
+ドバイで圏外になる | no-service
+タイでSOSしか表示されない | no-service
+スペインでSOSしか表示されない | no-service
+エジプトでSOSしか表示されない | no-service
+イタリアでSOSしか表示されない | no-service
+スペインで圏外になる | no-service
+ギリシャでSOSしか表示されない | no-service
+トルコでSOSしか表示されない | no-service
+アメリカでSOSしか表示されない | no-service
+ギリシャで圏外になる | no-service
+トルコで圏外になる？ | no-service
+iPhoneでeSIMは有効なのにネットにつながらない | no-internet
+トルコでネットが使えない | no-internet
+XperiaでeSIMは有効なのにネットにつながらない | no-internet
+アメリカでネットが使えない | no-internet
+ギリシャでネットが使えない | no-internet
+タイでネットが使えない | no-internet
+iPhone 15でeSIMは有効なのにネットにつながらない | no-internet
+XiaomiでeSIMは有効なのにネットにつながらない | no-internet
+スペインでネットが使えない | no-internet
+GalaxyでeSIMは有効なのにネットにつながらない | no-internet
+イタリアでネットが使えない | no-internet
+Pixel 8でeSIMは有効なのにネットにつながらない | no-internet
+ドバイでネットが使えない | no-internet
+エジプトでネットが使えない | no-internet
+AQUOSでeSIMは有効なのにネットにつながらない | no-internet
+GalaxyでeSIMは有効なのにネットにつながらない。 | no-internet
+すみません、アメリカでネットが使えない。 | no-internet
+google mapsが読み込まない | slow-internet
+エジプトでネットがとても遅い | slow-internet
+youtubeが読み込まない | slow-internet
+instagramが読み込まない | slow-internet
+アメリカでネットがとても遅い | slow-internet
+タイでネットがとても遅い | slow-internet
+instagramが止まる | slow-internet
+ギリシャでネットがとても遅い | slow-internet
+whatsappが読み込まない | slow-internet
+tiktokが止まる | slow-internet
+youtubeが止まる | slow-internet
+トルコでネットがとても遅い | slow-internet
+google mapsが止まる | slow-internet
+スペインでネットがとても遅い | slow-internet
+netflixが止まる | slow-internet
+spotifyが読み込まない | slow-internet
+spotifyが止まる | slow-internet
+なぜプランがすぐなくなるの | data-fast
+instagramがデータを使いすぎる | data-fast
+youtubeがデータを使いすぎる | data-fast
+google mapsがデータを使いすぎる | data-fast
+データが1日でなくなった | data-fast
+tiktokがデータを使いすぎる | data-fast
+spotifyがデータを使いすぎる | data-fast
+netflixがデータを使いすぎる | data-fast
+whatsappがデータを使いすぎる | data-fast
+データが1日でなくなった。 | data-fast
+instagramがデータを使いすぎる？ | data-fast
+質問です。なぜプランがすぐなくなるの？ | data-fast
+こんにちは。whatsappがデータを使いすぎる。 | data-fast
+質問です。netflixがデータを使いすぎる？ | data-fast
+質問です。whatsappがデータを使いすぎる | data-fast
+whatsappがデータを使いすぎる。 | data-fast
+こんにちは。google mapsがデータを使いすぎる。 | data-fast
+Pixel 8でQRコードが使えない | code-invalid
+XiaomiでQRコードが使えない | code-invalid
+iPhone 15でQRコードが使えない | code-invalid
+iPhoneでQRコードが使えない | code-invalid
+GalaxyでQRコードが使えない | code-invalid
+XperiaでQRコードが使えない | code-invalid
+「コードが無効」というエラーが出る | code-invalid
+AQUOSでQRコードが使えない | code-invalid
+AQUOSでQRコードが使えない？ | code-invalid
+「コードが無効」というエラーが出る。 | code-invalid
+こんにちは。XperiaでQRコードが使えない？ | code-invalid
+こんにちは。AQUOSでQRコードが使えない。 | code-invalid
+XperiaでQRコードが使えない？ | code-invalid
+iPhoneでQRコードが使えない？ | code-invalid
+「コードが無効」というエラーが出る？ | code-invalid
+XiaomiでQRコードが使えない？ | code-invalid
+質問です。XperiaでQRコードが使えない？ | code-invalid
+Xiaomiで「eSIMを追加できません」と表示される | cannot-add
+iPhoneで「eSIMを追加できません」と表示される | cannot-add
+Xperiaで「eSIMを追加できません」と表示される | cannot-add
+Galaxyで「eSIMを追加できません」と表示される | cannot-add
+iPhone 15で「eSIMを追加できません」と表示される | cannot-add
+モバイル通信プランを追加できないエラー | cannot-add
+Pixel 8で「eSIMを追加できません」と表示される | cannot-add
+AQUOSで「eSIMを追加できません」と表示される | cannot-add
+Xperiaで「eSIMを追加できません」と表示される。 | cannot-add
+すみません、Xiaomiで「eSIMを追加できません」と表示される | cannot-add
+iPhone 15で「eSIMを追加できません」と表示される？ | cannot-add
+Xiaomiで「eSIMを追加できません」と表示される？ | cannot-add
+すみません、Pixel 8で「eSIMを追加できません」と表示される？ | cannot-add
+すみません、Xiaomiで「eSIMを追加できません」と表示される？ | cannot-add
+Galaxyで「eSIMを追加できません」と表示される。 | cannot-add
+こんにちは。Xperiaで「eSIMを追加できません」と表示される | cannot-add
+iPhoneで「eSIMを追加できません」と表示される？ | cannot-add
+QRコードなしでeSIMを手動インストールしたい | manual-install
+SM-DP+アドレスはどこに入力しますか | manual-install
+すみません、QRコードなしでeSIMを手動インストールしたい？ | manual-install
+こんにちは。QRコードなしでeSIMを手動インストールしたい？ | manual-install
+すみません、QRコードなしでeSIMを手動インストールしたい。 | manual-install
+SM-DP+アドレスはどこに入力しますか？ | manual-install
+こんにちは。SM-DP+アドレスはどこに入力しますか | manual-install
+こんにちは。QRコードなしでeSIMを手動インストールしたい | manual-install
+QRコードなしでeSIMを手動インストールしたい。 | manual-install
+こんにちは。SM-DP+アドレスはどこに入力しますか。 | manual-install
+こんにちは。SM-DP+アドレスはどこに入力しますか？ | manual-install
+SM-DP+アドレスはどこに入力しますか。 | manual-install
+質問です。QRコードなしでeSIMを手動インストールしたい | manual-install
+すみません、QRコードなしでeSIMを手動インストールしたい | manual-install
+すみません、SM-DP+アドレスはどこに入力しますか | manual-install
+質問です。SM-DP+アドレスはどこに入力しますか | manual-install
+QRコードなしでeSIMを手動インストールしたい？ | manual-install
+AQUOSでeSIMがアクティベート中のまま | activating-stuck
+Pixel 8でeSIMがアクティベート中のまま | activating-stuck
+iPhone 15でeSIMがアクティベート中のまま | activating-stuck
+iPhoneでeSIMがアクティベート中のまま | activating-stuck
+XiaomiでeSIMがアクティベート中のまま | activating-stuck
+XperiaでeSIMがアクティベート中のまま | activating-stuck
+GalaxyでeSIMがアクティベート中のまま | activating-stuck
+eSIMの開通が何時間も終わらない | activating-stuck
+AQUOSでeSIMがアクティベート中のまま。 | activating-stuck
+eSIMの開通が何時間も終わらない？ | activating-stuck
+質問です。eSIMの開通が何時間も終わらない？ | activating-stuck
+XperiaでeSIMがアクティベート中のまま？ | activating-stuck
+iPhone 15でeSIMがアクティベート中のまま？ | activating-stuck
+すみません、iPhoneでeSIMがアクティベート中のまま | activating-stuck
+Pixel 8でeSIMがアクティベート中のまま。 | activating-stuck
+eSIMの開通が何時間も終わらない。 | activating-stuck
+すみません、eSIMの開通が何時間も終わらない | activating-stuck
+XperiaでeSIMを誤って削除した | deleted-esim,new-phone
+AQUOSでeSIMを誤って削除した | deleted-esim,new-phone
+iPhoneでeSIMを誤って削除した | deleted-esim,new-phone
+GalaxyでeSIMを誤って削除した | deleted-esim,new-phone
+Pixel 8でeSIMを誤って削除した | deleted-esim,new-phone
+iPhone 15でeSIMを誤って削除した | deleted-esim,new-phone
+消したeSIMは再インストールできますか | deleted-esim,new-phone
+XiaomiでeSIMを誤って削除した | deleted-esim,new-phone
+GalaxyでeSIMを誤って削除した？ | deleted-esim,new-phone
+iPhoneでeSIMを誤って削除した。 | deleted-esim,new-phone
+質問です。GalaxyでeSIMを誤って削除した。 | deleted-esim,new-phone
+こんにちは。Pixel 8でeSIMを誤って削除した？ | deleted-esim,new-phone
+消したeSIMは再インストールできますか？ | deleted-esim,new-phone
+すみません、Pixel 8でeSIMを誤って削除した | deleted-esim,new-phone
+こんにちは。消したeSIMは再インストールできますか | deleted-esim,new-phone
+AQUOSでeSIMを誤って削除した。 | deleted-esim,new-phone
+質問です。Pixel 8でeSIMを誤って削除した | deleted-esim,new-phone
+XiaomiのSIMロックでeSIMは使えますか | sim-lock
+GalaxyのSIMロックでeSIMは使えますか | sim-lock
+XperiaのSIMロックでeSIMは使えますか | sim-lock
+Pixel 8のSIMロックでeSIMは使えますか | sim-lock
+AQUOSのSIMロックでeSIMは使えますか | sim-lock
+iPhoneのSIMロックでeSIMは使えますか | sim-lock
+iPhone 15のSIMロックでeSIMは使えますか | sim-lock
+キャリアロックの端末でもeSIMは使える | sim-lock
+AQUOSのSIMロックでeSIMは使えますか？ | sim-lock
+すみません、Pixel 8のSIMロックでeSIMは使えますか | sim-lock
+iPhone 15のSIMロックでeSIMは使えますか？ | sim-lock
+質問です。XiaomiのSIMロックでeSIMは使えますか | sim-lock
+すみません、XiaomiのSIMロックでeSIMは使えますか | sim-lock
+こんにちは。iPhone 15のSIMロックでeSIMは使えますか | sim-lock
+Pixel 8のSIMロックでeSIMは使えますか。 | sim-lock
+質問です。GalaxyのSIMロックでeSIMは使えますか | sim-lock
+こんにちは。Pixel 8のSIMロックでeSIMは使えますか？ | sim-lock
+アメリカでいつものSIMにローミング料金がかかりますか | avoid-roaming-costs
+エジプトでローミング料金を避けるには | avoid-roaming-costs
+ドバイでローミング料金を避けるには | avoid-roaming-costs
+スペインでローミング料金を避けるには | avoid-roaming-costs
+スペインでいつものSIMにローミング料金がかかりますか | avoid-roaming-costs
+トルコでいつものSIMにローミング料金がかかりますか | avoid-roaming-costs
+イタリアでローミング料金を避けるには | avoid-roaming-costs
+トルコでローミング料金を避けるには | avoid-roaming-costs
+ギリシャでローミング料金を避けるには | avoid-roaming-costs
+イタリアでいつものSIMにローミング料金がかかりますか | avoid-roaming-costs
+エジプトでいつものSIMにローミング料金がかかりますか | avoid-roaming-costs
+タイでいつものSIMにローミング料金がかかりますか | avoid-roaming-costs
+ギリシャでいつものSIMにローミング料金がかかりますか | avoid-roaming-costs
+アメリカでローミング料金を避けるには | avoid-roaming-costs
+ドバイでいつものSIMにローミング料金がかかりますか | avoid-roaming-costs
+タイでローミング料金を避けるには | avoid-roaming-costs
+エジプトでローミング料金を避けるには。 | avoid-roaming-costs
+トルコで銀行のSMSは届きますか | bank-sms
+スペインで銀行のSMSは届きますか | bank-sms
+アメリカで銀行のSMSは届きますか | bank-sms
+エジプトで銀行のSMSは届きますか | bank-sms
+ギリシャで銀行のSMSは届きますか | bank-sms
+海外で認証コードを受け取れますか | bank-sms
+ドバイで銀行のSMSは届きますか | bank-sms
+タイで銀行のSMSは届きますか | bank-sms
+イタリアで銀行のSMSは届きますか | bank-sms
+質問です。海外で認証コードを受け取れますか？ | bank-sms
+すみません、ドバイで銀行のSMSは届きますか。 | bank-sms
+質問です。タイで銀行のSMSは届きますか？ | bank-sms
+イタリアで銀行のSMSは届きますか？ | bank-sms
+ギリシャで銀行のSMSは届きますか？ | bank-sms
+イタリアで銀行のSMSは届きますか。 | bank-sms
+質問です。海外で認証コードを受け取れますか。 | bank-sms
+海外で認証コードを受け取れますか。 | bank-sms
+空港でeSIMをインストールできますか | install-internet
+eSIMのインストールにWi-Fiは必要ですか | install-internet
+空港でeSIMをインストールできますか？ | install-internet
+すみません、空港でeSIMをインストールできますか | install-internet
+質問です。空港でeSIMをインストールできますか？ | install-internet
+すみません、空港でeSIMをインストールできますか？ | install-internet
+こんにちは。空港でeSIMをインストールできますか？ | install-internet
+すみません、eSIMのインストールにWi-Fiは必要ですか。 | install-internet
+eSIMのインストールにWi-Fiは必要ですか？ | install-internet
+すみません、eSIMのインストールにWi-Fiは必要ですか | install-internet
+質問です。eSIMのインストールにWi-Fiは必要ですか | install-internet
+質問です。eSIMのインストールにWi-Fiは必要ですか？ | install-internet
+こんにちは。eSIMのインストールにWi-Fiは必要ですか | install-internet
+空港でeSIMをインストールできますか。 | install-internet
+すみません、eSIMのインストールにWi-Fiは必要ですか？ | install-internet
+こんにちは。eSIMのインストールにWi-Fiは必要ですか。 | install-internet
+質問です。eSIMのインストールにWi-Fiは必要ですか。 | install-internet
+Apple WatchでeSIMは使えますか | tablet-watch
+iPadでeSIMは使えますか | tablet-watch
+タブレットでeSIMは使えますか | tablet-watch
+質問です。iPadでeSIMは使えますか？ | tablet-watch
+すみません、iPadでeSIMは使えますか。 | tablet-watch
+すみません、タブレットでeSIMは使えますか | tablet-watch
+質問です。タブレットでeSIMは使えますか | tablet-watch
+iPadでeSIMは使えますか。 | tablet-watch
+こんにちは。Apple WatchでeSIMは使えますか？ | tablet-watch
+質問です。Apple WatchでeSIMは使えますか？ | tablet-watch
+Apple WatchでeSIMは使えますか？ | tablet-watch
+すみません、タブレットでeSIMは使えますか？ | tablet-watch
+こんにちは。iPadでeSIMは使えますか？ | tablet-watch
+質問です。Apple WatchでeSIMは使えますか | tablet-watch
+こんにちは。iPadでeSIMは使えますか | tablet-watch
+すみません、タブレットでeSIMは使えますか。 | tablet-watch
+すみません、iPadでeSIMは使えますか | tablet-watch
+トルコで5Gは使えますか | 5g
+アメリカで5Gは使えますか | 5g
+ギリシャで5Gは使えますか | 5g
+イタリアで5Gは使えますか | 5g
+タイで5Gは使えますか | 5g
+ドバイで5Gは使えますか | 5g
+スペインで5Gは使えますか | 5g
+エジプトで5Gは使えますか | 5g
+スペインで5Gは使えますか。 | 5g
+質問です。アメリカで5Gは使えますか？ | 5g
+アメリカで5Gは使えますか？ | 5g
+こんにちは。アメリカで5Gは使えますか？ | 5g
+ドバイで5Gは使えますか？ | 5g
+すみません、ドバイで5Gは使えますか | 5g
+質問です。アメリカで5Gは使えますか。 | 5g
+すみません、ギリシャで5Gは使えますか | 5g
+すみません、タイで5Gは使えますか。 | 5g
+船の上でeSIMは使えますか | cruise-flight
+クルーズ船でeSIMは使えますか | cruise-flight
+飛行機でeSIMは使えますか | cruise-flight
+クルーズ船でeSIMは使えますか。 | cruise-flight
+飛行機でeSIMは使えますか？ | cruise-flight
+すみません、船の上でeSIMは使えますか | cruise-flight
+クルーズ船でeSIMは使えますか？ | cruise-flight
+飛行機でeSIMは使えますか。 | cruise-flight
+船の上でeSIMは使えますか？ | cruise-flight
+すみません、船の上でeSIMは使えますか。 | cruise-flight
+すみません、クルーズ船でeSIMは使えますか | cruise-flight
+こんにちは。飛行機でeSIMは使えますか | cruise-flight
+質問です。飛行機でeSIMは使えますか？ | cruise-flight
+質問です。船の上でeSIMは使えますか | cruise-flight
+すみません、飛行機でeSIMは使えますか | cruise-flight
+質問です。クルーズ船でeSIMは使えますか | cruise-flight
+すみません、クルーズ船でeSIMは使えますか？ | cruise-flight
+なぜIPが別の国のですか | ip-location
+Netflixで別の国が表示される | ip-location
+なぜ位置情報がおかしいのですか | ip-location
+Googleで別の国が表示される | ip-location
+Googleで別の国が表示される。 | ip-location
+なぜ位置情報がおかしいのですか。 | ip-location
+Netflixで別の国が表示される？ | ip-location
+質問です。なぜIPが別の国のですか？ | ip-location
+Googleで別の国が表示される？ | ip-location
+質問です。なぜ位置情報がおかしいのですか | ip-location
+なぜIPが別の国のですか。 | ip-location
+こんにちは。なぜ位置情報がおかしいのですか？ | ip-location
+質問です。Googleで別の国が表示される？ | ip-location
+こんにちは。Googleで別の国が表示される？ | ip-location
+こんにちは。なぜIPが別の国のですか | ip-location
+質問です。Netflixで別の国が表示される | ip-location
+なぜIPが別の国のですか？ | ip-location
+中国でGoogleは使えますか | china
+中国でWhatsAppは使えますか | china
+中国でYouTubeは使えますか | china
+中国でWhatsAppは使えますか？ | china
+中国でWhatsAppは使えますか。 | china
+すみません、中国でYouTubeは使えますか？ | china
+こんにちは。中国でYouTubeは使えますか？ | china
+中国でGoogleは使えますか？ | china
+質問です。中国でYouTubeは使えますか？ | china
+こんにちは。中国でWhatsAppは使えますか | china
+すみません、中国でYouTubeは使えますか。 | china
+こんにちは。中国でYouTubeは使えますか。 | china
+こんにちは。中国でGoogleは使えますか | china
+質問です。中国でYouTubeは使えますか | china
+質問です。中国でWhatsAppは使えますか？ | china
+すみません、中国でWhatsAppは使えますか | china
+トルコ用のeSIMはありますか | turkey
+トルコでのIMEI登録は必要ですか | turkey
+質問です。トルコ用のeSIMはありますか | turkey
+トルコでのIMEI登録は必要ですか？ | turkey
+すみません、トルコ用のeSIMはありますか。 | turkey
+質問です。トルコ用のeSIMはありますか。 | turkey
+トルコ用のeSIMはありますか。 | turkey
+すみません、トルコ用のeSIMはありますか | turkey
+トルコ用のeSIMはありますか？ | turkey
+こんにちは。トルコ用のeSIMはありますか？ | turkey
+すみません、トルコ用のeSIMはありますか？ | turkey
+こんにちは。トルコでのIMEI登録は必要ですか | turkey
+こんにちは。トルコでのIMEI登録は必要ですか？ | turkey
+すみません、トルコでのIMEI登録は必要ですか。 | turkey
+すみません、トルコでのIMEI登録は必要ですか？ | turkey
+こんにちは。トルコ用のeSIMはありますか | turkey
+eSIMとローミングどちらが安いですか | esim-vs-roaming
+こんにちは。eSIMとローミングどちらが安いですか？ | esim-vs-roaming
+質問です。eSIMとローミングどちらが安いですか？ | esim-vs-roaming
+質問です。eSIMとローミングどちらが安いですか | esim-vs-roaming
+すみません、eSIMとローミングどちらが安いですか？ | esim-vs-roaming
+こんにちは。eSIMとローミングどちらが安いですか | esim-vs-roaming
+eSIMとローミングどちらが安いですか？ | esim-vs-roaming
+eSIMとローミングどちらが安いですか。 | esim-vs-roaming
+すみません、eSIMとローミングどちらが安いですか | esim-vs-roaming
+こんにちは。eSIMとローミングどちらが安いですか。 | esim-vs-roaming
+すみません、eSIMとローミングどちらが安いですか。 | esim-vs-roaming
+質問です。eSIMとローミングどちらが安いですか。 | esim-vs-roaming
+カードが使えない | payment-failed
+支払いに失敗した | payment-failed
+お金が引き落とされたのに注文がない | payment-failed
+二重に請求された | payment-failed
+すみません、お金が引き落とされたのに注文がない？ | payment-failed
+こんにちは。二重に請求された。 | payment-failed
+こんにちは。カードが使えない | payment-failed
+こんにちは。お金が引き落とされたのに注文がない？ | payment-failed
+こんにちは。支払いに失敗した。 | payment-failed
+こんにちは。二重に請求された？ | payment-failed
+お金が引き落とされたのに注文がない？ | payment-failed
+こんにちは。二重に請求された | payment-failed
+お金が引き落とされたのに注文がない。 | payment-failed
+質問です。支払いに失敗した | payment-failed
+カードが使えない？ | payment-failed
+質問です。お金が引き落とされたのに注文がない | payment-failed
+月額料金はありますか | hidden-costs
+プランは自動更新されますか | hidden-costs
+隠れた費用はありますか | hidden-costs
+月額料金はありますか。 | hidden-costs
+質問です。月額料金はありますか？ | hidden-costs
+質問です。月額料金はありますか。 | hidden-costs
+すみません、プランは自動更新されますか？ | hidden-costs
+こんにちは。月額料金はありますか | hidden-costs
+こんにちは。隠れた費用はありますか。 | hidden-costs
+隠れた費用はありますか？ | hidden-costs
+こんにちは。隠れた費用はありますか | hidden-costs
+質問です。月額料金はありますか | hidden-costs
+月額料金はありますか？ | hidden-costs
+プランは自動更新されますか。 | hidden-costs
+質問です。プランは自動更新されますか？ | hidden-costs
+こんにちは。プランは自動更新されますか。 | hidden-costs
+返金の申請方法 | refund-how,refund
+返金ボタンはどこですか | refund-how,refund
+こんにちは。返金ボタンはどこですか？ | refund-how,refund
+こんにちは。返金の申請方法 | refund-how,refund
+返金ボタンはどこですか？ | refund-how,refund
+質問です。返金ボタンはどこですか | refund-how,refund
+質問です。返金ボタンはどこですか？ | refund-how,refund
+すみません、返金の申請方法？ | refund-how,refund
+質問です。返金の申請方法？ | refund-how,refund
+返金の申請方法。 | refund-how,refund
+返金の申請方法？ | refund-how,refund
+こんにちは。返金ボタンはどこですか | refund-how,refund
+こんにちは。返金の申請方法？ | refund-how,refund
+すみません、返金ボタンはどこですか？ | refund-how,refund
+返金ボタンはどこですか。 | refund-how,refund
+質問です。返金の申請方法 | refund-how,refund
+エジプトのラウンジに入る方法 | lounge-access,lounge-what
+アメリカのラウンジに入る方法 | lounge-access,lounge-what
+ギリシャのラウンジに入る方法 | lounge-access,lounge-what
+ラウンジで何を見せればいいですか | lounge-access,lounge-what
+スペインのラウンジに入る方法 | lounge-access,lounge-what
+トルコのラウンジに入る方法 | lounge-access,lounge-what
+ドバイのラウンジに入る方法 | lounge-access,lounge-what
+タイのラウンジに入る方法 | lounge-access,lounge-what
+イタリアのラウンジに入る方法 | lounge-access,lounge-what
+空港のラウンジに入る方法 | lounge-access,lounge-what
+イタリアのラウンジに入る方法？ | lounge-access,lounge-what
+こんにちは。スペインのラウンジに入る方法 | lounge-access,lounge-what
+すみません、スペインのラウンジに入る方法 | lounge-access,lounge-what
+タイのラウンジに入る方法。 | lounge-access,lounge-what
+質問です。ドバイのラウンジに入る方法 | lounge-access,lounge-what
+すみません、空港のラウンジに入る方法 | lounge-access,lounge-what
+ラウンジには何時間いられますか | lounge-hours
+ラウンジには何時間いられますか。 | lounge-hours
+質問です。ラウンジには何時間いられますか | lounge-hours
+ラウンジには何時間いられますか？ | lounge-hours
+こんにちは。ラウンジには何時間いられますか？ | lounge-hours
+質問です。ラウンジには何時間いられますか？ | lounge-hours
+すみません、ラウンジには何時間いられますか | lounge-hours
+すみません、ラウンジには何時間いられますか。 | lounge-hours
+こんにちは。ラウンジには何時間いられますか | lounge-hours
+こんにちは。ラウンジには何時間いられますか。 | lounge-hours
+すみません、ラウンジには何時間いられますか？ | lounge-hours
+質問です。ラウンジには何時間いられますか。 | lounge-hours
+同伴者はラウンジに入れますか | lounge-kids
+子どもはラウンジに入れますか | lounge-kids
+赤ちゃんはラウンジに入れますか | lounge-kids
+質問です。赤ちゃんはラウンジに入れますか？ | lounge-kids
+子どもはラウンジに入れますか？ | lounge-kids
+質問です。赤ちゃんはラウンジに入れますか | lounge-kids
+質問です。同伴者はラウンジに入れますか | lounge-kids
+すみません、赤ちゃんはラウンジに入れますか。 | lounge-kids
+こんにちは。赤ちゃんはラウンジに入れますか？ | lounge-kids
+赤ちゃんはラウンジに入れますか？ | lounge-kids
+すみません、同伴者はラウンジに入れますか。 | lounge-kids
+質問です。子どもはラウンジに入れますか？ | lounge-kids
+こんにちは。赤ちゃんはラウンジに入れますか。 | lounge-kids
+こんにちは。子どもはラウンジに入れますか？ | lounge-kids
+すみません、子どもはラウンジに入れますか？ | lounge-kids
+同伴者はラウンジに入れますか？ | lounge-kids
+ラウンジに入れなかった | lounge-denied
+ラウンジが満員 | lounge-denied
+すみません、ラウンジに入れなかった | lounge-denied
+ラウンジに入れなかった。 | lounge-denied
+ラウンジが満員。 | lounge-denied
+ラウンジに入れなかった？ | lounge-denied
+こんにちは。ラウンジに入れなかった | lounge-denied
+すみません、ラウンジが満員？ | lounge-denied
+ラウンジが満員？ | lounge-denied
+すみません、ラウンジに入れなかった。 | lounge-denied
+質問です。ラウンジに入れなかった。 | lounge-denied
+質問です。ラウンジが満員？ | lounge-denied
+こんにちは。ラウンジに入れなかった？ | lounge-denied
+すみません、ラウンジが満員。 | lounge-denied
+こんにちは。ラウンジが満員 | lounge-denied
+すみません、ラウンジが満員 | lounge-denied
+フライトが遅延したらラウンジのバウチャーは使えますか | lounge-delay
+フライトが遅延したらラウンジのバウチャーは使えますか。 | lounge-delay
+すみません、フライトが遅延したらラウンジのバウチャーは使えますか | lounge-delay
+すみません、フライトが遅延したらラウンジのバウチャーは使えますか。 | lounge-delay
+すみません、フライトが遅延したらラウンジのバウチャーは使えますか？ | lounge-delay
+質問です。フライトが遅延したらラウンジのバウチャーは使えますか。 | lounge-delay
+質問です。フライトが遅延したらラウンジのバウチャーは使えますか | lounge-delay
+こんにちは。フライトが遅延したらラウンジのバウチャーは使えますか | lounge-delay
+フライトが遅延したらラウンジのバウチャーは使えますか？ | lounge-delay
+質問です。フライトが遅延したらラウンジのバウチャーは使えますか？ | lounge-delay
+こんにちは。フライトが遅延したらラウンジのバウチャーは使えますか？ | lounge-delay
+こんにちは。フライトが遅延したらラウンジのバウチャーは使えますか。 | lounge-delay
+空港のファストトラックはどこ | fasttrack-where
+ファストトラックの入口が見つからない | fasttrack-where
+イスタンブール空港のファストトラックはどこ | fasttrack-where
+イスタンブール空港のファストトラックはどこ？ | fasttrack-where
+ファストトラックの入口が見つからない。 | fasttrack-where
+空港のファストトラックはどこ？ | fasttrack-where
+空港のファストトラックはどこ。 | fasttrack-where
+すみません、空港のファストトラックはどこ？ | fasttrack-where
+すみません、空港のファストトラックはどこ | fasttrack-where
+ファストトラックの入口が見つからない？ | fasttrack-where
+こんにちは。空港のファストトラックはどこ | fasttrack-where
+こんにちは。ファストトラックの入口が見つからない？ | fasttrack-where
+すみません、ファストトラックの入口が見つからない？ | fasttrack-where
+質問です。空港のファストトラックはどこ。 | fasttrack-where
+すみません、空港のファストトラックはどこ。 | fasttrack-where
+質問です。空港のファストトラックはどこ | fasttrack-where
+ファストトラックの有効期間は | fasttrack-time
+こんにちは。ファストトラックの有効期間は | fasttrack-time
+すみません、ファストトラックの有効期間は | fasttrack-time
+ファストトラックの有効期間は？ | fasttrack-time
+質問です。ファストトラックの有効期間は。 | fasttrack-time
+こんにちは。ファストトラックの有効期間は？ | fasttrack-time
+ファストトラックの有効期間は。 | fasttrack-time
+質問です。ファストトラックの有効期間は | fasttrack-time
+質問です。ファストトラックの有効期間は？ | fasttrack-time
+すみません、ファストトラックの有効期間は？ | fasttrack-time
+こんにちは。ファストトラックの有効期間は。 | fasttrack-time
+すみません、ファストトラックの有効期間は。 | fasttrack-time
+eSIMでVPNは使えますか | vpn
+eSIMでVPNは使えますか。 | vpn
+eSIMでVPNは使えますか？ | vpn
+こんにちは。eSIMでVPNは使えますか | vpn
+質問です。eSIMでVPNは使えますか？ | vpn
+こんにちは。eSIMでVPNは使えますか？ | vpn
+質問です。eSIMでVPNは使えますか | vpn
+すみません、eSIMでVPNは使えますか | vpn
+すみません、eSIMでVPNは使えますか？ | vpn
+すみません、eSIMでVPNは使えますか。 | vpn
+こんにちは。eSIMでVPNは使えますか。 | vpn
+質問です。eSIMでVPNは使えますか。 | vpn
+社員用のeSIMはありますか | business
+法人のeSIMはありますか | business
+すみません、社員用のeSIMはありますか | business
+法人のeSIMはありますか？ | business
+法人のeSIMはありますか。 | business
+社員用のeSIMはありますか。 | business
+こんにちは。法人のeSIMはありますか。 | business
+質問です。社員用のeSIMはありますか。 | business
+こんにちは。法人のeSIMはありますか | business
+質問です。社員用のeSIMはありますか？ | business
+質問です。法人のeSIMはありますか | business
+すみません、社員用のeSIMはありますか？ | business
+社員用のeSIMはありますか？ | business
+すみません、法人のeSIMはありますか。 | business
+すみません、法人のeSIMはありますか | business
+こんにちは。社員用のeSIMはありますか | business
+eSIMに電話番号は付いていますか | phone-number,calls
+eSIMにトルコの番号は付いていますか | phone-number,calls
+こんにちは。eSIMにトルコの番号は付いていますか | phone-number,calls
+eSIMにトルコの番号は付いていますか？ | phone-number,calls
+質問です。eSIMにトルコの番号は付いていますか？ | phone-number,calls
+eSIMに電話番号は付いていますか。 | phone-number,calls
+すみません、eSIMに電話番号は付いていますか | phone-number,calls
+すみません、eSIMにトルコの番号は付いていますか？ | phone-number,calls
+こんにちは。eSIMに電話番号は付いていますか？ | phone-number,calls
+こんにちは。eSIMに電話番号は付いていますか。 | phone-number,calls
+eSIMに電話番号は付いていますか？ | phone-number,calls
+eSIMにトルコの番号は付いていますか。 | phone-number,calls
+すみません、eSIMにトルコの番号は付いていますか。 | phone-number,calls
+質問です。eSIMに電話番号は付いていますか。 | phone-number,calls
+すみません、eSIMに電話番号は付いていますか？ | phone-number,calls
+質問です。eSIMにトルコの番号は付いていますか | phone-number,calls
+eSIMはいつインストールすればいいですか | buy-when,when-activate
+eSIMはいつ買えばいいですか | buy-when,when-activate
+出発前にeSIMをインストールする | buy-when,when-activate
+質問です。eSIMはいつインストールすればいいですか | buy-when,when-activate
+こんにちは。eSIMはいつ買えばいいですか？ | buy-when,when-activate
+質問です。出発前にeSIMをインストールする？ | buy-when,when-activate
+eSIMはいつ買えばいいですか？ | buy-when,when-activate
+すみません、出発前にeSIMをインストールする | buy-when,when-activate
+こんにちは。出発前にeSIMをインストールする。 | buy-when,when-activate
+すみません、eSIMはいつ買えばいいですか？ | buy-when,when-activate
+eSIMはいつインストールすればいいですか。 | buy-when,when-activate
+質問です。出発前にeSIMをインストールする。 | buy-when,when-activate
+こんにちは。eSIMはいつインストールすればいいですか？ | buy-when,when-activate
+質問です。eSIMはいつ買えばいいですか。 | buy-when,when-activate
+すみません、出発前にeSIMをインストールする？ | buy-when,when-activate
+すみません、eSIMはいつインストールすればいいですか？ | buy-when,when-activate
+Galaxyでデータローミングをオンにする方法。 | data-roaming
+質問です。AQUOSのAPN設定。 | apn
+すみません、AQUOSのネットワーク設定をリセットしたい。 | reset-network
+iPhoneでeSIMのテザリングができない？ | hotspot-setup,hotspot
+iPhone 13にeSIMをインストールする方法？ | install-iphone,install-esim
+Pixel 9にeSIMを入れる方法？ | install-android,install-esim
+こんにちは。アメリカで圏外になる | no-service
+こんにちは。ドバイでネットが使えない | no-internet
+すみません、whatsappが読み込まない | slow-internet
+iPhone 15でQRコードが使えない？ | code-invalid
+すみません、モバイル通信プランを追加できないエラー | cannot-add
+Pixel 8でeSIMを誤って削除した？ | deleted-esim,new-phone
+ギリシャでいつものSIMにローミング料金がかかりますか？ | avoid-roaming-costs
+タブレットでeSIMは使えますか？ | tablet-watch
+こんにちは。船の上でeSIMは使えますか | cruise-flight
+すみません、中国でGoogleは使えますか？ | china
+こんにちは。トルコ用のeSIMはありますか。 | turkey
+タイのラウンジに入る方法？ | lounge-access,lounge-what
+すみません、ファストトラックの入口が見つからない | fasttrack-where
+質問です。法人のeSIMはありますか。 | business

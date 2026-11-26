@@ -1,0 +1,715 @@
+## Spezifische Kundenfragen (it) – aus Vorlagen erzeugt (simple-src/gen_specific.py), 714 Fragen
+attivare roaming redmi note 13 | data-roaming
+attivare roaming iphone 16 pro | data-roaming
+attivare roaming samsung | data-roaming
+dove attivo il roaming dati su xiaomi | data-roaming
+dove attivo il roaming dati su iphone 15 | data-roaming
+devo attivare il roaming in egitto | data-roaming
+devo attivare il roaming per la esim | data-roaming
+devo attivare il roaming in turchia | data-roaming
+dove attivo il roaming dati su iphone 16 pro | data-roaming
+attivare roaming galaxy a54 | data-roaming
+dove attivo il roaming dati su samsung | data-roaming
+dove attivo il roaming dati su redmi note 13 | data-roaming
+dove attivo il roaming dati su pixel 8 | data-roaming
+devo attivare il roaming in italia | data-roaming
+attivare roaming xiaomi | data-roaming
+devo attivare il roaming in spagna | data-roaming
+attivare roaming samsung galaxy s24 | data-roaming
+iphone 15 usa ancora la mia sim normale per internet | data-line,line-on
+passare i dati mobili sulla esim pixel 8 | data-line,line-on
+passare i dati mobili sulla esim samsung galaxy s24 | data-line,line-on
+passare i dati mobili sulla esim redmi note 13 | data-line,line-on
+pixel 8 usa ancora la mia sim normale per internet | data-line,line-on
+iphone 16 pro usa ancora la mia sim normale per internet | data-line,line-on
+samsung galaxy s24 usa ancora la mia sim normale per internet | data-line,line-on
+come imposto la esim per i dati mobili su iphone | data-line,line-on
+passare i dati mobili sulla esim iphone 16 pro | data-line,line-on
+samsung usa ancora la mia sim normale per internet | data-line,line-on
+come imposto la esim per i dati mobili su pixel 8 | data-line,line-on
+come imposto la esim per i dati mobili su galaxy a54 | data-line,line-on
+redmi note 13 usa ancora la mia sim normale per internet | data-line,line-on
+passare i dati mobili sulla esim galaxy a54 | data-line,line-on
+passare i dati mobili sulla esim samsung | data-line,line-on
+come imposto la esim per i dati mobili su iphone 15 | data-line,line-on
+come imposto la esim per i dati mobili su redmi note 13 | data-line,line-on
+rete sbagliata in grecia cambiare operatore | network-select
+scegliere la rete manualmente su iphone | network-select
+scegliere la rete manualmente su pixel 8 | network-select
+nessuna rete in thailandia cambiare operatore | network-select
+rete sbagliata in turchia cambiare operatore | network-select
+scegliere la rete manualmente su iphone 16 pro | network-select
+scegliere la rete manualmente su xiaomi | network-select
+rete sbagliata in egitto cambiare operatore | network-select
+rete sbagliata in italia cambiare operatore | network-select
+nessuna rete in dubai cambiare operatore | network-select
+nessuna rete in italia cambiare operatore | network-select
+rete sbagliata in spagna cambiare operatore | network-select
+rete sbagliata in dubai cambiare operatore | network-select
+scegliere la rete manualmente su samsung galaxy s24 | network-select
+rete sbagliata in thailandia cambiare operatore | network-select
+nessuna rete in turchia cambiare operatore | network-select
+scegliere la rete manualmente su iphone 15 | network-select
+impostare l'apn su redmi note 13 | apn
+quale apn in thailandia | apn
+cambiare l'apn su iphone 15 | apn
+impostare l'apn su pixel 8 | apn
+cambiare l'apn su redmi note 13 | apn
+quale apn in italia | apn
+impostare l'apn su iphone | apn
+quale apn in turchia | apn
+quale apn in egitto | apn
+impostare l'apn su xiaomi | apn
+cambiare l'apn su iphone | apn
+quale apn in spagna | apn
+cambiare l'apn su xiaomi | apn
+quale apn per la esim | apn
+impostare l'apn su samsung | apn
+cambiare l'apn su iphone 16 pro | apn
+quale apn in grecia | apn
+ripristinare le impostazioni di rete su iphone 16 pro | reset-network
+ripristinare le impostazioni di rete su iphone 15 | reset-network
+ripristinare le impostazioni di rete su pixel 8 | reset-network
+ripristinare le impostazioni di rete su samsung galaxy s24 | reset-network
+ripristinare le impostazioni di rete su xiaomi | reset-network
+ripristinare le impostazioni di rete su redmi note 13 | reset-network
+ripristinare le impostazioni di rete su samsung | reset-network
+ripristinare le impostazioni di rete su galaxy a54 | reset-network
+devo ripristinare le impostazioni di rete | reset-network
+ripristinare le impostazioni di rete su iphone | reset-network
+salve ripristinare le impostazioni di rete su samsung galaxy s24 | reset-network
+ripristinare le impostazioni di rete su redmi note 13? | reset-network
+una domanda ripristinare le impostazioni di rete su pixel 8 | reset-network
+una domanda ripristinare le impostazioni di rete su samsung galaxy s24? | reset-network
+una domanda ripristinare le impostazioni di rete su pixel 8 per favore | reset-network
+ciao ripristinare le impostazioni di rete su redmi note 13 per favore | reset-network
+ripristinare le impostazioni di rete su samsung grazie | reset-network
+configurare l'hotspot su samsung galaxy s24 | hotspot-setup,hotspot
+attivare l'hotspot su iphone | hotspot-setup,hotspot
+attivare l'hotspot su samsung galaxy s24 | hotspot-setup,hotspot
+attivare l'hotspot su redmi note 13 | hotspot-setup,hotspot
+samsung hotspot con la esim non funziona | hotspot-setup,hotspot
+configurare l'hotspot su redmi note 13 | hotspot-setup,hotspot
+iphone 15 hotspot con la esim non funziona | hotspot-setup,hotspot
+configurare l'hotspot su samsung | hotspot-setup,hotspot
+attivare l'hotspot su pixel 8 | hotspot-setup,hotspot
+configurare l'hotspot su pixel 8 | hotspot-setup,hotspot
+galaxy a54 hotspot con la esim non funziona | hotspot-setup,hotspot
+redmi note 13 hotspot con la esim non funziona | hotspot-setup,hotspot
+configurare l'hotspot su iphone | hotspot-setup,hotspot
+attivare l'hotspot su iphone 16 pro | hotspot-setup,hotspot
+configurare l'hotspot su galaxy a54 | hotspot-setup,hotspot
+attivare l'hotspot su samsung | hotspot-setup,hotspot
+configurare l'hotspot su iphone 15 | hotspot-setup,hotspot
+installare la esim su iphone 16 | install-iphone,install-esim
+installare la esim su iphone 17 | install-iphone,install-esim
+installare la esim su iphone 15 | install-iphone,install-esim
+installare la esim su iphone 13 | install-iphone,install-esim
+iphone aggiungi piano cellulare come | install-iphone,install-esim
+iphone aggiungi esim come | install-iphone,install-esim
+iphone aggiungi esim come per favore | install-iphone,install-esim
+installare la esim su iphone 15 per favore | install-iphone,install-esim
+salve iphone aggiungi esim come per favore | install-iphone,install-esim
+una domanda installare la esim su iphone 16 | install-iphone,install-esim
+salve installare la esim su iphone 17 per favore | install-iphone,install-esim
+installare la esim su iphone 17 grazie | install-iphone,install-esim
+installare la esim su iphone 13 per favore | install-iphone,install-esim
+iphone aggiungi esim come? | install-iphone,install-esim
+ciao installare la esim su iphone 17 per favore | install-iphone,install-esim
+salve installare la esim su iphone 13 per favore | install-iphone,install-esim
+una domanda iphone aggiungi esim come | install-iphone,install-esim
+installare la esim su galaxy a55 | install-android,install-esim
+installare la esim su samsung s24 | install-android,install-esim
+xiaomi aggiungere esim come | install-android,install-esim
+installare la esim su pixel 9 | install-android,install-esim
+android aggiungere esim come | install-android,install-esim
+installare la esim su xiaomi 14 | install-android,install-esim
+samsung aggiungere esim come | install-android,install-esim
+una domanda installare la esim su xiaomi 14 per favore | install-android,install-esim
+una domanda xiaomi aggiungere esim come per favore | install-android,install-esim
+salve installare la esim su galaxy a55 | install-android,install-esim
+ciao installare la esim su samsung s24? | install-android,install-esim
+salve samsung aggiungere esim come per favore | install-android,install-esim
+installare la esim su galaxy a55 per favore | install-android,install-esim
+salve installare la esim su xiaomi 14 grazie | install-android,install-esim
+samsung aggiungere esim come grazie | install-android,install-esim
+una domanda installare la esim su galaxy a55 | install-android,install-esim
+salve installare la esim su xiaomi 14 | install-android,install-esim
+la esim è disattivata su redmi note 13 | line-on,data-line
+la esim è spenta su redmi note 13 | line-on,data-line
+attivare la linea esim samsung galaxy s24 | line-on,data-line
+attivare la linea esim iphone 16 pro | line-on,data-line
+la esim è disattivata su samsung galaxy s24 | line-on,data-line
+la esim è spenta su pixel 8 | line-on,data-line
+la esim è spenta su iphone | line-on,data-line
+la esim è disattivata su iphone 15 | line-on,data-line
+la esim è disattivata su pixel 8 | line-on,data-line
+la esim è disattivata su iphone 16 pro | line-on,data-line
+accendere la linea esim samsung galaxy s24 | line-on,data-line
+attivare la linea esim galaxy a54 | line-on,data-line
+attivare la linea esim pixel 8 | line-on,data-line
+accendere la linea esim samsung | line-on,data-line
+accendere la linea esim galaxy a54 | line-on,data-line
+la esim è spenta su iphone 16 pro | line-on,data-line
+la esim è spenta su xiaomi | line-on,data-line
+nessun segnale in dubai | no-service
+solo sos in italia | no-service
+nessuna rete in america con la esim | no-service
+nessuna rete in grecia | no-service
+nessuna rete in italia | no-service
+nessuna rete in thailandia | no-service
+nessuna rete in turchia con la esim | no-service
+nessuna rete in italia con la esim | no-service
+nessuna rete in turchia | no-service
+nessun segnale in spagna | no-service
+nessuna rete in dubai | no-service
+nessun segnale in grecia | no-service
+nessun segnale | no-service
+solo sos in dubai | no-service
+nessuna rete in egitto | no-service
+nessuna rete in america | no-service
+nessuna rete in spagna | no-service
+niente internet in turchia con redmi note 13 | no-internet
+niente internet in dubai con xiaomi | no-internet
+niente internet in thailandia con samsung | no-internet
+iphone 16 pro esim attiva ma niente internet | no-internet
+niente internet in grecia con iphone | no-internet
+niente internet in dubai con pixel 8 | no-internet
+niente internet in dubai con galaxy a54 | no-internet
+niente internet in italia con samsung | no-internet
+niente internet in egitto con iphone | no-internet
+niente internet in turchia | no-internet
+niente internet in dubai con samsung galaxy s24 | no-internet
+niente internet in america | no-internet
+niente internet in grecia con samsung | no-internet
+niente internet in turchia con pixel 8 | no-internet
+redmi note 13 esim attiva ma niente internet | no-internet
+niente internet in america con iphone 16 pro | no-internet
+niente internet in turchia con iphone 16 pro | no-internet
+google maps non carica in grecia | slow-internet
+spotify si blocca in italia | slow-internet
+youtube non carica in italia | slow-internet
+instagram si blocca in italia | slow-internet
+spotify non carica in egitto | slow-internet
+whatsapp si blocca in grecia | slow-internet
+tiktok non carica in italia | slow-internet
+whatsapp si blocca in dubai | slow-internet
+tiktok non carica con la esim | slow-internet
+internet lento in italia | slow-internet
+youtube si blocca in turchia | slow-internet
+internet lentissimo in thailandia | slow-internet
+youtube si blocca in grecia | slow-internet
+tiktok non carica in egitto | slow-internet
+instagram non carica in thailandia | slow-internet
+spotify non carica in thailandia | slow-internet
+internet lentissimo in turchia | slow-internet
+perché il pacchetto è finito così in fretta | data-fast
+dati finiti così in fretta | data-fast
+spotify consuma tantissimi dati | data-fast
+instagram consuma tantissimi dati | data-fast
+google maps consuma tantissimi dati | data-fast
+youtube consuma tantissimi dati | data-fast
+dati esauriti in un giorno | data-fast
+dati finiti in un giorno | data-fast
+netflix consuma tantissimi dati | data-fast
+dati esauriti così in fretta | data-fast
+tiktok consuma tantissimi dati | data-fast
+whatsapp consuma tantissimi dati | data-fast
+youtube consuma tantissimi dati per favore | data-fast
+instagram consuma tantissimi dati per favore | data-fast
+whatsapp consuma tantissimi dati per favore | data-fast
+salve netflix consuma tantissimi dati per favore | data-fast
+google maps consuma tantissimi dati grazie | data-fast
+qr code rifiutato iphone | code-invalid
+qr code rifiutato samsung | code-invalid
+qr code non valido iphone | code-invalid
+qr code non valido samsung | code-invalid
+qr code rifiutato iphone 16 pro | code-invalid
+qr code non valido xiaomi | code-invalid
+errore codice non valido | code-invalid
+qr code non valido samsung galaxy s24 | code-invalid
+qr code non valido iphone 16 pro | code-invalid
+errore codice già usato | code-invalid
+qr code non valido redmi note 13 | code-invalid
+qr code rifiutato pixel 8 | code-invalid
+qr code non valido galaxy a54 | code-invalid
+qr code rifiutato xiaomi | code-invalid
+qr code rifiutato redmi note 13 | code-invalid
+qr code rifiutato galaxy a54 | code-invalid
+qr code rifiutato iphone 15 | code-invalid
+galaxy a54 dice impossibile aggiungere la esim | cannot-add
+impossibile aggiungere il piano cellulare samsung galaxy s24 | cannot-add
+impossibile aggiungere il piano cellulare galaxy a54 | cannot-add
+pixel 8 dice impossibile aggiungere la esim | cannot-add
+impossibile aggiungere il piano cellulare iphone 16 pro | cannot-add
+impossibile aggiungere la esim iphone | cannot-add
+impossibile aggiungere il piano cellulare | cannot-add
+impossibile aggiungere la esim samsung galaxy s24 | cannot-add
+impossibile aggiungere il piano cellulare redmi note 13 | cannot-add
+iphone dice impossibile aggiungere la esim | cannot-add
+impossibile aggiungere il piano cellulare samsung | cannot-add
+impossibile aggiungere la esim iphone 15 | cannot-add
+impossibile aggiungere il piano cellulare iphone | cannot-add
+impossibile aggiungere la esim pixel 8 | cannot-add
+samsung galaxy s24 dice impossibile aggiungere la esim | cannot-add
+iphone 16 pro dice impossibile aggiungere la esim | cannot-add
+xiaomi dice impossibile aggiungere la esim | cannot-add
+installare la esim manualmente | manual-install
+dove inserisco il codice di attivazione | manual-install
+dove inserisco l'indirizzo sm-dp | manual-install
+installare la esim senza qr code | manual-install
+ciao dove inserisco l'indirizzo sm-dp | manual-install
+salve dove inserisco l'indirizzo sm-dp | manual-install
+ciao installare la esim manualmente grazie | manual-install
+ciao installare la esim manualmente? | manual-install
+installare la esim manualmente grazie | manual-install
+ciao dove inserisco il codice di attivazione | manual-install
+salve installare la esim manualmente per favore | manual-install
+installare la esim senza qr code? | manual-install
+una domanda installare la esim senza qr code | manual-install
+una domanda dove inserisco il codice di attivazione per favore | manual-install
+una domanda installare la esim senza qr code per favore | manual-install
+salve dove inserisco il codice di attivazione | manual-install
+dove inserisco l'indirizzo sm-dp per favore | manual-install
+esim bloccata su attivazione in corso iphone 15 | activating-stuck
+esim bloccata su attivazione in corso iphone 16 pro | activating-stuck
+esim bloccata in attivazione redmi note 13 | activating-stuck
+esim bloccata su attivazione in corso pixel 8 | activating-stuck
+esim bloccata su attivazione in corso samsung | activating-stuck
+esim bloccata in attivazione iphone 15 | activating-stuck
+esim bloccata in attivazione pixel 8 | activating-stuck
+esim bloccata in attivazione | activating-stuck
+esim bloccata in attivazione galaxy a54 | activating-stuck
+esim bloccata su attivazione in corso xiaomi | activating-stuck
+esim bloccata in attivazione iphone | activating-stuck
+esim bloccata in attivazione xiaomi | activating-stuck
+l'attivazione della esim dura da ore | activating-stuck
+esim bloccata in attivazione samsung galaxy s24 | activating-stuck
+esim bloccata su attivazione in corso redmi note 13 | activating-stuck
+esim bloccata in attivazione samsung | activating-stuck
+esim bloccata su attivazione in corso galaxy a54 | activating-stuck
+ho eliminato la esim pixel 8 | deleted-esim,new-phone
+ho eliminato la esim per errore galaxy a54 | deleted-esim,new-phone
+ho eliminato la esim per errore iphone 16 pro | deleted-esim,new-phone
+ho eliminato la esim per errore samsung | deleted-esim,new-phone
+esim cancellata si può reinstallare | deleted-esim,new-phone
+ho eliminato la esim iphone 16 pro | deleted-esim,new-phone
+ho eliminato la esim per errore iphone 15 | deleted-esim,new-phone
+ho eliminato la esim per errore iphone | deleted-esim,new-phone
+ho eliminato la esim | deleted-esim,new-phone
+ho eliminato la esim iphone | deleted-esim,new-phone
+ho eliminato la esim per errore samsung galaxy s24 | deleted-esim,new-phone
+ho eliminato la esim per errore | deleted-esim,new-phone
+ho eliminato la esim per errore pixel 8 | deleted-esim,new-phone
+ho eliminato la esim per errore redmi note 13 | deleted-esim,new-phone
+ho eliminato la esim redmi note 13 | deleted-esim,new-phone
+ho eliminato la esim per errore xiaomi | deleted-esim,new-phone
+ho eliminato la esim iphone 15 | deleted-esim,new-phone
+blocco operatore esim iphone 15 | sim-lock
+telefono bloccato esim xiaomi | sim-lock
+iphone 15 bloccato dall'operatore esim possibile | sim-lock
+blocco operatore esim iphone 16 pro | sim-lock
+xiaomi bloccato dall'operatore esim possibile | sim-lock
+iphone 16 pro bloccato dall'operatore esim possibile | sim-lock
+blocco operatore esim | sim-lock
+blocco operatore esim redmi note 13 | sim-lock
+blocco operatore esim xiaomi | sim-lock
+telefono bloccato esim redmi note 13 | sim-lock
+telefono bloccato esim | sim-lock
+telefono bloccato esim pixel 8 | sim-lock
+telefono bloccato esim iphone | sim-lock
+iphone bloccato dall'operatore esim possibile | sim-lock
+blocco operatore esim galaxy a54 | sim-lock
+telefono bloccato esim iphone 16 pro | sim-lock
+samsung bloccato dall'operatore esim possibile | sim-lock
+come evito i costi di roaming in dubai | avoid-roaming-costs
+pago il roaming sulla mia sim in america | avoid-roaming-costs
+pago il roaming sulla mia sim in egitto | avoid-roaming-costs
+pago il roaming sulla mia sim in turchia | avoid-roaming-costs
+pago il roaming sulla mia sim in thailandia | avoid-roaming-costs
+pago il roaming sulla mia sim in italia | avoid-roaming-costs
+come evito i costi di roaming in egitto | avoid-roaming-costs
+come evito i costi di roaming in italia | avoid-roaming-costs
+come evito i costi di roaming in spagna | avoid-roaming-costs
+come evito i costi di roaming in america | avoid-roaming-costs
+come evito i costi di roaming | avoid-roaming-costs
+pago il roaming sulla mia sim in grecia | avoid-roaming-costs
+pago il roaming sulla mia sim in spagna | avoid-roaming-costs
+pago il roaming sulla mia sim in dubai | avoid-roaming-costs
+come evito i costi di roaming in grecia | avoid-roaming-costs
+come evito i costi di roaming in turchia | avoid-roaming-costs
+come evito i costi di roaming in thailandia | avoid-roaming-costs
+ricevo gli sms della banca in italia | bank-sms
+ricevo i codici di verifica in spagna | bank-sms
+ricevo gli sms della banca con la esim | bank-sms
+ricevo i codici di verifica in thailandia | bank-sms
+ricevo i codici di verifica in turchia | bank-sms
+ricevo i codici di verifica in grecia | bank-sms
+ricevo i codici di verifica in egitto | bank-sms
+ricevo gli sms della banca in turchia | bank-sms
+ricevo gli sms della banca in america | bank-sms
+ricevo gli sms della banca in thailandia | bank-sms
+ricevo gli sms della banca in grecia | bank-sms
+ricevo i codici di verifica in dubai | bank-sms
+ricevo gli sms della banca in dubai | bank-sms
+ricevo i codici di verifica in italia | bank-sms
+ricevo gli sms della banca in spagna | bank-sms
+ricevo i codici di verifica con la esim | bank-sms
+ricevo gli sms della banca in egitto | bank-sms
+installare la esim senza wifi | install-internet
+serve internet per installare la esim | install-internet
+serve il wifi per installare la esim | install-internet
+installare la esim in aeroporto | install-internet
+una domanda installare la esim senza wifi | install-internet
+ciao installare la esim senza wifi grazie | install-internet
+una domanda serve il wifi per installare la esim | install-internet
+salve installare la esim in aeroporto per favore | install-internet
+ciao serve il wifi per installare la esim grazie | install-internet
+salve serve internet per installare la esim grazie | install-internet
+salve serve internet per installare la esim per favore | install-internet
+serve il wifi per installare la esim grazie | install-internet
+installare la esim senza wifi grazie | install-internet
+salve installare la esim in aeroporto | install-internet
+ciao installare la esim in aeroporto? | install-internet
+installare la esim senza wifi per favore | install-internet
+una domanda installare la esim in aeroporto grazie | install-internet
+la esim funziona su ipad | tablet-watch
+esim su tablet | tablet-watch
+esim su apple watch | tablet-watch
+la esim funziona sull'orologio | tablet-watch
+esim su orologio | tablet-watch
+esim su ipad | tablet-watch
+ciao esim su ipad per favore | tablet-watch
+la esim funziona sull'orologio grazie | tablet-watch
+una domanda esim su tablet? | tablet-watch
+una domanda la esim funziona su ipad | tablet-watch
+ciao la esim funziona sull'orologio | tablet-watch
+una domanda esim su orologio | tablet-watch
+la esim funziona su ipad? | tablet-watch
+esim su apple watch per favore | tablet-watch
+esim su tablet per favore | tablet-watch
+salve esim su orologio? | tablet-watch
+una domanda la esim funziona su ipad per favore | tablet-watch
+c'è il 5g in grecia | 5g
+c'è il 5g con la esim | 5g
+c'è il 5g in italia | 5g
+c'è il 5g in turchia | 5g
+c'è il 5g in spagna | 5g
+c'è il 5g in dubai | 5g
+c'è il 5g in thailandia | 5g
+c'è il 5g in egitto | 5g
+c'è il 5g in america | 5g
+una domanda c'è il 5g in grecia | 5g
+salve c'è il 5g in grecia | 5g
+c'è il 5g in turchia grazie | 5g
+una domanda c'è il 5g in spagna | 5g
+c'è il 5g in dubai per favore | 5g
+salve c'è il 5g in america? | 5g
+salve c'è il 5g in grecia grazie | 5g
+salve c'è il 5g in dubai? | 5g
+la esim funziona in mare | cruise-flight
+la esim funziona in aereo | cruise-flight
+la esim funziona in crociera | cruise-flight
+la esim funziona in aereo? | cruise-flight
+una domanda la esim funziona in mare grazie | cruise-flight
+salve la esim funziona in mare grazie | cruise-flight
+ciao la esim funziona in crociera? | cruise-flight
+la esim funziona in mare per favore | cruise-flight
+salve la esim funziona in mare per favore | cruise-flight
+salve la esim funziona in mare | cruise-flight
+ciao la esim funziona in crociera per favore | cruise-flight
+una domanda la esim funziona in aereo | cruise-flight
+la esim funziona in crociera grazie | cruise-flight
+una domanda la esim funziona in aereo per favore | cruise-flight
+la esim funziona in crociera? | cruise-flight
+la esim funziona in crociera per favore | cruise-flight
+una domanda la esim funziona in mare | cruise-flight
+google mostra un altro paese con la esim | ip-location
+perché posizione sbagliata | ip-location
+netflix mostra un altro paese con la esim | ip-location
+perché ip di un altro paese | ip-location
+netflix mostra un altro paese con la esim grazie | ip-location
+google mostra un altro paese con la esim? | ip-location
+ciao netflix mostra un altro paese con la esim | ip-location
+ciao perché ip di un altro paese | ip-location
+ciao google mostra un altro paese con la esim? | ip-location
+perché posizione sbagliata per favore | ip-location
+salve netflix mostra un altro paese con la esim? | ip-location
+salve netflix mostra un altro paese con la esim grazie | ip-location
+ciao perché ip di un altro paese? | ip-location
+salve google mostra un altro paese con la esim | ip-location
+ciao perché posizione sbagliata grazie | ip-location
+perché posizione sbagliata grazie | ip-location
+salve perché posizione sbagliata grazie | ip-location
+whatsapp funziona in cina | china
+google funziona in cina con la esim | china
+youtube funziona in cina con la esim | china
+whatsapp funziona in cina con la esim | china
+google funziona in cina | china
+youtube funziona in cina | china
+ciao youtube funziona in cina per favore | china
+google funziona in cina grazie | china
+una domanda whatsapp funziona in cina con la esim | china
+una domanda google funziona in cina | china
+youtube funziona in cina con la esim per favore | china
+salve youtube funziona in cina | china
+whatsapp funziona in cina con la esim grazie | china
+whatsapp funziona in cina con la esim per favore | china
+ciao google funziona in cina con la esim? | china
+ciao google funziona in cina | china
+esim per la turchia funziona | turkey
+esim per la turchia quale pacchetto | turkey
+telefono estero in turchia blocco esim | turkey
+telefono estero in turchia registrazione imei esim | turkey
+ciao telefono estero in turchia blocco esim per favore | turkey
+una domanda telefono estero in turchia blocco esim | turkey
+una domanda telefono estero in turchia registrazione imei esim? | turkey
+telefono estero in turchia blocco esim? | turkey
+ciao telefono estero in turchia blocco esim? | turkey
+esim per la turchia funziona per favore | turkey
+salve esim per la turchia quale pacchetto per favore | turkey
+una domanda esim per la turchia funziona? | turkey
+una domanda telefono estero in turchia registrazione imei esim | turkey
+ciao telefono estero in turchia blocco esim | turkey
+ciao esim per la turchia quale pacchetto | turkey
+ciao telefono estero in turchia registrazione imei esim | turkey
+esim o roaming cosa conviene | esim-vs-roaming
+esim contro roaming cosa conviene | esim-vs-roaming
+esim contro roaming cosa conviene grazie | esim-vs-roaming
+una domanda esim contro roaming cosa conviene? | esim-vs-roaming
+una domanda esim contro roaming cosa conviene per favore | esim-vs-roaming
+ciao esim o roaming cosa conviene per favore | esim-vs-roaming
+ciao esim o roaming cosa conviene | esim-vs-roaming
+salve esim contro roaming cosa conviene | esim-vs-roaming
+ciao esim contro roaming cosa conviene | esim-vs-roaming
+esim contro roaming cosa conviene per favore | esim-vs-roaming
+esim contro roaming cosa conviene? | esim-vs-roaming
+salve esim contro roaming cosa conviene grazie | esim-vs-roaming
+salve esim o roaming cosa conviene per favore | esim-vs-roaming
+esim o roaming cosa conviene grazie | esim-vs-roaming
+salve esim contro roaming cosa conviene per favore | esim-vs-roaming
+esim o roaming cosa conviene per favore | esim-vs-roaming
+soldi addebitati ma nessuna esim | payment-failed
+addebitato due volte | payment-failed
+carta rifiutata | payment-failed
+soldi addebitati ma nessun ordine | payment-failed
+pagamento non riuscito | payment-failed
+pagamento non riuscito grazie | payment-failed
+soldi addebitati ma nessun ordine per favore | payment-failed
+carta rifiutata? | payment-failed
+ciao soldi addebitati ma nessun ordine? | payment-failed
+salve soldi addebitati ma nessuna esim grazie | payment-failed
+una domanda addebitato due volte? | payment-failed
+ciao soldi addebitati ma nessun ordine | payment-failed
+addebitato due volte? | payment-failed
+addebitato due volte per favore | payment-failed
+una domanda carta rifiutata | payment-failed
+ciao pagamento non riuscito | payment-failed
+il pacchetto si rinnova da solo | hidden-costs
+ci sono costi nascosti | hidden-costs
+ci sono abbonamenti | hidden-costs
+ci sono costi nascosti per favore | hidden-costs
+ciao il pacchetto si rinnova da solo | hidden-costs
+salve ci sono abbonamenti per favore | hidden-costs
+una domanda ci sono abbonamenti per favore | hidden-costs
+ciao il pacchetto si rinnova da solo grazie | hidden-costs
+ciao ci sono abbonamenti | hidden-costs
+ci sono costi nascosti? | hidden-costs
+ci sono abbonamenti grazie | hidden-costs
+una domanda ci sono costi nascosti | hidden-costs
+salve ci sono costi nascosti | hidden-costs
+salve il pacchetto si rinnova da solo grazie | hidden-costs
+salve ci sono costi nascosti per favore | hidden-costs
+ciao ci sono costi nascosti grazie | hidden-costs
+dov'è il pulsante rimborso | refund-how,refund
+come richiedo un rimborso | refund-how,refund
+una domanda dov'è il pulsante rimborso? | refund-how,refund
+salve dov'è il pulsante rimborso? | refund-how,refund
+una domanda dov'è il pulsante rimborso | refund-how,refund
+come richiedo un rimborso grazie | refund-how,refund
+una domanda dov'è il pulsante rimborso per favore | refund-how,refund
+dov'è il pulsante rimborso per favore | refund-how,refund
+una domanda come richiedo un rimborso | refund-how,refund
+una domanda come richiedo un rimborso? | refund-how,refund
+come richiedo un rimborso per favore | refund-how,refund
+salve dov'è il pulsante rimborso | refund-how,refund
+ciao dov'è il pulsante rimborso? | refund-how,refund
+una domanda dov'è il pulsante rimborso grazie | refund-how,refund
+salve dov'è il pulsante rimborso grazie | refund-how,refund
+salve come richiedo un rimborso grazie | refund-how,refund
+come entro in lounge in turchia | lounge-access,lounge-what
+come entro in lounge in thailandia | lounge-access,lounge-what
+accesso lounge cosa mostro | lounge-access,lounge-what
+come entro in lounge in grecia | lounge-access,lounge-what
+come entro in lounge in dubai | lounge-access,lounge-what
+come entro in lounge in america | lounge-access,lounge-what
+come entro in lounge in italia | lounge-access,lounge-what
+come entro in lounge in aeroporto | lounge-access,lounge-what
+voucher lounge cosa mostro | lounge-access,lounge-what
+come entro in lounge in egitto | lounge-access,lounge-what
+come entro in lounge in spagna | lounge-access,lounge-what
+come entro in lounge in spagna grazie | lounge-access,lounge-what
+ciao accesso lounge cosa mostro | lounge-access,lounge-what
+una domanda come entro in lounge in dubai? | lounge-access,lounge-what
+come entro in lounge in grecia grazie | lounge-access,lounge-what
+come entro in lounge in thailandia grazie | lounge-access,lounge-what
+quanto posso stare in lounge | lounge-hours
+quanto posso stare in lounge grazie | lounge-hours
+una domanda quanto posso stare in lounge per favore | lounge-hours
+salve quanto posso stare in lounge per favore | lounge-hours
+salve quanto posso stare in lounge? | lounge-hours
+quanto posso stare in lounge per favore | lounge-hours
+ciao quanto posso stare in lounge per favore | lounge-hours
+salve quanto posso stare in lounge | lounge-hours
+salve quanto posso stare in lounge grazie | lounge-hours
+una domanda quanto posso stare in lounge | lounge-hours
+ciao quanto posso stare in lounge grazie | lounge-hours
+una domanda quanto posso stare in lounge grazie | lounge-hours
+quanto posso stare in lounge? | lounge-hours
+ciao quanto posso stare in lounge | lounge-hours
+ciao quanto posso stare in lounge? | lounge-hours
+una domanda quanto posso stare in lounge? | lounge-hours
+neonato in lounge | lounge-kids
+accompagnatore in lounge | lounge-kids
+bambini in lounge | lounge-kids
+bambini in lounge per favore | lounge-kids
+ciao bambini in lounge | lounge-kids
+salve accompagnatore in lounge | lounge-kids
+neonato in lounge per favore | lounge-kids
+una domanda bambini in lounge | lounge-kids
+accompagnatore in lounge per favore | lounge-kids
+bambini in lounge grazie | lounge-kids
+ciao bambini in lounge grazie | lounge-kids
+accompagnatore in lounge grazie | lounge-kids
+bambini in lounge? | lounge-kids
+ciao bambini in lounge? | lounge-kids
+ciao bambini in lounge per favore | lounge-kids
+salve bambini in lounge grazie | lounge-kids
+la lounge mi ha rifiutato | lounge-denied
+lounge piena | lounge-denied
+ciao la lounge mi ha rifiutato per favore | lounge-denied
+la lounge mi ha rifiutato? | lounge-denied
+una domanda la lounge mi ha rifiutato? | lounge-denied
+salve lounge piena | lounge-denied
+una domanda la lounge mi ha rifiutato | lounge-denied
+ciao la lounge mi ha rifiutato | lounge-denied
+salve la lounge mi ha rifiutato | lounge-denied
+lounge piena per favore | lounge-denied
+una domanda lounge piena per favore | lounge-denied
+una domanda lounge piena grazie | lounge-denied
+lounge piena? | lounge-denied
+salve la lounge mi ha rifiutato? | lounge-denied
+una domanda lounge piena | lounge-denied
+ciao la lounge mi ha rifiutato? | lounge-denied
+volo in ritardo il voucher lounge vale ancora | lounge-delay
+ritardo il voucher lounge vale ancora | lounge-delay
+salve ritardo il voucher lounge vale ancora grazie | lounge-delay
+salve ritardo il voucher lounge vale ancora? | lounge-delay
+volo in ritardo il voucher lounge vale ancora? | lounge-delay
+ritardo il voucher lounge vale ancora per favore | lounge-delay
+volo in ritardo il voucher lounge vale ancora grazie | lounge-delay
+volo in ritardo il voucher lounge vale ancora per favore | lounge-delay
+salve ritardo il voucher lounge vale ancora | lounge-delay
+ritardo il voucher lounge vale ancora grazie | lounge-delay
+una domanda volo in ritardo il voucher lounge vale ancora | lounge-delay
+salve ritardo il voucher lounge vale ancora per favore | lounge-delay
+ciao volo in ritardo il voucher lounge vale ancora | lounge-delay
+salve volo in ritardo il voucher lounge vale ancora | lounge-delay
+una domanda volo in ritardo il voucher lounge vale ancora? | lounge-delay
+ciao ritardo il voucher lounge vale ancora | lounge-delay
+dov'è il fast track a istanbul | fasttrack-where
+dov'è il fast track in aeroporto | fasttrack-where
+non trovo l'ingresso del fast track | fasttrack-where
+ciao dov'è il fast track in aeroporto? | fasttrack-where
+una domanda non trovo l'ingresso del fast track grazie | fasttrack-where
+dov'è il fast track in aeroporto? | fasttrack-where
+dov'è il fast track in aeroporto per favore | fasttrack-where
+salve dov'è il fast track a istanbul grazie | fasttrack-where
+non trovo l'ingresso del fast track per favore | fasttrack-where
+ciao non trovo l'ingresso del fast track | fasttrack-where
+ciao non trovo l'ingresso del fast track grazie | fasttrack-where
+una domanda dov'è il fast track a istanbul per favore | fasttrack-where
+una domanda non trovo l'ingresso del fast track | fasttrack-where
+una domanda dov'è il fast track in aeroporto | fasttrack-where
+salve dov'è il fast track a istanbul | fasttrack-where
+dov'è il fast track a istanbul grazie | fasttrack-where
+quanto vale il fast track | fasttrack-time
+salve quanto vale il fast track grazie | fasttrack-time
+salve quanto vale il fast track? | fasttrack-time
+una domanda quanto vale il fast track per favore | fasttrack-time
+ciao quanto vale il fast track | fasttrack-time
+una domanda quanto vale il fast track | fasttrack-time
+ciao quanto vale il fast track? | fasttrack-time
+quanto vale il fast track per favore | fasttrack-time
+ciao quanto vale il fast track grazie | fasttrack-time
+quanto vale il fast track? | fasttrack-time
+salve quanto vale il fast track | fasttrack-time
+ciao quanto vale il fast track per favore | fasttrack-time
+quanto vale il fast track grazie | fasttrack-time
+salve quanto vale il fast track per favore | fasttrack-time
+una domanda quanto vale il fast track grazie | fasttrack-time
+una domanda quanto vale il fast track? | fasttrack-time
+la vpn funziona con la esim | vpn
+la vpn funziona con la esim? | vpn
+una domanda la vpn funziona con la esim? | vpn
+una domanda la vpn funziona con la esim per favore | vpn
+la vpn funziona con la esim per favore | vpn
+la vpn funziona con la esim grazie | vpn
+salve la vpn funziona con la esim? | vpn
+una domanda la vpn funziona con la esim | vpn
+ciao la vpn funziona con la esim? | vpn
+ciao la vpn funziona con la esim | vpn
+salve la vpn funziona con la esim | vpn
+ciao la vpn funziona con la esim grazie | vpn
+ciao la vpn funziona con la esim per favore | vpn
+una domanda la vpn funziona con la esim grazie | vpn
+salve la vpn funziona con la esim per favore | vpn
+salve la vpn funziona con la esim grazie | vpn
+esim per dipendenti offerta | business
+esim per aziende offerta | business
+esim per aziende offerta per favore | business
+una domanda esim per dipendenti offerta? | business
+salve esim per dipendenti offerta | business
+esim per dipendenti offerta? | business
+salve esim per aziende offerta grazie | business
+salve esim per aziende offerta per favore | business
+esim per aziende offerta grazie | business
+una domanda esim per aziende offerta grazie | business
+esim per aziende offerta? | business
+salve esim per dipendenti offerta? | business
+una domanda esim per aziende offerta | business
+una domanda esim per dipendenti offerta grazie | business
+esim per dipendenti offerta grazie | business
+una domanda esim per aziende offerta? | business
+la esim ha un numero turco | phone-number,calls
+la esim ha un numero di telefono | phone-number,calls
+ciao la esim ha un numero di telefono | phone-number,calls
+ciao la esim ha un numero turco grazie | phone-number,calls
+la esim ha un numero di telefono grazie | phone-number,calls
+la esim ha un numero di telefono per favore | phone-number,calls
+salve la esim ha un numero turco | phone-number,calls
+ciao la esim ha un numero di telefono grazie | phone-number,calls
+una domanda la esim ha un numero di telefono | phone-number,calls
+una domanda la esim ha un numero turco grazie | phone-number,calls
+salve la esim ha un numero turco per favore | phone-number,calls
+la esim ha un numero turco? | phone-number,calls
+una domanda la esim ha un numero turco | phone-number,calls
+salve la esim ha un numero turco? | phone-number,calls
+la esim ha un numero di telefono? | phone-number,calls
+una domanda la esim ha un numero turco per favore | phone-number,calls
+installare la esim prima del viaggio | buy-when,when-activate
+quando installo la esim | buy-when,when-activate
+quando compro la esim | buy-when,when-activate
+quando installo la esim? | buy-when,when-activate
+salve quando installo la esim | buy-when,when-activate
+quando installo la esim grazie | buy-when,when-activate
+una domanda quando installo la esim per favore | buy-when,when-activate
+una domanda installare la esim prima del viaggio? | buy-when,when-activate
+ciao quando installo la esim? | buy-when,when-activate
+ciao installare la esim prima del viaggio? | buy-when,when-activate
+salve installare la esim prima del viaggio? | buy-when,when-activate
+ciao installare la esim prima del viaggio per favore | buy-when,when-activate
+salve quando compro la esim | buy-when,when-activate
+ciao quando compro la esim | buy-when,when-activate
+installare la esim prima del viaggio grazie | buy-when,when-activate
+installare la esim prima del viaggio per favore | buy-when,when-activate

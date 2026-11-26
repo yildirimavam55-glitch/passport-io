@@ -9683,7 +9683,9 @@
           "installazione esim",
           "configurare esim",
           "attivare esim",
-          "scansionare qr"
+          "scansionare qr",
+          "come attivo la",
+          "come scansiono il"
         ]
       },
       {
@@ -9695,7 +9697,9 @@
           "quando inizia il piano",
           "quando parte",
           "da quando contano i giorni",
-          "quando si attiva"
+          "quando si attiva",
+          "quando inizia il",
+          "quando parte il"
         ]
       },
       {
@@ -9708,7 +9712,9 @@
           "quanti giga",
           "quale pacchetto scegliere",
           "piano giusto",
-          "quanti dati servono"
+          "quanti dati servono",
+          "quale pacchetto scelgo",
+          "quale pacchetto mi"
         ]
       },
       {
@@ -9721,7 +9727,8 @@
           "fare chiamate",
           "sms inclusi",
           "chiamare con esim",
-          "telefonate"
+          "telefonate",
+          "sms incluse"
         ]
       },
       {
@@ -9745,7 +9752,8 @@
           "condividere internet",
           "tethering",
           "router personale",
-          "hotspot possibile"
+          "hotspot possibile",
+          "hotspot"
         ]
       },
       {
@@ -9758,7 +9766,8 @@
           "dati extra",
           "più gb",
           "comprare altri dati",
-          "aggiungere dati"
+          "aggiungere dati",
+          "comprare altri giga"
         ]
       },
       {
@@ -9770,7 +9779,8 @@
           "entrare in lounge",
           "voucher lounge",
           "cosa mostrare in lounge",
-          "come funziona la lounge"
+          "come funziona la lounge",
+          "come entro in"
         ]
       },
       {
@@ -9781,7 +9791,8 @@
           "quanto restare in lounge",
           "ore in lounge",
           "limite di tempo lounge",
-          "durata lounge"
+          "durata lounge",
+          "quanto posso stare"
         ]
       },
       {
@@ -9818,7 +9829,8 @@
           "pagare con paypal",
           "carta di credito",
           "apple pay",
-          "google pay"
+          "google pay",
+          "pagare con carta"
         ]
       },
       {
@@ -9842,7 +9854,8 @@
           "servizio clienti",
           "parlare con una persona",
           "supporto",
-          "contatto"
+          "contatto",
+          "voglio parlare con"
         ]
       },
       {
@@ -9855,7 +9868,9 @@
           "connessa ma senza internet",
           "non va internet",
           "nessuna connessione dati",
-          "pagine non si aprono"
+          "pagine non si aprono",
+          "non ho internet",
+          "ma senza internet"
         ]
       },
       {
@@ -9868,7 +9883,8 @@
           "niente segnale",
           "solo sos",
           "non prende",
-          "nessuna tacca"
+          "nessuna tacca",
+          "nessun segnale"
         ]
       },
       {
@@ -9880,7 +9896,8 @@
           "codice non valido",
           "codice già usato",
           "errore codice qr",
-          "qr non valido"
+          "qr non valido",
+          "qr code rifiutato"
         ]
       },
       {
@@ -9892,7 +9909,8 @@
           "impossibile aggiungere piano cellulare",
           "errore aggiunta esim",
           "esim non si aggiunge",
-          "installazione fallita"
+          "installazione fallita",
+          "impossibile aggiungere la"
         ]
       },
       {
@@ -9905,7 +9923,9 @@
           "senza codice qr",
           "qr sullo stesso telefono",
           "inserire codice manualmente",
-          "indirizzo sm dp"
+          "indirizzo sm dp",
+          "codice di attivazione",
+          "esim senza qr"
         ]
       },
       {
@@ -9918,7 +9938,9 @@
           "connessione lenta",
           "video si blocca",
           "caricamento lento",
-          "velocità bassa"
+          "velocità bassa",
+          "non carica",
+          "si blocca in"
         ]
       },
       {
@@ -9930,7 +9952,10 @@
           "finisce in fretta",
           "consuma troppo",
           "gb finiti in un giorno",
-          "perché finiscono i dati"
+          "perché finiscono i dati",
+          "consuma tantissimi dati",
+          "cosi in fretta",
+          "in un giorno"
         ]
       },
       {
@@ -9955,7 +9980,8 @@
           "trasferire esim",
           "telefono perso",
           "telefono rotto",
-          "spostare esim"
+          "spostare esim",
+          "ho cambiato telefono"
         ]
       },
       {
@@ -10015,7 +10041,8 @@
           "numero whatsapp",
           "whatsapp cambia numero",
           "chiamate whatsapp",
-          "imessage"
+          "imessage",
+          "posso usare whatsapp"
         ]
       },
       {
@@ -10041,7 +10068,8 @@
           "consumo dati",
           "giorni rimanenti",
           "controllare consumo",
-          "fino a quando valida"
+          "fino a quando valida",
+          "quanti dati mi"
         ]
       },
       {
@@ -10053,7 +10081,9 @@
           "dati finiti cosa succede",
           "validità scaduta",
           "esim scaduta",
-          "piano esaurito"
+          "piano esaurito",
+          "pacchetto finito cosa",
+          "finito cosa faccio"
         ]
       },
       {
@@ -10088,7 +10118,8 @@
           "senza wifi",
           "installare in aeroporto",
           "installare in aereo",
-          "wifi necessario"
+          "wifi necessario",
+          "serve il wifi"
         ]
       },
       {
@@ -10161,7 +10192,8 @@
           "in quali paesi",
           "più paesi",
           "copertura paesi",
-          "paesi inclusi"
+          "paesi inclusi",
+          "per la thailandia"
         ]
       },
       {
@@ -10221,7 +10253,8 @@
           "per un'altra persona",
           "esim come regalo",
           "comprare per qualcuno",
-          "per mia madre"
+          "per mia madre",
+          "esim da regalare"
         ]
       },
       {
@@ -10233,7 +10266,8 @@
           "esim vs roaming",
           "sim locale",
           "meglio esim o roaming",
-          "più economico del roaming"
+          "più economico del roaming",
+          "esim contro roaming"
         ]
       },
       {
@@ -10281,7 +10315,8 @@
           "carta rifiutata",
           "pagamento non riuscito",
           "addebitato senza ordine",
-          "addebitato due volte"
+          "addebitato due volte",
+          "soldi addebitati ma"
         ]
       },
       {
@@ -10317,7 +10352,8 @@
           "password dimenticata",
           "codice di verifica",
           "login non funziona",
-          "reimpostare password"
+          "reimpostare password",
+          "di verifica non"
         ]
       },
       {
@@ -10328,7 +10364,8 @@
           "bambini in lounge",
           "ospiti in lounge",
           "neonato lounge",
-          "accompagnatore lounge"
+          "accompagnatore lounge",
+          "accompagnatore in"
         ]
       },
       {
@@ -10350,7 +10387,8 @@
           "volo in ritardo",
           "ritardo volo lounge",
           "volo cancellato",
-          "voucher ancora valido"
+          "voucher ancora valido",
+          "ritardo il voucher"
         ]
       },
       {
@@ -10397,7 +10435,8 @@
           "quanto costa",
           "prezzo",
           "costi esim",
-          "perché il prezzo"
+          "perché il prezzo",
+          "prezzi delle esim"
         ]
       },
       {
@@ -10502,7 +10541,8 @@
           "dati mobili su esim",
           "scegliere esim per i dati",
           "sim per internet",
-          "usa ancora la mia sim"
+          "usa ancora la mia sim",
+          "passare i dati"
         ]
       },
       {
@@ -10514,7 +10554,8 @@
           "scegliere operatore",
           "rete manuale",
           "cambiare rete",
-          "operatore sbagliato"
+          "operatore sbagliato",
+          "cambiare operatore"
         ]
       },
       {
@@ -10526,7 +10567,9 @@
           "disattivare linea",
           "esim spenta",
           "linea disattivata",
-          "accendere esim"
+          "accendere esim",
+          "esim e disattivata",
+          "la linea esim"
         ]
       },
       {
@@ -10550,7 +10593,8 @@
           "esim samsung",
           "esim pixel",
           "esim xiaomi",
-          "android aggiungi esim"
+          "android aggiungi esim",
+          "esim su galaxy"
         ]
       },
       {
@@ -10587,7 +10631,8 @@
           "le mie esim",
           "i miei ordini",
           "dov'è la mia esim",
-          "rivedere il qr"
+          "rivedere il qr",
+          "ho comprato"
         ]
       },
       {
@@ -10600,7 +10645,10 @@
           "comprare una esim",
           "acquistare pacchetto",
           "fare un ordine",
-          "come si compra"
+          "come si compra",
+          "come ordino",
+          "come acquisto",
+          "come compro"
         ]
       },
       {
@@ -10635,7 +10683,9 @@
           "nuova email",
           "modificare indirizzo email",
           "email sbagliata",
-          "ho sbagliato email"
+          "ho sbagliato email",
+          "modificare la email",
+          "modificare l email"
         ]
       }
     ]
@@ -10696,7 +10746,8 @@
           "esim compatível",
           "funciona no meu iphone",
           "funciona no meu samsung",
-          "quais celulares"
+          "quais celulares",
+          "funciona no meu"
         ]
       },
       {
@@ -10709,7 +10760,9 @@
           "instalação do esim",
           "configurar esim",
           "ativar esim",
-          "escanear qr"
+          "escanear qr",
+          "como escaneio o",
+          "como ativo o"
         ]
       },
       {
@@ -10721,7 +10774,8 @@
           "quando começa o plano",
           "quando começa a contar",
           "quando o esim ativa",
-          "a partir de quando"
+          "a partir de quando",
+          "quando o esim"
         ]
       },
       {
@@ -10734,7 +10788,9 @@
           "quantos giga",
           "qual pacote escolher",
           "plano ideal",
-          "quanto de dados"
+          "quanto de dados",
+          "quantos dados preciso",
+          "qual pacote preciso"
         ]
       },
       {
@@ -10771,7 +10827,8 @@
           "compartilhar internet",
           "roteador",
           "tethering",
-          "rotear internet"
+          "rotear internet",
+          "o hotspot funciona"
         ]
       },
       {
@@ -10784,7 +10841,9 @@
           "dados extras",
           "mais gb",
           "comprar mais dados",
-          "adicionar dados"
+          "adicionar dados",
+          "como recarrego",
+          "posso colocar mais"
         ]
       },
       {
@@ -10796,7 +10855,8 @@
           "entrar na sala vip",
           "voucher sala vip",
           "o que mostrar na sala vip",
-          "como funciona a sala vip"
+          "como funciona a sala vip",
+          "como entro na"
         ]
       },
       {
@@ -10831,7 +10891,8 @@
           "cancelamento",
           "dinheiro de volta",
           "devolver",
-          "estorno"
+          "estorno",
+          "cancelar meu pedido"
         ]
       },
       {
@@ -10856,7 +10917,8 @@
           "quando chega",
           "entrega",
           "prazo de entrega",
-          "quanto tempo demora"
+          "quanto tempo demora",
+          "quando recebo o"
         ]
       },
       {
@@ -10868,7 +10930,8 @@
           "atendimento ao cliente",
           "falar com uma pessoa",
           "suporte",
-          "contato"
+          "contato",
+          "como falo com"
         ]
       },
       {
@@ -10906,7 +10969,8 @@
           "código inválido",
           "código já usado",
           "erro no qr code",
-          "qr inválido"
+          "qr inválido",
+          "qr code recusado"
         ]
       },
       {
@@ -10931,7 +10995,8 @@
           "sem qr code",
           "qr no mesmo celular",
           "digitar código manualmente",
-          "endereço sm dp"
+          "endereço sm dp",
+          "codigo de ativacao"
         ]
       },
       {
@@ -10944,7 +11009,9 @@
           "conexão lenta",
           "vídeo trava",
           "demora para carregar",
-          "velocidade baixa"
+          "velocidade baixa",
+          "trava em",
+          "nao carrega em"
         ]
       },
       {
@@ -10956,7 +11023,10 @@
           "acaba muito rápido",
           "gasta demais",
           "gb acabou em um dia",
-          "por que acabam os dados"
+          "por que acabam os dados",
+          "gasta muitos dados",
+          "muitos dados",
+          "dados acabaram em"
         ]
       },
       {
@@ -10981,7 +11051,8 @@
           "transferir esim",
           "perdi o celular",
           "celular quebrou",
-          "passar esim"
+          "passar esim",
+          "troquei de celular"
         ]
       },
       {
@@ -11067,7 +11138,8 @@
           "consumo de dados",
           "dias restantes",
           "ver consumo",
-          "válido até quando"
+          "válido até quando",
+          "ainda tenho"
         ]
       },
       {
@@ -11079,7 +11151,8 @@
           "dados acabaram o que acontece",
           "validade acabou",
           "esim expirou",
-          "plano acabou"
+          "plano acabou",
+          "acabaram os dados"
         ]
       },
       {
@@ -11187,7 +11260,8 @@
           "em quais países",
           "vários países",
           "cobertura de países",
-          "países incluídos"
+          "países incluídos",
+          "voces tem esim"
         ]
       },
       {
@@ -11199,7 +11273,8 @@
           "no cruzeiro",
           "no navio",
           "na balsa",
-          "em alto-mar"
+          "em alto-mar",
+          "funciona no mar"
         ]
       },
       {
@@ -11307,7 +11382,8 @@
           "cartão recusado",
           "pagamento não passou",
           "cobrado sem pedido",
-          "cobrado duas vezes"
+          "cobrado duas vezes",
+          "cobraram mas nao"
         ]
       },
       {
@@ -11343,7 +11419,9 @@
           "esqueci a senha",
           "código de verificação",
           "login não funciona",
-          "redefinir senha"
+          "redefinir senha",
+          "nao consigo acessar",
+          "de verificacao nao"
         ]
       },
       {
@@ -11459,7 +11537,8 @@
           "apagar conta",
           "excluir meus dados",
           "encerrar conta",
-          "lgpd"
+          "lgpd",
+          "apagar meus dados"
         ]
       },
       {
@@ -11516,7 +11595,9 @@
           "ativar roaming",
           "onde ativo o roaming",
           "roaming iphone",
-          "roaming samsung"
+          "roaming samsung",
+          "preciso ligar o",
+          "ligar o roaming"
         ]
       },
       {
@@ -11528,7 +11609,8 @@
           "dados móveis no esim",
           "escolher esim para dados",
           "chip para internet",
-          "ainda usa meu chip"
+          "ainda usa meu chip",
+          "passar os dados"
         ]
       },
       {
@@ -11540,7 +11622,8 @@
           "escolher operadora",
           "rede manual",
           "trocar de rede",
-          "operadora errada"
+          "operadora errada",
+          "trocar operadora"
         ]
       },
       {
@@ -11552,7 +11635,9 @@
           "desligar linha",
           "esim desligado",
           "linha desativada",
-          "ativar esim"
+          "ativar esim",
+          "a linha do",
+          "o esim esta"
         ]
       },
       {
@@ -11613,7 +11698,8 @@
           "meus esims",
           "meus pedidos",
           "onde está meu esim",
-          "ver o qr de novo"
+          "ver o qr de novo",
+          "cade meu"
         ]
       },
       {
@@ -11626,7 +11712,8 @@
           "como pedir",
           "comprar um esim",
           "comprar pacote",
-          "fazer pedido"
+          "fazer pedido",
+          "onde compro"
         ]
       },
       {
@@ -11722,7 +11809,8 @@
           "esim geschikt",
           "werkt het op mijn iphone",
           "werkt het op mijn samsung",
-          "welke telefoons"
+          "welke telefoons",
+          "op mijn telefoon"
         ]
       },
       {
@@ -11735,7 +11823,10 @@
           "installatie esim",
           "esim instellen",
           "esim activeren",
-          "qr scannen"
+          "qr scannen",
+          "hoe activeer ik",
+          "esim installeren handleiding",
+          "hoe scan ik"
         ]
       },
       {
@@ -11747,7 +11838,10 @@
           "wanneer start de bundel",
           "wanneer gaan de dagen lopen",
           "wanneer wordt esim actief",
-          "vanaf wanneer"
+          "vanaf wanneer",
+          "wanneer gaan de",
+          "wanneer begint de",
+          "wanneer is de"
         ]
       },
       {
@@ -11795,7 +11889,8 @@
           "hotspot toegestaan",
           "internet delen",
           "tethering",
-          "hotspot mogelijk"
+          "hotspot mogelijk",
+          "hotspot"
         ]
       },
       {
@@ -11808,7 +11903,8 @@
           "extra data",
           "meer gb",
           "bijladen",
-          "data toevoegen"
+          "data toevoegen",
+          "hoe waardeer ik"
         ]
       },
       {
@@ -11880,7 +11976,9 @@
           "wanneer komt het",
           "levering",
           "levertijd",
-          "hoe lang duurt het"
+          "hoe lang duurt het",
+          "wanneer komt de",
+          "wanneer krijg ik"
         ]
       },
       {
@@ -11892,7 +11990,8 @@
           "contact opnemen",
           "met een mens praten",
           "support",
-          "contact"
+          "contact",
+          "met een medewerker"
         ]
       },
       {
@@ -11930,7 +12029,8 @@
           "ongeldige code",
           "code al gebruikt",
           "fout qr code",
-          "qr ongeldig"
+          "qr ongeldig",
+          "qr code geweigerd"
         ]
       },
       {
@@ -11955,7 +12055,8 @@
           "zonder qr code",
           "qr op dezelfde telefoon",
           "code handmatig invoeren",
-          "sm dp adres"
+          "sm dp adres",
+          "ik de activeringscode"
         ]
       },
       {
@@ -11968,7 +12069,9 @@
           "trage verbinding",
           "video hapert",
           "laadt langzaam",
-          "lage snelheid"
+          "lage snelheid",
+          "laadt niet",
+          "blijft hangen in"
         ]
       },
       {
@@ -11980,7 +12083,9 @@
           "zo snel leeg",
           "verbruikt te veel",
           "gb op in een dag",
-          "waarom is mijn data op"
+          "waarom is mijn data op",
+          "verbruikt",
+          "zo snel"
         ]
       },
       {
@@ -12005,7 +12110,8 @@
           "esim overzetten",
           "telefoon kwijt",
           "telefoon kapot",
-          "esim verplaatsen"
+          "esim verplaatsen",
+          "andere telefoon wat"
         ]
       },
       {
@@ -12017,7 +12123,10 @@
           "providerslot",
           "telefoon geblokkeerd",
           "simlock verwijderen",
-          "telefoon van abonnement"
+          "telefoon van abonnement",
+          "zit vast aan",
+          "simlock esim",
+          "providerslot esim"
         ]
       },
       {
@@ -12041,7 +12150,8 @@
           "activeren duurt lang",
           "activering lukt niet",
           "wordt niet actief",
-          "hangt bij activeren"
+          "hangt bij activeren",
+          "esim blijft hangen"
         ]
       },
       {
@@ -12065,7 +12175,8 @@
           "whatsapp nummer",
           "whatsapp ander nummer",
           "whatsapp bellen",
-          "imessage"
+          "imessage",
+          "kan ik whatsapp"
         ]
       },
       {
@@ -12091,7 +12202,8 @@
           "dataverbruik",
           "resterende dagen",
           "verbruik checken",
-          "hoe lang nog geldig"
+          "hoe lang nog geldig",
+          "verbruik controleren"
         ]
       },
       {
@@ -12126,7 +12238,8 @@
           "wanneer installeren",
           "voor de reis kopen",
           "vooraf installeren",
-          "hoe lang van tevoren"
+          "hoe lang van tevoren",
+          "wanneer koop ik"
         ]
       },
       {
@@ -12295,7 +12408,9 @@
           "betrouwbare site",
           "oplichting",
           "veiligheid esim",
-          "is het betrouwbaar"
+          "is het betrouwbaar",
+          "is veilig",
+          "passport io is"
         ]
       },
       {
@@ -12319,7 +12434,8 @@
           "terugbetaling aanvragen",
           "hoe krijg ik mijn geld terug",
           "knop terugbetaling",
-          "aanvraag terugbetaling"
+          "aanvraag terugbetaling",
+          "ik een terugbetaling"
         ]
       },
       {
@@ -12331,7 +12447,8 @@
           "kaart geweigerd",
           "betalen lukt niet",
           "afgeschreven zonder bestelling",
-          "dubbel afgeschreven"
+          "dubbel afgeschreven",
+          "geld afgeschreven maar"
         ]
       },
       {
@@ -12447,7 +12564,9 @@
           "wat kost het",
           "prijs",
           "kosten esim",
-          "waarom de prijs"
+          "waarom de prijs",
+          "wat kost een",
+          "prijzen van esims"
         ]
       },
       {
@@ -12540,7 +12659,8 @@
           "roaming aanzetten",
           "waar zet ik roaming aan",
           "roaming iphone",
-          "roaming samsung"
+          "roaming samsung",
+          "moet ik roaming"
         ]
       },
       {
@@ -12552,7 +12672,8 @@
           "mobiele data op esim",
           "esim kiezen voor data",
           "simkaart voor internet",
-          "gebruikt nog mijn simkaart"
+          "gebruikt nog mijn simkaart",
+          "mobiele data naar"
         ]
       },
       {
@@ -12564,7 +12685,8 @@
           "provider kiezen",
           "netwerk handmatig",
           "ander netwerk",
-          "verkeerd netwerk"
+          "verkeerd netwerk",
+          "provider wisselen"
         ]
       },
       {
@@ -12600,7 +12722,9 @@
           "esim samsung",
           "esim pixel",
           "esim xiaomi",
-          "android esim toevoegen"
+          "android esim toevoegen",
+          "installeren op samsung",
+          "installeren op galaxy"
         ]
       },
       {
@@ -12650,7 +12774,8 @@
           "esim kopen",
           "bundel kopen",
           "bestelling plaatsen",
-          "hoe werkt kopen"
+          "hoe werkt kopen",
+          "waar koop ik"
         ]
       },
       {
@@ -12745,7 +12870,8 @@
           "kompatybilny z esim",
           "działa na iphonie",
           "działa na samsungu",
-          "jakie telefony"
+          "jakie telefony",
+          "obsługuje esim"
         ]
       },
       {
@@ -12758,7 +12884,8 @@
           "instalacja esim",
           "skonfigurować esim",
           "aktywować esim",
-          "zeskanować qr"
+          "zeskanować qr",
+          "jak zeskanowac kod"
         ]
       },
       {
@@ -12770,7 +12897,8 @@
           "kiedy startuje pakiet",
           "od kiedy liczą się dni",
           "kiedy esim się aktywuje",
-          "od kiedy"
+          "od kiedy",
+          "kiedy zaczyna sie"
         ]
       },
       {
@@ -12795,7 +12923,8 @@
           "rozmowy w cenie",
           "sms w cenie",
           "dzwonić z esim",
-          "połączenia telefoniczne"
+          "połączenia telefoniczne",
+          "czy moge wykonywac"
         ]
       },
       {
@@ -12807,7 +12936,8 @@
           "mój numer zostaje",
           "co z moją kartą sim",
           "numer się zmieni",
-          "zwykła karta sim"
+          "zwykła karta sim",
+          "czy moj numer"
         ]
       },
       {
@@ -12819,7 +12949,9 @@
           "udostępnić internet",
           "tethering",
           "router osobisty",
-          "hotspot możliwy"
+          "hotspot możliwy",
+          "hotspot",
+          "czy moge udostepniac"
         ]
       },
       {
@@ -12892,7 +13024,9 @@
           "płatność paypal",
           "karta kredytowa",
           "apple pay",
-          "blik"
+          "blik",
+          "jak moge zapłacic",
+          "płatnosc karta"
         ]
       },
       {
@@ -12916,7 +13050,9 @@
           "obsługa klienta",
           "rozmowa z człowiekiem",
           "pomoc",
-          "kontakt"
+          "kontakt",
+          "chce rozmawiac z",
+          "sie z wami"
         ]
       },
       {
@@ -12929,7 +13065,9 @@
           "połączony ale bez internetu",
           "nie ma internetu",
           "brak danych",
-          "strony się nie ładują"
+          "strony się nie ładują",
+          "nie mam internetu",
+          "ale bez internetu"
         ]
       },
       {
@@ -12954,7 +13092,8 @@
           "nieprawidłowy kod",
           "kod już użyty",
           "błąd kodu qr",
-          "qr nieważny"
+          "qr nieważny",
+          "kod qr odrzucony"
         ]
       },
       {
@@ -12979,7 +13118,10 @@
           "bez kodu qr",
           "qr na tym samym telefonie",
           "wpisać kod ręcznie",
-          "adres sm dp"
+          "adres sm dp",
+          "wpisac kod aktywacyjny",
+          "aktywacyjny",
+          "zainstalowac esim recznie"
         ]
       },
       {
@@ -12992,7 +13134,9 @@
           "wolne połączenie",
           "wideo się zacina",
           "długo się ładuje",
-          "niska prędkość"
+          "niska prędkość",
+          "zacina sie w",
+          "sie nie ładuje"
         ]
       },
       {
@@ -13004,7 +13148,10 @@
           "szybko się kończy",
           "zużywa za dużo",
           "gb skończyły się w dzień",
-          "dlaczego kończą się dane"
+          "dlaczego kończą się dane",
+          "zuzywa duzo danych",
+          "tak szybko",
+          "w jeden dzien"
         ]
       },
       {
@@ -13029,7 +13176,8 @@
           "przenieść esim",
           "zgubiony telefon",
           "zepsuty telefon",
-          "przenieść na inny telefon"
+          "przenieść na inny telefon",
+          "zmieniłem telefon co"
         ]
       },
       {
@@ -13041,7 +13189,8 @@
           "blokada operatora",
           "telefon zablokowany",
           "zdjąć simlocka",
-          "telefon z abonamentu"
+          "telefon z abonamentu",
+          "zablokowany na operatora"
         ]
       },
       {
@@ -13065,7 +13214,8 @@
           "aktywacja trwa wiecznie",
           "aktywacja się nie kończy",
           "nie aktywuje się",
-          "wisi na aktywowaniu"
+          "wisi na aktywowaniu",
+          "esim utknał w"
         ]
       },
       {
@@ -13115,7 +13265,9 @@
           "zużycie danych",
           "pozostałe dni",
           "sprawdzić zużycie",
-          "do kiedy ważny"
+          "do kiedy ważny",
+          "ile danych mi",
+          "danych mi zostało"
         ]
       },
       {
@@ -13127,7 +13279,8 @@
           "dane się skończyły co teraz",
           "ważność minęła",
           "esim wygasł",
-          "pakiet się skończył"
+          "pakiet się skończył",
+          "skonczyły sie dane"
         ]
       },
       {
@@ -13150,7 +13303,8 @@
           "kiedy zainstalować",
           "kupić przed podróżą",
           "zainstalować wcześniej",
-          "z jakim wyprzedzeniem"
+          "z jakim wyprzedzeniem",
+          "zainstalowac esim przed"
         ]
       },
       {
@@ -13162,7 +13316,8 @@
           "bez wifi",
           "instalacja na lotnisku",
           "instalacja w samolocie",
-          "czy potrzebne wifi"
+          "czy potrzebne wifi",
+          "esim na lotnisku"
         ]
       },
       {
@@ -13235,7 +13390,8 @@
           "w jakich krajach",
           "kilka krajów",
           "zasięg krajów",
-          "kraje w pakiecie"
+          "kraje w pakiecie",
+          "macie esim na"
         ]
       },
       {
@@ -13307,7 +13463,8 @@
           "esim vs roaming",
           "lokalna karta sim",
           "lepiej esim czy roaming",
-          "taniej niż roaming"
+          "taniej niż roaming",
+          "esim kontra roaming"
         ]
       },
       {
@@ -13319,7 +13476,9 @@
           "wiarygodna strona",
           "oszustwo",
           "bezpieczeństwo esim",
-          "czy to wiarygodne"
+          "czy to wiarygodne",
+          "czy passport io",
+          "jest bezpieczna"
         ]
       },
       {
@@ -13355,7 +13514,8 @@
           "karta odrzucona",
           "nie mogę zapłacić",
           "pobrano bez zamówienia",
-          "pobrano dwa razy"
+          "pobrano dwa razy",
+          "pieniadze pobrane ale"
         ]
       },
       {
@@ -13367,7 +13527,8 @@
           "abonament",
           "automatyczne odnowienie",
           "dodatkowe koszty",
-          "odnawia się sam"
+          "odnawia się sam",
+          "czy sa abonamenty"
         ]
       },
       {
@@ -13391,7 +13552,8 @@
           "nie pamiętam hasła",
           "kod weryfikacyjny",
           "logowanie nie działa",
-          "reset hasła"
+          "reset hasła",
+          "nie moge sie"
         ]
       },
       {
@@ -13424,7 +13586,8 @@
           "lot opóźniony",
           "opóźnienie lotu salonik",
           "lot odwołany",
-          "voucher nadal ważny"
+          "voucher nadal ważny",
+          "opoznienie czy voucher"
         ]
       },
       {
@@ -13459,7 +13622,8 @@
           "zmienić walutę",
           "ceny w euro",
           "w dolarach",
-          "jaka waluta"
+          "jaka waluta",
+          "ceny w złotowkach"
         ]
       },
       {
@@ -13471,7 +13635,8 @@
           "ile kosztuje",
           "cena",
           "koszt esim",
-          "dlaczego taka cena"
+          "dlaczego taka cena",
+          "ceny esim"
         ]
       },
       {
@@ -13588,7 +13753,8 @@
           "wybrać operatora",
           "sieć ręcznie",
           "zmienić sieć",
-          "zły operator"
+          "zły operator",
+          "zmienic operatora"
         ]
       },
       {
@@ -13600,7 +13766,9 @@
           "wyłączyć linię",
           "esim wyłączony",
           "linia wyłączona",
-          "włączyć esim"
+          "włączyć esim",
+          "aktywowac linie esim",
+          "esim jest nieaktywny"
         ]
       },
       {
@@ -13624,7 +13792,8 @@
           "esim samsung",
           "esim pixel",
           "esim xiaomi",
-          "android dodaj esim"
+          "android dodaj esim",
+          "android dodac esim"
         ]
       },
       {
@@ -13661,7 +13830,9 @@
           "moje esimy",
           "moje zamówienia",
           "gdzie jest mój esim",
-          "zobaczyć qr ponownie"
+          "zobaczyć qr ponownie",
+          "kupiłem",
+          "gdzie jest moj"
         ]
       },
       {
@@ -13686,7 +13857,9 @@
           "bez konta",
           "bez rejestracji",
           "zakup jako gość",
-          "czy muszę się rejestrować"
+          "czy muszę się rejestrować",
+          "czy potrzebuje konta",
+          "czy musze sie"
         ]
       },
       {
@@ -13697,7 +13870,8 @@
           "zmienić hasło",
           "nowe hasło",
           "zmiana hasła",
-          "zaktualizować hasło"
+          "zaktualizować hasło",
+          "zmienic hasła"
         ]
       },
       {
@@ -13756,7 +13930,8 @@
           "eSIMの意味",
           "eSIMの仕組み",
           "デジタルSIM",
-          "物理SIMとの違い"
+          "物理SIMとの違い",
+          "eSIMの仕組"
         ]
       },
       {
@@ -13783,7 +13958,11 @@
           "eSIMを入れる",
           "設定方法",
           "QRコードを読み取る",
-          "インストールのやり方"
+          "インストールのやり方",
+          "eSIMをどうやって",
+          "QRコードの読み取",
+          "eSIMの入れ方",
+          "eSIMの設定方法"
         ]
       },
       {
@@ -13820,7 +13999,11 @@
           "通話できる",
           "通話は含まれる",
           "SMSは使える",
-          "電話番号で電話"
+          "電話番号で電話",
+          "通話は含ま",
+          "SMSは含ま",
+          "電話でき",
+          "通話でき"
         ]
       },
       {
@@ -13832,7 +14015,9 @@
           "電話番号は変わる",
           "今のSIMはどうなる",
           "番号が使える",
-          "元のSIM"
+          "元のSIM",
+          "元のSIMはどう",
+          "今のSIMはどう"
         ]
       },
       {
@@ -13880,7 +14065,10 @@
           "ラウンジの滞在時間",
           "何時間いられる",
           "ラウンジの時間制限",
-          "どれくらいいられる"
+          "どれくらいいられる",
+          "何時間いら",
+          "どれくらいいら",
+          "滞在時間"
         ]
       },
       {
@@ -13891,7 +14079,8 @@
           "ファストトラックとは",
           "ファストトラックの使い方",
           "優先レーン",
-          "保安検査を早く"
+          "保安検査を早く",
+          "ファストトラックの仕組"
         ]
       },
       {
@@ -13941,7 +14130,9 @@
           "カスタマーサービス",
           "担当者と話したい",
           "サポートに連絡",
-          "連絡先"
+          "連絡先",
+          "スタッフと話",
+          "担当者と話"
         ]
       },
       {
@@ -13979,7 +14170,9 @@
           "有効ではありません",
           "コードは使用済み",
           "QRコードのエラー",
-          "QRが使えない"
+          "QRが使えない",
+          "QRコードが使え",
+          "QRコードが読め"
         ]
       },
       {
@@ -14017,7 +14210,11 @@
           "通信が遅い",
           "動画が止まる",
           "読み込みが遅い",
-          "速度が出ない"
+          "速度が出ない",
+          "が読み込ま",
+          "が止ま",
+          "ネットが遅",
+          "通信が遅"
         ]
       },
       {
@@ -14114,7 +14311,10 @@
           "WhatsAppの番号",
           "番号が変わる",
           "WhatsApp通話",
-          "LINEは使える"
+          "LINEは使える",
+          "WhatsAppは使",
+          "LINEは使",
+          "WhatsAppを使"
         ]
       },
       {
@@ -14152,7 +14352,9 @@
           "データがなくなったら",
           "有効期間が終わったら",
           "eSIMが切れた",
-          "プランが終わった"
+          "プランが終わった",
+          "プランが切れ",
+          "期限が切れ"
         ]
       },
       {
@@ -14175,7 +14377,9 @@
           "いつインストール",
           "出発前に購入",
           "事前にインストール",
-          "何日前に買う"
+          "何日前に買う",
+          "出発前に",
+          "いつ買え"
         ]
       },
       {
@@ -14187,7 +14391,9 @@
           "Wi-Fiなしで",
           "空港でインストール",
           "機内でインストール",
-          "Wi-Fiが必要"
+          "Wi-Fiが必要",
+          "空港でeSIMを",
+          "Wi-Fiは必要"
         ]
       },
       {
@@ -14260,7 +14466,10 @@
           "どの国で使える",
           "複数の国",
           "対応国",
-          "対象国"
+          "対象国",
+          "のeSIMはあり",
+          "の国で使え",
+          "国のeSIM"
         ]
       },
       {
@@ -14272,7 +14481,8 @@
           "機内で",
           "クルーズ船",
           "フェリー",
-          "海の上"
+          "海の上",
+          "船の上"
         ]
       },
       {
@@ -14357,7 +14567,10 @@
           "QRコードはどこ",
           "注文メールがない",
           "QRコードがない",
-          "確認メール"
+          "確認メール",
+          "QRコードが届",
+          "メールが届",
+          "メールが来"
         ]
       },
       {
@@ -14416,7 +14629,9 @@
           "パスワードを忘れた",
           "確認コード",
           "ログインのエラー",
-          "パスワード再設定"
+          "パスワード再設定",
+          "パスワードを忘れ",
+          "ログインでき"
         ]
       },
       {
@@ -14484,7 +14699,10 @@
           "通貨を変更",
           "ユーロで表示",
           "ドルで表示",
-          "円で払える"
+          "円で払える",
+          "円で表示",
+          "円で払",
+          "通貨を変え"
         ]
       },
       {
@@ -14520,7 +14738,10 @@
           "ビジネス利用",
           "社員用",
           "団体",
-          "まとめ買い"
+          "まとめ買い",
+          "法人の",
+          "法人向け",
+          "会社用"
         ]
       },
       {
@@ -14613,7 +14834,10 @@
           "事業者を選ぶ",
           "手動でネットワーク",
           "ネットワークを変更",
-          "違うネットワーク"
+          "違うネットワーク",
+          "事業者を変え",
+          "ネットワークを手動",
+          "手動で選"
         ]
       },
       {
@@ -14637,7 +14861,9 @@
           "iPhone eSIM",
           "iPhoneでeSIMを追加",
           "iPhoneのモバイル通信プラン",
-          "iPhoneの手順"
+          "iPhoneの手順",
+          "iPhoneでモバイル通信プランを追加",
+          "iPhoneにeSIMを"
         ]
       },
       {
@@ -14686,7 +14912,11 @@
           "マイeSIM",
           "注文履歴",
           "eSIMはどこ",
-          "QRコードをもう一度"
+          "QRコードをもう一度",
+          "注文を見",
+          "購入履歴",
+          "自分のeSIM",
+          "買ったeSIMはどこ"
         ]
       },
       {
@@ -14699,7 +14929,10 @@
           "eSIMを買う",
           "プランを購入",
           "注文する",
-          "どうやって買う"
+          "どうやって買う",
+          "注文したい",
+          "買いたい",
+          "どうやって注文"
         ]
       },
       {
@@ -14711,7 +14944,9 @@
           "アカウントなしで",
           "会員登録なしで",
           "ゲスト購入",
-          "登録しないと買えない"
+          "登録しないと買えない",
+          "登録しないで",
+          "会員登録は必要"
         ]
       },
       {
@@ -14781,7 +15016,9 @@
           "eSIM이란",
           "eSIM 원리",
           "디지털 SIM",
-          "이심이 뭐예요"
+          "이심이 뭐예요",
+          "eSIM은 어떻게 작동",
+          "eSIM이 뭐"
         ]
       },
       {
@@ -14795,7 +15032,10 @@
           "호환 기기",
           "아이폰에서 되나요",
           "갤럭시에서 되나요",
-          "어떤 휴대폰"
+          "어떤 휴대폰",
+          "eSIM을 지원",
+          "eSIM 되는 폰",
+          "지원하나"
         ]
       },
       {
@@ -14808,7 +15048,10 @@
           "eSIM 등록",
           "설치하는 법",
           "QR 코드 스캔",
-          "eSIM 넣는 법"
+          "eSIM 넣는 법",
+          "eSIM 설정 방법",
+          "어떻게 설치",
+          "eSIM 설치 방법"
         ]
       },
       {
@@ -14845,7 +15088,10 @@
           "통화 되나요",
           "통화 포함",
           "문자 되나요",
-          "전화 걸기"
+          "전화 걸기",
+          "문자 포함",
+          "전화 되나",
+          "통화 되나"
         ]
       },
       {
@@ -14882,7 +15128,8 @@
           "추가 구매",
           "용량 늘리기",
           "기가 추가",
-          "데이터 더 사기"
+          "데이터 더 사기",
+          "기가 더"
         ]
       },
       {
@@ -14894,7 +15141,9 @@
           "라운지 입장",
           "라운지 바우처",
           "라운지에서 뭘 보여주나",
-          "라운지 이용"
+          "라운지 이용",
+          "라운지 들어가",
+          "라운지에서 뭘 보여"
         ]
       },
       {
@@ -14954,7 +15203,10 @@
           "언제 오나요",
           "배송",
           "바로 오나요",
-          "얼마나 걸려요"
+          "얼마나 걸려요",
+          "언제 와",
+          "언제 받",
+          "언제 도착"
         ]
       },
       {
@@ -14966,7 +15218,10 @@
           "상담원 연결",
           "사람과 이야기",
           "고객 지원",
-          "문의 방법"
+          "문의 방법",
+          "상담원과",
+          "문의는 어떻게",
+          "고객센터"
         ]
       },
       {
@@ -14979,7 +15234,10 @@
           "연결됐는데 인터넷 안됨",
           "데이터가 안 돼요",
           "페이지가 안 열려요",
-          "인터넷 연결 안됨"
+          "인터넷 연결 안됨",
+          "인터넷 안 돼",
+          "인터넷이 안 돼",
+          "인터넷가 안"
         ]
       },
       {
@@ -14992,7 +15250,9 @@
           "신호 없음",
           "SOS만",
           "안 터져요",
-          "안테나가 안 떠요"
+          "안테나가 안 떠요",
+          "신호가 안",
+          "신호 없"
         ]
       },
       {
@@ -15004,7 +15264,10 @@
           "유효하지 않은 코드",
           "이미 사용된 코드",
           "QR 코드 오류",
-          "QR이 안 돼요"
+          "QR이 안 돼요",
+          "QR 코드가 안",
+          "코드가 유효하지",
+          "코드 오류"
         ]
       },
       {
@@ -15016,7 +15279,9 @@
           "요금제를 추가할 수 없음",
           "추가 오류",
           "eSIM 추가 안됨",
-          "설치 실패"
+          "설치 실패",
+          "추가할 수 없",
+          "추가가 안"
         ]
       },
       {
@@ -15042,7 +15307,11 @@
           "속도가 느려요",
           "영상이 끊겨요",
           "로딩이 느려요",
-          "속도 안 나와요"
+          "속도 안 나와요",
+          "자꾸 멈춰",
+          "안 열려",
+          "인터넷이 느려",
+          "너무 느려"
         ]
       },
       {
@@ -15054,7 +15323,10 @@
           "금방 없어져요",
           "데이터를 너무 써요",
           "하루 만에 다 씀",
-          "왜 데이터가 줄어요"
+          "왜 데이터가 줄어요",
+          "하루 만에",
+          "데이터가 다 없어",
+          "빨리 끝나"
         ]
       },
       {
@@ -15079,7 +15351,10 @@
           "eSIM 옮기기",
           "휴대폰 분실",
           "휴대폰 고장",
-          "다른 기기로 이동"
+          "다른 기기로 이동",
+          "다른 폰으로",
+          "폰을 바꿨",
+          "새 폰으로"
         ]
       },
       {
@@ -15103,7 +15378,8 @@
           "APN 설정",
           "APN 변경",
           "액세스 포인트",
-          "APN이 비어 있어요"
+          "APN이 비어 있어요",
+          "APN이 뭐"
         ]
       },
       {
@@ -15127,7 +15403,9 @@
           "로밍 피하기",
           "로밍비 나오나요",
           "기존 유심 로밍",
-          "기본 회선 로밍 끄기"
+          "기본 회선 로밍 끄기",
+          "로밍 요금 안",
+          "로밍비"
         ]
       },
       {
@@ -15139,7 +15417,10 @@
           "WhatsApp 번호",
           "번호가 바뀌나요",
           "WhatsApp 통화",
-          "카카오톡 되나요"
+          "카카오톡 되나요",
+          "WhatsApp 쓸",
+          "카카오톡",
+          "WhatsApp 되나"
         ]
       },
       {
@@ -15177,7 +15458,10 @@
           "데이터 다 쓰면",
           "유효 기간 끝나면",
           "eSIM 만료",
-          "요금제 끝났어요"
+          "요금제 끝났어요",
+          "요금제가 끝나",
+          "기간이 끝나",
+          "만료되면"
         ]
       },
       {
@@ -15200,7 +15484,9 @@
           "언제 설치",
           "출발 전에 구매",
           "미리 설치",
-          "며칠 전에 사요"
+          "며칠 전에 사요",
+          "출발 전에",
+          "언제 사야"
         ]
       },
       {
@@ -15249,7 +15535,8 @@
           "무제한 요금제",
           "데이터 무제한",
           "하루 한도",
-          "속도 제한"
+          "속도 제한",
+          "무제한은"
         ]
       },
       {
@@ -15261,7 +15548,8 @@
           "5G 지원",
           "5G 되나요",
           "5G 네트워크",
-          "4G 5G"
+          "4G 5G",
+          "5G 되나"
         ]
       },
       {
@@ -15273,7 +15561,9 @@
           "현지 번호",
           "번호를 받나요",
           "한국 번호",
-          "튀르키예 번호"
+          "튀르키예 번호",
+          "번호가 있나",
+          "전화번호가 있"
         ]
       },
       {
@@ -15285,7 +15575,10 @@
           "어느 나라에서",
           "여러 나라",
           "지원 국가",
-          "포함 국가"
+          "포함 국가",
+          "eSIM 있나",
+          "어느 나라",
+          "다른 나라에서도"
         ]
       },
       {
@@ -15297,7 +15590,8 @@
           "기내에서",
           "크루즈",
           "페리",
-          "바다 위"
+          "바다 위",
+          "배 위"
         ]
       },
       {
@@ -15309,7 +15603,10 @@
           "IP가 달라요",
           "위치가 이상해요",
           "구글이 다른 나라",
-          "IP 위치"
+          "IP 위치",
+          "IP가 다른",
+          "다른 나라가 떠",
+          "위치가 이상"
         ]
       },
       {
@@ -15345,7 +15642,8 @@
           "다른 사람을 위해",
           "eSIM 선물",
           "가족에게 사주기",
-          "엄마에게"
+          "엄마에게",
+          "위해 eSIM"
         ]
       },
       {
@@ -15357,7 +15655,10 @@
           "eSIM 로밍 비교",
           "현지 유심",
           "뭐가 더 좋아요",
-          "로밍보다 싸요"
+          "로밍보다 싸요",
+          "로밍 중에 뭐가",
+          "로밍보다",
+          "로밍이랑"
         ]
       },
       {
@@ -15369,7 +15670,10 @@
           "믿을 수 있나요",
           "사기",
           "보안",
-          "신뢰할 수 있나요"
+          "신뢰할 수 있나요",
+          "사기 아니",
+          "믿을 수 있",
+          "안전한가"
         ]
       },
       {
@@ -15405,7 +15709,10 @@
           "카드 거절",
           "결제가 안 돼요",
           "돈은 나갔는데 주문 없음",
-          "이중 결제"
+          "이중 결제",
+          "두 번 결제",
+          "결제가 실패",
+          "카드가 거절"
         ]
       },
       {
@@ -15463,7 +15770,9 @@
           "입장 거절",
           "라운지 만석",
           "못 들어갔어요",
-          "라운지 거부"
+          "라운지 거부",
+          "라운지가 꽉",
+          "라운지에 못 들어"
         ]
       },
       {
@@ -15474,7 +15783,9 @@
           "항공편 지연",
           "지연 라운지",
           "항공편 결항",
-          "바우처 아직 유효"
+          "바우처 아직 유효",
+          "지연되면",
+          "항공편이 지연"
         ]
       },
       {
@@ -15509,7 +15820,8 @@
           "통화 변경",
           "유로로 보기",
           "달러로 보기",
-          "원화 결제"
+          "원화 결제",
+          "원화로"
         ]
       },
       {
@@ -15545,7 +15857,9 @@
           "기업 고객",
           "직원용",
           "단체",
-          "대량 구매"
+          "대량 구매",
+          "기업용",
+          "법인"
         ]
       },
       {
@@ -15557,7 +15871,8 @@
           "회원 탈퇴",
           "개인정보 삭제",
           "계정 닫기",
-          "탈퇴하기"
+          "탈퇴하기",
+          "탈퇴"
         ]
       },
       {
@@ -15591,7 +15906,8 @@
           "라운지란",
           "라운지 안에",
           "공항 라운지",
-          "라운지 서비스"
+          "라운지 서비스",
+          "라운지에는 뭐"
         ]
       },
       {
@@ -15614,7 +15930,8 @@
           "로밍 켜기",
           "로밍 설정",
           "아이폰 로밍",
-          "갤럭시 로밍"
+          "갤럭시 로밍",
+          "로밍을 켜"
         ]
       },
       {
@@ -15626,7 +15943,9 @@
           "모바일 데이터 eSIM",
           "데이터용 SIM 선택",
           "인터넷 SIM",
-          "아직 기존 유심 사용"
+          "아직 기존 유심 사용",
+          "기존 유심으로",
+          "모바일 데이터로 설정"
         ]
       },
       {
@@ -15638,7 +15957,9 @@
           "통신사 선택",
           "수동 네트워크",
           "네트워크 변경",
-          "다른 통신사"
+          "다른 통신사",
+          "통신사 바꾸",
+          "네트워크 수동"
         ]
       },
       {
@@ -15650,7 +15971,9 @@
           "회선 끄기",
           "eSIM 꺼짐",
           "회선 비활성화",
-          "eSIM 사용 설정"
+          "eSIM 사용 설정",
+          "eSIM이 꺼져",
+          "회선 켜"
         ]
       },
       {
@@ -15674,7 +15997,10 @@
           "갤럭시 eSIM",
           "픽셀 eSIM",
           "샤오미 eSIM",
-          "안드로이드 eSIM 추가"
+          "안드로이드 eSIM 추가",
+          "eSIM 넣는",
+          "갤럭시에 eSIM",
+          "안드로이드에서 eSIM"
         ]
       },
       {
@@ -15697,7 +16023,10 @@
           "핫스팟 설정",
           "핫스팟 안 돼요",
           "노트북과 공유",
-          "와이파이 핫스팟"
+          "와이파이 핫스팟",
+          "핫스팟 켜",
+          "핫스팟이 안",
+          "테더링"
         ]
       },
       {
@@ -15711,7 +16040,9 @@
           "내 eSIM",
           "주문 내역",
           "eSIM 어디",
-          "QR 코드 다시 보기"
+          "QR 코드 다시 보기",
+          "주문 보고",
+          "구매 내역"
         ]
       },
       {
@@ -15724,7 +16055,10 @@
           "eSIM 사기",
           "요금제 구매",
           "주문하기",
-          "어떻게 사요"
+          "어떻게 사요",
+          "어떻게 구매",
+          "사고 싶",
+          "주문하고 싶"
         ]
       },
       {
@@ -15736,7 +16070,9 @@
           "계정 없이",
           "회원가입 없이",
           "비회원 구매",
-          "가입해야 하나요"
+          "가입해야 하나요",
+          "가입 없이",
+          "회원가입 필요"
         ]
       },
       {

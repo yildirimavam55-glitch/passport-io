@@ -1,0 +1,715 @@
+## Einfache Kundenfragen (nl) – aus Vorlagen erzeugt (tools: gen_simple.py), 714 Fragen
+waar is mijn bundel in mijn account | my-esims
+ik heb een bundel gekocht waar vind ik die | my-esims
+ik heb een esim gekocht waar staat die | my-esims
+waar zie ik mijn esims | my-esims
+waar zie ik mijn gekochte bundels | my-esims
+ik heb een bundel gekocht waar staat die | my-esims
+ik heb een esim gekocht waar vind ik die | my-esims
+waar zie ik mijn bundels | my-esims
+hoe zie ik mijn aankopen | my-esims
+waar vind ik mijn gekochte bundels | my-esims
+waar is mijn bundel na de aankoop | my-esims
+waar vind ik mijn bestellingen | my-esims
+waar is mijn esim na de aankoop | my-esims
+waar vind ik de esim die ik kocht | my-esims
+hoe zie ik mijn bestellingen | my-esims
+waar is mijn esim in mijn account | my-esims
+hoe zie ik mijn esims | my-esims
+waar zie ik de esim die ik kocht | my-esims
+waar zie ik mijn bestellingen | my-esims
+hoe plaats ik een bestelling | how-to-buy
+hoe bestel ik een bundel | how-to-buy
+waar koop ik een esim | how-to-buy
+hoe koop ik | how-to-buy
+waar koop ik een bundel | how-to-buy
+ik wil een esim kopen hoe werkt dat | how-to-buy
+hoe koop ik een bundel | how-to-buy
+hoe bestel ik een esim | how-to-buy
+ik wil een bundel kopen hoe werkt dat | how-to-buy
+hoe koop ik een esim | how-to-buy
+hoe bestel ik | how-to-buy
+hoi hoe bestel ik een esim alstublieft | how-to-buy
+even een vraag waar koop ik een bundel | how-to-buy
+hoi hoe bestel ik een esim? | how-to-buy
+waar koop ik een bundel bedankt | how-to-buy
+hoi hoe koop ik een esim alstublieft | how-to-buy
+hoe koop ik een bundel alstublieft | how-to-buy
+hoe koop ik een esim? | how-to-buy
+hoi hoe koop ik een bundel? | how-to-buy
+kan ik kopen zonder account | need-account
+kan ik kopen zonder registratie | need-account
+heb ik een account nodig om te kopen | need-account
+heb ik een account nodig | need-account
+kan ik kopen als gast | need-account
+moet ik me registreren om te kopen | need-account
+kan ik kopen als gast bedankt | need-account
+hallo kan ik kopen als gast? | need-account
+hoi moet ik me registreren om te kopen | need-account
+hoi kan ik kopen als gast | need-account
+hoi heb ik een account nodig? | need-account
+even een vraag heb ik een account nodig om te kopen | need-account
+hoi kan ik kopen zonder registratie | need-account
+heb ik een account nodig bedankt | need-account
+even een vraag kan ik kopen als gast | need-account
+kan ik kopen zonder registratie? | need-account
+kan ik kopen zonder registratie alstublieft | need-account
+heb ik een account nodig alstublieft | need-account
+hallo kan ik kopen zonder registratie alstublieft | need-account
+hoe wijzig ik mijn wachtwoord | change-password
+wachtwoord wijzigen | change-password
+ik wil een nieuw wachtwoord | change-password
+wachtwoord veranderen | change-password
+even een vraag hoe wijzig ik mijn wachtwoord? | change-password
+hoi wachtwoord wijzigen | change-password
+wachtwoord veranderen bedankt | change-password
+hallo ik wil een nieuw wachtwoord bedankt | change-password
+hoi wachtwoord veranderen alstublieft | change-password
+hoi hoe wijzig ik mijn wachtwoord alstublieft | change-password
+hallo hoe wijzig ik mijn wachtwoord bedankt | change-password
+hallo hoe wijzig ik mijn wachtwoord | change-password
+even een vraag wachtwoord veranderen | change-password
+hallo hoe wijzig ik mijn wachtwoord? | change-password
+wachtwoord veranderen alstublieft | change-password
+even een vraag ik wil een nieuw wachtwoord alstublieft | change-password
+wachtwoord wijzigen bedankt | change-password
+hallo wachtwoord veranderen | change-password
+hallo wachtwoord veranderen? | change-password
+e-mail veranderen | change-email
+e-mail wijzigen | change-email
+hoe wijzig ik mijn e-mailadres | change-email
+ik heb mijn e-mail verkeerd getypt | change-email
+hoe wijzig ik mijn e-mail | change-email
+hallo ik heb mijn e-mail verkeerd getypt | change-email
+even een vraag ik heb mijn e-mail verkeerd getypt alstublieft | change-email
+hallo e-mail wijzigen? | change-email
+even een vraag e-mail veranderen bedankt | change-email
+hoi hoe wijzig ik mijn e-mail? | change-email
+even een vraag ik heb mijn e-mail verkeerd getypt bedankt | change-email
+even een vraag ik heb mijn e-mail verkeerd getypt | change-email
+even een vraag e-mail veranderen | change-email
+ik heb mijn e-mail verkeerd getypt alstublieft | change-email
+hoi hoe wijzig ik mijn e-mailadres? | change-email
+hoe wijzig ik mijn e-mailadres bedankt | change-email
+hallo e-mail veranderen? | change-email
+hallo hoe wijzig ik mijn e-mailadres alstublieft | change-email
+hoi e-mail veranderen | change-email
+ik kan niet inloggen | account-login
+de verificatiecode komt niet | account-login
+ik kan niet in mijn account | account-login
+wachtwoord vergeten | account-login
+even een vraag ik kan niet in mijn account bedankt | account-login
+de verificatiecode komt niet bedankt | account-login
+wachtwoord vergeten alstublieft | account-login
+even een vraag ik kan niet inloggen? | account-login
+hallo ik kan niet inloggen? | account-login
+hoi ik kan niet inloggen | account-login
+wachtwoord vergeten? | account-login
+ik kan niet in mijn account? | account-login
+hallo ik kan niet inloggen | account-login
+hallo ik kan niet inloggen bedankt | account-login
+ik kan niet in mijn account alstublieft | account-login
+ik kan niet inloggen bedankt | account-login
+even een vraag ik kan niet in mijn account alstublieft | account-login
+hoi de verificatiecode komt niet bedankt | account-login
+even een vraag ik kan niet in mijn account | account-login
+wat betekent esim | what-is-esim
+hoe werkt een esim | what-is-esim
+wat is een esim | what-is-esim
+hoi wat betekent esim | what-is-esim
+wat is een esim? | what-is-esim
+even een vraag wat betekent esim | what-is-esim
+hallo wat betekent esim | what-is-esim
+even een vraag wat betekent esim alstublieft | what-is-esim
+even een vraag hoe werkt een esim | what-is-esim
+even een vraag wat is een esim | what-is-esim
+wat is een esim alstublieft | what-is-esim
+even een vraag wat is een esim alstublieft | what-is-esim
+hallo wat is een esim | what-is-esim
+wat betekent esim? | what-is-esim
+wat is een esim bedankt | what-is-esim
+hallo wat betekent esim alstublieft | what-is-esim
+hoe werkt een esim bedankt | what-is-esim
+hallo wat is een esim? | what-is-esim
+even een vraag wat betekent esim bedankt | what-is-esim
+welke telefoons ondersteunen esim | device-compatible
+werkt de esim op mijn telefoon | device-compatible
+is mijn samsung geschikt voor esim | device-compatible
+is mijn telefoon geschikt voor esim | device-compatible
+is mijn iphone geschikt voor esim | device-compatible
+hallo is mijn samsung geschikt voor esim bedankt | device-compatible
+is mijn telefoon geschikt voor esim alstublieft | device-compatible
+welke telefoons ondersteunen esim bedankt | device-compatible
+hallo is mijn iphone geschikt voor esim alstublieft | device-compatible
+hoi welke telefoons ondersteunen esim | device-compatible
+hallo welke telefoons ondersteunen esim | device-compatible
+is mijn telefoon geschikt voor esim? | device-compatible
+hoi is mijn samsung geschikt voor esim? | device-compatible
+is mijn iphone geschikt voor esim? | device-compatible
+hoi werkt de esim op mijn telefoon? | device-compatible
+even een vraag is mijn samsung geschikt voor esim? | device-compatible
+hoi is mijn samsung geschikt voor esim | device-compatible
+hoi werkt de esim op mijn telefoon alstublieft | device-compatible
+even een vraag werkt de esim op mijn telefoon | device-compatible
+esim installeren | install-esim,install-iphone,install-android
+esim installeren handleiding | install-esim,install-iphone,install-android
+hoe scan ik de qr-code | install-esim,install-iphone,install-android
+hoe installeer ik de esim | install-esim,install-iphone,install-android
+hoe activeer ik de esim | install-esim,install-iphone,install-android
+esim installeren bedankt | install-esim,install-iphone,install-android
+hoe activeer ik de esim? | install-esim,install-iphone,install-android
+even een vraag hoe activeer ik de esim | install-esim,install-iphone,install-android
+hallo esim installeren bedankt | install-esim,install-iphone,install-android
+hallo hoe installeer ik de esim bedankt | install-esim,install-iphone,install-android
+even een vraag hoe installeer ik de esim bedankt | install-esim,install-iphone,install-android
+hoe installeer ik de esim bedankt | install-esim,install-iphone,install-android
+hallo hoe activeer ik de esim? | install-esim,install-iphone,install-android
+hoi esim installeren | install-esim,install-iphone,install-android
+esim installeren? | install-esim,install-iphone,install-android
+even een vraag hoe installeer ik de esim? | install-esim,install-iphone,install-android
+hoi esim installeren handleiding bedankt | install-esim,install-iphone,install-android
+hoe scan ik de qr-code? | install-esim,install-iphone,install-android
+even een vraag esim installeren | install-esim,install-iphone,install-android
+wanneer is de esim actief | when-activate,buy-when,line-on
+wanneer start de bundel | when-activate,buy-when,line-on
+wanneer gaan de dagen tellen | when-activate,buy-when,line-on
+wanneer begint de bundel | when-activate,buy-when,line-on
+hoi wanneer gaan de dagen tellen | when-activate,buy-when,line-on
+hoi wanneer begint de bundel bedankt | when-activate,buy-when,line-on
+wanneer gaan de dagen tellen? | when-activate,buy-when,line-on
+wanneer is de esim actief bedankt | when-activate,buy-when,line-on
+even een vraag wanneer begint de bundel alstublieft | when-activate,buy-when,line-on
+wanneer gaan de dagen tellen alstublieft | when-activate,buy-when,line-on
+wanneer is de esim actief alstublieft | when-activate,buy-when,line-on
+wanneer begint de bundel? | when-activate,buy-when,line-on
+wanneer begint de bundel alstublieft | when-activate,buy-when,line-on
+hallo wanneer gaan de dagen tellen bedankt | when-activate,buy-when,line-on
+even een vraag wanneer begint de bundel bedankt | when-activate,buy-when,line-on
+wanneer gaan de dagen tellen bedankt | when-activate,buy-when,line-on
+even een vraag wanneer gaan de dagen tellen | when-activate,buy-when,line-on
+hoi wanneer start de bundel | when-activate,buy-when,line-on
+hallo wanneer is de esim actief | when-activate,buy-when,line-on
+hoeveel gb heb ik nodig | which-package
+hoeveel data heb ik nodig op vakantie | which-package
+hoeveel gb heb ik nodig voor een week | which-package
+welke bundel kies ik | which-package
+welke bundel heb ik nodig | which-package
+hoeveel data heb ik nodig | which-package
+hoeveel gb heb ik nodig op vakantie | which-package
+hoeveel data heb ik nodig voor een week | which-package
+hallo hoeveel gb heb ik nodig op vakantie? | which-package
+hoi hoeveel data heb ik nodig? | which-package
+hoeveel gb heb ik nodig voor een week alstublieft | which-package
+hoeveel gb heb ik nodig op vakantie bedankt | which-package
+welke bundel heb ik nodig? | which-package
+hoeveel gb heb ik nodig bedankt | which-package
+hoi hoeveel gb heb ik nodig op vakantie? | which-package
+even een vraag hoeveel data heb ik nodig voor een week bedankt | which-package
+hoi welke bundel heb ik nodig? | which-package
+even een vraag hoeveel data heb ik nodig op vakantie bedankt | which-package
+hoi hoeveel gb heb ik nodig op vakantie | which-package
+kan ik bellen met de esim | calls,phone-number
+kan ik telefoneren met de esim | calls,phone-number
+krijg ik een telefoonnummer | calls,phone-number
+bellen inbegrepen | calls,phone-number
+sms inbegrepen | calls,phone-number
+krijg ik een telefoonnummer? | calls,phone-number
+bellen inbegrepen? | calls,phone-number
+hallo sms inbegrepen | calls,phone-number
+hallo kan ik bellen met de esim? | calls,phone-number
+krijg ik een telefoonnummer alstublieft | calls,phone-number
+kan ik telefoneren met de esim bedankt | calls,phone-number
+hoi krijg ik een telefoonnummer? | calls,phone-number
+hallo bellen inbegrepen bedankt | calls,phone-number
+hoi kan ik telefoneren met de esim bedankt | calls,phone-number
+even een vraag kan ik bellen met de esim bedankt | calls,phone-number
+sms inbegrepen alstublieft | calls,phone-number
+even een vraag krijg ik een telefoonnummer | calls,phone-number
+hoi bellen inbegrepen | calls,phone-number
+hoi bellen inbegrepen? | calls,phone-number
+wat gebeurt er met mijn simkaart | keep-number
+houd ik mijn nummer | keep-number
+blijft mijn nummer actief | keep-number
+even een vraag houd ik mijn nummer? | keep-number
+hallo blijft mijn nummer actief alstublieft | keep-number
+hallo blijft mijn nummer actief | keep-number
+hoi wat gebeurt er met mijn simkaart? | keep-number
+blijft mijn nummer actief? | keep-number
+even een vraag wat gebeurt er met mijn simkaart bedankt | keep-number
+hoi houd ik mijn nummer bedankt | keep-number
+hoi blijft mijn nummer actief | keep-number
+wat gebeurt er met mijn simkaart alstublieft | keep-number
+even een vraag blijft mijn nummer actief bedankt | keep-number
+houd ik mijn nummer alstublieft | keep-number
+wat gebeurt er met mijn simkaart? | keep-number
+hallo houd ik mijn nummer? | keep-number
+houd ik mijn nummer? | keep-number
+hoi houd ik mijn nummer | keep-number
+werkt hotspot | hotspot,hotspot-setup
+kan ik internet delen | hotspot,hotspot-setup
+kan ik een hotspot maken | hotspot,hotspot-setup
+even een vraag kan ik een hotspot maken | hotspot,hotspot-setup
+hallo kan ik internet delen alstublieft | hotspot,hotspot-setup
+werkt hotspot alstublieft | hotspot,hotspot-setup
+hallo kan ik een hotspot maken | hotspot,hotspot-setup
+kan ik internet delen bedankt | hotspot,hotspot-setup
+hoi werkt hotspot alstublieft | hotspot,hotspot-setup
+even een vraag kan ik internet delen alstublieft | hotspot,hotspot-setup
+even een vraag werkt hotspot? | hotspot,hotspot-setup
+hallo werkt hotspot | hotspot,hotspot-setup
+even een vraag werkt hotspot | hotspot,hotspot-setup
+hallo kan ik een hotspot maken? | hotspot,hotspot-setup
+hoi kan ik een hotspot maken alstublieft | hotspot,hotspot-setup
+hallo kan ik een hotspot maken alstublieft | hotspot,hotspot-setup
+kan ik internet delen alstublieft | hotspot,hotspot-setup
+hoi kan ik internet delen | hotspot,hotspot-setup
+hoe waardeer ik mijn bundel op | topup
+kan ik opwaarderen | topup
+hoe waardeer ik data op | topup
+kan ik data bijkopen | topup
+meer gb kopen | topup
+hoe waardeer ik data op alstublieft | topup
+even een vraag hoe waardeer ik data op alstublieft | topup
+hallo kan ik opwaarderen | topup
+even een vraag meer gb kopen bedankt | topup
+hoi meer gb kopen | topup
+hoe waardeer ik data op? | topup
+hoe waardeer ik data op bedankt | topup
+hoe waardeer ik mijn bundel op alstublieft | topup
+hallo meer gb kopen? | topup
+even een vraag kan ik opwaarderen | topup
+kan ik data bijkopen? | topup
+hallo meer gb kopen bedankt | topup
+hallo meer gb kopen | topup
+kan ik annuleren | refund,refund-how
+mijn bestelling annuleren | refund,refund-how
+hoe krijg ik mijn geld terug | refund,refund-how
+kan ik mijn geld terugkrijgen | refund,refund-how
+hallo kan ik mijn geld terugkrijgen | refund,refund-how
+hoi mijn bestelling annuleren alstublieft | refund,refund-how
+hoe krijg ik mijn geld terug? | refund,refund-how
+kan ik mijn geld terugkrijgen alstublieft | refund,refund-how
+even een vraag kan ik mijn geld terugkrijgen? | refund,refund-how
+kan ik mijn geld terugkrijgen? | refund,refund-how
+hoi hoe krijg ik mijn geld terug alstublieft | refund,refund-how
+kan ik annuleren bedankt | refund,refund-how
+even een vraag hoe krijg ik mijn geld terug? | refund,refund-how
+kan ik annuleren? | refund,refund-how
+hallo mijn bestelling annuleren? | refund,refund-how
+hoe krijg ik mijn geld terug alstublieft | refund,refund-how
+hallo hoe krijg ik mijn geld terug | refund,refund-how
+mijn bestelling annuleren? | refund,refund-how
+hoe kan ik betalen | payment
+betalen met ideal | payment
+betalen met creditcard | payment
+welke betaalmethoden zijn er | payment
+betalen met apple pay | payment
+betalen met paypal | payment
+welke betaalmethoden zijn er alstublieft | payment
+even een vraag betalen met ideal | payment
+even een vraag betalen met creditcard bedankt | payment
+betalen met paypal bedankt | payment
+hallo betalen met creditcard? | payment
+welke betaalmethoden zijn er? | payment
+hoi betalen met ideal? | payment
+hallo betalen met ideal | payment
+hoi betalen met creditcard | payment
+even een vraag welke betaalmethoden zijn er alstublieft | payment
+hallo welke betaalmethoden zijn er alstublieft | payment
+even een vraag betalen met ideal? | payment
+hoe lang duurt de levering | delivery
+wanneer komt de esim | delivery
+wanneer krijg ik de esim | delivery
+wanneer komt de qr-code | delivery
+wanneer komt de qr-code alstublieft | delivery
+hoi wanneer komt de esim? | delivery
+wanneer komt de esim alstublieft | delivery
+even een vraag hoe lang duurt de levering | delivery
+wanneer komt de qr-code? | delivery
+hallo wanneer komt de esim? | delivery
+even een vraag wanneer krijg ik de esim? | delivery
+hallo hoe lang duurt de levering alstublieft | delivery
+even een vraag wanneer krijg ik de esim alstublieft | delivery
+hoe lang duurt de levering? | delivery
+wanneer komt de qr-code bedankt | delivery
+hoi wanneer krijg ik de esim alstublieft | delivery
+hallo wanneer krijg ik de esim? | delivery
+hoi wanneer komt de qr-code? | delivery
+contact met support | contact
+hoe neem ik contact op | contact
+contact met de klantenservice | contact
+ik wil met een mens praten | contact
+ik wil met een medewerker praten | contact
+hoe neem ik contact op bedankt | contact
+even een vraag hoe neem ik contact op | contact
+even een vraag contact met support bedankt | contact
+hoi ik wil met een mens praten | contact
+hoi contact met support bedankt | contact
+hallo contact met support alstublieft | contact
+even een vraag ik wil met een mens praten? | contact
+even een vraag ik wil met een medewerker praten | contact
+hallo hoe neem ik contact op? | contact
+even een vraag contact met de klantenservice? | contact
+ik wil met een medewerker praten alstublieft | contact
+hallo contact met de klantenservice | contact
+hoi contact met de klantenservice alstublieft | contact
+waarom werkt internet niet | no-internet
+geen internet met de esim | no-internet
+geen internet | no-internet
+esim geïnstalleerd maar geen internet | no-internet
+geen internet in het buitenland | no-internet
+esim actief maar geen internet | no-internet
+esim geïnstalleerd maar geen internet bedankt | no-internet
+geen internet bedankt | no-internet
+hallo esim actief maar geen internet | no-internet
+esim geïnstalleerd maar geen internet? | no-internet
+hallo geen internet | no-internet
+hallo esim actief maar geen internet alstublieft | no-internet
+geen internet alstublieft | no-internet
+geen internet in het buitenland bedankt | no-internet
+even een vraag waarom werkt internet niet | no-internet
+even een vraag waarom werkt internet niet bedankt | no-internet
+even een vraag geen internet | no-internet
+geen internet in het buitenland? | no-internet
+verbruik controleren | check-usage
+hoeveel data heb ik nog | check-usage
+hoeveel gb heb ik nog | check-usage
+waar zie ik mijn resterende data | check-usage
+hoeveel gb heb ik nog? | check-usage
+even een vraag waar zie ik mijn resterende data | check-usage
+hoeveel gb heb ik nog alstublieft | check-usage
+even een vraag hoeveel gb heb ik nog bedankt | check-usage
+hallo hoeveel data heb ik nog | check-usage
+even een vraag hoeveel data heb ik nog alstublieft | check-usage
+waar zie ik mijn resterende data? | check-usage
+hallo waar zie ik mijn resterende data? | check-usage
+verbruik controleren bedankt | check-usage
+hoi verbruik controleren | check-usage
+hoi hoeveel gb heb ik nog | check-usage
+verbruik controleren? | check-usage
+hoi waar zie ik mijn resterende data bedankt | check-usage
+waar zie ik mijn resterende data bedankt | check-usage
+prijzen van esims | prices
+wat kost een esim | prices
+wat kost een bundel | prices
+even een vraag prijzen van esims | prices
+hoi wat kost een bundel alstublieft | prices
+even een vraag wat kost een esim? | prices
+even een vraag wat kost een bundel | prices
+wat kost een bundel? | prices
+hallo prijzen van esims | prices
+wat kost een esim alstublieft | prices
+hallo wat kost een esim alstublieft | prices
+hallo wat kost een bundel | prices
+hoi wat kost een esim alstublieft | prices
+hallo wat kost een bundel bedankt | prices
+hallo wat kost een esim | prices
+wat kost een esim bedankt | prices
+hoi prijzen van esims alstublieft | prices
+prijzen van esims alstublieft | prices
+waar vul ik de coupon in | discount-code
+waar vul ik de promocode in | discount-code
+hebben jullie een kortingscode | discount-code
+waar vul ik de kortingscode in | discount-code
+even een vraag waar vul ik de coupon in | discount-code
+waar vul ik de kortingscode in bedankt | discount-code
+waar vul ik de coupon in alstublieft | discount-code
+hoi hebben jullie een kortingscode? | discount-code
+hallo hebben jullie een kortingscode alstublieft | discount-code
+even een vraag waar vul ik de promocode in | discount-code
+hoi waar vul ik de promocode in alstublieft | discount-code
+hoi hebben jullie een kortingscode bedankt | discount-code
+hoi waar vul ik de promocode in? | discount-code
+hoi waar vul ik de coupon in bedankt | discount-code
+hallo waar vul ik de coupon in bedankt | discount-code
+waar vul ik de kortingscode in? | discount-code
+hebben jullie een kortingscode alstublieft | discount-code
+hebben jullie een kortingscode bedankt | discount-code
+waar is mijn factuur | invoice
+kan ik een factuur krijgen | invoice
+hoi kan ik een factuur krijgen alstublieft | invoice
+hallo kan ik een factuur krijgen? | invoice
+even een vraag kan ik een factuur krijgen | invoice
+waar is mijn factuur? | invoice
+waar is mijn factuur alstublieft | invoice
+even een vraag kan ik een factuur krijgen alstublieft | invoice
+kan ik een factuur krijgen? | invoice
+hallo waar is mijn factuur alstublieft | invoice
+kan ik een factuur krijgen bedankt | invoice
+hoi kan ik een factuur krijgen | invoice
+hallo kan ik een factuur krijgen | invoice
+kan ik een factuur krijgen alstublieft | invoice
+waar is mijn factuur bedankt | invoice
+even een vraag waar is mijn factuur alstublieft | invoice
+even een vraag kan ik een factuur krijgen? | invoice
+even een vraag waar is mijn factuur | invoice
+hoe verwijder ik mijn account | account-delete
+mijn gegevens verwijderen | account-delete
+mijn account verwijderen | account-delete
+mijn gegevens verwijderen bedankt | account-delete
+hallo mijn account verwijderen alstublieft | account-delete
+hoi hoe verwijder ik mijn account? | account-delete
+hoe verwijder ik mijn account alstublieft | account-delete
+hallo mijn account verwijderen? | account-delete
+even een vraag mijn account verwijderen bedankt | account-delete
+hallo mijn gegevens verwijderen | account-delete
+even een vraag mijn account verwijderen | account-delete
+mijn gegevens verwijderen alstublieft | account-delete
+even een vraag mijn gegevens verwijderen bedankt | account-delete
+mijn account verwijderen bedankt | account-delete
+hallo mijn account verwijderen | account-delete
+even een vraag hoe verwijder ik mijn account bedankt | account-delete
+even een vraag hoe verwijder ik mijn account | account-delete
+hallo hoe verwijder ik mijn account | account-delete
+wat betekent klaar om te installeren | order-status
+wat betekent wacht op betaling | order-status
+bestelstatus wat betekent dat | order-status
+wat betekent wordt voorbereid | order-status
+hallo wat betekent wordt voorbereid bedankt | order-status
+hallo bestelstatus wat betekent dat | order-status
+wat betekent wordt voorbereid? | order-status
+hoi wat betekent wordt voorbereid | order-status
+wat betekent wordt voorbereid alstublieft | order-status
+even een vraag wat betekent wacht op betaling bedankt | order-status
+wat betekent wordt voorbereid bedankt | order-status
+hallo wat betekent wordt voorbereid alstublieft | order-status
+hallo wat betekent wacht op betaling | order-status
+wat betekent klaar om te installeren alstublieft | order-status
+hoi wat betekent wordt voorbereid? | order-status
+even een vraag wat betekent klaar om te installeren alstublieft | order-status
+even een vraag wat betekent wordt voorbereid? | order-status
+hoi bestelstatus wat betekent dat bedankt | order-status
+is onbeperkt echt onbeperkt | unlimited
+hoe werkt de onbeperkte bundel | unlimited
+hallo hoe werkt de onbeperkte bundel? | unlimited
+even een vraag hoe werkt de onbeperkte bundel alstublieft | unlimited
+hoe werkt de onbeperkte bundel? | unlimited
+hallo hoe werkt de onbeperkte bundel bedankt | unlimited
+hallo is onbeperkt echt onbeperkt bedankt | unlimited
+is onbeperkt echt onbeperkt alstublieft | unlimited
+is onbeperkt echt onbeperkt bedankt | unlimited
+even een vraag is onbeperkt echt onbeperkt | unlimited
+even een vraag is onbeperkt echt onbeperkt bedankt | unlimited
+hoi hoe werkt de onbeperkte bundel | unlimited
+hoi hoe werkt de onbeperkte bundel? | unlimited
+hallo hoe werkt de onbeperkte bundel alstublieft | unlimited
+hallo is onbeperkt echt onbeperkt alstublieft | unlimited
+hoe werkt de onbeperkte bundel bedankt | unlimited
+hoi hoe werkt de onbeperkte bundel alstublieft | unlimited
+hoe werkt de onbeperkte bundel alstublieft | unlimited
+werkt whatsapp met de esim | whatsapp
+werkt whatsapp | whatsapp
+kan ik whatsapp gebruiken | whatsapp
+hoi werkt whatsapp? | whatsapp
+hallo werkt whatsapp met de esim | whatsapp
+even een vraag werkt whatsapp? | whatsapp
+even een vraag werkt whatsapp | whatsapp
+hoi werkt whatsapp bedankt | whatsapp
+hallo werkt whatsapp? | whatsapp
+kan ik whatsapp gebruiken? | whatsapp
+werkt whatsapp met de esim bedankt | whatsapp
+werkt whatsapp alstublieft | whatsapp
+hallo kan ik whatsapp gebruiken? | whatsapp
+hallo werkt whatsapp bedankt | whatsapp
+hoi kan ik whatsapp gebruiken | whatsapp
+hoi kan ik whatsapp gebruiken alstublieft | whatsapp
+kan ik whatsapp gebruiken bedankt | whatsapp
+kan ik whatsapp gebruiken alstublieft | whatsapp
+nieuwe telefoon wat gebeurt er met de esim | new-phone,deleted-esim
+esim overzetten naar een andere telefoon | new-phone,deleted-esim
+esim verwijderd wat nu | new-phone,deleted-esim
+andere telefoon wat gebeurt er met de esim | new-phone,deleted-esim
+even een vraag esim verwijderd wat nu? | new-phone,deleted-esim
+hoi andere telefoon wat gebeurt er met de esim? | new-phone,deleted-esim
+esim verwijderd wat nu bedankt | new-phone,deleted-esim
+nieuwe telefoon wat gebeurt er met de esim bedankt | new-phone,deleted-esim
+hallo andere telefoon wat gebeurt er met de esim | new-phone,deleted-esim
+hoi esim verwijderd wat nu bedankt | new-phone,deleted-esim
+esim overzetten naar een andere telefoon alstublieft | new-phone,deleted-esim
+esim verwijderd wat nu? | new-phone,deleted-esim
+even een vraag nieuwe telefoon wat gebeurt er met de esim? | new-phone,deleted-esim
+hallo nieuwe telefoon wat gebeurt er met de esim alstublieft | new-phone,deleted-esim
+hoi esim overzetten naar een andere telefoon bedankt | new-phone,deleted-esim
+even een vraag esim verwijderd wat nu alstublieft | new-phone,deleted-esim
+hallo esim verwijderd wat nu? | new-phone,deleted-esim
+esim verwijderd wat nu alstublieft | new-phone,deleted-esim
+esim kopen als cadeau | gift
+esim kopen voor iemand anders | gift
+esim kopen voor mijn moeder | gift
+even een vraag esim kopen voor mijn moeder? | gift
+hallo esim kopen als cadeau? | gift
+hallo esim kopen als cadeau alstublieft | gift
+esim kopen als cadeau alstublieft | gift
+esim kopen voor iemand anders? | gift
+esim kopen voor mijn moeder alstublieft | gift
+even een vraag esim kopen als cadeau alstublieft | gift
+hoi esim kopen als cadeau | gift
+hallo esim kopen voor iemand anders | gift
+hallo esim kopen voor iemand anders? | gift
+even een vraag esim kopen als cadeau | gift
+hoi esim kopen voor mijn moeder | gift
+even een vraag esim kopen voor mijn moeder | gift
+even een vraag esim kopen voor mijn moeder bedankt | gift
+hallo esim kopen voor iemand anders alstublieft | gift
+de site is veilig | safe
+passport io is veilig | safe
+passport io is betrouwbaar | safe
+is dit oplichting | safe
+de site is betrouwbaar | safe
+is dit oplichting? | safe
+even een vraag de site is betrouwbaar? | safe
+hoi de site is veilig? | safe
+de site is veilig alstublieft | safe
+hallo de site is betrouwbaar | safe
+hoi passport io is betrouwbaar? | safe
+hallo de site is veilig? | safe
+hoi de site is betrouwbaar? | safe
+even een vraag is dit oplichting | safe
+hallo passport io is veilig? | safe
+hoi de site is veilig | safe
+hallo passport io is betrouwbaar alstublieft | safe
+passport io is betrouwbaar bedankt | safe
+valuta wijzigen | currency
+prijzen in dollar zien | currency
+prijzen in euro zien | currency
+prijzen in euro zien alstublieft | currency
+hoi prijzen in dollar zien? | currency
+prijzen in dollar zien alstublieft | currency
+even een vraag prijzen in dollar zien bedankt | currency
+even een vraag prijzen in euro zien alstublieft | currency
+hallo prijzen in dollar zien | currency
+even een vraag prijzen in euro zien? | currency
+hoi valuta wijzigen | currency
+hoi prijzen in dollar zien | currency
+hallo prijzen in dollar zien alstublieft | currency
+prijzen in dollar zien bedankt | currency
+hallo prijzen in euro zien | currency
+hallo prijzen in dollar zien bedankt | currency
+hallo valuta wijzigen | currency
+prijzen in dollar zien? | currency
+wat is er in de lounge | lounge-what
+wat is een lounge | lounge-what
+hallo wat is een lounge bedankt | lounge-what
+even een vraag wat is er in de lounge | lounge-what
+hoi wat is er in de lounge | lounge-what
+hallo wat is er in de lounge | lounge-what
+wat is er in de lounge alstublieft | lounge-what
+hoi wat is een lounge | lounge-what
+hallo wat is een lounge | lounge-what
+even een vraag wat is een lounge | lounge-what
+wat is er in de lounge bedankt | lounge-what
+wat is een lounge alstublieft | lounge-what
+even een vraag wat is een lounge bedankt | lounge-what
+wat is een lounge? | lounge-what
+hallo wat is er in de lounge alstublieft | lounge-what
+hoi wat is er in de lounge bedankt | lounge-what
+hoi wat is een lounge bedankt | lounge-what
+hallo wat is een lounge? | lounge-what
+hoe werkt fast track | fasttrack-how
+wat is fast track | fasttrack-how
+wat is fast track bedankt | fasttrack-how
+even een vraag wat is fast track | fasttrack-how
+hoe werkt fast track? | fasttrack-how
+hoi hoe werkt fast track | fasttrack-how
+even een vraag hoe werkt fast track | fasttrack-how
+hallo hoe werkt fast track alstublieft | fasttrack-how
+hoe werkt fast track bedankt | fasttrack-how
+wat is fast track? | fasttrack-how
+even een vraag hoe werkt fast track? | fasttrack-how
+hallo hoe werkt fast track bedankt | fasttrack-how
+even een vraag hoe werkt fast track bedankt | fasttrack-how
+wat is fast track alstublieft | fasttrack-how
+hoi wat is fast track bedankt | fasttrack-how
+even een vraag hoe werkt fast track alstublieft | fasttrack-how
+hallo hoe werkt fast track | fasttrack-how
+hoi wat is fast track alstublieft | fasttrack-how
+kan ik twee esims hebben | multiple-esims
+kan ik meerdere esims hebben | multiple-esims
+kan ik meerdere esims hebben bedankt | multiple-esims
+kan ik meerdere esims hebben alstublieft | multiple-esims
+hallo kan ik meerdere esims hebben alstublieft | multiple-esims
+hallo kan ik twee esims hebben | multiple-esims
+hoi kan ik twee esims hebben? | multiple-esims
+hallo kan ik meerdere esims hebben bedankt | multiple-esims
+kan ik twee esims hebben alstublieft | multiple-esims
+even een vraag kan ik meerdere esims hebben | multiple-esims
+kan ik twee esims hebben? | multiple-esims
+even een vraag kan ik twee esims hebben | multiple-esims
+hoi kan ik meerdere esims hebben | multiple-esims
+even een vraag kan ik meerdere esims hebben? | multiple-esims
+even een vraag kan ik meerdere esims hebben bedankt | multiple-esims
+hoi kan ik meerdere esims hebben alstublieft | multiple-esims
+kan ik meerdere esims hebben? | multiple-esims
+kan ik twee esims hebben bedankt | multiple-esims
+moet ik de esim na de reis verwijderen | remove-after
+even een vraag moet ik de esim na de reis verwijderen bedankt | remove-after
+moet ik de esim na de reis verwijderen alstublieft | remove-after
+hoi moet ik de esim na de reis verwijderen alstublieft | remove-after
+hallo moet ik de esim na de reis verwijderen? | remove-after
+moet ik de esim na de reis verwijderen? | remove-after
+hoi moet ik de esim na de reis verwijderen | remove-after
+hallo moet ik de esim na de reis verwijderen | remove-after
+moet ik de esim na de reis verwijderen bedankt | remove-after
+even een vraag moet ik de esim na de reis verwijderen? | remove-after
+hoi moet ik de esim na de reis verwijderen bedankt | remove-after
+even een vraag moet ik de esim na de reis verwijderen | remove-after
+even een vraag moet ik de esim na de reis verwijderen alstublieft | remove-after
+hallo moet ik de esim na de reis verwijderen bedankt | remove-after
+hallo moet ik de esim na de reis verwijderen alstublieft | remove-after
+hoi moet ik de esim na de reis verwijderen? | remove-after
+bundel op wat nu | expired
+data op wat nu | expired
+data op wat nu alstublieft | expired
+hallo bundel op wat nu | expired
+hoi data op wat nu alstublieft | expired
+data op wat nu? | expired
+bundel op wat nu alstublieft | expired
+bundel op wat nu? | expired
+even een vraag bundel op wat nu? | expired
+hoi bundel op wat nu | expired
+data op wat nu bedankt | expired
+even een vraag data op wat nu | expired
+even een vraag bundel op wat nu bedankt | expired
+even een vraag data op wat nu alstublieft | expired
+hallo data op wat nu | expired
+hoi data op wat nu | expired
+hoi bundel op wat nu bedankt | expired
+hoi data op wat nu bedankt | expired
+ik heb geen qr-code ontvangen | no-email,my-esims
+waar is mijn qr-code | no-email,my-esims
+even een vraag ik heb geen qr-code ontvangen alstublieft | no-email,my-esims
+hallo waar is mijn qr-code | no-email,my-esims
+ik heb geen qr-code ontvangen? | no-email,my-esims
+even een vraag ik heb geen qr-code ontvangen bedankt | no-email,my-esims
+hallo ik heb geen qr-code ontvangen alstublieft | no-email,my-esims
+waar is mijn qr-code bedankt | no-email,my-esims
+hoi ik heb geen qr-code ontvangen bedankt | no-email,my-esims
+hoi waar is mijn qr-code bedankt | no-email,my-esims
+even een vraag waar is mijn qr-code? | no-email,my-esims
+even een vraag waar is mijn qr-code | no-email,my-esims
+hallo ik heb geen qr-code ontvangen | no-email,my-esims
+hoi waar is mijn qr-code | no-email,my-esims
+ik heb geen qr-code ontvangen bedankt | no-email,my-esims
+hallo waar is mijn qr-code bedankt | no-email,my-esims
+even een vraag waar is mijn qr-code bedankt | no-email,my-esims
+hoi waar is mijn qr-code alstublieft | no-email,my-esims
+hebben jullie een esim voor amerika | coverage-countries
+hebben jullie een esim voor japan | coverage-countries
+hebben jullie een esim voor marokko | coverage-countries
+in welke landen werkt het | coverage-countries
+hebben jullie een esim voor thailand | coverage-countries
+even een vraag hebben jullie een esim voor japan bedankt | coverage-countries
+hallo hebben jullie een esim voor thailand | coverage-countries
+hoi hebben jullie een esim voor thailand alstublieft | coverage-countries
+hoi hebben jullie een esim voor japan | coverage-countries
+hoi hebben jullie een esim voor amerika | coverage-countries
+even een vraag hebben jullie een esim voor amerika bedankt | coverage-countries
+hebben jullie een esim voor japan bedankt | coverage-countries
+hebben jullie een esim voor japan? | coverage-countries
+hebben jullie een esim voor marokko alstublieft | coverage-countries
+hebben jullie een esim voor thailand bedankt | coverage-countries
+hallo hebben jullie een esim voor amerika? | coverage-countries
+hallo hebben jullie een esim voor thailand alstublieft | coverage-countries
+hebben jullie een esim voor marokko bedankt | coverage-countries
+hallo waar is mijn bundel na de aankoop? | my-esims
+hallo waar koop ik een bundel | how-to-buy
