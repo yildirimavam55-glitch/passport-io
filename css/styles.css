@@ -1602,3 +1602,8 @@ img.is-broken { visibility: hidden; }
 .popup__code .btn { background: transparent !important; color: #fff !important; border: 1.5px solid rgba(255,255,255,.35) !important; flex: none; }
 .popup__code .btn:hover { border-color: var(--green) !important; color: var(--green) !important; }
 .popup__x { background: rgba(255,255,255,.08) !important; border: 1px solid rgba(255,255,255,.14) !important; color: #dfe8e3 !important; }
+
+/* Japanisch/Koreanisch: Zeilenumbruch an Wort- bzw. Phrasengrenzen statt mitten im Wort */
+html:lang(ko) body { word-break: keep-all; overflow-wrap: anywhere; }
+html:lang(ja) body { line-break: strict; }
+html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }

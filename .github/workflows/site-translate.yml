@@ -1,0 +1,48 @@
+# Webseite: neue oder geänderte Texte automatisch in alle Sprachen übersetzen
+# Läuft, wenn Inhalte auf main geändert werden (Mağaza editörü, Blog, Rechtstexte, neue Sprache).
+# Quelle ist Türkisch; je Text wird ein Fingerabdruck gespeichert (tools/site-sync.json) – nur Neues/Geändertes wird übersetzt.
+# Lina-FAQs übersetzt der Workflow „Lina übersetzen“.
+# Benötigtes Repository-Secret: ANTHROPIC_API_KEY (console.anthropic.com → API Keys).
+# Ohne Secret passiert nichts Schlimmes: fehlende Texte zeigt die Seite auf Englisch, bis übersetzt ist.
+
+name: Webseite übersetzen
+
+on:
+  push:
+    branches: [main]
+    paths: ["content/**", "!content/assistant.json"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: site-translate
+  cancel-in-progress: false
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Fehlende Übersetzungen ergänzen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tools/site-translate.mjs
+      - name: Speichern und Webseite neu veröffentlichen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- content tools/site-sync.json; then echo "Keine Änderungen."; exit 0; fi
+          git config user.name "Webseite (Übersetzung)"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content tools/site-sync.json
+          git commit -m "Webseite: Übersetzungen automatisch ergänzt"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          # Commits dieses Workflows lösen keinen neuen Lauf aus – daher die Veröffentlichung direkt anstoßen
+          gh workflow run deploy.yml --ref main

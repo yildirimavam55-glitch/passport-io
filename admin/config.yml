@@ -21,7 +21,7 @@ locale: tr
 # Türkisch ist die Hauptsprache und enthält Bilder, Links, Preise-Schlüssel usw.; andere Sprachen nur die Texte.
 i18n:
   structure: single_file
-  locales: [tr, en, de, ar, ru, fr, es]
+  locales: [tr, en, de, ar, ru, fr, es, it, pt, nl, pl, ja, ko]
   default_locale: tr
 site_url: /
 display_url: /

@@ -1737,5 +1737,293 @@
         "note": "Egipto, Marruecos, Sudáfrica y más"
       }
     ]
+  },
+  "it": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "Più venduto"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "Europa",
+        "note": "Tutti i paesi UE + Regno Unito, Svizzera, Turchia"
+      },
+      {
+        "id": "asia",
+        "name": "Asia",
+        "note": "Thailandia, Giappone, Vietnam e altri"
+      },
+      {
+        "id": "na",
+        "name": "Nord America",
+        "note": "USA, Canada, Messico"
+      },
+      {
+        "id": "me",
+        "name": "Medio Oriente",
+        "note": "EAU, Qatar, Arabia Saudita e altri"
+      },
+      {
+        "id": "latam",
+        "name": "America Latina",
+        "note": "Brasile, Messico, Colombia e altri"
+      },
+      {
+        "id": "af",
+        "name": "Africa",
+        "note": "Egitto, Marocco, Sudafrica e altri"
+      }
+    ]
+  },
+  "pt": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "Mais vendido"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "Europa",
+        "note": "Todos os países da UE + Reino Unido, Suíça, Turquia"
+      },
+      {
+        "id": "asia",
+        "name": "Ásia",
+        "note": "Tailândia, Japão, Vietnã e outros"
+      },
+      {
+        "id": "na",
+        "name": "América do Norte",
+        "note": "EUA, Canadá, México"
+      },
+      {
+        "id": "me",
+        "name": "Oriente Médio",
+        "note": "Emirados, Catar, Arábia Saudita e outros"
+      },
+      {
+        "id": "latam",
+        "name": "América Latina",
+        "note": "Brasil, México, Colômbia e outros"
+      },
+      {
+        "id": "af",
+        "name": "África",
+        "note": "Egito, Marrocos, África do Sul e outros"
+      }
+    ]
+  },
+  "nl": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "Bestseller"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "Europa",
+        "note": "Alle EU-landen + VK, Zwitserland, Turkije"
+      },
+      {
+        "id": "asia",
+        "name": "Azië",
+        "note": "Thailand, Japan, Vietnam en meer"
+      },
+      {
+        "id": "na",
+        "name": "Noord-Amerika",
+        "note": "VS, Canada, Mexico"
+      },
+      {
+        "id": "me",
+        "name": "Midden-Oosten",
+        "note": "VAE, Qatar, Saudi-Arabië en meer"
+      },
+      {
+        "id": "latam",
+        "name": "Latijns-Amerika",
+        "note": "Brazilië, Mexico, Colombia en meer"
+      },
+      {
+        "id": "af",
+        "name": "Afrika",
+        "note": "Egypte, Marokko, Zuid-Afrika en meer"
+      }
+    ]
+  },
+  "pl": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "Bestseller"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "Europa",
+        "note": "Wszystkie kraje UE + Wielka Brytania, Szwajcaria, Turcja"
+      },
+      {
+        "id": "asia",
+        "name": "Azja",
+        "note": "Tajlandia, Japonia, Wietnam i inne"
+      },
+      {
+        "id": "na",
+        "name": "Ameryka Północna",
+        "note": "USA, Kanada, Meksyk"
+      },
+      {
+        "id": "me",
+        "name": "Bliski Wschód",
+        "note": "ZEA, Katar, Arabia Saudyjska i inne"
+      },
+      {
+        "id": "latam",
+        "name": "Ameryka Łacińska",
+        "note": "Brazylia, Meksyk, Kolumbia i inne"
+      },
+      {
+        "id": "af",
+        "name": "Afryka",
+        "note": "Egipt, Maroko, RPA i inne"
+      }
+    ]
+  },
+  "ja": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "ベストセラー"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "ヨーロッパ",
+        "note": "EU全加盟国＋イギリス、スイス、トルコ"
+      },
+      {
+        "id": "asia",
+        "name": "アジア",
+        "note": "タイ、日本、ベトナムなど"
+      },
+      {
+        "id": "na",
+        "name": "北米",
+        "note": "アメリカ、カナダ、メキシコ"
+      },
+      {
+        "id": "me",
+        "name": "中東",
+        "note": "UAE、カタール、サウジアラビアなど"
+      },
+      {
+        "id": "latam",
+        "name": "中南米",
+        "note": "ブラジル、メキシコ、コロンビアなど"
+      },
+      {
+        "id": "af",
+        "name": "アフリカ",
+        "note": "エジプト、モロッコ、南アフリカなど"
+      }
+    ]
+  },
+  "ko": {
+    "countries": [
+      {
+        "code": "tr",
+        "tag": "베스트셀러"
+      },
+      {
+        "code": "us",
+        "tag": "5G"
+      },
+      {
+        "code": "jp",
+        "tag": "5G"
+      }
+    ],
+    "regional": [
+      {
+        "id": "eu",
+        "name": "유럽",
+        "note": "EU 전 회원국 + 영국, 스위스, 튀르키예"
+      },
+      {
+        "id": "asia",
+        "name": "아시아",
+        "note": "태국, 일본, 베트남 등"
+      },
+      {
+        "id": "na",
+        "name": "북미",
+        "note": "미국, 캐나다, 멕시코"
+      },
+      {
+        "id": "me",
+        "name": "중동",
+        "note": "UAE, 카타르, 사우디아라비아 등"
+      },
+      {
+        "id": "latam",
+        "name": "중남미",
+        "note": "브라질, 멕시코, 콜롬비아 등"
+      },
+      {
+        "id": "af",
+        "name": "아프리카",
+        "note": "이집트, 모로코, 남아프리카공화국 등"
+      }
+    ]
   }
 }

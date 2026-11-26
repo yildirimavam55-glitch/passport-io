@@ -533,7 +533,7 @@
   }
 
   /* ---------- Diller & çeviri ---------- */
-  const T_LANGS = [["en", "English"], ["de", "Deutsch"], ["ar", "العربية"], ["ru", "Русский"], ["fr", "Français"], ["es", "Español"]];
+  const T_LANGS = [["en", "English"], ["de", "Deutsch"], ["ar", "العربية"], ["ru", "Русский"], ["fr", "Français"], ["es", "Español"], ["it", "Italiano"], ["pt", "Português"], ["nl", "Nederlands"], ["pl", "Polski"], ["ja", "日本語"], ["ko", "한국어"]];
   const T_FILES = [["content/site.json", "Ana sayfa"], ["content/ui.json", "Arayüz metinleri"], ["content/assistant.json", "Lina & SSS"], ["content/install.json", "Kurulum rehberi"], ["content/account.json", "Müşteri hesabı"], ["content/pages.json", "Yasal sayfalar"], ["content/reviews.json", "Değerlendirmeler"], ["content/esim.json", "eSIM ülkeleri"]];
   // Übersetzbare Texte: Zeichenketten, aber keine Links, Bilder, Codes, Farben, Daten
   const T_SKIP = /^(image|images|img|url|href|link|icon|color|green|dark|code|id|type|date|cta|country|countryCode|pricesUrl|questionsUrl|linaUrl|mapCodes|slug|value|style|tap|toggle|kind|currency|email|phone|logo|flag)$/i;
@@ -661,7 +661,7 @@
     const usable = d.codes.filter((c) => c.active && (!c.ends_at || new Date(c.ends_at) > Date.now()) && (!c.max_uses || c.used_count < c.max_uses));
     const label = (c) => `${c.code} – ${c.kind === "percent" ? "%" + Number(c.value) : money(c.value, "EUR")}`;
     const opts = (sel) => `<option value="">– seçilmedi –</option>` + d.codes.map((c) => `<option value="${esc(c.code)}" ${c.code === sel ? "selected" : ""} ${usable.includes(c) ? "" : "disabled"}>${esc(label(c))}${usable.includes(c) ? "" : " (geçersiz)"}</option>`).join("");
-    const L = [["tr", "Türkçe"], ["de", "Deutsch"], ["en", "English"], ["ar", "العربية"], ["ru", "Русский"], ["fr", "Français"], ["es", "Español"]];
+    const L = [["tr", "Türkçe"], ["de", "Deutsch"], ["en", "English"], ["ar", "العربية"], ["ru", "Русский"], ["fr", "Français"], ["es", "Español"], ["it", "Italiano"], ["pt", "Português"], ["nl", "Nederlands"], ["pl", "Polski"], ["ja", "日本語"], ["ko", "한국어"]];
     const live = d.live || {};
     const liveText = live.type === "promo" ? `<b>Kampanya</b> gösteriliyor: kod <b class="mono">${esc(live.code)}</b> (${live.kind === "percent" ? "%" + live.value : esc(money(live.value, "EUR"))})${live.endsAt ? " · bitiş " + esc(date(live.endsAt)) : ""}`
       : live.type === "newsletter" ? `<b>Bülten penceresi</b> gösteriliyor${live.offer ? ` – kayıttan sonra hoş geldin kodu (${live.offer.kind === "percent" ? "%" + live.offer.value : esc(money(live.offer.value, "EUR"))})` : " – indirim vaadi olmadan"}`

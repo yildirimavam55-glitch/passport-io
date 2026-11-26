@@ -1,0 +1,21 @@
+## Neue Sprachen (11/2026): eigene Formulierungen, nicht aus den FAQ-Texten kopiert
+werkt de esim op mijn galaxy s23 | device-compatible
+hoe zet ik de esim op mijn telefoon | install-esim,install-iphone,install-android
+ik heb een bundel gekocht waar vind ik die | my-esims
+ben in rome geland maar internet doet het niet | no-internet
+hoeveel gb heb ik nodig voor twee weken | which-package
+kan ik gewoon bellen | calls,phone-number
+blijft mijn eigen nummer werken | keep-number
+ik heb geen mail met de qr gekregen | no-email,my-esims
+ik wil mijn geld terug | refund,refund-how
+hoe kan ik afrekenen | payment
+de kortingscode doet het niet | discount-code
+ik ben mijn wachtwoord vergeten | account-login
+waar zet ik roaming aan op de iphone | data-roaming
+het internet is super traag | slow-internet
+per ongeluk de esim gewist | deleted-esim
+is de esim een abonnement | hidden-costs
+mag mijn zoontje mee de lounge in | lounge-kids
+vlucht heeft vertraging geldt de voucher nog | lounge-delay
+werkt whatsapp nog gewoon | whatsapp
+hoe bestel ik | how-to-buy

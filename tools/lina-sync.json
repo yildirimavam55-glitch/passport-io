@@ -5,7 +5,13 @@
   "ar": "f1c0be952319",
   "ru": "f1c0be952319",
   "fr": "f1c0be952319",
-  "es": "f1c0be952319"
+  "es": "f1c0be952319",
+  "it": "f1c0be952319",
+  "pt": "f1c0be952319",
+  "nl": "f1c0be952319",
+  "pl": "f1c0be952319",
+  "ja": "f1c0be952319",
+  "ko": "f1c0be952319"
  },
  "device-compatible": {
   "en": "11b643814065",
@@ -13,7 +19,13 @@
   "ar": "11b643814065",
   "ru": "11b643814065",
   "fr": "11b643814065",
-  "es": "11b643814065"
+  "es": "11b643814065",
+  "it": "11b643814065",
+  "pt": "11b643814065",
+  "nl": "11b643814065",
+  "pl": "11b643814065",
+  "ja": "11b643814065",
+  "ko": "11b643814065"
  },
  "install-esim": {
   "en": "6251fd989d7f",
@@ -21,7 +33,13 @@
   "ar": "6251fd989d7f",
   "ru": "6251fd989d7f",
   "fr": "6251fd989d7f",
-  "es": "6251fd989d7f"
+  "es": "6251fd989d7f",
+  "it": "6251fd989d7f",
+  "pt": "6251fd989d7f",
+  "nl": "6251fd989d7f",
+  "pl": "6251fd989d7f",
+  "ja": "6251fd989d7f",
+  "ko": "6251fd989d7f"
  },
  "when-activate": {
   "en": "aa844e36cdec",
@@ -29,7 +47,13 @@
   "ar": "aa844e36cdec",
   "ru": "aa844e36cdec",
   "fr": "aa844e36cdec",
-  "es": "aa844e36cdec"
+  "es": "aa844e36cdec",
+  "it": "aa844e36cdec",
+  "pt": "aa844e36cdec",
+  "nl": "aa844e36cdec",
+  "pl": "aa844e36cdec",
+  "ja": "aa844e36cdec",
+  "ko": "aa844e36cdec"
  },
  "which-package": {
   "en": "89bee48870b4",
@@ -37,7 +61,13 @@
   "ar": "89bee48870b4",
   "ru": "89bee48870b4",
   "fr": "89bee48870b4",
-  "es": "89bee48870b4"
+  "es": "89bee48870b4",
+  "it": "89bee48870b4",
+  "pt": "89bee48870b4",
+  "nl": "89bee48870b4",
+  "pl": "89bee48870b4",
+  "ja": "89bee48870b4",
+  "ko": "89bee48870b4"
  },
  "calls": {
   "en": "3b40e15e75cc",
@@ -45,7 +75,13 @@
   "ar": "3b40e15e75cc",
   "ru": "3b40e15e75cc",
   "fr": "3b40e15e75cc",
-  "es": "3b40e15e75cc"
+  "es": "3b40e15e75cc",
+  "it": "3b40e15e75cc",
+  "pt": "3b40e15e75cc",
+  "nl": "3b40e15e75cc",
+  "pl": "3b40e15e75cc",
+  "ja": "3b40e15e75cc",
+  "ko": "3b40e15e75cc"
  },
  "keep-number": {
   "en": "244f68fb79b0",
@@ -53,7 +89,13 @@
   "ar": "244f68fb79b0",
   "ru": "244f68fb79b0",
   "fr": "244f68fb79b0",
-  "es": "244f68fb79b0"
+  "es": "244f68fb79b0",
+  "it": "244f68fb79b0",
+  "pt": "244f68fb79b0",
+  "nl": "244f68fb79b0",
+  "pl": "244f68fb79b0",
+  "ja": "244f68fb79b0",
+  "ko": "244f68fb79b0"
  },
  "hotspot": {
   "en": "51a93622ccea",
@@ -61,7 +103,13 @@
   "ar": "51a93622ccea",
   "ru": "51a93622ccea",
   "fr": "51a93622ccea",
-  "es": "51a93622ccea"
+  "es": "51a93622ccea",
+  "it": "51a93622ccea",
+  "pt": "51a93622ccea",
+  "nl": "51a93622ccea",
+  "pl": "51a93622ccea",
+  "ja": "51a93622ccea",
+  "ko": "51a93622ccea"
  },
  "topup": {
   "en": "e0c832c06c49",
@@ -69,7 +117,13 @@
   "ar": "e0c832c06c49",
   "ru": "e0c832c06c49",
   "fr": "e0c832c06c49",
-  "es": "e0c832c06c49"
+  "es": "e0c832c06c49",
+  "it": "e0c832c06c49",
+  "pt": "e0c832c06c49",
+  "nl": "e0c832c06c49",
+  "pl": "e0c832c06c49",
+  "ja": "e0c832c06c49",
+  "ko": "e0c832c06c49"
  },
  "lounge-access": {
   "en": "b1cf016e5e33",
@@ -77,7 +131,13 @@
   "ar": "b1cf016e5e33",
   "ru": "b1cf016e5e33",
   "fr": "b1cf016e5e33",
-  "es": "b1cf016e5e33"
+  "es": "b1cf016e5e33",
+  "it": "b1cf016e5e33",
+  "pt": "b1cf016e5e33",
+  "nl": "b1cf016e5e33",
+  "pl": "b1cf016e5e33",
+  "ja": "b1cf016e5e33",
+  "ko": "b1cf016e5e33"
  },
  "lounge-hours": {
   "en": "94912ef6233d",
@@ -85,7 +145,13 @@
   "ar": "94912ef6233d",
   "ru": "94912ef6233d",
   "fr": "94912ef6233d",
-  "es": "94912ef6233d"
+  "es": "94912ef6233d",
+  "it": "94912ef6233d",
+  "pt": "94912ef6233d",
+  "nl": "94912ef6233d",
+  "pl": "94912ef6233d",
+  "ja": "94912ef6233d",
+  "ko": "94912ef6233d"
  },
  "fasttrack-how": {
   "en": "09eeb889c8f6",
@@ -93,7 +159,13 @@
   "ar": "09eeb889c8f6",
   "ru": "09eeb889c8f6",
   "fr": "09eeb889c8f6",
-  "es": "09eeb889c8f6"
+  "es": "09eeb889c8f6",
+  "it": "09eeb889c8f6",
+  "pt": "09eeb889c8f6",
+  "nl": "09eeb889c8f6",
+  "pl": "09eeb889c8f6",
+  "ja": "09eeb889c8f6",
+  "ko": "09eeb889c8f6"
  },
  "refund": {
   "en": "925163b83ae1",
@@ -101,7 +173,13 @@
   "ar": "925163b83ae1",
   "ru": "925163b83ae1",
   "fr": "925163b83ae1",
-  "es": "925163b83ae1"
+  "es": "925163b83ae1",
+  "it": "925163b83ae1",
+  "pt": "925163b83ae1",
+  "nl": "925163b83ae1",
+  "pl": "925163b83ae1",
+  "ja": "925163b83ae1",
+  "ko": "925163b83ae1"
  },
  "payment": {
   "en": "e150e40b45e7",
@@ -109,7 +187,13 @@
   "ar": "e150e40b45e7",
   "ru": "e150e40b45e7",
   "fr": "e150e40b45e7",
-  "es": "e150e40b45e7"
+  "es": "e150e40b45e7",
+  "it": "e150e40b45e7",
+  "pt": "e150e40b45e7",
+  "nl": "e150e40b45e7",
+  "pl": "e150e40b45e7",
+  "ja": "e150e40b45e7",
+  "ko": "e150e40b45e7"
  },
  "delivery": {
   "en": "96481c1c55fb",
@@ -117,7 +201,13 @@
   "ar": "96481c1c55fb",
   "ru": "96481c1c55fb",
   "fr": "96481c1c55fb",
-  "es": "96481c1c55fb"
+  "es": "96481c1c55fb",
+  "it": "96481c1c55fb",
+  "pt": "96481c1c55fb",
+  "nl": "96481c1c55fb",
+  "pl": "96481c1c55fb",
+  "ja": "96481c1c55fb",
+  "ko": "96481c1c55fb"
  },
  "contact": {
   "en": "3543f72eae3d",
@@ -125,7 +215,13 @@
   "ar": "3543f72eae3d",
   "ru": "3543f72eae3d",
   "fr": "3543f72eae3d",
-  "es": "3543f72eae3d"
+  "es": "3543f72eae3d",
+  "it": "3543f72eae3d",
+  "pt": "3543f72eae3d",
+  "nl": "3543f72eae3d",
+  "pl": "3543f72eae3d",
+  "ja": "3543f72eae3d",
+  "ko": "3543f72eae3d"
  },
  "no-internet": {
   "en": "2ef1f3c92893",
@@ -133,7 +229,13 @@
   "ar": "2ef1f3c92893",
   "ru": "2ef1f3c92893",
   "fr": "2ef1f3c92893",
-  "es": "2ef1f3c92893"
+  "es": "2ef1f3c92893",
+  "it": "2ef1f3c92893",
+  "pt": "2ef1f3c92893",
+  "nl": "2ef1f3c92893",
+  "pl": "2ef1f3c92893",
+  "ja": "2ef1f3c92893",
+  "ko": "2ef1f3c92893"
  },
  "no-service": {
   "en": "d1ec1b8767c0",
@@ -141,7 +243,13 @@
   "ar": "d1ec1b8767c0",
   "ru": "d1ec1b8767c0",
   "fr": "d1ec1b8767c0",
-  "es": "d1ec1b8767c0"
+  "es": "d1ec1b8767c0",
+  "it": "d1ec1b8767c0",
+  "pt": "d1ec1b8767c0",
+  "nl": "d1ec1b8767c0",
+  "pl": "d1ec1b8767c0",
+  "ja": "d1ec1b8767c0",
+  "ko": "d1ec1b8767c0"
  },
  "code-invalid": {
   "en": "5ccde7cbb089",
@@ -149,7 +257,13 @@
   "ar": "5ccde7cbb089",
   "ru": "5ccde7cbb089",
   "fr": "5ccde7cbb089",
-  "es": "5ccde7cbb089"
+  "es": "5ccde7cbb089",
+  "it": "5ccde7cbb089",
+  "pt": "5ccde7cbb089",
+  "nl": "5ccde7cbb089",
+  "pl": "5ccde7cbb089",
+  "ja": "5ccde7cbb089",
+  "ko": "5ccde7cbb089"
  },
  "cannot-add": {
   "en": "7d070a2847a4",
@@ -157,7 +271,13 @@
   "ar": "7d070a2847a4",
   "ru": "7d070a2847a4",
   "fr": "7d070a2847a4",
-  "es": "7d070a2847a4"
+  "es": "7d070a2847a4",
+  "it": "7d070a2847a4",
+  "pt": "7d070a2847a4",
+  "nl": "7d070a2847a4",
+  "pl": "7d070a2847a4",
+  "ja": "7d070a2847a4",
+  "ko": "7d070a2847a4"
  },
  "manual-install": {
   "en": "40fec12d612c",
@@ -165,7 +285,13 @@
   "ar": "40fec12d612c",
   "ru": "40fec12d612c",
   "fr": "40fec12d612c",
-  "es": "40fec12d612c"
+  "es": "40fec12d612c",
+  "it": "40fec12d612c",
+  "pt": "40fec12d612c",
+  "nl": "40fec12d612c",
+  "pl": "40fec12d612c",
+  "ja": "40fec12d612c",
+  "ko": "40fec12d612c"
  },
  "slow-internet": {
   "en": "6cc659458ea2",
@@ -173,7 +299,13 @@
   "ar": "6cc659458ea2",
   "ru": "6cc659458ea2",
   "fr": "6cc659458ea2",
-  "es": "6cc659458ea2"
+  "es": "6cc659458ea2",
+  "it": "6cc659458ea2",
+  "pt": "6cc659458ea2",
+  "nl": "6cc659458ea2",
+  "pl": "6cc659458ea2",
+  "ja": "6cc659458ea2",
+  "ko": "6cc659458ea2"
  },
  "data-fast": {
   "en": "87e070632c0c",
@@ -181,7 +313,13 @@
   "ar": "87e070632c0c",
   "ru": "87e070632c0c",
   "fr": "87e070632c0c",
-  "es": "87e070632c0c"
+  "es": "87e070632c0c",
+  "it": "87e070632c0c",
+  "pt": "87e070632c0c",
+  "nl": "87e070632c0c",
+  "pl": "87e070632c0c",
+  "ja": "87e070632c0c",
+  "ko": "87e070632c0c"
  },
  "deleted-esim": {
   "en": "b1d9556f8889",
@@ -189,7 +327,13 @@
   "ar": "b1d9556f8889",
   "ru": "b1d9556f8889",
   "fr": "b1d9556f8889",
-  "es": "b1d9556f8889"
+  "es": "b1d9556f8889",
+  "it": "b1d9556f8889",
+  "pt": "b1d9556f8889",
+  "nl": "b1d9556f8889",
+  "pl": "b1d9556f8889",
+  "ja": "b1d9556f8889",
+  "ko": "b1d9556f8889"
  },
  "new-phone": {
   "en": "76a780da994a",
@@ -197,7 +341,13 @@
   "ar": "76a780da994a",
   "ru": "76a780da994a",
   "fr": "76a780da994a",
-  "es": "76a780da994a"
+  "es": "76a780da994a",
+  "it": "76a780da994a",
+  "pt": "76a780da994a",
+  "nl": "76a780da994a",
+  "pl": "76a780da994a",
+  "ja": "76a780da994a",
+  "ko": "76a780da994a"
  },
  "sim-lock": {
   "en": "0aabbe7b2156",
@@ -205,7 +355,13 @@
   "ar": "0aabbe7b2156",
   "ru": "0aabbe7b2156",
   "fr": "0aabbe7b2156",
-  "es": "0aabbe7b2156"
+  "es": "0aabbe7b2156",
+  "it": "0aabbe7b2156",
+  "pt": "0aabbe7b2156",
+  "nl": "0aabbe7b2156",
+  "pl": "0aabbe7b2156",
+  "ja": "0aabbe7b2156",
+  "ko": "0aabbe7b2156"
  },
  "apn": {
   "en": "c25611bf5bbb",
@@ -213,7 +369,13 @@
   "ar": "c25611bf5bbb",
   "ru": "c25611bf5bbb",
   "fr": "c25611bf5bbb",
-  "es": "c25611bf5bbb"
+  "es": "c25611bf5bbb",
+  "it": "c25611bf5bbb",
+  "pt": "c25611bf5bbb",
+  "nl": "c25611bf5bbb",
+  "pl": "c25611bf5bbb",
+  "ja": "c25611bf5bbb",
+  "ko": "c25611bf5bbb"
  },
  "activating-stuck": {
   "en": "3461bc539e4f",
@@ -221,7 +383,13 @@
   "ar": "3461bc539e4f",
   "ru": "3461bc539e4f",
   "fr": "3461bc539e4f",
-  "es": "3461bc539e4f"
+  "es": "3461bc539e4f",
+  "it": "3461bc539e4f",
+  "pt": "3461bc539e4f",
+  "nl": "3461bc539e4f",
+  "pl": "3461bc539e4f",
+  "ja": "3461bc539e4f",
+  "ko": "3461bc539e4f"
  },
  "avoid-roaming-costs": {
   "en": "1a2bae60a99c",
@@ -229,7 +397,13 @@
   "ar": "1a2bae60a99c",
   "ru": "1a2bae60a99c",
   "fr": "1a2bae60a99c",
-  "es": "1a2bae60a99c"
+  "es": "1a2bae60a99c",
+  "it": "1a2bae60a99c",
+  "pt": "1a2bae60a99c",
+  "nl": "1a2bae60a99c",
+  "pl": "1a2bae60a99c",
+  "ja": "1a2bae60a99c",
+  "ko": "1a2bae60a99c"
  },
  "whatsapp": {
   "en": "5ccc0304e3b0",
@@ -237,7 +411,13 @@
   "ar": "5ccc0304e3b0",
   "ru": "5ccc0304e3b0",
   "fr": "5ccc0304e3b0",
-  "es": "5ccc0304e3b0"
+  "es": "5ccc0304e3b0",
+  "it": "5ccc0304e3b0",
+  "pt": "5ccc0304e3b0",
+  "nl": "5ccc0304e3b0",
+  "pl": "5ccc0304e3b0",
+  "ja": "5ccc0304e3b0",
+  "ko": "5ccc0304e3b0"
  },
  "bank-sms": {
   "en": "281c3ce3865c",
@@ -245,7 +425,13 @@
   "ar": "281c3ce3865c",
   "ru": "281c3ce3865c",
   "fr": "281c3ce3865c",
-  "es": "281c3ce3865c"
+  "es": "281c3ce3865c",
+  "it": "281c3ce3865c",
+  "pt": "281c3ce3865c",
+  "nl": "281c3ce3865c",
+  "pl": "281c3ce3865c",
+  "ja": "281c3ce3865c",
+  "ko": "281c3ce3865c"
  },
  "check-usage": {
   "en": "63d61cd6a1b4",
@@ -253,7 +439,13 @@
   "ar": "63d61cd6a1b4",
   "ru": "63d61cd6a1b4",
   "fr": "63d61cd6a1b4",
-  "es": "63d61cd6a1b4"
+  "es": "63d61cd6a1b4",
+  "it": "63d61cd6a1b4",
+  "pt": "63d61cd6a1b4",
+  "nl": "63d61cd6a1b4",
+  "pl": "63d61cd6a1b4",
+  "ja": "63d61cd6a1b4",
+  "ko": "63d61cd6a1b4"
  },
  "expired": {
   "en": "6eae23a20a70",
@@ -261,7 +453,13 @@
   "ar": "6eae23a20a70",
   "ru": "6eae23a20a70",
   "fr": "6eae23a20a70",
-  "es": "6eae23a20a70"
+  "es": "6eae23a20a70",
+  "it": "6eae23a20a70",
+  "pt": "6eae23a20a70",
+  "nl": "6eae23a20a70",
+  "pl": "6eae23a20a70",
+  "ja": "6eae23a20a70",
+  "ko": "6eae23a20a70"
  },
  "remove-after": {
   "en": "c6f83a637ed8",
@@ -269,7 +467,13 @@
   "ar": "c6f83a637ed8",
   "ru": "c6f83a637ed8",
   "fr": "c6f83a637ed8",
-  "es": "c6f83a637ed8"
+  "es": "c6f83a637ed8",
+  "it": "c6f83a637ed8",
+  "pt": "c6f83a637ed8",
+  "nl": "c6f83a637ed8",
+  "pl": "c6f83a637ed8",
+  "ja": "c6f83a637ed8",
+  "ko": "c6f83a637ed8"
  },
  "buy-when": {
   "en": "03fb459891c4",
@@ -277,7 +481,13 @@
   "ar": "03fb459891c4",
   "ru": "03fb459891c4",
   "fr": "03fb459891c4",
-  "es": "03fb459891c4"
+  "es": "03fb459891c4",
+  "it": "03fb459891c4",
+  "pt": "03fb459891c4",
+  "nl": "03fb459891c4",
+  "pl": "03fb459891c4",
+  "ja": "03fb459891c4",
+  "ko": "03fb459891c4"
  },
  "install-internet": {
   "en": "8a13ab4a5b44",
@@ -285,7 +495,13 @@
   "ar": "8a13ab4a5b44",
   "ru": "8a13ab4a5b44",
   "fr": "8a13ab4a5b44",
-  "es": "8a13ab4a5b44"
+  "es": "8a13ab4a5b44",
+  "it": "8a13ab4a5b44",
+  "pt": "8a13ab4a5b44",
+  "nl": "8a13ab4a5b44",
+  "pl": "8a13ab4a5b44",
+  "ja": "8a13ab4a5b44",
+  "ko": "8a13ab4a5b44"
  },
  "multiple-esims": {
   "en": "31d14fb9baf5",
@@ -293,7 +509,13 @@
   "ar": "31d14fb9baf5",
   "ru": "31d14fb9baf5",
   "fr": "31d14fb9baf5",
-  "es": "31d14fb9baf5"
+  "es": "31d14fb9baf5",
+  "it": "31d14fb9baf5",
+  "pt": "31d14fb9baf5",
+  "nl": "31d14fb9baf5",
+  "pl": "31d14fb9baf5",
+  "ja": "31d14fb9baf5",
+  "ko": "31d14fb9baf5"
  },
  "tablet-watch": {
   "en": "e9d8805e4112",
@@ -301,7 +523,13 @@
   "ar": "e9d8805e4112",
   "ru": "e9d8805e4112",
   "fr": "e9d8805e4112",
-  "es": "e9d8805e4112"
+  "es": "e9d8805e4112",
+  "it": "e9d8805e4112",
+  "pt": "e9d8805e4112",
+  "nl": "e9d8805e4112",
+  "pl": "e9d8805e4112",
+  "ja": "e9d8805e4112",
+  "ko": "e9d8805e4112"
  },
  "unlimited": {
   "en": "e6b7f4c289bb",
@@ -309,7 +537,13 @@
   "ar": "e6b7f4c289bb",
   "ru": "e6b7f4c289bb",
   "fr": "e6b7f4c289bb",
-  "es": "e6b7f4c289bb"
+  "es": "e6b7f4c289bb",
+  "it": "e6b7f4c289bb",
+  "pt": "e6b7f4c289bb",
+  "nl": "e6b7f4c289bb",
+  "pl": "e6b7f4c289bb",
+  "ja": "e6b7f4c289bb",
+  "ko": "e6b7f4c289bb"
  },
  "5g": {
   "en": "0f6cddb5ba70",
@@ -317,7 +551,13 @@
   "ar": "0f6cddb5ba70",
   "ru": "0f6cddb5ba70",
   "fr": "0f6cddb5ba70",
-  "es": "0f6cddb5ba70"
+  "es": "0f6cddb5ba70",
+  "it": "0f6cddb5ba70",
+  "pt": "0f6cddb5ba70",
+  "nl": "0f6cddb5ba70",
+  "pl": "0f6cddb5ba70",
+  "ja": "0f6cddb5ba70",
+  "ko": "0f6cddb5ba70"
  },
  "phone-number": {
   "en": "b8d7a8668c3b",
@@ -325,7 +565,13 @@
   "ar": "b8d7a8668c3b",
   "ru": "b8d7a8668c3b",
   "fr": "b8d7a8668c3b",
-  "es": "b8d7a8668c3b"
+  "es": "b8d7a8668c3b",
+  "it": "b8d7a8668c3b",
+  "pt": "b8d7a8668c3b",
+  "nl": "b8d7a8668c3b",
+  "pl": "b8d7a8668c3b",
+  "ja": "b8d7a8668c3b",
+  "ko": "b8d7a8668c3b"
  },
  "coverage-countries": {
   "en": "8fdd3225c109",
@@ -333,7 +579,13 @@
   "ar": "8fdd3225c109",
   "ru": "8fdd3225c109",
   "fr": "8fdd3225c109",
-  "es": "8fdd3225c109"
+  "es": "8fdd3225c109",
+  "it": "8fdd3225c109",
+  "pt": "8fdd3225c109",
+  "nl": "8fdd3225c109",
+  "pl": "8fdd3225c109",
+  "ja": "8fdd3225c109",
+  "ko": "8fdd3225c109"
  },
  "cruise-flight": {
   "en": "fb837891276e",
@@ -341,7 +593,13 @@
   "ar": "fb837891276e",
   "ru": "fb837891276e",
   "fr": "fb837891276e",
-  "es": "fb837891276e"
+  "es": "fb837891276e",
+  "it": "fb837891276e",
+  "pt": "fb837891276e",
+  "nl": "fb837891276e",
+  "pl": "fb837891276e",
+  "ja": "fb837891276e",
+  "ko": "fb837891276e"
  },
  "ip-location": {
   "en": "0d312014deb1",
@@ -349,7 +607,13 @@
   "ar": "0d312014deb1",
   "ru": "0d312014deb1",
   "fr": "0d312014deb1",
-  "es": "0d312014deb1"
+  "es": "0d312014deb1",
+  "it": "0d312014deb1",
+  "pt": "0d312014deb1",
+  "nl": "0d312014deb1",
+  "pl": "0d312014deb1",
+  "ja": "0d312014deb1",
+  "ko": "0d312014deb1"
  },
  "china": {
   "en": "6877cc53eed5",
@@ -357,7 +621,13 @@
   "ar": "6877cc53eed5",
   "ru": "6877cc53eed5",
   "fr": "6877cc53eed5",
-  "es": "6877cc53eed5"
+  "es": "6877cc53eed5",
+  "it": "6877cc53eed5",
+  "pt": "6877cc53eed5",
+  "nl": "6877cc53eed5",
+  "pl": "6877cc53eed5",
+  "ja": "6877cc53eed5",
+  "ko": "6877cc53eed5"
  },
  "turkey": {
   "en": "55f692bbb87a",
@@ -365,7 +635,13 @@
   "ar": "55f692bbb87a",
   "ru": "55f692bbb87a",
   "fr": "55f692bbb87a",
-  "es": "55f692bbb87a"
+  "es": "55f692bbb87a",
+  "it": "55f692bbb87a",
+  "pt": "55f692bbb87a",
+  "nl": "55f692bbb87a",
+  "pl": "55f692bbb87a",
+  "ja": "55f692bbb87a",
+  "ko": "55f692bbb87a"
  },
  "gift": {
   "en": "64e3bebc0398",
@@ -373,7 +649,13 @@
   "ar": "64e3bebc0398",
   "ru": "64e3bebc0398",
   "fr": "64e3bebc0398",
-  "es": "64e3bebc0398"
+  "es": "64e3bebc0398",
+  "it": "64e3bebc0398",
+  "pt": "64e3bebc0398",
+  "nl": "64e3bebc0398",
+  "pl": "64e3bebc0398",
+  "ja": "64e3bebc0398",
+  "ko": "64e3bebc0398"
  },
  "esim-vs-roaming": {
   "en": "779016c7e98d",
@@ -381,7 +663,13 @@
   "ar": "779016c7e98d",
   "ru": "779016c7e98d",
   "fr": "779016c7e98d",
-  "es": "779016c7e98d"
+  "es": "779016c7e98d",
+  "it": "779016c7e98d",
+  "pt": "779016c7e98d",
+  "nl": "779016c7e98d",
+  "pl": "779016c7e98d",
+  "ja": "779016c7e98d",
+  "ko": "779016c7e98d"
  },
  "safe": {
   "en": "1200d0e91e1a",
@@ -389,7 +677,13 @@
   "ar": "1200d0e91e1a",
   "ru": "1200d0e91e1a",
   "fr": "1200d0e91e1a",
-  "es": "1200d0e91e1a"
+  "es": "1200d0e91e1a",
+  "it": "1200d0e91e1a",
+  "pt": "1200d0e91e1a",
+  "nl": "1200d0e91e1a",
+  "pl": "1200d0e91e1a",
+  "ja": "1200d0e91e1a",
+  "ko": "1200d0e91e1a"
  },
  "no-email": {
   "en": "346ebde8a120",
@@ -397,7 +691,13 @@
   "ar": "346ebde8a120",
   "ru": "346ebde8a120",
   "fr": "346ebde8a120",
-  "es": "346ebde8a120"
+  "es": "346ebde8a120",
+  "it": "346ebde8a120",
+  "pt": "346ebde8a120",
+  "nl": "346ebde8a120",
+  "pl": "346ebde8a120",
+  "ja": "346ebde8a120",
+  "ko": "346ebde8a120"
  },
  "refund-how": {
   "en": "7e647d6e1843",
@@ -405,7 +705,13 @@
   "ar": "7e647d6e1843",
   "ru": "7e647d6e1843",
   "fr": "7e647d6e1843",
-  "es": "7e647d6e1843"
+  "es": "7e647d6e1843",
+  "it": "7e647d6e1843",
+  "pt": "7e647d6e1843",
+  "nl": "7e647d6e1843",
+  "pl": "7e647d6e1843",
+  "ja": "7e647d6e1843",
+  "ko": "7e647d6e1843"
  },
  "payment-failed": {
   "en": "72d0de1b090d",
@@ -413,7 +719,13 @@
   "ar": "72d0de1b090d",
   "ru": "72d0de1b090d",
   "fr": "72d0de1b090d",
-  "es": "72d0de1b090d"
+  "es": "72d0de1b090d",
+  "it": "72d0de1b090d",
+  "pt": "72d0de1b090d",
+  "nl": "72d0de1b090d",
+  "pl": "72d0de1b090d",
+  "ja": "72d0de1b090d",
+  "ko": "72d0de1b090d"
  },
  "hidden-costs": {
   "en": "24182dd61f80",
@@ -421,7 +733,13 @@
   "ar": "24182dd61f80",
   "ru": "24182dd61f80",
   "fr": "24182dd61f80",
-  "es": "24182dd61f80"
+  "es": "24182dd61f80",
+  "it": "24182dd61f80",
+  "pt": "24182dd61f80",
+  "nl": "24182dd61f80",
+  "pl": "24182dd61f80",
+  "ja": "24182dd61f80",
+  "ko": "24182dd61f80"
  },
  "discount-code": {
   "en": "483dfabc6d38",
@@ -429,7 +747,13 @@
   "ar": "483dfabc6d38",
   "ru": "483dfabc6d38",
   "fr": "483dfabc6d38",
-  "es": "483dfabc6d38"
+  "es": "483dfabc6d38",
+  "it": "483dfabc6d38",
+  "pt": "483dfabc6d38",
+  "nl": "483dfabc6d38",
+  "pl": "483dfabc6d38",
+  "ja": "483dfabc6d38",
+  "ko": "483dfabc6d38"
  },
  "account-login": {
   "en": "7b64a5c23b11",
@@ -437,7 +761,13 @@
   "ar": "7b64a5c23b11",
   "ru": "7b64a5c23b11",
   "fr": "7b64a5c23b11",
-  "es": "7b64a5c23b11"
+  "es": "7b64a5c23b11",
+  "it": "7b64a5c23b11",
+  "pt": "7b64a5c23b11",
+  "nl": "7b64a5c23b11",
+  "pl": "7b64a5c23b11",
+  "ja": "7b64a5c23b11",
+  "ko": "7b64a5c23b11"
  },
  "lounge-kids": {
   "en": "71731c1663cd",
@@ -445,7 +775,13 @@
   "ar": "71731c1663cd",
   "ru": "71731c1663cd",
   "fr": "71731c1663cd",
-  "es": "71731c1663cd"
+  "es": "71731c1663cd",
+  "it": "71731c1663cd",
+  "pt": "71731c1663cd",
+  "nl": "71731c1663cd",
+  "pl": "71731c1663cd",
+  "ja": "71731c1663cd",
+  "ko": "71731c1663cd"
  },
  "lounge-denied": {
   "en": "cd54a0152c1f",
@@ -453,7 +789,13 @@
   "ar": "cd54a0152c1f",
   "ru": "cd54a0152c1f",
   "fr": "cd54a0152c1f",
-  "es": "cd54a0152c1f"
+  "es": "cd54a0152c1f",
+  "it": "cd54a0152c1f",
+  "pt": "cd54a0152c1f",
+  "nl": "cd54a0152c1f",
+  "pl": "cd54a0152c1f",
+  "ja": "cd54a0152c1f",
+  "ko": "cd54a0152c1f"
  },
  "lounge-delay": {
   "en": "e60975745c3f",
@@ -461,7 +803,13 @@
   "ar": "e60975745c3f",
   "ru": "e60975745c3f",
   "fr": "e60975745c3f",
-  "es": "e60975745c3f"
+  "es": "e60975745c3f",
+  "it": "e60975745c3f",
+  "pt": "e60975745c3f",
+  "nl": "e60975745c3f",
+  "pl": "e60975745c3f",
+  "ja": "e60975745c3f",
+  "ko": "e60975745c3f"
  },
  "fasttrack-where": {
   "en": "63d3503901e0",
@@ -469,7 +817,13 @@
   "ar": "63d3503901e0",
   "ru": "63d3503901e0",
   "fr": "63d3503901e0",
-  "es": "63d3503901e0"
+  "es": "63d3503901e0",
+  "it": "63d3503901e0",
+  "pt": "63d3503901e0",
+  "nl": "63d3503901e0",
+  "pl": "63d3503901e0",
+  "ja": "63d3503901e0",
+  "ko": "63d3503901e0"
  },
  "order-status": {
   "en": "a800f3ee9895",
@@ -477,7 +831,13 @@
   "ar": "a800f3ee9895",
   "ru": "a800f3ee9895",
   "fr": "a800f3ee9895",
-  "es": "a800f3ee9895"
+  "es": "a800f3ee9895",
+  "it": "a800f3ee9895",
+  "pt": "a800f3ee9895",
+  "nl": "a800f3ee9895",
+  "pl": "a800f3ee9895",
+  "ja": "a800f3ee9895",
+  "ko": "a800f3ee9895"
  },
  "currency": {
   "en": "958ff1ef0f2e",
@@ -485,7 +845,13 @@
   "ar": "958ff1ef0f2e",
   "ru": "958ff1ef0f2e",
   "fr": "958ff1ef0f2e",
-  "es": "958ff1ef0f2e"
+  "es": "958ff1ef0f2e",
+  "it": "958ff1ef0f2e",
+  "pt": "958ff1ef0f2e",
+  "nl": "958ff1ef0f2e",
+  "pl": "958ff1ef0f2e",
+  "ja": "958ff1ef0f2e",
+  "ko": "958ff1ef0f2e"
  },
  "prices": {
   "en": "acff8dd39fc3",
@@ -493,7 +859,13 @@
   "ar": "acff8dd39fc3",
   "ru": "acff8dd39fc3",
   "fr": "acff8dd39fc3",
-  "es": "acff8dd39fc3"
+  "es": "acff8dd39fc3",
+  "it": "acff8dd39fc3",
+  "pt": "acff8dd39fc3",
+  "nl": "acff8dd39fc3",
+  "pl": "acff8dd39fc3",
+  "ja": "acff8dd39fc3",
+  "ko": "acff8dd39fc3"
  },
  "invoice": {
   "en": "9752d896a4ed",
@@ -501,7 +873,13 @@
   "ar": "9752d896a4ed",
   "ru": "9752d896a4ed",
   "fr": "9752d896a4ed",
-  "es": "9752d896a4ed"
+  "es": "9752d896a4ed",
+  "it": "9752d896a4ed",
+  "pt": "9752d896a4ed",
+  "nl": "9752d896a4ed",
+  "pl": "9752d896a4ed",
+  "ja": "9752d896a4ed",
+  "ko": "9752d896a4ed"
  },
  "business": {
   "en": "d7c426872d03",
@@ -509,7 +887,13 @@
   "ar": "d7c426872d03",
   "ru": "d7c426872d03",
   "fr": "d7c426872d03",
-  "es": "d7c426872d03"
+  "es": "d7c426872d03",
+  "it": "d7c426872d03",
+  "pt": "d7c426872d03",
+  "nl": "d7c426872d03",
+  "pl": "d7c426872d03",
+  "ja": "d7c426872d03",
+  "ko": "d7c426872d03"
  },
  "account-delete": {
   "en": "40b7cd8250ea",
@@ -517,7 +901,13 @@
   "ar": "40b7cd8250ea",
   "ru": "40b7cd8250ea",
   "fr": "40b7cd8250ea",
-  "es": "40b7cd8250ea"
+  "es": "40b7cd8250ea",
+  "it": "40b7cd8250ea",
+  "pt": "40b7cd8250ea",
+  "nl": "40b7cd8250ea",
+  "pl": "40b7cd8250ea",
+  "ja": "40b7cd8250ea",
+  "ko": "40b7cd8250ea"
  },
  "newsletter": {
   "en": "9f2a9571bfbe",
@@ -525,7 +915,13 @@
   "ar": "9f2a9571bfbe",
   "ru": "9f2a9571bfbe",
   "fr": "9f2a9571bfbe",
-  "es": "9f2a9571bfbe"
+  "es": "9f2a9571bfbe",
+  "it": "9f2a9571bfbe",
+  "pt": "9f2a9571bfbe",
+  "nl": "9f2a9571bfbe",
+  "pl": "9f2a9571bfbe",
+  "ja": "9f2a9571bfbe",
+  "ko": "9f2a9571bfbe"
  },
  "vpn": {
   "en": "287810652c2f",
@@ -533,7 +929,13 @@
   "ar": "287810652c2f",
   "ru": "287810652c2f",
   "fr": "287810652c2f",
-  "es": "287810652c2f"
+  "es": "287810652c2f",
+  "it": "287810652c2f",
+  "pt": "287810652c2f",
+  "nl": "287810652c2f",
+  "pl": "287810652c2f",
+  "ja": "287810652c2f",
+  "ko": "287810652c2f"
  },
  "lounge-what": {
   "en": "0cb80798c200",
@@ -541,7 +943,13 @@
   "ar": "0cb80798c200",
   "ru": "0cb80798c200",
   "fr": "0cb80798c200",
-  "es": "0cb80798c200"
+  "es": "0cb80798c200",
+  "it": "0cb80798c200",
+  "pt": "0cb80798c200",
+  "nl": "0cb80798c200",
+  "pl": "0cb80798c200",
+  "ja": "0cb80798c200",
+  "ko": "0cb80798c200"
  },
  "fasttrack-time": {
   "en": "67ba70c9f96d",
@@ -549,7 +957,13 @@
   "ar": "67ba70c9f96d",
   "ru": "67ba70c9f96d",
   "fr": "67ba70c9f96d",
-  "es": "67ba70c9f96d"
+  "es": "67ba70c9f96d",
+  "it": "67ba70c9f96d",
+  "pt": "67ba70c9f96d",
+  "nl": "67ba70c9f96d",
+  "pl": "67ba70c9f96d",
+  "ja": "67ba70c9f96d",
+  "ko": "67ba70c9f96d"
  },
  "data-roaming": {
   "en": "ed3d03623fb8",
@@ -557,7 +971,13 @@
   "ar": "ed3d03623fb8",
   "ru": "ed3d03623fb8",
   "fr": "ed3d03623fb8",
-  "es": "ed3d03623fb8"
+  "es": "ed3d03623fb8",
+  "it": "ed3d03623fb8",
+  "pt": "ed3d03623fb8",
+  "nl": "ed3d03623fb8",
+  "pl": "ed3d03623fb8",
+  "ja": "ed3d03623fb8",
+  "ko": "ed3d03623fb8"
  },
  "data-line": {
   "en": "fe32a5d97c66",
@@ -565,7 +985,13 @@
   "ar": "fe32a5d97c66",
   "ru": "fe32a5d97c66",
   "fr": "fe32a5d97c66",
-  "es": "fe32a5d97c66"
+  "es": "fe32a5d97c66",
+  "it": "fe32a5d97c66",
+  "pt": "fe32a5d97c66",
+  "nl": "fe32a5d97c66",
+  "pl": "fe32a5d97c66",
+  "ja": "fe32a5d97c66",
+  "ko": "fe32a5d97c66"
  },
  "network-select": {
   "en": "b6312c92e517",
@@ -573,7 +999,13 @@
   "ar": "b6312c92e517",
   "ru": "b6312c92e517",
   "fr": "b6312c92e517",
-  "es": "b6312c92e517"
+  "es": "b6312c92e517",
+  "it": "b6312c92e517",
+  "pt": "b6312c92e517",
+  "nl": "b6312c92e517",
+  "pl": "b6312c92e517",
+  "ja": "b6312c92e517",
+  "ko": "b6312c92e517"
  },
  "line-on": {
   "en": "3d68e40ffe7d",
@@ -581,7 +1013,13 @@
   "ar": "3d68e40ffe7d",
   "ru": "3d68e40ffe7d",
   "fr": "3d68e40ffe7d",
-  "es": "3d68e40ffe7d"
+  "es": "3d68e40ffe7d",
+  "it": "3d68e40ffe7d",
+  "pt": "3d68e40ffe7d",
+  "nl": "3d68e40ffe7d",
+  "pl": "3d68e40ffe7d",
+  "ja": "3d68e40ffe7d",
+  "ko": "3d68e40ffe7d"
  },
  "install-iphone": {
   "en": "82e5f348ed2c",
@@ -589,7 +1027,13 @@
   "ar": "82e5f348ed2c",
   "ru": "82e5f348ed2c",
   "fr": "82e5f348ed2c",
-  "es": "82e5f348ed2c"
+  "es": "82e5f348ed2c",
+  "it": "82e5f348ed2c",
+  "pt": "82e5f348ed2c",
+  "nl": "82e5f348ed2c",
+  "pl": "82e5f348ed2c",
+  "ja": "82e5f348ed2c",
+  "ko": "82e5f348ed2c"
  },
  "install-android": {
   "en": "51e706c34388",
@@ -597,7 +1041,13 @@
   "ar": "51e706c34388",
   "ru": "51e706c34388",
   "fr": "51e706c34388",
-  "es": "51e706c34388"
+  "es": "51e706c34388",
+  "it": "51e706c34388",
+  "pt": "51e706c34388",
+  "nl": "51e706c34388",
+  "pl": "51e706c34388",
+  "ja": "51e706c34388",
+  "ko": "51e706c34388"
  },
  "reset-network": {
   "en": "0239b0abc7ee",
@@ -605,7 +1055,13 @@
   "ar": "0239b0abc7ee",
   "ru": "0239b0abc7ee",
   "fr": "0239b0abc7ee",
-  "es": "0239b0abc7ee"
+  "es": "0239b0abc7ee",
+  "it": "0239b0abc7ee",
+  "pt": "0239b0abc7ee",
+  "nl": "0239b0abc7ee",
+  "pl": "0239b0abc7ee",
+  "ja": "0239b0abc7ee",
+  "ko": "0239b0abc7ee"
  },
  "hotspot-setup": {
   "en": "d4a062671f10",
@@ -613,7 +1069,13 @@
   "ar": "d4a062671f10",
   "ru": "d4a062671f10",
   "fr": "d4a062671f10",
-  "es": "d4a062671f10"
+  "es": "d4a062671f10",
+  "it": "d4a062671f10",
+  "pt": "d4a062671f10",
+  "nl": "d4a062671f10",
+  "pl": "d4a062671f10",
+  "ja": "d4a062671f10",
+  "ko": "d4a062671f10"
  },
  "my-esims": {
   "en": "95558489b114",
@@ -621,7 +1083,13 @@
   "ar": "95558489b114",
   "ru": "95558489b114",
   "fr": "95558489b114",
-  "es": "95558489b114"
+  "es": "95558489b114",
+  "it": "95558489b114",
+  "pt": "95558489b114",
+  "nl": "95558489b114",
+  "pl": "95558489b114",
+  "ja": "95558489b114",
+  "ko": "95558489b114"
  },
  "how-to-buy": {
   "en": "d26ab2df2376",
@@ -629,7 +1097,13 @@
   "ar": "d26ab2df2376",
   "ru": "d26ab2df2376",
   "fr": "d26ab2df2376",
-  "es": "d26ab2df2376"
+  "es": "d26ab2df2376",
+  "it": "d26ab2df2376",
+  "pt": "d26ab2df2376",
+  "nl": "d26ab2df2376",
+  "pl": "d26ab2df2376",
+  "ja": "d26ab2df2376",
+  "ko": "d26ab2df2376"
  },
  "need-account": {
   "en": "8484f081c59e",
@@ -637,7 +1111,13 @@
   "ar": "8484f081c59e",
   "ru": "8484f081c59e",
   "fr": "8484f081c59e",
-  "es": "8484f081c59e"
+  "es": "8484f081c59e",
+  "it": "8484f081c59e",
+  "pt": "8484f081c59e",
+  "nl": "8484f081c59e",
+  "pl": "8484f081c59e",
+  "ja": "8484f081c59e",
+  "ko": "8484f081c59e"
  },
  "change-password": {
   "en": "19fb59a908f2",
@@ -645,7 +1125,13 @@
   "ar": "19fb59a908f2",
   "ru": "19fb59a908f2",
   "fr": "19fb59a908f2",
-  "es": "19fb59a908f2"
+  "es": "19fb59a908f2",
+  "it": "19fb59a908f2",
+  "pt": "19fb59a908f2",
+  "nl": "19fb59a908f2",
+  "pl": "19fb59a908f2",
+  "ja": "19fb59a908f2",
+  "ko": "19fb59a908f2"
  },
  "change-email": {
   "en": "e9af77afac84",
@@ -653,6 +1139,12 @@
   "ar": "e9af77afac84",
   "ru": "e9af77afac84",
   "fr": "e9af77afac84",
-  "es": "e9af77afac84"
+  "es": "e9af77afac84",
+  "it": "e9af77afac84",
+  "pt": "e9af77afac84",
+  "nl": "e9af77afac84",
+  "pl": "e9af77afac84",
+  "ja": "e9af77afac84",
+  "ko": "e9af77afac84"
  }
 }

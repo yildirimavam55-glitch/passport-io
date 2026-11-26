@@ -1,6 +1,6 @@
 // Lina mit KI: Aufgabe und Wissensbasis für Claude. Gemeinsam genutzt von supabase/functions/lina
 // und dem Test tools/lina-test/eval.mjs --ai (reines JavaScript, damit Deno und Node es laden können).
-const NAMES = { tr: "Türkçe", en: "English", de: "Deutsch", ar: "العربية", ru: "Русский", fr: "Français", es: "Español" };
+const NAMES = { tr: "Türkçe", en: "English", de: "Deutsch", ar: "العربية", ru: "Русский", fr: "Français", es: "Español", it: "Italiano", pt: "Português (Brasil)", nl: "Nederlands", pl: "Polski", ja: "日本語", ko: "한국어" };
 
 export function buildPrompt(data, lang, question, ids = []) {
   const base = data.tr ?? data[Object.keys(data)[0]];

@@ -1,4 +1,6 @@
 // Neue Ranking-Logik für Lina (identisch nach js/app.js übernommen)
+const CJK = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u;
+const bigTok = (w) => w.length > 3 || CJK.test(w); // CJK-Zeichenpaare zählen immer als Wort
 export function makeRanker(faqs, norm) {
   // Wortstamm-Vergleich: verträgt Endungen und Tippfehler am Wortende („internetim“ ~ „internet“, „calismiyo“ ~ „calismiyor“)
   const same = (a, b) => {
@@ -10,8 +12,8 @@ export function makeRanker(faqs, norm) {
   };
   const idx = faqs.map((f) => {
     const kws = (f.keywords || []).map((k) => norm(k)).filter(Boolean).map((k) => ({ k, w: k.split(" ") }));
-    const qw = norm(f.question).split(" ").filter((w) => w.length > 3);
-    const aw = [...new Set(norm(String(f.answer || "").replace(/\]\([^)]*\)/g, " ")).split(" ").filter((w) => w.length > 3))];
+    const qw = norm(f.question).split(" ").filter(bigTok);
+    const aw = [...new Set(norm(String(f.answer || "").replace(/\]\([^)]*\)/g, " ")).split(" ").filter(bigTok))];
     return { f, kws, qw, aw, words: new Set([...kws.flatMap((x) => x.w), ...qw]) };
   });
   // Wörter, die in vielen Einträgen vorkommen („esim“, „nasil“), zählen kaum – sonst gewinnt immer dieselbe FAQ
@@ -33,14 +35,14 @@ export function makeRanker(faqs, norm) {
       [...kws.filter(isExact), ...kws.filter((x) => !isExact(x))].forEach(({ k, w }) => {
         const weak = w.length === 1 && common(k);
         const exact = isExact({ k, w });
-        const t = exact || (!weak && w.some((x) => x.length >= 4)) ? hit(w) : null;
+        const t = exact || (!weak && w.some(bigTok)) ? hit(w) : null;
         if (!t && !exact) return;
         if (t && t.every((i) => used.has(i))) return;
         (t || []).forEach((i) => used.add(i));
         s += (exact ? (weak ? 1 : 2 + w.length) : 0.5 + w.length) * (weak ? 1 : weight(w));
       });
       // Frage zählt voll, Antworttext halb (deckt Formulierungen ab, an die beim Stichwort niemand gedacht hat)
-      toks.forEach((t) => { if (t.length <= 3 || common(t)) return; if (qw.some((w) => same(t, w))) s += 1; else if (aw.some((w) => same(t, w))) s += 0.5; });
+      toks.forEach((t) => { if (!bigTok(t) || common(t)) return; if (qw.some((w) => same(t, w))) s += 1; else if (aw.some((w) => same(t, w))) s += 0.5; });
       return { f, s };
     }).sort((a, b) => b.s - a.s);
   };

@@ -13,7 +13,7 @@ export const DEFAULT_POPUP: PopupSettings = {
   everyDays: 7,
 };
 
-const LANGS = ["tr", "en", "de", "ar", "ru", "fr", "es"];
+const LANGS = ["tr", "en", "de", "ar", "ru", "fr", "es", "it", "pt", "nl", "pl", "ja", "ko"];
 const str = (v: unknown, n: number) => String(v ?? "").replace(/[<>]/g, "").trim().slice(0, n);
 const code = (v: unknown) => { const c = String(v ?? "").toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32); return c || null; };
 const date = (v: unknown) => { const d = v ? new Date(String(v)) : null; return d && !isNaN(d.getTime()) ? d.toISOString() : null; };

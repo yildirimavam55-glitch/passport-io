@@ -1,0 +1,21 @@
+## Neue Sprachen (11/2026): eigene Formulierungen, nicht aus den FAQ-Texten kopiert
+Galaxy S23でもeSIMは使えますか | device-compatible
+スマホにeSIMを入れる方法 | install-esim,install-iphone,install-android
+買ったプランはどこで確認できますか | my-esims
+ローマに着いたのにネットが使えない | no-internet
+2週間なら何ギガ必要 | which-package
+普通に電話はかけられますか | calls,phone-number
+日本の電話番号はそのまま使える | keep-number
+QRコードのメールが届いていません | no-email,my-esims
+お金を返してほしい | refund,refund-how
+支払いはどうすればいい | payment
+クーポンが使えない | discount-code
+パスワードを忘れました | account-login
+iPhoneでローミングをオンにする場所 | data-roaming
+ネットがすごく遅い | slow-internet
+間違えてeSIMを消しました | deleted-esim
+eSIMは月額制ですか | hidden-costs
+子どもとラウンジに入れますか | lounge-kids
+飛行機が遅れたらバウチャーは使えますか | lounge-delay
+WhatsAppはそのまま使えますか | whatsapp
+どうやって注文するの | how-to-buy

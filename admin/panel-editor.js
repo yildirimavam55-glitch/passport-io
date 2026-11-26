@@ -9,7 +9,7 @@
    ========================================================================== */
 (() => {
   "use strict";
-  const LANGS = [["tr", "Türkçe"], ["en", "English"], ["de", "Deutsch"], ["ar", "العربية"], ["ru", "Русский"], ["fr", "Français"], ["es", "Español"]];
+  const LANGS = [["tr", "Türkçe"], ["en", "English"], ["de", "Deutsch"], ["ar", "العربية"], ["ru", "Русский"], ["fr", "Français"], ["es", "Español"], ["it", "Italiano"], ["pt", "Português"], ["nl", "Nederlands"], ["pl", "Polski"], ["ja", "日本語"], ["ko", "한국어"]];
   const TEXT_WIDGETS = new Set(["string", "text", "markdown"]);
   const KEYF = (o) => (o && typeof o === "object" ? (o.id !== undefined ? "id" : o.code !== undefined ? "code" : null) : null);
   const clone = (o) => JSON.parse(JSON.stringify(o ?? null));

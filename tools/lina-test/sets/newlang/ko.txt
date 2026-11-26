@@ -1,0 +1,21 @@
+## Neue Sprachen (11/2026): eigene Formulierungen, nicht aus den FAQ-Texten kopiert
+갤럭시 S23에서도 eSIM 되나요 | device-compatible
+휴대폰에 eSIM 넣는 법 | install-esim,install-iphone,install-android
+산 요금제 어디서 확인해요 | my-esims
+로마 도착했는데 인터넷이 안 터져요 | no-internet
+2주면 몇 기가 필요해요 | which-package
+일반 전화도 걸 수 있나요 | calls,phone-number
+한국 번호 그대로 쓸 수 있나요 | keep-number
+QR 코드 메일이 안 왔어요 | no-email,my-esims
+돈 돌려받고 싶어요 | refund,refund-how
+결제는 어떻게 해요 | payment
+쿠폰이 안 먹혀요 | discount-code
+비밀번호를 까먹었어요 | account-login
+아이폰에서 로밍 켜는 곳 | data-roaming
+인터넷이 엄청 느려요 | slow-internet
+실수로 eSIM 지웠어요 | deleted-esim
+eSIM은 월정액인가요 | hidden-costs
+아이랑 라운지 들어갈 수 있나요 | lounge-kids
+비행기가 지연되면 바우처 쓸 수 있나요 | lounge-delay
+WhatsApp 계속 쓸 수 있나요 | whatsapp
+주문은 어떻게 해요 | how-to-buy

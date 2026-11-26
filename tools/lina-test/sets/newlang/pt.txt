@@ -1,0 +1,21 @@
+## Neue Sprachen (11/2026): eigene Formulierungen, nicht aus den FAQ-Texten kopiert
+o esim funciona no meu galaxy s23 | device-compatible
+como coloco o esim no celular | install-esim,install-iphone,install-android
+comprei um pacote onde eu vejo | my-esims
+cheguei em lisboa e a internet não funciona | no-internet
+quantos gigas preciso para duas semanas | which-package
+dá para fazer ligação normal | calls,phone-number
+meu número daqui continua funcionando | keep-number
+não chegou nenhum email com o qr | no-email,my-esims
+quero meu dinheiro de volta | refund,refund-how
+como faço o pagamento | payment
+o cupom não funciona | discount-code
+esqueci minha senha | account-login
+onde ligo o roaming no iphone | data-roaming
+a internet está muito lenta | slow-internet
+apaguei o esim sem querer | deleted-esim
+o esim é assinatura mensal | hidden-costs
+posso levar meu filho na sala vip | lounge-kids
+o voo atrasou o voucher ainda vale | lounge-delay
+o whatsapp continua funcionando | whatsapp
+como faço para comprar | how-to-buy

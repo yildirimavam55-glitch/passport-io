@@ -291,5 +291,251 @@
         "text": "Precios claros, sin costes ocultos. Añadir datos fue un clic."
       }
     ]
+  },
+  "it": {
+    "note": "SEGNAPOSTO DEMO – sostituire con il widget Trustpilot prima della pubblicazione.",
+    "items": [
+      {
+        "name": "Cliente A.",
+        "title": "Online in 2 minuti",
+        "text": "Ho scansionato il codice QR, sono atterrato ad Antalya e avevo subito il 5G. Molto più economico del roaming.",
+        "date": "2 giorni fa"
+      },
+      {
+        "name": "Cliente M.",
+        "title": "Ottimo voucher lounge",
+        "text": "Prenotato la sera prima, il voucher è arrivato subito. Ho solo mostrato il codice QR all'ingresso – nessun problema.",
+        "date": "4 giorni fa"
+      },
+      {
+        "name": "Cliente S.",
+        "title": "Assistenza super",
+        "text": "Avevo una domanda sull'attivazione e l'assistente ha risposto subito.",
+        "date": "1 settimana fa"
+      },
+      {
+        "name": "Cliente T.",
+        "title": "Il Fast Track ne vale la pena",
+        "text": "A Francoforte, all'inizio delle vacanze, ho risparmiato una buona mezz'ora. Lo rifarò.",
+        "date": "1 settimana fa"
+      },
+      {
+        "name": "Cliente L.",
+        "title": "Perfetto per viaggi in più paesi",
+        "text": "Piano Asia per Thailandia, Vietnam e Malesia – una eSIM per tutto. Ha funzionato perfettamente.",
+        "date": "2 settimane fa"
+      },
+      {
+        "name": "Cliente R.",
+        "title": "Semplice e onesto",
+        "text": "Prezzi chiari, nessun costo nascosto. La ricarica ha richiesto un clic.",
+        "date": "3 settimane fa"
+      }
+    ]
+  },
+  "pt": {
+    "note": "EXEMPLO DE DEMONSTRAÇÃO – substituir pelo widget do Trustpilot antes de publicar.",
+    "items": [
+      {
+        "name": "Cliente A.",
+        "date": "há 2 dias",
+        "title": "Online em 2 minutos",
+        "text": "Escaneei o QR code, pousei em Antália e já tinha 5G. Muito mais barato que roaming."
+      },
+      {
+        "name": "Cliente M.",
+        "date": "há 4 dias",
+        "title": "Ótimo voucher de sala VIP",
+        "text": "Reservei na noite anterior e o voucher chegou na hora. Só mostrei o QR code na entrada – sem problemas."
+      },
+      {
+        "name": "Cliente S.",
+        "date": "há 1 semana",
+        "title": "Suporte excelente",
+        "text": "Tive uma dúvida sobre a ativação e a assistente respondeu na hora."
+      },
+      {
+        "name": "Cliente T.",
+        "date": "há 1 semana",
+        "title": "O Fast Track vale a pena",
+        "text": "Economizei uns bons 30 minutos em Frankfurt no início das férias. Vou fazer de novo."
+      },
+      {
+        "name": "Cliente L.",
+        "date": "há 2 semanas",
+        "title": "Perfeito para viagens por vários países",
+        "text": "Plano Ásia para Tailândia, Vietnã e Malásia – um eSIM para tudo. Funcionou perfeitamente."
+      },
+      {
+        "name": "Cliente R.",
+        "date": "há 3 semanas",
+        "title": "Simples e justo",
+        "text": "Preços claros, sem custos escondidos. A recarga levou um clique."
+      }
+    ]
+  },
+  "nl": {
+    "note": "DEMO-PLACEHOLDER – vervang door de Trustpilot-widget voordat de site live gaat.",
+    "items": [
+      {
+        "name": "Klant A.",
+        "date": "2 dagen geleden",
+        "title": "In 2 minuten online",
+        "text": "QR-code gescand, geland in Antalya, meteen 5G. Veel goedkoper dan roaming."
+      },
+      {
+        "name": "Klant M.",
+        "date": "4 dagen geleden",
+        "title": "Top loungevoucher",
+        "text": "De avond ervoor geboekt, de voucher kwam meteen. Alleen de QR-code bij de ingang laten zien – geen probleem."
+      },
+      {
+        "name": "Klant S.",
+        "date": "1 week geleden",
+        "title": "Supersupport",
+        "text": "Ik had een vraag over het activeren en de assistent beantwoordde die meteen."
+      },
+      {
+        "name": "Klant T.",
+        "date": "1 week geleden",
+        "title": "Fast Track is het waard",
+        "text": "In Frankfurt aan het begin van de vakantie een goed half uur bespaard. Doe ik weer."
+      },
+      {
+        "name": "Klant L.",
+        "date": "2 weken geleden",
+        "title": "Perfect voor reizen door meerdere landen",
+        "text": "Azië-bundel voor Thailand, Vietnam en Maleisië – één eSIM voor alles. Werkte vlekkeloos."
+      },
+      {
+        "name": "Klant R.",
+        "date": "3 weken geleden",
+        "title": "Simpel en eerlijk",
+        "text": "Duidelijke prijzen, geen verborgen kosten. Opwaarderen kostte één klik."
+      }
+    ]
+  },
+  "pl": {
+    "note": "PRZYKŁAD DEMO – przed startem zastąp widżetem Trustpilot.",
+    "items": [
+      {
+        "name": "Klient A.",
+        "date": "2 dni temu",
+        "title": "Online w 2 minuty",
+        "text": "Zeskanowałem kod QR, wylądowałem w Antalyi i od razu miałem 5G. Dużo taniej niż roaming."
+      },
+      {
+        "name": "Klientka M.",
+        "date": "4 dni temu",
+        "title": "Świetny voucher do salonika",
+        "text": "Zarezerwowałam wieczorem dzień wcześniej, voucher przyszedł od razu. Pokazałam tylko kod QR przy wejściu – bez problemu."
+      },
+      {
+        "name": "Klient S.",
+        "date": "tydzień temu",
+        "title": "Super pomoc",
+        "text": "Miałem pytanie o aktywację, a asystentka od razu odpowiedziała."
+      },
+      {
+        "name": "Klientka T.",
+        "date": "tydzień temu",
+        "title": "Fast Track jest tego wart",
+        "text": "We Frankfurcie na początku wakacji oszczędziłam dobre pół godziny. Zrobię to znowu."
+      },
+      {
+        "name": "Klient L.",
+        "date": "2 tygodnie temu",
+        "title": "Idealne na podróże po kilku krajach",
+        "text": "Pakiet Azja na Tajlandię, Wietnam i Malezję – jeden eSIM na wszystko. Działał bez zarzutu."
+      },
+      {
+        "name": "Klient R.",
+        "date": "3 tygodnie temu",
+        "title": "Prosto i uczciwie",
+        "text": "Jasne ceny, bez ukrytych kosztów. Doładowanie zajęło jedno kliknięcie."
+      }
+    ]
+  },
+  "ja": {
+    "note": "デモ用サンプル – 公開前にTrustpilotのウィジェットに差し替えてください。",
+    "items": [
+      {
+        "name": "お客様 A.",
+        "date": "2日前",
+        "title": "2分でオンライン",
+        "text": "QRコードを読み取ってアンタルヤに着いたら、すぐに5Gにつながりました。ローミングよりずっと安いです。"
+      },
+      {
+        "name": "お客様 M.",
+        "date": "4日前",
+        "title": "ラウンジのバウチャーが最高",
+        "text": "前日の夜に予約したら、バウチャーがすぐ届きました。入口でQRコードを見せるだけ – 問題なしです。"
+      },
+      {
+        "name": "お客様 S.",
+        "date": "1週間前",
+        "title": "サポートが素晴らしい",
+        "text": "開通について質問したら、アシスタントがすぐに答えてくれました。"
+      },
+      {
+        "name": "お客様 T.",
+        "date": "1週間前",
+        "title": "ファストトラックは価値あり",
+        "text": "休暇の始まりのフランクフルトで30分は節約できました。また使います。"
+      },
+      {
+        "name": "お客様 L.",
+        "date": "2週間前",
+        "title": "周遊旅行にぴったり",
+        "text": "タイ、ベトナム、マレーシアをアジアプランで – eSIMひとつで全部。問題なく使えました。"
+      },
+      {
+        "name": "お客様 R.",
+        "date": "3週間前",
+        "title": "シンプルで誠実",
+        "text": "価格がわかりやすく、隠れた費用もなし。チャージもワンクリックでした。"
+      }
+    ]
+  },
+  "ko": {
+    "note": "데모 예시 – 공개 전에 Trustpilot 위젯으로 바꿔 주세요.",
+    "items": [
+      {
+        "name": "고객 A.",
+        "date": "2일 전",
+        "title": "2분 만에 온라인",
+        "text": "QR 코드를 스캔하고 안탈리아에 착륙하자마자 5G가 됐어요. 로밍보다 훨씬 저렴해요."
+      },
+      {
+        "name": "고객 M.",
+        "date": "4일 전",
+        "title": "라운지 바우처 최고",
+        "text": "전날 저녁에 예약했는데 바우처가 바로 왔어요. 입구에서 QR 코드만 보여줬어요 – 문제없었어요."
+      },
+      {
+        "name": "고객 S.",
+        "date": "1주 전",
+        "title": "지원이 훌륭해요",
+        "text": "개통에 대해 질문했더니 어시스턴트가 바로 답해 줬어요."
+      },
+      {
+        "name": "고객 T.",
+        "date": "1주 전",
+        "title": "패스트트랙, 쓸 만해요",
+        "text": "휴가 시작날 프랑크푸르트에서 30분은 아꼈어요. 또 이용할 거예요."
+      },
+      {
+        "name": "고객 L.",
+        "date": "2주 전",
+        "title": "여러 나라 여행에 딱",
+        "text": "태국, 베트남, 말레이시아를 아시아 요금제 하나로 – eSIM 하나로 전부. 완벽하게 작동했어요."
+      },
+      {
+        "name": "고객 R.",
+        "date": "3주 전",
+        "title": "간단하고 정직해요",
+        "text": "가격이 명확하고 숨은 비용이 없어요. 충전도 클릭 한 번이었어요."
+      }
+    ]
   }
 }

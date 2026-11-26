@@ -1,6 +1,6 @@
 # passport.io – Projektkontext (kurz)
 
-Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (später). Hauptsprache Türkisch; Seite in 7 Sprachen (tr,en,de,ar,ru,fr,es), Sprache = Gerät. Design: dunkel + Neongrün. Nutzer schreibt TR/DE.
+Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (später). Hauptsprache Türkisch; Seite in 13 Sprachen (tr,en,de,ar,ru,fr,es,it,pt[-BR],nl,pl,ja,ko), Sprache = Gerät. Fehlende Texte: erst Englisch, dann Türkisch. Design: dunkel + Neongrün. Nutzer schreibt TR/DE.
 
 ## Links
 - Live: https://yildirimavam55-glitch.github.io/passport-io/ · Panel: …/admin/panel.html · Konto: …/account.html
@@ -14,6 +14,7 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 
 ## Aufbau
 - Statische Seite: `index/install/blog/account/page.html`, `js/app.js` (rendert alles), `js/account.js`, `css/styles.css`.
+- **Automatische Übersetzung (alle Inhalte):** Workflow „Webseite übersetzen“ (`tools/site-translate.mjs`, Fingerabdrücke `tools/site-sync.json`) übersetzt neue/geänderte tr-Texte aller `content/*.json` + Blogartikel in alle Sprachen; neue Sprache in `languages.json` → alles. Lina-FAQs: „Lina übersetzen“. Beide brauchen GitHub-Secret `ANTHROPIC_API_KEY`. Von Hand: `--export=it` / `--import=it datei.json`. Neue Sprache außerdem in `admin/panel*.js`, `admin/config.yml`, `account/index.ts`, `_shared/popup.ts`, `_shared/lina-prompt.js` eintragen.
 - Inhalte: `content/*.json` je `{tr,en,…}`; Fremdsprachen werden über `id`/`code` bzw. Index gemischt. Blog: `content/posts/*.json` → `tools/build-blog.js` erzeugt `blog.json` beim Deploy (draft=true wird ausgelassen).
 - Supabase-Funktionen (`supabase/functions`): `prices` (Katalog+Preisregel, `?item=` Details, `?currency=`), `account` (Bestellung, Rabattcode, Erstattung, Support), `admin` (Panel-API inkl. GitHub-Inhalte), `questions` (Lina-Fragen, Support, Newsletter), `lina` (KI, optional).
 - Shared: `_shared/esim-provider.ts` (eSIM Access = Datenvolumen, eSIM Go = Unlimited Stufe essential), `pricing.ts`, `assortment.ts`.
@@ -22,15 +23,16 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 - **Keine Fremd-CDNs:** Schriften (`fonts/`, `css/fonts*.css`), Bibliotheken (`vendor/js`, Liste in `vendor/LICENSES.md`), Weltkarte (`vendor/data`) und Flaggen (`img/flags/1x1|4x3`, flag-icons) liegen im Repo. CSP-Meta in jeder HTML-Seite erlaubt nur `'self'`, Supabase und (Platzhalter-)Bilder von Unsplash. Neue externe Quellen nur mit CSP- und Datenschutz-Anpassung.
 
 ## Lina (Assistent)
-- 82 FAQs in `content/assistant.json`, alle 7 Sprachen; Kategorie `probleme` = Sorun giderme. Schritt-für-Schritt je Handy (iPhone/Samsung/Pixel/Xiaomi): data-roaming, data-line, network-select, line-on, install-iphone, install-android, reset-network, hotspot-setup.
+- 82 FAQs in `content/assistant.json`, alle 13 Sprachen; Kategorie `probleme` = Sorun giderme. Schritt-für-Schritt je Handy (iPhone/Samsung/Pixel/Xiaomi): data-roaming, data-line, network-select, line-on, install-iphone, install-android, reset-network, hotspot-setup.
 - Feld `next` (nur tr): IDs, die als Knöpfe „nächster Schritt“ unter der Antwort erscheinen (z. B. no-internet → Roaming → Datenleitung → Netzwahl → APN → Zurücksetzen).
+- **Japanisch/Koreanisch:** Suche zerlegt CJK-Text in Zeichenpaare (`cjkPairs` in app.js/lina.mjs, `bigTok` im Ranker); Schrift-Erkennung ja/ko. Schriften: Systemschriften (`fontFallback` in languages.json), CSS `:lang(ja|ko)` für Zeilenumbruch.
 - **Sprache der Frage:** Lina sucht in allen Sprachen (Schrift + Wortschatz der Sprache) und antwortet in der Sprache, in der gefragt wurde – unabhängig von der Seitensprache.
 - **Umgangssprache:** `content/lina-synonyms.json` (je Sprache: Kundenwörter → einheitlicher Begriff, gilt für Frage und FAQ-Texte). Neue Kundenformulierungen dort ergänzen.
 - **Suche** (`initAssistant` in app.js): Stichwörter mit Wortstamm-Vergleich, seltene Wörter wiegen mehr (IDF), Frage voll, Antwort halb. Sicher = Score ≥ 3 oder ≥ 2 mit 1,5 Abstand → Antwort; sonst „Meintest du…?“ + Team-Button.
 - **KI (optional):** `supabase/functions/lina` + `SITE.api.linaUrl`. Aktiv erst mit Supabase-Secret `ANTHROPIC_API_KEY`; ohne → 503 → nur Stichwortsuche. KI wird nur gefragt, wenn die Suche unsicher ist (Score < 5), antwortet nur aus den FAQs.
 - **Mehr Kundenformulierungen:** Workflow „Lina übersetzen“ von Hand starten mit expand=25 → KI schreibt je FAQ und Sprache bis zu 25 echte Formulierungen als Stichwörter; wird nur übernommen, wenn der Test danach besser ist.
 - **Neue FAQ:** nur auf Türkisch im Editor anlegen → Workflow „Lina übersetzen“ (`tools/lina-translate.mjs`) übersetzt in alle Sprachen + ergänzt Stichwörter, braucht GitHub-Secret `ANTHROPIC_API_KEY`. Fingerabdrücke: `tools/lina-sync.json`.
-- **Test:** `node tools/lina-test/eval.mjs [-v] [--set=colloq_c] [--ai]` · GitHub-Workflow „Lina testen“ (mit KI, wenn Secret gesetzt). Stand ohne KI: Katalog 97 %, einfache Fragen (`simple`, 5000) 89 % / 94 % inkl. Vorschlag, spezifische Fragen (`specific`, 5000: Gerät, Land, Fehlermeldung, Lounge) 92 % / 94 %, neue Kundensprache (colloq_c, nicht optimiert) 69 % / 79 %. simple/specific werden aus Vorlagen in `tools/lina-test/simple-src/` erzeugt und mit `--ai` nur per `--set=` geprüft. Suche dort ist eine Kopie aus app.js – bei Änderungen beide anpassen. KI-Aufgabe: `supabase/functions/_shared/lina-prompt.js`.
+- **Test:** `node tools/lina-test/eval.mjs [-v] [--set=colloq_c] [--ai]` · GitHub-Workflow „Lina testen“ (mit KI, wenn Secret gesetzt). Stand ohne KI: Katalog 97 %, einfache Fragen (`simple`, 5000) 89 % / 94 % inkl. Vorschlag, spezifische Fragen (`specific`, 5000: Gerät, Land, Fehlermeldung, Lounge) 92 % / 94 %, neue Kundensprache (colloq_c, nicht optimiert) 69 % / 79 %, neue Sprachen (`newlang`, je 20 Fragen it/pt/nl/pl/ja/ko) 74 % / 83 %. simple/specific werden aus Vorlagen in `tools/lina-test/simple-src/` erzeugt und mit `--ai` nur per `--set=` geprüft. Suche dort ist eine Kopie aus app.js – bei Änderungen beide anpassen. KI-Aufgabe: `supabase/functions/_shared/lina-prompt.js`.
 - Konto-FAQs (11/2026): my-esims (gekaufte eSIMs/Bestellungen → Mein Konto), how-to-buy, need-account, change-password, change-email (nur über Support).
 - Stichwörter: Kundensprache (2–4 Wörter), keine allgemeinen Einzelwörter („çalışmıyor“, „lounge“, „qr“).
 

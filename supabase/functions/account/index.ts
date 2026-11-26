@@ -15,7 +15,7 @@ import { cors, env, json } from "../_shared/http.ts";
 import { fulfillOrder, refresh } from "../_shared/esim-provider.ts";
 
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
-const LANGS = ["tr", "en", "de", "ar", "ru", "fr", "es"];
+const LANGS = ["tr", "en", "de", "ar", "ru", "fr", "es", "it", "pt", "nl", "pl", "ja", "ko"];
 // Geld-zurück-Frist für nicht installierte eSIMs (Secret REFUND_DAYS, Standard 30 – muss zu den Rechtstexten passen)
 const refundDays = () => Number(env("REFUND_DAYS") || 30);
 const CURS = (env("CURRENCIES") || "EUR,USD,GBP,TRY,CHF").split(",").map((s) => s.trim());

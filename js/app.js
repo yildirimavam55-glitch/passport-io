@@ -68,6 +68,8 @@
       document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="css/fonts-${String(meta.font).toLowerCase().replace(/[^a-z0-9]+/g, "-")}.css">`); // selbst gehostet
       document.documentElement.style.setProperty("--font", `"${meta.font}", "Schibsted Grotesk", system-ui, sans-serif`);
     }
+    // Japanisch/Koreanisch: lateinische Zeichen in der Hausschrift, Schriftzeichen aus den Systemschriften des Geräts (keine großen Schriftdateien)
+    if (meta.fontFallback) document.documentElement.style.setProperty("--font", `"PP Lira", "Schibsted Grotesk", ${meta.fontFallback}, system-ui, sans-serif`);
     // Währung: ?cur=… › gespeicherte Wahl › Land des Geräts › Standard der Sprache
     const curCodes = (LANGS.currencies || []).map((c) => c.code);
     const pickCur = (c) => { c = String(c || "").toUpperCase(); return curCodes.includes(c) ? c : null; };
@@ -75,7 +77,8 @@
     const region = devLangs.map((l) => (String(l).split(/[-_]/)[1] || "").toUpperCase()).find(Boolean);
     const savedCur = pickCur(store("pp_cur", keep ? curUrl : null)) || pickCur(session("pp_cur_visit", curUrl));
     CUR = curUrl || savedCur || pickCur(LANGS.regionCurrency?.[region]) || pickCur(meta.currency) || curCodes[0] || "EUR";
-    const loc = (d) => d && merge(d[LANGS.default], d[LANG]);
+    // Fehlende Texte: erst Englisch, dann Standardsprache (neue Sprachen zeigen so nie Türkisch statt Englisch)
+    const loc = (d) => d && merge(LANG === LANGS.default ? d[LANGS.default] : merge(d[LANGS.default], d.en), d[LANG]);
     const synP = getJSON("content/lina-synonyms.json").catch(() => ({})); // Umgangssprache → einheitliche Begriffe (Lina)
     const raw = await Promise.all([
       ...["site", "esim", "assistant", "blog", "reviews", "ui"].map((n) => getJSON(`content/${n}.json`)),
@@ -127,7 +130,12 @@
   // Logos liegen selbst gehostet in img/pay (kein Drittanbieter-CDN, keine IP-Weitergabe)
   const payLogo = (slug) => `<img class="pay-logo pay-logo--${esc(slug)}" src="img/pay/${esc(slug)}.svg" alt="${esc(PAY[slug] || slug)}" title="${esc(PAY[slug] || slug)}" loading="lazy">`;
   /* Für Suche & Assistent: Kleinschreibung, ohne Akzente (ü→u, ş→s, ı→i …), nur Buchstaben/Ziffern */
-  const normFor = (loc) => (s) => String(s).toLocaleLowerCase(loc).replace(/ı/g, "i").replace(/ß/g, "ss").normalize("NFD").replace(/[̀-ًͯ-ٰٟ]/g, "").replace(/ى/g, "ي").replace(/ة/g, "ه").replace(/ё/g, "е").replace(/[^\p{L}\p{N} ]+/gu, " ").replace(/\s+/g, " ").trim();
+  // Japanisch/Koreanisch haben keine (bzw. andere) Wortgrenzen: dort Zeichenpaare (Bigramme) als „Wörter“
+  const CJK_RUN = /([\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}ー]+)/gu;
+  const CJK = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u;
+  const cjkPairs = (s) => (CJK.test(s) ? s.replace(CJK_RUN, (run) => { const c = [...run]; return " " + (c.length < 3 ? run : c.slice(0, -1).map((x, i) => x + c[i + 1]).join(" ")) + " "; }).replace(/\s+/g, " ").trim() : s);
+  const normFor = (loc) => (s) => cjkPairs(String(s).toLocaleLowerCase(loc).replace(/ı/g, "i").replace(/ß/g, "ss").normalize("NFD").replace(/[̀-ًͯ-ٰٟ]/g, "").normalize("NFC").replace(/ى/g, "ي").replace(/ة/g, "ه").replace(/ё/g, "е").replace(/[^\p{L}\p{N} ]+/gu, " ").replace(/\s+/g, " ").trim());
+  const bigTok = (w) => w.length > 3 || CJK.test(w); // zählt als „richtiges“ Wort (CJK-Zeichenpaare immer)
   const norm = normFor(LOCALE);
   /* Ländernamen kommen automatisch in der Sprache des Besuchers (Browser); Suche kennt alle Sprachen */
   const regionNames = (loc) => { try { return new Intl.DisplayNames([loc], { type: "region" }); } catch (_) { return null; } };
@@ -1708,8 +1716,8 @@
     const makeRanker = (list, nrm) => {
       const idx = list.map((f) => {
         const kws = (f.keywords || []).map((k) => nrm(k)).filter(Boolean).map((k) => ({ k, w: k.split(" ") }));
-        const qw = nrm(f.question).split(" ").filter((w) => w.length > 3);
-        const aw = [...new Set(nrm(String(f.answer || "").replace(/\]\([^)]*\)/g, " ")).split(" ").filter((w) => w.length > 3))];
+        const qw = nrm(f.question).split(" ").filter(bigTok);
+        const aw = [...new Set(nrm(String(f.answer || "").replace(/\]\([^)]*\)/g, " ")).split(" ").filter(bigTok))];
         return { f, kws, qw, aw, words: new Set([...kws.flatMap((x) => x.w), ...qw]) };
       });
       const df = new Map();
@@ -1728,13 +1736,13 @@
           [...kws.filter(isExact), ...kws.filter((x) => !isExact(x))].forEach(({ k, w }) => {
             const weak = w.length === 1 && common(k);
             const exact = isExact({ k, w });
-            const t = exact || (!weak && w.some((x) => x.length >= 4)) ? hit(w) : null;
+            const t = exact || (!weak && w.some(bigTok)) ? hit(w) : null;
             if (!t && !exact) return;
             if (t && t.every((i) => used.has(i))) return;
             (t || []).forEach((i) => used.add(i));
             s += (exact ? (weak ? 1 : 2 + w.length) : 0.5 + w.length) * (weak ? 1 : weight(w));
           });
-          toks.forEach((t) => { if (t.length <= 3 || common(t)) return; if (qw.some((w) => same(t, w))) s += 1; else if (aw.some((w) => same(t, w))) s += 0.5; });
+          toks.forEach((t) => { if (!bigTok(t) || common(t)) return; if (qw.some((w) => same(t, w))) s += 1; else if (aw.some((w) => same(t, w))) s += 0.5; });
           return { f, s };
         }).sort((a, b) => b.s - a.s);
       };
@@ -1748,12 +1756,12 @@
       return (s) => { let x = " " + nrm(s) + " "; for (const [v, c] of list) if (x.includes(" " + v + " ")) x = x.split(" " + v + " ").join(" " + c + " "); return x.trim().replace(/\s+/g, " "); };
     };
     // Ein Paket pro Sprache: Texte (fehlende aus der Standardsprache), Suche und Wortschatz zur Spracherkennung
-    const SCRIPT = { ar: /[\u0600-\u06ff]/, ru: /[\u0400-\u04ff]/ };
+    const SCRIPT = { ar: /[\u0600-\u06ff]/, ru: /[\u0400-\u04ff]/, ko: /[\uac00-\ud7af\u1100-\u11ff\u3130-\u318f]/, ja: /[\u3040-\u30ff\u4e00-\u9fff]/ };
     const scriptOf = (s) => Object.keys(SCRIPT).find((c) => SCRIPT[c].test(s)) || "latn";
     const PACKS = LANGS.languages.map((l) => {
       const own = (RAW_AI && RAW_AI[l.code]) || {};
-      const data = l.code === LANG ? AI : merge(RAW_AI[LANGS.default], own);
-      const ui = l.code === LANG ? UI : merge(RAW_UI[LANGS.default], RAW_UI[l.code]);
+      const data = l.code === LANG ? AI : merge(l.code === LANGS.default ? RAW_AI[LANGS.default] : merge(RAW_AI[LANGS.default], RAW_AI.en), own);
+      const ui = l.code === LANG ? UI : merge(l.code === LANGS.default ? RAW_UI[LANGS.default] : merge(RAW_UI[LANGS.default], RAW_UI.en), RAW_UI[l.code]);
       const nrm = l.code === LANG ? norm : normFor(l.locale);
       const vocab = new Set(nrm([own.greeting, own.fallback, ...(own.suggestions || []), ...(own.faqs || []).flatMap((f) => [f.question, f.answer, ...(f.keywords || [])])].join(" ")).split(" ").filter((w) => w.length > 1));
       return { code: l.code, dir: l.dir || "ltr", script: SCRIPT[l.code] ? l.code : "latn", data, ui, norm: nrm, vocab,

@@ -540,5 +540,401 @@
         "readTime": "6 min"
       }
     ]
+  },
+  "it": {
+    "posts": [
+      {
+        "id": "esim-vs-roaming",
+        "title": "Dati mobili all'estero: eSIM o roaming? Il confronto 2027",
+        "excerpt": "Il pass roaming del tuo operatore o una eSIM da viaggio? Confrontiamo costi, configurazione e cosa succede al tuo numero WhatsApp – passo dopo passo.",
+        "category": "Guida eSIM",
+        "readTime": "6 min"
+      },
+      {
+        "id": "japan-esim",
+        "title": "Dati mobili in Giappone: la guida eSIM 2027",
+        "excerpt": "Tokyo, Kyoto, Osaka: come restare online in treno, ai templi e in montagna. Reti, scelta del piano e consigli pratici.",
+        "readTime": "7 min"
+      },
+      {
+        "id": "balkan-esim",
+        "title": "Dati mobili per un viaggio nei Balcani: Serbia, Montenegro, Bosnia e Albania",
+        "excerpt": "I Balcani occidentali sono in pieno boom. Ma attenzione: questi paesi non sono nell'UE e molti piani Europa non li coprono. Come scegliere la eSIM giusta.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "airport-lounge-guide",
+        "title": "Guida alle lounge aeroportuali: come entrare senza biglietto business",
+        "excerpt": "Le lounge non sono solo per la business class. Chi può entrare, cosa c'è dentro, quanto si può restare e come prenotare l'accesso in anticipo.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "thailand-esim",
+        "title": "Dati mobili ed eSIM in Thailandia: guida per Bangkok, Phuket e le isole",
+        "excerpt": "La Thailandia è un classico invernale. Come scegliere la eSIM giusta per restare connesso sulle isole, prenotare un Grab e usare le mappe ovunque.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "esim-setup-mistakes",
+        "title": "I 7 errori più comuni nella configurazione della eSIM (e come risolverli)",
+        "excerpt": "Niente dati all'atterraggio? Di solito è una piccola impostazione. Evita questi 7 errori prima del viaggio e sarai online entro due minuti dall'arrivo.",
+        "category": "Guida eSIM",
+        "readTime": "5 min"
+      },
+      {
+        "id": "dubai-esim",
+        "title": "Dati mobili a Dubai: guida eSIM per gli Emirati e le regole da conoscere",
+        "excerpt": "Dubai è un polo di shopping e di transito. Come funzionano i dati mobili negli Emirati, perché le chiamate via internet possono essere limitate e quale piano basta.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "fast-track-guide",
+        "title": "Che cos'è il Fast Track? Quando i controlli prioritari valgono davvero",
+        "excerpt": "Picchi delle vacanze, voli all'alba, coincidenze strette: cosa copre il Fast Track, cosa no e quando conviene.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "usa-esim",
+        "title": "Dati mobili negli USA: la guida eSIM",
+        "excerpt": "Da New York a Los Angeles, parchi nazionali e road trip: reti statunitensi, zone senza copertura e scelta del piano giusto.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "europe-trip-esim",
+        "title": "Una eSIM per il tuo viaggio in Europa: connesso in tutta l'area Schengen",
+        "excerpt": "Roma, Parigi e Barcellona in un solo viaggio? Come restare online in tutta Europa con una eSIM regionale invece di comprare una SIM in ogni paese.",
+        "readTime": "6 min"
+      }
+    ]
+  },
+  "pt": {
+    "posts": [
+      {
+        "id": "esim-vs-roaming",
+        "category": "Guia de eSIM",
+        "title": "Internet no exterior: eSIM ou roaming? O comparativo de 2027",
+        "excerpt": "O pacote de roaming da sua operadora ou um eSIM de viagem? Comparamos custo, configuração e o que acontece com seu número do WhatsApp – passo a passo.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "japan-esim",
+        "title": "Internet no Japão: o guia de eSIM de 2027",
+        "excerpt": "Tóquio, Kyoto, Osaka: como ficar online nos trens, nos templos e nas montanhas. Redes, escolha do plano e dicas práticas.",
+        "readTime": "7 min"
+      },
+      {
+        "id": "balkan-esim",
+        "title": "Internet numa viagem pelos Bálcãs: Sérvia, Montenegro, Bósnia e Albânia",
+        "excerpt": "Os Bálcãs Ocidentais estão em alta. Mas atenção: esses países não fazem parte da UE, e muitos planos Europa não os cobrem. Como escolher o eSIM certo.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "airport-lounge-guide",
+        "title": "Guia de salas VIP em aeroportos: como entrar sem passagem executiva",
+        "excerpt": "Salas VIP não são só para a classe executiva. Quem pode entrar, o que tem lá dentro, quanto tempo se pode ficar e como reservar o acesso antes.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "thailand-esim",
+        "title": "Internet e eSIM na Tailândia: guia para Bangkok, Phuket e as ilhas",
+        "excerpt": "A Tailândia é um clássico de inverno. Como escolher o eSIM certo para ficar conectado nas ilhas, chamar um Grab e usar mapas em qualquer lugar.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "esim-setup-mistakes",
+        "category": "Guia de eSIM",
+        "title": "Os 7 erros mais comuns ao configurar o eSIM (e como resolver)",
+        "excerpt": "Sem internet ao pousar? Geralmente é um ajuste pequeno. Evite estes 7 erros antes da viagem e fique online em até dois minutos depois de chegar.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "dubai-esim",
+        "title": "Internet em Dubai: guia de eSIM nos Emirados e as regras que você precisa saber",
+        "excerpt": "Dubai é um polo de compras e conexões. Como funciona a internet móvel nos Emirados, por que chamadas pela internet podem ser restritas e qual plano basta.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "fast-track-guide",
+        "title": "O que é Fast Track? Quando a fila prioritária na segurança realmente vale a pena",
+        "excerpt": "Picos de férias, voos de madrugada, conexões apertadas: o que o Fast Track cobre, o que não cobre e quando compensa.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "usa-esim",
+        "title": "Internet nos EUA: o guia de eSIM",
+        "excerpt": "De Nova York a Los Angeles, parques nacionais e road trips: redes americanas, áreas sem sinal e como escolher o plano certo.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "europe-trip-esim",
+        "title": "Um eSIM para sua viagem pela Europa: conectado em todo o espaço Schengen",
+        "excerpt": "Roma, Paris e Barcelona numa só viagem? Como ficar online em toda a Europa com um eSIM regional em vez de comprar um chip em cada país.",
+        "readTime": "6 min"
+      }
+    ]
+  },
+  "nl": {
+    "posts": [
+      {
+        "id": "esim-vs-roaming",
+        "category": "eSIM-gids",
+        "title": "Mobiele data in het buitenland: eSIM of roaming? De vergelijking van 2027",
+        "excerpt": "De roamingbundel van je provider of een reis-eSIM? We vergelijken kosten, installatie en wat er met je WhatsApp-nummer gebeurt – stap voor stap.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "japan-esim",
+        "title": "Mobiele data in Japan: de eSIM-gids van 2027",
+        "excerpt": "Tokio, Kyoto, Osaka: zo blijf je online in de trein, bij tempels en in de bergen. Netwerken, bundelkeuze en praktische tips.",
+        "readTime": "7 min"
+      },
+      {
+        "id": "balkan-esim",
+        "title": "Mobiele data voor een Balkanreis: Servië, Montenegro, Bosnië en Albanië",
+        "excerpt": "De westelijke Balkan is in opkomst. Maar let op: deze landen zitten niet in de EU en veel Europa-bundels dekken ze niet. Zo kies je de juiste eSIM.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "airport-lounge-guide",
+        "title": "Gids voor luchthavenlounges: zo kom je binnen zonder businessticket",
+        "excerpt": "Lounges zijn niet alleen voor businessclass. Wie mag erin, wat is er te vinden, hoe lang mag je blijven en hoe boek je vooraf toegang.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "thailand-esim",
+        "title": "Mobiele data en eSIM in Thailand: gids voor Bangkok, Phuket en de eilanden",
+        "excerpt": "Thailand is een winterklassieker. Zo kies je de juiste eSIM om online te blijven op de eilanden, een Grab te boeken en overal kaarten te gebruiken.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "esim-setup-mistakes",
+        "category": "eSIM-gids",
+        "title": "De 7 meest gemaakte fouten bij het instellen van een eSIM (en hoe je ze oplost)",
+        "excerpt": "Geen data bij de landing? Meestal is het een kleine instelling. Vermijd deze 7 fouten vóór je reis en ben binnen twee minuten na aankomst online.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "dubai-esim",
+        "title": "Mobiele data in Dubai: eSIM-gids voor de VAE en de regels die je moet kennen",
+        "excerpt": "Dubai is een knooppunt voor shoppen en overstappen. Hoe mobiele data in de VAE werkt, waarom internetbellen beperkt kan zijn en welke bundel genoeg is.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "fast-track-guide",
+        "title": "Wat is Fast Track? Wanneer voorrang bij de beveiliging echt de moeite waard is",
+        "excerpt": "Vakantiepieken, vroege vluchten, krappe overstappen: wat Fast Track dekt, wat niet en wanneer het loont.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "usa-esim",
+        "title": "Mobiele data in de VS: de eSIM-gids",
+        "excerpt": "Van New York tot Los Angeles, nationale parken en roadtrips: Amerikaanse netwerken, dekkingsgaten en de juiste bundel kiezen.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "europe-trip-esim",
+        "title": "Eén eSIM voor je Europareis: verbonden in heel Schengen",
+        "excerpt": "Rome, Parijs en Barcelona in één reis? Zo blijf je in heel Europa online met een regionale eSIM in plaats van in elk land een simkaart te kopen.",
+        "readTime": "6 min"
+      }
+    ]
+  },
+  "pl": {
+    "posts": [
+      {
+        "id": "esim-vs-roaming",
+        "category": "Poradnik eSIM",
+        "title": "Internet za granicą: eSIM czy roaming? Porównanie 2027",
+        "excerpt": "Pakiet roamingowy operatora czy eSIM podróżny? Porównujemy koszty, konfigurację i to, co dzieje się z Twoim numerem w WhatsAppie – krok po kroku.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "japan-esim",
+        "title": "Internet w Japonii: poradnik eSIM 2027",
+        "excerpt": "Tokio, Kioto, Osaka: jak być online w pociągu, przy świątyniach i w górach. Sieci, wybór pakietu i praktyczne wskazówki.",
+        "readTime": "7 min"
+      },
+      {
+        "id": "balkan-esim",
+        "title": "Internet na wyjazd na Bałkany: Serbia, Czarnogóra, Bośnia i Albania",
+        "excerpt": "Bałkany Zachodnie przeżywają boom. Ale uwaga: te kraje nie należą do UE i wiele pakietów na Europę ich nie obejmuje. Jak wybrać właściwy eSIM.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "airport-lounge-guide",
+        "title": "Poradnik po salonikach lotniskowych: jak wejść bez biletu w klasie biznes",
+        "excerpt": "Saloniki to nie tylko klasa biznes. Kto może wejść, co jest w środku, jak długo można zostać i jak z wyprzedzeniem zarezerwować wstęp.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "thailand-esim",
+        "title": "Internet i eSIM w Tajlandii: poradnik na Bangkok, Phuket i wyspy",
+        "excerpt": "Tajlandia to zimowy klasyk. Jak wybrać eSIM, by być online na wyspach, zamówić Graba i wszędzie korzystać z map.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "esim-setup-mistakes",
+        "category": "Poradnik eSIM",
+        "title": "7 najczęstszych błędów przy konfiguracji eSIM (i jak je naprawić)",
+        "excerpt": "Brak internetu po wylądowaniu? Zwykle to drobne ustawienie. Unikaj tych 7 błędów przed podróżą i bądź online w dwie minuty po przylocie.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "dubai-esim",
+        "title": "Internet w Dubaju: poradnik eSIM na ZEA i zasady, które warto znać",
+        "excerpt": "Dubaj to centrum zakupów i przesiadek. Jak działa internet mobilny w ZEA, dlaczego rozmowy przez internet mogą być ograniczone i jaki pakiet wystarczy.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "fast-track-guide",
+        "title": "Czym jest Fast Track? Kiedy priorytetowa kontrola naprawdę się opłaca",
+        "excerpt": "Szczyt wakacji, poranne loty, krótkie przesiadki: co obejmuje Fast Track, czego nie i kiedy się opłaca.",
+        "readTime": "5 min"
+      },
+      {
+        "id": "usa-esim",
+        "title": "Internet w USA: poradnik eSIM",
+        "excerpt": "Od Nowego Jorku po Los Angeles, parki narodowe i road tripy: amerykańskie sieci, dziury w zasięgu i wybór odpowiedniego pakietu.",
+        "readTime": "6 min"
+      },
+      {
+        "id": "europe-trip-esim",
+        "title": "Jeden eSIM na podróż po Europie: łączność w całej strefie Schengen",
+        "excerpt": "Rzym, Paryż i Barcelona w jednej podróży? Jak być online w całej Europie z regionalnym eSIM zamiast kupować kartę SIM w każdym kraju.",
+        "readTime": "6 min"
+      }
+    ]
+  },
+  "ja": {
+    "posts": [
+      {
+        "id": "esim-vs-roaming",
+        "category": "eSIMガイド",
+        "title": "海外でのモバイルデータ：eSIMかローミングか？2027年版比較",
+        "excerpt": "携帯会社のローミングパックか、旅行用eSIMか。費用、設定、WhatsAppの番号がどうなるかを順番に比較します。",
+        "readTime": "6分"
+      },
+      {
+        "id": "japan-esim",
+        "title": "日本でのモバイルデータ：2027年版eSIMガイド",
+        "excerpt": "東京、京都、大阪：電車でも、お寺でも、山の中でもオンラインでいる方法。ネットワーク、プランの選び方、実用的なヒント。",
+        "readTime": "7分"
+      },
+      {
+        "id": "balkan-esim",
+        "title": "バルカン旅行のモバイルデータ：セルビア、モンテネグロ、ボスニア、アルバニア",
+        "excerpt": "西バルカンは今大人気。ただし注意：これらの国はEU加盟国ではなく、多くのヨーロッパプランの対象外です。正しいeSIMの選び方。",
+        "readTime": "6分"
+      },
+      {
+        "id": "airport-lounge-guide",
+        "title": "空港ラウンジガイド：ビジネスクラスでなくても入る方法",
+        "excerpt": "ラウンジはビジネスクラスだけのものではありません。誰が入れるのか、中には何があるのか、どれくらい滞在できるのか、事前予約の方法。",
+        "readTime": "6分"
+      },
+      {
+        "id": "thailand-esim",
+        "title": "タイのモバイルデータとeSIM：バンコク、プーケット、島々のガイド",
+        "excerpt": "タイは冬の定番旅行先。島でもつながり、Grabを呼び、どこでも地図を使うためのeSIMの選び方。",
+        "readTime": "6分"
+      },
+      {
+        "id": "esim-setup-mistakes",
+        "category": "eSIMガイド",
+        "title": "eSIM設定でよくある7つの失敗（と解決方法）",
+        "excerpt": "着陸してもデータが使えない？たいていは小さな設定です。出発前にこの7つの失敗を避ければ、到着後2分でオンラインに。",
+        "readTime": "5分"
+      },
+      {
+        "id": "dubai-esim",
+        "title": "ドバイのモバイルデータ：UAEのeSIMガイドと知っておきたいルール",
+        "excerpt": "ドバイはショッピングと乗り継ぎの拠点。UAEのモバイルデータの仕組み、ネット通話が制限されることがある理由、十分なプラン。",
+        "readTime": "5分"
+      },
+      {
+        "id": "fast-track-guide",
+        "title": "ファストトラックとは？優先保安検査が本当に役立つとき",
+        "excerpt": "休暇のピーク、早朝便、短い乗り継ぎ：ファストトラックでできること、できないこと、お得になるとき。",
+        "readTime": "5分"
+      },
+      {
+        "id": "usa-esim",
+        "title": "アメリカでのモバイルデータ：eSIMガイド",
+        "excerpt": "ニューヨークからロサンゼルス、国立公園、ロードトリップまで：アメリカのネットワーク、圏外エリア、プランの選び方。",
+        "readTime": "6分"
+      },
+      {
+        "id": "europe-trip-esim",
+        "title": "ヨーロッパ旅行にeSIMひとつ：シェンゲン圏全体でつながる",
+        "excerpt": "ローマ、パリ、バルセロナを1回の旅で？国ごとにSIMを買う代わりに、地域eSIMでヨーロッパ中オンラインでいる方法。",
+        "readTime": "6分"
+      }
+    ]
+  },
+  "ko": {
+    "posts": [
+      {
+        "id": "esim-vs-roaming",
+        "category": "eSIM 가이드",
+        "title": "해외 모바일 데이터: eSIM이냐 로밍이냐? 2027년 비교",
+        "excerpt": "통신사 로밍 패스와 여행용 eSIM, 무엇이 나을까요? 비용, 설정, WhatsApp 번호가 어떻게 되는지 단계별로 비교해요.",
+        "readTime": "6분"
+      },
+      {
+        "id": "japan-esim",
+        "title": "일본 모바일 데이터: 2027년 eSIM 가이드",
+        "excerpt": "도쿄, 교토, 오사카: 기차에서도, 사찰에서도, 산에서도 인터넷을 쓰는 방법. 네트워크, 요금제 선택, 실용 팁.",
+        "readTime": "7분"
+      },
+      {
+        "id": "balkan-esim",
+        "title": "발칸 여행 모바일 데이터: 세르비아, 몬테네그로, 보스니아, 알바니아",
+        "excerpt": "서발칸이 뜨고 있어요. 하지만 주의하세요: 이 나라들은 EU가 아니라서 유럽 요금제 대부분에 포함되지 않아요. 알맞은 eSIM 고르는 법.",
+        "readTime": "6분"
+      },
+      {
+        "id": "airport-lounge-guide",
+        "title": "공항 라운지 가이드: 비즈니스석 없이 들어가는 방법",
+        "excerpt": "라운지는 비즈니스석만을 위한 곳이 아니에요. 누가 들어갈 수 있는지, 안에 무엇이 있는지, 얼마나 머물 수 있는지, 미리 예약하는 방법.",
+        "readTime": "6분"
+      },
+      {
+        "id": "thailand-esim",
+        "title": "태국 모바일 데이터와 eSIM: 방콕, 푸껫, 섬 여행 가이드",
+        "excerpt": "태국은 겨울 여행의 단골이죠. 섬에서도 연결되고, Grab을 부르고, 어디서나 지도를 쓰는 eSIM 고르는 법.",
+        "readTime": "6분"
+      },
+      {
+        "id": "esim-setup-mistakes",
+        "category": "eSIM 가이드",
+        "title": "eSIM 설정 시 가장 흔한 실수 7가지(와 해결 방법)",
+        "excerpt": "착륙했는데 데이터가 안 되나요? 대개 작은 설정 하나 때문이에요. 출발 전 이 7가지 실수만 피하면 도착 2분 만에 온라인이에요.",
+        "readTime": "5분"
+      },
+      {
+        "id": "dubai-esim",
+        "title": "두바이 모바일 데이터: UAE eSIM 가이드와 알아 둘 규칙",
+        "excerpt": "두바이는 쇼핑과 환승의 중심지예요. UAE에서 모바일 데이터가 어떻게 작동하는지, 인터넷 통화가 제한될 수 있는 이유, 충분한 요금제.",
+        "readTime": "5분"
+      },
+      {
+        "id": "fast-track-guide",
+        "title": "패스트트랙이란? 우선 보안 검색이 정말 가치 있을 때",
+        "excerpt": "휴가 성수기, 새벽 비행기, 빠듯한 환승: 패스트트랙이 해 주는 것과 해 주지 않는 것, 그리고 이득일 때.",
+        "readTime": "5분"
+      },
+      {
+        "id": "usa-esim",
+        "title": "미국 모바일 데이터: eSIM 가이드",
+        "excerpt": "뉴욕에서 로스앤젤레스, 국립공원과 로드 트립까지: 미국 네트워크, 음영 지역, 알맞은 요금제 고르기.",
+        "readTime": "6분"
+      },
+      {
+        "id": "europe-trip-esim",
+        "title": "유럽 여행에 eSIM 하나: 솅겐 지역 어디서나 연결",
+        "excerpt": "로마, 파리, 바르셀로나를 한 번에? 나라마다 SIM을 사는 대신 지역 eSIM으로 유럽 어디서나 인터넷을 쓰는 방법.",
+        "readTime": "6분"
+      }
+    ]
   }
 }

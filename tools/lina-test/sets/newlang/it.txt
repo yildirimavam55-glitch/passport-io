@@ -1,0 +1,21 @@
+## Neue Sprachen (11/2026): eigene Formulierungen, nicht aus den FAQ-Texten kopiert
+la esim funziona anche sul mio samsung s23 | device-compatible
+come si mette la esim sul telefono | install-esim,install-iphone,install-android
+ho comprato un pacchetto dove lo trovo | my-esims
+sono arrivato a roma ma internet non va | no-internet
+quanti giga servono per due settimane | which-package
+posso fare telefonate normali | calls,phone-number
+il mio numero di casa resta attivo | keep-number
+non mi è arrivata nessuna mail con il qr | no-email,my-esims
+voglio i soldi indietro | refund,refund-how
+come si paga | payment
+il codice sconto non va | discount-code
+mi sono dimenticato la password | account-login
+dove attivo il roaming sull'iphone | data-roaming
+la connessione è lentissima | slow-internet
+ho cancellato la esim per sbaglio | deleted-esim
+la esim è un abbonamento | hidden-costs
+in lounge posso portare mio figlio | lounge-kids
+il volo è in ritardo vale ancora il voucher | lounge-delay
+whatsapp continua a funzionare | whatsapp
+come faccio a comprare | how-to-buy

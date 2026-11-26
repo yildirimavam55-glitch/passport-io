@@ -8,7 +8,13 @@
     { "code": "ar", "flag": "sa", "name": "العربية", "locale": "ar-u-nu-latn", "dir": "rtl", "currency": "USD", "font": "IBM Plex Sans Arabic" },
     { "code": "ru", "flag": "ru", "name": "Русский", "locale": "ru-RU", "dir": "ltr", "currency": "USD" },
     { "code": "fr", "flag": "fr", "name": "Français", "locale": "fr-FR", "dir": "ltr", "currency": "EUR" },
-    { "code": "es", "flag": "es", "name": "Español", "locale": "es-ES", "dir": "ltr", "currency": "EUR" }
+    { "code": "es", "flag": "es", "name": "Español", "locale": "es-ES", "dir": "ltr", "currency": "EUR" },
+    { "code": "it", "flag": "it", "name": "Italiano", "locale": "it-IT", "dir": "ltr", "currency": "EUR" },
+    { "code": "pt", "flag": "br", "name": "Português", "locale": "pt-BR", "dir": "ltr", "currency": "EUR" },
+    { "code": "nl", "flag": "nl", "name": "Nederlands", "locale": "nl-NL", "dir": "ltr", "currency": "EUR" },
+    { "code": "pl", "flag": "pl", "name": "Polski", "locale": "pl-PL", "dir": "ltr", "currency": "EUR" },
+    { "code": "ja", "flag": "jp", "name": "日本語", "locale": "ja-JP", "dir": "ltr", "currency": "USD", "fontFallback": "\"Hiragino Sans\", \"Hiragino Kaku Gothic ProN\", \"Yu Gothic UI\", \"Yu Gothic\", Meiryo, \"Noto Sans JP\", \"Noto Sans CJK JP\"" },
+    { "code": "ko", "flag": "kr", "name": "한국어", "locale": "ko-KR", "dir": "ltr", "currency": "USD", "fontFallback": "\"Apple SD Gothic Neo\", \"Malgun Gothic\", \"Noto Sans KR\", \"Noto Sans CJK KR\"" }
   ],
   "currencies": [
     { "code": "TRY", "name": "Türk lirası" },

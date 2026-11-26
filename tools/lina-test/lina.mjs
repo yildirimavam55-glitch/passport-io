@@ -14,11 +14,15 @@ export function merge(base, over) {
   if (base && typeof base === "object") { const out = { ...base }; for (const k of Object.keys(over)) out[k] = merge(base[k], over[k]); return out; }
   return over;
 }
-export const mkNorm = (locale) => (s) => String(s).toLocaleLowerCase(locale).replace(/ı/g, "i").replace(/ß/g, "ss").normalize("NFD").replace(/[̀-ًͯ-ٰٟ]/g, "").replace(/ى/g, "ي").replace(/ة/g, "ه").replace(/ё/g, "е").replace(/[^\p{L}\p{N} ]+/gu, " ").replace(/\s+/g, " ").trim();
+// Japanisch/Koreanisch: Zeichenpaare (Bigramme) als „Wörter“ (wie app.js)
+const CJK_RUN = /([\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}ー]+)/gu;
+export const CJK = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u;
+export const cjkPairs = (s) => (CJK.test(s) ? s.replace(CJK_RUN, (run) => { const c = [...run]; return " " + (c.length < 3 ? run : c.slice(0, -1).map((x, i) => x + c[i + 1]).join(" ")) + " "; }).replace(/\s+/g, " ").trim() : s);
+export const mkNorm = (locale) => (s) => cjkPairs(String(s).toLocaleLowerCase(locale).replace(/ı/g, "i").replace(/ß/g, "ss").normalize("NFD").replace(/[̀-ًͯ-ٰٟ]/g, "").normalize("NFC").replace(/ى/g, "ي").replace(/ة/g, "ه").replace(/ё/g, "е").replace(/[^\p{L}\p{N} ]+/gu, " ").replace(/\s+/g, " ").trim());
 
 // Schrift erkennen: Arabisch/Kyrillisch eindeutig, sonst lateinische Sprachen
-export const scriptOf = (s) => (/[؀-ۿ]/.test(s) ? "arab" : /[Ѐ-ӿ]/.test(s) ? "cyrl" : "latn");
-const SCRIPT = { ar: "arab", ru: "cyrl" };
+export const scriptOf = (s) => (/[؀-ۿ]/.test(s) ? "arab" : /[Ѐ-ӿ]/.test(s) ? "cyrl" : /[\uac00-\ud7af\u1100-\u11ff\u3130-\u318f]/.test(s) ? "kore" : /[\u3040-\u30ff\u4e00-\u9fff]/.test(s) ? "jpan" : "latn");
+const SCRIPT = { ar: "arab", ru: "cyrl", ja: "jpan", ko: "kore" };
 
 // Umgangssprache → einheitliche Begriffe (content/lina-synonyms.json), auf Frage UND FAQ-Texte angewendet
 export function makeCanon(rules, norm) {
@@ -29,7 +33,7 @@ export function makeCanon(rules, norm) {
 }
 export function makeLina(AI, LANGS, site, SYN = {}) {
   const per = LANGS.languages.map((l) => {
-    const data = merge(AI[LANGS.default], AI[l.code]);
+    const data = merge(l.code === LANGS.default ? AI[LANGS.default] : merge(AI[LANGS.default], AI.en), AI[l.code]);
     const norm = mkNorm(l.locale);
     // Wortschatz nur aus den eigenen Texten der Sprache (nicht aus dem Rückgriff auf die Standardsprache)
     const own = AI[l.code] || {};
