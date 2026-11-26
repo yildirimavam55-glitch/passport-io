@@ -21,6 +21,10 @@
   const REF_ST = { open: "Bekliyor", approved: "Onaylandı", rejected: "Reddedildi" };
   const SUP_ST = { open: "Açık", answered: "Yanıtlandı", closed: "Kapatıldı" };
   const stClass = (s) => (["paid", "fulfilled", "active", "approved", "answered", "closed"].includes(s) ? "ok" : ["pending", "ready", "installed", "open"].includes(s) ? "warn" : ["failed", "cancelled", "expired", "depleted", "rejected", "refunded"].includes(s) ? "bad" : "");
+  // Ürün anahtarını okunur yap: country:de → Almanya, region:eu → Avrupa, global → Global
+  const itemName = (key) => { const [type, id] = String(key || "").split(":"); if (type === "country" && id) { try { return new Intl.DisplayNames(["tr"], { type: "region" }).of(id.toUpperCase()); } catch (_) { return id; } } if (type === "global") return "Global"; return ({ eu: "Avrupa", europe: "Avrupa", asia: "Asya", na: "Kuzey Amerika", me: "Orta Doğu", latam: "Latin Amerika", af: "Afrika", africa: "Afrika" })[id] || key || "–"; };
+  const planTitle = (t) => String(t || "").replace(/· (\d+)$/, "· $1 gün");
+  const product = (key, title) => `<b>${esc(itemName(key))}</b>${title ? ` · ${esc(planTitle(title))}` : ""}`;
   const badge = (s, map) => `<span class="pl-badge ${stClass(s)}">${esc(map[s] || s)}</span>`;
 
   let cfg = null;
@@ -130,6 +134,11 @@
           ${body}
         </main>
       </div>`;
+    // Spaltennamen an jede Zelle hängen – am Handy werden Tabellen zu Karten (siehe panel.css)
+    app.querySelectorAll(".pl-table-wrap table").forEach((tb) => {
+      const heads = [...tb.querySelectorAll("thead th")].map((th) => th.textContent.trim());
+      tb.querySelectorAll("tbody tr").forEach((tr) => [...tr.children].forEach((td, i) => { if (heads[i] && !td.hasAttribute("colspan")) td.dataset.label = heads[i]; }));
+    });
   }
   const loading = (title) => shell(title, `<p class="pl-loading">Yükleniyor …</p>`);
   const table = (head, rows, empty) => `<div class="pl-table-wrap"><table><thead><tr>${head.map((h) => `<th${h.startsWith("#") ? ' class="num"' : ""}>${esc(h.replace(/^#/, ""))}</th>`).join("")}</tr></thead><tbody>${rows.join("") || `<tr><td colspan="${head.length}" class="pl-empty">${esc(empty)}</td></tr>`}</tbody></table></div>`;
@@ -211,7 +220,6 @@
         <div class="pl-kpi__meta">${delta(v.revenue || 0, prev?.revenue || 0)}<span>${esc(prevLabel)}</span></div>
         <div class="pl-kpi__meta"><span>${v.orders || 0} sipariş</span></div>${spark(sp)}</div>`;
     const top = d.topItems || [], topMax = Math.max(1, ...top.map((t) => t.revenue));
-    const itemName = (key) => { const [type, id] = String(key).split(":"); if (type === "country") { try { return new Intl.DisplayNames(["tr"], { type: "region" }).of(id.toUpperCase()); } catch (_) { return id; } } return ({ eu: "Avrupa", asia: "Asya", na: "Kuzey Amerika", me: "Orta Doğu", latam: "Latin Amerika", af: "Afrika" })[id] || key; };
     shell("Genel bakış", `
       <div class="pl-grid">
         ${card("Bugün", k.today || {}, k.yesterday, "dün ile karşılaştırma", last(7), true)}
@@ -259,7 +267,7 @@
   }
 
   function ordersTable(list, editable = true) {
-    return table(["Tarih", "Müşteri", "Ürün", "#Tutar", "Durum"], list.map((o) => `<tr><td>${esc(date(o.created_at))}</td><td>${esc(o.email || o.customer_email || "–")}</td><td>${esc(o.item_key)} · ${esc(o.title || "")}${o.test ? ' <span class="pl-badge warn">Test</span>' : ""}</td>
+    return table(["Tarih", "Müşteri", "Ürün", "#Tutar", "Durum"], list.map((o) => `<tr><td>${esc(date(o.created_at))}</td><td>${esc(o.email || o.customer_email || "–")}</td><td>${product(o.item_key, o.title)}${o.test ? ' <span class="pl-badge warn">Test</span>' : ""}</td>
         <td class="num">${esc(money(o.amount, o.currency))}</td>
         <td>${editable ? `<select data-order="${esc(o.id)}">${Object.entries(ORDER_ST).map(([k, l]) => `<option value="${k}" ${k === o.status ? "selected" : ""}>${l}</option>`).join("")}</select>${o.status === "paid" ? ` <button class="pl-btn pl-btn--green" data-fulfill="${esc(o.id)}" title="Sağlayıcıdan eSIM satın alır ve müşteriye teslim eder">eSIM teslim et</button>` : ""}` : badge(o.status, ORDER_ST)}</td></tr>`), "Henüz sipariş yok.");
   }
@@ -287,7 +295,7 @@
         <div class="pl-card pl-kpi"><span>Ödeme kaydı</span><b>${d.payments.length}</b></div>
       </div>
       <div class="pl-tools"><button class="pl-btn pl-btn--line" data-csv="payments">CSV indir (muhasebe)</button></div>
-      <div class="pl-card">${table(["Tarih", "Müşteri", "Ürün", "#Tutar", "#İade", "Sağlayıcı", "Ödeme no", "Durum"], d.payments.map((p) => `<tr><td>${esc(date(p.paid_at || p.created_at))}</td><td>${esc(p.customer_email || "–")}</td><td>${esc(p.item_key)} · ${esc(p.title || "")}${p.test ? ' <span class="pl-badge warn">Test</span>' : ""}</td><td class="num">${esc(money(p.amount, p.currency))}</td><td class="num">${p.refunded_amount ? esc(money(p.refunded_amount, p.currency)) : "–"}</td><td>${esc(p.payment_provider || "–")}</td><td><span class="mono">${esc(p.payment_ref || "–")}</span></td><td>${badge(p.status, ORDER_ST)}</td></tr>`), "Henüz ödeme yok. Ödeme sağlayıcısı bağlandığında ödemeler burada görünür.")}</div>`);
+      <div class="pl-card">${table(["Tarih", "Müşteri", "Ürün", "#Tutar", "#İade", "Sağlayıcı", "Ödeme no", "Durum"], d.payments.map((p) => `<tr><td>${esc(date(p.paid_at || p.created_at))}</td><td>${esc(p.customer_email || "–")}</td><td>${product(p.item_key, p.title)}${p.test ? ' <span class="pl-badge warn">Test</span>' : ""}</td><td class="num">${esc(money(p.amount, p.currency))}</td><td class="num">${p.refunded_amount ? esc(money(p.refunded_amount, p.currency)) : "–"}</td><td>${esc(p.payment_provider || "–")}</td><td><span class="mono">${esc(p.payment_ref || "–")}</span></td><td>${badge(p.status, ORDER_ST)}</td></tr>`), "Henüz ödeme yok. Ödeme sağlayıcısı bağlandığında ödemeler burada görünür.")}</div>`);
     lastCsv = { name: "odemeler", rows: d.payments.map((p) => ({ tarih: p.paid_at || p.created_at, musteri: p.customer_email, urun: p.item_key, tutar: p.amount, iade: p.refunded_amount, para: p.currency, saglayici: p.payment_provider, odeme_no: p.payment_ref, durum: ORDER_ST[p.status], test: p.test ? "evet" : "" })) };
   }
 
@@ -367,11 +375,11 @@
           <p class="pl-help" style="margin-top:10px">Her satırda bir fiyat: <b>ürün;gb;gün;fiyat;para;rakip;link</b> – ör. <span class="mono">country:jp;5;30;9.50;USD;Nomad;https://…</span></p>
           <form data-import style="display:grid;gap:10px"><label class="pl-field">Veri<textarea name="csv" placeholder="country:jp;5;30;9.50;USD;Nomad;https://..."></textarea></label><button class="pl-btn pl-btn--line" type="submit" style="justify-self:start">İçe aktar</button></form>
         </details>
-        ${table(["Ürün", "#GB", "#Gün", "#Fiyat", "Rakip", "Kontrol", ""], d.competitors.map((c) => `<tr><td>${esc(c.item_key)}</td><td class="num">${esc(c.gb == null ? "tümü" : Number(c.gb) === 0 ? "Sınırsız" : c.gb)}</td><td class="num">${esc(c.days ?? "tümü")}</td><td class="num">${esc(money(c.price, c.currency))}</td><td>${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.competitor)}</a>` : esc(c.competitor)}</td><td>${esc(date(c.checked_at))}</td><td><button class="pl-btn pl-btn--red pl-btn--sm" data-del="${esc(c.id)}">Sil</button></td></tr>`), "Henüz rakip fiyatı yok – alış × çarpan uygulanır.")}
+        ${table(["Ürün", "#GB", "#Gün", "#Fiyat", "Rakip", "Kontrol", ""], d.competitors.map((c) => `<tr><td>${esc(itemName(c.item_key))} <span class="pl-note">${esc(c.item_key)}</span></td><td class="num">${esc(c.gb == null ? "tümü" : Number(c.gb) === 0 ? "Sınırsız" : c.gb)}</td><td class="num">${esc(c.days ?? "tümü")}</td><td class="num">${esc(money(c.price, c.currency))}</td><td>${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.competitor)}</a>` : esc(c.competitor)}</td><td>${esc(date(c.checked_at))}</td><td><button class="pl-btn pl-btn--red pl-btn--sm" data-del="${esc(c.id)}">Sil</button></td></tr>`), "Henüz rakip fiyatı yok – alış × çarpan uygulanır.")}
       </div>
       <div class="pl-card"><h2>Satış fiyatı önizlemesi <small>${p.source === "mock" ? "test verilerine göre" : "sağlayıcı alış fiyatlarına göre"} · ${esc(p.currency)}</small></h2>
         <div class="pl-tools"><label class="pl-field">Filtre<input data-pfilter placeholder="ör. country:jp"></label></div>
-        ${table(["Ürün", "Tarife", "#Alış", "Rakip", "#Satış fiyatı", "#Marj", "Kural"], p.rows.map((r) => { const m = r.cost ? Math.round(((r.price - r.cost) / r.price) * 100) : null; return `<tr data-prow="${esc(r.key)}"><td>${esc(r.key)}</td><td>${r.unlimited ? `Sınırsız · ${esc(r.days)} gün` : r.gb ? `${esc(r.gb)} GB · ${esc(r.days)} gün` : esc(r.name || r.id)}</td><td class="num">${esc(money(r.cost, p.currency))}</td><td>${esc(r.competitor || "–")}</td><td class="num"><b>${esc(money(r.price, p.currency))}</b></td><td class="num">${m != null ? "%" + m : "–"}</td><td><span class="pl-badge ${String(r.rule).startsWith("competitor") ? "ok" : ""}">${esc(ruleLabel(r.rule))}</span></td></tr>`; }), "Önizleme yok.")}
+        ${table(["Ürün", "Tarife", "#Alış", "Rakip", "#Satış fiyatı", "#Marj", "Kural"], p.rows.map((r) => { const m = r.cost ? Math.round(((r.price - r.cost) / r.price) * 100) : null; return `<tr data-prow="${esc(r.key)}"><td>${esc(itemName(r.key))}</td><td>${r.unlimited ? `Sınırsız · ${esc(r.days)} gün` : r.gb ? `${esc(r.gb)} GB · ${esc(r.days)} gün` : esc(r.name || r.id)}</td><td class="num">${esc(money(r.cost, p.currency))}</td><td>${esc(r.competitor || "–")}</td><td class="num"><b>${esc(money(r.price, p.currency))}</b></td><td class="num">${m != null ? "%" + m : "–"}</td><td><span class="pl-badge ${String(r.rule).startsWith("competitor") ? "ok" : ""}">${esc(ruleLabel(r.rule))}</span></td></tr>`; }), "Önizleme yok.")}
       </div>`);
   }
 

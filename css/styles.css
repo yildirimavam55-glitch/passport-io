@@ -52,7 +52,7 @@ p { margin: 0; }
 .kicker--dark { color: var(--green-ink); }
 .h2 { font-size: clamp(32px, 4.4vw, 54px); font-weight: 700; letter-spacing: -.03em; }
 .h3 { font-size: clamp(24px, 2.4vw, 30px); font-weight: 700; }
-.lead { font-size: 19px; color: var(--ink-2); margin-top: 18px; max-width: 560px; }
+.lead { font-size: 20px; color: var(--ink-2); margin-top: 18px; max-width: 560px; }
 
 /* ---------- Buttons ---------- */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 50px; padding: 0 24px; border-radius: 999px; font-weight: 600; font-size: 16px; white-space: nowrap; transition: background .2s, color .2s, transform .15s; }
@@ -83,12 +83,12 @@ p { margin: 0; }
 .nav--over { position: fixed; left: 0; right: 0; background: transparent; }
 .nav--over.is-scrolled, .nav.is-open { background: rgba(10, 13, 12, .92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
 .nav__inner { display: flex; align-items: center; gap: 36px; height: 68px; }
-.logo { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 21px; letter-spacing: -.03em; }
+.logo { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 22px; letter-spacing: -.03em; }
 .logo__mark { width: 26px; height: 26px; color: var(--green); }
 .logo em { font-style: normal; color: var(--green); }
 .nav__links { display: flex; gap: 28px; margin-right: auto; font-size: 15px; color: rgba(255,255,255,.78); }
 .nav__links a:hover { color: #fff; }
-.nav__links small { font-size: 11px; font-weight: 600; color: var(--green); margin-left: 3px; }
+.nav__links small { font-size: 12px; font-weight: 700; color: var(--green); margin-left: 3px; }
 .nav__actions { display: flex; align-items: center; gap: 18px; font-size: 15px; }
 .nav__locale { color: rgba(255,255,255,.7); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; padding: 8px 4px; }
 .nav__locale svg { width: 17px; height: 17px; flex: none; }
@@ -202,7 +202,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .dest:hover .dest__more, .dest:focus-visible .dest__more, .dest.is-open .dest__more { max-height: 220px; opacity: 1; transform: none; transition: max-height .55s var(--ease), opacity .4s .12s, transform .45s var(--ease) .08s; }
 .dest__plan { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.2); font-size: 15px; color: rgba(255,255,255,.85); }
 .dest__plan b { color: #fff; }
-.dest__plan em { font-style: normal; font-size: 11px; font-weight: 700; background: var(--green); color: var(--dark); padding: 2px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 1px; }
+.dest__plan em { font-style: normal; font-size: 12px; font-weight: 700; background: var(--green); color: var(--dark); padding: 2px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 1px; }
 .dest__feat { font-size: 13px; color: rgba(255,255,255,.65); margin-top: 4px; }
 .dest__cta { margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; background: var(--green); color: var(--dark); font-weight: 600; font-size: 14px; padding: 10px 16px; border-radius: 999px; white-space: nowrap; }
 .dest__cta svg { width: 16px; height: 16px; }
@@ -249,7 +249,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .gpick b { font-size: 22px; letter-spacing: -.02em; }
 .gpick span { font-size: 13px; color: rgba(255,255,255,.65); }
 .gpick strong { margin-top: 8px; font-size: 16px; }
-.gpick__badge { position: absolute !important; top: -10px; left: 12px; font-size: 10px !important; font-weight: 700; background: var(--green); color: var(--dark) !important; padding: 2px 8px; border-radius: 999px; }
+.gpick__badge { position: absolute !important; top: -10px; left: 12px; font-size: 12px !important; font-weight: 700; background: var(--green); color: var(--dark) !important; padding: 2px 8px; border-radius: 999px; }
 .rtab--global .rtab__name { color: var(--ink); }
 /* ---------- eSIM erklärt ---------- */
 .how { display: grid; grid-template-columns: .85fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; max-width: 1100px; }
@@ -278,7 +278,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .ticks li { display: flex; align-items: center; gap: 10px; }
 .ticks svg { color: var(--green); width: 18px; height: 18px; }
 .airport__foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.16); font-size: 15px; color: rgba(255,255,255,.7); flex-wrap: wrap; }
-.airport__foot b { color: #fff; font-size: 21px; }
+.airport__foot b { color: #fff; font-size: 22px; }
 .airport-search { margin-top: 12px; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px; background: var(--dark-2); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-lg); padding: 14px; }
 .airport-search__field { flex: 1 1 200px; display: flex; flex-direction: column; gap: 6px; }
 .airport-search__field--sm { flex: 0 1 110px; }
@@ -428,7 +428,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .post:hover .post__img img { transform: scale(1.04); }
 .post__meta { font-size: 14px; color: var(--ink-3); }
 .post__meta b { color: var(--green-ink); font-weight: 600; }
-.post h3 { font-size: 19px; line-height: 1.3; letter-spacing: -.015em; text-wrap: balance; }
+.post h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.015em; text-wrap: balance; }
 .post p { color: var(--ink-2); font-size: 16px; max-width: 60ch; }
 .post:hover h3 { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
 .post--lead { grid-row: span 4; }
@@ -448,7 +448,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .cta__form input { flex: 1; min-width: 0; height: 50px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); background: var(--dark-3); color: #fff; padding: 0 20px; outline: 0; }
 .cta__form input:focus { border-color: var(--green); }
 .cta__form { position: relative; }
-.cta__consent { margin: 10px 0 0; max-width: 480px; font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.55); }
+.cta__consent { margin: 10px 0 0; max-width: 480px; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.55); }
 .cta__ok { color: var(--green); font-weight: 600; }
 
 /* ---------- Footer ---------- */
@@ -500,7 +500,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .plan__info[aria-expanded="true"] svg { transform: rotate(90deg); }
 .plan-row:has(.plan__info[aria-expanded="true"]) .plan { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 /* Aufgeklappte Details */
-.plan-det { margin-top: -1.5px; padding: 12px 16px 14px; border: 1.5px solid var(--line); border-top: 0; border-radius: 0 0 12px 12px; background: var(--paper); font-size: 13.5px; animation: fade .2s; }
+.plan-det { margin-top: -1.5px; padding: 12px 16px 14px; border: 1.5px solid var(--line); border-top: 0; border-radius: 0 0 12px 12px; background: var(--paper); font-size: 14px; animation: fade .2s; }
 .plan-det[hidden] { display: none; }
 .plan-det__list { display: grid; gap: 8px; margin: 0; }
 .plan-det__list > div { display: grid; grid-template-columns: minmax(96px, 34%) minmax(0, 1fr); gap: 10px; align-items: baseline; }
@@ -509,12 +509,12 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .plan-det__none { margin: 6px 0 0; color: var(--ink-3); }
 .plan__days { white-space: nowrap; }
 /* Rabattcode im Paketfenster */
-.plan-coupon { margin-top: 12px; font-size: 13.5px; }
+.plan-coupon { margin-top: 12px; font-size: 14px; }
 .plan-coupon summary { cursor: pointer; color: var(--ink-3); font-weight: 600; width: max-content; }
 .plan-coupon input { margin-top: 8px; width: 100%; height: 42px; padding: 0 14px; border-radius: 10px; border: 1.5px solid var(--line); background: transparent; color: inherit; text-transform: uppercase; font: inherit; letter-spacing: .04em; outline: 0; }
 .plan-coupon input:focus { border-color: var(--green); }
 /* Info-Kasten oben im Paketfenster: Netze + Geschwindigkeitsregel (einmal für alle Tarife des Reiters) */
-.plan-info { margin: 0 0 12px; padding: 10px 14px; border-radius: 12px; background: var(--paper); border: 1px solid var(--line); font-size: 13.5px; }
+.plan-info { margin: 0 0 12px; padding: 10px 14px; border-radius: 12px; background: var(--paper); border: 1px solid var(--line); font-size: 14px; }
 .plan-info[hidden] { display: none; }
 .plan-info dl { display: grid; gap: 6px; margin: 0; }
 .plan-info dl > div { display: grid; grid-template-columns: minmax(84px, 30%) minmax(0, 1fr); gap: 10px; align-items: baseline; }
@@ -523,14 +523,14 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 @media (max-width: 420px) { .plan-info dl > div { grid-template-columns: minmax(0, 1fr); gap: 0; } }
 /* Kurzinfo unter dem Tarif (Netze, Technik, Drosselung) – eigene Zeile */
 .plan { flex-wrap: wrap; row-gap: 4px; }
-.plan__sum { order: 10; flex: 1 0 100%; font-size: 12.5px; line-height: 1.35; color: var(--ink-3); font-weight: 500; }
+.plan__sum { order: 10; flex: 1 0 100%; font-size: 13px; line-height: 1.35; color: var(--ink-3); font-weight: 500; }
 .plan__sum:empty { display: none; }
 .plan--unl .plan__sum { color: var(--green-ink); }
 @media (max-width: 480px) {
   .plan { gap: 8px; padding: 12px 10px 12px 14px; }
   .plan__gb { min-width: 0; font-size: 16px; }
   .plan { position: relative; }
-  .plan__pop { position: absolute; top: -9px; left: 12px; padding: 2px 8px; font-size: 10px; line-height: 1.4; }
+  .plan__pop { position: absolute; top: -9px; left: 12px; padding: 2px 8px; font-size: 12px; line-height: 1.4; }
   .plan-row + .plan-row { margin-top: 2px; }
   .plan__price { white-space: nowrap; }
   .plan__info { margin: -4px -4px -4px 0; width: 28px; height: 28px; }
@@ -553,7 +553,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .plan:focus-within { box-shadow: 0 0 0 4px rgba(46,245,138,.25); }
 .plan__gb { font-weight: 700; font-size: 17px; min-width: 60px; }
 .plan__days { color: var(--ink-3); font-size: 14px; }
-.plan__pop { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; background: var(--green); color: var(--dark); }
+.plan__pop { font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 999px; background: var(--green); color: var(--dark); }
 .plan__price { margin-left: auto; font-weight: 700; }
 .plan-note { text-align: center; font-size: 13px; color: var(--ink-3); margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 6px; }
 @keyframes fade { from { opacity: 0; } }
@@ -691,7 +691,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .guide-steps[hidden] { display: none; }
 .gstep { display: flex; flex-direction: column; gap: 20px; }
 .gstep__n { font-size: 13px; font-weight: 600; color: var(--green-ink); text-transform: uppercase; letter-spacing: .08em; }
-.gstep h3 { font-size: 21px; margin: 6px 0 6px; }
+.gstep h3 { font-size: 22px; margin: 6px 0 6px; }
 .gstep__text { color: var(--ink-2); font-size: 15px; }
 .gstep__text p + p { margin-top: 8px; }
 .gstep__tip { display: flex; gap: 10px; margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: #fff7dd; color: #5e4800; font-size: 14px; }
@@ -831,7 +831,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 /* Preise aus der Schnittstelle */
 .price--na { font-style: italic; opacity: .75; font-weight: 500; }
 .preview-bar { background: #fff3c4; color: #4a3a00; font-size: 13px; font-weight: 600; text-align: center; padding: 7px 16px; }
-.demo-tag { display: inline-block; margin-left: 6px; font-size: 11px; font-weight: 700; background: #fff3c4; color: #4a3a00; padding: 2px 8px; border-radius: 999px; vertical-align: 1px; }
+.demo-tag { display: inline-block; margin-left: 6px; font-size: 12px; font-weight: 700; background: #fff3c4; color: #4a3a00; padding: 2px 8px; border-radius: 999px; vertical-align: 1px; }
 .price__skel { display: inline-block; width: 2.6em; height: .8em; border-radius: 6px; background: currentColor; opacity: .25; vertical-align: middle; animation: skel 1.2s ease-in-out infinite; }
 .price--inline.price--na { font-style: normal; opacity: 1; }
 @keyframes skel { 50% { opacity: .1; } }
@@ -848,7 +848,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
   .faq__a > div > div { max-width: 68ch; }
   .head-split__note, .lead { font-size: 18px; }
   .h2 { font-size: clamp(36px, 3.6vw, 50px); }
-  .kicker { font-size: 13.5px; }
+  .kicker { font-size: 14px; }
   .footer__grid > div:not(.footer__brand) a, .footer__brand p { font-size: 15px; }
 }
 @media (max-width: 640px) {
@@ -907,7 +907,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
   .section, #howto.section, #airport.section, #blog.section { padding: 52px 0; }
   .section--tight { padding: 40px 0; }
   .head-split, #airport .head-split, #blog .head-split { margin-bottom: 22px; gap: 10px; }
-  .h2, #airport .h2, .how .h2 { font-size: 29px; line-height: 1.1; }
+  .h2, #airport .h2, .how .h2 { font-size: 28px; line-height: 1.1; }
   .kicker { font-size: 12px; margin-bottom: 10px; }
   .head-split__note, .lead, .how .lead { font-size: 15px; line-height: 1.5; margin-top: 0; }
   .how .lead { margin-top: 10px; }
@@ -942,10 +942,10 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
   .airport::-webkit-scrollbar { display: none; }
   .airport__card { flex: 0 0 86%; min-height: 420px; scroll-snap-align: center; }
   .airport__body { padding: 20px; }
-  .airport__body h3 { font-size: 23px; }
+  .airport__body h3 { font-size: 24px; }
   .airport__body > p { font-size: 14px; }
   .ticks { font-size: 13px; gap: 4px; flex-direction: column; }
-  .airport__foot b { font-size: 19px; }
+  .airport__foot b { font-size: 20px; }
   .airport-search { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px; }
   .airport-search > :first-child, .airport-search__toggle, .airport-search > .btn { grid-column: 1 / -1; }
   .airport-search input[type="date"] { min-width: 0; width: 100%; }
@@ -1055,7 +1055,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
   .strip__label { font-size: 15px; white-space: nowrap; }
   .strip__price { margin-top: 2px; font-size: 13px; white-space: nowrap; }
   a.strip__item::after { display: none; }
-  .preview-bar { font-size: 11px; padding: 5px 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .preview-bar { font-size: 12px; padding: 5px 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 }
 
 /* ---------- eSIM in 3 Schritten: Karten mit Handy-Bild ---------- */
@@ -1175,7 +1175,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 }
 @media (max-width: 640px) {
   .airport__card { height: 400px; }
-  .airport__body h3 { font-size: 23px; }
+  .airport__body h3 { font-size: 24px; }
   .airport__text { font-size: 14px; }
 }
 
@@ -1198,7 +1198,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .art__body { margin-top: 36px; font-size: 18px; line-height: 1.7; color: var(--ink-2); }
 .art__body > * + * { margin-top: 18px; }
 .art__body h2 { margin-top: 44px; font-size: clamp(24px, 2.6vw, 30px); color: var(--ink); letter-spacing: -.02em; line-height: 1.2; }
-.art__body h3 { margin-top: 30px; font-size: 21px; color: var(--ink); }
+.art__body h3 { margin-top: 30px; font-size: 22px; color: var(--ink); }
 .art__body b { color: var(--ink); }
 .art__body ul, .art__body ol { padding-inline-start: 22px; }
 .art__body li + li { margin-top: 8px; }
@@ -1271,12 +1271,12 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .acct-dash { max-width: 1040px; margin: 0 auto; }
 .acct-dash__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; flex-wrap: wrap; margin-bottom: 26px; }
 .acct-tabs { margin-bottom: 22px; }
-.acct-tabs small { display: inline-grid; place-items: center; min-width: 20px; height: 20px; margin-inline-start: 4px; padding: 0 6px; border-radius: 99px; background: var(--green); color: #0a0d0c; font-size: 11px; font-weight: 700; }
+.acct-tabs small { display: inline-grid; place-items: center; min-width: 20px; height: 20px; margin-inline-start: 4px; padding: 0 6px; border-radius: 99px; background: var(--green); color: #0a0d0c; font-size: 12px; font-weight: 700; }
 .esim-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .esim { padding: 22px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: 16px; }
 .esim__head { display: flex; align-items: center; gap: 12px; }
 .esim__head > div { flex: 1; min-width: 0; }
-.esim__head h3 { font-size: 19px; }
+.esim__head h3 { font-size: 20px; }
 .esim__head p { font-size: 14px; color: var(--ink-3); }
 .esim__flag { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; box-shadow: 0 0 0 1px var(--line); }
 .esim__flag--globe { display: grid; place-items: center; background: var(--paper); color: var(--green-ink); }
@@ -1307,7 +1307,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .order__right { text-align: end; }
 .order__st--fulfilled, .order__st--paid { color: var(--green-ink) !important; font-weight: 600; }
 .acct-panel { padding: 24px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); margin-top: 0; margin-bottom: 16px; max-width: 640px; }
-.acct-panel h3 { font-size: 19px; }
+.acct-panel h3 { font-size: 20px; }
 .acct-field textarea { width: 100%; padding: 12px 16px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; font-size: 16px; outline: 0; resize: vertical; }
 .acct-field textarea:focus { border-color: var(--ink); box-shadow: 0 0 0 4px rgba(46,245,138,.22); }
 .order--wrap { flex-wrap: wrap; }
@@ -1554,3 +1554,18 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
   .cart-btn { width: 32px; height: 32px; }
   .cart-btn svg { width: 17px; height: 17px; }
 }
+
+/* ---------- Design-Feinschliff (Audit 11/2026) ---------- */
+/* Größere Tippflächen ohne sichtbare Änderung: unsichtbarer Rand um die runden Kopf-Knöpfe (mind. 44 px) */
+.theme-btn, .cart-btn, .nav__burger { position: relative; }
+.theme-btn::before, .cart-btn::before, .nav__burger::before { content: ""; position: absolute; inset: -6px; border-radius: inherit; }
+.faq__hot { font-weight: 700; }
+@media (max-width: 640px) {
+  /* Fließtext am Handy mindestens 15 px, kleine Merkmale 14 px */
+  .airport__text, .persona__intro, .qband__title, .lead { font-size: 15px; }
+  .dest__feat, .ticks li, .rail-foot__hint { font-size: 14px; }
+}
+/* Fehlendes Foto: ruhiger Farbverlauf statt Bildtext oben links */
+img.is-broken { visibility: hidden; }
+/* Kopfzeile am Handy: mit Warenkorb-Knopf wurde es bei 375–420 px zu eng (Menüknopf ragte rechts heraus) */
+@media (max-width: 420px) { .nav__actions { gap: 6px; } .nav__inner { gap: 8px; } }

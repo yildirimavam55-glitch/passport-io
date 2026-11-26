@@ -162,7 +162,7 @@
       "steps": [
         {
           "title": "Paketini seç",
-          "text": "Destinasyonunu ara, veri miktarını seç; Apple Pay, PayPal veya kartla öde."
+          "text": "Destinasyonunu ara, veri miktarını seç; kartla, Apple Pay veya Google Pay ile öde."
         },
         {
           "title": "QR kodu tara",
@@ -313,9 +313,7 @@
         "applepay",
         "googlepay",
         "visa",
-        "mastercard",
-        "paypal",
-        "klarna"
+        "mastercard"
       ],
       "legal": [
         {
@@ -440,7 +438,7 @@
       "steps": [
         {
           "title": "Choose a plan",
-          "text": "Search your destination, pick your data volume and pay with Apple Pay, PayPal or card."
+          "text": "Search your destination, pick your data volume and pay by card, Apple Pay or Google Pay."
         },
         {
           "title": "Scan the QR code",
@@ -685,7 +683,7 @@
       "steps": [
         {
           "title": "Paket wählen",
-          "text": "Reiseziel suchen, Datenvolumen wählen, mit Apple Pay, PayPal oder Karte bezahlen."
+          "text": "Reiseziel suchen, Datenvolumen wählen, mit Karte, Apple Pay oder Google Pay bezahlen."
         },
         {
           "title": "QR-Code scannen",
@@ -930,7 +928,7 @@
       "steps": [
         {
           "title": "اختر الباقة",
-          "text": "ابحث عن وجهتك، واختر حجم البيانات، وادفع عبر Apple Pay أو PayPal أو البطاقة."
+          "text": "ابحث عن وجهتك، واختر حجم البيانات، وادفع بالبطاقة أو عبر Apple Pay أو Google Pay."
         },
         {
           "title": "امسح رمز QR",
@@ -1175,7 +1173,7 @@
       "steps": [
         {
           "title": "Выберите тариф",
-          "text": "Найдите направление, выберите объём данных и оплатите через Apple Pay, PayPal или картой."
+          "text": "Найдите направление, выберите объём данных и оплатите картой, через Apple Pay или Google Pay."
         },
         {
           "title": "Отсканируйте QR-код",
@@ -1420,7 +1418,7 @@
       "steps": [
         {
           "title": "Choisissez un forfait",
-          "text": "Recherchez votre destination, choisissez le volume de données et payez par Apple Pay, PayPal ou carte."
+          "text": "Recherchez votre destination, choisissez le volume de données et payez par carte, Apple Pay ou Google Pay."
         },
         {
           "title": "Scannez le QR code",
@@ -1665,7 +1663,7 @@
       "steps": [
         {
           "title": "Elige un plan",
-          "text": "Busca tu destino, elige el volumen de datos y paga con Apple Pay, PayPal o tarjeta."
+          "text": "Busca tu destino, elige el volumen de datos y paga con tarjeta, Apple Pay o Google Pay."
         },
         {
           "title": "Escanea el código QR",

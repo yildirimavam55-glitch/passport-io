@@ -8,6 +8,8 @@
   // Schutz vor Clickjacking: Die Seite darf nicht in fremden Rahmen (iframes) laufen.
   // (GitHub Pages erlaubt keine eigenen Sicherheits-Header wie X-Frame-Options.)
   if (window.top !== window.self) { try { window.top.location = window.self.location.href; } catch (_) { document.documentElement.innerHTML = ""; } return; }
+  // Bild lädt nicht (z. B. Platzhalter weg): Bild ausblenden, statt Alt-Text oben links in der Karte zu zeigen
+  document.addEventListener("error", (e) => { if (e.target?.tagName === "IMG") e.target.classList.add("is-broken"); }, true);
 
   /* ---------------- Sprache & Inhalte laden ----------------
      Jede Datei in content/ enthält alle Sprachen: { "tr": {...}, "en": {...}, "de": {...} }.
