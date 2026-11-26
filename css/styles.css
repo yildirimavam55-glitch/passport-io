@@ -614,6 +614,11 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
   .assistant__team { display: none; }
   .blog { grid-template-columns: 1fr; }
   .cta__form { flex-direction: column; }
+  .cta__form input { flex: none; } /* sonst fällt das E-Mail-Feld in der Spalte auf ~20 px zusammen */
+  /* Fußzeilen-Links: größere Tippfläche am Handy */
+  .footer__grid > div:not(.footer__brand) { gap: 0; }
+  .footer__grid > div:not(.footer__brand) a, .footer__bottom nav a { padding: 10px 0; }
+  .footer__bottom nav { gap: 0 20px; }
   .nav__login { display: none; }
   .modal__panel { padding: 24px; }
   .modal__hero { margin: -24px -24px 20px; }
