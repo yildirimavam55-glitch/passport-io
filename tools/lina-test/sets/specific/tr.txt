@@ -1,0 +1,715 @@
+## Spezifische Kundenfragen (tr) – aus Vorlagen erzeugt (simple-src/gen_specific.py), 714 Fragen
+iphone 16 pro dolaşım aç esim | data-roaming
+pixel 8 dolaşım aç esim | data-roaming
+redmi note 13 dolaşım açma esim | data-roaming
+veri dolaşımını açmalı mıyım ispanyada | data-roaming
+xiaomi veri dolaşımı nasıl açılır | data-roaming
+iphone dolaşım aç esim | data-roaming
+samsung dolaşım aç esim | data-roaming
+iphone 15 dolaşım aç esim | data-roaming
+veri dolaşımını açmam lazım mı mısırda | data-roaming
+veri dolaşımını açmam lazım mı ispanyada | data-roaming
+galaxy a54 veri dolaşımı nerede | data-roaming
+pixel 8 veri dolaşımı nerede | data-roaming
+redmi note 13 dolaşım aç esim | data-roaming
+iphone veri dolaşımı nerede | data-roaming
+xiaomi dolaşım açma esim | data-roaming
+veri dolaşımını açmalı mıyım dubaide | data-roaming
+veri dolaşımını açmalı mıyım türkiyede | data-roaming
+iphone 15 esimi mobil veri hattı yapmak | data-line,line-on
+samsung hala türk hattımı internet için kullanıyor | data-line,line-on
+iphone esimi veri hattı yapmak | data-line,line-on
+mobil veriyi esime nasıl geçiririm pixel 8 | data-line,line-on
+galaxy a54 esimi mobil veri hattı yapmak | data-line,line-on
+iphone hala türk hattımı internet için kullanıyor | data-line,line-on
+mobil veriyi esime nasıl geçiririm iphone | data-line,line-on
+pixel 8 hala türk hattımı internet için kullanıyor | data-line,line-on
+galaxy a54 hala türk hattımı internet için kullanıyor | data-line,line-on
+mobil veriyi esime almak xiaomi | data-line,line-on
+mobil veriyi esime nasıl geçiririm redmi note 13 | data-line,line-on
+mobil veriyi esime nasıl geçiririm samsung | data-line,line-on
+mobil veriyi esime nasıl geçiririm galaxy a54 | data-line,line-on
+mobil veriyi esime almak samsung galaxy s24 | data-line,line-on
+samsung galaxy s24 hala türk hattımı internet için kullanıyor | data-line,line-on
+xiaomi hala normal hattımı internet için kullanıyor | data-line,line-on
+redmi note 13 hala türk hattımı internet için kullanıyor | data-line,line-on
+samsung galaxy s24 şebeke manuel seçmek | network-select
+samsung galaxy s24 şebeke seçimi | network-select
+esim operatör seçimi redmi note 13 | network-select
+redmi note 13 şebeke seçimi | network-select
+iphone şebeke seçimi | network-select
+esim operatör seçimi pixel 8 | network-select
+dubaide şebeke yok operatör değiştirmek | network-select
+esim operatör seçimi galaxy a54 | network-select
+samsung şebeke seçimi | network-select
+galaxy a54 şebeke seçimi | network-select
+ispanyada şebeke yok operatör değiştirmek | network-select
+xiaomi şebeke seçimi | network-select
+redmi note 13 şebeke manuel seçmek | network-select
+yunanistanda yanlış şebeke operatör değiştirmek | network-select
+esim operatör seçimi iphone | network-select
+esim operatör seçimi iphone 16 pro | network-select
+samsung şebeke manuel seçmek | network-select
+iphone 16 pro apn nasıl girilir | apn
+samsung galaxy s24 apn değiştirmek | apn
+galaxy a54 apn nasıl girilir | apn
+esim apn ayarları iphone 15 | apn
+redmi note 13 apn nasıl girilir | apn
+iphone 16 pro apn ayarı | apn
+galaxy a54 apn ayarı | apn
+esim apn ayarları galaxy a54 | apn
+esim apn ayarları samsung galaxy s24 | apn
+pixel 8 apn nasıl girilir | apn
+samsung apn nasıl girilir | apn
+yunanistanda için hangi apn | apn
+redmi note 13 apn ayarı | apn
+ispanyada için hangi apn | apn
+taylandda için hangi apn | apn
+iphone apn ayarı | apn
+esim apn ayarları iphone | apn
+pixel 8 ağ sıfırlama nasıl | reset-network
+ağ ayarlarını sıfırlamalı mıyım iphone | reset-network
+iphone ağ ayarlarını sıfırlamak | reset-network
+iphone 15 ağ ayarlarını sıfırlamak | reset-network
+ağ ayarlarını sıfırlamalı mıyım pixel 8 | reset-network
+ağ ayarlarını sıfırlamalı mıyım iphone 16 pro | reset-network
+iphone 15 ağ sıfırlama nasıl | reset-network
+iphone ağ sıfırlama nasıl | reset-network
+xiaomi ağ sıfırlama nasıl | reset-network
+galaxy a54 ağ ayarlarını sıfırlamak | reset-network
+redmi note 13 ağ ayarlarını sıfırlamak | reset-network
+ağ ayarlarını sıfırlamalı mıyım samsung galaxy s24 | reset-network
+iphone 16 pro ağ sıfırlama nasıl | reset-network
+xiaomi ağ ayarlarını sıfırlamak | reset-network
+ağ ayarlarını sıfırlamalı mıyım galaxy a54 | reset-network
+ag ayarlarini sifirlamali miyim | reset-network
+samsung galaxy s24 ag ayarlarini sifirlamak | reset-network
+pixel 8 esim ile hotspot açmak | hotspot-setup,hotspot
+galaxy a54 hotspot nasıl açılır | hotspot-setup,hotspot
+pixel 8 internet paylaşımı laptopa | hotspot-setup,hotspot
+samsung esim ile hotspot açmak | hotspot-setup,hotspot
+samsung galaxy s24 hotspot nasıl açılır | hotspot-setup,hotspot
+redmi note 13 internet paylaşımı tablete | hotspot-setup,hotspot
+samsung esim ile hotspot çalışmıyor | hotspot-setup,hotspot
+iphone internet paylaşımı tablete | hotspot-setup,hotspot
+iphone 15 hotspot kurulumu | hotspot-setup,hotspot
+galaxy a54 esim ile hotspot çalışmıyor | hotspot-setup,hotspot
+iphone esim ile hotspot çalışmıyor | hotspot-setup,hotspot
+xiaomi hotspot nasıl açılır | hotspot-setup,hotspot
+iphone 15 internet paylaşımı laptopa | hotspot-setup,hotspot
+iphone 16 pro internet paylaşımı tablete | hotspot-setup,hotspot
+samsung galaxy s24 esim ile hotspot çalışmıyor | hotspot-setup,hotspot
+iphone 16 pro internet paylaşımı laptopa | hotspot-setup,hotspot
+iphone 15 esim ile hotspot açmak | hotspot-setup,hotspot
+iphone 13 esim nasıl kurulur | install-iphone,install-esim
+iphone se esim nasıl kurulur | install-iphone,install-esim
+iphone se esim kurulumu | install-iphone,install-esim
+iphone hücresel plan ekle nasıl | install-iphone,install-esim
+iphone 16 esim nasıl kurulur | install-iphone,install-esim
+iphone 17 esim kurulumu | install-iphone,install-esim
+iphone qr kod okutma esim | install-iphone,install-esim
+iphone 15 esim nasıl kurulur | install-iphone,install-esim
+iphone 16 esim kurulumu | install-iphone,install-esim
+iphone 15 esim kurulumu | install-iphone,install-esim
+iphone 17 esim nasıl kurulur | install-iphone,install-esim
+iphone 13 esim kurulumu | install-iphone,install-esim
+iphone esim ekle nasıl | install-iphone,install-esim
+bir sorum var iphone se esim kurulumu | install-iphone,install-esim
+lina iphone se esim nasil kurulur? | install-iphone,install-esim
+lina iphone esim ekle nasil? | install-iphone,install-esim
+selam iphone 15 esim nasil kurulur lutfen | install-iphone,install-esim
+galaxy a55 esim kurulumu | install-android,install-esim
+samsung s25 esim nasıl kurulur | install-android,install-esim
+samsung esim ekleme nasıl | install-android,install-esim
+samsung galaxy s24 esim nasıl kurulur | install-android,install-esim
+pixel esim ekleme nasıl | install-android,install-esim
+samsung galaxy s24 esim kurulumu | install-android,install-esim
+xiaomi 14 esim kurulumu | install-android,install-esim
+xiaomi 14 esim nasıl kurulur | install-android,install-esim
+pixel 9 esim nasıl kurulur | install-android,install-esim
+samsung qr kod okutma | install-android,install-esim
+android esim ekleme nasil | install-android,install-esim
+xiaomi esim ekleme adımları | install-android,install-esim
+pixel 9 esim kurulumu | install-android,install-esim
+android qr kod okutma | install-android,install-esim
+samsung s25 esim kurulumu | install-android,install-esim
+xiaomi esim ekleme nasıl | install-android,install-esim
+samsung esim ekleme adimlari | install-android,install-esim
+galaxy a54 esim kapalı görünüyor | line-on,data-line
+samsung galaxy s24 esim hattını açmak | line-on,data-line
+iphone 15 esim kapalı görünüyor | line-on,data-line
+xiaomi esim hattını aktif etmek | line-on,data-line
+pixel 8 esim kapalı görünüyor | line-on,data-line
+xiaomi esim hattını açmak | line-on,data-line
+esim hattı kapalı galaxy a54 | line-on,data-line
+iphone 16 pro esim devre dışı görünüyor | line-on,data-line
+iphone esim kapalı görünüyor | line-on,data-line
+iphone esim devre dışı görünüyor | line-on,data-line
+esim hattı gri iphone 16 pro | line-on,data-line
+esim hattı kapalı samsung | line-on,data-line
+galaxy a54 esim devre dışı görünüyor | line-on,data-line
+esim hattı kapalı iphone 16 pro | line-on,data-line
+iphone 16 pro esim hattını aktif etmek | line-on,data-line
+esim hattı gri redmi note 13 | line-on,data-line
+redmi note 13 esim hattını açmak | line-on,data-line
+iphone 16 pro mısırda servis yok | no-service
+iphone 15 mısırda servis yok | no-service
+galaxy a54 amerikada servis yok | no-service
+iphone yunanistanda servis yok | no-service
+galaxy a54 italyada servis yok | no-service
+iphone 16 pro italyada servis yok | no-service
+iphone amerikada servis yok | no-service
+pixel 8 italyada servis yok | no-service
+xiaomi dubaide servis yok | no-service
+iphone 16 pro dubaide servis yok | no-service
+samsung dubaide servis yok | no-service
+samsung amerikada servis yok | no-service
+amerikada çekmiyor | no-service
+galaxy a54 dubaide servis yok | no-service
+hiç çekmiyor yunanistanda | no-service
+pixel 8 ispanyada servis yok | no-service
+iphone 16 pro yunanistanda servis yok | no-service
+türkiyede internet yok samsung galaxy s24 | no-internet
+ispanyada internet yok xiaomi | no-internet
+taylandda internet girmiyor galaxy a54 | no-internet
+çekiyor ama internet yok mısırda | no-internet
+dubaide internet girmiyor galaxy a54 | no-internet
+türkiyede internet yok | no-internet
+taylandda internet yok samsung galaxy s24 | no-internet
+yunanistanda internet girmiyor galaxy a54 | no-internet
+mısırda internet yok | no-internet
+amerikada internet girmiyor | no-internet
+dubaide internet yok galaxy a54 | no-internet
+çekiyor ama internet yok dubaide | no-internet
+yunanistanda internet girmiyor xiaomi | no-internet
+ispanyada internet yok iphone 15 | no-internet
+yunanistanda internet girmiyor iphone 16 pro | no-internet
+amerikada internet girmiyor samsung galaxy s24 | no-internet
+samsung esim aktif ama internet yok | no-internet
+whatsapp donuyor amerikada | slow-internet
+tiktok yavaş yunanistanda | slow-internet
+instagram donuyor esim ile | slow-internet
+youtube yavaş ispanyada | slow-internet
+google maps açılmıyor dubaide | slow-internet
+ispanyada internet çok yavaş | slow-internet
+whatsapp yavaş italyada | slow-internet
+tiktok açılmıyor yunanistanda | slow-internet
+whatsapp yavaş mısırda | slow-internet
+netflix donuyor mısırda | slow-internet
+google maps açılmıyor italyada | slow-internet
+whatsapp yavaş taylandda | slow-internet
+mısırda internet çok yavaş | slow-internet
+dubaide internet çok yavaş | slow-internet
+google maps yavaş türkiyede | slow-internet
+tiktok yavaş ispanyada | slow-internet
+netflix donuyor amerikada | slow-internet
+paketim neden bu kadar çabuk bitti | data-fast
+instagram çok internet yiyor | data-fast
+google maps çok veri yiyor | data-fast
+instagram çok veri yiyor | data-fast
+whatsapp çok internet yiyor | data-fast
+gb bir günde bitti | data-fast
+internet bir günde bitti | data-fast
+tiktok çok internet yiyor | data-fast
+internet çok çabuk bitti | data-fast
+spotify çok veri yiyor | data-fast
+youtube cok veri yiyor | data-fast
+netflix çok veri yiyor | data-fast
+youtube çok internet yiyor | data-fast
+whatsapp cok veri yiyor | data-fast
+gb cok cabuk bitti | data-fast
+tiktok çok veri yiyor | data-fast
+gb 2 gunde bitti | data-fast
+geçersiz kod hatası | code-invalid
+bu kod artık geçerli değil ne yapmalıyım | code-invalid
+qr kod geçersiz samsung galaxy s24 | code-invalid
+qr kod kabul edilmiyor galaxy a54 | code-invalid
+qr kod geçersiz iphone 16 pro | code-invalid
+kod artık geçerli değil hatası | code-invalid
+qr kod kabul edilmiyor samsung | code-invalid
+qr kod geçersiz iphone 15 | code-invalid
+qr kod geçersiz redmi note 13 | code-invalid
+qr kod kabul edilmiyor iphone | code-invalid
+qr kod kabul edilmiyor iphone 16 pro | code-invalid
+qr kod kabul edilmiyor iphone 15 | code-invalid
+qr kod kabul edilmiyor samsung galaxy s24 | code-invalid
+qr kod kabul edilmiyor xiaomi | code-invalid
+qr kod gecersiz samsung | code-invalid
+qr kod geçersiz galaxy a54 | code-invalid
+qr kod kabul edilmiyor redmi note 13 | code-invalid
+esim eklenemiyor xiaomi | cannot-add
+esim eklenemiyor pixel 8 | cannot-add
+esim ekleme başarısız samsung galaxy s24 | cannot-add
+esim ekleme olmuyor iphone 16 pro | cannot-add
+hücresel plan eklenemiyor iphone 16 pro | cannot-add
+pixel 8 esim ekleme hatası diyor | cannot-add
+esim ekleme başarısız xiaomi | cannot-add
+iphone esim eklenemedi diyor | cannot-add
+esim ekleme başarısız iphone | cannot-add
+esim ekleme olmuyor redmi note 13 | cannot-add
+esim ekleme başarısız redmi note 13 | cannot-add
+xiaomi esim eklenemedi diyor | cannot-add
+esim ekleme olmuyor pixel 8 | cannot-add
+hücresel plan eklenemiyor samsung | cannot-add
+esim eklenemiyor iphone 16 pro | cannot-add
+hücresel plan eklenemiyor iphone | cannot-add
+redmi note 13 esim ekleme hatası diyor | cannot-add
+esimi qr kodsuz kurmak galaxy a54 | manual-install
+sm dp adresi nereye yazılır | manual-install
+esimi qr kodsuz kurmak iphone 15 | manual-install
+qr kod aynı telefonda nasıl kurarım | manual-install
+esimi qr kodsuz kurmak xiaomi | manual-install
+esimi manuel kurmak xiaomi | manual-install
+esimi manuel kurmak iphone 16 pro | manual-install
+esimi qr kodsuz kurmak | manual-install
+esimi qr kodsuz kurmak redmi note 13 | manual-install
+esimi qr kodsuz kurmak iphone 16 pro | manual-install
+esimi manuel kurmak iphone | manual-install
+qr kod aynı telefonda okutamıyorum | manual-install
+esimi qr kodsuz kurmak samsung galaxy s24 | manual-install
+esimi qr kodsuz kurmak samsung | manual-install
+esimi manuel kurmak pixel 8 | manual-install
+esimi manuel kurmak samsung galaxy s24 | manual-install
+aktivasyon kodu nereye yazılır | manual-install
+esim etkinleştiriliyor de kaldı | activating-stuck
+esim etkinleştiriliyor de takıldı pixel 8 | activating-stuck
+iphone 16 pro aktivasyon bitmiyor | activating-stuck
+esim aktive ediliyor de takıldı iphone 16 pro | activating-stuck
+esim etkinleştiriliyor de takıldı samsung galaxy s24 | activating-stuck
+esim aktive ediliyor de takıldı | activating-stuck
+xiaomi aktivasyon bitmiyor | activating-stuck
+esim etkinleştiriliyor de takıldı iphone 16 pro | activating-stuck
+esim etkinleştiriliyor de kaldı iphone 15 | activating-stuck
+galaxy a54 aktivasyon bitmiyor | activating-stuck
+samsung aktivasyon bitmiyor | activating-stuck
+galaxy a54 aktivasyon saatlerdir sürüyor | activating-stuck
+esim aktive ediliyor de takıldı samsung | activating-stuck
+esim aktive ediliyor de kaldı iphone 16 pro | activating-stuck
+esim aktive ediliyor de takıldı pixel 8 | activating-stuck
+esim etkinleştiriliyor de kaldı xiaomi | activating-stuck
+pixel 8 aktivasyon bitmiyor | activating-stuck
+esimi kazara sildim | deleted-esim,new-phone
+esimi yanlışlıkla sildim iphone 15 | deleted-esim,new-phone
+esimi kaldırdım tekrar kurabilir miyim | deleted-esim,new-phone
+esimi yanlışlıkla sildim pixel 8 | deleted-esim,new-phone
+esimi kaldırdım tekrar yükleyebilir miyim | deleted-esim,new-phone
+esimi yanlışlıkla sildim galaxy a54 | deleted-esim,new-phone
+esimi yanlışlıkla sildim | deleted-esim,new-phone
+esimi kazara sildim pixel 8 | deleted-esim,new-phone
+esimi kazara sildim redmi note 13 | deleted-esim,new-phone
+esimi kazara sildim galaxy a54 | deleted-esim,new-phone
+esimi kazara sildim samsung | deleted-esim,new-phone
+esimi yanlışlıkla sildim samsung | deleted-esim,new-phone
+esimi kazara sildim xiaomi | deleted-esim,new-phone
+esimi kazara sildim samsung galaxy s24 | deleted-esim,new-phone
+esimi yanlışlıkla sildim iphone 16 pro | deleted-esim,new-phone
+esimi yanlışlıkla sildim iphone | deleted-esim,new-phone
+esimi kazara sildim iphone | deleted-esim,new-phone
+redmi note 13 kilitli esim olur mu | sim-lock
+sim kilidi iphone 16 pro esim | sim-lock
+iphone 15 operatöre bağlı esim olur mu | sim-lock
+galaxy a54 operatöre bağlı esim olur mu | sim-lock
+operatör kilidi kontratlı telefon esim | sim-lock
+samsung kilitli esim olur mu | sim-lock
+pixel 8 kilitli esim olur mu | sim-lock
+sim kilidi galaxy a54 esim | sim-lock
+galaxy a54 kilitli esim olur mu | sim-lock
+pixel 8 operatöre bağlı esim olur mu | sim-lock
+redmi note 13 operatöre bağlı esim olur mu | sim-lock
+operatör kilidi iphone 16 pro esim | sim-lock
+sim kilidi kontratlı telefon esim | sim-lock
+xiaomi kilitli esim olur mu | sim-lock
+samsung operatöre bağlı esim olur mu | sim-lock
+operatör kilidi iphone 15 esim | sim-lock
+operatör kilidi samsung galaxy s24 esim | sim-lock
+türk hattımda roaming yansır mı taylandda | avoid-roaming-costs
+türk hattımda roaming ücret öder miyim amerikada | avoid-roaming-costs
+ispanyada roaming ücreti nasıl önlerim | avoid-roaming-costs
+türk hattımda roaming yansır mı italyada | avoid-roaming-costs
+dubaide dolaşım ücreti nasıl önlerim | avoid-roaming-costs
+italyada roaming ücreti nasıl önlerim | avoid-roaming-costs
+amerikada dolaşım ücreti nasıl önlerim | avoid-roaming-costs
+türk hattımda roaming yansır mı ispanyada | avoid-roaming-costs
+türk hattımda roaming ücret öder miyim italyada | avoid-roaming-costs
+türk hattımda roaming ücret öder miyim ispanyada | avoid-roaming-costs
+ispanyada dolaşım ücreti nasıl önlerim | avoid-roaming-costs
+türkiyede roaming ücreti nasıl önlerim | avoid-roaming-costs
+türk hattımda roaming ücret öder miyim yunanistanda | avoid-roaming-costs
+mısırda roaming ücreti nasıl önlerim | avoid-roaming-costs
+türk hattımda roaming yansır mı dubaide | avoid-roaming-costs
+türk hattımda roaming ücret öder miyim dubaide | avoid-roaming-costs
+turk hattimda roaming ucret oder miyim turkiyede | avoid-roaming-costs
+onay kodu türkiyede gelir mi | bank-sms
+sms şifre ispanyada gelir mi | bank-sms
+banka sms taylandda gelir mi | bank-sms
+yurt dışında bankadan sms alabilir miyim esim ile | bank-sms
+onay kodu dubaide gelir mi | bank-sms
+sms şifre taylandda gelir mi | bank-sms
+banka sms yunanistanda gelir mi | bank-sms
+onay kodu taylandda gelir mi | bank-sms
+onay kodu yurt dışında gelir mi | bank-sms
+onay kodu yunanistanda gelir mi | bank-sms
+banka sms türkiyede gelir mi | bank-sms
+banka sms yurt dışında gelir mi | bank-sms
+sms şifre yurt dışında gelir mi | bank-sms
+banka sms ispanyada gelir mi | bank-sms
+onay kodu amerikada gelir mi | bank-sms
+banka sms amerikada gelir mi | bank-sms
+sms şifre dubaide gelir mi | bank-sms
+esimi kurmak için internet lazım mı | install-internet
+esimi uçakta kurmak | install-internet
+esimi havalimaninda kurmak | install-internet
+esimi wifi olmadan kurmak | install-internet
+esimi kurmak icin wifi lazim mi | install-internet
+merhaba esimi kurmak icin internet lazim mi lutfen | install-internet
+esimi kurmak icin wifi lazim mi acaba | install-internet
+esimi ucakta kurmak? | install-internet
+lina esimi havalimanında kurmak | install-internet
+selam esimi kurmak için internet lazım mı | install-internet
+esimi kurmak için internet lazım mı acaba | install-internet
+selam esimi ucakta kurmak | install-internet
+esimi ucakta kurmak acaba | install-internet
+lina esimi kurmak için wifi lazım mı | install-internet
+merhaba esimi wifi olmadan kurmak acaba | install-internet
+merhaba esimi kurmak icin internet lazim mi | install-internet
+selam esimi uçakta kurmak | install-internet
+esim galaxy tab çalışır mı | tablet-watch
+akıllı saat esim | tablet-watch
+apple watch esim | tablet-watch
+ipad esim | tablet-watch
+esim saatte calisir mi | tablet-watch
+esim ipadde calisir mi | tablet-watch
+tablet esim | tablet-watch
+merhaba esim ipadde çalışır mı lütfen | tablet-watch
+merhaba akıllı saat esim acaba | tablet-watch
+esim saatte çalışır mı acaba | tablet-watch
+bir sorum var ipad esim? | tablet-watch
+ipad esim acaba | tablet-watch
+ipad esim? | tablet-watch
+tablet esim? | tablet-watch
+selam esim saatte çalışır mı | tablet-watch
+esim galaxy tab calisir mi? | tablet-watch
+esim ipadde calisir mi lutfen | tablet-watch
+taylandda 5g var mı | 5g
+esim ile 5g olur mu samsung galaxy s24 | 5g
+amerikada 5g var mı | 5g
+esim ile 5g destekleniyor mu galaxy a54 | 5g
+ispanyada 5g var mı | 5g
+mısırda 5g var mı | 5g
+türkiyede 5g var mı | 5g
+esim ile 5g destekleniyor mu samsung galaxy s24 | 5g
+esim ile 5g olur mu redmi note 13 | 5g
+esim ile 5g olur mu iphone | 5g
+esim ile 5g destekleniyor mu xiaomi | 5g
+esim ile 5g olur mu iphone 15 | 5g
+esim ile 5g destekleniyor mu redmi note 13 | 5g
+esim ile 5g olur mu galaxy a54 | 5g
+yunanistanda 5g var mı | 5g
+esim ile 5g olur mu samsung | 5g
+esim ile 5g destekleniyor mu samsung | 5g
+esim feribotta çalışır mı | cruise-flight
+esim denizde çalışır mı | cruise-flight
+esim gemide calisir mi | cruise-flight
+esim ucakta calisir mi | cruise-flight
+bir sorum var esim uçakta çalışır mı? | cruise-flight
+bir sorum var esim feribotta çalışır mı lütfen | cruise-flight
+bir sorum var esim ucakta calisir mi? | cruise-flight
+esim gemide çalışır mı | cruise-flight
+lina esim gemide calisir mi acaba | cruise-flight
+merhaba esim denizde çalışır mı lütfen | cruise-flight
+bir sorum var esim feribotta calisir mi lutfen | cruise-flight
+selam esim uçakta çalışır mı | cruise-flight
+esim gemide calisir mi lutfen | cruise-flight
+lina esim uçakta çalışır mı lütfen | cruise-flight
+esim denizde çalışır mı acaba | cruise-flight
+bir sorum var esim feribotta calisir mi? | cruise-flight
+esim uçakta çalışır mı acaba | cruise-flight
+netflix esim ile başka konum gösteriyor | ip-location
+neden yanlış konum görünüyor | ip-location
+instagram esim ile yanlış ülke gösteriyor | ip-location
+google esim ile başka konum gösteriyor | ip-location
+netflix esim ile yanlış ülke gösteriyor | ip-location
+google esim ile yanlış ülke gösteriyor | ip-location
+instagram esim ile baska konum gosteriyor | ip-location
+neden baska ulke ip gorunuyor | ip-location
+lina google esim ile yanlış ülke gösteriyor acaba | ip-location
+selam instagram esim ile yanlış ülke gösteriyor | ip-location
+instagram esim ile başka konum gösteriyor | ip-location
+selam netflix esim ile yanlış ülke gösteriyor | ip-location
+netflix esim ile yanlış ülke gösteriyor? | ip-location
+selam neden yanlis konum gorunuyor | ip-location
+google esim ile yanlis ulke gosteriyor lutfen | ip-location
+instagram esim ile baska konum gosteriyor lutfen | ip-location
+lina neden baska ulke ip gorunuyor | ip-location
+çin esim vpn gerekli mi | china
+çinde instagram çalışır mı | china
+çinde google çalışır mı | china
+çinde youtube çalışır mı | china
+çin esim vpnsiz | china
+cinde youtube calisir mi esim ile | china
+çinde whatsapp çalışır mı esim ile | china
+çinde google çalışır mı esim ile | china
+cinde instagram calisir mi esim ile | china
+çinde whatsapp çalışır mı | china
+cinde whatsapp calisir mi esim ile | china
+çinde whatsapp çalışır mı? | china
+selam cinde whatsapp calisir mi lutfen | china
+bir sorum var çinde google çalışır mı esim ile | china
+cinde google calisir mi esim ile lutfen | china
+bir sorum var cinde instagram calisir mi lutfen | china
+yurt dışı telefon türkiyede kapanma esim | turkey
+yurt dışı telefon türkiyede imei kaydı esim | turkey
+türkiye esim türk telekom şebekesi | turkey
+türkiye esim turkcell şebekesi | turkey
+türkiye esim vodafone şebekesi | turkey
+turkiye icin esim calisir mi | turkey
+turkiye icin esim hangi paket | turkey
+lina türkiye esim vodafone şebekesi | turkey
+lina turkiye esim turk telekom sebekesi acaba | turkey
+bir sorum var türkiye için esim çalışır mı lütfen | turkey
+selam turkiye icin esim calisir mi? | turkey
+türkiye esim vodafone şebekesi acaba | turkey
+bir sorum var türkiye esim turkcell şebekesi acaba | turkey
+turkiye icin esim calisir mi acaba | turkey
+merhaba yurt dışı telefon türkiyede kapanma esim | turkey
+bir sorum var yurt disi telefon turkiyede kapanma esim | turkey
+esim mi roaming mi yunanistanda | esim-vs-roaming
+esim mi roaming mi dubaide | esim-vs-roaming
+esim ile roaming yunanistanda | esim-vs-roaming
+esim mi roaming mi italyada | esim-vs-roaming
+esim mi roaming mi mısırda | esim-vs-roaming
+esim ile roaming türkiyede | esim-vs-roaming
+esim mi roaming mi ispanyada | esim-vs-roaming
+esim roamingden ucuz mu | esim-vs-roaming
+esim ile roaming amerikada | esim-vs-roaming
+esim ile roaming taylandda | esim-vs-roaming
+esim mi roaming mi hangisi ucuz | esim-vs-roaming
+esim ile roaming italyada | esim-vs-roaming
+esim ile roaming misirda | esim-vs-roaming
+esim ile roaming ispanyada | esim-vs-roaming
+esim mi roaming mi türkiyede | esim-vs-roaming
+esim ile roaming hangisi ucuz | esim-vs-roaming
+ödeme başarısız | payment-failed
+ödeme olmuyor | payment-failed
+kart reddedildi | payment-failed
+iki kez çekildi | payment-failed
+para çekildi ama sipariş yok | payment-failed
+para çekildi ama esim yok | payment-failed
+merhaba iki kez cekildi | payment-failed
+merhaba iki kez cekildi? | payment-failed
+para cekildi ama esim yok acaba | payment-failed
+para çekildi ama esim yok acaba | payment-failed
+kart reddedildi? | payment-failed
+bir sorum var ödeme olmuyor acaba | payment-failed
+merhaba kart reddedildi acaba | payment-failed
+merhaba kart reddedildi | payment-failed
+merhaba para çekildi ama sipariş yok | payment-failed
+iki kez cekildi | payment-failed
+ek ücret var mı | hidden-costs
+paket otomatik uzuyor mu | hidden-costs
+abonelik var mı | hidden-costs
+gizli ücret var mı | hidden-costs
+paket otomatik yenileniyor mu | hidden-costs
+merhaba paket otomatik uzuyor mu lütfen | hidden-costs
+paket otomatik yenileniyor mu lutfen | hidden-costs
+merhaba ek ucret var mi acaba | hidden-costs
+selam abonelik var mi acaba | hidden-costs
+merhaba ek ücret var mı | hidden-costs
+gizli ücret var mı lütfen | hidden-costs
+selam ek ücret var mı | hidden-costs
+paket otomatik uzuyor mu acaba | hidden-costs
+bir sorum var paket otomatik uzuyor mu? | hidden-costs
+gizli ucret var mi? | hidden-costs
+selam gizli ucret var mi lutfen | hidden-costs
+iade nasıl başvurulur | refund-how,refund
+iade butonu nerede | refund-how,refund
+iade karta ne zaman yatar | refund-how,refund
+iade talebi nasil | refund-how,refund
+iade karta ne zaman yatar lütfen | refund-how,refund
+selam iade karta ne zaman yatar | refund-how,refund
+bir sorum var iade talebi nasil | refund-how,refund
+iade nasıl başvurulur lütfen | refund-how,refund
+iade talebi nasıl acaba | refund-how,refund
+selam iade butonu nerede | refund-how,refund
+merhaba iade butonu nerede acaba | refund-how,refund
+bir sorum var iade nasıl başvurulur acaba | refund-how,refund
+bir sorum var iade karta ne zaman yatar | refund-how,refund
+merhaba iade karta ne zaman yatar acaba | refund-how,refund
+iade karta ne zaman yatar acaba | refund-how,refund
+selam iade nasıl başvurulur | refund-how,refund
+lounge'a nasıl girerim türkiyede | lounge-access,lounge-what
+antalya havalimanı lounge satın almak | lounge-access,lounge-what
+lounge'a nasıl girilir taylandda | lounge-access,lounge-what
+lounge'a nasıl girilir mısırda | lounge-access,lounge-what
+lounge'a nasıl girilir havalimanında | lounge-access,lounge-what
+lounge'a nasıl girerim italyada | lounge-access,lounge-what
+lounge'a nasıl girilir ispanyada | lounge-access,lounge-what
+lounge'a nasıl girilir amerikada | lounge-access,lounge-what
+antalya havalimanı lounge almak | lounge-access,lounge-what
+lounge voucher nasıl kullanılır | lounge-access,lounge-what
+lounge'a nasıl girerim ispanyada | lounge-access,lounge-what
+lounge'a nasıl girerim yunanistanda | lounge-access,lounge-what
+lounge'a nasıl girilir dubaide | lounge-access,lounge-what
+lounge'a nasıl girilir yunanistanda | lounge-access,lounge-what
+lounge girisi nasil kullanilir | lounge-access,lounge-what
+frankfurt havalimani lounge almak | lounge-access,lounge-what
+lounge süre sınırı kaç saat | lounge-hours
+lounge'da ne kadar kalabilirim | lounge-hours
+lina lounge sure siniri kac saat lutfen | lounge-hours
+lounge'da ne kadar kalabilirim acaba | lounge-hours
+lounge sure siniri kac saat acaba | lounge-hours
+lounge'da ne kadar kalabilirim lutfen | lounge-hours
+lounge sure siniri kac saat | lounge-hours
+merhaba lounge'da ne kadar kalabilirim acaba | lounge-hours
+selam lounge'da ne kadar kalabilirim lutfen | lounge-hours
+lina lounge süre sınırı kaç saat | lounge-hours
+lounge süre sınırı kaç saat acaba | lounge-hours
+lounge süre sınırı kaç saat lütfen | lounge-hours
+merhaba lounge'da ne kadar kalabilirim | lounge-hours
+selam lounge'da ne kadar kalabilirim | lounge-hours
+merhaba lounge süre sınırı kaç saat | lounge-hours
+bir sorum var lounge süre sınırı kaç saat | lounge-hours
+çocuk lounge'a girebilir mi | lounge-kids
+eşim lounge için ekstra öder mi | lounge-kids
+refakatçi lounge'a girebilir mi | lounge-kids
+çocuğum lounge için ekstra öder mi | lounge-kids
+bebek lounge'a girebilir mi | lounge-kids
+çocuk lounge'a girebilir mi? | lounge-kids
+selam esim lounge icin ekstra oder mi? | lounge-kids
+lina refakatçi lounge'a girebilir mi? | lounge-kids
+refakatci lounge'a girebilir mi acaba | lounge-kids
+merhaba cocuk lounge'a girebilir mi acaba | lounge-kids
+selam cocugum lounge icin ekstra oder mi | lounge-kids
+lina bebek lounge'a girebilir mi | lounge-kids
+bir sorum var bebek lounge'a girebilir mi lütfen | lounge-kids
+lina refakatçi lounge'a girebilir mi | lounge-kids
+çocuğum lounge için ekstra öder mi lütfen | lounge-kids
+bebek lounge'a girebilir mi lütfen | lounge-kids
+lounge girişi reddedildi | lounge-denied
+lounge dolu olursa ne olur | lounge-denied
+lounge dolu | lounge-denied
+lounge beni almadi | lounge-denied
+lounge girisi reddedildi? | lounge-denied
+lina lounge dolu olursa ne olur lütfen | lounge-denied
+lounge beni almadı | lounge-denied
+selam lounge beni almadi lutfen | lounge-denied
+lounge beni almadı? | lounge-denied
+lina lounge dolu olursa ne olur? | lounge-denied
+selam lounge girisi reddedildi? | lounge-denied
+lounge dolu lutfen | lounge-denied
+lina lounge dolu olursa ne olur | lounge-denied
+lounge dolu olursa ne olur? | lounge-denied
+lounge girisi reddedildi acaba | lounge-denied
+lina lounge dolu olursa ne olur acaba | lounge-denied
+rötar lounge voucher geçerli mi | lounge-delay
+uçuş iptal lounge ne olacak | lounge-delay
+uçuş rötar lounge voucher geçerli mi | lounge-delay
+uçuş ertelendi lounge iade | lounge-delay
+uçuş iptal lounge iade | lounge-delay
+uçuş ertelendi lounge ne olacak | lounge-delay
+selam uçuş ertelendi lounge iade? | lounge-delay
+ucus rotar lounge voucher gecerli mi | lounge-delay
+uçuş ertelendi lounge ne olacak? | lounge-delay
+bir sorum var ucus iptal lounge ne olacak lutfen | lounge-delay
+ucus rotar lounge voucher gecerli mi acaba | lounge-delay
+lina ucus ertelendi lounge ne olacak lutfen | lounge-delay
+lina uçuş rötar lounge voucher geçerli mi lütfen | lounge-delay
+lina uçuş iptal lounge ne olacak | lounge-delay
+lina ucus ertelendi lounge ne olacak? | lounge-delay
+lina rötar lounge voucher geçerli mi | lounge-delay
+istanbul fast track nerede | fasttrack-where
+havalimanında fast track nerede | fasttrack-where
+antalya fast track nerede | fasttrack-where
+fast track girisini bulamiyorum | fasttrack-where
+selam antalya fast track nerede acaba | fasttrack-where
+fast track girisini bulamiyorum lutfen | fasttrack-where
+bir sorum var fast track girisini bulamiyorum | fasttrack-where
+bir sorum var istanbul fast track nerede | fasttrack-where
+istanbul fast track nerede acaba | fasttrack-where
+lina fast track girişini bulamıyorum lütfen | fasttrack-where
+fast track girişini bulamıyorum | fasttrack-where
+fast track girişini bulamıyorum acaba | fasttrack-where
+bir sorum var havalimanında fast track nerede acaba | fasttrack-where
+lina antalya fast track nerede lütfen | fasttrack-where
+fast track girişini bulamıyorum lütfen | fasttrack-where
+istanbul fast track nerede? | fasttrack-where
+fast track tek kullanımlık mı | fasttrack-time
+fast track süresi | fasttrack-time
+fast track ne kadar geçerli | fasttrack-time
+fast track zaman aralığı | fasttrack-time
+lina fast track zaman aralığı acaba | fasttrack-time
+selam fast track ne kadar geçerli lütfen | fasttrack-time
+merhaba fast track süresi? | fasttrack-time
+selam fast track süresi | fasttrack-time
+fast track tek kullanimlik mi | fasttrack-time
+selam fast track ne kadar geçerli acaba | fasttrack-time
+fast track zaman aralığı acaba | fasttrack-time
+selam fast track süresi? | fasttrack-time
+selam fast track ne kadar geçerli | fasttrack-time
+selam fast track suresi lutfen | fasttrack-time
+merhaba fast track tek kullanimlik mi lutfen | fasttrack-time
+fast track suresi | fasttrack-time
+esim ile vpn kullanılır mı | vpn
+nordvpn esim ile olur mu | vpn
+vpn esim ile olur mu | vpn
+esim ile vpn çalışır mı | vpn
+merhaba nordvpn esim ile olur mu | vpn
+lina vpn esim ile olur mu | vpn
+lina esim ile vpn çalışır mı acaba | vpn
+lina esim ile vpn çalışır mı lütfen | vpn
+selam vpn esim ile olur mu lütfen | vpn
+esim ile vpn çalışır mı lütfen | vpn
+bir sorum var esim ile vpn çalışır mı | vpn
+lina esim ile vpn çalışır mı | vpn
+nordvpn esim ile olur mu acaba | vpn
+merhaba esim ile vpn calisir mi | vpn
+bir sorum var esim ile vpn çalışır mı acaba | vpn
+merhaba nordvpn esim ile olur mu? | vpn
+kurumsal esim teklif | business
+ekibim için esim indirim | business
+çalışanlar için esim almak | business
+kurumsal esim almak | business
+şirket için esim teklif | business
+şirkete birden fazla esim indirim | business
+şirkete birden fazla esim fatura | business
+çalışanlar için esim teklif | business
+ekibim için esim fatura | business
+sirket icin esim almak | business
+şirkete birden fazla esim indirim? | business
+lina sirkete birden fazla esim indirim lutfen | business
+merhaba şirkete birden fazla esim indirim? | business
+lina sirkete birden fazla esim fatura acaba | business
+merhaba şirket için esim teklif acaba | business
+lina ekibim için esim indirim lütfen | business
+esimden beni arayabilirler mi | phone-number,calls
+esimde türk numarası var mı | phone-number,calls
+esimde yerel numara var mi | phone-number,calls
+esimde telefon numarasi var mi | phone-number,calls
+esimden beni arayabilirler mi acaba | phone-number,calls
+selam esimde türk numarası var mı lütfen | phone-number,calls
+esimde yerel numara var mi? | phone-number,calls
+selam esimde telefon numarasi var mi lutfen | phone-number,calls
+lina esimden beni arayabilirler mi | phone-number,calls
+lina esimde yerel numara var mi? | phone-number,calls
+esimde yerel numara var mı lütfen | phone-number,calls
+esimde telefon numarası var mı? | phone-number,calls
+merhaba esimde turk numarasi var mi | phone-number,calls
+esimde turk numarasi var mi? | phone-number,calls
+esimde telefon numarası var mı lütfen | phone-number,calls
+lina esimde telefon numarasi var mi | phone-number,calls
+esimi ne zaman kurmalıyım | buy-when,when-activate
+esimi bir hafta önce kurmak | buy-when,when-activate
+esimi yolculuktan once kurmak | buy-when,when-activate
+esimi ne zaman almalıyım | buy-when,when-activate
+esimi evde kurmak | buy-when,when-activate
+selam esimi evde kurmak | buy-when,when-activate
+esimi ne zaman kurmalıyım lütfen | buy-when,when-activate
+selam esimi evde kurmak lütfen | buy-when,when-activate
+merhaba esimi yolculuktan önce kurmak lütfen | buy-when,when-activate
+merhaba esimi yolculuktan önce kurmak | buy-when,when-activate
+bir sorum var esimi yolculuktan once kurmak | buy-when,when-activate
+esimi evde kurmak lütfen | buy-when,when-activate
+bir sorum var esimi yolculuktan once kurmak acaba | buy-when,when-activate
+selam esimi yolculuktan önce kurmak acaba | buy-when,when-activate
+esimi bir hafta önce kurmak? | buy-when,when-activate
+esimi ne zaman kurmaliyim | buy-when,when-activate

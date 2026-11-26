@@ -1,0 +1,715 @@
+## Spezifische Kundenfragen (ar) – aus Vorlagen erzeugt (simple-src/gen_specific.py), 714 Fragen
+أين أفعّل تجوال البيانات في بكسل | data-roaming
+تشغيل تجوال البيانات سامسونج | data-roaming
+تشغيل تجوال البيانات شاومي | data-roaming
+تشغيل تجوال البيانات جالكسي | data-roaming
+أين أفعّل تجوال البيانات في ايفون | data-roaming
+أين أفعّل تجوال البيانات في شاومي | data-roaming
+هل يجب تشغيل التجوال في مصر | data-roaming
+أين أفعّل تجوال البيانات في جالكسي | data-roaming
+هل يجب تشغيل التجوال في أمريكا | data-roaming
+هل يجب تشغيل التجوال في دبي | data-roaming
+هل يجب تشغيل التجوال في إيطاليا | data-roaming
+تشغيل تجوال البيانات بكسل | data-roaming
+أين أفعّل تجوال البيانات في سامسونج | data-roaming
+هل يجب تشغيل التجوال في إسبانيا | data-roaming
+تشغيل تجوال البيانات ايفون | data-roaming
+هل يجب تشغيل التجوال في تايلاند | data-roaming
+هل يجب تشغيل التجوال في تركيا | data-roaming
+كيف أجعل الشريحة للبيانات في جالكسي | data-line,line-on
+تحويل بيانات الجوال إلى eSIM سامسونج | data-line,line-on
+ايفون ما زال يستخدم شريحتي العادية للإنترنت | data-line,line-on
+كيف أجعل الشريحة خط البيانات في بكسل | data-line,line-on
+كيف أجعل الشريحة خط البيانات في سامسونج | data-line,line-on
+كيف أجعل الشريحة للبيانات في سامسونج | data-line,line-on
+كيف أجعل الشريحة للبيانات في بكسل | data-line,line-on
+سامسونج ما زال يستخدم شريحتي العادية للإنترنت | data-line,line-on
+تحويل بيانات الجوال إلى eSIM بكسل | data-line,line-on
+كيف أجعل الشريحة خط البيانات في جالكسي | data-line,line-on
+كيف أجعل الشريحة خط البيانات في شاومي | data-line,line-on
+كيف أجعل الشريحة للبيانات في ايفون | data-line,line-on
+تحويل بيانات الجوال إلى eSIM شاومي | data-line,line-on
+كيف أجعل الشريحة خط البيانات في ايفون | data-line,line-on
+كيف أجعل الشريحة للبيانات في شاومي | data-line,line-on
+تحويل بيانات الجوال إلى eSIM ايفون | data-line,line-on
+شاومي ما زال يستخدم شريحتي العادية للإنترنت | data-line,line-on
+شبكة خاطئة في دبي تغيير الشبكة | network-select
+شبكة خاطئة في إسبانيا تغيير الشبكة | network-select
+اختيار الشبكة يدويا في ايفون | network-select
+شبكة خاطئة في إيطاليا تغيير الشبكة | network-select
+اختيار الشبكة يدويا في بكسل | network-select
+اختيار الشبكة يدويا في جالكسي | network-select
+لا توجد شبكة في تركيا تغيير الشبكة | network-select
+لا توجد شبكة في دبي تغيير الشبكة | network-select
+شبكة خاطئة في مصر تغيير الشبكة | network-select
+شبكة خاطئة في تركيا تغيير الشبكة | network-select
+شبكة خاطئة في تايلاند تغيير الشبكة | network-select
+لا توجد شبكة في إسبانيا تغيير الشبكة | network-select
+اختيار الشبكة يدويا في شاومي | network-select
+لا توجد شبكة في اليونان تغيير الشبكة | network-select
+لا توجد شبكة في مصر تغيير الشبكة | network-select
+لا توجد شبكة في إيطاليا تغيير الشبكة | network-select
+لا توجد شبكة في أمريكا تغيير الشبكة | network-select
+ما هو apn في اليونان | apn
+تغيير apn في بكسل | apn
+ما هو apn في مصر | apn
+تغيير apn في ايفون | apn
+ما هو apn في تركيا | apn
+ضبط apn في بكسل | apn
+ما هو apn في إيطاليا | apn
+ضبط apn في سامسونج | apn
+ما هو apn للشريحة | apn
+ضبط apn في جالكسي | apn
+ما هو apn في تايلاند | apn
+تغيير apn في جالكسي | apn
+ما هو apn في إسبانيا | apn
+ما هو apn في دبي | apn
+تغيير apn في شاومي | apn
+تغيير apn في سامسونج | apn
+ضبط apn في ايفون | apn
+إعادة ضبط إعدادات الشبكة في جالكسي | reset-network
+إعادة ضبط إعدادات الشبكة في ايفون | reset-network
+إعادة ضبط إعدادات الشبكة في بكسل | reset-network
+إعادة ضبط إعدادات الشبكة في شاومي | reset-network
+هل أعيد ضبط إعدادات الشبكة | reset-network
+إعادة ضبط إعدادات الشبكة في سامسونج | reset-network
+إعادة ضبط إعدادات الشبكة في سامسونج من فضلك | reset-network
+السلام عليكم إعادة ضبط إعدادات الشبكة في جالكسي | reset-network
+سؤال إعادة ضبط إعدادات الشبكة في جالكسي من فضلك | reset-network
+السلام عليكم إعادة ضبط إعدادات الشبكة في سامسونج | reset-network
+سؤال إعادة ضبط إعدادات الشبكة في سامسونج من فضلك | reset-network
+السلام عليكم إعادة ضبط إعدادات الشبكة في ايفون | reset-network
+إعادة ضبط إعدادات الشبكة في شاومي من فضلك | reset-network
+سؤال إعادة ضبط إعدادات الشبكة في شاومي؟ | reset-network
+سؤال إعادة ضبط إعدادات الشبكة في ايفون | reset-network
+سؤال إعادة ضبط إعدادات الشبكة في بكسل؟ | reset-network
+مرحبا إعادة ضبط إعدادات الشبكة في بكسل؟ | reset-network
+بكسل الهوتسبوت مع الشريحة لا يعمل | hotspot-setup,hotspot
+إعداد نقطة الاتصال في بكسل | hotspot-setup,hotspot
+إعداد نقطة الاتصال في سامسونج | hotspot-setup,hotspot
+ايفون الهوتسبوت مع الشريحة لا يعمل | hotspot-setup,hotspot
+إعداد نقطة الاتصال في ايفون | hotspot-setup,hotspot
+تشغيل نقطة الاتصال في جالكسي | hotspot-setup,hotspot
+إعداد نقطة الاتصال في شاومي | hotspot-setup,hotspot
+إعداد نقطة الاتصال في جالكسي | hotspot-setup,hotspot
+تشغيل نقطة الاتصال في سامسونج | hotspot-setup,hotspot
+شاومي الهوتسبوت مع الشريحة لا يعمل | hotspot-setup,hotspot
+جالكسي الهوتسبوت مع الشريحة لا يعمل | hotspot-setup,hotspot
+تشغيل نقطة الاتصال في ايفون | hotspot-setup,hotspot
+تشغيل نقطة الاتصال في شاومي | hotspot-setup,hotspot
+سامسونج الهوتسبوت مع الشريحة لا يعمل | hotspot-setup,hotspot
+تشغيل نقطة الاتصال في بكسل | hotspot-setup,hotspot
+السلام عليكم إعداد نقطة الاتصال في شاومي | hotspot-setup,hotspot
+سؤال تشغيل نقطة الاتصال في ايفون من فضلك | hotspot-setup,hotspot
+تثبيت eSIM على ايفون 16 | install-iphone,install-esim
+ايفون إضافة خطة خلوية كيف | install-iphone,install-esim
+ايفون إضافة eSIM كيف | install-iphone,install-esim
+تثبيت eSIM على iphone 17 | install-iphone,install-esim
+تثبيت eSIM على ايفون 13 | install-iphone,install-esim
+تثبيت eSIM على ايفون 15 | install-iphone,install-esim
+مرحبا تثبيت eSIM على ايفون 15 | install-iphone,install-esim
+سؤال ايفون إضافة خطة خلوية كيف؟ | install-iphone,install-esim
+السلام عليكم ايفون إضافة خطة خلوية كيف من فضلك | install-iphone,install-esim
+تثبيت eSIM على ايفون 16 من فضلك | install-iphone,install-esim
+مرحبا تثبيت eSIM على ايفون 16 | install-iphone,install-esim
+السلام عليكم ايفون إضافة eSIM كيف؟ | install-iphone,install-esim
+تثبيت eSIM على iphone 17 من فضلك | install-iphone,install-esim
+ايفون إضافة eSIM كيف؟ | install-iphone,install-esim
+السلام عليكم تثبيت eSIM على iphone 17؟ | install-iphone,install-esim
+سؤال ايفون إضافة خطة خلوية كيف | install-iphone,install-esim
+تثبيت eSIM على ايفون 13 من فضلك | install-iphone,install-esim
+تثبيت eSIM على جالكسي a55 | install-android,install-esim
+سامسونج إضافة eSIM كيف | install-android,install-esim
+شاومي إضافة eSIM كيف | install-android,install-esim
+تثبيت eSIM على بكسل 9 | install-android,install-esim
+تثبيت eSIM على شاومي 14 | install-android,install-esim
+تثبيت eSIM على سامسونج s24 | install-android,install-esim
+اندرويد إضافة eSIM كيف | install-android,install-esim
+السلام عليكم سامسونج إضافة eSIM كيف | install-android,install-esim
+تثبيت eSIM على جالكسي a55؟ | install-android,install-esim
+مرحبا تثبيت eSIM على سامسونج s24؟ | install-android,install-esim
+سؤال شاومي إضافة eSIM كيف؟ | install-android,install-esim
+السلام عليكم تثبيت eSIM على بكسل 9 من فضلك | install-android,install-esim
+السلام عليكم اندرويد إضافة eSIM كيف | install-android,install-esim
+السلام عليكم تثبيت eSIM على شاومي 14 | install-android,install-esim
+مرحبا تثبيت eSIM على جالكسي a55 | install-android,install-esim
+السلام عليكم شاومي إضافة eSIM كيف | install-android,install-esim
+اندرويد إضافة eSIM كيف؟ | install-android,install-esim
+تفعيل خط الشريحة شاومي | line-on,data-line
+تشغيل خط الشريحة ايفون | line-on,data-line
+الشريحة معطلة في سامسونج | line-on,data-line
+الشريحة معطلة في جالكسي | line-on,data-line
+الشريحة معطلة في بكسل | line-on,data-line
+تفعيل خط الشريحة سامسونج | line-on,data-line
+الشريحة مطفأة في بكسل | line-on,data-line
+تفعيل خط الشريحة جالكسي | line-on,data-line
+تشغيل خط الشريحة سامسونج | line-on,data-line
+الشريحة مطفأة في جالكسي | line-on,data-line
+تفعيل خط الشريحة بكسل | line-on,data-line
+تشغيل خط الشريحة جالكسي | line-on,data-line
+تشغيل خط الشريحة شاومي | line-on,data-line
+الشريحة مطفأة في ايفون | line-on,data-line
+الشريحة مطفأة في سامسونج | line-on,data-line
+تفعيل خط الشريحة ايفون | line-on,data-line
+الشريحة مطفأة في شاومي | line-on,data-line
+لا إشارة في تركيا | no-service
+لا توجد شبكة في مصر مع الشريحة | no-service
+طوارئ فقط في إسبانيا | no-service
+لا إشارة في أمريكا | no-service
+لا توجد شبكة في إسبانيا مع الشريحة | no-service
+طوارئ فقط في تركيا | no-service
+لا إشارة في إيطاليا | no-service
+طوارئ فقط في مصر | no-service
+لا توجد شبكة في إيطاليا | no-service
+طوارئ فقط في دبي | no-service
+لا إشارة | no-service
+طوارئ فقط في إيطاليا | no-service
+لا إشارة في اليونان | no-service
+لا توجد شبكة في تركيا مع الشريحة | no-service
+لا توجد شبكة في دبي مع الشريحة | no-service
+لا توجد شبكة في إسبانيا | no-service
+لا توجد شبكة في تايلاند | no-service
+لا يوجد إنترنت في أمريكا | no-internet
+سامسونج الشريحة مفعلة لكن الصفحات لا تفتح | no-internet
+بكسل الشريحة مفعلة لكن الصفحات لا تفتح | no-internet
+لا يوجد إنترنت في إيطاليا مع ايفون | no-internet
+لا يوجد إنترنت في تايلاند مع شاومي | no-internet
+لا يوجد إنترنت في إسبانيا مع بكسل | no-internet
+لا يوجد إنترنت في أمريكا مع ايفون | no-internet
+لا يوجد إنترنت في دبي مع ايفون | no-internet
+لا يوجد إنترنت في دبي مع جالكسي | no-internet
+لا يوجد إنترنت في اليونان مع ايفون | no-internet
+جالكسي الشريحة مفعلة لكن لا إنترنت | no-internet
+لا يوجد إنترنت في تايلاند مع جالكسي | no-internet
+لا يوجد إنترنت في تركيا مع ايفون | no-internet
+لا يوجد إنترنت في تركيا مع جالكسي | no-internet
+لا يوجد إنترنت في إسبانيا مع سامسونج | no-internet
+لا يوجد إنترنت في تركيا | no-internet
+لا يوجد إنترنت في أمريكا مع سامسونج | no-internet
+spotify بطيء في تايلاند | slow-internet
+tiktok يعلق في تركيا | slow-internet
+google maps يعلق في أمريكا | slow-internet
+whatsapp بطيء في إيطاليا | slow-internet
+spotify بطيء في أمريكا | slow-internet
+whatsapp يعلق في إيطاليا | slow-internet
+tiktok بطيء مع الشريحة | slow-internet
+whatsapp بطيء في اليونان | slow-internet
+tiktok بطيء في اليونان | slow-internet
+youtube يعلق في مصر | slow-internet
+spotify يعلق في مصر | slow-internet
+الإنترنت بطيء في إيطاليا | slow-internet
+tiktok بطيء في إيطاليا | slow-internet
+google maps يعلق في إسبانيا | slow-internet
+whatsapp يعلق في تركيا | slow-internet
+instagram بطيء في دبي | slow-internet
+instagram بطيء مع الشريحة | slow-internet
+whatsapp يستهلك بيانات كثيرة | data-fast
+البيانات خلصت بسرعة | data-fast
+البيانات انتهت بسرعة | data-fast
+instagram يستهلك بيانات كثيرة | data-fast
+tiktok يستهلك بيانات كثيرة | data-fast
+youtube يستهلك بيانات كثيرة | data-fast
+spotify يستهلك بيانات كثيرة | data-fast
+netflix يستهلك بيانات كثيرة | data-fast
+البيانات انتهت في يوم | data-fast
+google maps يستهلك بيانات كثيرة | data-fast
+البيانات خلصت في يوم | data-fast
+لماذا انتهت باقتي بسرعة | data-fast
+spotify يستهلك بيانات كثيرة من فضلك | data-fast
+السلام عليكم لماذا انتهت باقتي بسرعة | data-fast
+مرحبا google maps يستهلك بيانات كثيرة | data-fast
+البيانات انتهت في يوم من فضلك | data-fast
+السلام عليكم البيانات انتهت في يوم من فضلك | data-fast
+رمز QR غير مقبول ايفون | code-invalid
+رمز QR غير مقبول شاومي | code-invalid
+رمز QR غير صالح شاومي | code-invalid
+رمز QR غير صالح بكسل | code-invalid
+رمز QR غير صالح جالكسي | code-invalid
+رمز QR غير صالح سامسونج | code-invalid
+خطأ رمز غير صالح | code-invalid
+رمز QR غير مقبول جالكسي | code-invalid
+خطأ الرمز مستخدم | code-invalid
+رمز QR غير مقبول سامسونج | code-invalid
+رمز QR غير مقبول بكسل | code-invalid
+خطأ الرمز لم يعد صالحا | code-invalid
+رمز QR غير صالح ايفون | code-invalid
+مرحبا رمز QR غير مقبول بكسل من فضلك | code-invalid
+رمز QR غير صالح سامسونج؟ | code-invalid
+سؤال رمز QR غير صالح جالكسي؟ | code-invalid
+سؤال رمز QR غير مقبول بكسل | code-invalid
+لا يمكن إضافة الشريحة ايفون | cannot-add
+بكسل يقول تعذر إضافة eSIM | cannot-add
+جالكسي يقول تعذر إضافة eSIM | cannot-add
+لا يمكن إضافة الخطة الخلوية شاومي | cannot-add
+لا يمكن إضافة الخطة الخلوية بكسل | cannot-add
+شاومي يقول تعذر إضافة eSIM | cannot-add
+لا يمكن إضافة الشريحة شاومي | cannot-add
+لا يمكن إضافة الشريحة سامسونج | cannot-add
+لا يمكن إضافة الشريحة جالكسي | cannot-add
+لا يمكن إضافة الخطة الخلوية | cannot-add
+لا يمكن إضافة الشريحة | cannot-add
+ايفون يقول تعذر إضافة eSIM | cannot-add
+لا يمكن إضافة الخطة الخلوية ايفون | cannot-add
+لا يمكن إضافة الخطة الخلوية سامسونج | cannot-add
+لا يمكن إضافة الشريحة بكسل | cannot-add
+لا يمكن إضافة الخطة الخلوية جالكسي | cannot-add
+سامسونج يقول تعذر إضافة eSIM | cannot-add
+أين أدخل رمز التفعيل | manual-install
+تثبيت الشريحة بدون رمز QR | manual-install
+تثبيت الشريحة يدويا | manual-install
+أين أدخل عنوان SM-DP | manual-install
+مرحبا أين أدخل عنوان SM-DP؟ | manual-install
+مرحبا أين أدخل رمز التفعيل | manual-install
+السلام عليكم أين أدخل رمز التفعيل من فضلك | manual-install
+سؤال تثبيت الشريحة يدويا | manual-install
+سؤال تثبيت الشريحة بدون رمز QR | manual-install
+مرحبا تثبيت الشريحة يدويا | manual-install
+تثبيت الشريحة بدون رمز QR من فضلك | manual-install
+مرحبا تثبيت الشريحة بدون رمز QR | manual-install
+تثبيت الشريحة يدويا من فضلك | manual-install
+السلام عليكم أين أدخل رمز التفعيل | manual-install
+السلام عليكم أين أدخل رمز التفعيل؟ | manual-install
+سؤال أين أدخل عنوان SM-DP من فضلك | manual-install
+السلام عليكم تثبيت الشريحة يدويا من فضلك | manual-install
+الشريحة عالقة جار التفعيل بكسل | activating-stuck
+التفعيل يستغرق وقتا طويلا بكسل | activating-stuck
+الشريحة عالقة في التفعيل شاومي | activating-stuck
+التفعيل يستغرق وقتا طويلا سامسونج | activating-stuck
+الشريحة عالقة جار التفعيل ايفون | activating-stuck
+التفعيل يستغرق وقتا طويلا شاومي | activating-stuck
+التفعيل يستغرق وقتا طويلا ايفون | activating-stuck
+الشريحة عالقة في التفعيل سامسونج | activating-stuck
+الشريحة عالقة جار التفعيل | activating-stuck
+الشريحة عالقة في التفعيل جالكسي | activating-stuck
+الشريحة عالقة جار التفعيل سامسونج | activating-stuck
+الشريحة عالقة جار التفعيل جالكسي | activating-stuck
+الشريحة عالقة في التفعيل ايفون | activating-stuck
+الشريحة عالقة في التفعيل بكسل | activating-stuck
+الشريحة عالقة في التفعيل | activating-stuck
+التفعيل يستغرق وقتا طويلا جالكسي | activating-stuck
+الشريحة عالقة جار التفعيل شاومي | activating-stuck
+حذفت eSIM هل يمكن إعادة تثبيتها | deleted-esim,new-phone
+حذفت الشريحة بالخطأ جالكسي | deleted-esim,new-phone
+حذفت الشريحة بالخطأ | deleted-esim,new-phone
+حذفت الشريحة شاومي | deleted-esim,new-phone
+حذفت الشريحة بالخطأ سامسونج | deleted-esim,new-phone
+حذفت الشريحة سامسونج | deleted-esim,new-phone
+حذفت الشريحة ايفون | deleted-esim,new-phone
+حذفت الشريحة بالخطأ شاومي | deleted-esim,new-phone
+حذفت الشريحة | deleted-esim,new-phone
+حذفت الشريحة بكسل | deleted-esim,new-phone
+حذفت الشريحة جالكسي | deleted-esim,new-phone
+حذفت الشريحة بالخطأ ايفون | deleted-esim,new-phone
+حذفت الشريحة بالخطأ بكسل | deleted-esim,new-phone
+السلام عليكم حذفت الشريحة بالخطأ جالكسي | deleted-esim,new-phone
+حذفت الشريحة بكسل؟ | deleted-esim,new-phone
+سؤال حذفت eSIM هل يمكن إعادة تثبيتها؟ | deleted-esim,new-phone
+حذفت الشريحة سامسونج؟ | deleted-esim,new-phone
+ايفون مقفل على الشبكة هل يعمل eSIM | sim-lock
+هاتف مقفل eSIM ايفون | sim-lock
+سامسونج مقفل على الشبكة هل يعمل eSIM | sim-lock
+هاتف مقفل eSIM | sim-lock
+هاتف مقفل eSIM سامسونج | sim-lock
+هاتف مقفل eSIM بكسل | sim-lock
+قفل الشبكة eSIM سامسونج | sim-lock
+قفل الشبكة eSIM جالكسي | sim-lock
+جالكسي مقفل على الشبكة هل يعمل eSIM | sim-lock
+قفل الشبكة eSIM شاومي | sim-lock
+بكسل مقفل على الشبكة هل يعمل eSIM | sim-lock
+هاتف مقفل eSIM جالكسي | sim-lock
+قفل الشبكة eSIM | sim-lock
+قفل الشبكة eSIM ايفون | sim-lock
+قفل الشبكة eSIM بكسل | sim-lock
+شاومي مقفل على الشبكة هل يعمل eSIM | sim-lock
+هاتف مقفل eSIM شاومي | sim-lock
+كيف أتجنب رسوم التجوال في تركيا | avoid-roaming-costs
+كيف أتجنب رسوم التجوال في اليونان | avoid-roaming-costs
+هل أدفع تجوال على شريحتي في دبي | avoid-roaming-costs
+كيف أتجنب رسوم التجوال في تايلاند | avoid-roaming-costs
+كيف أتجنب رسوم التجوال في دبي | avoid-roaming-costs
+كيف أتجنب رسوم التجوال في إيطاليا | avoid-roaming-costs
+هل أدفع تجوال على شريحتي في إسبانيا | avoid-roaming-costs
+هل أدفع تجوال على شريحتي في مصر | avoid-roaming-costs
+هل أدفع تجوال على شريحتي في تايلاند | avoid-roaming-costs
+هل أدفع تجوال على شريحتي في تركيا | avoid-roaming-costs
+كيف أتجنب رسوم التجوال في أمريكا | avoid-roaming-costs
+كيف أتجنب رسوم التجوال | avoid-roaming-costs
+كيف أتجنب رسوم التجوال في مصر | avoid-roaming-costs
+هل أدفع تجوال على شريحتي في أمريكا | avoid-roaming-costs
+كيف أتجنب رسوم التجوال في إسبانيا | avoid-roaming-costs
+هل أدفع تجوال على شريحتي في إيطاليا | avoid-roaming-costs
+هل أدفع تجوال على شريحتي في اليونان | avoid-roaming-costs
+هل تصلني رسائل البنك في إيطاليا | bank-sms
+هل تصلني رسائل البنك في تركيا | bank-sms
+هل تصلني رموز التحقق في تايلاند | bank-sms
+هل تصلني رموز التحقق في دبي | bank-sms
+هل تصلني رسائل البنك في اليونان | bank-sms
+هل تصلني رسائل البنك في تايلاند | bank-sms
+هل تصلني رموز التحقق في مصر | bank-sms
+هل تصلني رسائل البنك في مصر | bank-sms
+هل تصلني رموز التحقق مع الشريحة | bank-sms
+هل تصلني رسائل البنك في إسبانيا | bank-sms
+هل تصلني رموز التحقق في اليونان | bank-sms
+هل تصلني رموز التحقق في إيطاليا | bank-sms
+هل تصلني رموز التحقق في تركيا | bank-sms
+هل تصلني رموز التحقق في أمريكا | bank-sms
+هل تصلني رموز التحقق في إسبانيا | bank-sms
+هل تصلني رسائل البنك مع الشريحة | bank-sms
+هل تصلني رسائل البنك في دبي | bank-sms
+هل أحتاج إنترنت لتثبيت الشريحة | install-internet
+تثبيت الشريحة في المطار | install-internet
+تثبيت الشريحة بدون واي فاي | install-internet
+هل أحتاج واي فاي لتثبيت الشريحة | install-internet
+هل أحتاج إنترنت لتثبيت الشريحة؟ | install-internet
+سؤال هل أحتاج إنترنت لتثبيت الشريحة من فضلك | install-internet
+سؤال تثبيت الشريحة في المطار | install-internet
+السلام عليكم تثبيت الشريحة بدون واي فاي؟ | install-internet
+سؤال هل أحتاج إنترنت لتثبيت الشريحة | install-internet
+هل أحتاج واي فاي لتثبيت الشريحة من فضلك | install-internet
+السلام عليكم هل أحتاج واي فاي لتثبيت الشريحة من فضلك | install-internet
+تثبيت الشريحة في المطار من فضلك | install-internet
+السلام عليكم هل أحتاج واي فاي لتثبيت الشريحة؟ | install-internet
+مرحبا هل أحتاج واي فاي لتثبيت الشريحة من فضلك | install-internet
+تثبيت الشريحة في المطار؟ | install-internet
+السلام عليكم هل أحتاج إنترنت لتثبيت الشريحة؟ | install-internet
+تثبيت الشريحة بدون واي فاي؟ | install-internet
+هل تعمل الشريحة على الساعة | tablet-watch
+eSIM على التابلت | tablet-watch
+هل تعمل الشريحة على الآيباد | tablet-watch
+eSIM على ساعة ابل | tablet-watch
+eSIM على الآيباد | tablet-watch
+eSIM على ساعة ابل؟ | tablet-watch
+مرحبا هل تعمل الشريحة على الآيباد من فضلك | tablet-watch
+eSIM على الآيباد؟ | tablet-watch
+هل تعمل الشريحة على الآيباد من فضلك | tablet-watch
+سؤال eSIM على التابلت؟ | tablet-watch
+سؤال eSIM على التابلت | tablet-watch
+السلام عليكم هل تعمل الشريحة على الآيباد؟ | tablet-watch
+eSIM على ساعة ابل من فضلك | tablet-watch
+هل تعمل الشريحة على الساعة من فضلك | tablet-watch
+سؤال eSIM على الآيباد من فضلك | tablet-watch
+سؤال هل تعمل الشريحة على الآيباد | tablet-watch
+سؤال eSIM على الآيباد | tablet-watch
+هل يوجد 5g في مصر | 5g
+هل يوجد 5g في دبي | 5g
+هل يوجد 5g في أمريكا | 5g
+هل يوجد 5g في إيطاليا | 5g
+هل يوجد 5g في تركيا | 5g
+هل يوجد 5g في تايلاند | 5g
+هل يوجد 5g مع الشريحة | 5g
+هل يوجد 5g في اليونان | 5g
+هل يوجد 5g في إسبانيا | 5g
+السلام عليكم هل يوجد 5g في تايلاند؟ | 5g
+السلام عليكم هل يوجد 5g في اليونان من فضلك | 5g
+مرحبا هل يوجد 5g في اليونان من فضلك | 5g
+هل يوجد 5g في مصر؟ | 5g
+هل يوجد 5g في أمريكا من فضلك | 5g
+السلام عليكم هل يوجد 5g في إيطاليا | 5g
+هل يوجد 5g في إيطاليا؟ | 5g
+مرحبا هل يوجد 5g في أمريكا؟ | 5g
+هل تعمل الشريحة على السفينة | cruise-flight
+هل تعمل الشريحة في البحر | cruise-flight
+هل تعمل الشريحة في الطائرة | cruise-flight
+سؤال هل تعمل الشريحة في البحر من فضلك | cruise-flight
+مرحبا هل تعمل الشريحة في البحر | cruise-flight
+مرحبا هل تعمل الشريحة في الطائرة؟ | cruise-flight
+هل تعمل الشريحة في الطائرة من فضلك | cruise-flight
+السلام عليكم هل تعمل الشريحة في البحر من فضلك | cruise-flight
+سؤال هل تعمل الشريحة في البحر | cruise-flight
+مرحبا هل تعمل الشريحة على السفينة | cruise-flight
+السلام عليكم هل تعمل الشريحة في البحر | cruise-flight
+مرحبا هل تعمل الشريحة في البحر؟ | cruise-flight
+هل تعمل الشريحة في الطائرة؟ | cruise-flight
+هل تعمل الشريحة في البحر؟ | cruise-flight
+سؤال هل تعمل الشريحة على السفينة | cruise-flight
+سؤال هل تعمل الشريحة في الطائرة؟ | cruise-flight
+هل تعمل الشريحة في البحر من فضلك | cruise-flight
+جوجل يظهر دولة أخرى مع الشريحة | ip-location
+لماذا عنوان ip من دولة أخرى | ip-location
+نتفليكس يظهر دولة أخرى مع الشريحة | ip-location
+لماذا يظهر موقع خاطئ | ip-location
+سؤال جوجل يظهر دولة أخرى مع الشريحة؟ | ip-location
+مرحبا جوجل يظهر دولة أخرى مع الشريحة | ip-location
+لماذا عنوان ip من دولة أخرى من فضلك | ip-location
+السلام عليكم نتفليكس يظهر دولة أخرى مع الشريحة | ip-location
+سؤال لماذا يظهر موقع خاطئ | ip-location
+جوجل يظهر دولة أخرى مع الشريحة من فضلك | ip-location
+سؤال جوجل يظهر دولة أخرى مع الشريحة | ip-location
+السلام عليكم جوجل يظهر دولة أخرى مع الشريحة من فضلك | ip-location
+سؤال لماذا عنوان ip من دولة أخرى | ip-location
+مرحبا نتفليكس يظهر دولة أخرى مع الشريحة | ip-location
+لماذا يظهر موقع خاطئ من فضلك | ip-location
+مرحبا لماذا يظهر موقع خاطئ | ip-location
+جوجل يظهر دولة أخرى مع الشريحة؟ | ip-location
+هل يعمل يوتيوب في الصين مع الشريحة | china
+هل يعمل يوتيوب في الصين | china
+هل يعمل جوجل في الصين مع الشريحة | china
+هل يعمل واتساب في الصين مع الشريحة | china
+هل يعمل واتساب في الصين | china
+هل يعمل جوجل في الصين | china
+سؤال هل يعمل واتساب في الصين؟ | china
+هل يعمل يوتيوب في الصين؟ | china
+مرحبا هل يعمل واتساب في الصين مع الشريحة | china
+مرحبا هل يعمل يوتيوب في الصين | china
+سؤال هل يعمل واتساب في الصين من فضلك | china
+السلام عليكم هل يعمل واتساب في الصين مع الشريحة | china
+سؤال هل يعمل جوجل في الصين مع الشريحة من فضلك | china
+مرحبا هل يعمل واتساب في الصين مع الشريحة؟ | china
+مرحبا هل يعمل جوجل في الصين من فضلك | china
+السلام عليكم هل يعمل واتساب في الصين؟ | china
+هاتف أجنبي في تركيا حظر eSIM | turkey
+شريحة لتركيا أي باقة | turkey
+هاتف أجنبي في تركيا تسجيل imei eSIM | turkey
+شريحة لتركيا هل تعمل | turkey
+سؤال هاتف أجنبي في تركيا تسجيل imei eSIM | turkey
+سؤال شريحة لتركيا أي باقة من فضلك | turkey
+مرحبا شريحة لتركيا أي باقة؟ | turkey
+مرحبا شريحة لتركيا هل تعمل | turkey
+هاتف أجنبي في تركيا تسجيل imei eSIM من فضلك | turkey
+السلام عليكم شريحة لتركيا هل تعمل من فضلك | turkey
+مرحبا هاتف أجنبي في تركيا حظر eSIM من فضلك | turkey
+شريحة لتركيا هل تعمل من فضلك | turkey
+مرحبا شريحة لتركيا أي باقة | turkey
+السلام عليكم هاتف أجنبي في تركيا حظر eSIM | turkey
+مرحبا هاتف أجنبي في تركيا تسجيل imei eSIM | turkey
+السلام عليكم شريحة لتركيا هل تعمل | turkey
+eSIM أم التجوال أيهما أرخص | esim-vs-roaming
+eSIM مقابل التجوال أيهما أرخص | esim-vs-roaming
+eSIM أم التجوال أيهما أرخص؟ | esim-vs-roaming
+سؤال eSIM مقابل التجوال أيهما أرخص من فضلك | esim-vs-roaming
+مرحبا eSIM مقابل التجوال أيهما أرخص؟ | esim-vs-roaming
+eSIM أم التجوال أيهما أرخص من فضلك | esim-vs-roaming
+السلام عليكم eSIM مقابل التجوال أيهما أرخص | esim-vs-roaming
+eSIM مقابل التجوال أيهما أرخص؟ | esim-vs-roaming
+مرحبا eSIM أم التجوال أيهما أرخص | esim-vs-roaming
+مرحبا eSIM مقابل التجوال أيهما أرخص من فضلك | esim-vs-roaming
+السلام عليكم eSIM أم التجوال أيهما أرخص | esim-vs-roaming
+السلام عليكم eSIM أم التجوال أيهما أرخص؟ | esim-vs-roaming
+سؤال eSIM مقابل التجوال أيهما أرخص؟ | esim-vs-roaming
+السلام عليكم eSIM مقابل التجوال أيهما أرخص من فضلك | esim-vs-roaming
+السلام عليكم eSIM مقابل التجوال أيهما أرخص؟ | esim-vs-roaming
+سؤال eSIM أم التجوال أيهما أرخص | esim-vs-roaming
+فشل الدفع | payment-failed
+خصم المبلغ بدون طلب | payment-failed
+البطاقة مرفوضة | payment-failed
+خصم مرتين | payment-failed
+خصم المبلغ بدون شريحة | payment-failed
+خصم المبلغ بدون طلب من فضلك | payment-failed
+البطاقة مرفوضة من فضلك | payment-failed
+مرحبا البطاقة مرفوضة | payment-failed
+سؤال فشل الدفع؟ | payment-failed
+سؤال خصم مرتين؟ | payment-failed
+سؤال فشل الدفع | payment-failed
+مرحبا خصم المبلغ بدون طلب؟ | payment-failed
+السلام عليكم فشل الدفع | payment-failed
+خصم المبلغ بدون طلب؟ | payment-failed
+فشل الدفع؟ | payment-failed
+السلام عليكم خصم مرتين؟ | payment-failed
+هل توجد رسوم مخفية | hidden-costs
+هل توجد اشتراك | hidden-costs
+هل تتجدد الباقة تلقائيا | hidden-costs
+هل توجد اشتراك من فضلك | hidden-costs
+هل تتجدد الباقة تلقائيا؟ | hidden-costs
+مرحبا هل توجد رسوم مخفية | hidden-costs
+هل توجد رسوم مخفية؟ | hidden-costs
+السلام عليكم هل توجد اشتراك من فضلك | hidden-costs
+السلام عليكم هل تتجدد الباقة تلقائيا | hidden-costs
+السلام عليكم هل توجد اشتراك | hidden-costs
+السلام عليكم هل توجد رسوم مخفية من فضلك | hidden-costs
+سؤال هل توجد اشتراك | hidden-costs
+سؤال هل تتجدد الباقة تلقائيا من فضلك | hidden-costs
+هل توجد رسوم مخفية من فضلك | hidden-costs
+هل تتجدد الباقة تلقائيا من فضلك | hidden-costs
+مرحبا هل تتجدد الباقة تلقائيا من فضلك | hidden-costs
+أين زر الاسترداد | refund-how,refund
+كيف أطلب استرداد | refund-how,refund
+كيف أطلب استرداد من فضلك | refund-how,refund
+سؤال أين زر الاسترداد | refund-how,refund
+مرحبا أين زر الاسترداد | refund-how,refund
+السلام عليكم كيف أطلب استرداد؟ | refund-how,refund
+السلام عليكم أين زر الاسترداد | refund-how,refund
+أين زر الاسترداد؟ | refund-how,refund
+مرحبا كيف أطلب استرداد؟ | refund-how,refund
+سؤال كيف أطلب استرداد؟ | refund-how,refund
+كيف أطلب استرداد؟ | refund-how,refund
+السلام عليكم كيف أطلب استرداد | refund-how,refund
+سؤال كيف أطلب استرداد من فضلك | refund-how,refund
+السلام عليكم كيف أطلب استرداد من فضلك | refund-how,refund
+مرحبا كيف أطلب استرداد | refund-how,refund
+سؤال أين زر الاسترداد من فضلك | refund-how,refund
+دخول الصالة ماذا أظهر | lounge-access,lounge-what
+كيف أدخل الصالة في إيطاليا | lounge-access,lounge-what
+قسيمة الصالة ماذا أظهر | lounge-access,lounge-what
+كيف أدخل الصالة في المطار | lounge-access,lounge-what
+كيف أدخل الصالة في مصر | lounge-access,lounge-what
+كيف أدخل الصالة في تركيا | lounge-access,lounge-what
+كيف أدخل الصالة في دبي | lounge-access,lounge-what
+كيف أدخل الصالة في أمريكا | lounge-access,lounge-what
+كيف أدخل الصالة في تايلاند | lounge-access,lounge-what
+كيف أدخل الصالة في إسبانيا | lounge-access,lounge-what
+كيف أدخل الصالة في اليونان | lounge-access,lounge-what
+مرحبا كيف أدخل الصالة في مصر من فضلك | lounge-access,lounge-what
+دخول الصالة ماذا أظهر من فضلك | lounge-access,lounge-what
+السلام عليكم كيف أدخل الصالة في تايلاند | lounge-access,lounge-what
+مرحبا دخول الصالة ماذا أظهر؟ | lounge-access,lounge-what
+مرحبا دخول الصالة ماذا أظهر | lounge-access,lounge-what
+كم ساعة يمكنني البقاء في الصالة | lounge-hours
+كم ساعة يمكنني البقاء في الصالة؟ | lounge-hours
+سؤال كم ساعة يمكنني البقاء في الصالة | lounge-hours
+مرحبا كم ساعة يمكنني البقاء في الصالة | lounge-hours
+مرحبا كم ساعة يمكنني البقاء في الصالة من فضلك | lounge-hours
+كم ساعة يمكنني البقاء في الصالة من فضلك | lounge-hours
+السلام عليكم كم ساعة يمكنني البقاء في الصالة من فضلك | lounge-hours
+السلام عليكم كم ساعة يمكنني البقاء في الصالة؟ | lounge-hours
+السلام عليكم كم ساعة يمكنني البقاء في الصالة | lounge-hours
+سؤال كم ساعة يمكنني البقاء في الصالة؟ | lounge-hours
+سؤال كم ساعة يمكنني البقاء في الصالة من فضلك | lounge-hours
+مرحبا كم ساعة يمكنني البقاء في الصالة؟ | lounge-hours
+المرافق في الصالة | lounge-kids
+الرضيع في الصالة | lounge-kids
+الأطفال في الصالة | lounge-kids
+مرحبا الرضيع في الصالة | lounge-kids
+الأطفال في الصالة من فضلك | lounge-kids
+سؤال المرافق في الصالة من فضلك | lounge-kids
+مرحبا الأطفال في الصالة | lounge-kids
+السلام عليكم الأطفال في الصالة | lounge-kids
+سؤال الأطفال في الصالة | lounge-kids
+سؤال الرضيع في الصالة؟ | lounge-kids
+سؤال المرافق في الصالة؟ | lounge-kids
+الرضيع في الصالة من فضلك | lounge-kids
+المرافق في الصالة؟ | lounge-kids
+مرحبا الأطفال في الصالة من فضلك | lounge-kids
+السلام عليكم الرضيع في الصالة | lounge-kids
+الرضيع في الصالة؟ | lounge-kids
+الصالة ممتلئة | lounge-denied
+الصالة رفضتني | lounge-denied
+مرحبا الصالة ممتلئة | lounge-denied
+السلام عليكم الصالة ممتلئة من فضلك | lounge-denied
+مرحبا الصالة رفضتني من فضلك | lounge-denied
+مرحبا الصالة رفضتني | lounge-denied
+سؤال الصالة ممتلئة | lounge-denied
+السلام عليكم الصالة رفضتني من فضلك | lounge-denied
+السلام عليكم الصالة ممتلئة؟ | lounge-denied
+الصالة رفضتني من فضلك | lounge-denied
+السلام عليكم الصالة رفضتني | lounge-denied
+سؤال الصالة رفضتني | lounge-denied
+سؤال الصالة رفضتني؟ | lounge-denied
+السلام عليكم الصالة ممتلئة | lounge-denied
+الصالة رفضتني؟ | lounge-denied
+سؤال الصالة ممتلئة؟ | lounge-denied
+تأخير هل قسيمة الصالة صالحة | lounge-delay
+الرحلة متأخرة هل قسيمة الصالة صالحة | lounge-delay
+سؤال الرحلة متأخرة هل قسيمة الصالة صالحة | lounge-delay
+مرحبا الرحلة متأخرة هل قسيمة الصالة صالحة؟ | lounge-delay
+تأخير هل قسيمة الصالة صالحة من فضلك | lounge-delay
+الرحلة متأخرة هل قسيمة الصالة صالحة من فضلك | lounge-delay
+سؤال تأخير هل قسيمة الصالة صالحة | lounge-delay
+مرحبا تأخير هل قسيمة الصالة صالحة من فضلك | lounge-delay
+مرحبا تأخير هل قسيمة الصالة صالحة | lounge-delay
+مرحبا تأخير هل قسيمة الصالة صالحة؟ | lounge-delay
+الرحلة متأخرة هل قسيمة الصالة صالحة؟ | lounge-delay
+مرحبا الرحلة متأخرة هل قسيمة الصالة صالحة | lounge-delay
+سؤال الرحلة متأخرة هل قسيمة الصالة صالحة من فضلك | lounge-delay
+السلام عليكم تأخير هل قسيمة الصالة صالحة؟ | lounge-delay
+مرحبا الرحلة متأخرة هل قسيمة الصالة صالحة من فضلك | lounge-delay
+تأخير هل قسيمة الصالة صالحة؟ | lounge-delay
+أين المسار السريع في إسطنبول | fasttrack-where
+لا أجد مدخل المسار السريع | fasttrack-where
+أين المسار السريع في المطار | fasttrack-where
+مرحبا أين المسار السريع في المطار | fasttrack-where
+لا أجد مدخل المسار السريع؟ | fasttrack-where
+أين المسار السريع في المطار؟ | fasttrack-where
+أين المسار السريع في إسطنبول من فضلك | fasttrack-where
+سؤال أين المسار السريع في المطار من فضلك | fasttrack-where
+لا أجد مدخل المسار السريع من فضلك | fasttrack-where
+سؤال أين المسار السريع في المطار | fasttrack-where
+السلام عليكم أين المسار السريع في إسطنبول | fasttrack-where
+أين المسار السريع في إسطنبول؟ | fasttrack-where
+السلام عليكم لا أجد مدخل المسار السريع | fasttrack-where
+مرحبا أين المسار السريع في المطار من فضلك | fasttrack-where
+مرحبا لا أجد مدخل المسار السريع من فضلك | fasttrack-where
+سؤال أين المسار السريع في إسطنبول من فضلك | fasttrack-where
+كم مدة صلاحية المسار السريع | fasttrack-time
+مرحبا كم مدة صلاحية المسار السريع | fasttrack-time
+كم مدة صلاحية المسار السريع؟ | fasttrack-time
+السلام عليكم كم مدة صلاحية المسار السريع | fasttrack-time
+السلام عليكم كم مدة صلاحية المسار السريع من فضلك | fasttrack-time
+سؤال كم مدة صلاحية المسار السريع | fasttrack-time
+سؤال كم مدة صلاحية المسار السريع؟ | fasttrack-time
+كم مدة صلاحية المسار السريع من فضلك | fasttrack-time
+السلام عليكم كم مدة صلاحية المسار السريع؟ | fasttrack-time
+سؤال كم مدة صلاحية المسار السريع من فضلك | fasttrack-time
+مرحبا كم مدة صلاحية المسار السريع من فضلك | fasttrack-time
+مرحبا كم مدة صلاحية المسار السريع؟ | fasttrack-time
+هل يعمل في بي ان مع الشريحة | vpn
+هل يعمل vpn مع الشريحة | vpn
+مرحبا هل يعمل vpn مع الشريحة؟ | vpn
+السلام عليكم هل يعمل vpn مع الشريحة؟ | vpn
+هل يعمل vpn مع الشريحة من فضلك | vpn
+سؤال هل يعمل vpn مع الشريحة | vpn
+السلام عليكم هل يعمل vpn مع الشريحة | vpn
+السلام عليكم هل يعمل في بي ان مع الشريحة؟ | vpn
+مرحبا هل يعمل vpn مع الشريحة | vpn
+السلام عليكم هل يعمل في بي ان مع الشريحة | vpn
+هل يعمل في بي ان مع الشريحة؟ | vpn
+هل يعمل في بي ان مع الشريحة من فضلك | vpn
+سؤال هل يعمل vpn مع الشريحة من فضلك | vpn
+سؤال هل يعمل vpn مع الشريحة؟ | vpn
+السلام عليكم هل يعمل vpn مع الشريحة من فضلك | vpn
+السلام عليكم هل يعمل في بي ان مع الشريحة من فضلك | vpn
+شرائح للشركات عرض | business
+eSIM للموظفين عرض | business
+شرائح للشركات عرض؟ | business
+سؤال شرائح للشركات عرض | business
+سؤال شرائح للشركات عرض من فضلك | business
+مرحبا شرائح للشركات عرض من فضلك | business
+eSIM للموظفين عرض من فضلك | business
+مرحبا شرائح للشركات عرض | business
+مرحبا eSIM للموظفين عرض؟ | business
+eSIM للموظفين عرض؟ | business
+سؤال eSIM للموظفين عرض | business
+مرحبا شرائح للشركات عرض؟ | business
+مرحبا eSIM للموظفين عرض | business
+شرائح للشركات عرض من فضلك | business
+السلام عليكم eSIM للموظفين عرض من فضلك | business
+مرحبا eSIM للموظفين عرض من فضلك | business
+هل للشريحة رقم هاتف | phone-number,calls
+هل للشريحة رقم تركي | phone-number,calls
+مرحبا هل للشريحة رقم هاتف | phone-number,calls
+السلام عليكم هل للشريحة رقم تركي من فضلك | phone-number,calls
+سؤال هل للشريحة رقم هاتف | phone-number,calls
+السلام عليكم هل للشريحة رقم هاتف | phone-number,calls
+هل للشريحة رقم تركي من فضلك | phone-number,calls
+سؤال هل للشريحة رقم هاتف من فضلك | phone-number,calls
+سؤال هل للشريحة رقم تركي من فضلك | phone-number,calls
+هل للشريحة رقم هاتف؟ | phone-number,calls
+مرحبا هل للشريحة رقم تركي؟ | phone-number,calls
+السلام عليكم هل للشريحة رقم هاتف؟ | phone-number,calls
+سؤال هل للشريحة رقم هاتف؟ | phone-number,calls
+مرحبا هل للشريحة رقم تركي | phone-number,calls
+سؤال هل للشريحة رقم تركي؟ | phone-number,calls
+هل للشريحة رقم هاتف من فضلك | phone-number,calls
+متى أثبت الشريحة | buy-when,when-activate
+تثبيت الشريحة قبل السفر | buy-when,when-activate
+متى أشتري الشريحة | buy-when,when-activate
+السلام عليكم تثبيت الشريحة قبل السفر من فضلك | buy-when,when-activate
+تثبيت الشريحة قبل السفر من فضلك | buy-when,when-activate
+السلام عليكم تثبيت الشريحة قبل السفر؟ | buy-when,when-activate
+مرحبا متى أشتري الشريحة من فضلك | buy-when,when-activate
+السلام عليكم متى أثبت الشريحة | buy-when,when-activate
+سؤال تثبيت الشريحة قبل السفر | buy-when,when-activate
+سؤال تثبيت الشريحة قبل السفر من فضلك | buy-when,when-activate
+مرحبا تثبيت الشريحة قبل السفر | buy-when,when-activate
+سؤال متى أثبت الشريحة؟ | buy-when,when-activate
+السلام عليكم تثبيت الشريحة قبل السفر | buy-when,when-activate
+متى أشتري الشريحة؟ | buy-when,when-activate
+متى أشتري الشريحة من فضلك | buy-when,when-activate
+السلام عليكم متى أثبت الشريحة من فضلك | buy-when,when-activate
+هل يجب تشغيل التجوال للشريحة من فضلك | data-roaming
+تحويل بيانات الجوال إلى eSIM شاومي؟ | data-line,line-on
+مرحبا لا توجد شبكة في تايلاند تغيير الشبكة | network-select
+إعادة ضبط إعدادات الشبكة في ايفون؟ | reset-network
+بكسل الهوتسبوت مع الشريحة لا يعمل من فضلك | hotspot-setup,hotspot
+مرحبا ايفون إضافة eSIM كيف | install-iphone,install-esim
+شاومي إضافة eSIM كيف؟ | install-android,install-esim
+مرحبا الشريحة مطفأة في ايفون | line-on,data-line

@@ -66,9 +66,7 @@
         "keywords": [
           "uyumlu",
           "destekliyor",
-          "iphone",
           "samsung",
-          "pixel",
           "eid",
           "telefonumda çalışır mı",
           "uyumlu mu",
@@ -85,7 +83,9 @@
           "galaxy",
           "samsung galaxy",
           "samsung esim calisir",
-          "iphone esim calisir"
+          "iphone esim calisir",
+          "iphone",
+          "pixel"
         ],
         "views": 1240
       },
@@ -185,7 +185,8 @@
           "arama yapılır mı",
           "sms dahil",
           "konusabilir",
-          "arama dahil"
+          "arama dahil",
+          "numara"
         ],
         "views": 640
       },
@@ -247,7 +248,8 @@
           "tükendi",
           "ek paket",
           "ek gb",
-          "paket yükleme"
+          "paket yükleme",
+          "gb almak"
         ],
         "views": 380
       },
@@ -258,14 +260,16 @@
         "answer": "Rezervasyondan hemen sonra dijital voucher'ın e-postana ve hesabına gelir. Lounge girişinde QR kodu ve biniş kartını göstermen yeterli.",
         "keywords": [
           "erişim",
-          "voucher",
           "nasıl alırım",
           "lounge rezervasyon",
           "lounge nasıl",
           "lounge voucher",
           "lounge almak",
           "rezerve",
-          "voucher göster"
+          "voucher göster",
+          "a nasil girilir",
+          "a nasil girerim",
+          "voucher"
         ],
         "views": 590
       },
@@ -280,7 +284,8 @@
           "kaç saat kalabilirim",
           "kaç saat önce",
           "lounge süresi",
-          "ne kadar kalabilirim"
+          "ne kadar kalabilirim",
+          "lounge sure siniri"
         ],
         "views": 260
       },
@@ -451,7 +456,9 @@
           "kullanılmış",
           "zaten kullanılmış",
           "görünmüyor",
-          "kurduktan sonra görünmüyor"
+          "kurduktan sonra görünmüyor",
+          "qr kod kabul",
+          "kod kabul edilmiyor"
         ],
         "views": 380
       },
@@ -474,7 +481,10 @@
           "yükleme başarısız",
           "kurulumda sorun",
           "kurulum sorunu",
-          "kuramıyorum"
+          "kuramıyorum",
+          "ekleme basarisiz",
+          "ekleme olmuyor",
+          "ekleme hatasi diyor"
         ],
         "views": 360,
         "next": [
@@ -507,7 +517,9 @@
           "kodu nereye",
           "nereye girilir",
           "elle",
-          "elle girmek"
+          "elle girmek",
+          "esimi qr kodsuz",
+          "qr kodsuz kurmak"
         ],
         "views": 330
       },
@@ -560,7 +572,8 @@
           "iki günde",
           "gb nereye",
           "veri nereye",
-          "veri hızlı bitiyor"
+          "veri hızlı bitiyor",
+          "veri yiyor"
         ],
         "views": 220
       },
@@ -615,7 +628,8 @@
           "kontratlı",
           "faturalı telefon",
           "unlock",
-          "sim kısıtlaması"
+          "sim kısıtlaması",
+          "operatore bagli"
         ],
         "views": 170
       },
@@ -654,7 +668,8 @@
           "bekliyor",
           "activating",
           "aktif değil",
-          "aktif olmadı"
+          "aktif olmadı",
+          "aktivasyon bitmiyor"
         ],
         "views": 160,
         "next": [
@@ -700,13 +715,13 @@
           "whatsapp",
           "whatsapp numarası",
           "telegram",
-          "instagram",
           "facetime",
           "imessage",
           "görüntülü arama",
           "numara değişir mi",
           "whatsapp kullanabilir miyim",
-          "whatsapp kullanilir"
+          "whatsapp kullanilir",
+          "instagram"
         ],
         "views": 410
       },
@@ -723,7 +738,9 @@
           "otp",
           "banka şifresi",
           "sms almak",
-          "e devlet"
+          "e devlet",
+          "sms sifre",
+          "taylandda gelir"
         ],
         "views": 260
       },
@@ -808,7 +825,10 @@
           "son dakika",
           "havalimanında almak",
           "ne zaman kurmalıyım",
-          "yola çıkmadan"
+          "yola çıkmadan",
+          "once kurmak",
+          "yolculuktan once",
+          "esimi evde kurmak"
         ],
         "views": 330
       },
@@ -830,7 +850,10 @@
           "internetsiz kurabilir",
           "uçakta kurabilir",
           "wifi kurabilir miyim",
-          "wifi kursam"
+          "wifi kursam",
+          "esimi kurmak",
+          "esimi ucakta kurmak",
+          "esimi havalimaninda kurmak"
         ],
         "views": 210
       },
@@ -843,12 +866,12 @@
           "birden fazla esim",
           "iki esim",
           "çoklu esim",
-          "kaç esim",
           "aynı anda",
           "ikinci esim",
           "başka esim",
           "eski esim",
-          "iki paket ayni"
+          "iki paket ayni",
+          "kaç esim"
         ],
         "views": 130
       },
@@ -868,7 +891,8 @@
           "macbook",
           "galaxy tab",
           "ipad de",
-          "tablette"
+          "tablette",
+          "saatte calisir"
         ],
         "views": 110
       },
@@ -921,7 +945,8 @@
           "türk numarası",
           "yabancı numara",
           "numara veriyor musunuz",
-          "sms atabilir miyim"
+          "sms atabilir miyim",
+          "esimden beni arayabilirler"
         ],
         "views": 180
       },
@@ -961,13 +986,15 @@
           "gemi",
           "cruise",
           "kruvaziyer",
-          "uçakta",
           "uçak içi",
           "deniz",
           "açık deniz",
           "feribot",
           "denizde internet",
-          "feribotta"
+          "feribotta",
+          "ucakta calisir",
+          "denizde calisir",
+          "uçakta"
         ],
         "views": 100
       },
@@ -988,7 +1015,8 @@
           "ip",
           "netflix katalog",
           "başka ülke katalog",
-          "kataloğu"
+          "kataloğu",
+          "baska konum gosteriyor"
         ],
         "views": 120
       },
@@ -1023,7 +1051,6 @@
         "answer": "- eSIM'i **Türkiye'ye gelmeden önce kur.** Türkiye içinden yabancı eSIM profillerinin indirilmesi engellenebiliyor.\n- **IMEI kaydı:** 120 gün kuralı yurt dışından getirilen telefonun **Türk SIM kartıyla** kullanımı için geçerlidir. Seyahat eSIM'i dolaşım (roaming) olarak çalıştığından kısa tatillerde genellikle kayıt gerekmez.\n- Türk numaran varsa onu SMS için açık bırakabilirsin, mobil veriyi eSIM'e ver.",
         "keywords": [
           "türkiye",
-          "türkiyede",
           "turkey",
           "izin",
           "memleket",
@@ -1037,7 +1064,8 @@
           "telefon kapanır",
           "gurbetçi",
           "türkiyede esim",
-          "esim indirilebilir"
+          "esim indirilebilir",
+          "türkiyede"
         ],
         "views": 450
       },
@@ -1155,7 +1183,9 @@
           "kart geçmiyor",
           "ödeme yapamıyorum",
           "kartım reddedildi",
-          "para çekildi esim yok"
+          "para çekildi esim yok",
+          "iki kez cekildi",
+          "odeme olmuyor"
         ],
         "views": 160
       },
@@ -1173,7 +1203,8 @@
           "sözleşme",
           "taahhüt",
           "aktivasyon ücreti",
-          "kesinti olur mu"
+          "kesinti olur mu",
+          "paket otomatik"
         ],
         "views": 190
       },
@@ -1203,7 +1234,6 @@
         "keywords": [
           "giriş yapamıyorum",
           "şifremi unuttum",
-          "şifre",
           "hesap",
           "kod gelmiyor",
           "doğrulama kodu",
@@ -1213,8 +1243,10 @@
           "kayıt",
           "google ile giriş",
           "apple ile giriş",
-          "onay kodu",
-          "şifre sıfırlama"
+          "şifre sıfırlama",
+          "onay kodu gelmiyor",
+          "şifre",
+          "onay kodu"
         ],
         "views": 150
       },
@@ -1237,7 +1269,8 @@
           "götürebilir miyim",
           "eşim de",
           "eşim girebilir",
-          "refakatçi"
+          "refakatçi",
+          "lounge icin ekstra"
         ],
         "views": 90
       },
@@ -1253,7 +1286,8 @@
           "lounge kapalı",
           "içeri almadılar",
           "reddedildi",
-          "lounge dolu"
+          "lounge dolu",
+          "lounge beni almadi"
         ],
         "views": 80
       },
@@ -1270,7 +1304,8 @@
           "erken gittim",
           "geç kaldım",
           "saat değişti",
-          "lounge saati"
+          "lounge saati",
+          "ucus ertelendi lounge"
         ],
         "views": 70
       },
@@ -1391,7 +1426,8 @@
           "çalışanlar için",
           "acente",
           "tur şirketi",
-          "çok sayıda"
+          "çok sayıda",
+          "sirkete birden fazla"
         ],
         "views": 90
       },
@@ -1450,7 +1486,8 @@
           "vpn açınca",
           "vpn ile",
           "proxy",
-          "vpn çalışır mı"
+          "vpn çalışır mı",
+          "nordvpn"
         ],
         "views": 110
       },
@@ -1486,7 +1523,8 @@
           "tek kullanımlık",
           "hangi saatler",
           "saat aralığı",
-          "fast track süresi"
+          "fast track süresi",
+          "track zaman araligi"
         ],
         "views": 60
       },
@@ -1504,7 +1542,8 @@
           "dolaşım ayarı",
           "roaming ayarı",
           "data roaming",
-          "dolaşımı açmalı mıyım"
+          "dolaşımı açmalı mıyım",
+          "dolasim ac"
         ],
         "views": 330,
         "next": [
@@ -1526,7 +1565,9 @@
           "veri için sim",
           "varsayılan sim",
           "mobil veri esim",
-          "sim yöneticisi"
+          "sim yöneticisi",
+          "hattimi",
+          "kullaniyor"
         ],
         "views": 300,
         "next": [
@@ -1548,7 +1589,8 @@
           "otomatik seç kapat",
           "şebeke değiştirmek",
           "başka operatör",
-          "operatör seçimi"
+          "operatör seçimi",
+          "sebeke"
         ],
         "views": 290,
         "next": [
@@ -1570,7 +1612,12 @@
           "hattı kapat",
           "esimi kapatmak",
           "esim kapalı",
-          "sim i kullan"
+          "sim i kullan",
+          "devre disi gorunuyor",
+          "kapali",
+          "hattini aktif etmek",
+          "hatti gri",
+          "kapali gorunuyor"
         ],
         "views": 200
       },
@@ -1609,7 +1656,8 @@
           "redmi kurulum",
           "android esim nasıl",
           "sim yöneticisi esim ekle",
-          "mobil plan ekle"
+          "mobil plan ekle",
+          "xiaomi esim ekleme"
         ],
         "views": 250,
         "next": [
@@ -1648,7 +1696,10 @@
           "hotspot açmak",
           "laptopa internet",
           "bağlantı paylaşımı",
-          "tethering"
+          "tethering",
+          "paylasimi tablete",
+          "hotspot",
+          "hotspot calismiyor"
         ],
         "views": 130
       },
@@ -2043,10 +2094,7 @@
         "answer": "Most smartphones from 2019 onwards support eSIM – e.g. iPhone XS/XR and newer, Samsung Galaxy S20 and newer, Google Pixel 3 and newer.\n\n**Quick test:** dial ***#06#** – if an **EID** appears, your device supports eSIM. Important: the device also needs to be **carrier-unlocked**.",
         "keywords": [
           "compatible",
-          "supported",
           "iphone",
-          "samsung",
-          "pixel",
           "eid",
           "phone compatible",
           "support esim",
@@ -2054,9 +2102,12 @@
           "esim compatible",
           "no esim option",
           "huawei",
+          "capable",
+          "supported",
+          "samsung",
+          "pixel",
           "xiaomi",
-          "galaxy",
-          "capable"
+          "galaxy"
         ]
       },
       {
@@ -2064,7 +2115,6 @@
         "question": "How do I install my eSIM?",
         "answer": "**iPhone:** Settings → Cellular (Mobile Data) → Add eSIM → scan QR code.\n**Android:** Settings → Connections → SIM manager → Add eSIM → scan QR code.\n\nTip: install the eSIM **at home on Wi-Fi** – you only need to activate it at your destination.\n\n[Go to the illustrated step-by-step guide](install.html)",
         "keywords": [
-          "install",
           "set up",
           "setup",
           "guide",
@@ -2073,7 +2123,8 @@
           "install on android",
           "install on iphone",
           "set up esim",
-          "print qr"
+          "print qr",
+          "install"
         ]
       },
       {
@@ -2174,12 +2225,12 @@
         "answer": "Right after booking you receive a digital voucher by email and in your account. At the lounge entrance, simply show the QR code and your boarding pass.",
         "keywords": [
           "access",
-          "voucher",
           "how do i get",
           "book a lounge",
           "lounge booking",
           "lounge voucher",
-          "lounge access"
+          "lounge access",
+          "voucher"
         ]
       },
       {
@@ -2191,7 +2242,8 @@
           "duration",
           "stay",
           "how long in the lounge",
-          "how long can i stay"
+          "how long can i stay",
+          "lounge time limit"
         ]
       },
       {
@@ -2314,7 +2366,8 @@
           "qr error",
           "already used",
           "not showing",
-          "not showing after install"
+          "not showing after install",
+          "code not accepted"
         ]
       },
       {
@@ -2331,7 +2384,9 @@
           "unsupported esim",
           "not supported",
           "cellular plan",
-          "unable to complete"
+          "unable to complete",
+          "adding",
+          "says esim unable"
         ]
       },
       {
@@ -2352,7 +2407,9 @@
           "same phone",
           "screenshot qr",
           "cannot scan",
-          "scan the qr code"
+          "scan the qr code",
+          "without qr code",
+          "install esim manually"
         ]
       },
       {
@@ -2390,7 +2447,8 @@
           "data consumption",
           "runs out fast",
           "data runs out",
-          "data ran out fast"
+          "data ran out fast",
+          "up so fast"
         ]
       },
       {
@@ -2476,12 +2534,14 @@
           "bill shock",
           "extra charges",
           "main sim",
-          "home sim",
           "data switching",
           "avoid costs",
           "my own number cost",
           "home carrier charge",
-          "charge me"
+          "charge me",
+          "pay roaming",
+          "turn off roaming",
+          "home sim"
         ]
       },
       {
@@ -2493,12 +2553,12 @@
           "whatsapp number",
           "does whatsapp work",
           "telegram",
-          "instagram",
           "facetime",
           "imessage",
           "video call",
           "number change",
-          "use whatsapp calls"
+          "use whatsapp calls",
+          "instagram"
         ]
       },
       {
@@ -2514,7 +2574,8 @@
           "one time password",
           "tan",
           "security code",
-          "text messages"
+          "text messages",
+          "sms codes"
         ]
       },
       {
@@ -2552,8 +2613,8 @@
           "data finished",
           "buy again",
           "package used up",
-          "data used up",
-          "package empty"
+          "package empty",
+          "data used up"
         ]
       },
       {
@@ -2583,7 +2644,8 @@
           "buy at airport",
           "when to install",
           "before trip",
-          "when should i buy"
+          "when should i buy",
+          "week before"
         ]
       },
       {
@@ -2622,14 +2684,14 @@
         "answer": "- **iPad / tablet:** Yes, on cellular models that support eSIM.\n- **Laptop:** Possible on eSIM-enabled models; otherwise share a **hotspot** from your phone.\n- **Smartwatch:** No – watch eSIMs are tied to your carrier, travel eSIMs aren't supported.",
         "keywords": [
           "ipad",
-          "tablet",
           "laptop",
           "computer",
           "smartwatch",
           "apple watch",
           "watch",
           "macbook",
-          "galaxy tab"
+          "galaxy tab",
+          "tablet"
         ]
       },
       {
@@ -2670,7 +2732,8 @@
           "do i get a number",
           "send sms",
           "new number",
-          "number included"
+          "number included",
+          "turkish"
         ]
       },
       {
@@ -2688,10 +2751,10 @@
           "which countries",
           "layover",
           "all of europe",
-          "thailand",
           "packages for japan",
           "packages for usa",
-          "morocco"
+          "morocco",
+          "thailand"
         ]
       },
       {
@@ -2722,7 +2785,8 @@
           "wrong country",
           "location",
           "netflix",
-          "ip shows"
+          "ip shows",
+          "ip from another"
         ]
       },
       {
@@ -2788,7 +2852,8 @@
           "comparison",
           "tourist sim",
           "which is better",
-          "cheaper"
+          "cheaper",
+          "vs roaming"
         ]
       },
       {
@@ -2857,7 +2922,8 @@
           "money taken",
           "can't pay",
           "transaction failed",
-          "charged no esim"
+          "charged no esim",
+          "pay at checkout"
         ]
       },
       {
@@ -2872,7 +2938,10 @@
           "extra cost",
           "contract",
           "activation fee",
-          "recurring"
+          "recurring",
+          "package renew",
+          "there extra fees",
+          "there hidden costs"
         ]
       },
       {
@@ -2896,7 +2965,6 @@
         "keywords": [
           "can't log in",
           "forgot password",
-          "password",
           "account",
           "no code",
           "verification code",
@@ -2907,7 +2975,8 @@
           "into my account",
           "code not coming",
           "password reset",
-          "reset password"
+          "reset password",
+          "password"
         ]
       },
       {
@@ -2924,7 +2993,8 @@
           "how many people",
           "bring someone",
           "kids enter",
-          "kids in lounge"
+          "kids in lounge",
+          "companion"
         ]
       },
       {
@@ -2939,7 +3009,9 @@
           "didn't let me in",
           "rejected",
           "capacity",
-          "lounge was full"
+          "lounge was full",
+          "lounge refused",
+          "if the lounge"
         ]
       },
       {
@@ -2954,7 +3026,8 @@
           "arrived early",
           "late",
           "time changed",
-          "lounge time"
+          "lounge time",
+          "flight rescheduled lounge"
         ]
       },
       {
@@ -3016,7 +3089,8 @@
           "cheapest",
           "tax included",
           "price difference",
-          "package cost"
+          "package cost",
+          "expensive"
         ]
       },
       {
@@ -3047,7 +3121,10 @@
           "group trip",
           "employees",
           "travel agency",
-          "many esims"
+          "many esims",
+          "several esims",
+          "team invoice",
+          "company invoice"
         ]
       },
       {
@@ -3090,7 +3167,8 @@
           "use a vpn",
           "vpn on",
           "vpn not working",
-          "proxy"
+          "proxy",
+          "use nordvpn"
         ]
       },
       {
@@ -3121,7 +3199,9 @@
           "how many times",
           "single use",
           "opening hours",
-          "time window"
+          "time window",
+          "fast track expiry",
+          "fast track one"
         ]
       },
       {
@@ -3151,7 +3231,10 @@
           "data sim",
           "default data sim",
           "sim manager",
-          "choose esim"
+          "choose esim",
+          "mobile data",
+          "uses my normal",
+          "uses my home"
         ]
       },
       {
@@ -3166,7 +3249,8 @@
           "manual network",
           "change network",
           "automatic network off",
-          "another operator"
+          "another operator",
+          "choose carrier"
         ]
       },
       {
@@ -3181,7 +3265,8 @@
           "turn off esim",
           "disable esim",
           "esim is off",
-          "use sim"
+          "use sim",
+          "line greyed out"
         ]
       },
       {
@@ -3195,7 +3280,8 @@
           "set up iphone",
           "ios install",
           "add esim iphone",
-          "install directly on iphone"
+          "install directly on iphone",
+          "code on iphone"
         ]
       },
       {
@@ -3210,7 +3296,8 @@
           "redmi install",
           "android esim setup",
           "add esim samsung",
-          "add mobile plan"
+          "add mobile plan",
+          "android"
         ]
       },
       {
@@ -3236,7 +3323,8 @@
           "share internet",
           "tethering",
           "hotspot setup",
-          "internet to laptop"
+          "internet to laptop",
+          "set up hotspot"
         ]
       },
       {
@@ -3309,7 +3397,8 @@
           "update password",
           "different password",
           "change login password",
-          "update my password"
+          "update my password",
+          "reset password"
         ]
       },
       {
@@ -3368,11 +3457,12 @@
         "answer": "Eine eSIM ist eine digitale SIM-Karte, die fest in deinem Smartphone verbaut ist. Statt eine Plastikkarte einzulegen, lädst du dein Datenpaket per QR-Code herunter – in unter 2 Minuten, ohne Shop und ohne Warten.",
         "keywords": [
           "was ist",
-          "esim",
           "digitale sim",
           "erklärung",
           "funktioniert",
-          "sim karte rausnehmen"
+          "sim karte rausnehmen",
+          "einfach erklart",
+          "esim"
         ]
       },
       {
@@ -3383,19 +3473,19 @@
           "kompatibel",
           "fähig",
           "unterstützt",
-          "iphone",
-          "samsung",
-          "pixel",
           "eid",
           "esim fähig",
           "unterstützt esim",
           "hat esim",
           "handy kompatibel",
           "huawei",
-          "xiaomi",
           "keine esim option",
-          "galaxy",
-          "tauglich"
+          "tauglich",
+          "iphone",
+          "samsung",
+          "pixel",
+          "xiaomi",
+          "galaxy"
         ]
       },
       {
@@ -3511,13 +3601,14 @@
         "answer": "Nach der Buchung erhältst du sofort einen digitalen Voucher per E-Mail und in deinem Konto. Am Lounge-Eingang zeigst du einfach den QR-Code und deine Bordkarte vor.",
         "keywords": [
           "zugang",
-          "voucher",
           "wie bekomme",
           "lounge buchen",
           "wie buche",
           "lounge zugang",
           "lounge voucher",
-          "voucher lounge"
+          "voucher lounge",
+          "kaufen am flughafen",
+          "voucher"
         ]
       },
       {
@@ -3529,7 +3620,8 @@
           "aufenthalt",
           "wie lange in der lounge",
           "wie lange darf ich",
-          "aufenthaltsdauer"
+          "aufenthaltsdauer",
+          "lounge zeitlimit"
         ]
       },
       {
@@ -3658,7 +3750,8 @@
           "qr fehler",
           "code abgelaufen",
           "nicht sichtbar",
-          "nach installation nicht sichtbar"
+          "nach installation nicht sichtbar",
+          "qr code wird"
         ]
       },
       {
@@ -3671,11 +3764,15 @@
           "tarif kann nicht",
           "installiert nicht",
           "installation fehlgeschlagen",
-          "installationsfehler",
           "nicht unterstützt",
-          "mobilfunktarif",
           "lässt sich nicht installieren",
-          "fehler beim installieren"
+          "fehler beim installieren",
+          "fehler beim hinzufugen",
+          "hinzufugen bricht ab",
+          "hinzufugen schlagt fehl",
+          "installationsfehler",
+          "mobilfunktarif",
+          "konnte nicht hinzugefugt"
         ]
       },
       {
@@ -3699,7 +3796,10 @@
           "qr code nicht scannen",
           "demselben handy",
           "kamera erkennt",
-          "qr scannen geht nicht"
+          "qr scannen geht nicht",
+          "gebe ich aktivierungscode",
+          "gleichen handy",
+          "manuell installieren"
         ]
       },
       {
@@ -3722,7 +3822,8 @@
           "videos ruckeln",
           "ruckeln",
           "anrufe langsam",
-          "whatsapp langsam"
+          "whatsapp langsam",
+          "hangt in agypten"
         ]
       },
       {
@@ -3741,7 +3842,9 @@
           "schnell weg",
           "so schnell leer",
           "schnell verbraucht",
-          "volumen schnell verbraucht"
+          "volumen schnell verbraucht",
+          "2 tagen",
+          "2 tagen leer"
         ]
       },
       {
@@ -3816,12 +3919,12 @@
         "keywords": [
           "wird aktiviert",
           "aktiviert nicht",
-          "hängt",
           "aktivierung",
           "nicht aktiv",
           "bleibt hängen",
           "ausstehend",
-          "aktivierung fehlgeschlagen"
+          "aktivierung fehlgeschlagen",
+          "hängt"
         ]
       },
       {
@@ -3830,7 +3933,6 @@
         "answer": "- Wähle für **mobile Daten** nur die passport.io eSIM.\n- Auf deiner Haupt-SIM **Daten-Roaming ausschalten** (beim iPhone hat jede Leitung eine eigene Einstellung).\n- iPhone: **Wechsel der mobilen Daten zulassen** **ausschalten** – sonst springt das Handy bei schwachem eSIM-Empfang auf deine Haupt-SIM.\n- Deine Haupt-SIM kannst du für Anrufe/SMS anlassen; dafür gelten die Roaming-Preise deines Anbieters.",
         "keywords": [
           "roaming kosten",
-          "roaminggebühren",
           "hohe rechnung",
           "zusatzkosten",
           "haupt sim",
@@ -3839,7 +3941,8 @@
           "kosten vermeiden",
           "kosten",
           "deutschen sim",
-          "deutsche sim"
+          "deutsche sim",
+          "roaminggebühren"
         ]
       },
       {
@@ -3851,12 +3954,12 @@
           "whatsapp nummer",
           "geht whatsapp",
           "telegram",
-          "instagram",
           "facetime",
           "imessage",
           "videoanruf",
           "nummer ändern",
-          "funktioniert whatsapp"
+          "funktioniert whatsapp",
+          "instagram"
         ]
       },
       {
@@ -3872,7 +3975,8 @@
           "2fa",
           "einmalpasswort",
           "pushtan",
-          "sicherheitscode"
+          "sicherheitscode",
+          "bestatigungscodes"
         ]
       },
       {
@@ -3963,7 +4067,8 @@
           "hotel wlan",
           "wlan zum installieren",
           "ohne internet installieren",
-          "ohne wlan installieren"
+          "ohne wlan installieren",
+          "brauche ich wlan"
         ]
       },
       {
@@ -3987,14 +4092,14 @@
         "answer": "- **iPad / Tablet:** Ja, bei Cellular-Modellen mit eSIM-Unterstützung.\n- **Laptop:** Bei eSIM-fähigen Modellen möglich; sonst teilst du einen **Hotspot** vom Handy.\n- **Smartwatch:** Nein – Uhren-eSIMs hängen am Mobilfunkvertrag, Reise-eSIMs werden nicht unterstützt.",
         "keywords": [
           "ipad",
-          "tablet",
           "laptop",
           "computer",
           "smartwatch",
           "apple watch",
           "uhr",
           "macbook",
-          "galaxy tab"
+          "galaxy tab",
+          "tablet"
         ]
       },
       {
@@ -4037,7 +4142,10 @@
           "neue nummer",
           "nummer inklusive",
           "bekomme ich eine telefonnummer",
-          "eigene nummer bekommen"
+          "eigene nummer bekommen",
+          "lokale telefonnummer",
+          "eigene",
+          "turkische"
         ]
       },
       {
@@ -4056,9 +4164,9 @@
           "umsteigen",
           "ganz europa",
           "für europa",
-          "thailand",
           "habt ihr pakete",
-          "marokko"
+          "marokko",
+          "thailand"
         ]
       },
       {
@@ -4115,7 +4223,6 @@
         "question": "Ich reise in die Türkei – worauf muss ich achten? (IMEI-Registrierung)",
         "answer": "- **Installiere die eSIM vor der Einreise in die Türkei.** Das Herunterladen ausländischer eSIM-Profile kann innerhalb der Türkei blockiert sein.\n- **IMEI-Registrierung:** Die 120-Tage-Regel gilt für die Nutzung eines ausländischen Handys mit **türkischer SIM-Karte**. Eine Reise-eSIM läuft als Roaming, im Kurzurlaub ist meist keine Registrierung nötig.\n- Hast du eine türkische Nummer, lass sie für SMS an und nutze die eSIM für mobile Daten.",
         "keywords": [
-          "türkei",
           "türkiye",
           "turkey",
           "heimaturlaub",
@@ -4124,7 +4231,9 @@
           "120 tage",
           "btk",
           "handy gesperrt",
-          "registrieren"
+          "registrieren",
+          "turkei esim vodafone",
+          "türkei"
         ]
       },
       {
@@ -4157,7 +4266,8 @@
           "touristen sim",
           "was ist besser",
           "günstiger",
-          "lohnt sich"
+          "lohnt sich",
+          "vs roaming"
         ]
       },
       {
@@ -4213,7 +4323,8 @@
           "widerruf",
           "geld zurück wie",
           "wie bekomme ich mein geld",
-          "bestellung stornieren"
+          "bestellung stornieren",
+          "retoure button"
         ]
       },
       {
@@ -4230,7 +4341,8 @@
           "geld abgebucht",
           "kann nicht bezahlen",
           "zahlung geht nicht",
-          "abgebucht keine esim"
+          "abgebucht keine esim",
+          "bezahlung klappt"
         ]
       },
       {
@@ -4246,7 +4358,9 @@
           "zusatzkosten",
           "vertrag",
           "aktivierungsgebühr",
-          "kündigen"
+          "kündigen",
+          "sich das paket",
+          "verlangert sich"
         ]
       },
       {
@@ -4259,12 +4373,12 @@
           "gutscheincode",
           "promo code",
           "code funktioniert nicht",
-          "rabatt",
           "aktionscode",
           "ungültiger code",
           "gutscheincode eingeben",
           "rabattcode ungültig",
-          "gebe ich den gutscheincode"
+          "gebe ich den gutscheincode",
+          "rabatt"
         ]
       },
       {
@@ -4315,7 +4429,8 @@
           "kein zutritt",
           "abgelehnt",
           "überfüllt",
-          "lounge war voll"
+          "lounge war voll",
+          "wenn die lounge"
         ]
       },
       {
@@ -4330,7 +4445,10 @@
           "zu früh",
           "zu spät",
           "zeit geändert",
-          "lounge zeit"
+          "lounge zeit",
+          "flug verschoben lounge",
+          "flug gestrichen lounge",
+          "verspatung lounge voucher"
         ]
       },
       {
@@ -4424,7 +4542,9 @@
           "gruppe",
           "gruppenreise",
           "mitarbeiter",
-          "reisebüro"
+          "reisebüro",
+          "team rabatt",
+          "mitarbeiter esim angebot"
         ]
       },
       {
@@ -4466,7 +4586,9 @@
           "vpn nutzen",
           "mit vpn",
           "vpn an",
-          "proxy"
+          "proxy",
+          "vpn benutzen",
+          "funktioniert vpn"
         ]
       },
       {
@@ -4495,7 +4617,8 @@
           "wie oft",
           "einmalig",
           "öffnungszeiten",
-          "zeitfenster"
+          "zeitfenster",
+          "fast track ablauf"
         ]
       },
       {
@@ -4525,7 +4648,8 @@
           "daten sim",
           "standard sim daten",
           "sim manager",
-          "esim auswählen"
+          "esim auswählen",
+          "mobile daten"
         ]
       },
       {
@@ -4556,7 +4680,8 @@
           "esim ausschalten",
           "esim deaktivieren",
           "esim ist aus",
-          "sim verwenden"
+          "sim verwenden",
+          "leitung"
         ]
       },
       {
@@ -4570,7 +4695,9 @@
           "iphone installation",
           "ios installieren",
           "esim hinzufügen iphone",
-          "direkt auf dem iphone installieren"
+          "direkt auf dem iphone installieren",
+          "iphone mobilfunktarif hinzufugen",
+          "code am iphone"
         ]
       },
       {
@@ -4614,7 +4741,8 @@
           "internet teilen",
           "tethering",
           "hotspot einrichten",
-          "internet für laptop"
+          "internet für laptop",
+          "hotspot"
         ]
       },
       {
@@ -4756,14 +4884,14 @@
           "يدعم",
           "متوافق",
           "iphone",
-          "ايفون",
           "samsung",
-          "سامسونج",
           "pixel",
           "eid",
           "هاتفي",
           "جوالي",
-          "يدعم eSIM"
+          "يدعم eSIM",
+          "ايفون",
+          "سامسونج"
         ]
       },
       {
@@ -4794,7 +4922,8 @@
           "تبدأ",
           "الهبوط",
           "مسبقا",
-          "تفعل الباقه"
+          "تفعل الباقه",
+          "تصبح الشريحه فعاله"
         ]
       },
       {
@@ -4802,7 +4931,6 @@
         "question": "ما باقة البيانات المناسبة لي؟",
         "answer": "كقاعدة تقريبية يوميًا:\n\n- **المراسلة والخرائط:** نحو 0.3 غيغابايت\n- **التواصل الاجتماعي والتصفح:** نحو 0.7–1 غيغابايت\n- **البث ونقطة الاتصال:** 2 غيغابايت أو أكثر\n\nلعطلة مدتها 7 أيام تكفي معظم الناس **3–5 غيغابايت**. وإذا كنت تزور عدة دول فالباقة الإقليمية أو العالمية أوفر.",
         "keywords": [
-          "اي باقة",
           "حجم البيانات",
           "غيغابايت",
           "يكفي",
@@ -4810,7 +4938,8 @@
           "مناسبة",
           "أي باقة أختار",
           "كم جيجا",
-          "كم بيانات احتاج"
+          "كم بيانات احتاج",
+          "اي باقة"
         ]
       },
       {
@@ -4872,11 +5001,13 @@
         "question": "كيف أحصل على دخول الصالة؟",
         "answer": "بعد الحجز مباشرةً تصلك قسيمة رقمية عبر البريد وفي حسابك. عند مدخل الصالة اعرض رمز QR وبطاقة الصعود فقط.",
         "keywords": [
-          "قسيمة",
           "مدخل",
           "lounge",
           "حجز صالة",
-          "حجز"
+          "حجز",
+          "ادخل الصاله",
+          "الصاله ماذا اظهر",
+          "قسيمة"
         ]
       },
       {
@@ -4979,12 +5110,12 @@
         "answer": "- **هل وصلت إلى وجهتك؟** تتصل eSIM فقط في دول الباقة، وظهور «لا توجد خدمة» في بلدك أمر طبيعي.\n- تأكد أن خط eSIM **مفعّل**.\n- فعّل/أوقف **وضع الطيران** و**أعد التشغيل**.\n- الإعدادات ← الخلوي ← eSIM ← **اختيار الشبكة**: أوقف التلقائي و**اختر مشغلًا آخر**.\n- قد تكون الإشارة ضعيفة تحت الأرض أو داخل المباني ذات الجدران السميكة.",
         "keywords": [
           "لا توجد خدمة",
-          "لا توجد شبكة",
           "لا إشارة",
           "يبحث عن شبكة",
           "التغطية",
           "الشبكة غير موجودة",
-          "طوارئ فقط"
+          "طوارئ فقط",
+          "لا توجد شبكة"
         ]
       },
       {
@@ -4997,7 +5128,8 @@
           "qr لا يعمل",
           "رمز مستخدم",
           "خطأ في الرمز",
-          "خطأ qr"
+          "خطأ qr",
+          "qr غير مقبول"
         ]
       },
       {
@@ -5029,7 +5161,8 @@
           "إدخال الرمز",
           "نفس الهاتف",
           "لا أستطيع مسح",
-          "مسح رمز qr"
+          "مسح رمز qr",
+          "الشريحه بدون رمز"
         ]
       },
       {
@@ -5057,7 +5190,9 @@
           "استهلاك كبير",
           "استهلاك البيانات",
           "أين ذهبت البيانات",
-          "توفير البيانات"
+          "توفير البيانات",
+          "يستهلك بيانات كثيره",
+          "انتهت باقتي بسرعه"
         ]
       },
       {
@@ -5097,7 +5232,8 @@
           "sim lock",
           "قفل المشغل",
           "فك القفل",
-          "قيود sim"
+          "قيود sim",
+          "قفل الشبكه esim"
         ]
       },
       {
@@ -5131,12 +5267,13 @@
         "answer": "- اختر eSIM من passport.io فقط **للبيانات الخلوية**.\n- **أوقف تجوال البيانات** على خطك الأساسي.\n- iPhone: **أوقف** **السماح بتبديل البيانات الخلوية**.\n- يمكنك إبقاء الخط الأساسي للمكالمات والرسائل، وتطبَّق عليها أسعار التجوال لدى مشغلك.",
         "keywords": [
           "رسوم التجوال",
-          "التجوال",
           "فاتورة",
           "رسوم إضافية",
           "الشريحة الأساسية",
           "تبديل البيانات",
-          "تجنب التكاليف"
+          "تجنب التكاليف",
+          "تجوال علي شريحتي",
+          "التجوال"
         ]
       },
       {
@@ -5165,7 +5302,8 @@
           "otp",
           "استقبال الرسائل",
           "التحقق الثنائي",
-          "رمز الأمان"
+          "رمز الأمان",
+          "تصلني رموز التحقق"
         ]
       },
       {
@@ -5220,7 +5358,8 @@
           "قبل كم يوم",
           "آخر لحظة",
           "الشراء في المطار",
-          "متى أثبت"
+          "متى أثبت",
+          "الشريحه قبل السفر"
         ]
       },
       {
@@ -5232,7 +5371,10 @@
           "أحتاج wifi",
           "بدون wifi",
           "wifi المطار",
-          "wifi الفندق"
+          "wifi الفندق",
+          "احتاج واي فاي",
+          "الشريحه في المطار",
+          "الشريحه بدون واي"
         ]
       },
       {
@@ -5260,7 +5402,10 @@
           "لابتوب",
           "ساعة",
           "apple watch",
-          "macbook"
+          "macbook",
+          "الايباد",
+          "esim علي التابلت",
+          "الشريحه علي الساعه"
         ]
       },
       {
@@ -5299,7 +5444,8 @@
           "رقم محلي",
           "إرسال رسائل",
           "رقم جديد",
-          "يتضمن رقم"
+          "يتضمن رقم",
+          "للشريحه رقم تركي"
         ]
       },
       {
@@ -5330,7 +5476,8 @@
           "في الطائرة",
           "أثناء الطيران",
           "في البحر",
-          "عبارة"
+          "عبارة",
+          "الشريحه علي السفينه"
         ]
       },
       {
@@ -5343,7 +5490,8 @@
           "موقع خاطئ",
           "لغة جوجل",
           "بلد خاطئ",
-          "netflix"
+          "netflix",
+          "يظهر دوله اخري"
         ]
       },
       {
@@ -5364,13 +5512,15 @@
         "question": "أسافر إلى تركيا، ماذا يجب أن أعرف؟ (تسجيل IMEI)",
         "answer": "- **ثبّت eSIM قبل الوصول إلى تركيا**، فقد يُحظر تنزيل ملفات eSIM الأجنبية داخلها.\n- **IMEI:** قاعدة 120 يومًا تخص استخدام هاتف أجنبي مع **شريحة تركية**. تعمل eSIM السياحية بنظام التجوال، لذا لا يلزم التسجيل عادةً في الإجازات القصيرة.",
         "keywords": [
-          "تركيا",
           "türkiye",
           "imei",
           "تسجيل imei",
           "120 يوم",
           "btk",
-          "حظر الهاتف"
+          "حظر الهاتف",
+          "شريحه لتركيا",
+          "اجنبي في تركيا",
+          "تركيا"
         ]
       },
       {
@@ -5384,7 +5534,8 @@
           "لأمي",
           "لزوجتي",
           "العائلة",
-          "إهداء"
+          "إهداء",
+          "شراء شريحه"
         ]
       },
       {
@@ -5414,7 +5565,8 @@
           "احتيال",
           "الخصوصية",
           "اختراق",
-          "موثوقة"
+          "موثوقة",
+          "الموقع"
         ]
       },
       {
@@ -5444,7 +5596,8 @@
           "كيف أسترد",
           "استرجاع المال",
           "إلغاء الطلب",
-          "استرداد"
+          "استرداد",
+          "زر الاسترداد"
         ]
       },
       {
@@ -5459,7 +5612,8 @@
           "3d secure",
           "خصم مرتين",
           "لا أستطيع الدفع",
-          "خصم المال"
+          "خصم المال",
+          "خصم المبلغ بدون"
         ]
       },
       {
@@ -5473,7 +5627,9 @@
           "تجديد تلقائي",
           "رسوم إضافية",
           "عقد",
-          "رسوم تفعيل"
+          "رسوم تفعيل",
+          "تتجدد الباقه تلقاييا",
+          "توجد رسوم مخفيه"
         ]
       },
       {
@@ -5485,10 +5641,10 @@
           "كوبون",
           "كود خصم",
           "الرمز لا يعمل",
-          "خصم",
           "كوبون غير صالح",
           "ادخل الكوبون",
-          "يوجد خصم"
+          "يوجد خصم",
+          "خصم"
         ]
       },
       {
@@ -5519,7 +5675,9 @@
           "مرافق",
           "العائلة",
           "كم شخص",
-          "الأطفال في الصالة"
+          "الأطفال في الصالة",
+          "الرضيع في الصاله",
+          "المرافق في الصاله"
         ]
       },
       {
@@ -5531,7 +5689,8 @@
           "منع الدخول",
           "الصالة ممتلئة",
           "الصالة مغلقة",
-          "مرفوض"
+          "مرفوض",
+          "الصاله رفضتني"
         ]
       },
       {
@@ -5545,7 +5704,8 @@
           "ألغيت الرحلة",
           "وصلت مبكرا",
           "متأخر",
-          "وقت الصالة"
+          "وقت الصالة",
+          "قسيمه الصاله صالحه"
         ]
       },
       {
@@ -5632,7 +5792,9 @@
           "مجموعة",
           "رحلة جماعية",
           "موظفين",
-          "وكالة"
+          "وكالة",
+          "شرايح للشركات عرض",
+          "esim للموظفين عرض"
         ]
       },
       {
@@ -5667,7 +5829,9 @@
           "vpn",
           "استخدام vpn",
           "مع vpn",
-          "بروكسي"
+          "بروكسي",
+          "vpn مع الشريحه",
+          "يعمل في بي"
         ]
       },
       {
@@ -5704,7 +5868,8 @@
           "تجوال البيانات",
           "تفعيل التجوال",
           "أين التجوال",
-          "إعداد التجوال"
+          "إعداد التجوال",
+          "يجب تشغيل التجوال"
         ]
       },
       {
@@ -5716,7 +5881,9 @@
           "اختيار eSIM",
           "بيانات الجوال eSIM",
           "أي خط",
-          "شريحة البيانات"
+          "شريحة البيانات",
+          "اجعل الشريحه",
+          "زال يستخدم شريحتي"
         ]
       },
       {
@@ -5728,7 +5895,8 @@
           "اختيار المشغل",
           "شبكة يدويا",
           "تغيير الشبكة",
-          "مشغلو الشبكة"
+          "مشغلو الشبكة",
+          "تركيا تغيير الشبكه"
         ]
       },
       {
@@ -5740,7 +5908,12 @@
           "تشغيل eSIM",
           "إيقاف eSIM",
           "خط eSIM",
-          "استخدام SIM"
+          "استخدام SIM",
+          "خط الشريحه",
+          "الشريحه مطفاه",
+          "تفعيل خط الشريحه",
+          "الشريحه معطله",
+          "تشغيل خط الشريحه"
         ]
       },
       {
@@ -5752,7 +5925,8 @@
           "eSIM ايفون",
           "إعداد iphone",
           "تثبيت ايفون",
-          "إضافة eSIM ايفون"
+          "إضافة eSIM ايفون",
+          "ايفون اضافه خطه"
         ]
       },
       {
@@ -5764,7 +5938,9 @@
           "تثبيت سامسونج",
           "تثبيت بكسل",
           "تثبيت شاومي",
-          "eSIM أندرويد"
+          "eSIM أندرويد",
+          "شاومي اضافه esim",
+          "سامسونج اضافه esim"
         ]
       },
       {
@@ -5787,7 +5963,8 @@
           "نقطة الاتصال",
           "مشاركة الإنترنت",
           "تشغيل نقطة الاتصال",
-          "هوت سبوت"
+          "هوت سبوت",
+          "الهوتسبوت مع الشريحه"
         ]
       },
       {
@@ -5840,7 +6017,8 @@
           "هل يجب التسجيل",
           "إنشاء حساب ضروري",
           "شراء بدون حساب",
-          "لازم أسجل"
+          "لازم أسجل",
+          "الشراء بدون تسجيل"
         ]
       },
       {
@@ -5870,7 +6048,8 @@
           "كتبت البريد خطأ",
           "إيميل آخر",
           "أغير الإيميل",
-          "الايميل"
+          "الايميل",
+          "البريد"
         ]
       }
     ]
@@ -5928,14 +6107,14 @@
           "поддерживает",
           "совместим",
           "iphone",
-          "айфон",
-          "samsung",
-          "самсунг",
-          "pixel",
           "eid",
           "поддерживает esim",
           "есть ли esim",
-          "моем телефоне"
+          "моем телефоне",
+          "айфон",
+          "samsung",
+          "самсунг",
+          "pixel"
         ]
       },
       {
@@ -5943,7 +6122,6 @@
         "question": "Как установить eSIM?",
         "answer": "**iPhone:** Настройки → Сотовая связь → Добавить eSIM → отсканировать QR-код.\n**Android:** Настройки → Подключения → Диспетчер SIM-карт → Добавить eSIM → отсканировать QR-код.\n\nСовет: установите eSIM **дома через Wi-Fi** – активировать её нужно только на месте.\n\n[К пошаговой инструкции с картинками](install.html)",
         "keywords": [
-          "установить",
           "установка",
           "настроить",
           "инструкция",
@@ -5951,7 +6129,8 @@
           "как установить",
           "установке",
           "печать qr",
-          "отсканировать qr код"
+          "отсканировать qr код",
+          "установить"
         ]
       },
       {
@@ -5959,13 +6138,13 @@
         "question": "Когда активировать eSIM?",
         "answer": "Установить её можно заранее в любое время. Срок действия начинается, когда eSIM впервые подключается к сети в стране назначения. Просто включите линию eSIM и **роуминг данных** после посадки.",
         "keywords": [
-          "активировать",
           "срок",
           "начинается",
           "посадка",
           "заранее",
           "активируется пакет",
-          "становится активнои"
+          "становится активнои",
+          "активировать"
         ]
       },
       {
@@ -6102,7 +6281,8 @@
         "keywords": [
           "когда получу",
           "доставка",
-          "сколько ждать доставку"
+          "сколько ждать доставку",
+          "придет"
         ]
       },
       {
@@ -6158,7 +6338,8 @@
           "неверный код",
           "код уже использован",
           "ошибка кода",
-          "ошибка qr"
+          "ошибка qr",
+          "код не принимается"
         ]
       },
       {
@@ -6171,7 +6352,8 @@
           "тарифный план",
           "ошибка установки",
           "не устанавливается",
-          "не поддерживается"
+          "не поддерживается",
+          "удается добавить"
         ]
       },
       {
@@ -6189,7 +6371,8 @@
           "ввести код",
           "тот же телефон",
           "не могу отсканировать",
-          "отсканировать qr"
+          "отсканировать qr",
+          "без qr кода"
         ]
       },
       {
@@ -6204,7 +6387,8 @@
           "тормозит",
           "урезали скорость",
           "mbps",
-          "3g"
+          "3g",
+          "грузится вечно"
         ]
       },
       {
@@ -6260,7 +6444,10 @@
           "sim lock",
           "привязка к оператору",
           "разблокировать",
-          "ограничения sim"
+          "ограничения sim",
+          "залочен работает",
+          "залочен",
+          "залоченныи телефон"
         ]
       },
       {
@@ -6273,7 +6460,8 @@
           "настройки apn",
           "сотовая сеть передачи данных",
           "что такое apn",
-          "какой apn"
+          "какой apn",
+          "изменить apn"
         ]
       },
       {
@@ -6299,7 +6487,8 @@
           "дополнительные расходы",
           "основная sim",
           "переключение данных",
-          "избежать расходов"
+          "избежать расходов",
+          "роуминг на своеи"
         ]
       },
       {
@@ -6307,7 +6496,6 @@
         "question": "Работает ли WhatsApp с eSIM? Изменится ли мой номер?",
         "answer": "Да, работает, и **номер остаётся прежним**. WhatsApp привязан к номеру, а не к линии, через которую идёт интернет. Ничего менять не нужно — сообщения и звонки работают как обычно. iMessage и FaceTime тоже.",
         "keywords": [
-          "whatsapp",
           "ватсап",
           "номер whatsapp",
           "telegram",
@@ -6319,7 +6507,9 @@
           "номер изменится",
           "работает ли ватсап",
           "ватсап работает",
-          "работает ли whatsapp"
+          "работает ли whatsapp",
+          "пользоваться whatsapp",
+          "whatsapp"
         ]
       },
       {
@@ -6333,7 +6523,8 @@
           "получать смс",
           "двухфакторная",
           "код безопасности",
-          "смс от банка"
+          "смс от банка",
+          "будут ли приходить"
         ]
       },
       {
@@ -6463,7 +6654,8 @@
           "местный номер",
           "отправлять смс",
           "новый номер",
-          "номер включён"
+          "номер включён",
+          "турецкии номер"
         ]
       },
       {
@@ -6541,7 +6733,8 @@
           "регистрация imei",
           "120 дней",
           "btk",
-          "заблокируют телефон"
+          "заблокируют телефон",
+          "турции какои пакет"
         ]
       },
       {
@@ -6612,7 +6805,8 @@
           "как вернуть деньги",
           "вернуть деньги",
           "отменить заказ",
-          "возврат"
+          "возврат",
+          "кнопка возврата"
         ]
       },
       {
@@ -6641,7 +6835,8 @@
           "автопродление",
           "доплата",
           "договор",
-          "плата за активацию"
+          "плата за активацию",
+          "продлевается ли пакет"
         ]
       },
       {
@@ -6685,7 +6880,10 @@
           "гость",
           "партнёр",
           "семья",
-          "сколько человек"
+          "сколько человек",
+          "ребенок в бизнес",
+          "сопровождающии в бизнес",
+          "дети в бизнес"
         ]
       },
       {
@@ -6697,7 +6895,8 @@
           "отказали во входе",
           "лаунж заполнен",
           "лаунж закрыт",
-          "отказ"
+          "отказ",
+          "бизнес зал переполнен"
         ]
       },
       {
@@ -6796,7 +6995,8 @@
           "группа",
           "групповая поездка",
           "сотрудники",
-          "агентство"
+          "агентство",
+          "сотрудников предложение"
         ]
       },
       {
@@ -6832,7 +7032,8 @@
           "впн",
           "использовать vpn",
           "с vpn",
-          "прокси"
+          "прокси",
+          "работает ли vpn"
         ]
       },
       {
@@ -6870,7 +7071,8 @@
           "роуминг данных",
           "включить роуминг",
           "где роуминг",
-          "настройка роуминга"
+          "настройка роуминга",
+          "включать роуминг"
         ]
       },
       {
@@ -6882,7 +7084,9 @@
           "выбрать esim",
           "мобильные данные esim",
           "какая линия",
-          "sim для интернета"
+          "sim для интернета",
+          "сделать esim линиеи",
+          "переключить мобильные данные"
         ]
       },
       {
@@ -6894,7 +7098,8 @@
           "выбрать сеть вручную",
           "выбрать оператора",
           "сменить сеть",
-          "операторы сети"
+          "операторы сети",
+          "сменить оператора"
         ]
       },
       {
@@ -6906,7 +7111,10 @@
           "включить esim",
           "выключить esim",
           "линия esim",
-          "использовать sim"
+          "использовать sim",
+          "выключена",
+          "отключена",
+          "активировать линию"
         ]
       },
       {
@@ -6918,7 +7126,8 @@
           "esim iphone",
           "настроить iphone",
           "установка iphone",
-          "добавить esim iphone"
+          "добавить esim iphone",
+          "iphone добавить сотовыи"
         ]
       },
       {
@@ -6930,7 +7139,9 @@
           "установить samsung",
           "установить pixel",
           "установить xiaomi",
-          "esim android"
+          "esim android",
+          "сяоми добавить",
+          "самсунг добавить"
         ]
       },
       {
@@ -6953,7 +7164,8 @@
           "режим модема",
           "точка доступа",
           "включить раздачу",
-          "раздать интернет"
+          "раздать интернет",
+          "настроить точку доступа"
         ]
       },
       {
@@ -7081,7 +7293,8 @@
           "esim",
           "sim numérique",
           "explication",
-          "comment ça marche"
+          "comment ça marche",
+          "fonctionne"
         ]
       },
       {
@@ -7091,11 +7304,11 @@
         "keywords": [
           "compatible",
           "iphone",
-          "samsung",
-          "pixel",
           "eid",
           "téléphone compatible",
-          "compatible esim"
+          "compatible esim",
+          "samsung",
+          "pixel"
         ]
       },
       {
@@ -7103,13 +7316,13 @@
         "question": "Comment installer mon eSIM ?",
         "answer": "**iPhone :** Réglages → Données cellulaires → Ajouter une eSIM → scanner le QR code.\n**Android :** Paramètres → Connexions → Gestionnaire de cartes SIM → Ajouter une eSIM → scanner le QR code.\n\nAstuce : installez l'eSIM **chez vous en Wi-Fi** – vous ne l'activerez qu'à destination.\n\n[Voir le guide illustré étape par étape](install.html)",
         "keywords": [
-          "installer",
           "configurer",
           "guide",
           "installer l esim",
           "comment installer",
           "imprimer qr",
-          "installation"
+          "installation",
+          "installer"
         ]
       },
       {
@@ -7117,12 +7330,12 @@
         "question": "Quand activer l'eSIM ?",
         "answer": "Vous pouvez l'installer à tout moment à l'avance. La validité commence lorsque l'eSIM se connecte pour la première fois à un réseau à destination. Activez donc simplement la ligne eSIM et **l'itinérance des données** après l'atterrissage.",
         "keywords": [
-          "activer",
           "quand",
           "validité",
           "atterrissage",
           "avance",
-          "demarre le forfait"
+          "demarre le forfait",
+          "activer"
         ]
       },
       {
@@ -7302,7 +7515,8 @@
           "couverture",
           "pas de barres",
           "réseau introuvable",
-          "sos uniquement"
+          "sos uniquement",
+          "aucun signal"
         ]
       },
       {
@@ -7316,7 +7530,8 @@
           "qr invalide",
           "code déjà utilisé",
           "erreur code",
-          "erreur qr"
+          "erreur qr",
+          "qr code refuse"
         ]
       },
       {
@@ -7346,7 +7561,8 @@
           "smdp",
           "saisir code",
           "même téléphone",
-          "capture qr"
+          "capture qr",
+          "sans qr code"
         ]
       },
       {
@@ -7363,7 +7579,9 @@
           "vitesse",
           "mbps",
           "ralenti",
-          "3g"
+          "3g",
+          "charge sans fin",
+          "rame en espagne"
         ]
       },
       {
@@ -7379,7 +7597,8 @@
           "économiser",
           "données réduites",
           "partent vite",
-          "épuisées vite"
+          "épuisées vite",
+          "beaucoup de donnees"
         ]
       },
       {
@@ -7420,7 +7639,8 @@
           "bloqué opérateur",
           "désimlocker",
           "débloquer",
-          "restriction sim"
+          "restriction sim",
+          "telephone bloque"
         ]
       },
       {
@@ -7458,7 +7678,8 @@
           "frais supplémentaires",
           "sim principale",
           "basculement",
-          "éviter les frais"
+          "éviter les frais",
+          "vais je payer"
         ]
       },
       {
@@ -7487,7 +7708,8 @@
           "recevoir sms",
           "double authentification",
           "code sécurité",
-          "sms de ma banque"
+          "sms de ma banque",
+          "recevoir les codes"
         ]
       },
       {
@@ -7540,7 +7762,8 @@
           "combien de jours avant",
           "dernière minute",
           "acheter à l aéroport",
-          "quand installer"
+          "quand installer",
+          "avant le voyage"
         ]
       },
       {
@@ -7618,7 +7841,8 @@
           "numéro local",
           "envoyer sms",
           "nouveau numéro",
-          "numéro inclus"
+          "numéro inclus",
+          "numero turc"
         ]
       },
       {
@@ -7685,13 +7909,16 @@
         "question": "Je pars en Turquie – à quoi faire attention ? (enregistrement IMEI)",
         "answer": "- **Installe l'eSIM avant d'arriver en Turquie.** Le téléchargement de profils eSIM étrangers peut être bloqué sur place.\n- **IMEI :** la règle des 120 jours concerne l'usage d'un téléphone étranger avec une **carte SIM turque**. Une eSIM de voyage fonctionne en itinérance ; pour de courtes vacances, aucun enregistrement n'est généralement nécessaire.",
         "keywords": [
-          "turquie",
           "türkiye",
           "imei",
           "enregistrement imei",
           "120 jours",
           "btk",
-          "téléphone bloqué"
+          "téléphone bloqué",
+          "turquie ca marche",
+          "turquie quel forfait",
+          "etranger en turquie",
+          "turquie"
         ]
       },
       {
@@ -7734,7 +7961,8 @@
           "confidentialité",
           "piratage",
           "fiable",
-          "sécurisé"
+          "sécurisé",
+          "passport io"
         ]
       },
       {
@@ -7821,7 +8049,8 @@
           "code de vérification",
           "se connecter",
           "inscription",
-          "réinitialiser mot de passe"
+          "réinitialiser mot de passe",
+          "n arrive"
         ]
       },
       {
@@ -7842,11 +8071,12 @@
         "question": "Le salon m'a refusé l'entrée – que faire ?",
         "answer": "Les salons peuvent limiter l'accès en cas d'**affluence**, de travaux ou d'événements privés. Garde ton voucher, ta carte d'embarquement et si possible une **capture/un justificatif**, puis écris-nous tout de suite – nous proposerons une solution ou un remboursement.",
         "keywords": [
-          "refusé",
           "entrée refusée",
           "salon complet",
           "salon fermé",
-          "pas pu entrer"
+          "pas pu entrer",
+          "m a refuse",
+          "refusé"
         ]
       },
       {
@@ -7945,7 +8175,8 @@
           "voyage de groupe",
           "professionnel",
           "salariés",
-          "agence"
+          "agence",
+          "employes offre"
         ]
       },
       {
@@ -8020,7 +8251,8 @@
           "activer l itinérance",
           "roaming",
           "où est l itinérance",
-          "réglage itinérance"
+          "réglage itinérance",
+          "activer itinerance"
         ]
       },
       {
@@ -8032,7 +8264,8 @@
           "choisir l esim",
           "données mobiles esim",
           "quelle ligne",
-          "sim pour les données"
+          "sim pour les données",
+          "sim normale"
         ]
       },
       {
@@ -8056,7 +8289,8 @@
           "activer l esim",
           "désactiver l esim",
           "ligne esim",
-          "utiliser la sim"
+          "utiliser la sim",
+          "eteinte"
         ]
       },
       {
@@ -8080,7 +8314,9 @@
           "installer samsung",
           "installer pixel",
           "installer xiaomi",
-          "esim android"
+          "esim android",
+          "samsung ajouter",
+          "xiaomi ajouter"
         ]
       },
       {
@@ -8103,7 +8339,8 @@
           "partage de connexion",
           "point d accès",
           "activer hotspot",
-          "partager internet"
+          "partager internet",
+          "hotspot"
         ]
       },
       {
@@ -8156,7 +8393,8 @@
           "en tant qu'invité",
           "obligé de m'inscrire",
           "créer un compte obligatoire",
-          "acheter en invite"
+          "acheter en invite",
+          "dois je m"
         ]
       },
       {
@@ -8238,13 +8476,14 @@
         "answer": "La mayoría de los smartphones desde 2019 admiten eSIM – por ejemplo iPhone XS/XR y posteriores, Samsung Galaxy S20 y posteriores, Google Pixel 3 y posteriores.\n\n**Prueba rápida:** marca ***#06#** – si aparece un **EID**, tu dispositivo es compatible. Importante: además debe estar **libre de operador**.",
         "keywords": [
           "compatible",
-          "iphone",
-          "samsung",
-          "pixel",
           "eid",
           "teléfono compatible",
           "tiene esim",
-          "moviles admiten"
+          "moviles admiten",
+          "iphone es compatible",
+          "iphone",
+          "samsung",
+          "pixel"
         ]
       },
       {
@@ -8252,13 +8491,13 @@
         "question": "¿Cómo instalo mi eSIM?",
         "answer": "**iPhone:** Ajustes → Datos móviles → Añadir eSIM → escanear código QR.\n**Android:** Ajustes → Conexiones → Administrador de SIM → Añadir eSIM → escanear código QR.\n\nConsejo: instala la eSIM **en casa con Wi-Fi** – solo tendrás que activarla en destino.\n\n[Ir a la guía ilustrada paso a paso](install.html)",
         "keywords": [
-          "instalar",
           "configurar",
           "guía",
           "instalo la esim",
           "cómo instalar",
           "imprimir qr",
-          "escaneo el codigo"
+          "escaneo el codigo",
+          "instalar"
         ]
       },
       {
@@ -8286,7 +8525,8 @@
           "qué plan elijo",
           "plan para semanas",
           "qué plan para",
-          "paquete elijo"
+          "paquete elijo",
+          "vacaciones"
         ]
       },
       {
@@ -8347,10 +8587,10 @@
         "question": "¿Cómo obtengo el acceso a la sala VIP?",
         "answer": "Justo después de reservar recibes un bono digital por e-mail y en tu cuenta. En la entrada de la sala solo tienes que mostrar el código QR y tu tarjeta de embarque.",
         "keywords": [
-          "sala vip",
           "acceso",
           "bono",
-          "reservar sala vip"
+          "reservar sala vip",
+          "sala vip"
         ]
       },
       {
@@ -8469,7 +8709,8 @@
           "qr inválido",
           "código ya usado",
           "error de código",
-          "error qr"
+          "error qr",
+          "qr no aceptado"
         ]
       },
       {
@@ -8483,7 +8724,8 @@
           "instalación fallida",
           "error de instalación",
           "no compatible",
-          "no se instala"
+          "no se instala",
+          "pudo anadir"
         ]
       },
       {
@@ -8494,12 +8736,13 @@
           "no puedo escanear",
           "qr no escanea",
           "manual",
-          "manualmente",
           "código de activación",
           "sm dp",
           "smdp",
           "introducir código",
-          "mismo teléfono"
+          "mismo teléfono",
+          "sin codigo qr",
+          "manualmente"
         ]
       },
       {
@@ -8515,7 +8758,8 @@
           "limitado",
           "mbps",
           "va lento",
-          "3g"
+          "3g",
+          "tarda muchisimo"
         ]
       },
       {
@@ -8530,7 +8774,9 @@
           "dónde están mis datos",
           "ahorrar datos",
           "datos reducidos",
-          "se acaban rápido"
+          "se acaban rápido",
+          "gasta muchos datos",
+          "tan rapido"
         ]
       },
       {
@@ -8578,7 +8824,8 @@
           "restricciones sim",
           "teléfono está bloqueado",
           "está bloqueado",
-          "bloqueado por operador"
+          "bloqueado por operador",
+          "movil bloqueado"
         ]
       },
       {
@@ -8616,7 +8863,8 @@
           "cargos extra",
           "sim principal",
           "cambio de datos",
-          "evitar costes"
+          "evitar costes",
+          "pagare roaming"
         ]
       },
       {
@@ -8698,7 +8946,8 @@
           "cuántos días antes",
           "última hora",
           "comprar en el aeropuerto",
-          "cuándo instalar"
+          "cuándo instalar",
+          "antes del viaje"
         ]
       },
       {
@@ -8773,7 +9022,8 @@
           "número local",
           "enviar sms",
           "número nuevo",
-          "incluye número"
+          "incluye número",
+          "tiene numero turco"
         ]
       },
       {
@@ -8819,6 +9069,7 @@
           "idioma de google",
           "país equivocado",
           "ubicación",
+          "ip de otro",
           "netflix"
         ]
       },
@@ -8946,7 +9197,8 @@
           "renovación automática",
           "cargos extra",
           "contrato",
-          "cuota de activación"
+          "cuota de activación",
+          "renueva el paquete"
         ]
       },
       {
@@ -8976,7 +9228,8 @@
           "código de verificación",
           "iniciar sesión",
           "registro",
-          "restablecer contraseña"
+          "restablecer contraseña",
+          "entrar"
         ]
       },
       {
@@ -8990,7 +9243,8 @@
           "pareja",
           "familia",
           "cuántas personas",
-          "niños en la sala"
+          "niños en la sala",
+          "acompanante"
         ]
       },
       {
@@ -9002,7 +9256,9 @@
           "acceso denegado",
           "sala llena",
           "sala cerrada",
-          "rechazado"
+          "rechazado",
+          "vip me rechazo",
+          "sala vip llena"
         ]
       },
       {
@@ -9188,7 +9444,9 @@
           "elegir la esim",
           "datos móviles esim",
           "qué línea",
-          "sim para datos"
+          "sim para datos",
+          "usando mi sim",
+          "datos moviles"
         ]
       },
       {
@@ -9200,7 +9458,9 @@
           "elegir red manualmente",
           "elegir operador",
           "cambiar de red",
-          "operadores de red"
+          "operadores de red",
+          "cambiar operador",
+          "seleccionar red manualmente"
         ]
       },
       {
@@ -9212,7 +9472,9 @@
           "activar la esim",
           "desactivar la esim",
           "línea esim",
-          "usar sim"
+          "usar sim",
+          "apagada",
+          "encender la linea"
         ]
       },
       {
@@ -9224,7 +9486,8 @@
           "esim iphone",
           "configurar iphone",
           "instalación iphone",
-          "añadir esim iphone"
+          "añadir esim iphone",
+          "iphone anadir plan"
         ]
       },
       {
@@ -9236,7 +9499,9 @@
           "instalar samsung",
           "instalar pixel",
           "instalar xiaomi",
-          "esim android"
+          "esim android",
+          "samsung anadir",
+          "xiaomi anadir"
         ]
       },
       {
@@ -9259,7 +9524,10 @@
           "compartir internet",
           "zona wifi",
           "activar hotspot",
-          "módem"
+          "módem",
+          "punto de acceso",
+          "configurar el punto",
+          "activar el punto"
         ]
       },
       {

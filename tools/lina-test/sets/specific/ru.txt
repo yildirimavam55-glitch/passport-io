@@ -1,0 +1,715 @@
+## Spezifische Kundenfragen (ru) – aus Vorlagen erzeugt (simple-src/gen_specific.py), 714 Fragen
+нужно ли включать роуминг в греции | data-roaming
+включить роуминг айфон | data-roaming
+где включить роуминг данных на сяоми | data-roaming
+нужно ли включать роуминг в италии | data-roaming
+где включить роуминг данных на айфон | data-roaming
+нужно ли включать роуминг в испании | data-roaming
+где включить роуминг данных на самсунг | data-roaming
+нужно ли включать роуминг для esim | data-roaming
+включить роуминг samsung galaxy | data-roaming
+включить роуминг iphone | data-roaming
+нужно ли включать роуминг в таиланде | data-roaming
+включить роуминг сяоми | data-roaming
+включить роуминг самсунг | data-roaming
+нужно ли включать роуминг в сша | data-roaming
+нужно ли включать роуминг в египте | data-roaming
+где включить роуминг данных на iphone | data-roaming
+где включить роуминг данных на samsung galaxy | data-roaming
+xiaomi все еще использует мою обычную sim для интернета | data-line,line-on
+как сделать esim линией для данных на iphone | data-line,line-on
+переключить мобильные данные на esim самсунг | data-line,line-on
+самсунг все еще использует мою обычную sim для интернета | data-line,line-on
+как сделать esim для мобильных данных на айфон | data-line,line-on
+как сделать esim для мобильных данных на pixel | data-line,line-on
+как сделать esim линией для данных на айфон | data-line,line-on
+сяоми все еще использует мою обычную sim для интернета | data-line,line-on
+переключить мобильные данные на esim айфон | data-line,line-on
+как сделать esim для мобильных данных на xiaomi | data-line,line-on
+как сделать esim линией для данных на самсунг | data-line,line-on
+переключить мобильные данные на esim pixel | data-line,line-on
+переключить мобильные данные на esim сяоми | data-line,line-on
+как сделать esim для мобильных данных на самсунг | data-line,line-on
+переключить мобильные данные на esim xiaomi | data-line,line-on
+переключить мобильные данные на esim samsung galaxy | data-line,line-on
+как сделать esim линией для данных на pixel | data-line,line-on
+нет сети в турции сменить оператора | network-select
+не та сеть в египте сменить оператора | network-select
+не та сеть в италии сменить оператора | network-select
+не та сеть в греции сменить оператора | network-select
+не та сеть в турции сменить оператора | network-select
+нет сети в сша сменить оператора | network-select
+не та сеть в таиланде сменить оператора | network-select
+нет сети в египте сменить оператора | network-select
+не та сеть в испании сменить оператора | network-select
+нет сети в таиланде сменить оператора | network-select
+не та сеть в сша сменить оператора | network-select
+выбрать сеть вручную на samsung galaxy | network-select
+нет сети в италии сменить оператора | network-select
+нет сети в дубае сменить оператора | network-select
+выбрать сеть вручную на iphone | network-select
+выбрать сеть вручную на сяоми | network-select
+нет сети в испании сменить оператора | network-select
+настроить apn на iphone | apn
+изменить apn на samsung galaxy | apn
+изменить apn на pixel | apn
+какой apn нужен в италии | apn
+какой apn нужен в египте | apn
+настроить apn на pixel | apn
+изменить apn на самсунг | apn
+изменить apn на сяоми | apn
+какой apn нужен в дубае | apn
+изменить apn на айфон | apn
+настроить apn на samsung galaxy | apn
+настроить apn на xiaomi | apn
+настроить apn на самсунг | apn
+какой apn нужен в сша | apn
+настроить apn на сяоми | apn
+изменить apn на xiaomi | apn
+настроить apn на айфон | apn
+сбросить настройки сети на pixel | reset-network
+сбросить настройки сети на айфон | reset-network
+сбросить настройки сети на сяоми | reset-network
+сбросить настройки сети на samsung galaxy | reset-network
+сбросить настройки сети на самсунг | reset-network
+нужно ли сбрасывать настройки сети | reset-network
+сбросить настройки сети на xiaomi | reset-network
+сбросить настройки сети на iphone | reset-network
+привет сбросить настройки сети на xiaomi | reset-network
+вопрос сбросить настройки сети на samsung galaxy | reset-network
+вопрос сбросить настройки сети на iphone | reset-network
+сбросить настройки сети на самсунг? | reset-network
+сбросить настройки сети на сяоми пожалуйста | reset-network
+привет сбросить настройки сети на pixel? | reset-network
+здравствуйте сбросить настройки сети на xiaomi пожалуйста | reset-network
+привет сбросить настройки сети на айфон | reset-network
+сбросить настройки сети на xiaomi? | reset-network
+включить точку доступа на самсунг | hotspot-setup,hotspot
+включить точку доступа на сяоми | hotspot-setup,hotspot
+самсунг раздача интернета с esim не работает | hotspot-setup,hotspot
+настроить точку доступа на pixel | hotspot-setup,hotspot
+iphone раздача интернета с esim не работает | hotspot-setup,hotspot
+включить точку доступа на xiaomi | hotspot-setup,hotspot
+настроить точку доступа на xiaomi | hotspot-setup,hotspot
+сяоми раздача интернета с esim не работает | hotspot-setup,hotspot
+настроить точку доступа на самсунг | hotspot-setup,hotspot
+включить точку доступа на pixel | hotspot-setup,hotspot
+настроить точку доступа на айфон | hotspot-setup,hotspot
+xiaomi раздача интернета с esim не работает | hotspot-setup,hotspot
+включить точку доступа на samsung galaxy | hotspot-setup,hotspot
+включить точку доступа на iphone | hotspot-setup,hotspot
+настроить точку доступа на iphone | hotspot-setup,hotspot
+настроить точку доступа на samsung galaxy | hotspot-setup,hotspot
+настроить точку доступа на сяоми | hotspot-setup,hotspot
+установить esim на iphone 16 | install-iphone,install-esim
+установить esim на iphone 13 | install-iphone,install-esim
+iphone добавить esim как | install-iphone,install-esim
+установить esim на iphone 17 | install-iphone,install-esim
+установить esim на iphone 15 | install-iphone,install-esim
+iphone добавить сотовый тариф как | install-iphone,install-esim
+установить esim на iphone 13 пожалуйста | install-iphone,install-esim
+привет установить esim на iphone 17 | install-iphone,install-esim
+установить esim на iphone 16 пожалуйста | install-iphone,install-esim
+привет установить esim на iphone 16 | install-iphone,install-esim
+здравствуйте установить esim на iphone 15 | install-iphone,install-esim
+вопрос установить esim на iphone 15 пожалуйста | install-iphone,install-esim
+iphone добавить сотовый тариф как пожалуйста | install-iphone,install-esim
+привет установить esim на iphone 13 | install-iphone,install-esim
+iphone добавить esim как? | install-iphone,install-esim
+вопрос iphone добавить esim как | install-iphone,install-esim
+привет установить esim на iphone 13 пожалуйста | install-iphone,install-esim
+установить esim на samsung s24 | install-android,install-esim
+установить esim на xiaomi 14 | install-android,install-esim
+установить esim на pixel 9 | install-android,install-esim
+установить esim на galaxy a55 | install-android,install-esim
+самсунг добавить esim как | install-android,install-esim
+андроид добавить esim как | install-android,install-esim
+сяоми добавить esim как | install-android,install-esim
+привет установить esim на pixel 9? | install-android,install-esim
+установить esim на pixel 9? | install-android,install-esim
+вопрос сяоми добавить esim как пожалуйста | install-android,install-esim
+привет установить esim на samsung s24? | install-android,install-esim
+установить esim на xiaomi 14 пожалуйста | install-android,install-esim
+установить esim на samsung s24 пожалуйста | install-android,install-esim
+установить esim на samsung s24? | install-android,install-esim
+привет установить esim на xiaomi 14 | install-android,install-esim
+здравствуйте самсунг добавить esim как | install-android,install-esim
+установить esim на pixel 9 пожалуйста | install-android,install-esim
+esim выключена на samsung galaxy | line-on,data-line
+esim выключена на pixel | line-on,data-line
+esim отключена на iphone | line-on,data-line
+включить линию esim самсунг | line-on,data-line
+активировать линию esim сяоми | line-on,data-line
+esim отключена на xiaomi | line-on,data-line
+активировать линию esim iphone | line-on,data-line
+включить линию esim сяоми | line-on,data-line
+esim выключена на самсунг | line-on,data-line
+включить линию esim айфон | line-on,data-line
+esim отключена на pixel | line-on,data-line
+esim отключена на айфон | line-on,data-line
+esim выключена на айфон | line-on,data-line
+включить линию esim pixel | line-on,data-line
+активировать линию esim xiaomi | line-on,data-line
+esim выключена на xiaomi | line-on,data-line
+активировать линию esim samsung galaxy | line-on,data-line
+нет сети в турции с esim | no-service
+нет сигнала | no-service
+нет сигнала в италии | no-service
+нет сигнала в дубае | no-service
+нет сети в греции с esim | no-service
+нет сигнала в таиланде | no-service
+нет сигнала в испании | no-service
+нет сети в дубае с esim | no-service
+нет сети в дубае | no-service
+только sos в греции | no-service
+нет сигнала в турции | no-service
+только sos в турции | no-service
+только sos в египте | no-service
+нет сети в греции | no-service
+нет сети в италии | no-service
+нет сети в сша | no-service
+нет сети в италии с esim | no-service
+нет интернета в италии | no-internet
+нет интернета в египте на самсунг | no-internet
+нет интернета в египте на samsung galaxy | no-internet
+нет интернета в турции на pixel | no-internet
+нет интернета в дубае на сяоми | no-internet
+нет интернета в греции на самсунг | no-internet
+самсунг esim активна но нет интернета | no-internet
+нет интернета в турции на samsung galaxy | no-internet
+нет интернета в египте на айфон | no-internet
+нет интернета в таиланде на samsung galaxy | no-internet
+нет интернета в сша на самсунг | no-internet
+нет интернета в турции на сяоми | no-internet
+нет интернета в сша | no-internet
+нет интернета в египте на iphone | no-internet
+нет интернета в испании на pixel | no-internet
+нет интернета в турции на айфон | no-internet
+нет интернета в сша на сяоми | no-internet
+whatsapp тормозит в сша | slow-internet
+spotify грузится вечно в греции | slow-internet
+tiktok тормозит в египте | slow-internet
+youtube грузится вечно в испании | slow-internet
+google maps грузится вечно в таиланде | slow-internet
+spotify грузится вечно с esim | slow-internet
+интернет тормозит в турции | slow-internet
+whatsapp тормозит с esim | slow-internet
+whatsapp грузится вечно в италии | slow-internet
+youtube тормозит в египте | slow-internet
+интернет тормозит в испании | slow-internet
+netflix грузится вечно в таиланде | slow-internet
+instagram тормозит с esim | slow-internet
+whatsapp грузится вечно в сша | slow-internet
+whatsapp грузится вечно в таиланде | slow-internet
+netflix грузится вечно в турции | slow-internet
+интернет тормозит в таиланде | slow-internet
+spotify ест много трафика | data-fast
+трафик закончился за день | data-fast
+почему пакет так быстро закончился | data-fast
+tiktok ест много трафика | data-fast
+трафик ушел так быстро | data-fast
+netflix ест много трафика | data-fast
+трафик ушел за день | data-fast
+whatsapp ест много трафика | data-fast
+youtube ест много трафика | data-fast
+google maps ест много трафика | data-fast
+трафик закончился так быстро | data-fast
+instagram ест много трафика | data-fast
+вопрос трафик ушел так быстро? | data-fast
+netflix ест много трафика пожалуйста | data-fast
+whatsapp ест много трафика? | data-fast
+трафик закончился так быстро пожалуйста | data-fast
+здравствуйте spotify ест много трафика? | data-fast
+qr код не принимается iphone | code-invalid
+qr код недействителен сяоми | code-invalid
+qr код не принимается pixel | code-invalid
+qr код недействителен samsung galaxy | code-invalid
+qr код не принимается айфон | code-invalid
+ошибка код больше не действителен | code-invalid
+qr код не принимается samsung galaxy | code-invalid
+ошибка код уже использован | code-invalid
+qr код не принимается xiaomi | code-invalid
+qr код недействителен xiaomi | code-invalid
+qr код недействителен iphone | code-invalid
+qr код не принимается самсунг | code-invalid
+qr код недействителен pixel | code-invalid
+qr код недействителен самсунг | code-invalid
+qr код недействителен айфон | code-invalid
+ошибка неверный код | code-invalid
+qr код не принимается сяоми | code-invalid
+pixel пишет не удалось добавить esim | cannot-add
+не удается добавить esim сяоми | cannot-add
+не удается добавить сотовый тариф айфон | cannot-add
+не удается добавить esim айфон | cannot-add
+не удается добавить сотовый тариф iphone | cannot-add
+xiaomi пишет не удалось добавить esim | cannot-add
+не удается добавить esim самсунг | cannot-add
+не удается добавить esim samsung galaxy | cannot-add
+не удается добавить esim | cannot-add
+не удается добавить esim pixel | cannot-add
+не удается добавить сотовый тариф samsung galaxy | cannot-add
+айфон пишет не удалось добавить esim | cannot-add
+самсунг пишет не удалось добавить esim | cannot-add
+не удается добавить сотовый тариф сяоми | cannot-add
+не удается добавить сотовый тариф | cannot-add
+не удается добавить сотовый тариф самсунг | cannot-add
+не удается добавить сотовый тариф pixel | cannot-add
+установить esim без qr кода | manual-install
+установить esim вручную | manual-install
+куда вводить код активации | manual-install
+куда вводить адрес sm-dp | manual-install
+привет куда вводить код активации | manual-install
+вопрос куда вводить код активации | manual-install
+здравствуйте куда вводить адрес sm-dp пожалуйста | manual-install
+здравствуйте куда вводить адрес sm-dp | manual-install
+здравствуйте установить esim без qr кода пожалуйста | manual-install
+здравствуйте установить esim без qr кода | manual-install
+привет установить esim без qr кода? | manual-install
+установить esim без qr кода? | manual-install
+установить esim вручную пожалуйста | manual-install
+вопрос куда вводить адрес sm-dp | manual-install
+привет установить esim вручную? | manual-install
+здравствуйте установить esim вручную | manual-install
+вопрос установить esim вручную пожалуйста | manual-install
+esim зависла активируется | activating-stuck
+esim зависла активируется samsung galaxy | activating-stuck
+esim зависла активируется айфон | activating-stuck
+esim зависла на активации samsung galaxy | activating-stuck
+esim зависла на активации сяоми | activating-stuck
+esim зависла на активации айфон | activating-stuck
+esim зависла активируется самсунг | activating-stuck
+esim зависла на активации самсунг | activating-stuck
+esim зависла активируется сяоми | activating-stuck
+esim зависла на активации | activating-stuck
+esim зависла активируется xiaomi | activating-stuck
+активация esim длится часами | activating-stuck
+esim зависла на активации iphone | activating-stuck
+esim зависла на активации xiaomi | activating-stuck
+esim зависла на активации pixel | activating-stuck
+esim зависла активируется iphone | activating-stuck
+esim зависла активируется pixel | activating-stuck
+удалил esim можно установить снова | deleted-esim,new-phone
+удалил esim pixel | deleted-esim,new-phone
+удалил esim | deleted-esim,new-phone
+удалил esim сяоми | deleted-esim,new-phone
+случайно удалил esim samsung galaxy | deleted-esim,new-phone
+удалил esim iphone | deleted-esim,new-phone
+удалил esim самсунг | deleted-esim,new-phone
+случайно удалил esim xiaomi | deleted-esim,new-phone
+удалил esim айфон | deleted-esim,new-phone
+случайно удалил esim pixel | deleted-esim,new-phone
+случайно удалил esim сяоми | deleted-esim,new-phone
+случайно удалил esim айфон | deleted-esim,new-phone
+случайно удалил esim | deleted-esim,new-phone
+удалил esim xiaomi | deleted-esim,new-phone
+случайно удалил esim самсунг | deleted-esim,new-phone
+случайно удалил esim iphone | deleted-esim,new-phone
+удалил esim samsung galaxy | deleted-esim,new-phone
+залоченный телефон esim iphone | sim-lock
+привязка к оператору esim samsung galaxy | sim-lock
+самсунг залочен работает ли esim | sim-lock
+привязка к оператору esim сяоми | sim-lock
+привязка к оператору esim айфон | sim-lock
+samsung galaxy залочен работает ли esim | sim-lock
+pixel залочен работает ли esim | sim-lock
+залоченный телефон esim xiaomi | sim-lock
+залоченный телефон esim айфон | sim-lock
+айфон залочен работает ли esim | sim-lock
+xiaomi залочен работает ли esim | sim-lock
+залоченный телефон esim самсунг | sim-lock
+залоченный телефон esim samsung galaxy | sim-lock
+iphone залочен работает ли esim | sim-lock
+сяоми залочен работает ли esim | sim-lock
+залоченный телефон esim сяоми | sim-lock
+привязка к оператору esim | sim-lock
+буду ли я платить роуминг на своей sim в турции | avoid-roaming-costs
+как избежать платы за роуминг в греции | avoid-roaming-costs
+буду ли я платить роуминг на своей sim в дубае | avoid-roaming-costs
+как избежать платы за роуминг в турции | avoid-roaming-costs
+как избежать платы за роуминг в испании | avoid-roaming-costs
+буду ли я платить роуминг на своей sim в испании | avoid-roaming-costs
+буду ли я платить роуминг на своей sim в греции | avoid-roaming-costs
+буду ли я платить роуминг на своей sim в сша | avoid-roaming-costs
+буду ли я платить роуминг на своей sim в египте | avoid-roaming-costs
+как избежать платы за роуминг в сша | avoid-roaming-costs
+как избежать платы за роуминг в египте | avoid-roaming-costs
+как избежать платы за роуминг в дубае | avoid-roaming-costs
+как избежать платы за роуминг | avoid-roaming-costs
+буду ли я платить роуминг на своей sim в таиланде | avoid-roaming-costs
+как избежать платы за роуминг в италии | avoid-roaming-costs
+как избежать платы за роуминг в таиланде | avoid-roaming-costs
+буду ли я платить роуминг на своей sim в италии | avoid-roaming-costs
+будут ли приходить смс от банка в греции | bank-sms
+будут ли приходить коды подтверждения в турции | bank-sms
+будут ли приходить коды подтверждения в таиланде | bank-sms
+будут ли приходить смс от банка с esim | bank-sms
+будут ли приходить коды подтверждения с esim | bank-sms
+будут ли приходить смс от банка в таиланде | bank-sms
+будут ли приходить смс от банка в египте | bank-sms
+будут ли приходить коды подтверждения в испании | bank-sms
+будут ли приходить коды подтверждения в дубае | bank-sms
+будут ли приходить коды подтверждения в сша | bank-sms
+будут ли приходить смс от банка в турции | bank-sms
+будут ли приходить коды подтверждения в египте | bank-sms
+будут ли приходить смс от банка в испании | bank-sms
+будут ли приходить смс от банка в италии | bank-sms
+будут ли приходить смс от банка в сша | bank-sms
+будут ли приходить коды подтверждения в италии | bank-sms
+будут ли приходить коды подтверждения в греции | bank-sms
+нужен ли интернет для установки esim | install-internet
+установить esim без wifi | install-internet
+нужен ли wifi для установки esim | install-internet
+установить esim в аэропорту | install-internet
+привет установить esim без wifi | install-internet
+вопрос нужен ли wifi для установки esim? | install-internet
+привет установить esim без wifi? | install-internet
+здравствуйте нужен ли wifi для установки esim | install-internet
+установить esim в аэропорту? | install-internet
+здравствуйте установить esim в аэропорту | install-internet
+установить esim без wifi? | install-internet
+вопрос установить esim в аэропорту | install-internet
+вопрос установить esim без wifi? | install-internet
+привет установить esim в аэропорту пожалуйста | install-internet
+привет установить esim в аэропорту | install-internet
+установить esim без wifi пожалуйста | install-internet
+привет нужен ли интернет для установки esim? | install-internet
+esim на ipad | tablet-watch
+esim на часы | tablet-watch
+работает ли esim на часах | tablet-watch
+работает ли esim на ipad | tablet-watch
+esim на планшет | tablet-watch
+esim на apple watch | tablet-watch
+esim на планшет пожалуйста | tablet-watch
+вопрос работает ли esim на ipad | tablet-watch
+вопрос esim на планшет? | tablet-watch
+привет esim на планшет | tablet-watch
+привет работает ли esim на ipad пожалуйста | tablet-watch
+вопрос esim на часы | tablet-watch
+вопрос работает ли esim на ipad? | tablet-watch
+вопрос esim на планшет | tablet-watch
+вопрос работает ли esim на часах пожалуйста | tablet-watch
+вопрос работает ли esim на часах? | tablet-watch
+привет работает ли esim на ipad | tablet-watch
+есть ли 5g в италии | 5g
+есть ли 5g в греции | 5g
+есть ли 5g в египте | 5g
+есть ли 5g в дубае | 5g
+есть ли 5g в таиланде | 5g
+есть ли 5g с esim | 5g
+есть ли 5g в турции | 5g
+есть ли 5g в испании | 5g
+есть ли 5g в сша | 5g
+вопрос есть ли 5g в таиланде пожалуйста | 5g
+привет есть ли 5g в италии | 5g
+есть ли 5g в таиланде пожалуйста | 5g
+есть ли 5g в сша пожалуйста | 5g
+есть ли 5g с esim пожалуйста | 5g
+здравствуйте есть ли 5g в турции | 5g
+привет есть ли 5g с esim | 5g
+привет есть ли 5g с esim? | 5g
+работает ли esim в море | cruise-flight
+работает ли esim на круизном лайнере | cruise-flight
+работает ли esim в самолете | cruise-flight
+привет работает ли esim в море | cruise-flight
+вопрос работает ли esim на круизном лайнере | cruise-flight
+здравствуйте работает ли esim в море пожалуйста | cruise-flight
+здравствуйте работает ли esim на круизном лайнере | cruise-flight
+здравствуйте работает ли esim в море | cruise-flight
+вопрос работает ли esim в самолете | cruise-flight
+работает ли esim на круизном лайнере пожалуйста | cruise-flight
+вопрос работает ли esim в самолете? | cruise-flight
+работает ли esim в самолете пожалуйста | cruise-flight
+вопрос работает ли esim в море | cruise-flight
+привет работает ли esim на круизном лайнере пожалуйста | cruise-flight
+привет работает ли esim в самолете | cruise-flight
+здравствуйте работает ли esim в самолете | cruise-flight
+вопрос работает ли esim на круизном лайнере пожалуйста | cruise-flight
+google показывает другую страну с esim | ip-location
+почему ip другой страны | ip-location
+netflix показывает другую страну с esim | ip-location
+почему неправильное местоположение | ip-location
+почему ip другой страны? | ip-location
+netflix показывает другую страну с esim пожалуйста | ip-location
+привет почему ip другой страны? | ip-location
+привет google показывает другую страну с esim? | ip-location
+google показывает другую страну с esim? | ip-location
+вопрос почему неправильное местоположение | ip-location
+здравствуйте почему ip другой страны | ip-location
+вопрос netflix показывает другую страну с esim | ip-location
+привет почему неправильное местоположение? | ip-location
+почему ip другой страны пожалуйста | ip-location
+почему неправильное местоположение? | ip-location
+вопрос netflix показывает другую страну с esim? | ip-location
+google показывает другую страну с esim пожалуйста | ip-location
+работает ли google в китае с esim | china
+работает ли youtube в китае | china
+работает ли youtube в китае с esim | china
+работает ли whatsapp в китае | china
+работает ли google в китае | china
+работает ли whatsapp в китае с esim | china
+привет работает ли google в китае | china
+работает ли whatsapp в китае с esim пожалуйста | china
+работает ли google в китае пожалуйста | china
+работает ли whatsapp в китае пожалуйста | china
+здравствуйте работает ли google в китае с esim пожалуйста | china
+привет работает ли youtube в китае | china
+работает ли youtube в китае? | china
+здравствуйте работает ли youtube в китае с esim | china
+работает ли google в китае с esim? | china
+работает ли youtube в китае с esim? | china
+иностранный телефон в турции регистрация imei esim | turkey
+esim для турции работает ли | turkey
+иностранный телефон в турции блокировка esim | turkey
+esim для турции какой пакет | turkey
+esim для турции работает ли? | turkey
+здравствуйте esim для турции какой пакет пожалуйста | turkey
+привет esim для турции работает ли? | turkey
+вопрос иностранный телефон в турции блокировка esim | turkey
+привет иностранный телефон в турции регистрация imei esim? | turkey
+здравствуйте esim для турции какой пакет? | turkey
+вопрос esim для турции работает ли? | turkey
+esim для турции какой пакет пожалуйста | turkey
+вопрос иностранный телефон в турции регистрация imei esim пожалуйста | turkey
+привет иностранный телефон в турции блокировка esim | turkey
+здравствуйте esim для турции работает ли пожалуйста | turkey
+здравствуйте esim для турции работает ли? | turkey
+esim или роуминг что дешевле | esim-vs-roaming
+esim против роуминга что дешевле | esim-vs-roaming
+esim или роуминг что дешевле? | esim-vs-roaming
+вопрос esim против роуминга что дешевле пожалуйста | esim-vs-roaming
+esim против роуминга что дешевле? | esim-vs-roaming
+привет esim или роуминг что дешевле пожалуйста | esim-vs-roaming
+здравствуйте esim или роуминг что дешевле? | esim-vs-roaming
+здравствуйте esim против роуминга что дешевле | esim-vs-roaming
+привет esim против роуминга что дешевле? | esim-vs-roaming
+вопрос esim или роуминг что дешевле | esim-vs-roaming
+здравствуйте esim или роуминг что дешевле | esim-vs-roaming
+esim или роуминг что дешевле пожалуйста | esim-vs-roaming
+вопрос esim против роуминга что дешевле | esim-vs-roaming
+esim против роуминга что дешевле пожалуйста | esim-vs-roaming
+здравствуйте esim или роуминг что дешевле пожалуйста | esim-vs-roaming
+вопрос esim или роуминг что дешевле? | esim-vs-roaming
+карта отклонена | payment-failed
+деньги списали но нет esim | payment-failed
+деньги списали но нет заказа | payment-failed
+оплата не прошла | payment-failed
+списали дважды | payment-failed
+здравствуйте оплата не прошла пожалуйста | payment-failed
+вопрос оплата не прошла | payment-failed
+списали дважды пожалуйста | payment-failed
+привет списали дважды | payment-failed
+деньги списали но нет esim? | payment-failed
+вопрос деньги списали но нет esim | payment-failed
+привет деньги списали но нет заказа | payment-failed
+привет оплата не прошла | payment-failed
+вопрос списали дважды пожалуйста | payment-failed
+вопрос деньги списали но нет заказа | payment-failed
+карта отклонена? | payment-failed
+есть ли скрытые платежи | hidden-costs
+есть ли подписка | hidden-costs
+продлевается ли пакет автоматически | hidden-costs
+вопрос есть ли скрытые платежи? | hidden-costs
+продлевается ли пакет автоматически пожалуйста | hidden-costs
+здравствуйте есть ли скрытые платежи | hidden-costs
+есть ли скрытые платежи? | hidden-costs
+вопрос есть ли подписка | hidden-costs
+вопрос есть ли скрытые платежи | hidden-costs
+вопрос есть ли подписка пожалуйста | hidden-costs
+есть ли подписка пожалуйста | hidden-costs
+привет продлевается ли пакет автоматически пожалуйста | hidden-costs
+продлевается ли пакет автоматически? | hidden-costs
+вопрос продлевается ли пакет автоматически пожалуйста | hidden-costs
+привет есть ли скрытые платежи | hidden-costs
+вопрос есть ли скрытые платежи пожалуйста | hidden-costs
+где кнопка возврата | refund-how,refund
+как запросить возврат | refund-how,refund
+здравствуйте где кнопка возврата | refund-how,refund
+как запросить возврат пожалуйста | refund-how,refund
+привет где кнопка возврата? | refund-how,refund
+привет где кнопка возврата | refund-how,refund
+где кнопка возврата? | refund-how,refund
+привет как запросить возврат | refund-how,refund
+где кнопка возврата пожалуйста | refund-how,refund
+вопрос где кнопка возврата пожалуйста | refund-how,refund
+как запросить возврат? | refund-how,refund
+здравствуйте где кнопка возврата? | refund-how,refund
+вопрос как запросить возврат пожалуйста | refund-how,refund
+здравствуйте как запросить возврат | refund-how,refund
+вопрос где кнопка возврата | refund-how,refund
+здравствуйте где кнопка возврата пожалуйста | refund-how,refund
+как попасть в бизнес зал в сша | lounge-access,lounge-what
+как попасть в бизнес зал в греции | lounge-access,lounge-what
+как попасть в бизнес зал в таиланде | lounge-access,lounge-what
+как попасть в бизнес зал в аэропорту | lounge-access,lounge-what
+доступ в зал что показать | lounge-access,lounge-what
+как попасть в бизнес зал в дубае | lounge-access,lounge-what
+как попасть в бизнес зал в италии | lounge-access,lounge-what
+как попасть в бизнес зал в египте | lounge-access,lounge-what
+ваучер в лаунж что показать | lounge-access,lounge-what
+как попасть в бизнес зал в турции | lounge-access,lounge-what
+как попасть в бизнес зал в испании | lounge-access,lounge-what
+привет доступ в зал что показать? | lounge-access,lounge-what
+вопрос как попасть в бизнес зал в таиланде | lounge-access,lounge-what
+привет ваучер в лаунж что показать | lounge-access,lounge-what
+вопрос как попасть в бизнес зал в италии | lounge-access,lounge-what
+привет как попасть в бизнес зал в турции | lounge-access,lounge-what
+сколько можно находиться в бизнес зале | lounge-hours
+привет сколько можно находиться в бизнес зале? | lounge-hours
+здравствуйте сколько можно находиться в бизнес зале | lounge-hours
+сколько можно находиться в бизнес зале? | lounge-hours
+вопрос сколько можно находиться в бизнес зале | lounge-hours
+вопрос сколько можно находиться в бизнес зале пожалуйста | lounge-hours
+здравствуйте сколько можно находиться в бизнес зале? | lounge-hours
+привет сколько можно находиться в бизнес зале | lounge-hours
+вопрос сколько можно находиться в бизнес зале? | lounge-hours
+здравствуйте сколько можно находиться в бизнес зале пожалуйста | lounge-hours
+привет сколько можно находиться в бизнес зале пожалуйста | lounge-hours
+сколько можно находиться в бизнес зале пожалуйста | lounge-hours
+сопровождающий в бизнес зал | lounge-kids
+дети в бизнес зал | lounge-kids
+ребенок в бизнес зал | lounge-kids
+здравствуйте ребенок в бизнес зал | lounge-kids
+ребенок в бизнес зал пожалуйста | lounge-kids
+сопровождающий в бизнес зал? | lounge-kids
+привет ребенок в бизнес зал | lounge-kids
+здравствуйте ребенок в бизнес зал? | lounge-kids
+вопрос ребенок в бизнес зал | lounge-kids
+дети в бизнес зал пожалуйста | lounge-kids
+сопровождающий в бизнес зал пожалуйста | lounge-kids
+ребенок в бизнес зал? | lounge-kids
+дети в бизнес зал? | lounge-kids
+вопрос ребенок в бизнес зал пожалуйста | lounge-kids
+вопрос дети в бизнес зал? | lounge-kids
+здравствуйте сопровождающий в бизнес зал | lounge-kids
+бизнес зал переполнен | lounge-denied
+меня не пустили в зал | lounge-denied
+здравствуйте меня не пустили в зал пожалуйста | lounge-denied
+привет меня не пустили в зал | lounge-denied
+здравствуйте бизнес зал переполнен | lounge-denied
+вопрос бизнес зал переполнен | lounge-denied
+привет бизнес зал переполнен | lounge-denied
+меня не пустили в зал пожалуйста | lounge-denied
+привет меня не пустили в зал пожалуйста | lounge-denied
+привет бизнес зал переполнен? | lounge-denied
+здравствуйте бизнес зал переполнен пожалуйста | lounge-denied
+здравствуйте бизнес зал переполнен? | lounge-denied
+вопрос бизнес зал переполнен пожалуйста | lounge-denied
+бизнес зал переполнен? | lounge-denied
+вопрос меня не пустили в зал пожалуйста | lounge-denied
+бизнес зал переполнен пожалуйста | lounge-denied
+рейс задержан ваучер в зал действует | lounge-delay
+задержка ваучер в зал действует | lounge-delay
+задержка ваучер в зал действует? | lounge-delay
+привет задержка ваучер в зал действует | lounge-delay
+здравствуйте задержка ваучер в зал действует | lounge-delay
+вопрос рейс задержан ваучер в зал действует? | lounge-delay
+рейс задержан ваучер в зал действует? | lounge-delay
+здравствуйте задержка ваучер в зал действует пожалуйста | lounge-delay
+вопрос рейс задержан ваучер в зал действует пожалуйста | lounge-delay
+привет задержка ваучер в зал действует пожалуйста | lounge-delay
+рейс задержан ваучер в зал действует пожалуйста | lounge-delay
+привет рейс задержан ваучер в зал действует | lounge-delay
+задержка ваучер в зал действует пожалуйста | lounge-delay
+вопрос рейс задержан ваучер в зал действует | lounge-delay
+вопрос задержка ваучер в зал действует | lounge-delay
+вопрос задержка ваучер в зал действует? | lounge-delay
+не могу найти вход fast track | fasttrack-where
+где fast track в стамбуле | fasttrack-where
+где fast track в аэропорту | fasttrack-where
+привет где fast track в аэропорту | fasttrack-where
+вопрос не могу найти вход fast track? | fasttrack-where
+вопрос где fast track в стамбуле пожалуйста | fasttrack-where
+здравствуйте не могу найти вход fast track пожалуйста | fasttrack-where
+здравствуйте где fast track в стамбуле | fasttrack-where
+здравствуйте где fast track в стамбуле пожалуйста | fasttrack-where
+не могу найти вход fast track пожалуйста | fasttrack-where
+вопрос не могу найти вход fast track пожалуйста | fasttrack-where
+где fast track в аэропорту пожалуйста | fasttrack-where
+здравствуйте не могу найти вход fast track | fasttrack-where
+привет где fast track в стамбуле пожалуйста | fasttrack-where
+где fast track в стамбуле пожалуйста | fasttrack-where
+не могу найти вход fast track? | fasttrack-where
+сколько действует fast track | fasttrack-time
+привет сколько действует fast track? | fasttrack-time
+вопрос сколько действует fast track пожалуйста | fasttrack-time
+здравствуйте сколько действует fast track пожалуйста | fasttrack-time
+сколько действует fast track? | fasttrack-time
+вопрос сколько действует fast track | fasttrack-time
+здравствуйте сколько действует fast track | fasttrack-time
+сколько действует fast track пожалуйста | fasttrack-time
+здравствуйте сколько действует fast track? | fasttrack-time
+привет сколько действует fast track | fasttrack-time
+вопрос сколько действует fast track? | fasttrack-time
+привет сколько действует fast track пожалуйста | fasttrack-time
+работает ли vpn с esim | vpn
+работает ли впн с esim | vpn
+привет работает ли vpn с esim пожалуйста | vpn
+работает ли vpn с esim? | vpn
+привет работает ли vpn с esim | vpn
+вопрос работает ли впн с esim? | vpn
+работает ли впн с esim пожалуйста | vpn
+вопрос работает ли vpn с esim? | vpn
+здравствуйте работает ли vpn с esim | vpn
+привет работает ли впн с esim | vpn
+работает ли впн с esim? | vpn
+работает ли vpn с esim пожалуйста | vpn
+вопрос работает ли vpn с esim | vpn
+здравствуйте работает ли впн с esim | vpn
+вопрос работает ли vpn с esim пожалуйста | vpn
+здравствуйте работает ли vpn с esim пожалуйста | vpn
+esim для компании предложение | business
+esim для сотрудников предложение | business
+здравствуйте esim для компании предложение? | business
+привет esim для сотрудников предложение пожалуйста | business
+здравствуйте esim для компании предложение пожалуйста | business
+привет esim для сотрудников предложение | business
+здравствуйте esim для сотрудников предложение? | business
+вопрос esim для сотрудников предложение пожалуйста | business
+вопрос esim для сотрудников предложение? | business
+esim для сотрудников предложение пожалуйста | business
+вопрос esim для компании предложение пожалуйста | business
+здравствуйте esim для сотрудников предложение пожалуйста | business
+здравствуйте esim для сотрудников предложение | business
+вопрос esim для компании предложение? | business
+привет esim для компании предложение | business
+esim для компании предложение? | business
+есть ли у esim номер телефона | phone-number,calls
+есть ли у esim турецкий номер | phone-number,calls
+привет есть ли у esim номер телефона | phone-number,calls
+здравствуйте есть ли у esim номер телефона пожалуйста | phone-number,calls
+есть ли у esim номер телефона? | phone-number,calls
+есть ли у esim турецкий номер? | phone-number,calls
+вопрос есть ли у esim турецкий номер | phone-number,calls
+есть ли у esim номер телефона пожалуйста | phone-number,calls
+есть ли у esim турецкий номер пожалуйста | phone-number,calls
+вопрос есть ли у esim турецкий номер пожалуйста | phone-number,calls
+привет есть ли у esim турецкий номер | phone-number,calls
+вопрос есть ли у esim номер телефона | phone-number,calls
+здравствуйте есть ли у esim турецкий номер? | phone-number,calls
+здравствуйте есть ли у esim турецкий номер пожалуйста | phone-number,calls
+вопрос есть ли у esim турецкий номер? | phone-number,calls
+здравствуйте есть ли у esim турецкий номер | phone-number,calls
+когда устанавливать esim | buy-when,when-activate
+установить esim до поездки | buy-when,when-activate
+когда покупать esim | buy-when,when-activate
+установить esim до поездки пожалуйста | buy-when,when-activate
+вопрос когда устанавливать esim? | buy-when,when-activate
+когда устанавливать esim? | buy-when,when-activate
+вопрос когда устанавливать esim | buy-when,when-activate
+когда устанавливать esim пожалуйста | buy-when,when-activate
+привет когда устанавливать esim? | buy-when,when-activate
+здравствуйте когда устанавливать esim пожалуйста | buy-when,when-activate
+здравствуйте установить esim до поездки | buy-when,when-activate
+здравствуйте когда покупать esim пожалуйста | buy-when,when-activate
+вопрос когда покупать esim пожалуйста | buy-when,when-activate
+здравствуйте когда покупать esim? | buy-when,when-activate
+вопрос когда устанавливать esim пожалуйста | buy-when,when-activate
+привет когда покупать esim пожалуйста | buy-when,when-activate
+привет включить роуминг самсунг? | data-roaming
+вопрос переключить мобильные данные на esim xiaomi? | data-line,line-on
+здравствуйте выбрать сеть вручную на iphone? | network-select
+привет сбросить настройки сети на iphone пожалуйста | reset-network
+настроить точку доступа на samsung galaxy пожалуйста | hotspot-setup,hotspot
+сяоми добавить esim как пожалуйста | install-android,install-esim
+здравствуйте esim отключена на сяоми | line-on,data-line
+здравствуйте только sos в греции? | no-service
