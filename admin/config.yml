@@ -102,6 +102,8 @@ collections:
                 options:
                   - { label: "Giriş görseli (hero)", value: hero }
                   - { label: "Ağ operatörleri (kayan şerit)", value: networks }
+                  - { label: "Öne çıkan ülke paketleri", value: featured }
+                  - { label: "Güvenceler (iade, abonelik yok…)", value: promises }
                   - { label: "Popüler destinasyonlar", value: destinations }
                   - { label: "Bölgesel & global paketler", value: packages }
                   - { label: "eSIM nedir?", value: howto }

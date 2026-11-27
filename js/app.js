@@ -325,6 +325,109 @@
     },
   };
 
+  /* ---------- HAUPTLAND: PAKETE DIREKT AUF DER STARTSEITE ----------
+     Land kommt aus site.json (Bereich {type:"featured", country:"tr"}), Pakete und Preise nur aus der API.
+     Ohne Preise bleibt der Bereich verborgen – es werden nie Platzhalter-Preise gezeigt. */
+  const featuredCfg = () => (SITE.sections || []).find((s) => s.type === "featured") || {};
+  const featuredPicks = (plans, unl) => {
+    const list = plans.filter((p) => !!p.unlimited === unl).sort((a, b) => (unl ? a.days - b.days : a.gb - b.gb || a.days - b.days) || a.price - b.price);
+    if (list.length <= 4) return list;
+    const pop = Math.max(0, list.findIndex((p) => p.popular));
+    const start = Math.min(Math.max(0, pop - 1), list.length - 4);
+    return list.slice(start, start + 4);
+  };
+  sections.featured = {
+    render: () => {
+      const code = featuredCfg().country || "tr";
+      const country = ESIM.countries.find((c) => c.code === code);
+      const plans = plansOf("country:" + code);
+      if (!country || !plans.length) return `<section class="feat" hidden></section>`;
+      const data = featuredPicks(plans, false), unl = featuredPicks(plans, true);
+      const both = data.length && unl.length;
+      const card = (p, kind, hide) => `
+        <article class="feat__card${p.popular ? " is-pop" : ""}" data-kind="${kind}" ${hide ? "hidden" : ""}>
+          ${p.popular ? `<span class="feat__badge">${esc(t("bestseller"))}</span>` : ""}
+          <p class="feat__vol">${esc(vol(p))}</p>
+          <p class="feat__days">${esc(t("days", { n: p.days }))}</p>
+          <p class="feat__price">${eur(p.price)}</p>
+          <ul class="feat__perks">
+            <li>${icon("check")} ${esc(t("featPerkFast"))}</li>
+            <li>${icon("check")} ${esc(t("featPerkNumber"))}</li>
+            <li>${icon("check")} ${esc(t("featPerkNoSub"))}</li>
+          </ul>
+          <button type="button" class="btn ${p.popular ? "btn--green" : "btn--dark"} feat__buy" data-feat-plan="${esc(p.id)}">${esc(t("addToCart"))}</button>
+        </article>`;
+      return `
+      <section class="section feat" id="featured" data-country="${esc(code)}">
+        <div class="container">
+          <div class="head-split">
+            <div><p class="kicker kicker--dark">${esc(t("featKicker"))}</p>
+              <h2 class="h2 feat__title"><img class="feat__flag" src="${flag(code)}" alt="">${esc(country.name)}</h2>
+              <p class="feat__lead">${esc(t("featLead"))}</p></div>
+            ${both ? `<div class="plan-tabs feat__tabs" role="tablist">
+              <button type="button" role="tab" class="plan-tab is-active" aria-selected="true" data-ftab="data">${esc(t("tabData"))}</button>
+              <button type="button" role="tab" class="plan-tab" aria-selected="false" data-ftab="unl">${esc(t("tabUnlimited"))}</button>
+            </div>` : ""}
+          </div>
+          <div class="feat__grid">
+            ${data.map((p) => card(p, "data", false)).join("")}
+            ${unl.map((p) => card(p, "unl", !!data.length)).join("")}
+          </div>
+          <div class="feat__foot">
+            <p class="feat__note">${icon("shield")} ${esc(t("moneyBack"))}</p>
+            <button type="button" class="link-arrow" data-feat-all>${esc(t("featAll"))} ${icon("arrow")}</button>
+          </div>
+        </div>
+      </section>`;
+    },
+    init: (el) => {
+      if (!el || el.hidden) return;
+      const code = el.dataset.country;
+      // Handy: beliebtestes Paket in die Mitte der Kartenreihe holen
+      const grid = $(".feat__grid", el), pop = $(".feat__card.is-pop:not([hidden])", el);
+      if (grid && pop && grid.scrollWidth > grid.clientWidth) grid.scrollLeft += pop.getBoundingClientRect().left - grid.getBoundingClientRect().left - (grid.clientWidth - pop.offsetWidth) / 2;
+      el.addEventListener("click", (e) => {
+        const tab = e.target.closest("[data-ftab]");
+        if (tab) {
+          $$("[data-ftab]", el).forEach((b) => { b.classList.toggle("is-active", b === tab); b.setAttribute("aria-selected", b === tab); });
+          $$(".feat__card", el).forEach((c) => (c.hidden = c.dataset.kind !== tab.dataset.ftab));
+          return;
+        }
+        const buy = e.target.closest("[data-feat-plan]");
+        if (buy) return cartAdd({ item: "country:" + code, plan: buy.dataset.featPlan });
+        if (e.target.closest("[data-feat-all]")) openPlans(ESIM.countries.find((c) => c.code === code));
+      });
+    },
+  };
+
+  /* ---------- VERSPRECHEN: Einwände ausräumen ----------
+     Geld-zurück-Text kommt aus EINER Stelle (ui.json „moneyBack“), damit er überall gleich lautet. */
+  sections.promises = {
+    render: () => {
+      const items = [
+        ["phone", t("promNumT"), t("promNumD")],
+        ["shield", t("promMoneyT"), `${t("moneyBack")}. ${t("promMoneyD")}`],
+        ["check", t("promSubT"), t("promSubD")],
+        ["chat", t("promHelpT"), t("promHelpD")],
+      ];
+      return `
+      <section class="section section--dark prom" id="promises">
+        <div class="container">
+          <div class="head-split"><div><p class="kicker">${esc(t("promKicker"))}</p><h2 class="h2">${esc(t("promTitle"))}</h2></div></div>
+          <div class="prom__grid">
+            ${items.map(([ic, title, text], i) => `
+              <div class="prom__item">
+                <span class="prom__icon">${icon(ic)}</span>
+                <h3 class="prom__title">${esc(title)}</h3>
+                <p class="prom__text">${esc(text)}</p>
+              </div>`).join("")}
+          </div>
+          <a class="btn btn--green prom__cta" href="#esim">${esc(t("promCta"))} ${icon("arrow")}</a>
+        </div>
+      </section>`;
+    },
+  };
+
   /* ---------- BELIEBTE REISEZIELE ---------- */
   const popular = () => ESIM.countries.filter((c) => c.popular && offered("country:" + c.code));
   sections.destinations = {
@@ -1413,6 +1516,28 @@
     : (SITE.sections || []).filter((s) => s.enabled !== false && sections[s.type]);
   page.innerHTML = active.map((s) => sections[s.type].render()).join("");
   active.forEach((s, i) => sections[s.type].init?.(page.children[i]));
+
+  /* ---------- Lina als schwebende Blase (nur wenn es den Hilfe-Bereich gibt) ----------
+     Erscheint nach dem Startbild, verschwindet, solange der Hilfe-Bereich selbst sichtbar ist. */
+  (() => {
+    const help = $("#assistant");
+    if (!help || SITE.linaBubble === false) return;
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "lina-fab";
+    b.setAttribute("aria-label", t("linaBubble"));
+    b.innerHTML = `${PERSONA.image ? `<img src="${img(PERSONA.image, 120, 120)}" alt="">` : `<span class="lina-fab__ic">${icon("chat")}</span>`}
+      <span class="lina-fab__txt"><b>${esc(t("linaBubble"))}</b><span><i class="lina-fab__dot"></i>${esc(t("linaOnline"))}</span></span>`;
+    document.body.appendChild(b);
+    let helpVisible = false;
+    const sync = () => b.classList.toggle("is-shown", window.scrollY > window.innerHeight * 0.8 && !helpVisible && !document.querySelector(".modal:not([hidden]), .cart.is-open"));
+    new IntersectionObserver(([e]) => { helpVisible = e.isIntersecting; sync(); }, { threshold: 0.15 }).observe(help);
+    addEventListener("scroll", sync, { passive: true });
+    b.addEventListener("click", () => {
+      help.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+      setTimeout(() => $("#assistant-input")?.focus({ preventScroll: true }), 600);
+    });
+  })();
 
   // Inhalte beim Scrollen sanft einblenden (wie bei Apple/Samsung); bei „Bewegung reduzieren“ aus
   const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;

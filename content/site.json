@@ -50,11 +50,20 @@
         "enabled": true
       },
       {
+        "type": "featured",
+        "enabled": true,
+        "country": "tr"
+      },
+      {
         "type": "destinations",
         "enabled": true
       },
       {
         "type": "packages",
+        "enabled": true
+      },
+      {
+        "type": "promises",
         "enabled": true
       },
       {
