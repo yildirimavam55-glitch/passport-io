@@ -1607,3 +1607,13 @@ img.is-broken { visibility: hidden; }
 html:lang(ko) body { word-break: keep-all; overflow-wrap: anywhere; }
 html:lang(ja) body { line-break: strict; }
 html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
+
+/* Hell/Dunkel-Schalter im Menü (Handy/Tablet); in der Leiste nur auf dem Desktop */
+.nav__theme { display: none; }
+@media (max-width: 1024px) {
+  .theme-btn { display: none; }
+  .nav.is-open .nav__links .nav__theme { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0 4px; font-size: 16px; color: rgba(255,255,255,.78); }
+}
+.nav__seg { display: inline-flex; padding: 3px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.18); }
+.nav__seg button { padding: 7px 16px; border-radius: 999px; font: inherit; font-size: 15px; font-weight: 600; color: rgba(255,255,255,.7); transition: background .2s, color .2s; }
+.nav__seg button[aria-pressed="true"] { background: var(--green); color: #0a0d0c; }

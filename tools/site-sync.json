@@ -4397,6 +4397,48 @@
    "ru": "d8d810201b00",
    "fr": "d8d810201b00",
    "es": "d8d810201b00"
+  },
+  "themeMode": {
+   "en": "3a3b14f75d7b",
+   "de": "3a3b14f75d7b",
+   "ar": "3a3b14f75d7b",
+   "ru": "3a3b14f75d7b",
+   "fr": "3a3b14f75d7b",
+   "es": "3a3b14f75d7b",
+   "it": "3a3b14f75d7b",
+   "pt": "3a3b14f75d7b",
+   "nl": "3a3b14f75d7b",
+   "pl": "3a3b14f75d7b",
+   "ja": "3a3b14f75d7b",
+   "ko": "3a3b14f75d7b"
+  },
+  "themeDarkShort": {
+   "en": "44ce6e68fefd",
+   "de": "44ce6e68fefd",
+   "ar": "44ce6e68fefd",
+   "ru": "44ce6e68fefd",
+   "fr": "44ce6e68fefd",
+   "es": "44ce6e68fefd",
+   "it": "44ce6e68fefd",
+   "pt": "44ce6e68fefd",
+   "nl": "44ce6e68fefd",
+   "pl": "44ce6e68fefd",
+   "ja": "44ce6e68fefd",
+   "ko": "44ce6e68fefd"
+  },
+  "themeLightShort": {
+   "en": "2b7ced2726d2",
+   "de": "2b7ced2726d2",
+   "ar": "2b7ced2726d2",
+   "ru": "2b7ced2726d2",
+   "fr": "2b7ced2726d2",
+   "es": "2b7ced2726d2",
+   "it": "2b7ced2726d2",
+   "pt": "2b7ced2726d2",
+   "nl": "2b7ced2726d2",
+   "pl": "2b7ced2726d2",
+   "ja": "2b7ced2726d2",
+   "ko": "2b7ced2726d2"
   }
  },
  "content/account.json": {

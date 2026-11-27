@@ -1,6 +1,6 @@
 # passport.io – Projektkontext (kurz)
 
-Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (später). Hauptsprache Türkisch; Seite in 13 Sprachen (tr,en,de,ar,ru,fr,es,it,pt[-BR],nl,pl,ja,ko), Sprache = Gerät. Fehlende Texte: erst Englisch, dann Türkisch. Design: dunkel + Neongrün. Nutzer schreibt TR/DE.
+Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (später). Hauptsprache Türkisch; Seite in 13 Sprachen (tr,en,de,ar,ru,fr,es,it,pt[-BR],nl,pl,ja,ko), Sprache = Gerät. Fehlende Texte: erst Englisch, dann Türkisch. Design: dunkel + Neongrün; Standard = Dunkel-Modus (Wahl in localStorage `pp_theme`, Schalter „Darstellung“ im Menü, Desktop: Knopf in der Leiste). Inline-Theme-Skript ist per CSP-Hash erlaubt → bei Änderung Hash in allen 5 HTML-Seiten neu setzen. Nutzer schreibt TR/DE.
 
 ## Links
 - Live: https://yildirimavam55-glitch.github.io/passport-io/ · Panel: …/admin/panel.html · Konto: …/account.html

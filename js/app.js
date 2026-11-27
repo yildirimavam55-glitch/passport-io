@@ -1127,6 +1127,9 @@
       <nav class="nav__links" aria-label="${esc(t("mainNav"))}">
         ${(SITE.nav || []).map((n) => `<a href="${esc(href(n.url))}">${esc(n.label)}${n.badge ? ` <small>${esc(n.badge)}</small>` : ""}</a>`).join("")}
         <a href="account.html" class="nav__account">${esc(t(signedIn ? "myAccount" : "login"))}</a>
+        <div class="nav__theme" role="group" aria-label="${esc(t("themeMode"))}"><span>${esc(t("themeMode"))}</span>
+          <div class="nav__seg"><button type="button" data-theme-set="dark">${esc(t("themeDarkShort"))}</button><button type="button" data-theme-set="light">${esc(t("themeLightShort"))}</button></div>
+        </div>
       </nav>
       <div class="nav__actions">
         <button class="theme-btn" type="button" data-theme-toggle aria-label="${esc(t(document.documentElement.dataset.theme === "dark" ? "themeLight" : "themeDark"))}">
@@ -1344,20 +1347,23 @@
     setTimeout(open, preview ? 300 : Math.max(0, Number(cfg.delay) || 0) * 1000);
   })();
 
-  // Hell/Dunkel: Wahl speichern; ohne Wahl folgt die Seite der Systemeinstellung
+  // Hell/Dunkel: Standard Dunkel, Wahl wird gespeichert. Schalter im Menü (Handy/Tablet) bzw. Knopf in der Leiste (Desktop)
   const root = document.documentElement, themeBtn = $("[data-theme-toggle]");
-  const setTheme = (mode, save) => {
+  const syncTheme = () => {
+    const mode = root.dataset.theme === "light" ? "light" : "dark";
+    themeBtn?.setAttribute("aria-label", t(mode === "dark" ? "themeLight" : "themeDark"));
+    $$("[data-theme-set]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.themeSet === mode));
+  };
+  const setTheme = (mode) => {
     root.classList.add("theme-anim");
     root.dataset.theme = mode;
-    if (save) { try { localStorage.setItem("pp_theme", mode); } catch (_) {} }
-    themeBtn?.setAttribute("aria-label", t(mode === "dark" ? "themeLight" : "themeDark"));
+    try { localStorage.setItem("pp_theme", mode); } catch (_) {}
+    syncTheme();
     setTimeout(() => root.classList.remove("theme-anim"), 500);
   };
-  themeBtn?.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark", true));
-  matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", (e) => {
-    let saved = null; try { saved = localStorage.getItem("pp_theme"); } catch (_) {}
-    if (!saved) setTheme(e.matches ? "dark" : "light", false);
-  });
+  themeBtn?.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
+  $$("[data-theme-set]").forEach((b) => b.addEventListener("click", () => setTheme(b.dataset.themeSet)));
+  syncTheme();
   // Sprachumschalter
   const langBox = $(".lang"), langBtn = $(".nav__locale"), langMenu = $(".lang__menu");
   const setLangMenu = (open) => {
