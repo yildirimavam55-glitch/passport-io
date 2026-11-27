@@ -58,10 +58,6 @@
         "enabled": true
       },
       {
-        "type": "promises",
-        "enabled": true
-      },
-      {
         "type": "howto",
         "enabled": true
       },
@@ -170,7 +166,7 @@
       "steps": [
         {
           "title": "Paketini seç",
-          "text": "Destinasyonunu ara, veri miktarını seç; kartla, Apple Pay veya Google Pay ile öde."
+          "text": "Destinasyonunu ara, veri miktarını seç ve güvenle öde."
         },
         {
           "title": "QR kodu tara",
@@ -182,7 +178,8 @@
         }
       ],
       "button": "Telefonum eSIM uyumlu mu?",
-      "guideLink": "Kurulum rehberi"
+      "guideLink": "Kurulum rehberi",
+      "trustVariant": "a"
     },
     "airport": {
       "kicker": "Havalimanında",
@@ -446,7 +443,7 @@
       "steps": [
         {
           "title": "Choose a plan",
-          "text": "Search your destination, pick your data volume and pay by card, Apple Pay or Google Pay."
+          "text": "Search your destination, pick your data volume and pay securely."
         },
         {
           "title": "Scan the QR code",
@@ -691,7 +688,7 @@
       "steps": [
         {
           "title": "Paket wählen",
-          "text": "Reiseziel suchen, Datenvolumen wählen, mit Karte, Apple Pay oder Google Pay bezahlen."
+          "text": "Reiseziel suchen, Datenvolumen wählen und sicher bezahlen."
         },
         {
           "title": "QR-Code scannen",
@@ -936,7 +933,7 @@
       "steps": [
         {
           "title": "اختر الباقة",
-          "text": "ابحث عن وجهتك، واختر حجم البيانات، وادفع بالبطاقة أو عبر Apple Pay أو Google Pay."
+          "text": "ابحث عن وجهتك، واختر حجم البيانات، وادفع بأمان."
         },
         {
           "title": "امسح رمز QR",
@@ -1181,7 +1178,7 @@
       "steps": [
         {
           "title": "Выберите тариф",
-          "text": "Найдите направление, выберите объём данных и оплатите картой, через Apple Pay или Google Pay."
+          "text": "Найдите направление, выберите объём данных и безопасно оплатите."
         },
         {
           "title": "Отсканируйте QR-код",
@@ -1426,7 +1423,7 @@
       "steps": [
         {
           "title": "Choisissez un forfait",
-          "text": "Recherchez votre destination, choisissez le volume de données et payez par carte, Apple Pay ou Google Pay."
+          "text": "Recherchez votre destination, choisissez le volume de données et payez en toute sécurité."
         },
         {
           "title": "Scannez le QR code",
@@ -1671,7 +1668,7 @@
       "steps": [
         {
           "title": "Elige un plan",
-          "text": "Busca tu destino, elige el volumen de datos y paga con tarjeta, Apple Pay o Google Pay."
+          "text": "Busca tu destino, elige el volumen de datos y paga de forma segura."
         },
         {
           "title": "Escanea el código QR",
@@ -1916,7 +1913,7 @@
       "steps": [
         {
           "title": "Scegli un piano",
-          "text": "Cerca la destinazione, scegli il volume di dati e paga con carta, Apple Pay o Google Pay."
+          "text": "Cerca la destinazione, scegli il volume di dati e paga in modo sicuro."
         },
         {
           "title": "Scansiona il codice QR",
@@ -2159,7 +2156,7 @@
       "steps": [
         {
           "title": "Escolha um plano",
-          "text": "Pesquise seu destino, escolha o volume de dados e pague com cartão, Apple Pay ou Google Pay."
+          "text": "Pesquise seu destino, escolha o volume de dados e pague com segurança."
         },
         {
           "title": "Escaneie o QR code",
@@ -2402,7 +2399,7 @@
       "steps": [
         {
           "title": "Kies een bundel",
-          "text": "Zoek je bestemming, kies je datavolume en betaal met kaart, Apple Pay of Google Pay."
+          "text": "Zoek je bestemming, kies je datavolume en betaal veilig."
         },
         {
           "title": "Scan de QR-code",
@@ -2645,7 +2642,7 @@
       "steps": [
         {
           "title": "Wybierz pakiet",
-          "text": "Wyszukaj cel podróży, wybierz ilość danych i zapłać kartą, Apple Pay lub Google Pay."
+          "text": "Wyszukaj cel podróży, wybierz ilość danych i zapłać bezpiecznie."
         },
         {
           "title": "Zeskanuj kod QR",
@@ -2888,7 +2885,7 @@
       "steps": [
         {
           "title": "プランを選ぶ",
-          "text": "旅行先を検索してデータ容量を選び、カード、Apple Pay、Google Payでお支払い。"
+          "text": "旅行先を検索してデータ容量を選び、安全にお支払い。"
         },
         {
           "title": "QRコードを読み取る",
@@ -3131,7 +3128,7 @@
       "steps": [
         {
           "title": "요금제 선택",
-          "text": "여행지를 검색하고 데이터 용량을 고른 뒤 카드, Apple Pay 또는 Google Pay로 결제하세요."
+          "text": "여행지를 검색하고 데이터 용량을 고른 뒤 안전하게 결제하세요."
         },
         {
           "title": "QR 코드 스캔",

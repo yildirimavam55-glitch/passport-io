@@ -7,8 +7,8 @@
       Unlimited: 3, 5, 7, 10, 15, 30 Tage.
       Hat der Anbieter eine Größe nicht, fehlt sie einfach (nie erfundene Pakete).
    2. Preisstaffel nach der Preisregel: ein kleineres Paket kostet nie mehr als ein
-      größeres. Ist es teurer, wird es auf den Preis des größeren gesenkt – fiele es
-      dadurch unter die Untergrenze (Mindestpreis/Verlustschutz), wird es ausgeblendet.
+      größeres. Es wird mindestens 1 € unter das größere gesenkt – fiele es dadurch unter die
+      Untergrenze (Mindestpreis/Verlustschutz), wird es ausgeblendet (nie zwei Pakete zum gleichen Preis).
    ========================================================================== */
 // deno-lint-ignore-file no-explicit-any
 
@@ -77,10 +77,11 @@ export function enforceStaircase(body: any, floorOf: (p: any) => number) {
     const drop = new Set<any>();
     for (const p of sorted) {
       if (Number(p.price) >= cap && cap !== Infinity) {
-        // möglichst einen Tick (1 €, bleibt auf ,99) unter dem größeren Paket, sonst gleich teuer, sonst ausblenden
+        // möglichst einen Tick (1 €, bleibt auf ,99) unter dem größeren Paket – geht das nicht, ausblenden:
+        // zwei Pakete zum gleichen Preis verwirren (niemand kauft dann das kleinere)
         const below = Math.round((cap - 1) * 100) / 100, fl = floorOf(p);
-        if (Number(p.price) > below && below >= fl) p.price = below;
-        else if (Number(p.price) > cap) { if (cap >= fl) p.price = cap; else { drop.add(p); continue; } }
+        if (below >= fl) p.price = Math.min(Number(p.price), below);
+        else { drop.add(p); continue; }
       }
       cap = Math.min(cap, Number(p.price));
     }

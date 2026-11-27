@@ -224,7 +224,8 @@
     "hbFaq": "Sık sorulan sorular",
     "hbTeam": "Ekibimizle iletişime geç",
     "bestValue": "Fiyat-performans",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "Paketini bul"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -451,7 +452,8 @@
     "hbFaq": "Frequently asked questions",
     "hbTeam": "Contact our team",
     "bestValue": "Best value",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "Find your plan"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -678,7 +680,8 @@
     "hbFaq": "Häufige Fragen",
     "hbTeam": "Unser Team kontaktieren",
     "bestValue": "Preis-Leistung",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "Finde dein Paket"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -905,7 +908,8 @@
     "hbFaq": "الأسئلة الشائعة",
     "hbTeam": "تواصل مع فريقنا",
     "bestValue": "أفضل قيمة",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "ابحث عن باقتك"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -1132,7 +1136,8 @@
     "hbFaq": "Частые вопросы",
     "hbTeam": "Связаться с командой",
     "bestValue": "Выгодно",
-    "perGb": "{p}/ГБ"
+    "perGb": "{p}/ГБ",
+    "findPackage": "Найти тариф"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -1359,7 +1364,8 @@
     "hbFaq": "Questions fréquentes",
     "hbTeam": "Contacter l'équipe",
     "bestValue": "Meilleur rapport",
-    "perGb": "{p}/Go"
+    "perGb": "{p}/Go",
+    "findPackage": "Trouver mon forfait"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -1586,7 +1592,8 @@
     "hbFaq": "Preguntas frecuentes",
     "hbTeam": "Contactar con el equipo",
     "bestValue": "Mejor precio",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "Encuentra tu plan"
   },
   "it": {
     "metaTitle": "passport.io – eSIM, lounge e Fast Track per il tuo viaggio",
@@ -1813,7 +1820,8 @@
     "hbFaq": "Domande frequenti",
     "hbTeam": "Contatta il team",
     "bestValue": "Miglior prezzo",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "Trova il tuo pacchetto"
   },
   "pt": {
     "metaTitle": "passport.io – eSIM, sala VIP e Fast Track para sua viagem",
@@ -2040,7 +2048,8 @@
     "hbFaq": "Perguntas frequentes",
     "hbTeam": "Falar com a equipe",
     "bestValue": "Melhor custo-benefício",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "Encontre seu pacote"
   },
   "nl": {
     "metaTitle": "passport.io – eSIM, lounge en Fast Track voor je reis",
@@ -2267,7 +2276,8 @@
     "hbFaq": "Veelgestelde vragen",
     "hbTeam": "Neem contact op met ons team",
     "bestValue": "Beste prijs",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "Vind je bundel"
   },
   "pl": {
     "metaTitle": "passport.io – eSIM, saloniki i Fast Track na Twoją podróż",
@@ -2494,7 +2504,8 @@
     "hbFaq": "Częste pytania",
     "hbTeam": "Skontaktuj się z zespołem",
     "bestValue": "Najlepsza cena",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "Znajdź swój pakiet"
   },
   "ja": {
     "metaTitle": "passport.io – 旅行のためのeSIM、ラウンジ、ファストトラック",
@@ -2721,7 +2732,8 @@
     "hbFaq": "よくある質問",
     "hbTeam": "チームに問い合わせる",
     "bestValue": "コスパ最強",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "プランを探す"
   },
   "ko": {
     "metaTitle": "passport.io – 여행을 위한 eSIM, 라운지, 패스트트랙",
@@ -2948,6 +2960,7 @@
     "hbFaq": "자주 묻는 질문",
     "hbTeam": "팀에 문의하기",
     "bestValue": "가성비",
-    "perGb": "{p}/GB"
+    "perGb": "{p}/GB",
+    "findPackage": "요금제 찾기"
   }
 }

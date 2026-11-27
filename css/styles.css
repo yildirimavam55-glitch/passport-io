@@ -1662,15 +1662,58 @@ html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
   .modal__panel { animation: fade .2s both; }
 }
 
-/* ---------- Versprechen ---------- */
-.prom__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(24px, 3vw, 40px); }
-.prom__icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: rgba(46,245,138,.12); color: var(--green); margin-bottom: 18px; }
-.prom__icon svg { width: 22px; height: 22px; }
-.prom__title { font-size: 20px; font-weight: 700; letter-spacing: -.01em; margin-bottom: 8px; }
-.prom__text { color: rgba(255,255,255,.68); font-size: 15px; line-height: 1.55; max-width: 34ch; }
-.prom__cta { margin-top: clamp(32px, 4vw, 48px); }
-@media (max-width: 900px) { .prom__grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .prom__grid { grid-template-columns: 1fr; gap: 26px; } .prom__item { display: grid; grid-template-columns: 48px 1fr; column-gap: 16px; } .prom__icon { grid-row: span 2; margin: 0; } }
+/* ---------- Vertrauen (in „So funktioniert's“): drei Varianten ---------- */
+.trust { margin-top: clamp(28px, 4vw, 44px); }
+.trust__title { font-size: clamp(22px, 2.4vw, 30px); font-weight: 800; letter-spacing: -.02em; }
+.trust__ic { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--mint); color: var(--green-ink); flex: none; }
+.trust__ic svg { width: 20px; height: 20px; }
+.trust p { color: var(--ink-2); font-size: 15px; line-height: 1.5; }
+/* A – Leiste: vier kompakte Punkte, Antippen klappt den Satz auf */
+.trust--a .trust__head { margin-bottom: 16px; }
+.trust__bar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.trust__pill { border: 1.5px solid var(--line); border-radius: 18px; background: var(--surface, #fff); transition: border-color .2s ease; }
+.trust__pill[open] { border-color: var(--green-ink); }
+.trust__pill summary { display: flex; align-items: center; gap: 12px; padding: 14px; cursor: pointer; list-style: none; font-size: 15.5px; }
+.trust__pill summary::-webkit-details-marker { display: none; }
+.trust__pill summary b { flex: 1; }
+.trust__pill summary > svg { width: 18px; height: 18px; opacity: .5; transition: transform .2s var(--ease-out); flex: none; }
+.trust__pill[open] summary > svg { transform: rotate(45deg); }
+.trust__pill p { padding: 0 16px 16px 66px; margin: 0; }
+/* B – Garantie-Karte mit Siegel */
+.trust--b { position: relative; padding: clamp(24px, 3vw, 36px); border-radius: var(--radius-lg); background: radial-gradient(80% 120% at 100% 0%, rgba(46,245,138,.16), transparent 60%), var(--dark); color: #fff; overflow: hidden; }
+.trust--b .trust__head { max-width: 70%; margin-bottom: 22px; }
+.trust--b .kicker { color: var(--green); }
+.trust--b .trust__seal { position: absolute; right: clamp(20px, 3vw, 36px); top: clamp(20px, 3vw, 32px); display: grid; place-items: center; width: 74px; height: 74px; border-radius: 50%; background: rgba(46,245,138,.12); color: var(--green); box-shadow: 0 0 0 8px rgba(46,245,138,.06); }
+.trust--b .trust__seal svg { width: 36px; height: 36px; }
+.trust__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 28px; }
+.trust__item { display: flex; gap: 14px; }
+.trust--b .trust__ic { background: rgba(46,245,138,.12); color: var(--green); }
+.trust--b b { display: block; font-size: 17px; margin-bottom: 4px; }
+.trust--b p { color: rgba(255,255,255,.7); }
+/* C – Geld-zurück im Mittelpunkt */
+.trust--c { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); border: 1.5px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface, #fff); }
+.trust__hero { display: flex; align-items: center; gap: 18px; padding: clamp(22px, 3vw, 34px); background: radial-gradient(100% 120% at 0% 100%, rgba(46,245,138,.22), transparent 70%), var(--dark); color: #fff; }
+.trust__hero .kicker { color: var(--green); margin-bottom: 6px; }
+.trust__hero p { color: rgba(255,255,255,.75); }
+.trust--c .trust__seal { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; background: var(--green); color: var(--dark); flex: none; box-shadow: 0 12px 30px -10px rgba(46,245,138,.7); }
+.trust--c .trust__seal svg { width: 36px; height: 36px; }
+.trust__big { display: block; font-size: clamp(26px, 3vw, 36px); font-weight: 800; letter-spacing: -.02em; line-height: 1.1; margin-bottom: 6px; }
+.trust__list { list-style: none; margin: 0; padding: clamp(18px, 2.4vw, 28px); display: grid; gap: 16px; align-content: center; }
+.trust__list li { display: flex; gap: 14px; }
+.trust__list b { display: block; margin-bottom: 2px; }
+.how2__actions { flex-wrap: wrap; gap: 12px 16px; }
+@media (max-width: 900px) {
+  .trust__bar { grid-template-columns: 1fr 1fr; }
+  .trust--c { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .trust__bar { grid-template-columns: 1fr; gap: 8px; }
+  .trust__grid { grid-template-columns: 1fr; }
+  .trust--b .trust__head { max-width: none; padding-right: 70px; }
+  .trust--b .trust__seal { width: 56px; height: 56px; }
+  .trust--b .trust__seal svg { width: 28px; height: 28px; }
+  .how2__actions .btn { width: 100%; }
+}
 
 /* ---------- Lina-Blase ---------- */
 .lina-fab { position: fixed; z-index: 60; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); display: flex; align-items: center; gap: 12px; padding: 7px 20px 7px 7px; border-radius: 999px; background: var(--dark); color: #fff; border: 1px solid rgba(46,245,138,.35); box-shadow: 0 16px 40px -12px rgba(0,0,0,.6), 0 0 0 4px rgba(46,245,138,.08); opacity: 0; transform: translateY(16px) scale(.96); pointer-events: none; transition: opacity .2s ease, transform .3s var(--ease-out); -webkit-tap-highlight-color: transparent; }
@@ -1746,3 +1789,9 @@ html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
 .dest__tag { transition: opacity .2s ease; }
 :is(.dest:hover, .dest:focus-visible, .dest.is-open, .dest.is-peek) .dest__tag { opacity: 0; }
 @media (max-width: 640px) { .dest__feat { display: none; } }
+
+@media (max-width: 640px) {
+  .lina-fab { padding: 4px; gap: 0; }
+  .lina-fab img { width: 54px; height: 54px; }
+  .lina-fab__txt { display: none; }
+}

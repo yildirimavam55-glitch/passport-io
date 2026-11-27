@@ -325,32 +325,37 @@
     },
   };
 
-  /* ---------- VERSPRECHEN: Einwände ausräumen ----------
-     Geld-zurück-Text kommt aus EINER Stelle (ui.json „moneyBack“), damit er überall gleich lautet. */
-  sections.promises = {
-    render: () => {
-      const items = [
-        ["phone", t("promNumT"), t("promNumD")],
-        ["shield", t("promMoneyT"), `${t("moneyBack")}. ${t("promMoneyD")}`],
-        ["check", t("promSubT"), t("promSubD")],
-        ["chat", t("promHelpT"), t("promHelpD")],
-      ];
+  /* ---------- VERTRAUEN: Einwände ausräumen (Teil von „So funktioniert's“) ----------
+     Geld-zurück-Text kommt aus EINER Stelle (ui.json „moneyBack“). Drei Darstellungen zur Auswahl:
+     site.json howto.trustVariant = "a" (Leiste) | "b" (Garantie-Karte) | "c" (Geld-zurück-Banner); Vorschau: ?trust=b */
+  const trustItems = () => [
+    ["phone", t("promNumT"), t("promNumD")],
+    ["shield", t("promMoneyT"), `${t("moneyBack")}. ${t("promMoneyD")}`],
+    ["check", t("promSubT"), t("promSubD")],
+    ["chat", t("promHelpT"), t("promHelpD")],
+  ];
+  const trustBlock = (v) => {
+    const items = trustItems();
+    const head = `<p class="kicker kicker--dark">${esc(t("promKicker"))}</p><h3 class="trust__title">${esc(t("promTitle"))}</h3>`;
+    if (v === "b") return `
+      <div class="trust trust--b">
+        <div class="trust__seal">${icon("shield")}</div>
+        <div class="trust__head">${head}</div>
+        <div class="trust__grid">${items.map(([ic, ti, tx]) => `<div class="trust__item"><span class="trust__ic">${icon(ic)}</span><div><b>${esc(ti)}</b><p>${esc(tx)}</p></div></div>`).join("")}</div>
+      </div>`;
+    if (v === "c") {
+      const [, mT] = items[1];
       return `
-      <section class="section section--dark prom" id="promises">
-        <div class="container">
-          <div class="head-split"><div><p class="kicker">${esc(t("promKicker"))}</p><h2 class="h2">${esc(t("promTitle"))}</h2></div></div>
-          <div class="prom__grid">
-            ${items.map(([ic, title, text], i) => `
-              <div class="prom__item">
-                <span class="prom__icon">${icon(ic)}</span>
-                <h3 class="prom__title">${esc(title)}</h3>
-                <p class="prom__text">${esc(text)}</p>
-              </div>`).join("")}
-          </div>
-          <a class="btn btn--green prom__cta" href="#esim">${esc(t("promCta"))} ${icon("arrow")}</a>
-        </div>
-      </section>`;
-    },
+      <div class="trust trust--c">
+        <div class="trust__hero"><span class="trust__seal">${icon("shield")}</span><div><p class="kicker">${esc(t("promKicker"))}</p><b class="trust__big">${esc(mT)}</b><p>${esc(t("moneyBack"))}</p></div></div>
+        <ul class="trust__list">${[items[0], items[2], items[3]].map(([ic, ti, tx]) => `<li><span class="trust__ic">${icon(ic)}</span><div><b>${esc(ti)}</b><p>${esc(tx)}</p></div></li>`).join("")}</ul>
+      </div>`;
+    }
+    return `
+      <div class="trust trust--a">
+        <div class="trust__head">${head}</div>
+        <div class="trust__bar">${items.map(([ic, ti, tx]) => `<details class="trust__pill"><summary><span class="trust__ic">${icon(ic)}</span><b>${esc(ti)}</b>${icon("plus")}</summary><p>${esc(tx)}</p></details>`).join("")}</div>
+      </div>`;
   };
 
   /* ---------- BELIEBTE REISEZIELE ---------- */
@@ -601,13 +606,23 @@
               </li>`).join("")}
           </ol>
           <div class="how2__dots" aria-hidden="true">${(c.steps || []).map((_, i) => `<button type="button" tabindex="-1" class="${i ? "" : "is-active"}" data-dot="${i}"></button>`).join("")}</div>
+          ${trustBlock(new URLSearchParams(location.search).get("trust") || c.trustVariant || "a")}
           <div class="how__actions how2__actions">
-            <button class="btn btn--dark" type="button" data-open-device-check>${icon("phone")} ${esc(c.button)}</button>
+            <button class="btn btn--green" type="button" data-find-package>${icon("search")} ${esc(t("findPackage"))}</button>
+            <button class="btn btn--line" type="button" data-open-device-check>${icon("phone")} ${esc(c.button)}</button>
             ${c.guideLink ? `<a class="link-arrow" href="install.html">${esc(c.guideLink)} ${icon("arrow")}</a>` : ""}
           </div>
         </div>
       </section>`,
     init(el) {
+      // „Finde dein Paket“: nach oben zur Suche im Startbild, Feld öffnen (zeigt beliebte Länder)
+      $("[data-find-package]", el)?.addEventListener("click", () => {
+        const input = $(".hero .search__input") || $(".search__input");
+        if (!input) return;
+        const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        input.closest("form").scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "center" });
+        setTimeout(() => input.focus({ preventScroll: true }), calm ? 0 : 650);
+      });
       // Wischkarten: Punkte zeigen, welcher Schritt gerade sichtbar ist
       const track = $("[data-steps]", el), dots = $$("[data-dot]", el);
       if (!track || !dots.length) return;
