@@ -214,7 +214,15 @@
     "promHelpD": "Lina sorularını anında, 13 dilde yanıtlar. Diğer her konuda ekibimiz form üzerinden yanında.",
     "promCta": "Gideceğin yeri seç",
     "linaBubble": "Lina'ya sor",
-    "linaOnline": "Yapay zekâ asistanı · anında yanıt"
+    "linaOnline": "Yapay zekâ asistanı · anında yanıt",
+    "hbHello": "Merhaba!",
+    "hbIntro": "Ben {name}, yapay zekâ destekli seyahat asistanın. Doğru paketi bulmana, kurmana ve yolda bağlantıda kalmana yardım ederim.",
+    "hbCta": "Bana uygun paketi bul",
+    "hbBadge": "{name} 7/24 yanıt verir",
+    "hbDevice": "Telefonum eSIM uyumlu mu?",
+    "hbGuide": "Kurulum rehberleri",
+    "hbFaq": "Sık sorulan sorular",
+    "hbTeam": "Ekibimizle iletişime geç"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -431,7 +439,15 @@
     "promHelpD": "Lina answers your questions instantly, in 13 languages. For anything else, our team is a form away.",
     "promCta": "Choose your destination",
     "linaBubble": "Ask Lina",
-    "linaOnline": "AI assistant · replies instantly"
+    "linaOnline": "AI assistant · replies instantly",
+    "hbHello": "Hi!",
+    "hbIntro": "I'm {name}, your AI travel assistant. I'll help you find the right plan, set it up and stay connected on the road.",
+    "hbCta": "Find my plan",
+    "hbBadge": "{name} replies around the clock",
+    "hbDevice": "Check my phone for eSIM",
+    "hbGuide": "Installation guides",
+    "hbFaq": "Frequently asked questions",
+    "hbTeam": "Contact our team"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -648,7 +664,15 @@
     "promHelpD": "Lina beantwortet deine Fragen sofort, in 13 Sprachen. Für alles andere ist unser Team per Formular erreichbar.",
     "promCta": "Reiseziel wählen",
     "linaBubble": "Frag Lina",
-    "linaOnline": "KI-Assistentin · antwortet sofort"
+    "linaOnline": "KI-Assistentin · antwortet sofort",
+    "hbHello": "Hallo!",
+    "hbIntro": "Ich bin {name}, deine KI-Reiseassistentin. Ich helfe dir, das passende Paket zu finden, es einzurichten und unterwegs online zu bleiben.",
+    "hbCta": "Passendes Paket finden",
+    "hbBadge": "{name} antwortet rund um die Uhr",
+    "hbDevice": "Handy auf eSIM prüfen",
+    "hbGuide": "Installationsanleitungen",
+    "hbFaq": "Häufige Fragen",
+    "hbTeam": "Unser Team kontaktieren"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -865,7 +889,15 @@
     "promHelpD": "تجيب لينا عن أسئلتك فورًا بـ13 لغة. ولأي أمر آخر فريقنا متاح عبر النموذج.",
     "promCta": "اختر وجهتك",
     "linaBubble": "اسأل لينا",
-    "linaOnline": "مساعدة ذكاء اصطناعي · ترد فورًا"
+    "linaOnline": "مساعدة ذكاء اصطناعي · ترد فورًا",
+    "hbHello": "مرحبًا!",
+    "hbIntro": "أنا {name}، مساعدتك الذكية للسفر. أساعدك في اختيار الباقة المناسبة وتثبيتها والبقاء متصلًا أثناء رحلتك.",
+    "hbCta": "ابحث عن باقتي",
+    "hbBadge": "{name} ترد على مدار الساعة",
+    "hbDevice": "هل هاتفي يدعم eSIM؟",
+    "hbGuide": "أدلة التثبيت",
+    "hbFaq": "الأسئلة الشائعة",
+    "hbTeam": "تواصل مع فريقنا"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -1082,7 +1114,15 @@
     "promHelpD": "Лина мгновенно отвечает на вопросы на 13 языках. По остальным вопросам наша команда доступна через форму.",
     "promCta": "Выбрать направление",
     "linaBubble": "Спросить Лину",
-    "linaOnline": "ИИ-ассистент · отвечает сразу"
+    "linaOnline": "ИИ-ассистент · отвечает сразу",
+    "hbHello": "Привет!",
+    "hbIntro": "Я {name}, ваш ИИ-помощник в поездках. Помогу подобрать тариф, установить eSIM и оставаться на связи в пути.",
+    "hbCta": "Подобрать тариф",
+    "hbBadge": "{name} отвечает круглосуточно",
+    "hbDevice": "Проверить телефон на eSIM",
+    "hbGuide": "Инструкции по установке",
+    "hbFaq": "Частые вопросы",
+    "hbTeam": "Связаться с командой"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -1299,7 +1339,15 @@
     "promHelpD": "Lina répond instantanément à vos questions, en 13 langues. Pour le reste, notre équipe est joignable via le formulaire.",
     "promCta": "Choisir ma destination",
     "linaBubble": "Demander à Lina",
-    "linaOnline": "Assistante IA · répond aussitôt"
+    "linaOnline": "Assistante IA · répond aussitôt",
+    "hbHello": "Bonjour !",
+    "hbIntro": "Je suis {name}, votre assistante de voyage IA. Je vous aide à trouver le bon forfait, à l'installer et à rester connecté en route.",
+    "hbCta": "Trouver mon forfait",
+    "hbBadge": "{name} répond 24 h/24",
+    "hbDevice": "Vérifier mon téléphone",
+    "hbGuide": "Guides d'installation",
+    "hbFaq": "Questions fréquentes",
+    "hbTeam": "Contacter l'équipe"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -1516,7 +1564,15 @@
     "promHelpD": "Lina responde al instante, en 13 idiomas. Para todo lo demás, nuestro equipo te atiende a través del formulario.",
     "promCta": "Elegir destino",
     "linaBubble": "Pregunta a Lina",
-    "linaOnline": "Asistente de IA · responde al instante"
+    "linaOnline": "Asistente de IA · responde al instante",
+    "hbHello": "¡Hola!",
+    "hbIntro": "Soy {name}, tu asistente de viaje con IA. Te ayudo a encontrar el plan adecuado, instalarlo y seguir conectado en el camino.",
+    "hbCta": "Encontrar mi plan",
+    "hbBadge": "{name} responde las 24 horas",
+    "hbDevice": "Comprobar mi móvil",
+    "hbGuide": "Guías de instalación",
+    "hbFaq": "Preguntas frecuentes",
+    "hbTeam": "Contactar con el equipo"
   },
   "it": {
     "metaTitle": "passport.io – eSIM, lounge e Fast Track per il tuo viaggio",
@@ -1733,7 +1789,15 @@
     "promHelpD": "Lina risponde subito alle tue domande, in 13 lingue. Per tutto il resto il nostro team è raggiungibile tramite modulo.",
     "promCta": "Scegli la destinazione",
     "linaBubble": "Chiedi a Lina",
-    "linaOnline": "Assistente IA · risponde subito"
+    "linaOnline": "Assistente IA · risponde subito",
+    "hbHello": "Ciao!",
+    "hbIntro": "Sono {name}, la tua assistente di viaggio IA. Ti aiuto a trovare il pacchetto giusto, a installarlo e a restare connesso in viaggio.",
+    "hbCta": "Trova il mio pacchetto",
+    "hbBadge": "{name} risponde 24 ore su 24",
+    "hbDevice": "Verifica il mio telefono",
+    "hbGuide": "Guide all'installazione",
+    "hbFaq": "Domande frequenti",
+    "hbTeam": "Contatta il team"
   },
   "pt": {
     "metaTitle": "passport.io – eSIM, sala VIP e Fast Track para sua viagem",
@@ -1950,7 +2014,15 @@
     "promHelpD": "A Lina responde na hora, em 13 idiomas. Para todo o resto, nossa equipe atende pelo formulário.",
     "promCta": "Escolher destino",
     "linaBubble": "Pergunte à Lina",
-    "linaOnline": "Assistente de IA · responde na hora"
+    "linaOnline": "Assistente de IA · responde na hora",
+    "hbHello": "Oi!",
+    "hbIntro": "Sou a {name}, sua assistente de viagem com IA. Ajudo você a encontrar o pacote certo, instalar e ficar conectado na viagem.",
+    "hbCta": "Encontrar meu pacote",
+    "hbBadge": "{name} responde 24 horas",
+    "hbDevice": "Verificar meu celular",
+    "hbGuide": "Guias de instalação",
+    "hbFaq": "Perguntas frequentes",
+    "hbTeam": "Falar com a equipe"
   },
   "nl": {
     "metaTitle": "passport.io – eSIM, lounge en Fast Track voor je reis",
@@ -2167,7 +2239,15 @@
     "promHelpD": "Lina beantwoordt je vragen direct, in 13 talen. Voor al het andere is ons team bereikbaar via het formulier.",
     "promCta": "Kies je bestemming",
     "linaBubble": "Vraag het Lina",
-    "linaOnline": "AI-assistent · antwoordt direct"
+    "linaOnline": "AI-assistent · antwoordt direct",
+    "hbHello": "Hoi!",
+    "hbIntro": "Ik ben {name}, je AI-reisassistent. Ik help je de juiste bundel te vinden, te installeren en onderweg online te blijven.",
+    "hbCta": "Vind mijn bundel",
+    "hbBadge": "{name} antwoordt de klok rond",
+    "hbDevice": "Check mijn telefoon",
+    "hbGuide": "Installatiehandleidingen",
+    "hbFaq": "Veelgestelde vragen",
+    "hbTeam": "Neem contact op met ons team"
   },
   "pl": {
     "metaTitle": "passport.io – eSIM, saloniki i Fast Track na Twoją podróż",
@@ -2384,7 +2464,15 @@
     "promHelpD": "Lina odpowiada na pytania od razu, w 13 językach. W innych sprawach nasz zespół jest dostępny przez formularz.",
     "promCta": "Wybierz kierunek",
     "linaBubble": "Zapytaj Linę",
-    "linaOnline": "Asystentka AI · odpowiada od razu"
+    "linaOnline": "Asystentka AI · odpowiada od razu",
+    "hbHello": "Cześć!",
+    "hbIntro": "Jestem {name}, Twoja asystentka podróży AI. Pomogę Ci wybrać pakiet, zainstalować go i być online w podróży.",
+    "hbCta": "Znajdź mój pakiet",
+    "hbBadge": "{name} odpowiada całą dobę",
+    "hbDevice": "Sprawdź mój telefon",
+    "hbGuide": "Instrukcje instalacji",
+    "hbFaq": "Częste pytania",
+    "hbTeam": "Skontaktuj się z zespołem"
   },
   "ja": {
     "metaTitle": "passport.io – 旅行のためのeSIM、ラウンジ、ファストトラック",
@@ -2601,7 +2689,15 @@
     "promHelpD": "Linaが13言語ですぐにお答えします。それ以外はフォームからチームにご連絡ください。",
     "promCta": "渡航先を選ぶ",
     "linaBubble": "Linaに聞く",
-    "linaOnline": "AIアシスタント・すぐに返信"
+    "linaOnline": "AIアシスタント・すぐに返信",
+    "hbHello": "こんにちは！",
+    "hbIntro": "AI旅行アシスタントの{name}です。ぴったりのプラン選び、設定、旅先での通信までお手伝いします。",
+    "hbCta": "プランを探す",
+    "hbBadge": "{name}は24時間対応",
+    "hbDevice": "スマホのeSIM対応を確認",
+    "hbGuide": "設定ガイド",
+    "hbFaq": "よくある質問",
+    "hbTeam": "チームに問い合わせる"
   },
   "ko": {
     "metaTitle": "passport.io – 여행을 위한 eSIM, 라운지, 패스트트랙",
@@ -2818,6 +2914,14 @@
     "promHelpD": "Lina가 13개 언어로 바로 답해 드려요. 그 밖의 문의는 양식으로 팀에 연락하세요.",
     "promCta": "여행지 고르기",
     "linaBubble": "Lina에게 묻기",
-    "linaOnline": "AI 어시스턴트 · 바로 답변"
+    "linaOnline": "AI 어시스턴트 · 바로 답변",
+    "hbHello": "안녕하세요!",
+    "hbIntro": "AI 여행 어시스턴트 {name}예요. 딱 맞는 요금제 찾기, 설치, 여행 중 연결까지 도와드려요.",
+    "hbCta": "내 요금제 찾기",
+    "hbBadge": "{name}는 24시간 답변해요",
+    "hbDevice": "내 폰 eSIM 확인",
+    "hbGuide": "설치 가이드",
+    "hbFaq": "자주 묻는 질문",
+    "hbTeam": "팀에 문의하기"
   }
 }

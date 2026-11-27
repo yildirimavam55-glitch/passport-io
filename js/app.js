@@ -759,32 +759,41 @@
     render: (c = SITE.assistant) => `
       <section class="section section--paper" id="assistant">
         <div class="container">
-          <div class="head-split">
-            <div><p class="kicker kicker--dark">${esc(c.kicker)}</p><h2 class="h2">${esc(c.title)}</h2></div>
-            <p class="head-split__note">${esc(c.note)}</p>
-          </div>
-          <div class="helpdesk">
-          <aside class="persona">
-            <img class="persona__img" src="${img(PERSONA.image, 900, 1100)}" alt="${esc(PERSONA.name)}, ${esc(PERSONA.role)}" loading="lazy">
-            <div class="persona__body">
-              <span class="persona__badge"><span class="dot"></span> ${esc(PERSONA.badge)}</span>
-              <h3>${esc(t("helloIam", { name: PERSONA.name }))}</h3>
-              <p class="persona__role">${esc(PERSONA.role)}</p>
-              <p class="persona__intro">${esc(PERSONA.intro)}</p>
-              <button type="button" class="persona__team" data-handoff>${icon("chat")} ${esc(t("talkHuman"))}</button>
+          <div class="hbanner">
+            <div class="hbanner__intro">
+              <img class="hbanner__lina" src="img/lina-wave.webp" alt="${esc(PERSONA.name)}" width="900" height="861" loading="lazy">
+              <div class="hbanner__talk">
+                <div class="hbanner__bubble">
+                  <p class="hbanner__hi">${esc(t("hbHello"))}</p>
+                  <p>${esc(t("hbIntro", { name: PERSONA.name }))}</p>
+                </div>
+                <a class="btn btn--green hbanner__cta" href="#esim">${esc(t("hbCta"))} ${icon("arrow")}</a>
+              </div>
             </div>
-          </aside>
-          <div class="assistant">
-            <div class="assistant__head">
-              <img class="assistant__avatar" src="${img(PERSONA.image, 120, 120)}" alt="">
-              <div><b>${esc(PERSONA.name)}</b><small><span class="dot"></span> ${esc(PERSONA.badge)}</small></div>
+            <div class="hbanner__card">
+              <div class="hbanner__head">
+                <span class="hbanner__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="2.5" y="13" width="4.5" height="7" rx="2"/><rect x="17" y="13" width="4.5" height="7" rx="2"/><path d="M19 20c0 1.5-2 2.5-5 2.5"/></svg></span>
+                <h2 class="hbanner__title">${esc(c.title)}</h2>
+                <p class="hbanner__badge"><span class="dot"></span> ${esc(t("hbBadge", { name: PERSONA.name }))}</p>
+              </div>
+              <div class="assistant">
+                <div class="assistant__head">
+                  <img class="assistant__avatar" src="${img(PERSONA.image, 120, 120)}" alt="">
+                  <div><b>${esc(PERSONA.name)}</b><small><span class="dot"></span> ${esc(t("linaOnline"))}</small></div>
+                </div>
+                <div class="assistant__log" id="assistant-log" aria-live="polite"></div>
+                <form class="assistant__form" id="assistant-form" autocomplete="off">
+                  <input type="text" id="assistant-input" placeholder="${esc(t("askPlaceholder"))}" aria-label="${esc(t("askLabel"))}" />
+                  <button type="submit" class="assistant__send" aria-label="${esc(t("send"))}">${icon("send")}</button>
+                </form>
+              </div>
+              <ul class="hbanner__links">
+                <li><button type="button" data-open-device-check>${icon("phone")}<span>${esc(t("hbDevice"))}</span>${icon("chev-r")}</button></li>
+                <li><a href="install.html">${icon("qr")}<span>${esc(t("hbGuide"))}</span>${icon("chev-r")}</a></li>
+                <li><a href="#faq">${icon("chat")}<span>${esc(t("hbFaq"))}</span>${icon("chev-r")}</a></li>
+                <li><button type="button" data-handoff>${icon("mail")}<span>${esc(t("hbTeam"))}</span>${icon("chev-r")}</button></li>
+              </ul>
             </div>
-            <div class="assistant__log" id="assistant-log" aria-live="polite"></div>
-            <form class="assistant__form" id="assistant-form" autocomplete="off">
-              <input type="text" id="assistant-input" placeholder="${esc(t("askPlaceholder"))}" aria-label="${esc(t("askLabel"))}" />
-              <button type="submit" class="assistant__send" aria-label="${esc(t("send"))}">${icon("send")}</button>
-            </form>
-          </div>
           </div>
           ${questionBand()}
           <div class="faq" id="faq">
@@ -1473,7 +1482,7 @@
     b.type = "button";
     b.className = "lina-fab";
     b.setAttribute("aria-label", t("linaBubble"));
-    b.innerHTML = `<img src="img/lina-avatar.svg" alt="" width="52" height="52">
+    b.innerHTML = `<img src="img/lina-avatar.webp" alt="" width="52" height="52">
       <span class="lina-fab__txt"><b>${esc(t("linaBubble"))}</b><span><i class="lina-fab__dot"></i>${esc(t("linaOnline"))}</span></span>`;
     document.body.appendChild(b);
     let helpVisible = false;

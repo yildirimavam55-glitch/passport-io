@@ -1684,9 +1684,53 @@ html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
 [dir="rtl"] .lina-fab { right: auto; left: max(16px, env(safe-area-inset-left)); }
 @media (prefers-reduced-motion: reduce) { .lina-fab { transform: none; transition: opacity .2s ease; } }
 
-/* Gezeichneter Lina-Avatar in der großen Persona-Karte (Desktop): zentriert statt randlos */
-@media (min-width: 761px) {
-  .persona__img[src$=".svg"] { inset: 44px auto auto 50%; width: min(220px, 60%); height: auto; aspect-ratio: 1; transform: translateX(-50%); object-fit: contain; z-index: 0; filter: drop-shadow(0 20px 40px rgba(46,245,138,.25)); }
-  .persona:has(.persona__img[src$=".svg"]) { background: radial-gradient(90% 60% at 50% 18%, rgba(46,245,138,.16), transparent 70%), var(--dark); }
-  .persona:has(.persona__img[src$=".svg"])::before, .persona:has(.persona__img[src$=".svg"])::after { display: none; }
+
+/* ---------- Hilfe-Bereich: links Lina mit Sprechblase, rechts „Wie können wir helfen?“ mit Chat und Schnell-Links ---------- */
+.hbanner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 520px); gap: clamp(16px, 2.4vw, 32px); align-items: stretch; margin-bottom: 18px; }
+.hbanner__intro { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); align-items: end; min-height: 520px; padding: 32px clamp(20px, 3vw, 40px) 0; border-radius: var(--radius-lg); overflow: hidden; background: radial-gradient(90% 90% at 10% 100%, rgba(46,245,138,.22), transparent 60%), linear-gradient(135deg, #dfece6, #f4f8f6 55%, #e5efea); border: 1px solid var(--line); }
+.hbanner__lina { position: absolute; left: 0; bottom: -1px; width: min(66%, 500px); height: auto; filter: drop-shadow(0 20px 30px rgba(10,40,26,.22)); }
+.hbanner__talk { position: relative; z-index: 1; align-self: start; justify-self: end; display: grid; justify-items: start; gap: 18px; width: min(56%, 420px); }
+.hbanner__bubble { position: relative; padding: 22px 24px; border-radius: 28px; background: #fff; color: #18201c; box-shadow: 0 18px 40px -22px rgba(10,40,26,.35); font-size: 16.5px; line-height: 1.5; }
+.hbanner__bubble::before { content: ""; position: absolute; left: -14px; bottom: 30px; width: 28px; height: 28px; background: #fff; clip-path: polygon(100% 0, 0 70%, 100% 100%); }
+.hbanner__hi { font-size: 28px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 6px; }
+.hbanner__cta { box-shadow: 0 12px 28px -12px rgba(46,245,138,.6); }
+.hbanner__card { display: flex; flex-direction: column; padding: 22px; border-radius: var(--radius-lg); background: var(--surface, #fff); border: 1px solid var(--line); }
+.hbanner__head { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 4px 12px; margin-bottom: 14px; }
+.hbanner__ic { grid-row: span 2; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: #0a0d0c; color: var(--green); }
+.hbanner__ic svg { width: 24px; height: 24px; }
+.hbanner__title { font-size: 22px; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; }
+.hbanner__badge { display: inline-flex; align-items: center; gap: 8px; justify-self: start; padding: 4px 11px; border-radius: 999px; background: #0f3d2a; color: #fff; font-size: 12.5px; font-weight: 600; }
+.hbanner__badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.hbanner__card .assistant { display: flex; flex-direction: column; flex: 1; }
+.hbanner__card .assistant__log { flex: 1; min-height: 220px; max-height: 360px; }
+.hbanner__links { list-style: none; margin: 10px 0 0; padding: 0; }
+.hbanner__links li + li { border-top: 1px solid var(--line); }
+.hbanner__links :is(a, button) { display: flex; align-items: center; gap: 14px; width: 100%; padding: 12px 4px; font: inherit; font-size: 15px; color: inherit; text-align: start; background: none; border: 0; cursor: pointer; transition: color .16s ease, transform .16s var(--ease-out); }
+.hbanner__links :is(a, button) > svg:first-child { width: 20px; height: 20px; flex: none; color: var(--green-ink); }
+.hbanner__links :is(a, button) > span { flex: 1; }
+.hbanner__links :is(a, button) > svg:last-child { width: 16px; height: 16px; opacity: .45; }
+.hbanner__links :is(a, button):active { transform: scale(.98); }
+@media (hover: hover) and (pointer: fine) { .hbanner__links :is(a, button):hover { color: var(--green-ink); } }
+[dir="rtl"] .hbanner__lina { left: auto; right: -2%; transform: scaleX(-1); }
+[dir="rtl"] .hbanner__talk { justify-self: start; }
+[dir="rtl"] .hbanner__bubble::before { left: auto; right: -14px; transform: scaleX(-1); }
+[dir="rtl"] .hbanner__links :is(a, button) > svg:last-child { transform: scaleX(-1); }
+[data-theme="dark"] .hbanner__intro { background: radial-gradient(90% 90% at 10% 100%, rgba(46,245,138,.2), transparent 60%), linear-gradient(135deg, #15261e, #0f1814 55%, #14241c); }
+[data-theme="dark"] .hbanner__badge { background: rgba(46,245,138,.14); color: var(--ink); }
+@media (max-width: 1020px) {
+  .hbanner { grid-template-columns: 1fr; }
+  .hbanner__intro { min-height: 420px; }
+}
+@media (max-width: 640px) {
+  .hbanner__intro { min-height: 0; grid-template-columns: 40% 1fr; align-items: end; gap: 0 8px; padding: 18px 14px 0 0; }
+  .hbanner__lina { position: static; grid-column: 1; grid-row: 1; width: 112%; max-width: none; margin-left: -6%; align-self: end; }
+  .hbanner__talk { grid-column: 2; grid-row: 1; width: auto; justify-self: stretch; align-self: center; gap: 12px; padding-bottom: 18px; }
+  .hbanner__bubble { padding: 14px 15px; font-size: 14px; border-radius: 20px; }
+  .hbanner__bubble::before { left: -10px; width: 20px; height: 20px; bottom: 22px; }
+  .hbanner__hi { font-size: 20px; margin-bottom: 2px; }
+  .hbanner__cta { height: 42px; padding: 0 14px; font-size: 14px; }
+  [dir="rtl"] .hbanner__intro { padding: 18px 0 0 14px; }
+  [dir="rtl"] .hbanner__lina { margin-left: 0; margin-right: -6%; }
+  [dir="rtl"] .hbanner__bubble::before { right: -10px; }
+  .hbanner__card { padding: 16px; }
 }
