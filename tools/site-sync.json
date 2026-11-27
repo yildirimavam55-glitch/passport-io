@@ -603,18 +603,18 @@
    "ko": "79286b778964"
   },
   "howto.steps.[0].text": {
-   "en": "066ecea9f667",
-   "de": "066ecea9f667",
-   "ar": "066ecea9f667",
-   "ru": "066ecea9f667",
-   "fr": "066ecea9f667",
-   "es": "066ecea9f667",
-   "it": "066ecea9f667",
-   "pt": "066ecea9f667",
-   "nl": "066ecea9f667",
-   "pl": "066ecea9f667",
-   "ja": "066ecea9f667",
-   "ko": "066ecea9f667"
+   "en": "95cf3873aab7",
+   "de": "95cf3873aab7",
+   "ar": "95cf3873aab7",
+   "ru": "95cf3873aab7",
+   "fr": "95cf3873aab7",
+   "es": "95cf3873aab7",
+   "it": "95cf3873aab7",
+   "pt": "95cf3873aab7",
+   "nl": "95cf3873aab7",
+   "pl": "95cf3873aab7",
+   "ja": "95cf3873aab7",
+   "ko": "95cf3873aab7"
   },
   "howto.steps.[1].title": {
    "en": "16d47fdc2036",
@@ -4873,6 +4873,20 @@
    "pl": "a4e90e03fa87",
    "ja": "a4e90e03fa87",
    "ko": "a4e90e03fa87"
+  },
+  "findPackage": {
+   "en": "f8cd14440265",
+   "de": "f8cd14440265",
+   "ar": "f8cd14440265",
+   "ru": "f8cd14440265",
+   "fr": "f8cd14440265",
+   "es": "f8cd14440265",
+   "it": "f8cd14440265",
+   "pt": "f8cd14440265",
+   "nl": "f8cd14440265",
+   "pl": "f8cd14440265",
+   "ja": "f8cd14440265",
+   "ko": "f8cd14440265"
   }
  },
  "content/account.json": {

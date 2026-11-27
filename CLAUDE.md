@@ -40,6 +40,8 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 
 - **Netz-Laufband** (Startseite, Bereich `networks`, Panel → Ana sayfa düzeni): `prices` `?networks=1` → bekannte Netzbetreiber, die die Anbieter-API im jeweiligen Land wirklich liefert (Markenliste/Reihenfolge in `_shared/networks.ts`, max. 20). Nur Markennamen als Schriftzug (ohne Flaggen, ohne Logos – Markenrecht), Hinweis „nicht mit passport.io verbunden“. Unter 4 Treffern bleibt der Bereich verborgen.
 
+- **So funktioniert's + Vertrauen** (Bereich `howto`): 3 Wischkarten, darunter Vertrauensblock (`trustBlock`, gewählt: Variante „c“ = Geld-zurück-Banner, `site.json howto.trustVariant`, Vorschau `?trust=a|b|c`), Knopf „Finde dein Paket“ springt zur Suche im Startbild und öffnet sie. Geld-zurück-Text nur aus `ui.moneyBack`.
+
 - **Warenkorb** (app.js, `openCart`): Paketfenster → „In den Warenkorb“; Inhalt in localStorage `pp_cart` (max. 10), Preise immer live aus `prices`. Rabattcode nur im Warenkorb: `account` POST `{action:"coupon_check"}` (ohne Anmeldung, zählt nicht, 20/IP/10 min) → gilt für den teuersten Artikel. Kasse = `account.html?cart=1` → je Artikel eine Bestellung, Code wird erst dort verbraucht.
 
 - **Pop-up** (app.js `popupInit`, Panel → „Pop-up & kampanya“): Einstellungen in Tabelle `site_settings` (key `popup`, `_shared/popup.ts`). Aktive Aktion mit gültigem Rabattcode → Aktionsfenster, sonst Newsletter-Fenster (optional Willkommenscode, wird erst nach der Anmeldung von `questions` zurückgegeben). Öffentlich: `questions` GET `?popup=1`. Code landet als `pending` im Warenkorb. Weggeklickt = `everyDays` Ruhe (localStorage `pp_popup`), nach Anmeldung nie wieder (`pp_nl_done`). Vorschau: `index.html?popup=preview`.
