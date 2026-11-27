@@ -3,7 +3,7 @@
     "persona": {
       "name": "Lina",
       "role": "Dijital seyahat asistanın",
-      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
+      "image": "img/lina-avatar.svg",
       "intro": "eSIM, lounge ve Fast Track ile ilgili sorularını anında yanıtlarım – gece gündüz. Bir konuda emin olamazsam seni doğrudan müşteri hizmetleri ekibimize bağlarım.",
       "badge": "Dijital asistan · anında yanıt verir"
     },
@@ -347,7 +347,7 @@
         "id": "delivery",
         "category": "allgemein",
         "question": "Siparişim ne zaman gelir?",
-        "answer": "Anında. eSIM QR kodu ve voucher'lar birkaç saniye içinde e-postana gelir ve ayrıca passport.io hesabında yer alır.",
+        "answer": "Anında. Ödemeden hemen sonra eSIM QR kodun ve kurulum bilgilerin passport.io hesabında **eSIM'lerim** altında hazır olur.",
         "keywords": [
           "ne zaman gelir",
           "teslimat",
@@ -2290,7 +2290,7 @@
       {
         "id": "delivery",
         "question": "When will I receive my order?",
-        "answer": "Instantly. Your eSIM QR code and vouchers arrive by email within a few seconds and are also stored in your passport.io account.",
+        "answer": "Instantly. Right after payment, your eSIM QR code and installation details are ready in your passport.io account under **My eSIMs**.",
         "keywords": [
           "when will i receive",
           "delivery",
@@ -3673,7 +3673,7 @@
       {
         "id": "delivery",
         "question": "Wann erhalte ich meine Bestellung?",
-        "answer": "Sofort. eSIM-QR-Code und Voucher kommen innerhalb weniger Sekunden per E-Mail und liegen zusätzlich in deinem passport.io Konto.",
+        "answer": "Sofort. Direkt nach der Zahlung liegen dein eSIM-QR-Code und die Installationsdaten in deinem passport.io Konto unter **Meine eSIMs**.",
         "keywords": [
           "wann erhalte",
           "lieferung",
@@ -5064,7 +5064,7 @@
       {
         "id": "delivery",
         "question": "متى أستلم طلبي؟",
-        "answer": "فورًا. يصلك رمز QR للشريحة والقسائم خلال ثوانٍ عبر البريد، وتجدها أيضًا في حسابك على passport.io.",
+        "answer": "فورًا. بعد الدفع مباشرة يكون رمز QR الخاص بشريحة eSIM وبيانات التثبيت جاهزة في حسابك على passport.io ضمن **شرائح eSIM الخاصة بي**.",
         "keywords": [
           "متى استلم",
           "التسليم",
@@ -6277,7 +6277,7 @@
       {
         "id": "delivery",
         "question": "Когда я получу заказ?",
-        "answer": "Сразу. QR-код eSIM и ваучеры приходят на e-mail в течение нескольких секунд и также доступны в вашем аккаунте passport.io.",
+        "answer": "Сразу. Сразу после оплаты QR-код eSIM и данные для установки появляются в вашем личном кабинете passport.io в разделе **Мои eSIM**.",
         "keywords": [
           "когда получу",
           "доставка",
@@ -7466,7 +7466,7 @@
       {
         "id": "delivery",
         "question": "Quand vais-je recevoir ma commande ?",
-        "answer": "Immédiatement. Le QR code de l'eSIM et les vouchers arrivent par e-mail en quelques secondes et sont aussi disponibles dans votre compte passport.io.",
+        "answer": "Immédiatement. Juste après le paiement, le QR code de votre eSIM et les infos d'installation sont prêts dans votre compte passport.io, rubrique **Mes eSIM**.",
         "keywords": [
           "quand recevoir",
           "livraison",
@@ -8646,7 +8646,7 @@
       {
         "id": "delivery",
         "question": "¿Cuándo recibo mi pedido?",
-        "answer": "Al instante. El código QR de la eSIM y los bonos llegan por e-mail en pocos segundos y también están en tu cuenta de passport.io.",
+        "answer": "Al instante. Justo después del pago, el código QR de tu eSIM y los datos de instalación están listos en tu cuenta de passport.io, en **Mis eSIM**.",
         "keywords": [
           "cuándo recibo",
           "entrega",
@@ -9836,7 +9836,7 @@
       {
         "id": "delivery",
         "question": "Quando ricevo il mio ordine?",
-        "answer": "Subito. Il codice QR della eSIM e i voucher arrivano via email in pochi secondi e sono salvati anche nel tuo account passport.io.",
+        "answer": "Subito. Appena dopo il pagamento, il codice QR della eSIM e i dati di installazione sono pronti nel tuo account passport.io, in **Le mie eSIM**.",
         "keywords": [
           "quando ricevo",
           "quando arriva",
@@ -10911,7 +10911,7 @@
       {
         "id": "delivery",
         "question": "Quando recebo meu pedido?",
-        "answer": "Na hora. O QR code do eSIM e os vouchers chegam por e-mail em poucos segundos e também ficam salvos na sua conta passport.io.",
+        "answer": "Na hora. Logo após o pagamento, o QR code do seu eSIM e os dados de instalação ficam prontos na sua conta passport.io, em **Meus eSIMs**.",
         "keywords": [
           "quando recebo",
           "quando chega",
@@ -11970,7 +11970,7 @@
       {
         "id": "delivery",
         "question": "Wanneer ontvang ik mijn bestelling?",
-        "answer": "Direct. Je eSIM-QR-code en vouchers komen binnen een paar seconden per e-mail en staan ook in je passport.io-account.",
+        "answer": "Direct. Meteen na de betaling staan je eSIM-QR-code en installatiegegevens klaar in je passport.io-account onder **Mijn eSIM's**.",
         "keywords": [
           "wanneer ontvang ik",
           "wanneer komt het",
@@ -13032,7 +13032,7 @@
       {
         "id": "delivery",
         "question": "Kiedy dostanę zamówienie?",
-        "answer": "Od razu. Kod QR eSIM i vouchery przychodzą e-mailem w kilka sekund i są też zapisane na Twoim koncie passport.io.",
+        "answer": "Od razu. Zaraz po płatności kod QR eSIM i dane do instalacji czekają na Twoim koncie passport.io w sekcji **Moje eSIM**.",
         "keywords": [
           "kiedy dostanę",
           "kiedy przyjdzie",
@@ -14112,7 +14112,7 @@
       {
         "id": "delivery",
         "question": "注文はいつ届きますか？",
-        "answer": "すぐに届きます。eSIMのQRコードとバウチャーは数秒でメールに届き、passport.ioのアカウントにも保存されます。",
+        "answer": "すぐにお届けします。お支払い直後に、eSIMのQRコードと設定情報がpassport.ioアカウントの**マイeSIM**に表示されます。",
         "keywords": [
           "いつ届く",
           "届くまで",
@@ -15197,7 +15197,7 @@
       {
         "id": "delivery",
         "question": "주문은 언제 받나요?",
-        "answer": "즉시 받아요. eSIM QR 코드와 바우처는 몇 초 안에 이메일로 오고 passport.io 계정에도 저장돼요.",
+        "answer": "바로 받아요. 결제 직후 eSIM QR 코드와 설치 정보가 passport.io 계정의 **내 eSIM**에 준비돼요.",
         "keywords": [
           "언제 받나요",
           "언제 오나요",

@@ -1683,3 +1683,10 @@ html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
 .lina-fab__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgba(46,245,138,.2); flex: none; }
 [dir="rtl"] .lina-fab { right: auto; left: max(16px, env(safe-area-inset-left)); }
 @media (prefers-reduced-motion: reduce) { .lina-fab { transform: none; transition: opacity .2s ease; } }
+
+/* Gezeichneter Lina-Avatar in der großen Persona-Karte (Desktop): zentriert statt randlos */
+@media (min-width: 761px) {
+  .persona__img[src$=".svg"] { inset: 44px auto auto 50%; width: min(220px, 60%); height: auto; aspect-ratio: 1; transform: translateX(-50%); object-fit: contain; z-index: 0; filter: drop-shadow(0 20px 40px rgba(46,245,138,.25)); }
+  .persona:has(.persona__img[src$=".svg"]) { background: radial-gradient(90% 60% at 50% 18%, rgba(46,245,138,.16), transparent 70%), var(--dark); }
+  .persona:has(.persona__img[src$=".svg"])::before, .persona:has(.persona__img[src$=".svg"])::after { display: none; }
+}
