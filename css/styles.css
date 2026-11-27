@@ -1618,17 +1618,17 @@ html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
 .nav__seg button { padding: 7px 16px; border-radius: 999px; font: inherit; font-size: 15px; font-weight: 600; color: rgba(255,255,255,.7); transition: background .2s, color .2s; }
 .nav__seg button[aria-pressed="true"] { background: var(--green); color: #0a0d0c; }
 
-/* Netzbetreiber-Laufband (läuft von rechts nach links, hält bei Berührung an) */
-.nets { padding: 28px 0 22px; background: var(--dark); color: #fff; border-top: 1px solid rgba(255,255,255,.08); }
+/* Netzbetreiber-Laufband: Markennamen als Schriftzüge (keine Logos), läuft von rechts nach links, hält bei Berührung an */
+.nets { padding: 30px 0 24px; background: var(--dark); color: #fff; border-top: 1px solid rgba(255,255,255,.08); }
 .nets[hidden] { display: none; }
-.nets__title { margin: 0 0 14px; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.6); }
-.nets__viewport { overflow: hidden; direction: ltr; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.nets__title { margin: 0 0 16px; text-align: center; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.6); }
+.nets__viewport { overflow: hidden; direction: ltr; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
 .nets__track { display: flex; width: max-content; animation: nets-run var(--nets-dur, 40s) linear infinite; }
 .nets__viewport:hover .nets__track, .nets__viewport:active .nets__track { animation-play-state: paused; }
-.nets__group { display: flex; gap: 12px; padding-right: 12px; }
-.nets__item { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); font-size: 17px; font-weight: 600; white-space: nowrap; }
-.nets__item img { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; }
-.nets__note { margin: 14px 0 0; font-size: 12px; line-height: 1.5; color: rgba(255,255,255,.45); }
+.nets__group { display: flex; align-items: center; }
+.nets__item { padding: 4px 28px; font-size: clamp(22px, 2.4vw, 30px); font-weight: 800; letter-spacing: -.03em; line-height: 1.2; white-space: nowrap; color: rgba(255,255,255,.55); border-left: 1px solid rgba(255,255,255,.12); transition: color .2s; }
+.nets__item:hover { color: #fff; }
+.nets__note { margin: 16px 0 0; text-align: center; font-size: 12px; line-height: 1.5; color: rgba(255,255,255,.45); }
 @keyframes nets-run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .nets__track { animation: none; }

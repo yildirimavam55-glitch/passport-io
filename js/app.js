@@ -316,7 +316,7 @@
         const r = await fetch(u, { headers: { Accept: "application/json" } });
         const list = (r.ok ? (await r.json())?.networks : null) || [];
         if (list.length < 4) return;
-        const items = list.map((x) => `<span class="nets__item"><img src="${flag(x.c)}" alt="" width="20" height="20" loading="lazy">${esc(x.n)}</span>`).join("");
+        const items = list.map((x) => `<span class="nets__item">${esc(x.n)}</span>`).join("");
         const track = el.querySelector(".nets__track");
         track.innerHTML = `<div class="nets__group">${items}</div><div class="nets__group" aria-hidden="true">${items}</div>`;
         track.style.setProperty("--nets-dur", Math.max(25, list.length * 3) + "s");
