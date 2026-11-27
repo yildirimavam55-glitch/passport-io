@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Lina">
+  <!-- Lina – gezeichneter Avatar der KI-Assistentin von passport.io (eigene Figur) -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2ef58a"/>
+      <stop offset="1" stop-color="#14c96d"/>
+    </linearGradient>
+    <clipPath id="c"><circle cx="60" cy="60" r="60"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="120" height="120" fill="url(#bg)"/>
+    <!-- Haare hinten -->
+    <path d="M24 70c-4-30 12-50 36-50s40 20 36 50c-1 14-4 26-8 36H32c-4-10-7-22-8-36z" fill="#1b2420"/>
+    <!-- Hals und Schultern -->
+    <path d="M50 84h20v14H50z" fill="#d79a74"/>
+    <path d="M18 120c2-16 18-26 42-26s40 10 42 26z" fill="#0a0d0c"/>
+    <path d="M48 96c4 5 20 5 24 0" stroke="#2ef58a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Gesicht -->
+    <ellipse cx="60" cy="62" rx="22" ry="26" fill="#e8ac85"/>
+    <!-- Pony -->
+    <path d="M37 58c2-18 14-28 27-27 12 1 21 10 20 26-8-2-16-8-21-16-5 9-14 15-26 17z" fill="#1b2420"/>
+    <!-- Augen -->
+    <ellipse cx="51" cy="64" rx="2.6" ry="3.2" fill="#1b2420"/>
+    <ellipse cx="69" cy="64" rx="2.6" ry="3.2" fill="#1b2420"/>
+    <!-- Wangen -->
+    <circle cx="46" cy="73" r="4" fill="#f08f7a" opacity=".35"/>
+    <circle cx="74" cy="73" r="4" fill="#f08f7a" opacity=".35"/>
+    <!-- Lächeln -->
+    <path d="M53 76c4 4 10 4 14 0" stroke="#7a3b2a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <!-- Headset (Assistentin) -->
+    <path d="M36 62c0-16 10-27 24-27s24 11 24 27" stroke="#0a0d0c" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+    <rect x="31" y="58" width="8" height="13" rx="4" fill="#0a0d0c"/>
+    <rect x="81" y="58" width="8" height="13" rx="4" fill="#0a0d0c"/>
+    <path d="M85 70c0 8-6 13-14 13" stroke="#0a0d0c" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <circle cx="70" cy="83" r="3" fill="#0a0d0c"/>
+  </g>
+</svg>

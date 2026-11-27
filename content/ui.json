@@ -202,12 +202,6 @@
     "popNo": "Hayır, teşekkürler",
     "netTitle": "Bu ağlarda internetin var",
     "netNote": "Ağ operatörleri, eSIM tedarikçilerimizin iş ortaklarıdır; passport.io ile bağlantılı değildir. Markalar sahiplerine aittir.",
-    "featKicker": "En çok tercih edilen",
-    "featLead": "2 dakikada aktif. Sözleşme yok, abonelik yok.",
-    "featPerkFast": "2 dakikada aktif",
-    "featPerkNumber": "Numaran aynı kalır",
-    "featPerkNoSub": "Abonelik yok",
-    "featAll": "Tüm paketleri gör",
     "promKicker": "Güvenle yola çık",
     "promTitle": "Risksiz seyahat",
     "promNumT": "Numaran aynı kalır",
@@ -220,7 +214,7 @@
     "promHelpD": "Lina sorularını anında, 13 dilde yanıtlar. Diğer her konuda ekibimiz form üzerinden yanında.",
     "promCta": "Gideceğin yeri seç",
     "linaBubble": "Lina'ya sor",
-    "linaOnline": "Çevrimiçi · anında yanıt"
+    "linaOnline": "Yapay zekâ asistanı · anında yanıt"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -425,12 +419,6 @@
     "popNo": "No, thanks",
     "netTitle": "You're online on these networks",
     "netNote": "Network operators partner with our eSIM suppliers and are not affiliated with passport.io. Trademarks belong to their owners.",
-    "featKicker": "Most popular destination",
-    "featLead": "Active in 2 minutes. No contract, no subscription.",
-    "featPerkFast": "Active in 2 minutes",
-    "featPerkNumber": "Keep your number",
-    "featPerkNoSub": "No subscription",
-    "featAll": "See all plans",
     "promKicker": "Travel without worries",
     "promTitle": "Travel risk-free",
     "promNumT": "Keep your number",
@@ -443,7 +431,7 @@
     "promHelpD": "Lina answers your questions instantly, in 13 languages. For anything else, our team is a form away.",
     "promCta": "Choose your destination",
     "linaBubble": "Ask Lina",
-    "linaOnline": "Online · replies instantly"
+    "linaOnline": "AI assistant · replies instantly"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -648,12 +636,6 @@
     "popNo": "Nein, danke",
     "netTitle": "Du surfst in diesen Netzen",
     "netNote": "Die Netzbetreiber sind Partner unserer eSIM-Lieferanten und nicht mit passport.io verbunden. Marken gehören ihren Inhabern.",
-    "featKicker": "Beliebtestes Reiseziel",
-    "featLead": "In 2 Minuten aktiv. Kein Vertrag, kein Abo.",
-    "featPerkFast": "In 2 Minuten aktiv",
-    "featPerkNumber": "Deine Nummer bleibt",
-    "featPerkNoSub": "Kein Abo",
-    "featAll": "Alle Pakete ansehen",
     "promKicker": "Darauf kannst du dich verlassen",
     "promTitle": "Ohne Risiko unterwegs",
     "promNumT": "Deine Nummer bleibt",
@@ -666,7 +648,7 @@
     "promHelpD": "Lina beantwortet deine Fragen sofort, in 13 Sprachen. Für alles andere ist unser Team per Formular erreichbar.",
     "promCta": "Reiseziel wählen",
     "linaBubble": "Frag Lina",
-    "linaOnline": "Online · antwortet sofort"
+    "linaOnline": "KI-Assistentin · antwortet sofort"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -871,12 +853,6 @@
     "popNo": "لا، شكرًا",
     "netTitle": "تتصفح عبر هذه الشبكات",
     "netNote": "مشغلو الشبكات شركاء لموردي eSIM لدينا ولا يرتبطون بـ passport.io. العلامات التجارية مملوكة لأصحابها.",
-    "featKicker": "الوجهة الأكثر طلبًا",
-    "featLead": "تعمل خلال دقيقتين. بلا عقد وبلا اشتراك.",
-    "featPerkFast": "تعمل خلال دقيقتين",
-    "featPerkNumber": "رقمك يبقى كما هو",
-    "featPerkNoSub": "بلا اشتراك",
-    "featAll": "عرض كل الباقات",
     "promKicker": "يمكنك الاعتماد علينا",
     "promTitle": "سافر بلا مخاطرة",
     "promNumT": "رقمك يبقى كما هو",
@@ -889,7 +865,7 @@
     "promHelpD": "تجيب لينا عن أسئلتك فورًا بـ13 لغة. ولأي أمر آخر فريقنا متاح عبر النموذج.",
     "promCta": "اختر وجهتك",
     "linaBubble": "اسأل لينا",
-    "linaOnline": "متصلة · ترد فورًا"
+    "linaOnline": "مساعدة ذكاء اصطناعي · ترد فورًا"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -1094,12 +1070,6 @@
     "popNo": "Нет, спасибо",
     "netTitle": "Вы в сети этих операторов",
     "netNote": "Операторы — партнёры наших поставщиков eSIM и не связаны с passport.io. Товарные знаки принадлежат их владельцам.",
-    "featKicker": "Самое популярное направление",
-    "featLead": "Работает через 2 минуты. Без договора и подписки.",
-    "featPerkFast": "Работает через 2 минуты",
-    "featPerkNumber": "Ваш номер остаётся",
-    "featPerkNoSub": "Без подписки",
-    "featAll": "Все тарифы",
     "promKicker": "На это можно положиться",
     "promTitle": "Путешествуйте без риска",
     "promNumT": "Ваш номер остаётся",
@@ -1112,7 +1082,7 @@
     "promHelpD": "Лина мгновенно отвечает на вопросы на 13 языках. По остальным вопросам наша команда доступна через форму.",
     "promCta": "Выбрать направление",
     "linaBubble": "Спросить Лину",
-    "linaOnline": "Онлайн · отвечает сразу"
+    "linaOnline": "ИИ-ассистент · отвечает сразу"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -1317,12 +1287,6 @@
     "popNo": "Non merci",
     "netTitle": "Vous surfez sur ces réseaux",
     "netNote": "Les opérateurs sont partenaires de nos fournisseurs eSIM et ne sont pas liés à passport.io. Les marques appartiennent à leurs propriétaires.",
-    "featKicker": "Destination la plus demandée",
-    "featLead": "Active en 2 minutes. Sans contrat, sans abonnement.",
-    "featPerkFast": "Active en 2 minutes",
-    "featPerkNumber": "Vous gardez votre numéro",
-    "featPerkNoSub": "Sans abonnement",
-    "featAll": "Voir tous les forfaits",
     "promKicker": "Vous pouvez compter sur nous",
     "promTitle": "Voyagez sans risque",
     "promNumT": "Vous gardez votre numéro",
@@ -1335,7 +1299,7 @@
     "promHelpD": "Lina répond instantanément à vos questions, en 13 langues. Pour le reste, notre équipe est joignable via le formulaire.",
     "promCta": "Choisir ma destination",
     "linaBubble": "Demander à Lina",
-    "linaOnline": "En ligne · répond aussitôt"
+    "linaOnline": "Assistante IA · répond aussitôt"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -1540,12 +1504,6 @@
     "popNo": "No, gracias",
     "netTitle": "Navegas en estas redes",
     "netNote": "Los operadores son socios de nuestros proveedores de eSIM y no están vinculados a passport.io. Las marcas pertenecen a sus titulares.",
-    "featKicker": "Destino más popular",
-    "featLead": "Activa en 2 minutos. Sin contrato ni suscripción.",
-    "featPerkFast": "Activa en 2 minutos",
-    "featPerkNumber": "Conservas tu número",
-    "featPerkNoSub": "Sin suscripción",
-    "featAll": "Ver todos los planes",
     "promKicker": "Puedes contar con ello",
     "promTitle": "Viaja sin riesgos",
     "promNumT": "Conservas tu número",
@@ -1558,7 +1516,7 @@
     "promHelpD": "Lina responde al instante, en 13 idiomas. Para todo lo demás, nuestro equipo te atiende a través del formulario.",
     "promCta": "Elegir destino",
     "linaBubble": "Pregunta a Lina",
-    "linaOnline": "En línea · responde al instante"
+    "linaOnline": "Asistente de IA · responde al instante"
   },
   "it": {
     "metaTitle": "passport.io – eSIM, lounge e Fast Track per il tuo viaggio",
@@ -1763,12 +1721,6 @@
     "currency": "Valuta",
     "netTitle": "Navighi su queste reti",
     "netNote": "Gli operatori sono partner dei nostri fornitori eSIM e non sono collegati a passport.io. I marchi appartengono ai rispettivi titolari.",
-    "featKicker": "Destinazione più richiesta",
-    "featLead": "Attiva in 2 minuti. Nessun contratto, nessun abbonamento.",
-    "featPerkFast": "Attiva in 2 minuti",
-    "featPerkNumber": "Mantieni il tuo numero",
-    "featPerkNoSub": "Nessun abbonamento",
-    "featAll": "Vedi tutti i pacchetti",
     "promKicker": "Puoi contarci",
     "promTitle": "Viaggia senza rischi",
     "promNumT": "Mantieni il tuo numero",
@@ -1781,7 +1733,7 @@
     "promHelpD": "Lina risponde subito alle tue domande, in 13 lingue. Per tutto il resto il nostro team è raggiungibile tramite modulo.",
     "promCta": "Scegli la destinazione",
     "linaBubble": "Chiedi a Lina",
-    "linaOnline": "Online · risponde subito"
+    "linaOnline": "Assistente IA · risponde subito"
   },
   "pt": {
     "metaTitle": "passport.io – eSIM, sala VIP e Fast Track para sua viagem",
@@ -1986,12 +1938,6 @@
     "currency": "Moeda",
     "netTitle": "Você navega nestas redes",
     "netNote": "As operadoras são parceiras dos nossos fornecedores de eSIM e não têm vínculo com a passport.io. As marcas pertencem aos seus titulares.",
-    "featKicker": "Destino mais procurado",
-    "featLead": "Ativa em 2 minutos. Sem contrato, sem assinatura.",
-    "featPerkFast": "Ativa em 2 minutos",
-    "featPerkNumber": "Seu número continua o mesmo",
-    "featPerkNoSub": "Sem assinatura",
-    "featAll": "Ver todos os pacotes",
     "promKicker": "Pode contar com isso",
     "promTitle": "Viaje sem riscos",
     "promNumT": "Seu número continua o mesmo",
@@ -2004,7 +1950,7 @@
     "promHelpD": "A Lina responde na hora, em 13 idiomas. Para todo o resto, nossa equipe atende pelo formulário.",
     "promCta": "Escolher destino",
     "linaBubble": "Pergunte à Lina",
-    "linaOnline": "Online · responde na hora"
+    "linaOnline": "Assistente de IA · responde na hora"
   },
   "nl": {
     "metaTitle": "passport.io – eSIM, lounge en Fast Track voor je reis",
@@ -2209,12 +2155,6 @@
     "currency": "Valuta",
     "netTitle": "Je surft op deze netwerken",
     "netNote": "Netwerkoperators zijn partners van onze eSIM-leveranciers en niet verbonden aan passport.io. Merken zijn eigendom van hun houders.",
-    "featKicker": "Populairste bestemming",
-    "featLead": "Binnen 2 minuten actief. Geen contract, geen abonnement.",
-    "featPerkFast": "Binnen 2 minuten actief",
-    "featPerkNumber": "Je houdt je nummer",
-    "featPerkNoSub": "Geen abonnement",
-    "featAll": "Alle bundels bekijken",
     "promKicker": "Daar kun je op rekenen",
     "promTitle": "Zonder risico op reis",
     "promNumT": "Je houdt je nummer",
@@ -2227,7 +2167,7 @@
     "promHelpD": "Lina beantwoordt je vragen direct, in 13 talen. Voor al het andere is ons team bereikbaar via het formulier.",
     "promCta": "Kies je bestemming",
     "linaBubble": "Vraag het Lina",
-    "linaOnline": "Online · antwoordt direct"
+    "linaOnline": "AI-assistent · antwoordt direct"
   },
   "pl": {
     "metaTitle": "passport.io – eSIM, saloniki i Fast Track na Twoją podróż",
@@ -2432,12 +2372,6 @@
     "currency": "Waluta",
     "netTitle": "Surfujesz w tych sieciach",
     "netNote": "Operatorzy są partnerami naszych dostawców eSIM i nie są powiązani z passport.io. Znaki towarowe należą do ich właścicieli.",
-    "featKicker": "Najpopularniejszy kierunek",
-    "featLead": "Działa w 2 minuty. Bez umowy i abonamentu.",
-    "featPerkFast": "Działa w 2 minuty",
-    "featPerkNumber": "Zachowujesz swój numer",
-    "featPerkNoSub": "Bez abonamentu",
-    "featAll": "Zobacz wszystkie pakiety",
     "promKicker": "Możesz na to liczyć",
     "promTitle": "Podróżuj bez ryzyka",
     "promNumT": "Zachowujesz swój numer",
@@ -2450,7 +2384,7 @@
     "promHelpD": "Lina odpowiada na pytania od razu, w 13 językach. W innych sprawach nasz zespół jest dostępny przez formularz.",
     "promCta": "Wybierz kierunek",
     "linaBubble": "Zapytaj Linę",
-    "linaOnline": "Online · odpowiada od razu"
+    "linaOnline": "Asystentka AI · odpowiada od razu"
   },
   "ja": {
     "metaTitle": "passport.io – 旅行のためのeSIM、ラウンジ、ファストトラック",
@@ -2655,12 +2589,6 @@
     "currency": "通貨",
     "netTitle": "これらの通信網につながります",
     "netNote": "通信事業者は当社のeSIM供給元のパートナーであり、passport.ioとは提携していません。商標は各所有者に帰属します。",
-    "featKicker": "いちばん人気の渡航先",
-    "featLead": "2分で開通。契約なし、サブスクなし。",
-    "featPerkFast": "2分で開通",
-    "featPerkNumber": "電話番号はそのまま",
-    "featPerkNoSub": "サブスクなし",
-    "featAll": "すべてのプランを見る",
     "promKicker": "安心してご利用いただけます",
     "promTitle": "リスクなしで旅に出よう",
     "promNumT": "電話番号はそのまま",
@@ -2673,7 +2601,7 @@
     "promHelpD": "Linaが13言語ですぐにお答えします。それ以外はフォームからチームにご連絡ください。",
     "promCta": "渡航先を選ぶ",
     "linaBubble": "Linaに聞く",
-    "linaOnline": "オンライン・すぐに返信"
+    "linaOnline": "AIアシスタント・すぐに返信"
   },
   "ko": {
     "metaTitle": "passport.io – 여행을 위한 eSIM, 라운지, 패스트트랙",
@@ -2878,12 +2806,6 @@
     "currency": "통화",
     "netTitle": "이 통신망으로 연결돼요",
     "netNote": "통신사는 eSIM 공급사의 파트너이며 passport.io와 제휴 관계가 아닙니다. 상표는 각 소유자에게 있습니다.",
-    "featKicker": "가장 인기 있는 여행지",
-    "featLead": "2분 만에 개통. 약정도 구독도 없어요.",
-    "featPerkFast": "2분 만에 개통",
-    "featPerkNumber": "번호는 그대로",
-    "featPerkNoSub": "구독 없음",
-    "featAll": "모든 요금제 보기",
     "promKicker": "믿고 맡기세요",
     "promTitle": "걱정 없는 여행",
     "promNumT": "번호는 그대로",
@@ -2896,6 +2818,6 @@
     "promHelpD": "Lina가 13개 언어로 바로 답해 드려요. 그 밖의 문의는 양식으로 팀에 연락하세요.",
     "promCta": "여행지 고르기",
     "linaBubble": "Lina에게 묻기",
-    "linaOnline": "온라인 · 바로 답변"
+    "linaOnline": "AI 어시스턴트 · 바로 답변"
   }
 }

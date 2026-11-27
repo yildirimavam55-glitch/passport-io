@@ -50,11 +50,6 @@
         "enabled": true
       },
       {
-        "type": "featured",
-        "enabled": true,
-        "country": "tr"
-      },
-      {
         "type": "destinations",
         "enabled": true
       },
