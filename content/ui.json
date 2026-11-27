@@ -222,7 +222,9 @@
     "hbDevice": "Telefonum eSIM uyumlu mu?",
     "hbGuide": "Kurulum rehberleri",
     "hbFaq": "Sık sorulan sorular",
-    "hbTeam": "Ekibimizle iletişime geç"
+    "hbTeam": "Ekibimizle iletişime geç",
+    "bestValue": "Fiyat-performans",
+    "perGb": "{p}/GB"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -447,7 +449,9 @@
     "hbDevice": "Check my phone for eSIM",
     "hbGuide": "Installation guides",
     "hbFaq": "Frequently asked questions",
-    "hbTeam": "Contact our team"
+    "hbTeam": "Contact our team",
+    "bestValue": "Best value",
+    "perGb": "{p}/GB"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -672,7 +676,9 @@
     "hbDevice": "Handy auf eSIM prüfen",
     "hbGuide": "Installationsanleitungen",
     "hbFaq": "Häufige Fragen",
-    "hbTeam": "Unser Team kontaktieren"
+    "hbTeam": "Unser Team kontaktieren",
+    "bestValue": "Preis-Leistung",
+    "perGb": "{p}/GB"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -897,7 +903,9 @@
     "hbDevice": "هل هاتفي يدعم eSIM؟",
     "hbGuide": "أدلة التثبيت",
     "hbFaq": "الأسئلة الشائعة",
-    "hbTeam": "تواصل مع فريقنا"
+    "hbTeam": "تواصل مع فريقنا",
+    "bestValue": "أفضل قيمة",
+    "perGb": "{p}/GB"
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -1122,7 +1130,9 @@
     "hbDevice": "Проверить телефон на eSIM",
     "hbGuide": "Инструкции по установке",
     "hbFaq": "Частые вопросы",
-    "hbTeam": "Связаться с командой"
+    "hbTeam": "Связаться с командой",
+    "bestValue": "Выгодно",
+    "perGb": "{p}/ГБ"
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -1347,7 +1357,9 @@
     "hbDevice": "Vérifier mon téléphone",
     "hbGuide": "Guides d'installation",
     "hbFaq": "Questions fréquentes",
-    "hbTeam": "Contacter l'équipe"
+    "hbTeam": "Contacter l'équipe",
+    "bestValue": "Meilleur rapport",
+    "perGb": "{p}/Go"
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -1572,7 +1584,9 @@
     "hbDevice": "Comprobar mi móvil",
     "hbGuide": "Guías de instalación",
     "hbFaq": "Preguntas frecuentes",
-    "hbTeam": "Contactar con el equipo"
+    "hbTeam": "Contactar con el equipo",
+    "bestValue": "Mejor precio",
+    "perGb": "{p}/GB"
   },
   "it": {
     "metaTitle": "passport.io – eSIM, lounge e Fast Track per il tuo viaggio",
@@ -1797,7 +1811,9 @@
     "hbDevice": "Verifica il mio telefono",
     "hbGuide": "Guide all'installazione",
     "hbFaq": "Domande frequenti",
-    "hbTeam": "Contatta il team"
+    "hbTeam": "Contatta il team",
+    "bestValue": "Miglior prezzo",
+    "perGb": "{p}/GB"
   },
   "pt": {
     "metaTitle": "passport.io – eSIM, sala VIP e Fast Track para sua viagem",
@@ -2022,7 +2038,9 @@
     "hbDevice": "Verificar meu celular",
     "hbGuide": "Guias de instalação",
     "hbFaq": "Perguntas frequentes",
-    "hbTeam": "Falar com a equipe"
+    "hbTeam": "Falar com a equipe",
+    "bestValue": "Melhor custo-benefício",
+    "perGb": "{p}/GB"
   },
   "nl": {
     "metaTitle": "passport.io – eSIM, lounge en Fast Track voor je reis",
@@ -2247,7 +2265,9 @@
     "hbDevice": "Check mijn telefoon",
     "hbGuide": "Installatiehandleidingen",
     "hbFaq": "Veelgestelde vragen",
-    "hbTeam": "Neem contact op met ons team"
+    "hbTeam": "Neem contact op met ons team",
+    "bestValue": "Beste prijs",
+    "perGb": "{p}/GB"
   },
   "pl": {
     "metaTitle": "passport.io – eSIM, saloniki i Fast Track na Twoją podróż",
@@ -2472,7 +2492,9 @@
     "hbDevice": "Sprawdź mój telefon",
     "hbGuide": "Instrukcje instalacji",
     "hbFaq": "Częste pytania",
-    "hbTeam": "Skontaktuj się z zespołem"
+    "hbTeam": "Skontaktuj się z zespołem",
+    "bestValue": "Najlepsza cena",
+    "perGb": "{p}/GB"
   },
   "ja": {
     "metaTitle": "passport.io – 旅行のためのeSIM、ラウンジ、ファストトラック",
@@ -2697,7 +2719,9 @@
     "hbDevice": "スマホのeSIM対応を確認",
     "hbGuide": "設定ガイド",
     "hbFaq": "よくある質問",
-    "hbTeam": "チームに問い合わせる"
+    "hbTeam": "チームに問い合わせる",
+    "bestValue": "コスパ最強",
+    "perGb": "{p}/GB"
   },
   "ko": {
     "metaTitle": "passport.io – 여행을 위한 eSIM, 라운지, 패스트트랙",
@@ -2922,6 +2946,8 @@
     "hbDevice": "내 폰 eSIM 확인",
     "hbGuide": "설치 가이드",
     "hbFaq": "자주 묻는 질문",
-    "hbTeam": "팀에 문의하기"
+    "hbTeam": "팀에 문의하기",
+    "bestValue": "가성비",
+    "perGb": "{p}/GB"
   }
 }

@@ -202,7 +202,7 @@ a.strip__item:hover::after { opacity: 1; transform: none; }
 .dest__price b { color: #fff; }
 .dest__more { display: flex; flex-direction: column; max-height: 0; opacity: 0; overflow: hidden; transform: translateY(10px); transition: max-height .55s var(--ease), opacity .3s, transform .45s var(--ease); }
 .dest:hover .dest__more, .dest:focus-visible .dest__more, .dest.is-open .dest__more, .dest.is-peek .dest__more { max-height: 280px; opacity: 1; transform: none; transition: max-height .32s var(--ease-out), opacity .24s .12s, transform .45s var(--ease) .08s; }
-.dest__plan { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 15px; color: rgba(255,255,255,.85); }
+.dest__plan { display: flex; align-items: flex-start; gap: 8px; margin-top: 10px; font-size: 15px; color: rgba(255,255,255,.85); }
 .dest__plan:first-child { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.2); }
 .dest__pp { margin-left: auto; font-weight: 700; color: #fff; order: 2; }
 .dest__plan b { color: #fff; }
@@ -1734,3 +1734,15 @@ html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
   [dir="rtl"] .hbanner__bubble::before { right: -10px; }
   .hbanner__card { padding: 16px; }
 }
+
+/* Länderkarten: „Preis-Leistung“-Abzeichen und GB-Preis */
+.dest__plan em.is-value { background: rgba(255,255,255,.16); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,.35); }
+.dest__pl { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 0; }
+.dest__pl b { white-space: nowrap; }
+.dest__pp { display: grid; justify-items: end; line-height: 1.15; }
+.dest__pp small { font-size: 11.5px; font-weight: 500; color: rgba(255,255,255,.6); }
+[dir="rtl"] .dest__pp { justify-items: start; }
+.plan__pop--value { background: var(--paper); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+.dest__tag { transition: opacity .2s ease; }
+:is(.dest:hover, .dest:focus-visible, .dest.is-open, .dest.is-peek) .dest__tag { opacity: 0; }
+@media (max-width: 640px) { .dest__feat { display: none; } }

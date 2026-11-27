@@ -48,6 +48,7 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 - Wettbewerbspreise in Tabelle `competitor_prices` (Airalo, Saily, Nomad; gb=0 = Unlimited). Laden seitenweise (Supabase max 1000 Zeilen).
 - Regel: Wettbewerber vorhanden → nächster ,99-Preis darunter; sonst Einkauf × 2 auf ,99; min 2,99 €; Verlustschutz Einkauf + min_margin_pct (Panel → Fiyatlar).
 - Sortiment je Land: 1/7, 2/15, 3/15, 3/30, 5/30, 10/30, 20/30, 50/30, 50/180 (GB/Tage) + Unlimited 3/5/7/10/15/30 Tage. Staffel: kleineres Paket nie teurer als größeres.
+- „Beliebt“ je Ziel (`POPULAR_GB` in `_shared/assortment.ts`, Recherche 11/2026): Fernreisen/lange Aufenthalte (tr, ma, th, id, jp, us …) 10 GB, sonst 5 GB, Regionen 10 GB; fehlt die Größe → nächstgrößere. „Preis-Leistung“ (Frontend `valuePlan`): Datenpaket über „Beliebt“ mit dem niedrigsten Preis/GB – Länderkarten zeigen beide, Paketfenster markiert beide.
 - Einkauf nie öffentlich (debug-Felder werden in `prices` entfernt).
 
 ## Secrets (Supabase, gesetzt)

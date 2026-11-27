@@ -355,11 +355,17 @@
 
   /* ---------- BELIEBTE REISEZIELE ---------- */
   const popular = () => ESIM.countries.filter((c) => c.popular && offered("country:" + c.code));
-  // Zwei Pakete für die aufgeklappte Karte: das beliebte + das günstigste Unlimited (sonst das nächstgrößere)
+  // „Preis-Leistung“: das Datenpaket oberhalb von „Beliebt“ mit dem günstigsten Preis pro GB (meist 20 GB)
+  const valuePlan = (plans, pop) => {
+    const up = plans.filter((p) => !p.unlimited && p !== pop && p.gb > (pop?.gb || 0) && p.gb <= 50);
+    return up.sort((a, b) => a.price / a.gb - b.price / b.gb || a.gb - b.gb)[0] || null;
+  };
+  const perGb = (p) => (p.unlimited || !p.gb ? "" : t("perGb", { p: eur(Math.round((p.price / p.gb) * 100) / 100) }));
+  // Zwei Pakete für die aufgeklappte Karte: „Beliebt“ + „Preis-Leistung“ (ohne größeres Paket: günstigstes Unlimited)
   const destPicks = (plans, pop) => {
+    const val = valuePlan(plans, pop);
     const unl = plans.filter((p) => p.unlimited && p !== pop).sort((a, b) => a.price - b.price)[0];
-    const bigger = plans.filter((p) => !p.unlimited && p !== pop && p.gb > (pop.gb || 0)).sort((a, b) => a.gb - b.gb || a.price - b.price)[0];
-    return [pop, unl || bigger].filter(Boolean);
+    return [pop, val || unl].filter(Boolean);
   };
   sections.destinations = {
     render: (c = SITE.destinations) => `
@@ -382,7 +388,7 @@
                 <span class="dest__name"><img class="dest__flag" src="${flag(d.code)}" alt="">${esc(d.name)}</span>
                 <span class="dest__price">${P("country:" + d.code, t("priceFrom"))}</span>
                 <span class="dest__more">
-                  ${pop ? destPicks(plans, pop).map((p) => `<span class="dest__plan"><b>${esc(volDays(p))}</b><span class="dest__pp">${eur(p.price)}</span>${p === pop ? `<em>${esc(t("popular"))}</em>` : ""}</span>`).join("") : ""}
+                  ${pop ? destPicks(plans, pop).map((p, k) => `<span class="dest__plan"><span class="dest__pl"><b>${esc(volDays(p))}</b>${k === 0 ? `<em>${esc(t("popular"))}</em>` : !p.unlimited ? `<em class="is-value">${esc(t("bestValue"))}</em>` : ""}</span><span class="dest__pp">${eur(p.price)}${perGb(p) && k > 0 ? `<small>${esc(perGb(p))}</small>` : ""}</span></span>`).join("") : ""}
                   <span class="dest__feat">${esc(t("destFeatures"))}</span>
                   <span class="dest__cta">${esc(t("viewPlans"))} ${icon("arrow")}</span>
                 </span>
@@ -1636,6 +1642,7 @@
     ];
     const hasData = plans.some((p) => !p.unlimited), hasUnl = plans.some((p) => p.unlimited);
     const pre = Math.max(0, plans.findIndex((p) => p.popular));
+    const bestVal = valuePlan(plans, plans[pre]);
     const modal = document.createElement("div");
     modal.className = "modal";
     modal.innerHTML = `
@@ -1658,7 +1665,7 @@
               <label class="plan ${i === pre ? "is-active" : ""} ${p.unlimited ? "plan--unl" : ""}">
                 <input type="radio" name="plan" value="${i}" ${i === pre ? "checked" : ""}>
                 <span class="plan__gb">${esc(vol(p))}</span><span class="plan__days">${esc(t("days", { n: p.days }))}</span>
-                ${p.popular ? `<span class="plan__pop">${esc(t("popular"))}</span>` : ""}
+                ${p.popular ? `<span class="plan__pop">${esc(t("popular"))}</span>` : p === bestVal ? `<span class="plan__pop plan__pop--value">${esc(t("bestValue"))}</span>` : ""}
                 <span class="plan__price">${eur(p.price)}</span>
                 <button type="button" class="plan__info" data-info="${i}" aria-expanded="false" aria-controls="pd-${i}" aria-label="${esc(t("detToggle"))}" title="${esc(t("detToggle"))}">${icon("chev-r")}</button>
               </label>

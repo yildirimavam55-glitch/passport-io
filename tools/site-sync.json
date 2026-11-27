@@ -4845,6 +4845,34 @@
    "pl": "c900ef40a3e9",
    "ja": "c900ef40a3e9",
    "ko": "c900ef40a3e9"
+  },
+  "bestValue": {
+   "en": "92c66dd7e763",
+   "de": "92c66dd7e763",
+   "ar": "92c66dd7e763",
+   "ru": "92c66dd7e763",
+   "fr": "92c66dd7e763",
+   "es": "92c66dd7e763",
+   "it": "92c66dd7e763",
+   "pt": "92c66dd7e763",
+   "nl": "92c66dd7e763",
+   "pl": "92c66dd7e763",
+   "ja": "92c66dd7e763",
+   "ko": "92c66dd7e763"
+  },
+  "perGb": {
+   "en": "a4e90e03fa87",
+   "de": "a4e90e03fa87",
+   "ar": "a4e90e03fa87",
+   "ru": "a4e90e03fa87",
+   "fr": "a4e90e03fa87",
+   "es": "a4e90e03fa87",
+   "it": "a4e90e03fa87",
+   "pt": "a4e90e03fa87",
+   "nl": "a4e90e03fa87",
+   "pl": "a4e90e03fa87",
+   "ja": "a4e90e03fa87",
+   "ko": "a4e90e03fa87"
   }
  },
  "content/account.json": {
