@@ -578,9 +578,12 @@
   // Kleine Handy-Bildschirme für die drei Schritte (Pakete und Preise kommen aus der Schnittstelle)
   function stepScreen(i, s, c) {
     if (i === 0) {
+      // Gleiche zwei Pakete wie auf der Länderkarte: „Beliebt“ + „Preis-Leistung“ (live aus der API)
       const d = popular()[0];
-      const plans = d ? plansOf("country:" + d.code).slice(0, 4) : [];
-      return phoneScreen({ title: d ? d.name : s.title, type: "plans", items: plans });
+      const all = d ? plansOf("country:" + d.code) : [];
+      const pop = all.length ? popularPlan(all) : null;
+      const items = pop ? destPicks(all, pop).map((p, k) => ({ ...p, tag: k === 0 ? t("popular") : p.unlimited ? "" : t("bestValue"), tagKind: k === 0 ? "pop" : "value" })) : [];
+      return phoneScreen({ title: d ? d.name : s.title, type: "plans", items });
     }
     if (i === 1) return phoneScreen({ type: "qr", caption: s.title });
     return phoneScreen({ type: "done", title: s.title, caption: c.imageCaption || "" });
@@ -1029,7 +1032,7 @@
     } else if (s.type === "plans") {
       body = `<div class="plist">${(s.items || []).map((p) => `
         <div class="prow ${p.popular ? "is-tap" : ""}">
-          <span class="prow__label"><b>${esc(p.gb)} GB</b><small>${esc(t("days", { n: p.days }))}</small></span>
+          <span class="prow__label"><b>${esc(vol(p))}</b>${p.tag ? `<em class="prow__tag prow__tag--${p.tagKind}">${esc(p.tag)}</em>` : `<small>${esc(t("days", { n: p.days }))}</small>`}</span>
           <span class="prow__value price">${eur(p.price)}</span>
         </div>`).join("")}</div>`;
     } else if (s.type === "done") {

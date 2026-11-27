@@ -1795,3 +1795,16 @@ html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
   .lina-fab img { width: 54px; height: 54px; }
   .lina-fab__txt { display: none; }
 }
+
+/* Handy-Bild in Schritt 1: Abzeichen wie auf den Länderkarten */
+.prow__tag { display: inline-block; justify-self: start; margin-top: 4px; padding: 1px 7px; border-radius: 999px; font-style: normal; font-size: 10.5px; font-weight: 700; vertical-align: 2px; white-space: nowrap; }
+.prow__tag--pop { background: #2ef58a; color: #0a0d0c; }
+.how2__visual .plist .prow { padding: 10px 12px; }
+.prow__label { display: grid; min-width: 0; }
+.prow__label b { font-size: 14px; line-height: 1.2; }
+.how2__visual .prow { gap: 8px; }
+.how2__visual .prow__value { flex: none; font-size: 14px; }
+[dir="rtl"] .prow__tag { justify-self: end; }
+.prow__tag--value { background: #eef0f2; color: #1c1c1e; box-shadow: inset 0 0 0 1px #d1d1d6; }
+.prow__value { display: grid; justify-items: end; line-height: 1.15; }
+.prow__value small { font-size: 10.5px; font-weight: 500; color: #8e8e93; }
