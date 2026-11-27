@@ -299,6 +299,32 @@
       </section>`,
   };
 
+  /* ---------- NETZBETREIBER (Laufband) ----------
+     Namen kommen aus der Anbieter-API (prices ?networks=1), nur bekannte Marken.
+     Ohne Daten bleibt der Bereich unsichtbar – es wird nie etwas erfunden. */
+  sections.networks = {
+    render: () => `<section class="nets" id="networks" hidden aria-label="${esc(t("netTitle"))}">
+        <div class="container"><p class="nets__title">${esc(t("netTitle"))}</p></div>
+        <div class="nets__viewport"><div class="nets__track"></div></div>
+        <div class="container"><p class="nets__note">${esc(t("netNote"))}</p></div>
+      </section>`,
+    init: async (el) => {
+      if (!SITE.api?.pricesUrl || !el) return;
+      try {
+        const u = new URL(SITE.api.pricesUrl, location.href);
+        u.searchParams.set("networks", "1");
+        const r = await fetch(u, { headers: { Accept: "application/json" } });
+        const list = (r.ok ? (await r.json())?.networks : null) || [];
+        if (list.length < 4) return;
+        const items = list.map((x) => `<span class="nets__item"><img src="${flag(x.c)}" alt="" width="20" height="20" loading="lazy">${esc(x.n)}</span>`).join("");
+        const track = el.querySelector(".nets__track");
+        track.innerHTML = `<div class="nets__group">${items}</div><div class="nets__group" aria-hidden="true">${items}</div>`;
+        track.style.setProperty("--nets-dur", Math.max(25, list.length * 3) + "s");
+        el.hidden = false;
+      } catch (_) { /* ohne Daten kein Laufband */ }
+    },
+  };
+
   /* ---------- BELIEBTE REISEZIELE ---------- */
   const popular = () => ESIM.countries.filter((c) => c.popular && offered("country:" + c.code));
   sections.destinations = {

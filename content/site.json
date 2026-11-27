@@ -46,6 +46,10 @@
         "enabled": true
       },
       {
+        "type": "networks",
+        "enabled": true
+      },
+      {
         "type": "destinations",
         "enabled": true
       },

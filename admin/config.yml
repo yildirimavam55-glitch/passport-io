@@ -101,6 +101,7 @@ collections:
                 widget: select
                 options:
                   - { label: "Giriş görseli (hero)", value: hero }
+                  - { label: "Ağ operatörleri (kayan şerit)", value: networks }
                   - { label: "Popüler destinasyonlar", value: destinations }
                   - { label: "Bölgesel & global paketler", value: packages }
                   - { label: "eSIM nedir?", value: howto }

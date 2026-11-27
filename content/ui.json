@@ -199,7 +199,9 @@
     "popDoneText": "{v} indirim kodun sepetine eklendi. İstersen kopyala:",
     "popThanks": "Teşekkürler!",
     "popThanksText": "Kaydın alındı. Kampanyalardan ilk sen haberdar olacaksın.",
-    "popNo": "Hayır, teşekkürler"
+    "popNo": "Hayır, teşekkürler",
+    "netTitle": "Bu ağlarda internetin var",
+    "netNote": "Ağ operatörleri, eSIM tedarikçilerimizin iş ortaklarıdır; passport.io ile bağlantılı değildir. Markalar sahiplerine aittir."
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -401,7 +403,9 @@
     "popDoneText": "Your {v} code has been added to your cart. Copy it if you like:",
     "popThanks": "Thank you!",
     "popThanksText": "You’re signed up. You’ll be the first to hear about our deals.",
-    "popNo": "No, thanks"
+    "popNo": "No, thanks",
+    "netTitle": "You're online on these networks",
+    "netNote": "Network operators partner with our eSIM suppliers and are not affiliated with passport.io. Trademarks belong to their owners."
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -603,7 +607,9 @@
     "popDoneText": "Dein {v}-Code ist im Warenkorb hinterlegt. Zum Mitnehmen:",
     "popThanks": "Danke!",
     "popThanksText": "Du bist angemeldet und erfährst als Erste:r von unseren Aktionen.",
-    "popNo": "Nein, danke"
+    "popNo": "Nein, danke",
+    "netTitle": "Du surfst in diesen Netzen",
+    "netNote": "Die Netzbetreiber sind Partner unserer eSIM-Lieferanten und nicht mit passport.io verbunden. Marken gehören ihren Inhabern."
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",
@@ -805,7 +811,9 @@
     "popDoneText": "تمت إضافة رمز خصم {v} إلى سلتك. يمكنك نسخه:",
     "popThanks": "شكرًا!",
     "popThanksText": "تم تسجيلك. ستكون أول من يعرف بعروضنا.",
-    "popNo": "لا، شكرًا"
+    "popNo": "لا، شكرًا",
+    "netTitle": "تتصفح عبر هذه الشبكات",
+    "netNote": "مشغلو الشبكات شركاء لموردي eSIM لدينا ولا يرتبطون بـ passport.io. العلامات التجارية مملوكة لأصحابها."
   },
   "ru": {
     "metaTitle": "passport.io – eSIM, бизнес-залы и Fast Track для вашей поездки",
@@ -1007,7 +1015,9 @@
     "popDoneText": "Код на {v} уже в корзине. Можно скопировать:",
     "popThanks": "Спасибо!",
     "popThanksText": "Вы подписаны и первыми узнаете о наших акциях.",
-    "popNo": "Нет, спасибо"
+    "popNo": "Нет, спасибо",
+    "netTitle": "Вы в сети этих операторов",
+    "netNote": "Операторы — партнёры наших поставщиков eSIM и не связаны с passport.io. Товарные знаки принадлежат их владельцам."
   },
   "fr": {
     "metaTitle": "passport.io – eSIM, salons et Fast Track pour votre voyage",
@@ -1209,7 +1219,9 @@
     "popDoneText": "Ton code de {v} est dans ton panier. À copier si tu veux :",
     "popThanks": "Merci !",
     "popThanksText": "Tu es inscrit·e et seras le premier informé de nos offres.",
-    "popNo": "Non merci"
+    "popNo": "Non merci",
+    "netTitle": "Vous surfez sur ces réseaux",
+    "netNote": "Les opérateurs sont partenaires de nos fournisseurs eSIM et ne sont pas liés à passport.io. Les marques appartiennent à leurs propriétaires."
   },
   "es": {
     "metaTitle": "passport.io – eSIM, salas VIP y Fast Track para tu viaje",
@@ -1411,7 +1423,9 @@
     "popDoneText": "Tu código de {v} ya está en el carrito. Puedes copiarlo:",
     "popThanks": "¡Gracias!",
     "popThanksText": "Ya estás suscrito y serás el primero en conocer nuestras ofertas.",
-    "popNo": "No, gracias"
+    "popNo": "No, gracias",
+    "netTitle": "Navegas en estas redes",
+    "netNote": "Los operadores son socios de nuestros proveedores de eSIM y no están vinculados a passport.io. Las marcas pertenecen a sus titulares."
   },
   "it": {
     "metaTitle": "passport.io – eSIM, lounge e Fast Track per il tuo viaggio",
@@ -1613,7 +1627,9 @@
     "next": "Avanti",
     "popular": "Popolari",
     "readTime": "{t} di lettura",
-    "currency": "Valuta"
+    "currency": "Valuta",
+    "netTitle": "Navighi su queste reti",
+    "netNote": "Gli operatori sono partner dei nostri fornitori eSIM e non sono collegati a passport.io. I marchi appartengono ai rispettivi titolari."
   },
   "pt": {
     "metaTitle": "passport.io – eSIM, sala VIP e Fast Track para sua viagem",
@@ -1815,7 +1831,9 @@
     "next": "Próximo",
     "popular": "Populares",
     "readTime": "{t} de leitura",
-    "currency": "Moeda"
+    "currency": "Moeda",
+    "netTitle": "Você navega nestas redes",
+    "netNote": "As operadoras são parceiras dos nossos fornecedores de eSIM e não têm vínculo com a passport.io. As marcas pertencem aos seus titulares."
   },
   "nl": {
     "metaTitle": "passport.io – eSIM, lounge en Fast Track voor je reis",
@@ -2017,7 +2035,9 @@
     "next": "Volgende",
     "popular": "Populair",
     "readTime": "{t} lezen",
-    "currency": "Valuta"
+    "currency": "Valuta",
+    "netTitle": "Je surft op deze netwerken",
+    "netNote": "Netwerkoperators zijn partners van onze eSIM-leveranciers en niet verbonden aan passport.io. Merken zijn eigendom van hun houders."
   },
   "pl": {
     "metaTitle": "passport.io – eSIM, saloniki i Fast Track na Twoją podróż",
@@ -2219,7 +2239,9 @@
     "next": "Dalej",
     "popular": "Popularne",
     "readTime": "{t} czytania",
-    "currency": "Waluta"
+    "currency": "Waluta",
+    "netTitle": "Surfujesz w tych sieciach",
+    "netNote": "Operatorzy są partnerami naszych dostawców eSIM i nie są powiązani z passport.io. Znaki towarowe należą do ich właścicieli."
   },
   "ja": {
     "metaTitle": "passport.io – 旅行のためのeSIM、ラウンジ、ファストトラック",
@@ -2421,7 +2443,9 @@
     "next": "次へ",
     "popular": "人気",
     "readTime": "{t}で読めます",
-    "currency": "通貨"
+    "currency": "通貨",
+    "netTitle": "これらの通信網につながります",
+    "netNote": "通信事業者は当社のeSIM供給元のパートナーであり、passport.ioとは提携していません。商標は各所有者に帰属します。"
   },
   "ko": {
     "metaTitle": "passport.io – 여행을 위한 eSIM, 라운지, 패스트트랙",
@@ -2623,6 +2647,8 @@
     "next": "다음",
     "popular": "인기",
     "readTime": "{t} 분량",
-    "currency": "통화"
+    "currency": "통화",
+    "netTitle": "이 통신망으로 연결돼요",
+    "netNote": "통신사는 eSIM 공급사의 파트너이며 passport.io와 제휴 관계가 아닙니다. 상표는 각 소유자에게 있습니다."
   }
 }

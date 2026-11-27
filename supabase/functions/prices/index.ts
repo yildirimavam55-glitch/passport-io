@@ -23,6 +23,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { applyPricing, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
 import { applyAssortment, enforceStaircase } from "../_shared/assortment.ts";
+import { knownNetworks } from "../_shared/networks.ts";
 import { accessOn, type Catalog, esimAccessCatalog, goTier, esimGoCatalog, goOn, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
 
 const CACHE_SECONDS = 15 * 60;
@@ -189,6 +190,13 @@ Deno.serve(async (req) => {
     const list = (type === "country" ? E.countries?.[id]?.plans : type === "region" ? E.regions?.[id]?.plans : E.global?.plans) ?? [];
     // deno-lint-ignore no-explicit-any
     return json({ item, plans: list.map((p: any) => ({ id: p.id, meta: p.meta ?? null })) });
+  }
+
+  // Bekannte Netzbetreiber für das Laufband (?networks=1) – nur Netze, die die Anbieter-API wirklich liefert
+  if (params.get("networks") === "1") {
+    return new Response(JSON.stringify({ networks: knownNetworks(body.esim ?? {}) }), {
+      headers: { ...headers, "Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=3600" },
+    });
   }
 
   // Preisregel anwenden (Einkauf → Verkaufspreis); Einkaufspreise verlassen die Funktion nie
