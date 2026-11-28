@@ -197,9 +197,18 @@ export async function deliver(db: any, id: string, who: string) {
 }
 
 /** Datei speichern (Partner-Portal oder Panel) */
+/** Dateityp am Inhalt erkennen – die Angabe des Browsers allein reicht nicht (sonst z. B. HTML als „Bild“) */
+function sniff(b: Uint8Array, type: string) {
+  const at = (i: number, ...v: number[]) => v.every((x, k) => b[i + k] === x);
+  if (type === "image/png") return at(0, 0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a);
+  if (type === "image/jpeg") return at(0, 0xff, 0xd8, 0xff);
+  if (type === "image/webp") return at(0, 0x52, 0x49, 0x46, 0x46) && at(8, 0x57, 0x45, 0x42, 0x50);
+  if (type === "application/pdf") return at(0, 0x25, 0x50, 0x44, 0x46, 0x2d);
+  return false;
+}
 const TYPES: Record<string, string> = { "image/png": "png", "image/jpeg": "jpg", "image/webp": "webp", "application/pdf": "pdf" };
 export async function storeFile(db: any, id: string, bytes: Uint8Array, type: string, name: string, who: string) {
-  if (!TYPES[type]) throw new Error("type");
+  if (!TYPES[type] || !sniff(bytes, type)) throw new Error("type");
   if (bytes.length > 8 * 1024 * 1024) throw new Error("too_big");
   const { data: b } = await db.from("airport_bookings").select("files, status").eq("id", id).single();
   if (!b || ["cancelled"].includes(b.status)) throw new Error("closed");
@@ -226,7 +235,16 @@ export async function tick(db: any) {
   const a = await loadAirportSettings(db);
   const now = Date.now();
   const { data: list } = await db.from("airport_bookings").select("*").in("status", ["new", "sent", "accepted"]).order("created_at").limit(200);
-  const done = { reminded: 0, alerted: 0, failed: 0 };
+  const done = { reminded: 0, alerted: 0, failed: 0, cleaned: 0 };
+  // Datensparsamkeit (DSGVO/KVKK): 30 Tage nach der Reise Voucher-Dateien und Telefonnummer löschen
+  const old = new Date(now - 30 * 864e5).toISOString().slice(0, 10);
+  const { data: stale } = await db.from("airport_bookings").select("id, files").lt("travel_date", old).or("customer_phone.not.is.null,token.not.is.null").limit(50);
+  for (const s of stale ?? []) {
+    const paths = (s.files ?? []).map((f: any) => f.path).filter(Boolean);
+    if (paths.length) await db.storage.from("vouchers").remove(paths);
+    await db.from("airport_bookings").update({ files: [], customer_phone: null, token: null, updated_at: new Date().toISOString() }).eq("id", s.id);
+    done.cleaned++;
+  }
   for (const b of list ?? []) {
     const dep = new Date(`${b.travel_date}T${b.travel_time || "23:59"}:00+03:00`).getTime(); // Ortszeit unbekannt → TR-Zeit als Näherung
     // 1) Zu knapp vor Abflug und noch nicht geliefert → verpasst

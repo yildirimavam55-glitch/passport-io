@@ -256,7 +256,9 @@ Deno.serve(async (req) => {
   const strip = (g: any) => g?.plans?.forEach((p: any) => delete p.meta);
   Object.values(body.esim?.countries ?? {}).forEach(strip); Object.values(body.esim?.regions ?? {}).forEach(strip); strip(body.esim?.global);
 
-  return new Response(JSON.stringify(body), {
+  // Anbieter-Namen und -Fehlermeldungen bleiben intern (nur für den Zwischenspeicher/Panel)
+  const { providers: _providers, ...pub } = body;
+  return new Response(JSON.stringify(pub), {
     headers: { ...headers, "Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=60" },
   });
 });

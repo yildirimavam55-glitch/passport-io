@@ -77,12 +77,12 @@ Deno.serve(async (req) => {
   const user = auth?.user;
   if (!user) return json({ error: "unauthorized" }, 401, headers);
   if (!user.email_confirmed_at || !admins().includes((user.email ?? "").toLowerCase())) return json({ error: "forbidden" }, 403, headers);
-  // Zwei-Faktor-Anmeldung: Pflicht, sobald die Person eine Authenticator-App eingerichtet hat
-  // (oder für alle Admins mit ADMIN_REQUIRE_MFA=true). Die Stufe steht im geprüften Token (aal).
+  // Zwei-Faktor-Anmeldung (Authenticator-App) ist Pflicht. Die Stufe steht im geprüften Token (aal).
   let aal = "aal1";
   try { aal = JSON.parse(atob(token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))).aal ?? "aal1"; } catch (_) { /* aal1 */ }
   const hasFactor = (user.factors ?? []).some((f: any) => f.status === "verified");
-  if ((hasFactor || env("ADMIN_REQUIRE_MFA") === "true") && aal !== "aal2") return json({ error: hasFactor ? "mfa_required" : "mfa_setup_required" }, 403, headers);
+  // Standard: Pflicht für alle Admins (abschaltbar nur mit ADMIN_REQUIRE_MFA=false, z. B. für die Ersteinrichtung)
+  if ((hasFactor || env("ADMIN_REQUIRE_MFA") !== "false") && aal !== "aal2") return json({ error: hasFactor ? "mfa_required" : "mfa_setup_required" }, 403, headers);
   const audit = (action: string, target: string, details: unknown = null) =>
     db.from("admin_audit").insert({ admin_email: user.email, action, target, details }).then(() => {}, () => {});
 

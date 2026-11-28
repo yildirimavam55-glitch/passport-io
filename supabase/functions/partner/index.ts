@@ -16,6 +16,7 @@ import { cors, env, json } from "../_shared/http.ts";
 import { alertAdmin, deliver, logItem, removeFile, signedFiles, storeFile, tick } from "../_shared/airport.ts";
 
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
+let lastTick = 0;
 const okToken = (t: unknown) => typeof t === "string" && /^[A-Za-z0-9_-]{24,64}$/.test(t);
 
 async function byToken(t: unknown) {
@@ -49,7 +50,12 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers });
   const url = new URL(req.url);
   try {
-    if (req.method === "GET" && url.searchParams.get("tick") === "1") return json({ ok: true, ...(await tick(db)) }, 200, headers);
+    if (req.method === "GET" && url.searchParams.get("tick") === "1") {
+      // Öffentlich erreichbar, aber harmlos: tut nur Fälliges; gegen Dauerfeuer höchstens 1× pro Minute je Instanz
+      if (Date.now() - lastTick < 60e3) return json({ ok: true, skipped: true }, 200, headers);
+      lastTick = Date.now();
+      return json({ ok: true, ...(await tick(db)) }, 200, headers);
+    }
 
     if (req.method === "GET") {
       const b = await byToken(url.searchParams.get("t"));

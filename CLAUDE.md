@@ -55,6 +55,11 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 - „Beliebt“ je Ziel (`POPULAR_GB` in `_shared/assortment.ts`, Recherche 11/2026): Fernreisen/lange Aufenthalte (tr, ma, th, id, jp, us …) 10 GB, sonst 5 GB, Regionen 10 GB; fehlt die Größe → nächstgrößere. „Preis-Leistung“ (Frontend `valuePlan`): Datenpaket über „Beliebt“ mit dem niedrigsten Preis/GB – Länderkarten zeigen beide, Paketfenster markiert beide.
 - Einkauf nie öffentlich (debug-Felder werden in `prices` entfernt).
 
+## Sicherheit (Prüfung 28.11.2026)
+- Live geprüft mit öffentlichem Schlüssel: alle Tabellen leer/gesperrt (RLS), RPCs `use_discount`/`bump_usage` gesperrt, keine öffentlichen Buckets, Funktionen ohne Anmeldung 401, keine Einkaufspreise in `prices`.
+- Admin: Zwei-Faktor ist Standard-Pflicht (nur `ADMIN_REQUIRE_MFA=false` schaltet ab). `prices` gibt `providers` (Anbieter/Fehler) nicht mehr öffentlich aus.
+- Voucher-Uploads: Dateityp wird am Inhalt geprüft (PNG/JPG/WEBP/PDF). Wächter löscht Voucher, Telefon und Partner-Link 30 Tage nach der Reise; `?tick=1` max. 1×/Min. je Instanz.
+
 ## Secrets (Supabase, gesetzt)
 ADMIN_MAIL (Alias ADMIN_EMAILS), ALLOWED_ORIGINS, ESIMACCESS_ACCESS_CODE, ESIMACCESS_SECRETS (ungenutzt), ESIMGO_API_KEY, GITHUB_CONTENT_TOKEN.
 Optional (Lounge/Fast Track): RESEND_API_KEY, MAIL_FROM, WHATSAPP_TOKEN, WHATSAPP_PHONE_ID, WHATSAPP_TEMPLATE, WHATSAPP_TEMPLATE_LANG.

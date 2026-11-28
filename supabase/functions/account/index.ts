@@ -261,6 +261,7 @@ Deno.serve(async (req) => {
     if (body.action === "delete") {
       // Löscht das Konto; Profil und eSIM-Einträge werden mitgelöscht. Bestellungen bleiben wegen der
       // gesetzlichen Aufbewahrungspflicht für Rechnungsdaten erhalten, sind aber vom Konto getrennt.
+      await db.from("airport_bookings").update({ customer_phone: null, customer_note: null }).eq("user_id", user.id);
       const { error } = await db.auth.admin.deleteUser(user.id);
       if (error) throw error;
       return json({ ok: true }, 200, headers);
