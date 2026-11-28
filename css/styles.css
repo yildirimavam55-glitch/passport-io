@@ -1808,3 +1808,12 @@ html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
 .prow__tag--value { background: #eef0f2; color: #1c1c1e; box-shadow: inset 0 0 0 1px #d1d1d6; }
 .prow__value { display: grid; justify-items: end; line-height: 1.15; }
 .prow__value small { font-size: 10.5px; font-weight: 500; color: #8e8e93; }
+
+/* Desktop: ganze Seite gleichmäßig auf 90 % (Schrift, Abstände, Karten) – Handy/Tablet unverändert.
+   Höhen in vh werden mitskaliert; das Startbild bekommt seine volle Bildschirmhöhe zurück. */
+@media (min-width: 1025px) {
+  html { zoom: .9; }
+  .hero { min-height: min(calc(100svh / .9), 1000px); }
+  .modal__panel { max-height: calc((100vh - 32px) / .9); }
+  .popup__panel { max-height: calc((100svh - 40px) / .9); }
+}
