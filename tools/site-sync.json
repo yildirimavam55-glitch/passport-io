@@ -4887,6 +4887,54 @@
    "pl": "f8cd14440265",
    "ja": "f8cd14440265",
    "ko": "f8cd14440265"
+  },
+  "apNone": {
+   "en": "c4e846beea00",
+   "de": "c4e846beea00"
+  },
+  "apLead": {
+   "en": "edd4e49007bc",
+   "de": "edd4e49007bc"
+  },
+  "apPerPerson": {
+   "en": "a588001506be",
+   "de": "a588001506be"
+  },
+  "apTotal": {
+   "en": "dc69bd2b850c",
+   "de": "dc69bd2b850c"
+  },
+  "apBook": {
+   "en": "d0e7270c480a",
+   "de": "d0e7270c480a"
+  },
+  "apTime": {
+   "en": "7d5635930579",
+   "de": "7d5635930579"
+  },
+  "apFlight": {
+   "en": "bbbd72c2a654",
+   "de": "bbbd72c2a654"
+  },
+  "apName": {
+   "en": "9c57e2661d12",
+   "de": "9c57e2661d12"
+  },
+  "apPhone": {
+   "en": "0efa860e913a",
+   "de": "0efa860e913a"
+  },
+  "apNote": {
+   "en": "60caec7d80fe",
+   "de": "60caec7d80fe"
+  },
+  "apHint": {
+   "en": "b8828f93128f",
+   "de": "b8828f93128f"
+  },
+  "apContinue": {
+   "en": "ba789d8b04af",
+   "de": "ba789d8b04af"
   }
  },
  "content/account.json": {
@@ -6807,6 +6855,62 @@
    "ru": "d8d810201b00",
    "fr": "d8d810201b00",
    "es": "d8d810201b00"
+  },
+  "bkTitle": {
+   "en": "7e5e0f3946ba",
+   "de": "7e5e0f3946ba"
+  },
+  "bk_new": {
+   "en": "fbfb28f76665",
+   "de": "fbfb28f76665"
+  },
+  "bk_sent": {
+   "en": "59f53b0c69c9",
+   "de": "59f53b0c69c9"
+  },
+  "bk_accepted": {
+   "en": "59f53b0c69c9",
+   "de": "59f53b0c69c9"
+  },
+  "bk_declined": {
+   "en": "fbfb28f76665",
+   "de": "fbfb28f76665"
+  },
+  "bk_delivered": {
+   "en": "e42bdbb3a52a",
+   "de": "e42bdbb3a52a"
+  },
+  "bk_failed": {
+   "en": "ec0f21e59d58",
+   "de": "ec0f21e59d58"
+  },
+  "bk_cancelled": {
+   "en": "e15ad036b198",
+   "de": "e15ad036b198"
+  },
+  "voucherOpen": {
+   "en": "75975bba96fd",
+   "de": "75975bba96fd"
+  },
+  "voucherHint": {
+   "en": "ab0a01c17f11",
+   "de": "ab0a01c17f11"
+  },
+  "bookingDone": {
+   "en": "5f853cbaa9a3",
+   "de": "5f853cbaa9a3"
+  },
+  "bookingTooSoon": {
+   "en": "4d00855f7af1",
+   "de": "4d00855f7af1"
+  },
+  "bookingInvalid": {
+   "en": "4adda9116150",
+   "de": "4adda9116150"
+  },
+  "bookingUnavailable": {
+   "en": "f427c519d6ba",
+   "de": "f427c519d6ba"
   }
  },
  "content/install.json": {
