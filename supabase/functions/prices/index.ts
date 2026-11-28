@@ -23,6 +23,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { applyPricing, loadCompetitors, loadSettings } from "../_shared/pricing.ts";
 import { applyAssortment, enforceStaircase } from "../_shared/assortment.ts";
+import { offerList } from "../_shared/airport.ts";
 import { knownNetworks } from "../_shared/networks.ts";
 import { accessOn, type Catalog, esimAccessCatalog, goTier, esimGoCatalog, goOn, mergeCatalogs, providerConfigured } from "../_shared/esim-provider.ts";
 
@@ -156,6 +157,15 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers });
   const json = (b: unknown, status = 200) => new Response(JSON.stringify(b), { status, headers: { ...headers, "Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=60" } });
 
+  // Lounge & Fast Track über Partner (?airport=1): Angebote mit Verkaufspreis (Preisregel), ohne Einkauf
+  const qp = new URL(req.url).searchParams;
+  if (qp.get("airport") === "1") {
+    const want0 = (qp.get("currency") ?? "EUR").toUpperCase();
+    await rates("EUR"); // Kurse auffrischen (Zwischenspeicher)
+    const r = await offerList(db, currencies().includes(want0) ? want0 : "EUR");
+    return json({ enabled: r.settings.enabled, currency: r.currency, offers: r.offers });
+  }
+
   // deno-lint-ignore no-explicit-any
   let body: any = null;
   if (!providerConfigured()) {
@@ -231,6 +241,16 @@ Deno.serve(async (req) => {
     if (rate) body = { ...convert(body, rate), currency: want, fx: { base, rate, date: fx!.date, source: "ECB" } };
   }
   body.currencies = currencies();
+  // „ab“-Preise für Lounge/Fast Track aus der Partner-Preisliste (wenn es keine Anbieter-API gibt)
+  try {
+    const r = await offerList(db, body.currency ?? "EUR");
+    if (r.settings.enabled && r.currency === (body.currency ?? "EUR")) {
+      for (const k of ["lounge", "fasttrack"]) {
+        const list = r.offers.filter((o) => o.product === k).map((o) => o.price);
+        if (list.length && body[k]?.from == null) body[k] = { ...(body[k] ?? {}), from: Math.min(...list), partner: true };
+      }
+    }
+  } catch (err) { console.error(err); }
   // Details nicht im Hauptabruf (klein halten) – die Seite lädt sie pro Land über ?item=
   // deno-lint-ignore no-explicit-any
   const strip = (g: any) => g?.plans?.forEach((p: any) => delete p.meta);

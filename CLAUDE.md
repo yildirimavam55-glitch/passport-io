@@ -13,7 +13,7 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 - Commits enden mit `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
 
 ## Aufbau
-- Statische Seite: `index/install/blog/account/page.html`, `js/app.js` (rendert alles), `js/account.js`, `css/styles.css`.
+- Statische Seite: `index/install/blog/account/page.html` + `partner.html` (Partner-Portal, eigene CSP ohne Inline-Skript), `js/app.js` (rendert alles), `js/account.js`, `css/styles.css`.
 - **Automatische Übersetzung (alle Inhalte):** Workflow „Webseite übersetzen“ (`tools/site-translate.mjs`, Fingerabdrücke `tools/site-sync.json`) übersetzt neue/geänderte tr-Texte aller `content/*.json` + Blogartikel in alle Sprachen; neue Sprache in `languages.json` → alles. Lina-FAQs: „Lina übersetzen“. Beide brauchen GitHub-Secret `ANTHROPIC_API_KEY`. Von Hand: `--export=it` / `--import=it datei.json`. Neue Sprache außerdem in `admin/panel*.js`, `admin/config.yml`, `account/index.ts`, `_shared/popup.ts`, `_shared/lina-prompt.js` eintragen.
 - Inhalte: `content/*.json` je `{tr,en,…}`; Fremdsprachen werden über `id`/`code` bzw. Index gemischt. Blog: `content/posts/*.json` → `tools/build-blog.js` erzeugt `blog.json` beim Deploy (draft=true wird ausgelassen).
 - Supabase-Funktionen (`supabase/functions`): `prices` (Katalog+Preisregel, `?item=` Details, `?currency=`), `account` (Bestellung, Rabattcode, Erstattung, Support), `admin` (Panel-API inkl. GitHub-Inhalte), `questions` (Lina-Fragen, Support, Newsletter), `lina` (KI, optional).
@@ -46,6 +46,8 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 
 - **Pop-up** (app.js `popupInit`, Panel → „Pop-up & kampanya“): Einstellungen in Tabelle `site_settings` (key `popup`, `_shared/popup.ts`). Aktive Aktion mit gültigem Rabattcode → Aktionsfenster, sonst Newsletter-Fenster (optional Willkommenscode, wird erst nach der Anmeldung von `questions` zurückgegeben). Öffentlich: `questions` GET `?popup=1`. Code landet als `pending` im Warenkorb. Weggeklickt = `everyDays` Ruhe (localStorage `pp_popup`), nach Anmeldung nie wieder (`pp_nl_done`). Vorschau: `index.html?popup=preview`.
 
+- **Lounge & Fast Track über Partner** (keine Anbieter-API, 11/2026): Panel → „Lounge & Fast Track“ (Rezervasyonlar, Fiyat listesi, Partnerler, Ayarlar). Tabellen `airport_partners`, `airport_offers` (Einkauf pro Person), `airport_bookings`; Bucket `vouchers` (privat, signierte Links). Logik `_shared/airport.ts` (Preisregel: Einkauf × (1+markup_pct), ≥ Einkauf + min_margin_pct, ,99; Einstellungen `site_settings` key `airport`, Standard `enabled=false`). Ablauf: Kunde sucht im Bereich `airport` (`prices?airport=1`) → Formular → `account` POST `order` mit `item:"airport:<id>"` + `booking` → bezahlt (`dispatchForOrder`, auch bei Panel-Status „paid“) → Partner bekommt geheimen Link `partner.html#t=<token>` per Mail (Resend: `RESEND_API_KEY`, `MAIL_FROM`) und/oder WhatsApp Business API (`WHATSAPP_TOKEN`, `WHATSAPP_PHONE_ID`, `WHATSAPP_TEMPLATE` mit {{1}} Kurzinfo, {{2}} Link); ohne Kanal: wa.me-Link im Panel. Partner lädt Voucher hoch → „Tamamlandı“ → Kunde sieht ihn unter Bestellungen. Funktion `partner` (+ `?tick=1` = Wächter, Workflow „Lounge-Wächter“ alle 15 Min.: Erinnerung, Warnung an ADMIN_MAIL, „kaçırıldı“ kurz vor Abflug). Bewusste Ausnahme von „nur API-Preise“: Partner-Preisliste im Panel = Anbieterpreis. Neue Texte (`ap*`, `bk*`) nur tr/en/de – Rest über Workflow „Webseite übersetzen“.
+
 ## Preis- und Sortimentslogik
 - Wettbewerbspreise in Tabelle `competitor_prices` (Airalo, Saily, Nomad; gb=0 = Unlimited). Laden seitenweise (Supabase max 1000 Zeilen).
 - Regel: Wettbewerber vorhanden → nächster ,99-Preis darunter; sonst Einkauf × 2 auf ,99; min 2,99 €; Verlustschutz Einkauf + min_margin_pct (Panel → Fiyatlar).
@@ -55,6 +57,7 @@ Reise-Shop: eSIM (live), Lounge/Fast Track (noch ohne Anbieter), Vignette (spät
 
 ## Secrets (Supabase, gesetzt)
 ADMIN_MAIL (Alias ADMIN_EMAILS), ALLOWED_ORIGINS, ESIMACCESS_ACCESS_CODE, ESIMACCESS_SECRETS (ungenutzt), ESIMGO_API_KEY, GITHUB_CONTENT_TOKEN.
+Optional (Lounge/Fast Track): RESEND_API_KEY, MAIL_FROM, WHATSAPP_TOKEN, WHATSAPP_PHONE_ID, WHATSAPP_TEMPLATE, WHATSAPP_TEMPLATE_LANG.
 Optional: ESIMGO_UNLIMITED_TIER (lite|essential|plus, Std essential), ESIMGO_CURRENCY (Std USD), REFUND_DAYS, ALLOW_TEST_ORDERS, PAYMENT_PROVIDER.
 Prüfen: GitHub-Workflow `check-secrets.yml` (nur Namen) – `gh workflow run check-secrets.yml`.
 
@@ -69,7 +72,7 @@ Prüfen: GitHub-Workflow `check-secrets.yml` (nur Namen) – `gh workflow run ch
 
 ## Offen
 - Zahlungsanbieter (iyzico/PayTR vs. Stripe) – Entscheidung des Nutzers fehlt; Rabattnutzung zählt derzeit bei Bestellanlage.
-- Lounge/Fast Track-Anbieter; Newsletter-Versand (Export nach Brevo/Mailchimp).
+- Lounge/Fast Track: Partner + Preisliste im Panel eintragen, Mail (Resend) einrichten, dann „Sitede rezervasyon“ einschalten; Vereinbarung mit dem Partner (Preise, Lieferzeit, Erstattung). Newsletter-Versand (Export nach Brevo/Mailchimp).
 - Lina-FAQ „payment“ nennt Apple Pay/Klarna usw. – an den echten Zahlungsanbieter anpassen; FAQ „invoice“ verweist vorerst aufs Support-Formular (e-Fatura offen).
 - Rechtliches: BTK-Klärung, ETBİS, e-Fatura, KVKK, Rechtstexte (siehe YAYINA-HAZIRLIK.md, ANLEITUNG.md).
 - Echte Testbestellung auf Handy noch nicht gemacht.

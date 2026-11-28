@@ -37,11 +37,12 @@ jobs:
           mkdir _site
           # Blog-Übersicht aus content/posts erzeugen, dazu sitemap.xml und robots.txt
           node tools/build-blog.js _site "${SITE_URL}"
-          cp -r index.html install.html blog.html account.html page.html 404.html css js content img admin api fonts vendor _site/
+          cp -r index.html install.html blog.html account.html page.html partner.html 404.html css js content img admin api fonts vendor _site/
           touch _site/.nojekyll
           # Versionsnummer anhängen, damit Besucher Änderungen sofort sehen
           V=$(echo "$GITHUB_SHA" | cut -c1-8)
           sed -i "s#css/styles.css\"#css/styles.css?v=$V\"#; s#js/app.js\"#js/app.js?v=$V\"#" _site/index.html _site/install.html _site/blog.html _site/account.html _site/page.html
+          sed -i "s#js/partner.js\"#js/partner.js?v=$V\"#; s#css/partner.css\"#css/partner.css?v=$V\"#" _site/partner.html
           sed -i "s#panel.css\"#panel.css?v=$V\"#; s#panel.js\"#panel.js?v=$V\"#; s#panel-editor.js\"#panel-editor.js?v=$V\"#" _site/admin/panel.html
       - name: Öffentliche Supabase-Angaben für das Kundenkonto (nur der öffentliche Schlüssel)
         env:
@@ -100,3 +101,5 @@ jobs:
       - run: supabase functions delete cms-auth --project-ref "$PROJECT_REF" || true
       # Shop-Verwaltung (/admin/panel.html) – Zugriff nur für ADMIN_EMAILS
       - run: supabase functions deploy admin --no-verify-jwt --project-ref "$PROJECT_REF"
+      # Partner-Portal für Lounge/Fast Track (Zugang nur über den geheimen Link) + Wächter (?tick=1)
+      - run: supabase functions deploy partner --no-verify-jwt --project-ref "$PROJECT_REF"

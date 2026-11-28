@@ -1,0 +1,39 @@
+/* passport.io – Partner-Portal (Lounge/Fast Track): schlicht, groß, fürs Handy gedacht */
+:root { --bg: #0a0d0c; --card: #121816; --line: #233029; --text: #eef3f0; --muted: #93a39b; --green: #2ef58a; --green-ink: #04150c; --red: #ff6b6b; --amber: #ffc857; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+.pp-top { display: flex; align-items: center; justify-content: space-between; max-width: 640px; margin: 0 auto; padding: 18px 18px 6px; }
+.pp-logo { font-weight: 800; font-size: 20px; letter-spacing: -.01em; } .pp-logo em { color: var(--green); font-style: normal; }
+.pp-tag { font-size: 13px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
+.pp-main { max-width: 640px; margin: 0 auto; padding: 8px 18px 48px; display: grid; gap: 14px; }
+.pp-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+.pp-h { margin: 0 0 4px; font-size: 22px; line-height: 1.25; }
+.pp-muted { color: var(--muted); margin: 0; }
+.pp-test { background: var(--amber); color: #201600; font-weight: 700; border-radius: 12px; padding: 10px 14px; }
+.pp-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; border-radius: 999px; padding: 4px 10px; background: #1b2420; color: var(--muted); }
+.pp-pill.ok { background: rgba(46, 245, 138, .14); color: var(--green); } .pp-pill.warn { background: rgba(255, 200, 87, .14); color: var(--amber); } .pp-pill.bad { background: rgba(255, 107, 107, .14); color: var(--red); }
+.pp-rows { display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; margin: 14px 0 0; }
+.pp-rows dt { color: var(--muted); } .pp-rows dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.pp-names { margin: 0; padding-left: 18px; }
+.pp-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--line); background: #18201d; color: var(--text); font: inherit; font-weight: 700; cursor: pointer; width: 100%; transition: transform .12s ease; }
+.pp-btn:active { transform: scale(.98); }
+.pp-btn--green { background: var(--green); border-color: var(--green); color: var(--green-ink); }
+.pp-btn--ghost { background: transparent; color: var(--muted); }
+.pp-btn[disabled] { opacity: .5; cursor: default; }
+.pp-actions { display: grid; gap: 10px; margin-top: 14px; }
+.pp-drop { display: grid; place-items: center; gap: 6px; text-align: center; border: 2px dashed var(--line); border-radius: 16px; padding: 22px 14px; cursor: pointer; }
+.pp-drop.is-over { border-color: var(--green); }
+.pp-drop b { color: var(--green); }
+.pp-drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.pp-files { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 12px; }
+.pp-file { position: relative; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #0e1311; }
+.pp-file img { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; background: #fff; }
+.pp-file span { display: block; padding: 6px 8px; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pp-file .pp-pdf { display: grid; place-items: center; aspect-ratio: 1; font-weight: 800; color: var(--muted); }
+.pp-file button { position: absolute; top: 6px; right: 6px; width: 30px; height: 30px; border-radius: 50%; border: 0; background: rgba(0, 0, 0, .65); color: #fff; font-size: 16px; cursor: pointer; }
+textarea { width: 100%; min-height: 84px; border-radius: 12px; border: 1px solid var(--line); background: #0e1311; color: var(--text); font: inherit; padding: 10px 12px; resize: vertical; }
+textarea:focus, .pp-btn:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.pp-done { text-align: center; } .pp-done .pp-big { font-size: 44px; line-height: 1; }
+.pp-err { color: var(--red); font-weight: 600; margin: 8px 0 0; }
+details summary { cursor: pointer; color: var(--muted); }

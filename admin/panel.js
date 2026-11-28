@@ -111,7 +111,7 @@
   /* ---------- İskelet ---------- */
   const NAV = [
     ["", "", "Genel"], ["overview", "◧", "Genel bakış"],
-    ["", "", "Satış"], ["orders", "🧾", "Siparişler"], ["payments", "💳", "Ödemeler"], ["refunds", "↩", "İade talepleri"], ["esims", "📶", "eSIM'ler"], ["discounts", "🏷", "İndirim kodları"],
+    ["", "", "Satış"], ["orders", "🧾", "Siparişler"], ["payments", "💳", "Ödemeler"], ["refunds", "↩", "İade talepleri"], ["esims", "📶", "eSIM'ler"], ["airport", "🛋", "Lounge & Fast Track"], ["discounts", "🏷", "İndirim kodları"],
     ["", "", "Müşteriler"], ["customers", "👥", "Müşteriler"], ["newsletter", "📨", "Bülten"], ["popup", "🎁", "Pop-up & kampanya"], ["support", "✉", "Destek talepleri"], ["questions", "💬", "Lina soruları"],
     ["", "", "Online mağaza"], ["editor", "✎", "Mağaza editörü"], ["guides", "📖", "Rehberler"], ["translations", "🌐", "Diller & çeviri"], ["pricing", "₺", "Fiyatlar & rakipler"],
     ["", "", "Ayarlar"], ["settings", "⚙", "Entegrasyonlar"], ["audit", "📜", "İşlem kaydı"], ["security", "🔒", "Güvenlik"],
@@ -769,7 +769,127 @@
     });
   }
 
-  const VIEWS = { overview, editor, newsletter, popup, guides, translations, discounts, orders, payments, refunds, support, questions, customers, esims, pricing, settings, audit, security };
+
+  /* ---------- Lounge & Fast Track (Partner-Zustellung ohne API) ---------- */
+  const AIR_ST = { new: "Yeni", sent: "Partnere gönderildi", accepted: "Partner kabul etti", delivered: "Teslim edildi", declined: "Partner reddetti", failed: "Kaçırıldı", cancelled: "İptal" };
+  const airCls = (s) => (s === "delivered" ? "ok" : ["new", "sent", "accepted"].includes(s) ? "warn" : "bad");
+  const PROD = { lounge: "Lounge", fasttrack: "Fast Track" };
+  let airLast = null; // Ergebnis des letzten Versands (Link/WhatsApp zum Antippen)
+  async function airport() {
+    loading("Lounge & Fast Track");
+    const d = await api("GET", "?view=airport");
+    const tab = sessionStorage.getItem("pl_air") || "bookings";
+    const flt = sessionStorage.getItem("pl_airf") || "open";
+    const S = d.settings, ch = d.channels;
+    const partnerName = (id) => d.partners.find((p) => p.id === id)?.name || "–";
+    const editO = JSON.parse(sessionStorage.getItem("pl_air_eo") || "null"), editP = JSON.parse(sessionStorage.getItem("pl_air_ep") || "null");
+    const list = d.bookings.filter((b) => flt === "all" || (flt === "open" ? ["new", "sent", "accepted", "declined"].includes(b.status) : b.status === flt));
+    const openN = d.bookings.filter((b) => ["new", "sent", "accepted", "declined"].includes(b.status) && !b.test).length;
+    const late = (b) => b.due_at && ["sent", "accepted"].includes(b.status) && new Date(b.due_at) < Date.now();
+    const files = (b) => (b.files || []).map((f) => `<a class="pl-airfile" href="${esc(f.url)}" target="_blank" rel="noopener" title="${esc(f.name)}">${f.type === "application/pdf" ? "PDF" : `<img src="${esc(f.url)}" alt="">`}</a>${b.status !== "delivered" ? `<button class="pl-btn pl-btn--sm pl-btn--line" data-afrm="${esc(b.id)}" data-path="${esc(f.path)}" title="Kaldır">×</button>` : ""}`).join("");
+    const bookingRow = (b) => `<tr>
+      <td>${esc(date(b.created_at))}${b.test ? ' <span class="pl-badge warn">Test</span>' : ""}<br><span class="pl-note mono">#${esc(String(b.id).slice(0, 8))}</span></td>
+      <td><b>${esc(b.travel_date)}</b> ${esc(b.travel_time || "")}<br><span class="pl-note">${esc(b.flight || "uçuş no yok")}</span></td>
+      <td><b>${esc(PROD[b.product] || b.product)} · ${esc(b.airport)}</b><br><span class="pl-note">${esc(b.title || "")}</span></td>
+      <td>${b.persons} kişi<br><span class="pl-note">${esc((b.names || []).join(", "))}</span>${b.customer_note ? `<br><span class="pl-note">“${esc(b.customer_note)}”</span>` : ""}</td>
+      <td>${esc(b.customer_email || "–")}${b.customer_phone ? `<br><span class="pl-note">${esc(b.customer_phone)}</span>` : ""}${b.order ? `<br>${badge(b.order.status, ORDER_ST)} ${esc(money(b.order.amount, b.order.currency))}` : ""}</td>
+      <td><select data-apartner="${esc(b.id)}" ${b.status === "delivered" ? "disabled" : ""}><option value="">– otomatik –</option>${d.partners.map((p) => `<option value="${esc(p.id)}" ${p.id === b.partner_id ? "selected" : ""}>${esc(p.name)}</option>`).join("")}</select>
+        ${b.cost ? `<br><span class="pl-note">Alış: ${esc(money(b.cost, b.cost_currency))}</span>` : ""}</td>
+      <td><span class="pl-badge ${airCls(b.status)}">${esc(AIR_ST[b.status] || b.status)}</span>${late(b) ? '<br><span class="pl-badge bad">Süre aşıldı</span>' : ""}
+        ${b.due_at && ["sent", "accepted"].includes(b.status) ? `<br><span class="pl-note">Teslim: ${esc(date(b.due_at))}</span>` : ""}${b.reminders ? `<br><span class="pl-note">${b.reminders}× hatırlatıldı</span>` : ""}
+        ${b.partner_note ? `<br><span class="pl-note">Partner: ${esc(b.partner_note)}</span>` : ""}</td>
+      <td><div class="pl-airfiles">${files(b)}</div>
+        <div class="pl-actions" style="flex-wrap:wrap">
+          ${!["delivered", "cancelled"].includes(b.status) ? `<button class="pl-btn pl-btn--sm ${b.status === "new" || b.status === "declined" ? "pl-btn--green" : ""}" data-asend="${esc(b.id)}">${b.status === "new" ? "Partnere gönder" : "Tekrar gönder"}</button>` : ""}
+          ${b.has_link ? `<button class="pl-btn pl-btn--sm pl-btn--line" data-alink="${esc(b.id)}">Link / WhatsApp</button>` : ""}
+          ${b.status !== "delivered" && b.status !== "cancelled" ? `<label class="pl-btn pl-btn--sm pl-btn--line">Voucher yükle<input type="file" hidden accept="image/png,image/jpeg,image/webp,application/pdf" data-aup="${esc(b.id)}"></label>` : ""}
+          ${(b.files || []).length && b.status !== "delivered" ? `<button class="pl-btn pl-btn--sm pl-btn--green" data-adeliver="${esc(b.id)}">Müşteriye teslim et</button>` : ""}
+          <select data-astatus="${esc(b.id)}" title="Durumu elle değiştir"><option value="">Durum…</option>${Object.entries(AIR_ST).filter(([k]) => k !== "delivered" && k !== b.status).map(([k, l]) => `<option value="${k}">${esc(l)}</option>`).join("")}</select>
+        </div>
+        <details class="pl-details"><summary>Geçmiş & not</summary>
+          <ul class="pl-airlog">${(b.log || []).slice().reverse().map((l) => `<li><span class="pl-note">${esc(date(l.at))} · ${esc(l.who)}</span><br>${esc(l.what)}</li>`).join("")}</ul>
+          <textarea data-anote="${esc(b.id)}" rows="2" placeholder="Dahili not" style="width:100%">${esc(b.admin_note || "")}</textarea>
+        </details></td></tr>`;
+
+    const lastBox = airLast ? `<div class="pl-card pl-airlast"><h2>${airLast.channels?.length ? `Gönderildi: ${esc(airLast.channels.join(" + "))}` : "Otomatik kanal yok – linki kendin gönder"}${airLast.partner ? ` <small>${esc(airLast.partner)}</small>` : ""}</h2>
+      <div class="pl-actions" style="flex-wrap:wrap">${airLast.wa ? `<a class="pl-btn pl-btn--green" href="${esc(airLast.wa)}" target="_blank" rel="noopener">WhatsApp'ta aç ve gönder</a>` : ""}
+      <button class="pl-btn pl-btn--line" data-acopy="${esc(airLast.link)}">Partner linkini kopyala</button><a class="pl-btn pl-btn--line" href="${esc(airLast.link)}" target="_blank" rel="noopener">Portalı önizle</a><button class="pl-btn pl-btn--line" data-aclose>Kapat</button></div>
+      <p class="pl-help" style="margin:10px 0 0">Link gizlidir – yalnızca partnere gönder. Partner bu sayfada voucher'ı yükler ve “Tamamlandı”ya dokunur; müşteri hesabında hemen görür.</p></div>` : "";
+
+    const tabs = [["bookings", `Rezervasyonlar${openN ? ` (${openN})` : ""}`], ["offers", "Fiyat listesi"], ["partners", "Partnerler"], ["settings", "Ayarlar"]];
+    const head = `<div class="pl-tools" style="justify-content:space-between;flex-wrap:wrap"><span class="pl-seg" data-airtabs>${tabs.map(([k, l]) => `<button type="button" data-airtab="${k}" class="${k === tab ? "is-active" : ""}">${esc(l)}</button>`).join("")}</span>
+      <span class="pl-note">E-posta: <b>${ch.mail ? "✓ açık" : "✗ kapalı"}</b> · WhatsApp API: <b>${ch.whatsapp ? "✓ açık" : "✗ kapalı (wa.me linki)"}</b> · Sitede rezervasyon: <b>${S.enabled ? "✓ açık" : "✗ kapalı"}</b></span></div>`;
+
+    let body = "";
+    if (tab === "bookings") body = `
+      <p class="pl-help">Akış: müşteri öder → rezervasyon <b>otomatik</b> partnere gider (e-posta / WhatsApp, gizli link) → partner portalda voucher/QR'ı yükler → müşteri hesabında görür ve e-posta alır. Bekçi her 15 dakikada hatırlatır, süre aşılırsa seni uyarır. Partner WhatsApp'tan gönderdiyse: <b>Voucher yükle</b> → <b>Müşteriye teslim et</b>.</p>
+      <div class="pl-tools"><label class="pl-field">Filtre<select data-airf>${[["open", "Açık"], ["delivered", "Teslim edildi"], ["failed", "Kaçırıldı"], ["cancelled", "İptal"], ["all", "Tümü"]].map(([k, l]) => `<option value="${k}" ${k === flt ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+        ${d.offers.length ? `<label class="pl-field">Deneme<select data-atestoffer>${d.offers.filter((o) => o.active).map((o) => `<option value="${esc(o.id)}">${esc(o.airport)} · ${esc(PROD[o.product])} · ${esc(o.title)}</option>`).join("")}</select></label><button class="pl-btn pl-btn--line" data-atest>Test rezervasyonu oluştur</button>` : ""}</div>
+      <div class="pl-card">${table(["Oluşturma", "Uçuş", "Ürün", "Yolcular", "Müşteri / sipariş", "Partner", "Durum", "İşlem"], list.map(bookingRow), "Rezervasyon yok.")}</div>`;
+    if (tab === "offers") body = `
+      <p class="pl-help">Partnerin fiyat listesi (alış fiyatı, kişi başı). Satış fiyatı <b>fiyat kuralından</b> hesaplanır: alış × (1 + %${S.markup_pct}), en az alış + min. marj (Fiyatlar & rakipler), ,99'a yuvarlanır. Alış fiyatı asla sitede görünmez.</p>
+      <div class="pl-card" style="margin-bottom:16px"><h2>${editO ? "Teklifi düzenle" : "Yeni teklif"}</h2>
+        <form class="pl-form" data-aoffer style="grid-template-columns:repeat(4,minmax(0,1fr))">
+          <input type="hidden" name="id" value="${esc(editO?.id || "")}">
+          <label class="pl-field">Ürün<select name="product"><option value="lounge" ${editO?.product !== "fasttrack" ? "selected" : ""}>Lounge</option><option value="fasttrack" ${editO?.product === "fasttrack" ? "selected" : ""}>Fast Track</option></select></label>
+          <label class="pl-field">Havalimanı (IATA)<input name="airport" required maxlength="3" placeholder="IST" style="text-transform:uppercase" value="${esc(editO?.airport || "")}"></label>
+          <label class="pl-field">Havalimanı adı<input name="airport_name" placeholder="İstanbul Havalimanı" value="${esc(editO?.airport_name || "")}"></label>
+          <label class="pl-field">Terminal<input name="terminal" placeholder="Dış hatlar" value="${esc(editO?.terminal || "")}"></label>
+          <label class="pl-field" style="grid-column:span 2">Başlık (müşteri görür)<input name="title" required placeholder="IGA Lounge – 3 saat" value="${esc(editO?.title || "")}"></label>
+          <label class="pl-field" style="grid-column:span 2">Açıklama (müşteri görür)<input name="details" placeholder="Açık büfe, içecekler, Wi-Fi, duş" value="${esc(editO?.details || "")}"></label>
+          <label class="pl-field">Alış fiyatı / kişi<input name="cost" required inputmode="decimal" placeholder="35,00" value="${esc(editO?.cost ?? "")}"></label>
+          <label class="pl-field">Para birimi<select name="cost_currency">${["EUR", "USD", "TRY", "GBP", "CHF"].map((c) => `<option ${c === (editO?.cost_currency || "EUR") ? "selected" : ""}>${c}</option>`).join("")}</select></label>
+          <label class="pl-field">Partner<select name="partner_id"><option value="">– ilk aktif partner –</option>${d.partners.map((p) => `<option value="${esc(p.id)}" ${p.id === editO?.partner_id ? "selected" : ""}>${esc(p.name)}</option>`).join("")}</select></label>
+          <label class="pl-field">En fazla kişi<input name="max_persons" type="number" min="1" max="20" value="${esc(editO?.max_persons ?? 8)}"></label>
+          <label class="pl-field">Min. ön süre (saat)<input name="lead_hours" type="number" min="0" max="720" value="${esc(editO?.lead_hours ?? 24)}"></label>
+          <label class="pl-switch" style="align-self:center"><input type="checkbox" name="active" ${editO?.active === false ? "" : "checked"}> Aktif</label>
+          <div class="pl-actions"><button class="pl-btn pl-btn--green" type="submit">${editO ? "Kaydet" : "Ekle"}</button>${editO ? `<button type="button" class="pl-btn pl-btn--line" data-aoclear>Vazgeç</button>` : ""}</div>
+        </form></div>
+      <div class="pl-card"><h2>Teklifler <small>${d.offers.length}</small></h2>${table(["Havalimanı", "Ürün", "Başlık", "#Alış", "#Satış (EUR)", "#Marj", "Partner", "Ön süre", ""], d.offers.map((o) => {
+        const m = o.price_eur && o.cost_currency === "EUR" ? Math.round((1 - o.cost / o.price_eur) * 100) + " %" : "–";
+        return `<tr><td><b>${esc(o.airport)}</b>${o.airport_name ? `<br><span class="pl-note">${esc(o.airport_name)}${o.terminal ? " · " + esc(o.terminal) : ""}</span>` : ""}</td><td>${esc(PROD[o.product])}</td><td>${esc(o.title)}${o.active ? "" : ' <span class="pl-badge">Kapalı</span>'}</td>
+          <td class="num">${esc(money(o.cost, o.cost_currency))}</td><td class="num">${o.price_eur != null ? esc(money(o.price_eur, "EUR")) : "kur yok"}</td><td class="num">${m}</td><td>${esc(partnerName(o.partner_id))}</td><td>${o.lead_hours} sa</td>
+          <td class="pl-actions"><button class="pl-btn pl-btn--sm" data-aoedit="${esc(o.id)}">Düzenle</button><button class="pl-btn pl-btn--sm pl-btn--red" data-aodel="${esc(o.id)}">Sil</button></td></tr>`; }), "Henüz teklif yok – partnerinin fiyat listesini ekle.")}</div>`;
+    if (tab === "partners") body = `
+      <p class="pl-help">Lounge/Fast Track erişimini satın alan kişi veya firma. Rezervasyonlar e-posta ve/veya WhatsApp ile gelir (dil: partnerin dili). En az e-posta ya da WhatsApp gerekli.</p>
+      <div class="pl-card" style="margin-bottom:16px"><h2>${editP ? "Partneri düzenle" : "Yeni partner"}</h2>
+        <form class="pl-form" data-apartnerf style="grid-template-columns:repeat(4,minmax(0,1fr))">
+          <input type="hidden" name="id" value="${esc(editP?.id || "")}">
+          <label class="pl-field">Ad<input name="name" required placeholder="Ahmet (Lounge)" value="${esc(editP?.name || "")}"></label>
+          <label class="pl-field">E-posta<input name="email" type="email" placeholder="ahmet@ornek.com" value="${esc(editP?.email || "")}"></label>
+          <label class="pl-field">WhatsApp (ülke koduyla)<input name="whatsapp" inputmode="tel" placeholder="90 532 123 45 67" value="${esc(editP?.whatsapp || "")}"></label>
+          <label class="pl-field">Dil<select name="language">${[["tr", "Türkçe"], ["de", "Deutsch"], ["en", "English"]].map(([k, l]) => `<option value="${k}" ${k === (editP?.language || "tr") ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+          <label class="pl-field" style="grid-column:span 3">Not (dahili)<input name="notes" placeholder="ör. ödeme haftalık, gece 00–08 arası ulaşılamaz" value="${esc(editP?.notes || "")}"></label>
+          <label class="pl-switch" style="align-self:center"><input type="checkbox" name="active" ${editP?.active === false ? "" : "checked"}> Aktif</label>
+          <div class="pl-actions"><button class="pl-btn pl-btn--green" type="submit">${editP ? "Kaydet" : "Ekle"}</button>${editP ? `<button type="button" class="pl-btn pl-btn--line" data-apclear>Vazgeç</button>` : ""}</div>
+        </form></div>
+      <div class="pl-card">${table(["Ad", "E-posta", "WhatsApp", "Dil", "Durum", ""], d.partners.map((p) => `<tr><td><b>${esc(p.name)}</b>${p.notes ? `<br><span class="pl-note">${esc(p.notes)}</span>` : ""}</td><td>${esc(p.email || "–")}</td><td>${p.whatsapp ? `<a href="https://wa.me/${esc(p.whatsapp)}" target="_blank" rel="noopener">+${esc(p.whatsapp)}</a>` : "–"}</td><td>${esc(p.language.toUpperCase())}</td><td>${p.active ? '<span class="pl-badge ok">Aktif</span>' : '<span class="pl-badge">Kapalı</span>'}</td>
+        <td class="pl-actions"><button class="pl-btn pl-btn--sm" data-apedit="${esc(p.id)}">Düzenle</button><button class="pl-btn pl-btn--sm pl-btn--red" data-apdel="${esc(p.id)}">Sil</button></td></tr>`), "Henüz partner yok.")}</div>`;
+    if (tab === "settings") body = `
+      <div class="pl-two"><div class="pl-card"><h2>Kurallar</h2>
+        <form class="pl-form" data-aset style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <label class="pl-switch" style="grid-column:span 2"><input type="checkbox" name="enabled" ${S.enabled ? "checked" : ""}> Sitede Lounge/Fast Track rezervasyonu aç</label>
+          <label class="pl-field">Kâr payı (%)<input name="markup_pct" type="number" min="0" max="500" step="1" value="${S.markup_pct}"></label>
+          <label class="pl-field">Partner teslim süresi (saat)<input name="sla_hours" type="number" min="1" max="168" step="0.5" value="${S.sla_hours}"></label>
+          <label class="pl-field">Hatırlatma sonrası (saat)<input name="reminder_hours" type="number" min="0.5" max="48" step="0.5" value="${S.reminder_hours}"></label>
+          <label class="pl-field">En fazla hatırlatma<input name="max_reminders" type="number" min="0" max="5" value="${S.max_reminders}"></label>
+          <label class="pl-field">Kalkıştan kaç saat önce “kaçırıldı”<input name="cutoff_hours" type="number" min="0" max="48" step="0.5" value="${S.cutoff_hours}"></label>
+          <span></span>
+          <label class="pl-switch" style="grid-column:span 2"><input type="checkbox" name="auto_send" ${S.auto_send ? "checked" : ""}> Ödenen rezervasyonu otomatik partnere gönder</label>
+          <label class="pl-switch" style="grid-column:span 2"><input type="checkbox" name="send_test" ${S.send_test ? "checked" : ""}> Test siparişlerini de partnere gönder</label>
+          <label class="pl-switch" style="grid-column:span 2"><input type="checkbox" name="notify_admin" ${S.notify_admin ? "checked" : ""}> Sorunlarda beni e-postayla uyar (ADMIN_MAIL)</label>
+          <button class="pl-btn pl-btn--green" type="submit">Kaydet</button>
+        </form></div>
+        <div class="pl-card"><h2>Kanallar</h2><div class="pl-check">
+          <div><span>E-posta (Resend)<small>Supabase secrets: RESEND_API_KEY, MAIL_FROM (doğrulanmış alan adı). Partnere, müşteriye ve sana e-posta.</small></span><span class="pl-badge ${ch.mail ? "ok" : "warn"}">${ch.mail ? "Tamam" : "Eksik"}</span></div>
+          <div><span>WhatsApp Business API (Meta)<small>WHATSAPP_TOKEN, WHATSAPP_PHONE_ID, WHATSAPP_TEMPLATE (2 değişkenli onaylı şablon: {{1}} özet, {{2}} link), isteğe bağlı WHATSAPP_TEMPLATE_LANG. Yoksa panelde “WhatsApp'ta aç” linki.</small></span><span class="pl-badge ${ch.whatsapp ? "ok" : "warn"}">${ch.whatsapp ? "Tamam" : "Eksik"}</span></div>
+          <div><span>Bekçi (her 15 dk)<small>GitHub Actions “Lounge-Wächter”: hatırlatır, süre aşımında uyarır, kalkışa çok az kala “kaçırıldı” yapar.</small></span><span class="pl-badge ok">Açık</span></div>
+        </div></div></div>`;
+
+    shell("Lounge & Fast Track", `${head}${lastBox}${body}`, "Partner üzerinden teslimat");
+  }
+
+  const VIEWS = { airport, overview, editor, newsletter, popup, guides, translations, discounts, orders, payments, refunds, support, questions, customers, esims, pricing, settings, audit, security };
   let lastCsv = null;
   async function show() {
     view = VIEWS[location.hash.slice(1)] ? location.hash.slice(1) : "overview";
@@ -833,9 +953,49 @@
     const dt = e.target.closest("[data-dtoggle]");
     if (dt) { dt.disabled = true; await api("POST", "", { action: "discount_toggle", id: dt.dataset.dtoggle, active: dt.dataset.active === "1" }).then(() => toast("Kaydedildi."), () => toast("Kaydedilemedi.")); return show(); }
     const dd = e.target.closest("[data-ddel]");
-    if (dd) { if (!sure(dd, "Sil?")) return; dd.disabled = true; await api("POST", "", { action: "discount_delete", id: dd.dataset.ddel }).then(() => toast("Silindi."), () => toast("Silinemedi.")); return show(); }
+    if (dd) { if (!sure(dd, "Sil?")) return; dd.disabled = true; await api("POST", "", { action: "discount_delete", id: dd.dataset.ddel }).then(() => toast("Silindi."), () => toast("Silinemedi.")); return show(); }    /* Lounge & Fast Track */
+    const at = e.target.closest("[data-airtab]");
+    if (at) { sessionStorage.setItem("pl_air", at.dataset.airtab); return airport(); }
+    if (e.target.closest("[data-aclose]")) { airLast = null; return airport(); }
+    const ac = e.target.closest("[data-acopy]");
+    if (ac) { try { await navigator.clipboard.writeText(ac.dataset.acopy); toast("Link kopyalandı."); } catch (_) { prompt("Linki kopyala:", ac.dataset.acopy); } return; }
+    const as = e.target.closest("[data-asend]");
+    if (as) { as.disabled = true; await api("POST", "", { action: "airport_send", id: as.dataset.asend }).then((r) => { airLast = r; toast(r.channels.length ? `Gönderildi (${r.channels.join(" + ")}).` : "Link hazır – WhatsApp ile gönder."); }, (err) => toast(err.message === "no_partner" ? "Önce bir partner ekle (Partnerler)." : "Gönderilemedi: " + err.message)); return airport(); }
+    const al = e.target.closest("[data-alink]");
+    if (al) { al.disabled = true; await api("POST", "", { action: "airport_link", id: al.dataset.alink }).then((r) => { airLast = { ...r, channels: [], partner: "" }; }, () => toast("Link yok.")); return airport(); }
+    const adl = e.target.closest("[data-adeliver]");
+    if (adl) { if (!sure(adl, "Müşteriye gönderilsin mi?")) return; adl.disabled = true; await api("POST", "", { action: "airport_deliver", id: adl.dataset.adeliver }).then((r) => toast(r.mailed ? "Teslim edildi – müşteriye e-posta gitti." : "Teslim edildi – müşteri hesabında görür."), (err) => toast(err.message === "no_file" ? "Önce voucher yükle." : "Olmadı: " + err.message)); return airport(); }
+    const arm = e.target.closest("[data-afrm]");
+    if (arm) { if (!sure(arm, "Sil?")) return; await api("POST", "", { action: "airport_file_remove", id: arm.dataset.afrm, path: arm.dataset.path }).then(() => toast("Kaldırıldı."), () => toast("Olmadı.")); return airport(); }
+    if (e.target.closest("[data-atest]")) { const o = $("[data-atestoffer]")?.value; if (!o) return; await api("POST", "", { action: "airport_test", offer_id: o }).then(() => toast("Test rezervasyonu oluşturuldu – “Partnere gönder” ile dene."), (err) => toast("Olmadı: " + err.message)); return airport(); }
+    const aoe = e.target.closest("[data-aoedit]");
+    if (aoe) { const d = await api("GET", "?view=airport"); sessionStorage.setItem("pl_air_eo", JSON.stringify(d.offers.find((o) => o.id === aoe.dataset.aoedit) || null)); return airport(); }
+    if (e.target.closest("[data-aoclear]")) { sessionStorage.removeItem("pl_air_eo"); return airport(); }
+    const aod = e.target.closest("[data-aodel]");
+    if (aod) { if (!sure(aod, "Sil?")) return; await api("POST", "", { action: "airport_offer_delete", id: aod.dataset.aodel }).then(() => toast("Silindi."), () => toast("Silinemedi.")); return airport(); }
+    const ape = e.target.closest("[data-apedit]");
+    if (ape) { const d = await api("GET", "?view=airport"); sessionStorage.setItem("pl_air_ep", JSON.stringify(d.partners.find((p) => p.id === ape.dataset.apedit) || null)); return airport(); }
+    if (e.target.closest("[data-apclear]")) { sessionStorage.removeItem("pl_air_ep"); return airport(); }
+    const apd = e.target.closest("[data-apdel]");
+    if (apd) { if (!sure(apd, "Sil?")) return; await api("POST", "", { action: "airport_partner_delete", id: apd.dataset.apdel }).then(() => toast("Silindi."), () => toast("Silinemedi.")); return airport(); }
   });
   app.addEventListener("change", async (e) => {
+    if (e.target.matches("[data-airf]")) { sessionStorage.setItem("pl_airf", e.target.value); return airport(); }
+    const ast = e.target.closest("[data-astatus]");
+    if (ast && ast.value) { await api("POST", "", { action: "airport_status", id: ast.dataset.astatus, status: ast.value }).then(() => toast("Durum kaydedildi."), () => toast("Kaydedilemedi.")); return airport(); }
+    const apr = e.target.closest("[data-apartner]");
+    if (apr) { await api("POST", "", { action: "airport_partner", id: apr.dataset.apartner, partner_id: apr.value }).then(() => toast("Partner kaydedildi."), () => toast("Kaydedilemedi.")); return; }
+    const anote = e.target.closest("[data-anote]");
+    if (anote) { await api("POST", "", { action: "airport_note", id: anote.dataset.anote, note: anote.value }).then(() => toast("Not kaydedildi."), () => toast("Kaydedilemedi.")); return; }
+    const aup = e.target.closest("[data-aup]");
+    if (aup && aup.files[0]) {
+      const f = aup.files[0];
+      if (f.size > 8 * 1024 * 1024) return toast("Dosya çok büyük (en fazla 8 MB).");
+      const data = await new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(f); });
+      toast("Yükleniyor …");
+      await api("POST", "", { action: "airport_upload", id: aup.dataset.aup, name: f.name, type: f.type, data }).then(() => toast("Yüklendi – şimdi “Müşteriye teslim et”."), (err) => toast(err.message === "type" ? "Yalnızca PNG, JPG, WEBP veya PDF." : "Yüklenemedi: " + err.message));
+      return airport();
+    }
     const o = e.target.closest("[data-order]");
     if (o) { await api("POST", "", { action: "order_status", id: o.dataset.order, status: o.value }).then(() => toast("Durum kaydedildi."), () => toast("Kaydedilemedi.")); return; }
     const es = e.target.closest("[data-esim]");
@@ -854,6 +1014,19 @@
   });
   app.addEventListener("submit", async (e) => {
     const f = e.target;
+    if (f.matches("[data-aoffer], [data-apartnerf], [data-aset]")) {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(f));
+      d.active = f.active ? f.active.checked : undefined;
+      const btn = $("button[type=submit]", f); if (btn) btn.disabled = true;
+      try {
+        if (f.matches("[data-aoffer]")) { await api("POST", "", { action: "airport_offer_save", ...d }); sessionStorage.removeItem("pl_air_eo"); toast("Teklif kaydedildi."); }
+        if (f.matches("[data-apartnerf]")) { await api("POST", "", { action: "airport_partner_save", ...d }); sessionStorage.removeItem("pl_air_ep"); toast("Partner kaydedildi."); }
+        if (f.matches("[data-aset]")) { const settings = { ...d }; ["enabled", "auto_send", "send_test", "notify_admin"].forEach((k) => (settings[k] = !!f[k].checked)); await api("POST", "", { action: "airport_settings", settings }); toast("Ayarlar kaydedildi."); }
+        return airport();
+      } catch (err) { toast(err.message === "invalid" ? "Girdileri kontrol et (e-posta veya WhatsApp gerekli; IATA 3 harf)." : "Kaydedilemedi: " + err.message); if (btn) btn.disabled = false; }
+      return;
+    }
     if (f.matches("[data-nladd], [data-newpost], [data-disc]")) {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(f));

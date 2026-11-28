@@ -5,6 +5,7 @@
      GET                       → Profil, gebuchte eSIMs (mit aktuellem Verbrauch), Bestellungen
      POST {action:"profile"}   → Name, Sprache, Währung, Newsletter ändern
      POST {action:"order"}     → Bestellung anlegen; Preis kommt NUR aus der Preis-Schnittstelle
+                                 Lounge/Fast Track: item "airport:<Angebots-ID>" + booking {date, time, flight, persons, names[], phone, note}
      POST {action:"coupon_check", code, item, planId, currency} → Rabattcode für den Warenkorb prüfen (ohne Anmeldung, zählt nicht)
      POST {action:"delete"}    → Konto und alle Daten löschen (DSGVO / KVKK)
    Zahlung: Solange kein Zahlungsanbieter angebunden ist (PAYMENT_PROVIDER leer),
@@ -13,6 +14,7 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { cors, env, json } from "../_shared/http.ts";
 import { fulfillOrder, refresh } from "../_shared/esim-provider.ts";
+import { dispatchForOrder, logItem, offerList, signedFiles } from "../_shared/airport.ts";
 
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
 const LANGS = ["tr", "en", "de", "ar", "ru", "fr", "es", "it", "pt", "nl", "pl", "ja", "ko"];
@@ -104,6 +106,9 @@ Deno.serve(async (req) => {
         db.from("refund_requests").select("order_id, status, created_at, decided_at").eq("user_id", user.id),
         db.from("support_requests").select("id, subject, status, created_at").eq("user_id", user.id).order("created_at", { ascending: false }).limit(20),
       ]);
+      // Lounge & Fast Track: Buchungen; Voucher-Links erst nach der Zustellung (7 Tage gültig, bei jedem Aufruf neu)
+      const { data: bks } = await db.from("airport_bookings").select("id, order_id, product, airport, title, travel_date, travel_time, flight, persons, status, files, test, created_at").eq("user_id", user.id).order("created_at", { ascending: false }).limit(30);
+      const bookings = await Promise.all((bks ?? []).map(async (x) => ({ ...x, files: x.status === "delivered" ? await signedFiles(db, x.files) : [] })));
       // Verbrauch beim Anbieter auffrischen (höchstens alle 10 Minuten je eSIM; Profile in Arbeit alle 20 Sekunden)
       const fresh = await Promise.all((esims ?? []).map(async (e) => {
         const wait = e.status === "processing" ? 20 * 1000 : 10 * 60 * 1000;
@@ -117,7 +122,7 @@ Deno.serve(async (req) => {
       }));
       return json({
         user: { email: user.email, providers: user.app_metadata?.providers ?? [], created_at: user.created_at },
-        profile, esims: fresh.map(view), orders, refunds: refunds ?? [], tickets: tickets ?? [],
+        profile, esims: fresh.map(view), orders, refunds: refunds ?? [], tickets: tickets ?? [], bookings,
         refundDays: refundDays(),
       }, 200, headers);
     }
@@ -134,6 +139,58 @@ Deno.serve(async (req) => {
       const { error } = await db.from("profiles").update(patch).eq("id", user.id);
       if (error) throw error;
       return json({ ok: true }, 200, headers);
+    }
+
+    if (body.action === "order" && String(body.item ?? "").startsWith("airport:")) {
+      // Lounge / Fast Track über Partner: Preis aus der Partner-Preisliste + Preisregel (nie aus dem Browser)
+      const since = new Date(Date.now() - 3600 * 1000).toISOString();
+      const { count } = await db.from("orders").select("id", { count: "exact", head: true }).eq("user_id", user.id).gte("created_at", since);
+      if ((count ?? 0) >= 10) return json({ error: "rate_limited" }, 429, headers);
+      const testMode = env("ALLOW_TEST_ORDERS") === "true";
+      const offerId = String(body.item).slice(8, 50);
+      const currency = CURS.includes(body.currency) ? body.currency : "EUR";
+      const { offers, settings } = await offerList(db, currency, { ids: [offerId], withCost: true });
+      const offer = offers[0];
+      if (!offer) return json({ error: "plan_not_found" }, 400, headers);
+      if (!settings.enabled && !testMode) return json({ error: "unavailable" }, 409, headers);
+      const bk = body.booking ?? {};
+      const date = String(bk.date ?? "");
+      const time = /^([01]\d|2[0-3]):[0-5]\d$/.test(String(bk.time ?? "")) ? String(bk.time) : null;
+      const persons = Math.round(Number(bk.persons));
+      const names = (Array.isArray(bk.names) ? bk.names : []).map((x: unknown) => String(x ?? "").trim().replace(/\s+/g, " ").slice(0, 80)).filter((x: string) => x.length >= 3);
+      const flight = String(bk.flight ?? "").toUpperCase().replace(/\s+/g, "").slice(0, 12);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !time) return json({ error: "invalid_date" }, 400, headers);
+      // Mindestvorlauf: Abflug (Näherung TR-Zeit) minus Vorlauf des Angebots
+      const dep = new Date(`${date}T${time}:00+03:00`).getTime();
+      if (!Number.isFinite(dep) || dep - Date.now() < offer.lead_hours * 3600e3) return json({ error: "too_soon", lead_hours: offer.lead_hours }, 400, headers);
+      if (dep - Date.now() > 365 * 864e5) return json({ error: "invalid_date" }, 400, headers);
+      if (!(persons >= 1 && persons <= offer.max_persons) || names.length !== persons) return json({ error: "invalid_persons" }, 400, headers);
+      if (flight && !/^[A-Z0-9]{2,3}\d{1,5}[A-Z]?$/.test(flight)) return json({ error: "invalid_flight" }, 400, headers);
+      const price = Math.round(offer.price * persons * 100) / 100;
+      const disc = await applyCoupon(String(body.coupon ?? ""), price, offer.currency);
+      const amount = Math.max(0, Math.round((price - disc.discount) * 100) / 100);
+      const { data: order, error } = await db.from("orders").insert({
+        user_id: user.id, customer_email: user.email, product: offer.product, item_key: `airport:${offer.airport}`, plan_id: offer.id,
+        title: `${offer.title} · ${persons}×`, amount, currency: offer.currency, plan_meta: { airport: offer.airport, persons, date },
+        coupon: disc.code, discount: disc.discount, ...(testMode && !env("PAYMENT_PROVIDER") ? { status: "paid", test: true } : {}),
+      }).select().single();
+      if (error) throw error;
+      const { data: booking, error: bErr } = await db.from("airport_bookings").insert({
+        order_id: order.id, user_id: user.id, offer_id: offer.id, partner_id: offer.partner_id ?? null, product: offer.product, airport: offer.airport, title: offer.title,
+        travel_date: date, travel_time: time, flight: flight || null, persons, names, customer_email: user.email,
+        customer_phone: String(bk.phone ?? "").replace(/[^\d+ ]/g, "").slice(0, 30) || null, customer_note: String(bk.note ?? "").trim().slice(0, 1000) || null,
+        cost: Math.round(Number(offer.cost) * persons * 100) / 100, cost_currency: offer.cost_currency, test: order.test,
+        log: [logItem("kunde", "Buchung angelegt")],
+      }).select("id, status").single();
+      if (bErr) throw bErr;
+      if (env("PAYMENT_PROVIDER")) {
+        // TODO Zahlung: Zahlungssitzung erzeugen; nach erfolgreicher Zahlung (Webhook) status "paid" → dispatchForOrder()
+        return json({ order, booking, coupon: disc.state, payment: { status: "not_implemented" } }, 501, headers);
+      }
+      if (!testMode) return json({ order, booking, coupon: disc.state, payment: { status: "provider_missing" } }, 409, headers);
+      // Testmodus: als bezahlt behandeln → an den Partner nur, wenn im Panel „Testbestellungen senden“ an ist
+      const sent = await dispatchForOrder(db, order.id, "kunde (test)");
+      return json({ order, booking: { ...booking, status: sent ? "sent" : booking.status }, coupon: disc.state }, 200, headers);
     }
 
     if (body.action === "order") {
@@ -178,6 +235,8 @@ Deno.serve(async (req) => {
       if (Date.now() - new Date(order.created_at).getTime() > refundDays() * 864e5) return json({ error: "too_late" }, 409, headers);
       const { data: es } = await db.from("esims").select("status, activated_at").eq("order_id", order.id);
       if ((es ?? []).some((e) => !["processing", "ready", "cancelled"].includes(e.status) || e.activated_at)) return json({ error: "esim_used" }, 409, headers);
+      const { data: vb } = await db.from("airport_bookings").select("status").eq("order_id", order.id).maybeSingle();
+      if (vb?.status === "delivered") return json({ error: "voucher_delivered" }, 409, headers);
       const { error } = await db.from("refund_requests").insert({ order_id: order.id, user_id: user.id, customer_email: user.email, reason: String(body.reason ?? "").trim().slice(0, 1000) || null });
       if (error) return json({ error: error.code === "23505" ? "already_requested" : "server" }, error.code === "23505" ? 409 : 500, headers);
       return json({ ok: true }, 200, headers);

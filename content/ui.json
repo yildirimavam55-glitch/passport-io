@@ -225,7 +225,19 @@
     "hbTeam": "Ekibimizle iletişime geç",
     "bestValue": "Fiyat-performans",
     "perGb": "{p}/GB",
-    "findPackage": "Paketini bul"
+    "findPackage": "Paketini bul",
+    "apNone": "{ap} için şu an Lounge veya Fast Track teklifi yok. Başka bir havalimanı dene ya da bize yaz.",
+    "apLead": "En geç kalkıştan {h} saat önce rezervasyon yap · voucher/QR kod hesabına gelir",
+    "apPerPerson": "kişi başı",
+    "apTotal": "{n} kişi: {price}",
+    "apBook": "Rezervasyon yap",
+    "apTime": "Kalkış saati",
+    "apFlight": "Uçuş numarası",
+    "apName": "{n}. yolcu (pasaporttaki ad soyad)",
+    "apPhone": "Telefon (isteğe bağlı)",
+    "apNote": "Not (isteğe bağlı)",
+    "apHint": "Devam edince giriş yaparsın; fiyat ve uygunluk sunucuda kontrol edilir. Voucher genellikle birkaç saat içinde hesabına gelir.",
+    "apContinue": "Devam et"
   },
   "en": {
     "metaTitle": "passport.io – eSIM, lounge and Fast Track for your trip",
@@ -453,7 +465,19 @@
     "hbTeam": "Contact our team",
     "bestValue": "Best value",
     "perGb": "{p}/GB",
-    "findPackage": "Find your plan"
+    "findPackage": "Find your plan",
+    "apNone": "No lounge or fast track offer for {ap} right now. Try another airport or write to us.",
+    "apLead": "Book at least {h} hours before departure · voucher/QR code arrives in your account",
+    "apPerPerson": "per person",
+    "apTotal": "{n} persons: {price}",
+    "apBook": "Book now",
+    "apTime": "Departure time",
+    "apFlight": "Flight number",
+    "apName": "Passenger {n} (name as in passport)",
+    "apPhone": "Phone (optional)",
+    "apNote": "Note (optional)",
+    "apHint": "Next you sign in; price and availability are checked on our server. The voucher usually reaches your account within a few hours.",
+    "apContinue": "Continue"
   },
   "de": {
     "metaTitle": "passport.io – eSIM, Lounge & Fast Track für deine Reise",
@@ -681,7 +705,19 @@
     "hbTeam": "Unser Team kontaktieren",
     "bestValue": "Preis-Leistung",
     "perGb": "{p}/GB",
-    "findPackage": "Finde dein Paket"
+    "findPackage": "Finde dein Paket",
+    "apNone": "Für {ap} gibt es gerade kein Lounge- oder Fast-Track-Angebot. Versuch einen anderen Flughafen oder schreib uns.",
+    "apLead": "Spätestens {h} Stunden vor Abflug buchen · Voucher/QR-Code kommt in dein Konto",
+    "apPerPerson": "pro Person",
+    "apTotal": "{n} Personen: {price}",
+    "apBook": "Jetzt buchen",
+    "apTime": "Abflugzeit",
+    "apFlight": "Flugnummer",
+    "apName": "Reisende/r {n} (Name wie im Pass)",
+    "apPhone": "Telefon (optional)",
+    "apNote": "Hinweis (optional)",
+    "apHint": "Danach meldest du dich an; Preis und Verfügbarkeit prüft unser Server. Der Voucher ist meist innerhalb weniger Stunden in deinem Konto.",
+    "apContinue": "Weiter"
   },
   "ar": {
     "metaTitle": "passport.io – شريحة eSIM وصالات المطار والمسار السريع لرحلتك",

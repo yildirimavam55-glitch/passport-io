@@ -705,11 +705,101 @@
         const card = e.target.closest?.(".airport__card");
         if (card && e.target === card && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openCard(card); }
       });
-      $("[data-airport-search]", el).addEventListener("submit", (e) => {
+      // Angebote der Partner (Lounge/Fast Track ohne Anbieter-API) – Preise kommen nur vom Server (Preisregel)
+      let OFFERS = null;
+      const loadOffers = async () => {
+        if (OFFERS) return OFFERS;
+        if (!SITE.api?.pricesUrl) return (OFFERS = { enabled: false, offers: [] });
+        try {
+          const u = new URL(SITE.api.pricesUrl, location.href);
+          u.searchParams.set("airport", "1"); u.searchParams.set("currency", CUR);
+          const r = await fetch(u, { cache: "no-cache" });
+          OFFERS = r.ok ? await r.json() : { enabled: false, offers: [] };
+        } catch (_) { OFFERS = { enabled: false, offers: [] }; }
+        return OFFERS;
+      };
+      const norm = (s) => String(s || "").toLocaleLowerCase(LOCALE).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ı/g, "i");
+      const results = document.createElement("div");
+      results.className = "ap-results"; results.setAttribute("aria-live", "polite");
+      $("[data-airport-search]", el).after(results);
+      const fmt = (n, c) => { try { return new Intl.NumberFormat(LOCALE, { style: "currency", currency: c, currencyDisplay: "narrowSymbol" }).format(n); } catch (_) { return `${n} ${c}`; } };
+      let last = null;
+      const renderOffers = (list, q) => {
+        if (!list.length) { results.innerHTML = `<p class="ap-empty">${esc(t("apNone", { ap: q.ap }))}</p>`; return; }
+        results.innerHTML = list.map((o) => `
+          <article class="ap-offer" data-offer="${esc(o.id)}">
+            <div class="ap-offer__main">
+              <p class="ap-offer__kind">${esc(t(o.product === "fasttrack" ? "catFasttrack" : "catLounge"))} · ${esc(o.airport)}${o.airport_name ? " · " + esc(o.airport_name) : ""}${o.terminal ? " · " + esc(o.terminal) : ""}</p>
+              <h3>${esc(o.title)}</h3>
+              ${o.details ? `<p class="ap-offer__details">${esc(o.details)}</p>` : ""}
+              <p class="ap-offer__note">${esc(t("apLead", { h: o.lead_hours }))}</p>
+            </div>
+            <div class="ap-offer__buy">
+              <p class="ap-offer__price"><b>${esc(fmt(o.price, o.currency))}</b> <span>${esc(t("apPerPerson"))}</span></p>
+              ${q.pax > 1 ? `<p class="ap-offer__total">${esc(t("apTotal", { n: Math.min(q.pax, o.max_persons), price: fmt(Math.round(o.price * Math.min(q.pax, o.max_persons) * 100) / 100, o.currency) }))}</p>` : ""}
+              <button type="button" class="btn btn--green btn--sm" data-book="${esc(o.id)}">${esc(t("apBook"))}</button>
+            </div>
+          </article>`).join("");
+      };
+      const bookForm = (o, q) => {
+        const pax = Math.min(q.pax, o.max_persons);
+        return `<form class="ap-book" data-book-form="${esc(o.id)}">
+          <div class="ap-book__row">
+            <label>${esc(t("departDate"))}<input name="date" type="date" required value="${esc(q.date)}"></label>
+            <label>${esc(t("apTime"))}<input name="time" type="time" required></label>
+            <label>${esc(t("apFlight"))}<input name="flight" placeholder="TK1234" maxlength="9" autocapitalize="characters"></label>
+            <label>${esc(t("persons"))}<select name="persons">${Array.from({ length: o.max_persons }, (_, i) => `<option ${i + 1 === pax ? "selected" : ""}>${i + 1}</option>`).join("")}</select></label>
+          </div>
+          <div class="ap-book__names">${Array.from({ length: pax }, (_, i) => `<label>${esc(t("apName", { n: i + 1 }))}<input name="name" required minlength="3" maxlength="80" autocomplete="${i ? "off" : "name"}"></label>`).join("")}</div>
+          <div class="ap-book__row">
+            <label>${esc(t("apPhone"))}<input name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+            <label class="ap-book__wide">${esc(t("apNote"))}<input name="note" maxlength="300"></label>
+          </div>
+          <p class="ap-book__hint">${esc(t("apHint"))}</p>
+          <button class="btn btn--green" type="submit">${esc(t("apContinue"))} ${icon("arrow")}</button>
+        </form>`;
+      };
+      results.addEventListener("click", (e) => {
+        const b = e.target.closest("[data-book]");
+        if (!b || !last) return;
+        const o = last.list.find((x) => x.id === b.dataset.book);
+        const card = b.closest(".ap-offer");
+        $$(".ap-book", results).forEach((f) => f.remove());
+        card.insertAdjacentHTML("afterend", bookForm(o, last.q));
+        $(".ap-book input[name=time]", results)?.focus();
+      });
+      results.addEventListener("change", (e) => {
+        // Anzahl der Namensfelder an die Personenzahl anpassen
+        if (!e.target.matches(".ap-book select[name=persons]")) return;
+        const box = $(".ap-book__names", results), n = Number(e.target.value), have = $$("input", box);
+        const vals = have.map((i) => i.value);
+        box.innerHTML = Array.from({ length: n }, (_, i) => `<label>${esc(t("apName", { n: i + 1 }))}<input name="name" required minlength="3" maxlength="80" value="${esc(vals[i] || "")}"></label>`).join("");
+      });
+      results.addEventListener("submit", (e) => {
+        const f = e.target.closest("[data-book-form]");
+        if (!f) return;
+        e.preventDefault();
+        const fd = new FormData(f);
+        const booking = { date: fd.get("date"), time: fd.get("time"), flight: String(fd.get("flight") || "").toUpperCase().replace(/\s+/g, ""), persons: Number(fd.get("persons")), names: fd.getAll("name").map((x) => String(x).trim()), phone: fd.get("phone"), note: fd.get("note") };
+        // Bestellt wird erst nach der Anmeldung im Konto (Preis prüft der Server)
+        try { sessionStorage.setItem("pp_buy", JSON.stringify({ airport: { offer: f.dataset.bookForm, booking } })); } catch (_) {}
+        location.href = "account.html";
+      });
+      $("[data-airport-search]", el).addEventListener("submit", async (e) => {
         e.preventDefault();
         const ap = $("#ap-from", el).value.trim();
         if (!ap) { $("#ap-from", el).focus(); toast(t("chooseAirport")); return; }
-        toast(t("airportSearching", { ap }));
+        const d = await loadOffers();
+        if (!d.enabled || !d.offers?.length) { toast(t("airportSearching", { ap })); return; }
+        const prods = $$(".airport-search__toggle input:checked", el).map((i) => i.value);
+        const q = { ap, date: $("#ap-date", el).value, pax: parseInt($("#ap-pax", el).value, 10) || 1 };
+        // Treffer über IATA-Code oder Namen (z. B. „IST“, „İstanbul“, „Istanbul Airport (IST)“)
+        const code = (ap.match(/\b([A-Za-z]{3})\b\)?\s*$/) || [])[1]?.toUpperCase();
+        const words = norm(ap).replace(/\(.*?\)/g, " ").split(/[^a-z0-9]+/).filter((w) => w.length > 2 && !/^(airport|havalimani|havaalani|flughafen|international|uluslararasi|terminal)$/.test(w));
+        const list = d.offers.filter((o) => (!prods.length || prods.includes(o.product)) && (o.airport === code || o.airport === ap.toUpperCase() || (words.length && words.some((w) => norm(o.airport_name).includes(w) || norm(o.airport) === w))));
+        last = { list, q };
+        renderOffers(list, q);
+        results.scrollIntoView({ behavior: "smooth", block: "nearest" });
       });
     },
   };

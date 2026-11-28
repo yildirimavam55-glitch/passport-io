@@ -3,7 +3,7 @@
    --------------------------------------------------------------------------
    Zugriff nur für angemeldete Personen mit bestätigter E-Mail, die im Secret
    ADMIN_EMAILS stehen (kommagetrennt, z. B. "ali@firma.com,ayse@firma.com").
-     GET  ?view=overview | orders | customers | esims | pricing
+     GET  ?view=overview | orders | customers | esims | pricing | airport
      POST {action: "order_status" | "esim_status" | "pricing_settings" |
                    "competitor_save" | "competitor_delete" | "competitor_import"}
    ========================================================================== */
@@ -14,6 +14,9 @@ import { applyPricing, DEFAULTS, loadAllRows, loadCompetitors, loadSettings } fr
 import MOCK from "../_shared/mock.json" with { type: "json" };
 import { accessOn, cancel, fulfillOrder, goOn, providerConfigured } from "../_shared/esim-provider.ts";
 import { cleanPopup, loadPopup, publicPopup } from "../_shared/popup.ts";
+import { AIRPORT_DEFAULTS, cleanAirportSettings, deliver, dispatch, dispatchForOrder, loadAirportSettings, logItem, offerList, partnerMessage, portalLink, removeFile, signedFiles, storeFile } from "../_shared/airport.ts";
+import { mailOn } from "../_shared/mail.ts";
+import { whatsappOn, waLink, waNumber } from "../_shared/whatsapp.ts";
 
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"));
 const admins = () => (env("ADMIN_EMAILS") || env("ADMIN_MAIL")).split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
@@ -214,6 +217,28 @@ Deno.serve(async (req) => {
         ]);
         return json({ settings, defaults: DEFAULTS, competitors: comps ?? [], preview }, 200, headers);
       }
+      if (view === "airport") {
+        // Lounge & Fast Track: Buchungen, Partner, Preisliste (mit Einkauf – nur fürs Panel), Einstellungen
+        const [{ data: bookings }, { data: partners }, list, { data: orders }] = await Promise.all([
+          db.from("airport_bookings").select("*").order("created_at", { ascending: false }).limit(300),
+          db.from("airport_partners").select("*").order("created_at"),
+          offerList(db, "EUR", { withCost: true }),
+          db.from("orders").select("id, status, amount, currency").in("product", ["lounge", "fasttrack"]).order("created_at", { ascending: false }).limit(500),
+        ]);
+        const { data: allOffers } = await db.from("airport_offers").select("*").order("airport").order("product");
+        const priced = Object.fromEntries(list.offers.map((o: any) => [o.id, o.price_eur]));
+        const ord = Object.fromEntries((orders ?? []).map((o: any) => [o.id, o]));
+        const pname = Object.fromEntries((partners ?? []).map((p: any) => [p.id, p.name]));
+        const rows = await Promise.all((bookings ?? []).map(async (x: any) => ({
+          ...x, token: undefined, has_link: !!x.token, partner_name: pname[x.partner_id] ?? null, order: ord[x.order_id] ?? null,
+          files: (await signedFiles(db, x.files, 3600)).map((f: any, i: number) => ({ ...f, path: x.files[i].path })),
+        })));
+        return json({
+          bookings: rows, partners: partners ?? [], offers: (allOffers ?? []).map((o: any) => ({ ...o, price_eur: priced[o.id] ?? null })),
+          settings: await loadAirportSettings(db), defaults: AIRPORT_DEFAULTS,
+          channels: { mail: mailOn(), whatsapp: whatsappOn(), admin: (env("ADMIN_EMAILS") || env("ADMIN_MAIL")) ? true : false },
+        }, 200, headers);
+      }
       return json({ error: "unknown_view" }, 400, headers);
     }
 
@@ -221,11 +246,128 @@ Deno.serve(async (req) => {
     const b = await req.json().catch(() => ({}));
     const now = new Date().toISOString();
 
+    /* ---------- Lounge & Fast Track ---------- */
+    if (String(b.action || "").startsWith("airport_")) {
+      const id = txt(b.id, 60);
+      const who = `admin:${user.email}`;
+      const fail = (e: string, st = 400) => json({ error: e }, st, headers);
+      const addLog = async (what: string, patch: Record<string, unknown> = {}) => {
+        const { data } = await db.from("airport_bookings").select("log").eq("id", id).single();
+        await db.from("airport_bookings").update({ ...patch, log: [...(data?.log ?? []), logItem(who, what)].slice(-100), updated_at: now }).eq("id", id);
+      };
+      if (b.action === "airport_settings") {
+        const value = cleanAirportSettings(b.settings ?? {});
+        await db.from("site_settings").upsert({ key: "airport", value, updated_at: now });
+        await audit("airport_settings", "airport", value);
+        return json({ ok: true, settings: value }, 200, headers);
+      }
+      if (b.action === "airport_partner_save") {
+        const row: any = { name: txt(b.name, 120), email: txt(b.email, 200).toLowerCase() || null, whatsapp: waNumber(b.whatsapp).slice(0, 20) || null, language: ["tr", "de", "en"].includes(b.language) ? b.language : "tr", active: b.active !== false && b.active !== "0", notes: txt(b.notes, 2000) || null };
+        if (!row.name || (!row.email && !row.whatsapp)) return fail("invalid");
+        if (row.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(row.email)) return fail("invalid");
+        const q = id ? db.from("airport_partners").update(row).eq("id", id) : db.from("airport_partners").insert(row);
+        const { error } = await q; if (error) throw error;
+        await audit("airport_partner_save", id || row.name, { email: row.email, whatsapp: row.whatsapp });
+        return json({ ok: true }, 200, headers);
+      }
+      if (b.action === "airport_partner_delete") {
+        const { error } = await db.from("airport_partners").delete().eq("id", id); if (error) throw error;
+        await audit("airport_partner_delete", id); return json({ ok: true }, 200, headers);
+      }
+      if (b.action === "airport_offer_save") {
+        const cost = num(String(b.cost ?? "").replace(",", "."), 0.01, 100000);
+        const row: any = {
+          partner_id: txt(b.partner_id, 60) || null, product: b.product === "fasttrack" ? "fasttrack" : "lounge", airport: txt(b.airport, 3).toUpperCase(),
+          airport_name: txt(b.airport_name, 120) || null, terminal: txt(b.terminal, 60) || null, title: txt(b.title, 160), details: txt(b.details, 1000) || null,
+          cost, cost_currency: txt(b.cost_currency || "EUR", 3).toUpperCase(), max_persons: Math.round(num(b.max_persons, 1, 20) ?? 8), lead_hours: Math.round(num(b.lead_hours, 0, 720) ?? 24),
+          active: b.active !== false && b.active !== "0", updated_at: now,
+        };
+        if (!/^[A-Z]{3}$/.test(row.airport) || !row.title || !cost || !/^[A-Z]{3}$/.test(row.cost_currency)) return fail("invalid");
+        const q = id ? db.from("airport_offers").update(row).eq("id", id) : db.from("airport_offers").insert(row);
+        const { error } = await q; if (error) throw error;
+        await audit("airport_offer_save", id || `${row.airport} ${row.title}`, { cost: row.cost, currency: row.cost_currency });
+        return json({ ok: true }, 200, headers);
+      }
+      if (b.action === "airport_offer_delete") {
+        const { error } = await db.from("airport_offers").delete().eq("id", id); if (error) throw error;
+        await audit("airport_offer_delete", id); return json({ ok: true }, 200, headers);
+      }
+      if (b.action === "airport_test") {
+        // Testbuchung ohne Bestellung, um den Ablauf mit dem Partner auszuprobieren (Partner sieht „TEST“)
+        const { data: offer } = await db.from("airport_offers").select("*").eq("id", txt(b.offer_id, 60)).maybeSingle();
+        if (!offer) return fail("no_offer");
+        const d = new Date(Date.now() + 3 * 864e5).toISOString().slice(0, 10);
+        const { data: nb, error } = await db.from("airport_bookings").insert({
+          offer_id: offer.id, partner_id: offer.partner_id, product: offer.product, airport: offer.airport, title: offer.title, travel_date: d, travel_time: "14:30",
+          flight: "TK0000", persons: 1, names: ["TEST TEST"], customer_email: user.email, customer_note: "TEST", test: true, cost: offer.cost, cost_currency: offer.cost_currency,
+          log: [logItem(who, "Testbuchung angelegt")],
+        }).select("id").single();
+        if (error) throw error;
+        await audit("airport_test", nb.id);
+        return json({ ok: true, id: nb.id }, 200, headers);
+      }
+      const { data: bk } = await db.from("airport_bookings").select("*").eq("id", id).maybeSingle();
+      if (!bk) return fail("not_found", 404);
+      if (b.action === "airport_send") {
+        try {
+          const r = await dispatch(db, id, who, !!b.reminder);
+          await audit("airport_send", id, { channels: r.channels, reminder: !!b.reminder });
+          return json({ ok: true, ...r }, 200, headers);
+        } catch (err) { const m = (err as Error).message; return fail(["no_partner", "closed"].includes(m) ? m : "server", m === "closed" ? 409 : 400); }
+      }
+      if (b.action === "airport_link") {
+        // Link zum Partner-Portal erneut anzeigen (z. B. um ihn selbst per WhatsApp zu schicken)
+        if (!bk.token) return fail("no_link");
+        const { data: partner } = bk.partner_id ? await db.from("airport_partners").select("*").eq("id", bk.partner_id).maybeSingle() : { data: null };
+        const link = portalLink(bk.token);
+        const msg = partnerMessage(bk, partner?.language || "tr", link);
+        return json({ link, wa: partner?.whatsapp ? waLink(partner.whatsapp, msg.text) : null, text: msg.text }, 200, headers);
+      }
+      if (b.action === "airport_status") {
+        const ST = ["new", "sent", "accepted", "delivered", "declined", "failed", "cancelled"];
+        if (!ST.includes(b.status)) return fail("status");
+        if (b.status === "delivered") return fail("use_deliver");
+        await addLog(`Status → ${b.status}`, { status: b.status });
+        await audit("airport_status", id, { status: b.status });
+        return json({ ok: true }, 200, headers);
+      }
+      if (b.action === "airport_partner") {
+        await addLog("Partner geändert", { partner_id: txt(b.partner_id, 60) || null });
+        return json({ ok: true }, 200, headers);
+      }
+      if (b.action === "airport_note") {
+        await db.from("airport_bookings").update({ admin_note: txt(b.note, 2000) || null, updated_at: now }).eq("id", id);
+        return json({ ok: true }, 200, headers);
+      }
+      if (b.action === "airport_upload") {
+        // Voucher selbst hochladen (z. B. wenn der Partner ihn per WhatsApp geschickt hat)
+        const raw = String(b.data ?? "").replace(/^data:[^,]*,/, "");
+        if (raw.length > 12 * 1024 * 1024) return fail("too_big");
+        let bytes: Uint8Array;
+        try { bytes = Uint8Array.from(atob(raw), (c) => c.charCodeAt(0)); } catch (_) { return fail("file"); }
+        try { await storeFile(db, id, bytes, txt(b.type, 40), txt(b.name, 80), who); }
+        catch (err) { const m = (err as Error).message; return fail(["type", "too_big", "too_many", "closed"].includes(m) ? m : "upload"); }
+        await audit("airport_upload", id);
+        return json({ ok: true }, 200, headers);
+      }
+      if (b.action === "airport_file_remove") {
+        await removeFile(db, id, txt(b.path, 300), who);
+        return json({ ok: true }, 200, headers);
+      }
+      if (b.action === "airport_deliver") {
+        try { const r = await deliver(db, id, who); await audit("airport_deliver", id); return json({ ok: true, ...r }, 200, headers); }
+        catch (err) { return fail((err as Error).message === "no_file" ? "no_file" : "server"); }
+      }
+      return fail("unknown_action");
+    }
+
     if (b.action === "order_status") {
       if (!ORDER_ST.includes(b.status)) return json({ error: "status" }, 400, headers);
       const { error } = await db.from("orders").update({ status: b.status, updated_at: now }).eq("id", txt(b.id, 60));
       if (error) throw error;
       await audit("order_status", txt(b.id, 60), { status: b.status });
+      // Lounge/Fast Track: bezahlt → Buchung automatisch an den Partner (wenn eingeschaltet)
+      if (b.status === "paid") await dispatchForOrder(db, txt(b.id, 60), `admin:${user.email}`);
       return json({ ok: true }, 200, headers);
     }
     if (b.action === "esim_status") {

@@ -192,13 +192,18 @@ window.PP_ACCOUNT = function (ctx) {
       const refundable = (o) => {
         if (!["paid", "fulfilled"].includes(o.status)) return false;
         if (Date.now() - new Date(o.created_at).getTime() > (a.refundDays || 30) * 864e5) return false;
+        if ((a.bookings || []).some((x) => x.order_id === o.id && x.status === "delivered")) return false;
         return !(a.esims || []).some((e) => e.order_id === o.id && (!["processing", "ready", "cancelled"].includes(e.status) || e.activated_at));
       };
       body = a.orders.length ? `<div class="orders">${a.orders.map((o) => {
         const rr = (a.refunds || []).find((r) => r.order_id === o.id);
+        const bk = (a.bookings || []).find((x) => x.order_id === o.id);
+        const isAir = String(o.item_key || "").startsWith("airport:");
         return `
-        <div class="order order--wrap"><div><b>${esc(countryName((o.item_key || "").split(":")[1]))}</b><span>${esc(fmtDate(o.created_at))} · ${esc((o.title || "").replace(/·\s*(\d+)$/, (m, n) => "· " + A("days", { n })))}</span></div>
+        <div class="order order--wrap"><div><b>${esc(isAir ? `${A("bkTitle")} · ${(o.item_key || "").split(":")[1]}` : countryName((o.item_key || "").split(":")[1]))}</b><span>${esc(fmtDate(o.created_at))} · ${esc((o.title || "").replace(/·\s*(\d+)$/, (m, n) => "· " + A("days", { n })))}</span></div>
         <div class="order__right"><b>${esc(money(o.amount, o.currency))}</b><span class="order__st order__st--${esc(o.status)}">${esc(A("order_" + o.status))}${o.test ? " · Test" : ""}</span></div>
+        ${bk ? `<div class="order__voucher"><span class="order__st order__st--${bk.status === "delivered" ? "fulfilled" : bk.status === "failed" ? "failed" : "pending"}">${esc(A("bk_" + bk.status))}</span> <span class="acct-hint">${esc(bk.travel_date)}${bk.travel_time ? " · " + esc(bk.travel_time) : ""}${bk.flight ? " · " + esc(bk.flight) : ""} · ${bk.persons}×</span>
+          ${(bk.files || []).length ? `<div class="order__files">${bk.files.map((f, i) => `<a class="btn btn--green btn--sm" href="${esc(f.url)}" target="_blank" rel="noopener">${icon("qr")} ${esc(A("voucherOpen"))}${bk.files.length > 1 ? " " + (i + 1) : ""}</a>`).join("")}</div><p class="acct-hint">${esc(A("voucherHint"))}</p>` : ""}</div>` : ""}
         ${rr ? `<p class="order__refund order__refund--${esc(rr.status)}">${esc(A("refund_" + rr.status))}</p>`
           : refundable(o) ? `<details class="order__more"><summary>${esc(A("refundBtn"))}</summary>
             <form data-form="refund" data-order="${esc(o.id)}" class="acct-panel acct-panel--inline">
@@ -317,6 +322,16 @@ window.PP_ACCOUNT = function (ctx) {
     if (b) {
       try { sessionStorage.removeItem("pp_buy"); } catch (_) {}
       toast(A("buying"));
+      // Lounge / Fast Track (Partner): eine Buchung mit Reisedaten – Preis und Vorlauf prüft der Server
+      if (b.airport) {
+        try {
+          const r = await api("POST", { action: "order", item: "airport:" + b.airport.offer, currency: CUR, booking: b.airport.booking });
+          if (r.status === 409) toast(A(r.error === "unavailable" ? "bookingUnavailable" : "payMissing"));
+          else { toast(A("bookingDone")); state.tab = "orders"; }
+          state.account = await api("GET");
+        } catch (e) { toast(e.message === "too_soon" ? A("bookingTooSoon") : /^invalid/.test(e.message) ? A("bookingInvalid") : errText(e)); }
+        state.view = "profile"; render(); return;
+      }
       // Ein Artikel (alter Weg) oder der ganze Warenkorb – je Artikel eine Bestellung, Rabattcode nur für den gewählten Artikel
       const list = b.cart || [{ item: b.item, plan: b.plan }];
       let couponLeft = b.coupon, done = 0; const okIdx = [];

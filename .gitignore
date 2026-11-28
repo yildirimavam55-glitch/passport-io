@@ -13,3 +13,4 @@ Thumbs.db
 
 # Wird beim Veröffentlichen erzeugt (öffentlicher Supabase-Schlüssel)
 content/auth.json
+__pycache__/
