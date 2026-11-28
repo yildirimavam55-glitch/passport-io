@@ -278,6 +278,7 @@ collections:
               - { label: "Not metni", name: note, widget: text, i18n: true }
               - { label: "SSS başlığı", name: faqTitle, widget: string, i18n: true }
               - { label: "SSS metni", name: faqText, widget: string, i18n: true }
+              - { label: "Lina arka plan görseli (tatil yeri)", name: image, widget: image, choose_url: true }
 
           - label: "Bölüm: Dergi / blog"
             name: blog

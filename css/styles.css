@@ -1848,6 +1848,15 @@ html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
 .order__voucher { flex-basis: 100%; display: grid; gap: 8px; margin-top: 4px; }
 .order__files { display: flex; flex-wrap: wrap; gap: 8px; }
 
+/* Lina vor einem Urlaubsort (Bild im Panel austauschbar: Bereich „Dijital asistan“ → Arka plan görseli) */
+.hbanner__intro.has-bg { background: #0d1a14; border-color: rgba(255,255,255,.08); }
+.hbanner__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.hbanner__intro.has-bg::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(6,14,10,.55) 0%, rgba(6,14,10,.1) 45%, rgba(6,14,10,.35) 100%), linear-gradient(0deg, rgba(6,14,10,.6) 0%, transparent 40%); }
+.hbanner__intro.has-bg .hbanner__lina { z-index: 1; filter: drop-shadow(0 18px 28px rgba(0,0,0,.45)); }
+.hbanner__intro.has-bg .hbanner__talk { z-index: 2; }
+.hbanner__intro.has-bg .hbanner__bubble { box-shadow: 0 14px 40px rgba(0,0,0,.35); }
+
 /* Hilfe-Bereich am Desktop kompakt: etwa so hoch wie die Länderkarten */
 @media (min-width: 1021px) {
   .hbanner { grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); gap: 20px; }

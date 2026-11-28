@@ -874,7 +874,8 @@
       <section class="section section--paper" id="assistant">
         <div class="container">
           <div class="hbanner">
-            <div class="hbanner__intro">
+            <div class="hbanner__intro${c.image ? " has-bg" : ""}">
+              ${c.image ? `<img class="hbanner__bg" src="${esc(img(c.image, 1200))}" alt="" loading="lazy" decoding="async">` : ""}
               <img class="hbanner__lina" src="img/lina-wave.webp" alt="${esc(PERSONA.name)}" width="900" height="861" loading="lazy">
               <div class="hbanner__talk">
                 <div class="hbanner__bubble">
