@@ -1817,3 +1817,29 @@ html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
   .modal__panel { max-height: calc((100vh - 32px) / .9); }
   .popup__panel { max-height: calc((100svh - 40px) / .9); }
 }
+
+/* Hilfe-Bereich am Desktop kompakt: etwa so hoch wie die Länderkarten */
+@media (min-width: 1021px) {
+  .hbanner { grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); gap: 20px; }
+  .hbanner__intro { min-height: 0; padding: 24px 28px 0; }
+  .hbanner__lina { width: min(48%, 300px); }
+  .hbanner__talk { width: min(56%, 340px); gap: 14px; }
+  .hbanner__bubble { padding: 16px 18px; font-size: 14.5px; border-radius: 22px; }
+  .hbanner__bubble::before { bottom: 22px; width: 22px; height: 22px; left: -11px; }
+  .hbanner__hi { font-size: 22px; margin-bottom: 4px; }
+  .hbanner__cta { height: 44px; padding: 0 18px; font-size: 15px; }
+  .hbanner__card { padding: 18px; }
+  .hbanner__head { margin-bottom: 10px; }
+  .hbanner__ic { width: 40px; height: 40px; border-radius: 12px; }
+  .hbanner__title { font-size: 19px; }
+  .hbanner__card .assistant__head { padding: 10px 14px; }
+  .hbanner__card .assistant__log { min-height: 110px; max-height: 200px; padding: 12px 14px; }
+  .hbanner__card .assistant__form { padding: 10px 12px; }
+  .hbanner__links { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; margin-top: 6px; }
+  .hbanner__links li + li { border-top: 0; }
+  .hbanner__links li { border-bottom: 1px solid var(--line); }
+  .hbanner__links li:nth-last-child(-n+2) { border-bottom: 0; }
+  .hbanner__links :is(a, button) { padding: 10px 2px; font-size: 14px; gap: 10px; }
+  .hbanner__links :is(a, button) > svg:first-child { width: 18px; height: 18px; }
+  [dir="rtl"] .hbanner__bubble::before { right: -11px; left: auto; }
+}
